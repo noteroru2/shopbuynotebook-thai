@@ -17,6 +17,11 @@
 - LINE Official: https://line.me/R/ti/p/@webuy (@webuy)
 - โทร: 0642579353
 
+## Markdown สำหรับเอเจนต์ (เมื่อใช้ Cloudflare)
+เมื่อโดเมนผ่าน **Cloudflare** และเปิดฟีเจอร์ **Markdown for Agents** แล้ว การขอ URL ของเว็บนี้พร้อมหัวข้อ HTTP `Accept: text/markdown` จะได้เนื้อหาเป็น Markdown โดย `Content-Type: text/markdown; charset=utf-8` และมักมีหัวข้อประมาณโทเค็น **`x-markdown-tokens`** — คำขอจากเบราว์เซอร์ที่ไม่ระบุจะได้ HTML ตามปกติ (content negotiation)
+
+อ้างอิง: https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/
+
 ## บริการหลัก
 - รับซื้อโน๊ตบุ๊คมือสอง
 - รับซื้อ Notebook ทุกยี่ห้อ

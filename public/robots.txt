@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ร้านรับซื้อโน๊ตบุ๊ค.com/sitemap-index.xml
+Sitemap: https://www.xn--42cn4aobed0eb6hubj4es0m5dhvd.com/sitemap-index.xml

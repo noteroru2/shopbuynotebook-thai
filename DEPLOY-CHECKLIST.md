@@ -24,6 +24,57 @@
 - [ ] หน้า **404** ตั้ง `noindex` แล้ว (`404.astro`)
 - [ ] ส่ง Sitemap ใน **Google Search Console** (และ Bing Webmaster ถ้าใช้)
 
+### Cloudflare และ robots.txt (ข้อความ “Unknown directive” / Content-Signal)
+
+ถ้าโดเมนผ่าน **Cloudflare proxy** และเปิดฟีเจอร์ **managed robots.txt** / **Control AI Crawlers** Cloudflare จะแทรกหรือรวมบรรทัดแบบ `Content-Signal: search=yes,ai-train=no` เข้าไปใน response ของ `/robots.txt` — **ไฟล์ `public/robots.txt` ใน repo ไม่ได้ผิด** แต่ Search Console / Lighthouse บางเวอร์ชันยังถือว่าเป็น directive ที่ parser ไม่รู้จัก
+
+**ให้แจ้งเตือนหาย:** Cloudflare Dashboard → เลือกโซน →หน้า **Overview** → **Control AI Crawlers** → ปิดตัวเลือก **Display Content Signals Policy** (หรือปิดการให้ Cloudflare จัดการ robots.txt ถ้าต้องการให้เหลือแค่ไฟล์จาก origin เท่านั้น) — เอกสาร: [Managed robots.txt](https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/)
+
+**ถ้าต้องการเก็บการควบคุม AI crawler:** เปิดฟีเจอร์ต่อได้; Google ระบุว่าบรรทัดที่ parse ไม่ได้ใน robots.txt จะถูกข้าม — crawl ปกติยังใช้บรรทัด `Allow`/`Disallow`/`Sitemap` ที่ถูกต้องได้
+
+### Markdown for Agents (`Accept: text/markdown`)
+
+เว็บ Astro static ที่ deploy ผ่าน Coolify **ไม่แปลง HTML→Markdown ที่ origin** เอง — การให้เอเจนต์ได้ Markdown พร้อม `Content-Type: text/markdown` และหัวข้อ **`x-markdown-tokens`** (ถ้ามี) ทำที่ **Cloudflare edge** เมื่อเปิดฟีเจอร์นี้แล้วดึง HTML จาก origin มาแปลงให้คำขอที่มี content negotiation
+
+**เงื่อนไข:** โดเมนต้องใช้ Cloudflare proxy และแผน **Pro, Business หรือ Enterprise** (หรือตามที่ระบุใน [เอกสาร ↗](https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/#availability-and-pricing))
+
+**เปิดใน Dashboard**
+
+1. [Cloudflare Dashboard](https://dash.cloudflare.com/) → เลือกโซน  
+2. **AI Crawl Control** (`/:account/:zone/ai`)  
+3. เปิด **Markdown for Agents**
+
+**เปิดด้วย API (ทางเลือก)**
+
+```bash
+curl -X PATCH "https://api.cloudflare.com/client/v4/zones/{zone_id}/settings/content_converter" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer {api_token}" \
+  --data '{"value":"on"}'
+```
+
+ต้องการ token ที่มีสิทธิ์แก้ Zone Settings
+
+**จำกัดเฉพาะ path/subdomain:** [Configuration Rules](https://developers.cloudflare.com/rules/configuration-rules/) → เพิ่ม setting **Markdown for Agents** = On ตาม expression ที่ต้องการ
+
+**ทดสอบหลังเปิด**
+
+```bash
+curl -sS -D - "https://ร้านรับซื้อโน๊ตบุ๊ค.com/" -H "Accept: text/markdown" -o /dev/null
+```
+
+ควรเห็น `content-type: text/markdown` และบ่อยครั้งมี `x-markdown-tokens:` — มี `vary: accept`
+
+**ตรวจว่าไซต์ผ่านเกณฑ์เอเจนต์:** [isitagentready.com](https://isitagentready.com/) — POST `/api/scan` with `{"url":"https://..."}` แล้วดู `checks.contentAccessibility.markdownNegotiation`
+
+เอกสาร: [Markdown for Agents · Cloudflare](https://developers.cloudflare.com/fundamentals/reference/markdown-for-agents/)
+
+**Checklist**
+
+- [ ] โดเมนชี้ผ่าน Cloudflare proxy และแผนรองรับฟีเจอร์
+- [ ] เปิด **Markdown for Agents** ใน AI Crawl Control (หรือ Configuration Rule เฉพาะ path)
+- [ ] ทดสอบ `curl -H "Accept: text/markdown"` ได้ `content-type: text/markdown` และเมื่อเป็นไปได้มี `x-markdown-tokens`
+
 ## Schema
 
 - [ ] ทดสอบ JSON-LD ใน Rich Results Test / validator ว่าไม่ error
