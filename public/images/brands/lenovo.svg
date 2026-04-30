@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="B%BI Lenovo">
+  <rect width="256" height="256" rx="56" fill="#ffffff"/>
+  <rect x="56" y="92" width="144" height="72" rx="20" fill="#0f172a"/>
+  <text x="128" y="138" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="26" font-weight="800" fill="#ffffff">Lenovo</text>
+  <path d="M64 188h128" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+</svg>
+

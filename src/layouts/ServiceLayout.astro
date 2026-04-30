@@ -1,0 +1,31 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import type { BreadcrumbItem, FaqItem } from '../lib/seo';
+import { breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+  breadcrumbs: BreadcrumbItem[];
+  serviceName: string;
+  faqs?: FaqItem[];
+}
+
+const { title, description, canonical, ogImage, noindex, breadcrumbs, serviceName, faqs = [] } = Astro.props;
+
+const schemas = [
+  breadcrumbListSchema(breadcrumbs),
+  serviceSchema({ name: serviceName, url: canonical ?? breadcrumbs[breadcrumbs.length - 1]?.url ?? '', description }),
+  ...(faqs.length ? [faqPageSchema(faqs)] : []),
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} ogImage={ogImage} noindex={noindex} schemas={schemas}>
+  <Breadcrumbs items={breadcrumbs} />
+  <slot />
+</BaseLayout>
+

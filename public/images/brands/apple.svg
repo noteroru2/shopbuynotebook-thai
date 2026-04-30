@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Apple">
+  <rect width="256" height="256" rx="56" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="a" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+  <path
+    d="M154 60c-10 7-18 18-17 31 12 1 24-6 31-14 8-9 13-21 12-33-11 1-23 7-26 16Z"
+    fill="url(#a)"
+    opacity=".9"
+  />
+  <path
+    d="M196 166c-6 13-9 19-17 30-10 15-24 33-43 33-17 0-22-11-43-11-21 0-27 10-44 11-19 1-33-17-43-32-23-34-26-74-11-97 11-17 29-27 48-27 18 0 29 12 44 12 14 0 23-12 44-12 16 0 33 8 44 22-39 21-33 77 21 71Z"
+    fill="url(#a)"
+  />
+  <text x="128" y="214" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="20" font-weight="800" fill="#0f172a">
+    Apple
+  </text>
+</svg>
+

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="D-- Gaming Notebook">
+  <rect width="256" height="256" rx="56" fill="#ffffff"/>
+  <path d="M72 152c0-30 26-54 56-54s56 24 56 54c0 10-3 20-8 28H80c-5-8-8-18-8-28Z" fill="#0f172a"/>
+  <path d="M98 142h20v-10h10v10h20v10h-20v20h-10v-20H98v-10Z" fill="#ffffff" opacity=".9"/>
+  <circle cx="170" cy="154" r="8" fill="#ffffff" opacity=".9"/>
+  <circle cx="188" cy="140" r="8" fill="#ffffff" opacity=".9"/>
+  <text x="128" y="64" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="18" font-weight="800" fill="#0f172a">Gaming Notebook</text>
+  <path d="M64 200h128" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+</svg>
+

@@ -1,17 +1,111 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import MiniProcessBarDark from '../components/MiniProcessBarDark.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import SeoIntroSection from '../components/SeoIntroSection.astro';
+import SoftImageStrip from '../components/SoftImageStrip.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import PopularModelChips from '../components/PopularModelChips.astro';
+import BrandGrid from '../components/BrandGrid.astro';
+import NotebookTypesSection from '../components/NotebookTypesSection.astro';
+import ConditionGrid from '../components/ConditionGrid.astro';
+import PriceFactors from '../components/PriceFactors.astro';
+import HomeConditionPricingSection from '../components/HomeConditionPricingSection.astro';
+import HomeNotebookTerminologySection from '../components/HomeNotebookTerminologySection.astro';
+import HomeSellPrepSection from '../components/HomeSellPrepSection.astro';
+import PhotoGuide from '../components/PhotoGuide.astro';
+import TrustGallery from '../components/TrustGallery.astro';
+import ReviewCards from '../components/ReviewCards.astro';
+import SafetySection from '../components/SafetySection.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import FAQ from '../components/FAQ.astro';
+import CTAButtons from '../components/CTAButtons.astro';
+import FinalCtaBanner from '../components/FinalCtaBanner.astro';
+import ServiceAreasSection from '../components/ServiceAreasSection.astro';
+import PopularServicesLinks from '../components/PopularServicesLinks.astro';
+import { faqPageSchema } from '../lib/seo';
 
+const title = 'รับซื้อโน๊ตบุ๊ค ราคาดี ประเมินฟรี จ่ายเงินสด | ร้านรับซื้อโน๊ตบุ๊ค.com';
+const description =
+  'ร้านรับซื้อโน๊ตบุ๊ค รับซื้อโน๊ตบุ๊คมือสองทุกยี่ห้อ รับซื้อ Notebook, MacBook, Gaming Notebook และเครื่องเสียบางอาการ ส่งรูปเช็คราคาโน๊ตบุ๊คฟรีผ่าน LINE จ่ายเงินสดหรือโอนทันที';
+
+const faqs = [
+  {
+    question: 'รับซื้อโน๊ตบุ๊คเสียไหม?',
+    answer:
+      'รับครับ เรารับซื้อทั้งเครื่องใช้งานปกติและเครื่องเสีย “บางอาการ” เช่น เปิดไม่ติด จอแตก แบตเสื่อม คีย์บอร์ดบางปุ่มเสีย ราคาจะขึ้นกับรุ่น/สเปก/สภาพรวม และอุปกรณ์ที่มี',
+  },
+  {
+    question: 'รับซื้อโน๊ตบุ๊คไม่มีที่ชาร์จไหม?',
+    answer:
+      'รับครับ แค่แจ้งว่าไม่มีที่ชาร์จเพื่อให้ประเมินตรงขึ้น ราคามักปรับตามความครบของอุปกรณ์ แต่ยังรับซื้อได้ตามสภาพจริง',
+  },
+  {
+    question: 'เช็คราคาโน๊ตบุ๊คก่อนขายได้ไหม?',
+    answer:
+      'ได้ครับ ส่งรูป + รุ่น + สเปก + สภาพ/อาการ (ถ้ามี) มาทาง LINE เราช่วยเช็คราคาและประเมินเบื้องต้นให้ฟรี',
+  },
+  {
+    question: 'ขายโน๊ตบุ๊คมือสองต้องเตรียมอะไร?',
+    answer:
+      'แนะนำเตรียมรูปเครื่องชัด ๆ 3–5 รูป แจ้งรุ่น/สเปก อุปกรณ์ที่มี (ที่ชาร์จ/กล่อง/ใบเสร็จถ้ามี) และอาการที่พบ ถ้าล้างข้อมูลได้ก่อนจะช่วยให้ปิดงานเร็วขึ้น',
+  },
+  {
+    question: 'รับซื้อโน๊ตบุ๊คถึงที่ไหม?',
+    answer:
+      'แล้วแต่พื้นที่และเงื่อนไขครับ บางพื้นที่สามารถนัดรับได้ หรือเลือกส่งเครื่องผ่านขนส่ง/นัดเจอจุดที่สะดวก เพื่อให้เหมาะกับเคสของคุณ',
+  },
+  {
+    question: 'ประเมินราคาโน๊ตบุ๊คฟรีหรือไม่?',
+    answer:
+      'ฟรีครับ เราประเมินเบื้องต้นจากรูป/สเปก/สภาพ และจะแจ้งขั้นตอนให้ชัดเจนก่อนตกลงขายเสมอ',
+  },
+  {
+    question: 'ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลไหม?',
+    answer:
+      'แนะนำให้สำรองข้อมูลและล้างเครื่องก่อนขายเสมอเพื่อความปลอดภัยของข้อมูลส่วนตัว หากไม่สะดวก เราช่วยแนะนำขั้นตอน reset/ล้างข้อมูลอย่างปลอดภัยตามระบบได้',
+  },
+  {
+    question: 'เครื่องติดรหัสขายได้ไหม?',
+    answer:
+      'กรณีติดรหัส Windows/Apple ID ต้องปลดล็อกได้ก่อนเพื่อความถูกต้องในการรับซื้อ แนะนำเตรียมข้อมูลบัญชีเพื่อปลดก่อนนัดส่งเครื่อง',
+  },
+];
 ---
+<BaseLayout title={title} description={description} schemas={[faqPageSchema(faqs)]}>
+  <div class="absolute inset-x-0 top-0 -z-10 h-[520px] bg-gradient-to-b from-slate-50/80 to-transparent"></div>
+  <Hero
+    title="รับซื้อโน๊ตบุ๊คมือสอง ประเมินไว จ่ายเงินสด"
+    titleHtml={`<span class="block"><span class="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">รับซื้อโน๊ตบุ๊ค</span>มือสอง</span><span class="mt-1 block">ประเมินไว <span class="relative inline-flex items-center rounded-full bg-[#FACC15]/45 px-3 py-1 text-slate-900">จ่ายเงินสด</span></span>`}
+    subtitle="ส่งรูปเครื่องผ่าน LINE เพื่อเช็คราคาเบื้องต้นฟรี รับซื้อทั้งเครื่องดี เครื่องเก่า และเครื่องเสียบางอาการ"
+    imageSrc="/images/rubsue-notebook-hero-team.webp"
+    imageAlt="ทีมงานตรวจสภาพโน๊ตบุ๊คก่อนประเมินราคา"
+  />
+  <MiniProcessBarDark />
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <TrustBadges />
+  <SeoIntroSection />
+  <SoftImageStrip />
+  <ProcessSteps />
+  <PhotoGuide />
+  <BrandGrid />
+  <PopularModelChips />
+  <NotebookTypesSection />
+  <ConditionGrid />
+  <PriceFactors />
+  <HomeConditionPricingSection />
+  <HomeNotebookTerminologySection />
+  <HomeSellPrepSection />
+  <TrustGallery />
+  <ReviewCards />
+  <SafetySection />
+  <WhyChooseUs />
+  <FAQ faqs={faqs} />
+  <ServiceAreasSection />
+  <PopularServicesLinks />
+
+  <FinalCtaBanner>
+    <CTAButtons primaryText="แอดไลน์ @webuy ส่งรูปประเมินราคา" secondaryText="โทร" />
+  </FinalCtaBanner>
+</BaseLayout>

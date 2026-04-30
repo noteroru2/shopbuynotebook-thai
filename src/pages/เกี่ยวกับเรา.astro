@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButtons from '../components/CTAButtons.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import { SITE, absoluteUrl } from '../lib/seo';
+
+const title = 'เกี่ยวกับเรา | ร้านรับซื้อโน๊ตบุ๊ค.com';
+const description =
+  'รู้จักร้านรับซื้อโน๊ตบุ๊ค.com — รับซื้อโน๊ตบุ๊คมือสองทุกยี่ห้อ ประเมินฟรี ตอบไว จ่ายเงินสด/โอนทันที เน้นความชัดเจนและปลอดภัย';
+const canonical = absoluteUrl('/เกี่ยวกับเรา/');
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">เกี่ยวกับ ร้านรับซื้อโน๊ตบุ๊ค.com</h1>
+    <p class="mt-4 text-base leading-relaxed text-slate-600">
+      เราเป็นทีมรับซื้อโน๊ตบุ๊คมือสองที่โฟกัส “ความเร็ว + ความชัดเจน” ลูกค้าส่วนใหญ่ต้องการคำตอบง่าย ๆ: เครื่องรุ่นนี้ขายได้ไหม
+      ได้ราคาเท่าไร และจบงานอย่างปลอดภัย. เราจึงออกแบบขั้นตอนให้สั้น: ส่งรูป → ประเมิน → นัดรับ/ส่ง → จ่ายเงินทันที
+    </p>
+    <p class="mt-4 text-base leading-relaxed text-slate-600">
+      สิ่งที่เรายึดคือการประเมินแบบตรงไปตรงมา อิงจากรุ่น สเปก สภาพ และราคาตลาดมือสองในช่วงนั้น. ถ้าเครื่องมีอาการเสีย
+      เราจะอธิบายผลกระทบต่อราคาตามต้นทุนซ่อมหรือความเสี่ยง ไม่ใช้คำกำกวมเพื่อกดราคา. เป้าหมายคือให้คุณตัดสินใจได้ง่าย
+      และรู้สึกสบายใจตลอดการขาย
+    </p>
+    <div class="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-6">
+      <h2 class="text-lg font-extrabold text-slate-900">หน้าร้านจริง ({SITE.physicalStoreName})</h2>
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">
+        นำทางที่จอดหรือเข้ามาติดต่อได้ผ่าน Google Maps — แนะนำแจ้งนัดผ่าน LINE {SITE.lineHandle} ล่วงหน้าเพื่อความสะดวก
+      </p>
+      <a
+        class="mt-4 inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-extrabold text-white hover:bg-emerald-700"
+        href={SITE.googleMapsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        เปิด Google Maps — {SITE.physicalStoreName}
+      </a>
+    </div>
+    <div class="mt-6">
+      <CTAButtons />
+    </div>
+  </section>
+
+  <TrustBadges />
+
+  <section class="mx-auto w-full max-w-6xl px-4 py-14">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-10">
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900">อยากเริ่มขายเลย?</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        กลับไปหน้า <a class="underline" href="/">รับซื้อโน๊ตบุ๊ค</a> หรือไปที่หน้า <a class="underline" href="/ติดต่อเรา/">ติดต่อเรา</a>
+      </p>
+      <div class="mt-6">
+        <CTAButtons />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

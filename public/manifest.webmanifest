@@ -1,0 +1,15 @@
+{
+  "name": "ร้านรับซื้อโน๊ตบุ๊ค.com",
+  "short_name": "รับซื้อโน๊ตบุ๊ค",
+  "description": "รับซื้อโน๊ตบุ๊คมือสอง ประเมินราคาฟรีผ่าน LINE",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0F172A",
+  "lang": "th",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
+

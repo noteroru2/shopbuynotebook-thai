@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="B%BI Acer">
+  <rect width="256" height="256" rx="56" fill="#ffffff"/>
+  <circle cx="92" cy="128" r="36" fill="#0f172a" opacity=".12"/>
+  <path d="M78 128c0-20 14-36 34-36 11 0 20 4 27 11l-10 10c-5-5-10-7-17-7-10 0-18 8-18 22s8 22 18 22c7 0 12-2 17-7l10 10c-7 7-16 11-27 11-20 0-34-16-34-36Z" fill="#0f172a"/>
+  <text x="128" y="64" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="24" font-weight="800" fill="#0f172a">ACER</text>
+  <path d="M44 196h168" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+</svg>
+

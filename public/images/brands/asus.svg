@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="B%BI Asus">
+  <rect width="256" height="256" rx="56" fill="#ffffff"/>
+  <path d="M52 164l44-88h20l44 88h-22l-10-20H84l-10 20H52Zm40-36h28l-14-30-14 30Z" fill="#0f172a"/>
+  <text x="128" y="64" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="24" font-weight="800" fill="#0f172a">ASUS</text>
+  <path d="M44 196h168" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+</svg>
+

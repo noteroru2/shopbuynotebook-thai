@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="B%BI HP">
+  <rect width="256" height="256" rx="56" fill="#ffffff"/>
+  <circle cx="128" cy="128" r="60" fill="#0f172a"/>
+  <text x="128" y="142" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="44" font-weight="900" fill="#ffffff">hp</text>
+  <path d="M64 200h128" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+</svg>
+

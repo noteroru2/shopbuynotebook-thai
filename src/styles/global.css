@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer base {
+  :root {
+    --color-navy: 15 23 42; /* slate-900-ish */
+    --color-line: 34 197 94; /* green-500 */
+    --color-accent: 255 138 0; /* orange */
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Prompt", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+      "Noto Sans Thai", "Noto Sans", sans-serif;
+    text-rendering: optimizeLegibility;
+    background:
+      radial-gradient(1200px 600px at 15% 0%, rgb(var(--color-accent) / 0.10), transparent 60%),
+      radial-gradient(900px 500px at 85% 10%, rgb(var(--color-line) / 0.12), transparent 55%),
+      radial-gradient(900px 500px at 50% 100%, rgb(2 132 199 / 0.10), transparent 60%),
+      #fff;
+  }
+
+  :focus-visible {
+    outline: 3px solid rgb(var(--color-line) / 0.9);
+    outline-offset: 2px;
+  }
+}

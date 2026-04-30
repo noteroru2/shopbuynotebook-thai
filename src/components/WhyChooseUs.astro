@@ -1,0 +1,43 @@
+---
+import { SITE } from '../lib/seo';
+
+const items = [
+  { title: 'ติดต่อร้านได้ง่ายผ่าน LINE', desc: 'คุยไว ส่งรูปและข้อมูลได้ทันที' },
+  { title: 'ประเมินราคาเบื้องต้นจากรูปเครื่อง', desc: 'เช็คราคาก่อนนัด ลดการเสียเวลา' },
+  { title: 'แจ้งขั้นตอนก่อนตัดสินใจขาย', desc: 'เข้าใจเงื่อนไขชัดเจน ไม่เร่งตัดสินใจ' },
+  { title: 'รับซื้อหลายยี่ห้อ หลายสภาพ', desc: 'ทั้งเครื่องดี เครื่องเก่า และเครื่องเสียบางอาการ' },
+  { title: 'เหมาะกับคนที่อยากเปลี่ยนเป็นเงินสด', desc: 'ตกลงแล้วจ่ายเงินสด/โอนทันทีตามเงื่อนไข' },
+];
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 pt-12">
+  <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <h2 class="text-xl font-extrabold text-slate-900">ทำไมคนขายโน๊ตบุ๊คถึงเลือกเรา</h2>
+        <p class="mt-2 text-sm leading-relaxed text-slate-700">
+          ถ้าคุณต้องการ <strong>รับซื้อโน๊ตบุ๊ค</strong> แบบจบไวและปลอดภัย เราช่วยให้การ <strong>ขายโน๊ตบุ๊คมือสอง</strong> ง่ายขึ้นด้วยการ
+          <strong>เช็คราคาโน๊ตบุ๊ค</strong> และ <strong>ประเมินราคาโน๊ตบุ๊ค</strong> เบื้องต้นจากรูปเครื่อง พร้อมแจ้งขั้นตอนให้ชัดก่อนคุณตัดสินใจ
+        </p>
+      </div>
+      <a
+        class="inline-flex items-center justify-center rounded-2xl bg-[#06C755] px-5 py-3 text-sm font-extrabold text-white shadow-sm hover:brightness-95"
+        href={SITE.lineUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        แอดไลน์ {SITE.lineHandle} ส่งรูปประเมินราคา
+      </a>
+    </div>
+
+    <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+      {items.map((it) => (
+        <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+          <p class="text-sm font-extrabold text-slate-900">{it.title}</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-700">{it.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+

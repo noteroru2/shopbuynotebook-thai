@@ -1,0 +1,343 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import SeoCTA from '../../components/SeoCTA.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import { absoluteUrl, breadcrumbListSchema, faqPageSchema } from '../../lib/seo';
+import { generalFaqs, pricingFaqs, conditionFaqs } from '../../data/faqs';
+import { SITE } from '../../config/site';
+
+const title = 'รับซื้อโน๊ตบุ๊คทุกยี่ห้อ ประเมินฟรี | ร้านรับซื้อโน๊ตบุ๊ค.com';
+const description =
+  'รวมบริการรับซื้อโน๊ตบุ๊ค รับซื้อ Notebook, รับซื้อโน้ตบุ๊ก, MacBook, Gaming Notebook และเครื่องเสียบางอาการ ส่งรูปเช็คราคาโน๊ตบุ๊คฟรีผ่านไลน์ @webuy หรือโทร 0642579353';
+const canonical = absoluteUrl('/รับซื้อโน๊ตบุ๊ค/');
+
+const breadcrumbs = [
+  { name: 'หน้าแรก', url: absoluteUrl('/') },
+  { name: 'รับซื้อโน๊ตบุ๊ค', url: canonical },
+];
+
+const faqs = [...generalFaqs, ...pricingFaqs, ...conditionFaqs].slice(0, 8);
+
+const schemas = [breadcrumbListSchema(breadcrumbs), faqPageSchema(faqs)];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">รับซื้อโน๊ตบุ๊คทุกยี่ห้อ ประเมินราคาฟรี</h1>
+    <p class="mt-4 text-base leading-relaxed text-slate-600">
+      หน้านี้เป็น “หน้า hub รวมบริการ” สำหรับคนที่ต้องการ <strong>รับซื้อโน๊ตบุ๊ค</strong> แบบจบไวและคุยง่าย โดยรวบรวมบริการหลักทั้งหมดของร้านไว้ในที่เดียว
+      คุณสามารถเริ่มจากการส่งรูปเครื่องจริงพร้อมรุ่น/สเปก/สภาพ เพื่อเช็คราคาเบื้องต้นฟรีผ่าน LINE ก่อนตัดสินใจขาย
+    </p>
+    <p class="mt-4 text-base leading-relaxed text-slate-600">
+      เรารับซื้อทั้งโน๊ตบุ๊คมือสองใช้งานปกติ เครื่องทำงานทั่วไป เครื่องเรียนออนไลน์ รวมถึง <strong>MacBook</strong> และ <strong>Gaming Notebook</strong>.
+      กรณีเครื่องมีอาการเสียบางอย่าง เช่น เปิดไม่ติด จอแตก หรือแบตเสื่อม ก็ยังสามารถส่งข้อมูลมาประเมินได้ โดยยึดตามรุ่น สเปก สภาพ และราคาตลาดมือสองเป็นหลัก
+    </p>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">คำตอบสั้น (AEO): รับซื้อโน๊ตบุ๊คต้องทำยังไง</h2>
+      <ol class="mt-4 space-y-2 text-sm text-slate-700">
+        <li><strong>1)</strong> ส่งรูป 3–5 รูป + รุ่น/สเปก + สภาพ/อาการ เพื่อเช็คราคาเบื้องต้นฟรี</li>
+        <li><strong>2)</strong> ตกลงเงื่อนไขและวิธีนัดรับ/ส่งเครื่องตามความสะดวก</li>
+        <li><strong>3)</strong> รับเงินสด/โอนทันทีเมื่อรับเครื่องและตรวจสภาพตามข้อมูลที่ส่งไว้</li>
+      </ol>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        เริ่มได้เลยที่ไลน์ <strong>{SITE.lineHandle}</strong> หรือโทร <strong>{SITE.phone}</strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ส่งอะไรให้ประเมินไว (คัดลอกไปใช้ได้)</h2>
+      <div class="mt-4 grid gap-4 lg:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-800">
+          ขอเช็คราคาโน๊ตบุ๊คครับ
+          <br />รุ่น ______ (แนบรูปใต้เครื่อง)
+          <br />CPU ______ / RAM ___GB / SSD ___GB / GPU ______ (ถ้ามี)
+          <br />สภาพ: ใช้งานปกติ / มีรอย / แบตเสื่อม / จอมีเส้น / เปิดไม่ติด
+          <br />อุปกรณ์: มีที่ชาร์จ / ไม่มีกล่อง (แจ้งตามจริง)
+          <br />อยู่โซน ______
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-800">
+          ขอประเมินโน๊ตบุ๊คตามสภาพครับ
+          <br />รุ่น ______ (แนบรูปใต้เครื่อง)
+          <br />อาการ: ______ (เปิดไม่ติด/จอแตก/แบตบวม)
+          <br />มีที่ชาร์จครับ (แนบรูป)
+          <br />แนบวิดีโออาการ 5–10 วินาที (ถ้ามี)
+          <br />อยู่โซน ______
+        </div>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed text-slate-700">
+        ถ้าคุณส่งข้อมูลครบตั้งแต่ต้น เราจะประเมินได้ไวขึ้นมาก และลดการถามซ้ำหลายรอบ
+      </p>
+      <div class="mt-5">
+        <SeoCTA heading="เริ่มส่งรูปประเมินราคา" description={`แอดไลน์ ${SITE.lineHandle} ส่งรูปเครื่อง รุ่น สเปก และสภาพ เพื่อเช็คราคาเบื้องต้นฟรี`} />
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ร้านรับซื้อโน๊ตบุ๊คสำหรับเครื่องใช้งานปกติและเครื่องเสียบางอาการ</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        เป้าหมายของหน้านี้คือช่วยให้คุณเลือก “ทางลัด” ที่เหมาะกับเคสของตัวเอง ไม่ว่าจะเป็นการ <strong>รับซื้อโน๊ตบุ๊คมือสอง</strong> สำหรับเครื่องใช้งานปกติ
+        หรือการส่งประเมินสำหรับเครื่องที่มีอาการบางอย่าง เช่น <strong>รับซื้อโน๊ตบุ๊คเสีย</strong>, เปิดไม่ติด, จอแตก หรือแบตเสื่อม
+        เราเน้นประเมินจากสภาพจริงและอธิบายเหตุผลของราคาแบบตรงไปตรงมา เพื่อให้คุณตัดสินใจง่ายก่อนนัดรับ/ส่งเครื่อง
+      </p>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        ถ้าต้องการเริ่มเร็วที่สุด แอดไลน์ <strong>{SITE.lineHandle}</strong> แล้วส่ง “รูปเครื่อง + รุ่น/สเปก + สภาพ” เพื่อให้เช็คราคาเบื้องต้นฟรี
+        หรือโทร <strong>{SITE.phone}</strong> หากต้องการคุยก่อน
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="grid gap-4 lg:grid-cols-3">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
+        <h2 class="text-xl font-extrabold text-slate-900">รับซื้อโน๊ตบุ๊คประเภทไหนบ้าง</h2>
+        <p class="mt-3 text-sm leading-relaxed text-slate-700">
+          เรารับซื้อโน๊ตบุ๊คหลากหลายประเภท ตั้งแต่เครื่องทำงานทั่วไป เครื่องเรียนออนไลน์ ไปจนถึงเครื่องสเปกสูง โดยจะพิจารณาจาก “รุ่น/สเปก/สภาพจริง” เป็นหลัก
+          เพื่อให้สอดคล้องกับการใช้งานและตลาดมือสองในช่วงนั้น
+        </p>
+        <ul class="mt-3 list-disc pl-5 text-sm text-slate-700">
+          <li>โน๊ตบุ๊คทำงานทั่วไป (Office/Business/Creator)</li>
+          <li>Notebook มือสองสำหรับเรียน/ใช้งานเอกสาร</li>
+          <li>MacBook (Air/Pro, Intel และ Apple Silicon)</li>
+          <li>Gaming Notebook ที่มี GPU แยก</li>
+          <li>เครื่องเก่า/ตกรุ่น ที่ยังมีมูลค่าตามสภาพ</li>
+        </ul>
+        <p class="mt-3 text-sm leading-relaxed text-slate-700">
+          ถ้าเครื่องมีอาการบางอย่าง ก็ยังส่งประเมินได้ เช่น เปิดไม่ติด จอแตก แบตเสื่อม หรือไม่มีที่ชาร์จ (แจ้งให้ครบเพื่อประเมินตรงขึ้น)
+        </p>
+      </div>
+      <aside class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-extrabold text-slate-900">สภาพเครื่องที่ส่งประเมินได้</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="flex gap-2"><span aria-hidden="true">✓</span> เปิดติด ใช้งานปกติ</li>
+          <li class="flex gap-2"><span aria-hidden="true">✓</span> เครื่องเก่า/ตกรุ่น</li>
+          <li class="flex gap-2"><span aria-hidden="true">✓</span> แบตเสื่อม/ชาร์จไม่เข้า (บางอาการ)</li>
+          <li class="flex gap-2"><span aria-hidden="true">✓</span> จอมีตำหนิ/จอแตก (บางอาการ)</li>
+          <li class="flex gap-2"><span aria-hidden="true">✓</span> เปิดไม่ติด/บูตไม่ขึ้น (บางอาการ)</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ปัจจัยที่ทำให้ราคาประเมินต่างกัน (สรุปแบบเข้าใจง่าย)</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        รุ่นเดียวกันอาจมีหลายสเปก และสภาพเล็ก ๆ บางจุดมีผลกับการใช้งานจริง เช่น จอ แบต และบานพับ ดังนั้นการประเมินจะดู “สเปก + สภาพ + อุปกรณ์”
+        เพื่อให้ใกล้เคียงราคาตลาดมือสอง ณ ช่วงนั้น
+      </p>
+      <div class="mt-4 grid gap-4 lg:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <h3 class="text-base font-bold text-slate-900">สเปก</h3>
+          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
+            <li>CPU รุ่นเต็มและเจน</li>
+            <li>RAM และ SSD ความจุ</li>
+            <li>GPU (สำคัญมากสำหรับเกมมิ่ง)</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <h3 class="text-base font-bold text-slate-900">สภาพ</h3>
+          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
+            <li>จอมีเส้น/จุด/รอยร้าว</li>
+            <li>แบตหมดไว/ต้องเสียบตลอด/แบตบวม</li>
+            <li>บานพับหลวม บอดี้บุบ พอร์ตหลวม</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <h3 class="text-base font-bold text-slate-900">อุปกรณ์</h3>
+          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
+            <li>ที่ชาร์จมีผลมาก</li>
+            <li>กล่อง/ใบเสร็จช่วยเพิ่มความมั่นใจ (ถ้ามี)</li>
+            <li>อุปกรณ์เสริมอื่น ๆ แล้วแต่เคส</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ความปลอดภัยข้อมูลก่อนขาย</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        คุณสามารถขอประเมินจากรูปก่อนโดยยังไม่ต้องล้างเครื่องทันที แต่ก่อนส่งมอบจริง แนะนำสำรองข้อมูลและล้างข้อมูลเพื่อความปลอดภัยเสมอ
+        โดยเฉพาะบัญชีที่ผูกกับเครื่อง หากเป็น MacBook ต้องออก Apple ID และปิด Find My เพื่อไม่ให้ติดล็อกบัญชี
+      </p>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        อ่านต่อ: <a class="underline" href="/blog/ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร/">ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">เช็คราคาโน๊ตบุ๊คก่อนขายต้องส่งข้อมูลอะไร</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        เพื่อให้การ <strong>เช็คราคาโน๊ตบุ๊ค</strong> และ <strong>ประเมินราคาโน๊ตบุ๊ค</strong> ใกล้เคียงขึ้น แนะนำส่งข้อมูลแบบสั้น ๆ แต่ครบ:
+        รูปเครื่องชัด ๆ 3–5 รูป + รุ่น/สเปก (ถ้าทราบ) + สภาพ/อาการ และอุปกรณ์ที่มี ข้อมูลเหล่านี้ช่วยให้ประเมินไวขึ้นและลดการถามซ้ำหลายรอบ
+      </p>
+      <ul class="mt-3 list-disc pl-5 text-sm text-slate-700">
+        <li>ส่งรูปหน้าเครื่อง (เปิดจอถ้าได้) และรูปคีย์บอร์ด</li>
+        <li>ส่งรูปฝาหลัง/สติ๊กเกอร์รุ่น หรือพิมพ์รุ่นเครื่อง</li>
+        <li>แจ้ง CPU / RAM / SSD (ถ้าทราบ)</li>
+        <li>แจ้งสภาพ/อาการ เช่น เปิดไม่ติด จอแตก แบตเสื่อม หรือไม่มีที่ชาร์จ</li>
+        <li>แจ้งอุปกรณ์ที่มี เช่น ที่ชาร์จ กล่อง ใบเสร็จ (ถ้ามี)</li>
+      </ul>
+      <p class="mt-4 text-sm text-slate-700">
+        ส่งข้อมูลผ่านไลน์ <strong>{SITE.lineHandle}</strong> ได้เลย หรือโทร <strong>{SITE.phone}</strong> ถ้าต้องการคุยก่อน
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        เราให้บริการหลายโซน เช่น กรุงเทพและปริมณฑล รวมถึงโซนภาคอีสานและพื้นที่อื่น ๆ ตามที่ระบุไว้ในหน้า <a class="underline" href="/พื้นที่ให้บริการ/">พื้นที่ให้บริการ</a>.
+        ไม่ว่าคุณจะอยู่พื้นที่ไหน แนะนำส่งโลเคชันพร้อมรูปเครื่องเพื่อให้เราแนะนำวิธีนัดรับ/ส่งเครื่องที่เหมาะที่สุด
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">เลือกขายกับร้านรับซื้อหรือขายเอง ควรคิดจากอะไร</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        การขายโน๊ตบุ๊คมือสองมีหลายช่องทาง และไม่มีคำตอบเดียวที่ถูกที่สุดสำหรับทุกคน เพราะเป้าหมายไม่เหมือนกัน บางคนอยากได้เงินเร็วและไม่อยากคุยซ้ำหลายรอบ บางคนอยากได้ราคาสูงสุดถึงแม้จะต้องใช้เวลานานขึ้น
+        ถ้าคุณอยากได้ความเรียบง่าย การส่งรูปเพื่อ <a class="underline" href="/เช็คราคาโน๊ตบุ๊ค/">เช็คราคาโน๊ตบุ๊ค</a> กับร้านที่อธิบายราคาชัดและยึดสภาพจริงมักเป็นทางเลือกที่ลดความเสี่ยงด้านเวลาและการคุยกลางทางได้
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        การขายเองอาจให้โอกาสตั้งราคาสูงกว่า แต่ต้องแลกด้วยการตอบข้อความ การนัดเจอ และความเสี่ยงเรื่องมิจฉาชีพ ถ้าคุณเลือกขายเอง แนะนำอ่านแนวทางปลอดภัยในหน้า <a class="underline" href="/วิธีขายโน๊ตบุ๊ค/">วิธีขายโน๊ตบุ๊ค</a> และบทความ <a class="underline" href="/blog/ขายโน๊ตบุ๊คที่ไหนดี-ได้ราคาและปลอดภัย/">ขายโน๊ตบุ๊คที่ไหนดี</a>
+        สรุปสั้น ๆ คือ ถ้าคุณต้องการ “คุยครั้งเดียวจบ” ให้เตรียมรูปและสเปกให้ครบก่อนส่งประเมิน
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">คำว่า Notebook โน๊ตบุ๊ค โน้ตบุ๊ก เรียกต่างกัน แต่ประเมินเหมือนกัน</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        หลายคนใช้คำเรียกไม่ตรงกัน แต่ในทางปฏิบัติเราพิจารณาจากรุ่น สเปก และสภาพจริงของเครื่องเป็นหลัก ไม่ว่าคุณจะค้นหาด้วยคำว่า <strong>รับซื้อ Notebook</strong> หรือ <strong>รับซื้อโน๊ตบุ๊ค</strong> ก็สามารถส่งข้อมูลเดียวกันได้
+        หากต้องการอ่านคำอธิบายแบบจัดหมวด ดูหน้า <a class="underline" href="/รับซื้อ-notebook/">รับซื้อ Notebook</a> เพื่อเห็นตัวอย่างเคสและคำถามที่พบบ่อย
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        สิ่งที่สำคัญกว่าชื่อเรียกคือ “ข้อมูลที่ส่งมา” เช่น รูปใต้เครื่องช่วยยืนยันรุ่น รูป Task Manager ช่วยยืนยันสเปกปัจจุบัน และรูปตำหนิช่วยลดการถกเถียงเรื่องสภาพทีหลัง
+        ถ้าคุณไม่ถนัดเทคนิค ไม่เป็นไร แค่ถ่ายรูปให้ครบและแจ้งอาการตรง ๆ ก็เพียงพอสำหรับการประเมินเบื้องต้น
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">Gaming และเครื่องงานหนัก ต้องบอกอะไรเพิ่ม</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        เครื่องเกมมิ่งหรือเครื่องที่มีการ์ดจอแยกมักมีปัจจัยราคาที่ละเอียดกว่าเครื่องออฟฟิศทั่วไป เพราะ GPU รุ่นและวัตต์ รวมถึงสุขภาพการระบายความร้อน มีผลต่อมูลค่ามือสอง
+        แนะนำแจ้งรุ่น GPU ให้ครบ และถ่ายรูปฝุ่นคร่ำ ๆ รอบช่องระบายอากาศถ้ามี เพื่อให้เห็นภาพการใช้งานจริง
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        ถ้าคุณเคยอัปเกรด SSD หรือ RAM มาแล้ว ให้บอกสเปก “หลังอัปเกรด” เพราะมักส่งผลดีต่อการขายมากกว่าสเปกจากโรงงานในหลายกรณี
+        อ่านทางลัดเฉพาะกลุ่มได้ที่หน้า <a class="underline" href="/รับซื้อโน๊ตบุ๊ค/gaming/">รับซื้อ Gaming Notebook</a> และถ้าเป็นเครื่องแอปเปิ้ลให้ดูหน้า <a class="underline" href="/รับซื้อโน๊ตบุ๊ค/macbook/">รับซื้อ MacBook</a> สำหรับเรื่อง Apple ID
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">เครื่องเคยซ่อม เคยเปลี่ยนจอ ยังขายได้ไหม และควรแจ้งไหม</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        ขายได้ในอีกหลายกรณี และการแจ้งตรง ๆ จะช่วยให้การประเมินราคาใกล้เคียงขึ้น ลดโอกาสที่ราคาจะเปลี่ยนหลังตรวจเครื่องจริง
+        ถ้าเคยเปลี่ยนจอมาแล้ว แนะนำแจ้งว่าเป็นจอเดิมหรือจอใหม่ และถ่ายรูปมุมมองหน้าจอในหลายแสง หากเป็นจอมีเส้น ควรบอกว่าเป็นเส้นหลังเปลี่ยนหรือก่อนเปลี่ยน
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        กรณีเครื่องมีอาการหนัก เช่น เปิดไม่ติดหรือแบตบวม ควรแจ้งเพื่อความปลอดภัยและเพื่อให้คนประเมินเห็นภาพต้นทุนการเก็บซ่อมต่อเช่นกัน
+        ดูหน้า <a class="underline" href="/รับซื้อโน๊ตบุ๊ค/เครื่องเสีย/">รับซื้อโน๊ตบุ๊คเสีย</a> และลิงก์อาการย่อยอย่าง <a class="underline" href="/รับซื้อโน๊ตบุ๊ค/จอแตก/">จอแตก</a> หรือ <a class="underline" href="/รับซื้อโน๊ตบุ๊ค/แบตเสื่อม/">แบตเสื่อม</a> สำหรับรายละเอียดเพิ่มเติม
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ทำไมราคาประเมินจากรูปกับตอนส่งเครื่องจริงถึงอาจไม่เท่ากัน</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        การ <a class="underline" href="/ตีราคาโน๊ตบุ๊ค/">ตีราคาโน๊ตบุ๊ค</a> จากรูปคือการประเมินเบื้องต้นที่ใกล้เคียงที่สุดในข้อมูลที่มี แต่บางจุดมองไม่เห็นในรูป เช่น บานพับหลวมเล็กน้อย พอร์ต USB หลวม หรือปุ่มเสื่อม
+        ยิ่งคุณส่งรูปมุมมองและวิดีโอสั้น ๆ ได้ครบเท่าไหร่ ยิ่งลดช่องว่างของความคลาดเคลื่อนได้มากขึ้น
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        ถ้าคุณสงสัยว่าควรซ่อมก่อนหรือขายตามสภาพดี ให้เริ่มจากขอประเมินเทียบสองทางเลือกในข้อความเดียว จะช่วยให้เห็นภาพรวมเร็วขึ้น ไม่ต้องเดาเองว่าค่าซ่อมจะคุ้มหรือไม่
+        คุณยังสามารถดูแนวคิดราคาเบื้องต้นในหน้า <a class="underline" href="/รับซื้อโน๊ตบุ๊คมือสอง/">รับซื้อโน๊ตบุ๊คมือสอง</a> และ <a class="underline" href="/ขายโน๊ตบุ๊ค/">ขายโน๊ตบุ๊ค</a> เพื่อเตรียมข้อมูลก่อนคุย
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ถ้าต้องการปิดการขายภายในไม่กี่ชั่วโมง ควรเรียงลำดับอย่างไร</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        แนวทางที่เร็วและชัดที่สุดคือเริ่มจากข้อมูลภาพก่อนข้อความยาว เพราะรูปช่วยลดการถามซ้ำและทำให้ทั้งสองฝ่ายเข้าใจตรงกันเร็วขึ้น
+        จากนั้นจึงค่อยพิมพ์สเปกและสภาพเป็นข้อความสั้น ๆ หากข้อมูลครบแล้ว การคุยเรื่องกรอบราคาและวิธีรับเครื่องจะตามมาได้โดยไม่ต้องพลิกแพลงหลายรอบ
+      </p>
+      <ul class="mt-4 list-disc pl-5 text-base leading-relaxed text-slate-700">
+        <li>ถ่ายรูปครบชุดตามหัวข้อในหน้านี้ก่อน</li>
+        <li>แนบวิดีโอสั้นถ้ามีอาการผิดปกติ</li>
+        <li>ระบุว่ามีที่ชาร์จหรือไม่ และสภาพหลักของจอ แบต บานพับ</li>
+        <li>บอกโซนที่อยู่คร่าว ๆ เพื่อเลือกวิธีนัดหรือส่งที่เหมาะสม</li>
+      </ul>
+      <p class="mt-4 text-base leading-relaxed text-slate-700">
+        ถ้าคุณอยากเห็นภาพรวมการเตรียมตัวแบบเป็นขั้นตอน ให้อ่านหน้า <a class="underline" href="/วิธีขายโน๊ตบุ๊ค/">วิธีขายโน๊ตบุ๊ค</a> ควบคู่ไปด้วย แล้วค่อยกลับมาที่หน้านี้เพื่อเลือกทางลัดตามประเภทเครื่องที่อยู่ด้านล่าง
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">เริ่มต้นวันนี้: ส่งข้อมูลแบบมืออาชีพโดยไม่ต้องเก่งคอม</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        แอดไลน์ <strong>{SITE.lineHandle}</strong> แล้วส่งรูปตามเช็กลิสต์ในหน้านี้ พร้อมบอกว่าใช้เครื่องทำงานอะไรบ้าง เช่น เรียนออนไลน์ งานกราฟิก เล่นเกม หรือเปิดโปรแกรมบัญชี
+        ข้อมูลบริบทเล็กน้อยช่วยให้การประเมินตรงใจการใช้งานมากขึ้น โทร <strong>{SITE.phone}</strong> ได้ถ้าอยากคุยก่อนส่งรูป หรืออ่านคำถามเพิ่มในหน้า <a class="underline" href="/คำถามที่พบบ่อย/">คำถามที่พบบ่อย</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">โน๊ตบุ๊คเก็บไม่ได้ใช้นานมีผลต่อการประเมินไหม</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        เครื่องที่เปิดไม่บ่อยหรือเก็บไว้หลายเดือนอาจมีแบตลดสภาพ เกิดคราบคร่ำในช่องระบายอากาศ หรือเมนบอร์ดมีความเสี่ยงจากความชื้นสะสมได้โดยที่ตัวเจ้าของไม่ทันได้สังเกต การเปิดเครื่องให้เห็นหน้าจอและถ่ายรูปชัด ๆ จึงมีความสำคัญมากพอ ๆ กับการแจ้งระยะเวลาที่ไม่ได้ใช้งานจริง ถ้ามีรอยเกิดจากการเก็บ เช่น รอยทับจากของวางทับบานพับ ควรถ่ายให้เห็นด้วยเพื่อให้การประเมินตรงกับสภาพจริงมากที่สุด การเริ่มจากการส่งข้อมูลฟรีผ่านไลน์ยังช่วยให้คุณตัดสินใจได้ว่าจะขายตามสภาพหรือพยายามซ่อมต่อให้ใช้งานได้ดีขึ้นก่อนปิดดีล
+      </p>
+    </div>
+  </section>
+
+  <RelatedLinks
+    title="เลือกบริการที่ตรงกับสิ่งที่คุณต้องการ"
+    links={[
+      { label: 'รับซื้อโน๊ตบุ๊คมือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/', description: 'เหมาะกับเครื่องใช้งานได้ เครื่องเก่า และเครื่องตกรุ่น' },
+      { label: 'รับซื้อ Notebook', href: '/รับซื้อ-notebook/', description: 'รวมคำเรียก notebook/โน๊ตบุ๊ค/โน้ตบุ๊ก และประเภทเครื่อง' },
+      { label: 'เช็คราคาโน๊ตบุ๊ค', href: '/เช็คราคาโน๊ตบุ๊ค/', description: 'ส่งรูป + สเปก เพื่อประเมินราคาเบื้องต้นฟรี' },
+      { label: 'ตีราคาโน๊ตบุ๊ค', href: '/ตีราคาโน๊ตบุ๊ค/', description: 'โฟกัสปัจจัยราคาและการประเมินตามสภาพจริง' },
+      { label: 'ขายโน๊ตบุ๊ค', href: '/ขายโน๊ตบุ๊ค/', description: 'แนวทางเตรียมเครื่องก่อนขายให้ปลอดภัยและได้ราคาดี' },
+      { label: 'บทความ', href: '/blog/', description: 'คู่มือเช็กสเปก ล้างข้อมูล และคำถามยอดฮิตก่อนขาย' },
+    ]}
+  />
+
+  <RelatedLinks
+    title="ทางลัดตามประเภทเครื่องและอาการยอดนิยม"
+    links={[
+      { label: 'รับซื้อ MacBook', href: '/รับซื้อโน๊ตบุ๊ค/macbook/', description: 'ดู Apple ID/Find My และสุขภาพแบต' },
+      { label: 'รับซื้อ Gaming Notebook', href: '/รับซื้อโน๊ตบุ๊ค/gaming/', description: 'ดู GPU/ความร้อน/สภาพการใช้งานจริง' },
+      { label: 'รับซื้อโน๊ตบุ๊คเสีย', href: '/รับซื้อโน๊ตบุ๊ค/เครื่องเสีย/', description: 'ประเมินตามอาการและต้นทุนที่เกี่ยวข้อง' },
+      { label: 'รับซื้อโน๊ตบุ๊คเปิดไม่ติด', href: '/รับซื้อโน๊ตบุ๊ค/เปิดไม่ติด/', description: 'ส่งวิดีโออาการช่วยให้ประเมินไวขึ้น' },
+      { label: 'รับซื้อโน๊ตบุ๊คจอแตก', href: '/รับซื้อโน๊ตบุ๊ค/จอแตก/', description: 'ถ่ายรูปตำหนิจอให้ชัดเพื่อประเมินตรงขึ้น' },
+      { label: 'รับซื้อโน๊ตบุ๊คแบตเสื่อม', href: '/รับซื้อโน๊ตบุ๊ค/แบตเสื่อม/', description: 'สุขภาพแบตมีผลกับราคาในหลายรุ่น' },
+    ]}
+  />
+
+  <SeoCTA />
+  <FAQ title="คำถามที่พบบ่อย (รับซื้อโน๊ตบุ๊ค)" faqs={faqs} />
+</BaseLayout>
+

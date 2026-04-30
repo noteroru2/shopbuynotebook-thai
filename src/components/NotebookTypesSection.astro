@@ -1,0 +1,42 @@
+---
+const items = [
+  { title: 'โน๊ตบุ๊คทำงาน', desc: 'เหมาะสำหรับเครื่องใช้งานทั่วไป ประเมินจากสเปกและสภาพจริง', href: '/รับซื้อ-notebook/' },
+  { title: 'โน๊ตบุ๊คนักเรียน', desc: 'เครื่องเรียนออนไลน์/พกพา ดูรุ่นและสภาพแบตเป็นหลัก', href: '/รับซื้อ-notebook/' },
+  { title: 'Gaming Notebook', desc: 'เน้น GPU/ชุดระบายความร้อน ประเมินตามสเปกและอาการ', href: '/รับซื้อโน๊ตบุ๊ค/gaming/' },
+  { title: 'MacBook', desc: 'ทั้ง Intel และ Apple Silicon (M1/M2/M3) ประเมินไว', href: '/รับซื้อโน๊ตบุ๊ค/macbook/' },
+  { title: 'โน๊ตบุ๊คบริษัท', desc: 'เครื่องใช้งานองค์กร/ออฟฟิศ ประเมินตามรุ่นและสภาพรวม', href: '/รับซื้อโน๊ตบุ๊คมือสอง/' },
+  { title: 'โน๊ตบุ๊คเก่า', desc: 'รุ่นเก่า/เครื่องช้า ยังขายได้ถ้าสภาพโดยรวมโอเค', href: '/รับซื้อโน๊ตบุ๊ค/เครื่องเก่า' },
+  { title: 'โน๊ตบุ๊คตกรุ่น', desc: 'เปลี่ยนเป็นเงินสดได้ง่าย ส่งรูปประเมินฟรีก่อน', href: '/รับซื้อโน๊ตบุ๊ค/ตกรุ่น' },
+  { title: 'โน๊ตบุ๊คเสีย', desc: 'รับซื้อเครื่องเสียบางอาการ เช่น เปิดไม่ติด/จอแตก/แบตเสื่อม', href: '/รับซื้อโน๊ตบุ๊ค/เครื่องเสีย' },
+  { title: 'โน๊ตบุ๊คไม่มีที่ชาร์จ', desc: 'ยังรับซื้อได้ แค่แจ้งให้ครบเพื่อประเมินตรง', href: '/รับซื้อโน๊ตบุ๊ค/ไม่มีที่ชาร์จ' },
+  { title: 'โน๊ตบุ๊คเปิดไม่ติด', desc: 'ประเมินจากอาการที่ส่งมาและรุ่น/สเปกของเครื่อง', href: '/รับซื้อโน๊ตบุ๊ค/เปิดไม่ติด' },
+];
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 pt-12">
+  <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <h2 class="text-xl font-extrabold text-slate-900">เรารับซื้อโน๊ตบุ๊คประเภทไหนบ้าง</h2>
+        <p class="mt-2 text-sm text-slate-600">เลือกหัวข้อใกล้เคียงกับเครื่องของคุณ แล้วกดดูรายละเอียด/เงื่อนไขได้เลย</p>
+      </div>
+    </div>
+
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+      {items.map((it) => (
+        <a
+          href={it.href}
+          class="group flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md"
+          aria-label={`ดูรายละเอียด ${it.title}`}
+        >
+          <p class="text-base font-extrabold text-slate-900">{it.title}</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-700">{it.desc}</p>
+          <p class="mt-auto pt-4 text-xs font-semibold text-slate-600 group-hover:text-slate-900">
+            ดูรายละเอียด <span aria-hidden="true">→</span>
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+

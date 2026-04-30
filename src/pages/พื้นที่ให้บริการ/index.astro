@@ -1,0 +1,323 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import FAQ from '../../components/FAQ.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+import SeoCTA from '../../components/SeoCTA.astro';
+import { SITE } from '../../config/site';
+import { absoluteUrl, breadcrumbListSchema, faqPageSchema } from '../../lib/seo';
+import { locationFaqs } from '../../data/faqs';
+import { serviceAreaGroups } from '../../data/service-areas';
+
+const title = 'พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค | กรุงเทพ ปริมณฑล อีสาน ภูเก็ต หาดใหญ่';
+const description =
+  'ดูพื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค กรุงเทพและปริมณฑล ทุกจังหวัดในภาคอีสาน สระแก้ว จันทบุรี ตราด พัทลุง ภูเก็ต หาดใหญ่ และสงขลา';
+const canonical = absoluteUrl('/พื้นที่ให้บริการ/');
+
+const breadcrumbs = [
+  { name: 'หน้าแรก', url: absoluteUrl('/') },
+  { name: 'พื้นที่ให้บริการ', url: canonical },
+];
+
+const faqs = locationFaqs.slice(0, 6);
+const schemas = [breadcrumbListSchema(breadcrumbs), faqPageSchema(faqs)];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค</h1>
+    <p class="mt-4 text-base leading-relaxed text-slate-600">
+      ไม่ว่าคุณจะอยู่พื้นที่ไหน แนะนำเริ่มจาก <strong>ส่งรูปประเมินราคา</strong> ผ่าน LINE ก่อน เพื่อให้เช็คราคาเบื้องต้นได้ไว
+      จากนั้นค่อยเลือกวิธีรับเครื่องที่เหมาะกับพื้นที่ เช่น นัดรับ/นัดเจอในโซนที่สะดวก หรือส่งเครื่องตามแนวทางที่ตกลงกัน
+    </p>
+    <p class="mt-4 text-base leading-relaxed text-slate-600">
+      พื้นที่ให้บริการของเราอัปเดตตามข้อมูลในเว็บไซต์และ schema: {SITE.serviceAreaGroups.map((g) => g.group).join(' • ')}
+    </p>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">คำตอบสั้น (AEO): อยู่ต่างจังหวัดขายโน๊ตบุ๊คได้ไหม</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        ได้ครับ คุณสามารถเริ่มจากส่งรูปเครื่อง รุ่น/สเปก และสภาพผ่าน LINE เพื่อเช็คราคาเบื้องต้นก่อน จากนั้นเราจะแนะนำวิธีที่เหมาะกับพื้นที่ของคุณ
+        เช่น นัดเจอในโซนที่สะดวก หรือส่งเครื่องผ่านขนส่งตามขั้นตอนที่ตกลงกัน
+      </p>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        พร้อมเริ่ม แอดไลน์ <strong>{SITE.lineHandle}</strong> หรือโทร <strong>{SITE.phone}</strong>
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="grid gap-4 lg:grid-cols-2">
+      {serviceAreaGroups.map((g) => (
+        <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h2 class="text-lg font-extrabold text-slate-900">{g.group}</h2>
+          <p class="mt-2 text-sm text-slate-700">
+            {g.areas.join(' • ')}
+          </p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-4 text-xs text-slate-500">
+      หมายเหตุ: ถ้าพื้นที่ของคุณไม่ได้อยู่ในรายการด้านบน สามารถส่งโลเคชันมาได้ เราช่วยแนะนำทางเลือกที่เหมาะที่สุด
+    </p>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ต้องส่งอะไรเพื่อให้ประเมินไว (ใช้ได้ทุกพื้นที่)</h2>
+      <ul class="mt-4 list-disc pl-5 text-base leading-relaxed text-slate-600">
+        <li>รูป 3–5 รูป: หน้าเครื่องเปิดจอ, คีย์บอร์ด, ใต้เครื่อง/สติ๊กเกอร์รุ่น, มุมเครื่อง, ที่ชาร์จ</li>
+        <li>สเปก: CPU/RAM/SSD และ GPU ถ้ามี (หรือส่งรูป Task Manager ให้ร้านอ่านให้)</li>
+        <li>สภาพ/อาการ: ใช้งานปกติ / มีรอย / แบตเสื่อม / จอมีเส้น / เปิดไม่ติด</li>
+        <li>โลเคชันหรือโซนคร่าว ๆ เพื่อแนะนำวิธีนัดรับ/ส่งเครื่องที่เหมาะที่สุด</li>
+      </ul>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        ถ้าเครื่องมีอาการ แนะนำส่งวิดีโออาการ 5–10 วินาทีด้วย จะช่วยมาก
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">การส่งเครื่องทางขนส่ง (เช็กลิสต์สั้น ๆ)</h2>
+      <ul class="mt-3 list-disc pl-5 text-base leading-relaxed text-slate-700">
+        <li>ถ่ายวิดีโอสภาพเครื่องก่อนแพ็ก (เห็นจอและตัวเครื่อง)</li>
+        <li>กันกระแทกมุมเครื่องและฝาจอเป็นพิเศษ</li>
+        <li>แยกที่ชาร์จใส่ซองกันกระแทก ไม่ให้กดทับเครื่อง</li>
+        <li>ใช้ขนส่งที่มี tracking และเก็บเลขพัสดุไว้</li>
+      </ul>
+      <p class="mt-4 text-sm leading-relaxed text-slate-700">
+        ถ้าคุณต้องการให้เราแนะนำวิธีส่งที่เหมาะกับเคสของคุณ ส่งรูปและโลเคชันมาก่อน แล้วค่อยคุยขั้นตอนที่สบายใจได้
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-lg font-extrabold text-slate-900">ลิงก์พื้นที่ยอดนิยม (กรุงเทพ/ปริมณฑล)</h2>
+      <div class="mt-4 flex flex-wrap gap-2">
+        {[
+          { label: 'กรุงเทพ', href: '/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/' },
+          { label: 'นนทบุรี', href: '/รับซื้อโน๊ตบุ๊ค/นนทบุรี/' },
+          { label: 'ปทุมธานี', href: '/รับซื้อโน๊ตบุ๊ค/ปทุมธานี/' },
+          { label: 'สมุทรปราการ', href: '/รับซื้อโน๊ตบุ๊ค/สมุทรปราการ/' },
+          { label: 'บางนา', href: '/รับซื้อโน๊ตบุ๊ค/บางนา/' },
+          { label: 'ลาดพร้าว', href: '/รับซื้อโน๊ตบุ๊ค/ลาดพร้าว/' },
+          { label: 'รังสิต', href: '/รับซื้อโน๊ตบุ๊ค/รังสิต/' },
+          { label: 'พระราม 2', href: '/รับซื้อโน๊ตบุ๊ค/พระราม2/' },
+          { label: 'รามคำแหง', href: '/รับซื้อโน๊ตบุ๊ค/รามคำแหง/' },
+          { label: 'ห้วยขวาง', href: '/รับซื้อโน๊ตบุ๊ค/ห้วยขวาง/' },
+        ].map((l) => (
+          <a
+            href={l.href}
+            class="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-800 shadow-sm hover:bg-emerald-50 hover:border-emerald-200"
+          >
+            {l.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">นัดรับ/นัดเจอ vs ส่งขนส่ง (เลือกแบบไหนดี)</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-600">
+        วิธีรับเครื่องที่เหมาะสมขึ้นกับพื้นที่และความสะดวกของคุณ โดยทั่วไปมี 2 แนวทางหลัก คือ “นัดรับ/นัดเจอ” และ “ส่งเครื่องทางขนส่ง”
+        ทั้งสองแบบสามารถเริ่มจากการส่งรูปเพื่อเช็คราคาเบื้องต้นได้เหมือนกัน
+      </p>
+      <div class="mt-4 grid gap-4 lg:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <h3 class="text-base font-bold text-slate-900">นัดรับ/นัดเจอ</h3>
+          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
+            <li>เหมาะกับพื้นที่ที่เดินทางสะดวก หรือมีจุดนัดที่ชัดเจน</li>
+            <li>ข้อดีคือคุยรายละเอียดหน้างานได้ง่ายและตรวจสภาพได้ทันที</li>
+            <li>ควรเลือกจุดนัดที่ปลอดภัยและมีคนเยอะ</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+          <h3 class="text-base font-bold text-slate-900">ส่งเครื่องทางขนส่ง</h3>
+          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
+            <li>เหมาะกับต่างจังหวัด หรือคนที่ไม่สะดวกนัดเจอ</li>
+            <li>ข้อดีคือประหยัดเวลา แต่ต้องแพ็กให้แน่นและมีหลักฐาน</li>
+            <li>ควรใช้ขนส่งที่มี tracking และเก็บเลขพัสดุไว้</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed text-slate-700">
+        ถ้าคุณไม่แน่ใจว่าเคสของคุณเหมาะกับแบบไหน ให้ส่งรูป + โลเคชันมาได้ เราช่วยแนะนำทางเลือกที่เหมาะที่สุด
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ตัวอย่างข้อความที่ส่งเพื่อระบุพื้นที่ (คัดลอกได้)</h2>
+      <div class="mt-4 grid gap-4 lg:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 text-sm leading-relaxed text-slate-800">
+          ขอเช็คราคาโน๊ตบุ๊คครับ
+          <br />อยู่โซน ______ (แนบโลเคชันได้)
+          <br />รุ่น ______ (แนบรูปใต้เครื่อง)
+          <br />สเปก: CPU ______ / RAM ___GB / SSD ___GB
+          <br />สภาพใช้งานปกติ มีที่ชาร์จ
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-4 text-sm leading-relaxed text-slate-800">
+          ขอประเมินโน๊ตบุ๊คตามสภาพครับ
+          <br />อยู่โซน ______ (แนบโลเคชันได้)
+          <br />รุ่น ______ (แนบรูปใต้เครื่อง)
+          <br />อาการ: ______ (เปิดไม่ติด/จอแตก/แบตเสื่อม)
+          <br />มีที่ชาร์จครับ (แนบรูป)
+        </div>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed text-slate-700">
+        ถ้าคุณส่งรูปให้ครบและแจ้งพื้นที่ให้ชัด เราจะช่วยประเมินและแนะนำวิธีรับเครื่องที่เหมาะที่สุดได้ไวขึ้นมาก
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">กรุงเทพและปริมณฑล: เลือกจุดนัดอย่างไรให้ปลอดภัยและสะดวก</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        พื้นที่เมืองใหญ่มีตัวเลือกการเดินทางหลากหลาย แต่หลักการเดียวกันคือควรเลือกจุดนัดที่มีคนพลุกพล่าน เดินทางเข้าออกสะดวก และมีแสงสว่างเพียงพอถ้าต้องตรวจเครื่องหน้างาน ถ้าคุณอยู่โซนที่มีหลายเขตให้เลือก ให้พิมพ์โลเคชันคร่าว ๆ ในไลน์เพื่อให้เราช่วยหาจุดพบที่เหมาะสมได้เร็วขึ้น
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        การพกเครื่องในกระเป๋าที่มีซับฟองหรือปลอกป้องกันแรงกระแทกช่วยลดความเสี่ยงระหว่างเดินทาง และควรถ่ายรูปสภาพเครื่องก่อนออกจากบ้านเป็นหลักฐานเล็กน้อยที่เป็นประโยชน์ต่อทั้งสองฝ่ายหากเกิดเหตุไม่คาดคิดระหว่างทาง
+      </p>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        สำหรับคีย์เวิร์ดที่เกี่ยวข้องกับการประเมินเบื้องต้น แนะนำเริ่มจากหน้า <a class="underline" href="/เช็คราคาโน๊ตบุ๊ค/">เช็คราคาโน๊ตบุ๊ค</a> แล้วค่อยเลือกทางลัดพื้นที่จากปุ่มด้านบนของหน้านี้
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ภาคอีสานและเมืองใหญ่ในภูมิภาค: เริ่มจากข้อมูลภาพแล้วค่อยเลือกขนส่ง</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        การอยู่ห่างจากศูนย์กลางเมืองไม่ได้เป็นปัญหาต่อการขอประเมินราคา เพราะเริ่มจากรูปและข้อความได้เหมือนกันในทุกพื้นที่ จุดที่ต่างคือการเลือกวิธีส่งหรือนัดที่เหมาะกับระยะทางและตารางของคุณ
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        ถ้าคุณอยู่ในเมืองที่มีขนส่งครบขัน การใช้บริษัทที่มีระบบติดตามพัสดุและประกันมาตรฐานช่วยให้คุณสบายใจขึ้น อย่างไรก็ตามควรถ่ายวิดีโอก่อนแพ็กและเก็บเลขพัสดุไว้ทุกครั้งตามแนวทางในหน้านี้
+      </p>
+      <p class="mt-3 text-sm leading-relaxed text-slate-700">
+        ต้องการทางลัดบริการโดยรวมก่อนเลือกพื้นที่ละเอียด ให้อ่านหน้า <a class="underline" href="/รับซื้อโน๊ตบุ๊ค/">รับซื้อโน๊ตบุ๊ค</a> และหน้า <a class="underline" href="/คำถามที่พบบ่อย/">คำถามที่พบบ่อย</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ภูเก็ต หาดใหญ่ พัทลุง และโซนภาคใต้ที่ระบุในเว็บไซต์</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        พื้นที่ภาคใต้มีปัจจัยเรื่องระยะทางและความชื้นที่แตกต่างจากภาคกลางดังนั้นการแพ็กและการเก็บรักษาก่อนส่งจึงมีความสำคัญเป็นพิเศษ หากใช้งานในที่ที่มีความเค็มในอากาศหรือมีคราบคร่ำจากความชื้นบ่อย ควรถ่ายรูปช่องระบายอากาศและแป้นพิมพ์ให้เห็นสภาพจริง
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        เมื่อคุณแจ้งโซนที่อยู่ชัดเจน เราจะช่วยแนะนำขั้นตอนที่เหมาะกับระยะทางและความพร้อมของขนส่งในพื้นที่นั้น โดยยังคงยึดหลักการเดียวกันกับพื้นที่อื่นคือเริ่มจากภาพและข้อความสั้นที่ครบก่อนตัดสินใจวิธีส่งท้ายที่สุด
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">จังหวัดชายแดนตะวันออกและเส้นทางขนส่งข้ามเขต</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        พื้นที่อย่างสระแก้ว จันทบุรี และตราดมีความหลากหลายเรื่องเส้นทางและบริษัทขนส่งที่ให้บริการไม่เหมือนกันในทุกตำบลดังนั้นการระบุโลเคชันช่วยให้คำแนะนำมีความเป็นรูปธรรมมากขึ้น ถ้าคุณอยู่ในเขตที่ขนส่งถึงช้ากว่าปกติ ควรแจ้งตั้งแต่ต้นเพื่อจัดแผนเวลาที่เหมาะสม
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        ในทุกกรณีการเก็บหลักฐานภาพก่อนส่งและหลังแพ็กเป็นหลักการเดียวกัน และควรเลือกบริการที่มีเลขพัสดุติดตามได้แม้ว่าต้นทุนจะสูงขึ้นเล็กน้อย เพื่อความสบายใจเมื่อส่งอุปกรณ์ที่มีมูลค่า
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">เรื่องเวลา ความเร่งด่วน และการประเมินก่อนจัดส่งจริง</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        ถ้าคุณมีเวลาจำกัด เช่น ต้องย้ายที่อยู่หรือเริ่มงานใหม่เร็ว ๆ ให้ระบุในแชทว่าต้องการปิดดีลภายในกรอบเวลาใด และแนบข้อมูลภาพให้ครบตั้งแต่ครั้งแรก เพื่อให้การคุยเรื่องราคาและการส่งของเป็นไปในลำดับที่เร็วที่สุด
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        ในทางกลับกัน ถ้าคุณไม่เร่งด่วนก็สามารถขอประเมินเพื่อเก็บข้อมูลไว้ตัดสินใจภายหลังได้ เพียงแจ้งว่ายังไม่พร้อมส่งมอบเพื่อให้ทั้งสองฝ่ายตั้งความคาดหวังตรงกัน
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">เคสต่างจังหวัดที่แนะนำเตรียมอุปกรณ์เสริมก่อนส่ง</h2>
+      <ul class="mt-4 list-disc pl-5 text-base leading-relaxed text-slate-700">
+        <li>ถ้าเครื่องมีแบตเสื่อมหรือต้องเสียบชาร์จตลอด แนะนำให้แจ้งเพื่อวางแผนการแพ็กที่ลดความกดทับของสายชาร์จ</li>
+        <li>ถ้าหน้าจอมีรอยร้าว ให้ใช้โฟมรองเสริมรอบขอบจอเป็นพิเศษและหลีกเลี่ยงแรงกดจากสิ่งของอื่นในกล่อง</li>
+        <li>ถ้ามี HDD/SSD ภายในแบบเปราะบาง ควรหลีกเลี่ยงการเขย่ากล่องแรงและใช้วัสดุกันกระแทกให้หนาเพียงพอ</li>
+      </ul>
+      <p class="mt-4 text-sm leading-relaxed text-slate-700">
+        หลังแพ็กเสร็จ แนะนำส่งรูปกล่องปิดพร้อมสติ๊กเกอร์พัสดุในแชทเพื่อยืนยันว่าส่งออกในลักษณะที่ตกลงกัน และบันทึกเลขพัสดุไว้ตรวจสอบตลอดเส้นทาง
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">พร้อมเริ่ม: แอดไลน์หรือโทรเพื่อระบุพื้นที่และส่งรูป</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        แอดไลน์ <strong>{SITE.lineHandle}</strong> ส่งรูปเครื่องและโซนที่อยู่ หรือโทร <strong>{SITE.phone}</strong> หากอยากคุยก่อน จากนั้นเราจะช่วยแนะนำวิธีนัดหรือส่งที่เหมาะสมให้คุณเลือกต่อ อ่านแนวทางเตรียมข้อความเพิ่มเติมที่หน้า <a class="underline" href="/วิธีขายโน๊ตบุ๊ค/">วิธีขายโน๊ตบุ๊ค</a>
+      </p>
+    </div>
+  </section>
+
+  <RelatedLinks
+    title="ลิงก์ที่เกี่ยวข้องกับการรับซื้อและการเช็คราคา"
+    links={[
+      { label: 'รับซื้อโน๊ตบุ๊ค (รวมบริการ)', href: '/รับซื้อโน๊ตบุ๊ค/', description: 'เลือกทางลัดตามยี่ห้อและอาการ' },
+      { label: 'รับซื้อโน๊ตบุ๊คมือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/', description: 'เหมาะกับเครื่องใช้งานได้และเครื่องเก่า' },
+      { label: 'ขายโน๊ตบุ๊ค', href: '/ขายโน๊ตบุ๊ค/', description: 'เตรียมเครื่องและล้างข้อมูลก่อนส่งมอบ' },
+      { label: 'บทความ', href: '/blog/', description: 'คู่มือดูสเปก จอแตก แบตเสื่อม และเปิดไม่ติด' },
+    ]}
+  />
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">ลิงก์จังหวัด/พื้นที่ที่คนถามบ่อย (ภาคอีสาน)</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-600">
+        ถ้าคุณอยู่ภาคอีสาน เรามีหน้าพื้นที่ยอดนิยมบางจังหวัดให้ดูรายละเอียดเพิ่มเติม และยังสามารถส่งโลเคชันเพื่อให้เราแนะนำทางเลือกได้เช่นกัน
+      </p>
+      <div class="mt-4 flex flex-wrap gap-2">
+        {[
+          { label: 'ขอนแก่น', href: '/รับซื้อโน๊ตบุ๊ค/ขอนแก่น/' },
+          { label: 'อุดรธานี', href: '/รับซื้อโน๊ตบุ๊ค/อุดรธานี/' },
+          { label: 'อุบลราชธานี', href: '/รับซื้อโน๊ตบุ๊ค/อุบลราชธานี/' },
+          { label: 'นครราชสีมา', href: '/รับซื้อโน๊ตบุ๊ค/นครราชสีมา/' },
+        ].map((l) => (
+          <a
+            href={l.href}
+            class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-800 shadow-sm hover:bg-emerald-50 hover:border-emerald-200"
+          >
+            {l.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-xl font-extrabold text-slate-900">คำถามที่ชาวต่างจังหวัดถามบ่อยเกี่ยวกับการขายโน๊ตบุ๊ค</h2>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        คำถามแรกที่พบบ่อยคือว่าการประเมินจากรูปจะเหมือนกันไหมเมื่ออยู่คนละจังหวัด คำตอบโดยหลักการคือเหมือนกัน แต่การเลือกขนส่งและการเก็บหลักฐานเป็นขั้นตอนที่ต้องระวังเป็นพิเศษเมื่ออยู่ไกล เพราะความเสี่ยงจากการขนส่งอาจทำให้สภาพเปลี่ยนเล็กน้อยได้ถ้าแพ็กไม่เหมาะสม จึงควรถ่ายวิดีโอก่อนปิดกล่องทุกครั้ง และเก็บเลขพัสดุไว้จนถึงวันที่ได้รับการยืนยันการรับเครื่องจากอีกฝ่าย เพื่อความโปร่งใสของทั้งสองฝ่าย
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        คำถามที่สองคือว่าระบุโซนคร่าวพอไหมโดยไม่ต้องส่งที่อยู่เต็ม ในช่วงแรกการระบุโซนหรือพื้นที่คร่าวจะช่วยให้เลือกแผนการเดินทางหรือขนส่งได้เหมาะสม เมื่อถึงขั้นต้องจัดส่งจริงค่อยแลกเปลี่ยนรายละเอียดที่จำเป็นในแชทส่วนตัวตามขั้นตอนที่ตกลงกัน และควรเลี่ยงการโพสต์ข้อมูลส่วนตัวในที่สาธารณะโดยไม่จำเป็น เพื่อความปลอดภัยส่วนบุคคลในทุกพื้นที่ของประเทศไทยที่เราพูดถึงในหน้านี้
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        โดยเฉพาะเมื่อจังหวัดของคุณอยู่ในกลุ่มภาคอีสานหรือโซนที่อยู่ห่างจากเส้นทางขนส่งหลัก ซึ่งบางครั้งต้องประเมินเวลาจัดส่งเป็นวันเพิ่มจากการขนส่งทั่วไปในพื้นที่เมืองใหญ่ การแจ้งความเร่งด่วนให้ชัดจึงเป็นประโยชน์ต่อการจัดคิว และการให้คำแนะนำว่าควรใช้ขนส่งแบบไหนที่เหมาะกับค่าใช้จ่ายและความเร็วของคุณ รวมถึงการแพ็กที่เหมาะกับโน้ตบุ๊คที่มีจอใหญ่หรือมีการ์ดจอที่มีน้ำหนักมากกว่าปกติ ซึ่งต้องการโฟมกันกระแทกที่หนากว่าปกติเล็กน้อย และควรไม่ใช้กล่องที่เล็กเกินจนทำให้สายชาร์จหรือบานพับถูกบีบในทางที่เปราะต่อความเสียหายระหว่างขนส่ง
+      </p>
+      <p class="mt-3 text-base leading-relaxed text-slate-700">
+        สรุปได้ว่าการเริ่มจากภาพและการระบุพื้นที่คร่าวเป็นพื้นฐานของการให้บริการรับซื้อโน๊ตบุ๊คในทุกพื้นที่ที่เรามุ่งเน้นในเว็บไซต์ และเมื่อข้อมูลครบแล้ว การเลือกระหว่างนัดพบและการจัดส่งจะเป็นเรื่องที่ปรึกษากันได้อย่างเป็นรูปธรรมมากขึ้น ทั้งในกรุงเทพและปริมณฑล หรือในเมืองใหญ่อย่างขอนแก่น อุดรธานี อุบลราชธานี และนครราชสีมา ที่เรามีหน้าย่อยให้อ่านต่อได้ และยังสามารถย้อนกลับไปหน้ารับซื้อโน๊ตบุ๊คหลักเพื่อเลือกทางลัดตามแบรนด์หรืออาการของเครื่องได้ตามปกติโดยไม่ขัดกับการอยู่คนละพื้นที่ เพราะการประเมินเบื้องต้นทำผ่านไลน์ได้เหมือนกันในทุกจังหวัดที่เรากล่าวถึง และในเคสที่อยู่นอกกลุ่มที่ระบุในเว็บก็ยังส่งโลเคชันมาปรึกษาได้ตามความเหมาะสมของแต่ละเคส โดยไม่มีข้อผูกมัดในการเริ่มส่งรูปครั้งแรกเพื่อเช็คราคาโน๊ตบุ๊คฟรีตามคำประกาศในหน้าบริการหลักของเรา
+      </p>
+    </div>
+  </section>
+
+  <SeoCTA />
+  <FAQ title="คำถามที่พบบ่อย (พื้นที่ให้บริการ)" faqs={faqs} />
+</BaseLayout>
+

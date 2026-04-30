@@ -1,0 +1,35 @@
+---
+const links = [
+  { label: 'รับซื้อโน๊ตบุ๊คทุกยี่ห้อ', href: '/รับซื้อโน๊ตบุ๊ค/' },
+  { label: 'รับซื้อโน๊ตบุ๊คมือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/' },
+  { label: 'รับซื้อ Notebook', href: '/รับซื้อ-notebook/' },
+  { label: 'เช็คราคาโน๊ตบุ๊ค', href: '/เช็คราคาโน๊ตบุ๊ค/' },
+  { label: 'ตีราคาโน๊ตบุ๊ค', href: '/ตีราคาโน๊ตบุ๊ค/' },
+  { label: 'ขายโน๊ตบุ๊ค', href: '/ขายโน๊ตบุ๊ค/' },
+  { label: 'พื้นที่ให้บริการ', href: '/พื้นที่ให้บริการ/' },
+  { label: 'รับซื้อโน๊ตบุ๊คเสีย', href: '/รับซื้อโน๊ตบุ๊ค/เครื่องเสีย/' },
+  { label: 'รับซื้อ MacBook', href: '/รับซื้อโน๊ตบุ๊ค/macbook/' },
+  { label: 'รับซื้อ Gaming Notebook', href: '/รับซื้อโน๊ตบุ๊ค/gaming/' },
+  { label: 'รับซื้อโน๊ตบุ๊คกรุงเทพ', href: '/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/' },
+  { label: 'บทความ', href: '/blog/' },
+];
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 pt-12">
+  <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+    <h2 class="text-lg font-extrabold text-slate-900">บริการรับซื้อยอดนิยม</h2>
+    <p class="mt-2 text-sm text-slate-600">ลิงก์รวมหน้าที่คนเข้าบ่อย ช่วยให้หาเนื้อหาที่ต้องการได้เร็วขึ้น</p>
+
+    <div class="mt-5 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+      {links.map((l) => (
+        <a
+          href={l.href}
+          class="rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-800 shadow-sm hover:border-emerald-200 hover:bg-emerald-50"
+        >
+          {l.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+

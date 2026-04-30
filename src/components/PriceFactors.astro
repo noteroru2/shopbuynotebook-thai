@@ -1,0 +1,39 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = 'ราคาประเมินโน๊ตบุ๊คขึ้นอยู่กับอะไร' } = Astro.props;
+
+const factors = [
+  'ยี่ห้อและรุ่น',
+  'CPU / RAM / SSD',
+  'ปีที่ซื้อและรุ่นย่อย',
+  'สภาพจอ (รอย/เส้น/จอแตก)',
+  'สภาพแบตเตอรี่',
+  'อุปกรณ์ที่มี (ที่ชาร์จ กล่อง ใบเสร็จ)',
+  'อาการเสีย (ถ้ามี)',
+  'ราคาตลาดมือสอง ณ ช่วงนั้น',
+];
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 pt-12">
+  <div class="rounded-3xl border border-slate-200 bg-white/70 p-6 shadow-sm backdrop-blur sm:p-8">
+    <h2 class="text-xl font-bold text-slate-900">{title}</h2>
+    <div class="mt-6 grid gap-3 sm:grid-cols-2">
+      {factors.map((f) => (
+        <div class="flex items-start gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
+          <span class="mt-0.5 inline-flex h-6 w-6 flex-none items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+            ✓
+          </span>
+          <p class="text-sm font-semibold text-slate-800">{f}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-5 text-sm leading-relaxed text-slate-600">
+      เราประเมินแบบ “ตรงไปตรงมา” โดยอิงจากราคาตลาดมือสองและสภาพจริงของเครื่อง เพื่อให้คุณได้ราคาที่เหมาะสม
+      และตัดสินใจง่ายขึ้น
+    </p>
+  </div>
+</section>
+

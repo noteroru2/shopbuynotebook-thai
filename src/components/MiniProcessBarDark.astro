@@ -1,0 +1,57 @@
+---
+const steps = [
+  { title: 'ส่งรูปเครื่อง', desc: '3–5 รูป + รุ่น/สเปก', tone: 'line' },
+  { title: 'รับราคาประเมิน', desc: 'ตอบไวทาง LINE', tone: 'amber' },
+  { title: 'นัดรับหรือส่งเครื่อง', desc: 'เลือกวิธีที่สะดวก', tone: 'sky' },
+  { title: 'รับเงินทันที', desc: 'เงินสด/โอนหลังตกลง', tone: 'line' },
+];
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 pt-6">
+  <div class="relative overflow-hidden rounded-3xl border border-slate-800 bg-[#0F172A] shadow-sm">
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0">
+      <div class="absolute -left-16 -top-20 h-56 w-56 rounded-full bg-[#06C755]/20 blur-3xl"></div>
+      <div class="absolute -right-20 top-8 h-72 w-72 rounded-full bg-sky-400/15 blur-3xl"></div>
+      <div class="absolute bottom-[-120px] left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-amber-300/10 blur-3xl"></div>
+    </div>
+
+    <div class="relative p-6 sm:p-8">
+      <h2 class="text-base font-extrabold tracking-tight text-white sm:text-lg">
+        ขายโน๊ตบุ๊คง่าย ๆ ใน 4 ขั้นตอน
+      </h2>
+      <p class="mt-1 text-sm text-slate-300">ชัดเจน โปร่งใส ประเมินได้จากรูปเครื่อง</p>
+
+      <ol class="mt-6 grid gap-3 sm:gap-4 lg:grid-cols-4">
+        {steps.map((s, idx) => (
+          <li class="relative rounded-3xl border border-slate-700/70 bg-white/5 p-5 shadow-sm">
+            <div class="flex items-start gap-3">
+              <span
+                class:list={[
+                  'inline-flex h-10 w-10 flex-none items-center justify-center rounded-2xl text-sm font-extrabold',
+                  s.tone === 'line' && 'bg-[#06C755] text-white',
+                  s.tone === 'amber' && 'bg-[#FACC15] text-slate-900',
+                  s.tone === 'sky' && 'bg-sky-400 text-slate-900',
+                ]}
+                aria-hidden="true"
+              >
+                {String(idx + 1).padStart(2, '0')}
+              </span>
+              <div class="min-w-0">
+                <p class="text-sm font-bold text-white">{s.title}</p>
+                <p class="mt-1 text-xs leading-relaxed text-slate-300">{s.desc}</p>
+              </div>
+            </div>
+
+            {idx < steps.length - 1 ? (
+              <span
+                aria-hidden="true"
+                class="hidden lg:block absolute right-[-14px] top-1/2 h-px w-7 -translate-y-1/2 bg-slate-600/60"
+              />
+            ) : null}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+

@@ -1,0 +1,131 @@
+---
+import { SITE } from '../lib/seo';
+
+const pathname = Astro.url.pathname;
+
+const nav = [
+  { label: 'หน้าแรก', short: 'หน้าแรก', href: '/' },
+  { label: 'รับซื้อโน๊ตบุ๊ค', short: 'รับซื้อ', href: '/รับซื้อโน๊ตบุ๊ค/' },
+  { label: 'รับซื้อโน๊ตบุ๊คมือสอง', short: 'มือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/' },
+  { label: 'เช็คราคา', short: 'เช็คราคา', href: '/เช็คราคาโน๊ตบุ๊ค/' },
+  { label: 'พื้นที่ให้บริการ', short: 'พื้นที่', href: '/พื้นที่ให้บริการ/' },
+  { label: 'บทความ', short: 'บทความ', href: '/blog/' },
+  { label: 'ติดต่อเรา', short: 'ติดต่อ', href: '/ติดต่อเรา/' },
+];
+
+const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
+---
+
+<header class="sticky top-0 z-40 border-b border-slate-200 bg-white/85 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5">
+    <a href="/" class="flex min-w-0 items-center gap-3">
+      <span class="rounded-3xl border border-slate-200 bg-slate-950/95 p-2 shadow-sm">
+        <picture>
+          <source srcset="/images/logo-ranrubsue-notebook-black.webp" media="(min-width: 480px)" />
+          <img
+            src="/images/logo-ranrubsue-notebook-black-280.webp"
+            alt="โลโก้ ร้านรับซื้อโน๊ตบุ๊ค.com"
+            width="280"
+            height="140"
+            class="h-12 w-auto flex-none object-contain sm:h-12"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
+      </span>
+      <span class="min-w-0">
+        <span class="block truncate text-sm font-extrabold tracking-tight text-slate-900 sm:text-base">
+          ร้านรับซื้อโน๊ตบุ๊ค.com
+        </span>
+        <span class="hidden truncate text-xs text-slate-600 xl:block">รับซื้อโน๊ตบุ๊คมือสอง • ประเมินไว • จ่ายเงินสด</span>
+      </span>
+    </a>
+
+    <div class="flex min-w-0 items-center gap-2 lg:hidden">
+      <a
+        class="inline-flex min-w-0 items-center justify-center rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-900 shadow-sm hover:bg-slate-50"
+        href={`tel:${SITE.telephone}`}
+        aria-label={`โทร ${SITE.telephone}`}
+      >
+        <span class="truncate">โทร {SITE.telephone}</span>
+      </a>
+      <a
+        class="inline-flex min-w-0 items-center justify-center rounded-2xl bg-[#06C755] px-3 py-2 text-xs font-extrabold text-white shadow-sm hover:brightness-95"
+        href={SITE.lineUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`LINE ${SITE.lineHandle}`}
+      >
+        <span class="truncate">LINE {SITE.lineHandle}</span>
+      </a>
+      <details class="relative">
+        <summary
+          class="list-none cursor-pointer rounded-2xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-900 shadow-sm hover:bg-slate-50"
+          aria-label="เปิดเมนู"
+        >
+          เมนู
+        </summary>
+        <div class="absolute right-0 mt-2 w-64 rounded-2xl border border-slate-200 bg-white p-2 shadow-lg">
+          <nav aria-label="เมนูหลัก (มือถือ)" class="flex flex-col">
+            {nav.map((item) => (
+              <a
+                href={item.href}
+                class:list={[
+                  'rounded-xl px-3 py-2 text-sm font-semibold',
+                  isActive(item.href) ? 'bg-slate-900 text-white' : 'text-slate-900 hover:bg-slate-50',
+                ]}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+          <div class="mt-2 grid gap-2 px-1 pb-1">
+            <a
+              class="inline-flex items-center justify-center rounded-xl bg-[#06C755] px-4 py-2 text-sm font-extrabold text-white shadow-sm hover:brightness-95"
+              href={SITE.lineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              แอดไลน์ {SITE.lineHandle} ส่งรูปประเมินราคา
+            </a>
+            <a
+              class="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50"
+              href={`tel:${SITE.telephone}`}
+            >
+              โทร {SITE.telephone}
+            </a>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <nav aria-label="เมนูหลัก" class="hidden items-center gap-1 lg:flex lg:min-w-0 lg:flex-1 lg:justify-center">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'rounded-xl px-2.5 py-1.5 text-[13px] font-semibold transition-colors',
+            isActive(item.href) ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900',
+          ]}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+        >
+          <span class="xl:hidden">{item.short ?? item.label}</span>
+          <span class="hidden xl:inline">{item.label}</span>
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden items-center gap-2 lg:flex">
+      <a
+        class="inline-flex items-center justify-center rounded-2xl bg-[#06C755] px-3.5 py-2 text-[13px] font-extrabold text-white shadow-sm hover:brightness-95"
+        href={SITE.lineUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        แอดไลน์ {SITE.lineHandle} ส่งรูปประเมินราคา
+      </a>
+    </div>
+  </div>
+</header>
+

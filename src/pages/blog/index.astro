@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { absoluteUrl } from '../../lib/seo';
+import { itemListSchema } from '../../lib/schema';
+
+const posts = (await getCollection('blog')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const toSlug = (p: any) => (p.data.slug ? p.data.slug : String(p.id).replace(/\.(md|mdx)$/i, ''));
+
+const title = 'บทความ | ร้านรับซื้อโน๊ตบุ๊ค.com';
+const description = 'บทความแนะนำเกี่ยวกับการขายโน๊ตบุ๊คมือสอง การเช็คราคา การล้างข้อมูล และคำถามที่พบบ่อย';
+const canonical = absoluteUrl('/blog/');
+
+const schemas = [
+  itemListSchema({
+    name: 'บทความ',
+    url: canonical,
+    items: posts.slice(0, 50).map((p) => ({
+      name: p.data.title,
+      url: absoluteUrl(`/blog/${toSlug(p)}/`),
+    })),
+  }),
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">บทความ</h1>
+    <p class="mt-4 text-base leading-relaxed text-slate-600">
+      รวมบทความสั้น ๆ เพื่อช่วยให้ขายโน๊ตบุ๊คมือสองได้ง่ายขึ้น ตั้งแต่เช็คราคา ไปจนถึงการล้างข้อมูลก่อนขาย
+    </p>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 py-10">
+    <div class="grid gap-4 md:grid-cols-2">
+      {posts.map((p) => (
+        <a href={`/blog/${toSlug(p)}/`} class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:bg-slate-50">
+          <p class="text-xs font-semibold text-slate-500">{p.data.category} • {p.data.date.toLocaleDateString('th-TH')}</p>
+          <p class="mt-2 text-lg font-extrabold tracking-tight text-slate-900">{p.data.title}</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">{p.data.description}</p>
+          <p class="mt-4 text-sm font-semibold text-slate-900 underline underline-offset-4">อ่านต่อ</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+

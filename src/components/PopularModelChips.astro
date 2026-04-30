@@ -1,0 +1,51 @@
+---
+const chips = [
+  { label: 'MacBook Air', href: '/รับซื้อโน๊ตบุ๊ค/macbook/', highlight: true },
+  { label: 'MacBook Pro', href: '/รับซื้อโน๊ตบุ๊ค/macbook/' },
+  { label: 'Asus TUF', href: '/รับซื้อโน๊ตบุ๊ค/asus/', highlight: true },
+  { label: 'Asus ROG', href: '/รับซื้อโน๊ตบุ๊ค/asus/' },
+  { label: 'Acer Nitro', href: '/รับซื้อโน๊ตบุ๊ค/acer/', highlight: true },
+  { label: 'Acer Predator', href: '/รับซื้อโน๊ตบุ๊ค/acer/' },
+  { label: 'Lenovo Legion', href: '/รับซื้อโน๊ตบุ๊ค/lenovo/', highlight: true },
+  { label: 'Lenovo ThinkPad', href: '/รับซื้อโน๊ตบุ๊ค/lenovo/' },
+  { label: 'Dell Inspiron', href: '/รับซื้อโน๊ตบุ๊ค/dell/' },
+  { label: 'Dell XPS', href: '/รับซื้อโน๊ตบุ๊ค/dell/', highlight: true },
+  { label: 'HP Pavilion', href: '/รับซื้อโน๊ตบุ๊ค/hp/' },
+  { label: 'HP Omen', href: '/รับซื้อโน๊ตบุ๊ค/hp/', highlight: true },
+  { label: 'MSI Gaming', href: '/รับซื้อโน๊ตบุ๊ค/msi/', highlight: true },
+  { label: 'Surface Pro', href: '/รับซื้อโน๊ตบุ๊ค/surface/' },
+  { label: 'Surface Laptop', href: '/รับซื้อโน๊ตบุ๊ค/surface/' },
+];
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 pt-12">
+  <div class="flex items-end justify-between gap-4">
+    <div>
+      <h2 class="text-xl font-extrabold text-slate-900">รับซื้อรุ่นยอดนิยม</h2>
+      <p class="mt-2 text-sm text-slate-600">
+        ส่งรูปเครื่องพร้อมรุ่นหรือสเปก ทีมงานช่วยประเมินราคาเบื้องต้นได้เร็วขึ้น
+      </p>
+    </div>
+    <a class="hidden text-sm font-semibold text-slate-600 hover:text-slate-900 sm:block" href="/รับซื้อ-notebook">
+      ดูเงื่อนไขการรับซื้อ
+    </a>
+  </div>
+
+  <div class="mt-5 flex flex-wrap gap-2">
+    {chips.map((c) => (
+      <a
+        href={c.href}
+        class:list={[
+          'rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors',
+          c.highlight
+            ? 'border-amber-200 bg-amber-50 text-amber-900 hover:bg-amber-100'
+            : 'border-slate-200 bg-white text-slate-800 hover:bg-emerald-50 hover:border-emerald-200',
+        ]}
+        aria-label={`ดูหน้ารับซื้อสำหรับรุ่น ${c.label}`}
+      >
+        {c.label}
+      </a>
+    ))}
+  </div>
+</section>
+

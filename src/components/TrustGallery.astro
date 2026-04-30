@@ -1,0 +1,59 @@
+---
+const items = [
+  {
+    srcLg: '/images/trust/rubsue-notebook-trust-cash-payment.webp',
+    srcSm: '/images/trust/rubsue-notebook-trust-cash-payment-640.webp',
+    alt: 'จ่ายเงินสดทันทีเมื่อรับซื้อโน๊ตบุ๊ค',
+    title: 'จ่ายเงินไว',
+    desc: 'ตกลงราคาแล้วรับเงินทันที',
+  },
+  {
+    srcLg: '/images/trust/rubsue-notebook-trust-real-shopfront.webp',
+    srcSm: '/images/trust/rubsue-notebook-trust-real-shopfront-640.webp',
+    alt: 'หน้าร้านจริง มีตัวตน เชื่อถือได้สำหรับรับซื้อโน๊ตบุ๊ค',
+    title: 'หน้าร้านจริง',
+    desc: 'มีทีมงานดูแลและตรวจเช็ค',
+  },
+  {
+    srcLg: '/images/trust/rubsue-notebook-trust-team-checking.webp',
+    srcSm: '/images/trust/rubsue-notebook-trust-team-checking-640.webp',
+    alt: 'ทีมงานตรวจเช็คสภาพโน๊ตบุ๊คอย่างมืออาชีพก่อนประเมินราคา',
+    title: 'ตรวจเช็คมืออาชีพ',
+    desc: 'ประเมินตามสภาพจริง',
+  },
+];
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 pt-12">
+  <div class="flex items-end justify-between gap-4">
+    <div>
+      <h2 class="text-xl font-bold text-slate-900">ความน่าเชื่อถือที่มองเห็นได้</h2>
+      <p class="mt-2 text-sm text-slate-600">ตัวอย่างบรรยากาศการรับซื้อจริงและการตรวจเครื่อง</p>
+    </div>
+    <a class="text-sm font-semibold text-slate-600 hover:text-slate-900" href="/เกี่ยวกับเรา/">ดูข้อมูลร้าน</a>
+  </div>
+
+  <div class="mt-6 grid gap-4 md:grid-cols-3">
+    {items.map((it) => (
+      <figure class="rounded-3xl border border-slate-200 bg-white/70 p-3 shadow-sm backdrop-blur">
+        <picture>
+          <source srcset={it.srcLg} media="(min-width: 768px)" />
+          <img
+            src={it.srcSm}
+            alt={it.alt}
+            loading="lazy"
+            decoding="async"
+            width="640"
+            height="640"
+            class="aspect-square w-full rounded-2xl object-cover"
+          />
+        </picture>
+        <figcaption class="mt-3 px-1">
+          <p class="text-sm font-semibold text-slate-900">{it.title}</p>
+          <p class="mt-1 text-sm text-slate-600">{it.desc}</p>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+</section>
+

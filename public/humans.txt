@@ -1,0 +1,18 @@
+ร้านรับซื้อโน๊ตบุ๊ค.com
+บริการรับซื้อโน๊ตบุ๊คมือสอง รับซื้อ Notebook ทุกยี่ห้อ ประเมินราคาฟรีผ่าน LINE
+
+Contact:
+Phone: 0642579353
+LINE: @webuy
+LINE URL: https://line.me/R/ti/p/@webuy
+Website: https://ร้านรับซื้อโน๊ตบุ๊ค.com/
+
+Physical store (Google Maps): https://maps.app.goo.gl/MRNFJY318DSg2Q22A
+Store name on Maps: ร้านอำพล เทรดดิ้ง
+
+Service Area:
+กรุงเทพและปริมณฑล, ทุกจังหวัดในภาคอีสาน, สระแก้ว, จันทบุรี, ตราด, พัทลุง, ภูเก็ต, หาดใหญ่/สงขลา
+
+Technology:
+Astro, Tailwind CSS, Markdown/MDX, Decap CMS, Coolify
+

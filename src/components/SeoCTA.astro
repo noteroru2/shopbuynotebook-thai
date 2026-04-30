@@ -1,0 +1,42 @@
+---
+import { SITE } from '../config/site';
+
+interface Props {
+  heading?: string;
+  description?: string;
+  primaryText?: string;
+  primaryHref?: string;
+  secondaryText?: string;
+  secondaryHref?: string;
+}
+
+const {
+  heading = 'ต้องการขายโน๊ตบุ๊ค? ส่งรูปประเมินราคาฟรี',
+  description = `ส่งรูปเครื่อง รุ่น สเปก และสภาพเบื้องต้นทางไลน์ ${SITE.lineHandle} เพื่อเช็คราคาโน๊ตบุ๊คฟรีก่อนตัดสินใจขาย`,
+  primaryText = `แอดไลน์ ${SITE.lineHandle} ส่งรูปประเมินราคา`,
+  primaryHref = SITE.lineUrl,
+  secondaryText = `โทร ${SITE.telephone}`,
+  secondaryHref = `tel:${SITE.telephone}`,
+} = Astro.props;
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 pt-10">
+  <div class="rounded-3xl border border-slate-200 bg-slate-950/95 p-6 text-white shadow-sm sm:p-8">
+    <h2 class="text-xl font-extrabold tracking-tight">{heading}</h2>
+    <p class="mt-2 text-sm leading-relaxed text-white/85">{description}</p>
+    <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+      <a
+        class="inline-flex items-center justify-center rounded-2xl bg-[#06C755] px-5 py-3 text-sm font-extrabold text-white shadow-sm hover:brightness-95"
+        href={primaryHref}
+        target={primaryHref.startsWith('http') ? '_blank' : undefined}
+        rel={primaryHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+      >
+        {primaryText}
+      </a>
+      <a class="inline-flex items-center justify-center rounded-2xl bg-white/10 px-5 py-3 text-sm font-extrabold text-white hover:bg-white/15" href={secondaryHref}>
+        {secondaryText}
+      </a>
+    </div>
+  </div>
+</section>
+

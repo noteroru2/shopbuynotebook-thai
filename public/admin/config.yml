@@ -1,0 +1,146 @@
+backend:
+  name: git-gateway # หรือ github
+  branch: main
+  # repo: owner/repo  # ถ้าใช้ github ให้ปลดคอมเมนต์และใส่ repo จริง
+  # base_url: https://YOUR-OAUTH-SERVER  # ถ้าใช้ OAuth ภายนอก
+  # auth_endpoint: auth
+
+local_backend: true
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+site_url: "https://ร้านรับซื้อโน๊ตบุ๊ค.com"
+display_url: "https://ร้านรับซื้อโน๊ตบุ๊ค.com"
+
+collections:
+  - name: "blog"
+    label: "บทความ"
+    label_singular: "บทความ"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Slug (optional)", name: "slug", widget: "string", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Date Modified", name: "dateModified", widget: "datetime", required: false }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
+      - { label: "OG Image (optional)", name: "ogImage", widget: "image", required: false }
+      - { label: "Canonical (optional)", name: "canonical", widget: "string", required: false }
+      - { label: "Keywords", name: "keywords", widget: "list", required: false }
+      - label: "FAQ"
+        name: "faqs"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Question", name: "question", widget: "string" }
+          - { label: "Answer", name: "answer", widget: "text" }
+      - label: "Related Links"
+        name: "relatedLinks"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Label", name: "label", widget: "string" }
+          - { label: "Href", name: "href", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+      - { label: "CTA Text", name: "ctaText", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "brands"
+    label: "Brand Pages"
+    folder: "src/content/brands"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Kind", name: "kind", widget: "hidden", default: "brand" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
+      - { label: "Popular Models", name: "popularModels", widget: "list", required: false }
+      - { label: "Keywords", name: "keywords", widget: "list", required: false }
+      - label: "FAQ"
+        name: "faqs"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Question", name: "question", widget: "string" }
+          - { label: "Answer", name: "answer", widget: "text" }
+      - { label: "CTA Text", name: "ctaText", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "conditions"
+    label: "Condition Pages"
+    folder: "src/content/conditions"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Kind", name: "kind", widget: "hidden", default: "condition" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
+      - { label: "What We Buy", name: "whatWeBuy", widget: "list", required: false }
+      - { label: "Keywords", name: "keywords", widget: "list", required: false }
+      - label: "FAQ"
+        name: "faqs"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Question", name: "question", widget: "string" }
+          - { label: "Answer", name: "answer", widget: "text" }
+      - { label: "CTA Text", name: "ctaText", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "locations"
+    label: "Location Pages"
+    folder: "src/content/locations"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Kind", name: "kind", widget: "hidden", default: "location" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }
+      - { label: "Sub Areas", name: "subAreas", widget: "list", required: false }
+      - { label: "Meeting Options", name: "meetingOptions", widget: "list", required: false }
+      - { label: "Highlights", name: "highlights", widget: "list", required: false }
+      - { label: "Keywords", name: "keywords", widget: "list", required: false }
+      - label: "FAQ"
+        name: "faqs"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Question", name: "question", widget: "string" }
+          - { label: "Answer", name: "answer", widget: "text" }
+      - { label: "CTA Text", name: "ctaText", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "reviews"
+    label: "Reviews"
+    folder: "src/content/reviews"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Rating", name: "rating", widget: "number", default: 5, min: 1, max: 5 }
+      - { label: "Date", name: "date", widget: "string", required: false }
+      - { label: "Model", name: "model", widget: "string", required: false }
+      - { label: "Location", name: "location", widget: "string", required: false }
+      - { label: "Avatar", name: "avatar", widget: "image", required: false }
+

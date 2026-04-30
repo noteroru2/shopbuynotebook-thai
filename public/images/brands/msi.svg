@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="B%BI MSI">
+  <rect width="256" height="256" rx="56" fill="#ffffff"/>
+  <path d="M76 176c-20-14-32-34-32-56 0-36 32-64 84-64s84 28 84 64c0 22-12 42-32 56-12 8-30 14-52 14s-40-6-52-14Z" fill="#0f172a" opacity=".10"/>
+  <text x="128" y="140" text-anchor="middle" font-family="system-ui,Segoe UI,Arial" font-size="34" font-weight="900" fill="#0f172a">MSI</text>
+  <path d="M64 200h128" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+</svg>
+
