@@ -1,0 +1,106 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PartnerSites from '../../components/PartnerSites.astro';
+import CTAButtons from '../../components/CTAButtons.astro';
+import { SITE, absoluteUrl, breadcrumbListSchema } from '../../lib/seo';
+
+const title = 'เว็บไซต์ในเครือและบริการรับซื้อสินค้าไอที | ร้านรับซื้อโน๊ตบุ๊ค.com';
+const description =
+  'รวมเว็บไซต์ในเครือสำหรับบริการรับซื้อสินค้าไอที รับซื้อโน๊ตบุ๊ค คอมพิวเตอร์ iPhone iPad MacBook กล้องมือสอง และบริการจำนำสินค้าไอทีในบางพื้นที่';
+const canonical = absoluteUrl('/เว็บไซต์ในเครือ/');
+
+const breadcrumbs = [
+  { name: 'หน้าแรก', url: absoluteUrl('/') },
+  { name: 'เว็บไซต์ในเครือ', url: canonical },
+];
+
+const schemas = [breadcrumbListSchema(breadcrumbs)];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
+    <nav class="text-xs text-slate-500" aria-label="เส้นทางนำทาง">
+      <a class="underline-offset-2 hover:underline" href="/">หน้าแรก</a>
+      <span class="mx-1.5 text-slate-300">/</span>
+      <span class="font-medium text-slate-700">เว็บไซต์ในเครือ</span>
+    </nav>
+
+    <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+      เว็บไซต์ในเครือและบริการรับซื้อสินค้าไอที
+    </h1>
+
+    <div class="prose prose-slate mt-6 max-w-none text-base leading-relaxed text-slate-600">
+      <p>
+        <strong class="text-slate-800">ร้านรับซื้อโน๊ตบุ๊ค.com</strong> เป็นหนึ่งในช่องทางของกลุ่มบริการที่เน้นการรับซื้อและประเมิน
+        <strong class="text-slate-800">โน๊ตบุ๊ค</strong> หรือ <strong class="text-slate-800">Notebook</strong> มือสองโดยเฉพาะ
+        เพื่อให้ผู้ใช้งานสามารถส่งรูป สเปก และสภาพเครื่องแล้วได้คำตอบที่เข้าใจง่ายก่อนตัดสินใจขาย
+      </p>
+      <p class="mt-4">
+        ในกลุ่มเดียวกันยังมีเว็บไซต์อื่นที่จัดทำขึ้นเพื่อครอบคลุมสินค้าและบริบทที่ต่างออกไป เช่น
+        การรับซื้อสินค้าไอทีหลายประเภทในที่เดียว การเน้นอุปกรณ์คอมพิวเตอร์และอุปกรณ์ IT มือสอง
+        การรับซื้อกล้องและเลนส์ รวมถึงบริการจำนำหรือรับซื้อในพื้นที่เฉพาะเมื่อต้องการความสะดวกแบบใกล้บ้าน
+        แต่ละเว็บมีข้อมูลและช่องทางติดต่อเป็นของตัวเอง เราจึงอยากให้คุณเลือกตามประเภทสินค้าและความสะดวกจริง ๆ
+        ไม่ใช่การ “ยัดลิงก์” ให้คลิกโดยไม่มีเหตุผล
+      </p>
+      <p class="mt-4">
+        หน้านี้รวมรายการเว็บไซต์ในเครือไว้เป็นภาพรวมเพื่อความโปร่งใส: ถ้าคุณต้องการขายโน๊ตบุ๊คเป็นหลัก
+        การเริ่มที่หน้า
+        <a class="font-semibold text-emerald-700 underline hover:text-emerald-800" href="/รับซื้อโน๊ตบุ๊ค/">บริการรับซื้อโน๊ตบุ๊ค</a>
+        หรือแอดไลน์ {SITE.lineHandle} ยังเป็นทางที่ตรงที่สุด ส่วนถ้าคุณมี iPhone, iPad, MacBook, คอมพิวเตอร์ตั้งโต๊ะ กล้อง
+        หรืออุปกรณ์ถ่ายภาพมือสอง สามารถเปิดเว็บที่ตรงหมวดจากรายการด้านล่างเพื่ออ่านรายละเอียดและสอบถามทีมงานของแต่ละช่องทางได้โดยตรง
+      </p>
+      <p class="mt-4">
+        เราไม่แนะนำให้ “สุ่มเลือกลิงก์” หลายครั้งในหน้าเดียวเพื่อค้นหา SEO — แต่ละลิงก์ควรมีความหมายกับสิ่งที่คุณกำลังจะขาย
+        หากไม่แน่ใจว่าควรเริ่มจากเว็บไหน ให้ใช้หน้านี้เป็นทางเลือกอ่านภาพรวมก่อน แล้วค่อยตัดสินใจตามประเภทสินค้าและพื้นที่ของคุณ
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 py-12">
+    <h2 class="text-2xl font-extrabold tracking-tight text-slate-900">เลือกบริการให้ตรงกับสินค้าที่ต้องการขาย</h2>
+    <p class="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
+      รายการด้านล่างจัดกลุ่มตามลักษณะบริการ ช่วยให้เห็นภาพว่าแต่ละเว็บเหมาะกับเคสใด — คลิกเพื่อเปิดเว็บไซต์นั้นในแท็บใหม่
+    </p>
+    <div class="mt-8">
+      <PartnerSites variant="full" hideHeading />
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pb-14">
+    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+      <h2 class="text-lg font-extrabold text-slate-900">กลับมาขายโน๊ตบุ๊คกับเรา</h2>
+      <p class="mt-2 text-sm leading-relaxed text-slate-600">
+        หากต้องการขายโน๊ตบุ๊คหรือ Notebook มือสอง สามารถกลับไปที่หน้า
+        <a class="font-semibold text-emerald-700 underline hover:text-emerald-800" href="/รับซื้อโน๊ตบุ๊ค/">รับซื้อโน๊ตบุ๊ค</a>
+        หรือแอดไลน์ @webuy ส่งรูปประเมินราคาได้ทันที
+      </p>
+      <div class="mt-5">
+        <CTAButtons primaryText="แอดไลน์ @webuy ส่งรูปประเมินราคา" secondaryText="โทร" />
+      </div>
+    </div>
+
+    <div class="mt-10">
+      <h3 class="text-lg font-extrabold text-slate-900">ลิงก์ภายในเว็บไซต์</h3>
+      <ul class="mt-3 grid gap-2 text-sm text-slate-700 sm:grid-cols-2">
+        <li>
+          <a class="text-emerald-700 underline hover:text-emerald-800" href="/">หน้าแรก</a>
+        </li>
+        <li>
+          <a class="text-emerald-700 underline hover:text-emerald-800" href="/รับซื้อโน๊ตบุ๊ค/">บริการรับซื้อโน๊ตบุ๊ค</a>
+        </li>
+        <li>
+          <a class="text-emerald-700 underline hover:text-emerald-800" href="/รับซื้อโน๊ตบุ๊คมือสอง/">รับซื้อโน๊ตบุ๊คมือสอง</a>
+        </li>
+        <li>
+          <a class="text-emerald-700 underline hover:text-emerald-800" href="/เช็คราคาโน๊ตบุ๊ค/">เช็คราคาโน๊ตบุ๊คก่อนขาย</a>
+        </li>
+        <li>
+          <a class="text-emerald-700 underline hover:text-emerald-800" href="/พื้นที่ให้บริการ/">พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค</a>
+        </li>
+        <li>
+          <a class="text-emerald-700 underline hover:text-emerald-800" href="/คำถามที่พบบ่อย/">คำถามที่พบบ่อย</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>

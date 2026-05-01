@@ -3,31 +3,23 @@ import { SITE } from '../lib/seo';
 ---
 
 <div class="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 backdrop-blur sm:hidden">
-  <div class="mx-auto grid max-w-6xl grid-cols-3 gap-2 px-3 py-2">
+  <div class="mx-auto grid max-w-6xl grid-cols-2 gap-2 px-3 py-2">
     <a
-      class="inline-flex min-w-0 items-center justify-center rounded-xl border border-slate-200 bg-white px-2 py-3 text-[12px] font-semibold text-slate-900"
+      class="inline-flex min-w-0 items-center justify-center rounded-xl border border-slate-200 bg-white px-2 py-3 text-[11px] font-semibold leading-tight text-slate-900"
       href={`tel:${SITE.telephone}`}
       aria-label={`โทร ${SITE.telephone}`}
     >
-      <span class="truncate">โทร {SITE.telephone}</span>
+      <span class="text-center">โทร {SITE.telephone}</span>
     </a>
     <a
-      class="inline-flex min-w-0 items-center justify-center rounded-xl bg-[#06C755] px-2 py-3 text-[12px] font-semibold text-white"
+      class="inline-flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-xl bg-[#06C755] px-2 py-2.5 text-[11px] font-semibold leading-tight text-white"
       href={SITE.lineUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`LINE ${SITE.lineHandle}`}
+      aria-label={`แอดไลน์ ${SITE.lineHandle} ส่งรูปประเมินราคา`}
     >
-      <span class="truncate">LINE {SITE.lineHandle}</span>
-    </a>
-    <a
-      class="inline-flex min-w-0 items-center justify-center rounded-xl bg-slate-900 px-2 py-3 text-[12px] font-semibold text-white"
-      href={SITE.lineUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="ส่งรูปประเมินราคาทาง LINE"
-    >
-      <span class="truncate">ส่งรูป</span>
+      <span class="text-center">แอดไลน์ {SITE.lineHandle}</span>
+      <span class="text-center text-[10px] font-semibold opacity-95">ส่งรูปประเมินราคา</span>
     </a>
   </div>
 </div>

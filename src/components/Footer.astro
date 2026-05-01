@@ -1,5 +1,6 @@
 ---
 import { SITE } from '../lib/seo';
+import PartnerSites from './PartnerSites.astro';
 ---
 
 <footer class="border-t border-slate-200 bg-white">
@@ -27,14 +28,14 @@ import { SITE } from '../lib/seo';
           รับซื้อโน๊ตบุ๊คมือสองทุกยี่ห้อ ประเมินราคาฟรี ตอบไวทาง LINE จ่ายเงินสด/โอนทันที รับทั้งเครื่องใช้งานได้และเครื่องเสียบางอาการ
         </p>
         <p class="mt-3 text-sm text-slate-600">
-          ร้านรับซื้อโน๊ตบุ๊ค.com ให้บริการรับซื้อโน๊ตบุ๊คมือสอง รับซื้อ Notebook ทุกยี่ห้อ ประเมินราคาฟรีผ่าน LINE เหมาะสำหรับผู้ที่ต้องการขายโน๊ตบุ๊คเก่า เครื่องเสีย หรือเปลี่ยนเป็นเงินสดในกรุงเทพและพื้นที่ใกล้เคียง
+          ร้านรับซื้อโน๊ตบุ๊ค.com ให้บริการรับซื้อโน๊ตบุ๊คมือสอง รับซื้อ Notebook ทุกยี่ห้อ ประเมินราคาฟรีผ่าน LINE เหมาะสำหรับผู้ที่ต้องการขายโน๊ตบุ๊คเก่า เครื่องเสีย หรือเปลี่ยนเป็นเงินสดในกรุงเทพ ปริมณฑล ภาคอีสาน และพื้นที่ให้บริการอื่น ๆ
         </p>
         <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
           <p class="text-sm font-semibold text-slate-900">เวลาทำการ</p>
-          <p class="mt-1 text-sm text-slate-600">ทุกวัน 10:00–20:00 (ปรับได้ตามจริง)</p>
+          <p class="mt-1 text-sm text-slate-600">ทุกวัน 10:00–20:00</p>
           <p class="mt-3 text-sm font-semibold text-slate-900">พื้นที่ให้บริการ</p>
           <p class="mt-1 text-sm text-slate-600">
-            กรุงเทพและปริมณฑล • ภาคอีสาน • ภาคตะวันออก • ภาคใต้{' '}
+            กรุงเทพและปริมณฑล • ทุกจังหวัดในภาคอีสาน • สระแก้ว • จันทบุรี • ตราด • พัทลุง • ภูเก็ต • หาดใหญ่/สงขลา{' '}
             <a class="underline underline-offset-4" href="/พื้นที่ให้บริการ/">
               ดูทั้งหมด
             </a>
@@ -78,6 +79,7 @@ import { SITE } from '../lib/seo';
           <li><a class="text-slate-600 hover:text-slate-900" href="/รับซื้อโน๊ตบุ๊ค/">รับซื้อโน๊ตบุ๊ค (รวมบริการ)</a></li>
           <li><a class="text-slate-600 hover:text-slate-900" href="/คำถามที่พบบ่อย/">คำถามที่พบบ่อย</a></li>
           <li><a class="text-slate-600 hover:text-slate-900" href="/นโยบายความเป็นส่วนตัว/">นโยบายความเป็นส่วนตัว</a></li>
+          <li><a class="text-slate-600 hover:text-slate-900" href="/เว็บไซต์ในเครือ/">เว็บไซต์ในเครือ</a></li>
         </ul>
       </div>
 
@@ -110,6 +112,19 @@ import { SITE } from '../lib/seo';
           <li><a class="text-slate-600 hover:text-slate-900" href="/blog/ขายโน๊ตบุ๊คที่ไหนดี-ได้ราคาและปลอดภัย/">ขายโน๊ตบุ๊คที่ไหนดี</a></li>
         </ul>
       </div>
+    </div>
+
+    <div class="mt-8 flex flex-col gap-4 border-t border-slate-200 pt-8 sm:flex-row sm:items-start sm:justify-between">
+      <PartnerSites
+        variant="footer"
+        limit={4}
+        description="บริการอื่นในเครือสำหรับผู้ที่ต้องการขายสินค้าไอทีประเภทอื่น เช่น คอมพิวเตอร์ iPhone iPad MacBook กล้อง และอุปกรณ์มือสอง"
+      />
+      <p class="shrink-0 text-sm text-slate-600">
+        <a class="font-semibold text-emerald-700 underline underline-offset-4 hover:text-emerald-800" href="/เว็บไซต์ในเครือ/">
+          ดูเว็บไซต์ในเครือทั้งหมด
+        </a>
+      </p>
     </div>
 
     <div class="mt-10 border-t border-slate-200 pt-6 text-xs text-slate-500">

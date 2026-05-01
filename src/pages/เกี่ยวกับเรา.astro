@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTAButtons from '../components/CTAButtons.astro';
+import PartnerSites from '../components/PartnerSites.astro';
 import TrustBadges from '../components/TrustBadges.astro';
 import { SITE, absoluteUrl } from '../lib/seo';
 
@@ -39,6 +40,22 @@ const canonical = absoluteUrl('/เกี่ยวกับเรา/');
     <div class="mt-6">
       <CTAButtons />
     </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 py-12">
+    <h2 class="text-2xl font-extrabold tracking-tight text-slate-900">บริการอื่นในเครือ</h2>
+    <p class="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
+      นอกจากบริการรับซื้อโน๊ตบุ๊ค เรายังมีเว็บไซต์ในเครือที่ดูแลสินค้าไอทีประเภทอื่น เช่น คอมพิวเตอร์ iPhone iPad MacBook กล้อง เลนส์
+      และบริการจำนำสินค้าไอทีในบางพื้นที่ เพื่อให้ลูกค้าเลือกช่องทางที่เหมาะกับสินค้าที่ต้องการขาย
+    </p>
+    <div class="mt-6">
+      <PartnerSites variant="section" hideHeading limit={6} />
+    </div>
+    <p class="mt-4 text-sm">
+      <a class="font-semibold text-emerald-700 underline underline-offset-4 hover:text-emerald-800" href="/เว็บไซต์ในเครือ/">
+        ดูเว็บไซต์ในเครือทั้งหมด
+      </a>
+    </p>
   </section>
 
   <TrustBadges />
