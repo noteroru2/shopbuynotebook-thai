@@ -70,6 +70,11 @@ const locations = defineCollection({
     title: z.string(),
     description: z.string(),
     slug: z.string(),
+    /** ถ้าไม่ระบุ หน้า [slug] จะสร้าง title tag ตามรูปแบบรับซื้อโน๊ตบุ๊ค + จังหวัด + @webuy */
+    seoTitle: z.string().optional(),
+    /** ถ้าไม่ระบุ จะใช้รูปแบบ H1 มาตรฐานของหน้าพื้นที่ */
+    h1: z.string().optional(),
+    region: z.string().optional(),
     featuredImage: z.string().optional(),
     subAreas: z.array(z.string()).default([]),
     meetingOptions: z.array(z.string()).default([]),

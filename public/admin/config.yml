@@ -111,6 +111,9 @@ collections:
     fields:
       - { label: "Kind", name: "kind", widget: "hidden", default: "location" }
       - { label: "Title", name: "title", widget: "string" }
+      - { label: "SEO Title (optional)", name: "seoTitle", widget: "string", required: false, hint: "ถ้าว่าง ระบบจะสร้าง title tag อัตโนมัติ" }
+      - { label: "H1 (optional)", name: "h1", widget: "string", required: false }
+      - { label: "Region (optional)", name: "region", widget: "string", required: false }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Featured Image", name: "featuredImage", widget: "image", required: false }

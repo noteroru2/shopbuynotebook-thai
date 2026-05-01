@@ -40,16 +40,26 @@ const breadcrumbs = [
   { name: entry.data.title, url: canonical },
 ];
 
-const layoutTitle = `${entry.data.title} | ร้านรับซื้อโน๊ตบุ๊ค.com`;
+const layoutTitle =
+  kind === 'location'
+    ? (entry.data.seoTitle ??
+        `รับซื้อโน๊ตบุ๊ค${entry.data.title} ประเมินฟรีผ่านไลน์ @webuy | ร้านรับซื้อโน๊ตบุ๊ค.com`)
+    : `${entry.data.title} | ร้านรับซื้อโน๊ตบุ๊ค.com`;
+const locationH1 =
+  kind === 'location'
+    ? (entry.data.h1 ?? `รับซื้อโน๊ตบุ๊ค${entry.data.title} ประเมินไว ส่งรูปเช็คราคาฟรี`)
+    : '';
 const description = entry.data.description;
 const ogImage = entry.data.featuredImage ? absoluteUrl(entry.data.featuredImage) : undefined;
 const faqs = entry.data.faqs ?? [];
 
 const internalLinks = [
-  { label: 'รับซื้อโน๊ตบุ๊ค (รวมบริการ)', href: '/รับซื้อโน๊ตบุ๊ค/' },
+  { label: 'รับซื้อโน๊ตบุ๊ค', href: '/' },
+  { label: 'บริการรับซื้อโน๊ตบุ๊คทุกยี่ห้อ', href: '/รับซื้อโน๊ตบุ๊ค/' },
   { label: 'รับซื้อโน๊ตบุ๊คมือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/' },
-  { label: 'เช็คราคาโน๊ตบุ๊ค', href: '/เช็คราคาโน๊ตบุ๊ค/' },
+  { label: 'เช็คราคาโน๊ตบุ๊คก่อนขาย', href: '/เช็คราคาโน๊ตบุ๊ค/' },
   { label: 'ตีราคาโน๊ตบุ๊ค', href: '/ตีราคาโน๊ตบุ๊ค/' },
+  { label: 'พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค', href: '/พื้นที่ให้บริการ/' },
   { label: 'ขายโน๊ตบุ๊ค', href: '/ขายโน๊ตบุ๊ค/' },
 ];
 
@@ -84,7 +94,7 @@ const conditionCauseMap: Record<string, string[]> = {
   >
     <section class="mx-auto w-full max-w-6xl px-4 pt-10">
       <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-        รับซื้อโน๊ตบุ๊ค {entry.data.title} ประเมินไว จ่ายเงินสด
+        {locationH1}
       </h1>
       <p class="mt-4 text-base leading-relaxed text-slate-600">{description}</p>
       <p class="mt-4 text-base leading-relaxed text-slate-600">
@@ -122,9 +132,6 @@ const conditionCauseMap: Record<string, string[]> = {
               <li>{h}</li>
             ))}
           </ul>
-          <p class="mt-4 text-sm text-slate-600">
-            หมายเหตุ: เนื้อหาพื้นที่ถูกเขียนให้ไม่ซ้ำกันเป๊ะ เพื่อให้เป็น SEO page ที่มีประโยชน์จริงกับผู้ใช้งาน
-          </p>
         </div>
       </div>
     </section>

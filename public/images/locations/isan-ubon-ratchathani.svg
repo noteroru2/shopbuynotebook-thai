@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="รับซื้อโน๊ตบุ๊คอุบลราชธานี">
+  <defs>
+    <linearGradient id="g-isan-ubon-ratchathani" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:hsl(14 42% 24%)"/>
+      <stop offset="100%" style="stop-color:hsl(227 48% 12%)"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g-isan-ubon-ratchathani)"/>
+  <text x="64" y="200" fill="#f8fafc" font-size="52" font-weight="700" font-family="'Sarabun','Noto Sans Thai',system-ui,sans-serif">รับซื้อโน๊ตบุ๊คอุบลราชธานี</text>
+  <text x="64" y="278" fill="#cbd5e1" font-size="28" font-family="'Sarabun','Noto Sans Thai',system-ui,sans-serif">ส่งรูปประเมินก่อนนัด · ไลน์ @webuy · โทร 0642579353</text>
+  <text x="64" y="330" fill="#94a3b8" font-size="22" font-family="'Sarabun','Noto Sans Thai',system-ui,sans-serif">ร้านรับซื้อโน๊ตบุ๊ค.com · ภาคอีสาน</text>
+  
+  <g opacity="0.92" aria-hidden="true">
+    <rect x="820" y="420" width="320" height="22" rx="8" fill="rgba(255,255,255,0.14)"/>
+    <rect x="860" y="140" width="240" height="280" rx="14" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.28)" stroke-width="2"/>
+    <rect x="880" y="160" width="200" height="120" rx="4" fill="rgba(255,255,255,0.12)"/>
+  </g>
+</svg>

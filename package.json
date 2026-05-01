@@ -9,7 +9,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "gen:isan-svgs": "node scripts/gen-isan-location-svgs.mjs",
+    "gen:isan-pages": "node scripts/isan-build.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",
