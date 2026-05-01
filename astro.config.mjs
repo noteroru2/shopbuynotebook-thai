@@ -13,7 +13,15 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [sitemap(), mdx()],
 
+  /** ลด render-blocking: อินไลน์ CSS ชุดหลักถ้าเล็กกว่า assetsInlineLimit */
+  build: {
+    inlineStylesheets: 'auto',
+  },
+
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      assetsInlineLimit: 20480,
+    },
   },
 });

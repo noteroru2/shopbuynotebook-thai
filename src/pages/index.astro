@@ -73,7 +73,12 @@ const faqs = [
   },
 ];
 ---
-<BaseLayout title={title} description={description} schemas={[faqPageSchema(faqs)]}>
+<BaseLayout
+  title={title}
+  description={description}
+  schemas={[faqPageSchema(faqs)]}
+  lcpImageSrc="/images/rubsue-notebook-hero-team.webp"
+>
   <div class="absolute inset-x-0 top-0 -z-10 h-[520px] bg-gradient-to-b from-slate-50/80 to-transparent"></div>
   <Hero
     title="รับซื้อโน๊ตบุ๊คมือสอง ประเมินไว จ่ายเงินสด"

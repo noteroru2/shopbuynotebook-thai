@@ -15,6 +15,8 @@ interface Props {
   ogImage?: string;
   noindex?: boolean;
   schemas?: Record<string, any>[];
+  /** path เช่น /images/hero.webp — preload เพื่อช่วย LCP บนหน้าที่กำหนด */
+  lcpImageSrc?: string;
 }
 
 const {
@@ -24,7 +26,11 @@ const {
   ogImage = absoluteUrl(SITE.ogImage),
   noindex = false,
   schemas = [],
+  lcpImageSrc,
 } = Astro.props;
+
+const fontStylesheet =
+  'https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap';
 ---
 
 <!doctype html>
@@ -45,10 +51,16 @@ const {
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    {
+      lcpImageSrc && (
+        <link rel="preload" as="image" href={absoluteUrl(lcpImageSrc)} fetchpriority="high" />
+      )
+    }
+    <!-- โหลดฟอนต์แบบไม่บล็อก FCP/LCP (media=print แล้วสลับเป็น all เมื่อโหลดเสร็จ) -->
+    <link href={fontStylesheet} rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href={fontStylesheet} />
+    </noscript>
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
