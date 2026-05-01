@@ -2,24 +2,27 @@
 import { SITE } from '../lib/seo';
 ---
 
-<div class="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 backdrop-blur sm:hidden">
-  <div class="mx-auto grid max-w-6xl grid-cols-2 gap-2 px-3 py-2">
+<div
+  class="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 pb-[max(0.5rem,env(safe-area-inset-bottom,0px))] pt-1 backdrop-blur sm:hidden"
+>
+  <div class="mx-auto grid max-w-6xl grid-cols-2 gap-2.5 px-3 py-2">
     <a
-      class="inline-flex min-w-0 items-center justify-center rounded-xl border border-slate-200 bg-white px-2 py-3 text-[11px] font-semibold leading-tight text-slate-900"
+      class="flex min-h-[4.5rem] min-w-0 flex-col items-center justify-center gap-1 rounded-2xl border-2 border-slate-200 bg-white px-2 py-2 text-slate-900 shadow-sm active:bg-slate-50"
       href={`tel:${SITE.telephone}`}
-      aria-label={`โทร ${SITE.telephone}`}
+      aria-label={`โทรเลย ${SITE.telephone}`}
     >
-      <span class="text-center">โทร {SITE.telephone}</span>
+      <span class="text-center text-[clamp(1.2rem,5.4vw,1.7rem)] font-black leading-none tracking-tight">โทรเลย</span>
+      <span class="text-center text-sm font-bold tabular-nums tracking-wide text-slate-700">{SITE.telephone}</span>
     </a>
     <a
-      class="inline-flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-xl bg-[#06C755] px-2 py-2.5 text-[11px] font-semibold leading-tight text-white"
+      class="flex min-h-[4.5rem] min-w-0 flex-col items-center justify-center gap-0 rounded-2xl bg-[#06C755] px-2 py-2 text-white shadow-md active:brightness-95"
       href={SITE.lineUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`แอดไลน์ ${SITE.lineHandle} ส่งรูปประเมินราคา`}
+      aria-label={`แอด LINE ${SITE.lineHandle} ส่งรูปประเมินราคา`}
     >
-      <span class="text-center">แอดไลน์ {SITE.lineHandle}</span>
-      <span class="text-center text-[10px] font-semibold opacity-95">ส่งรูปประเมินราคา</span>
+      <span class="text-center text-[clamp(1.05rem,4.6vw,1.45rem)] font-black leading-none tracking-tight">LINE</span>
+      <span class="text-center text-[clamp(1.2rem,5.2vw,1.65rem)] font-black leading-none tracking-tight">{SITE.lineHandle}</span>
     </a>
   </div>
 </div>
