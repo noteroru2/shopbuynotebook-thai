@@ -10,6 +10,21 @@ export function absoluteUrl(pathname: string) {
   return `${base}${path}`;
 }
 
+/** แปลง srcset แบบ path โลคัลเป็น URL เต็ม สำหรับ `<link rel=preload imagesrcset>` */
+export function absoluteSrcset(srcset: string) {
+  return srcset
+    .split(',')
+    .map((part) => {
+      const t = part.trim();
+      const i = t.lastIndexOf(' ');
+      if (i <= 0) return t;
+      const url = t.slice(0, i).trim();
+      const descriptor = t.slice(i + 1).trim();
+      return `${absoluteUrl(url)} ${descriptor}`;
+    })
+    .join(', ');
+}
+
 export function localBusinessSchema(opts?: { description?: string }) {
   const description = opts?.description ?? SITE.description;
 

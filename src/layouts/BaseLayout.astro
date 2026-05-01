@@ -4,7 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StickyMobileCTA from '../components/StickyMobileCTA.astro';
 import JsonLd from '../components/JsonLd.astro';
-import { absoluteUrl, localBusinessSchema } from '../lib/seo';
+import { absoluteUrl, absoluteSrcset, localBusinessSchema } from '../lib/seo';
 import { organizationSchema, webPageSchema, webSiteSchema } from '../lib/schema';
 import { SITE } from '../config/site';
 
@@ -17,6 +17,9 @@ interface Props {
   schemas?: Record<string, any>[];
   /** path เช่น /images/hero.webp — preload เพื่อช่วย LCP บนหน้าที่กำหนด */
   lcpImageSrc?: string;
+  /** srcset แบบ path โลคัล เช่น `/a.webp 640w, /b.webp 1024w` — ใช้คู่กับ lcpImageSizes */
+  lcpImageSrcset?: string;
+  lcpImageSizes?: string;
 }
 
 const {
@@ -27,6 +30,8 @@ const {
   noindex = false,
   schemas = [],
   lcpImageSrc,
+  lcpImageSrcset,
+  lcpImageSizes,
 } = Astro.props;
 
 const fontStylesheet =
@@ -52,9 +57,19 @@ const fontStylesheet =
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     {
-      lcpImageSrc && (
-        <link rel="preload" as="image" href={absoluteUrl(lcpImageSrc)} fetchpriority="high" />
-      )
+      lcpImageSrc &&
+        (lcpImageSrcset && lcpImageSizes ? (
+          <link
+            rel="preload"
+            as="image"
+            href={absoluteUrl(lcpImageSrc)}
+            imagesrcset={absoluteSrcset(lcpImageSrcset)}
+            imagesizes={lcpImageSizes}
+            fetchpriority="high"
+          />
+        ) : (
+          <link rel="preload" as="image" href={absoluteUrl(lcpImageSrc)} fetchpriority="high" />
+        ))
     }
     <!-- โหลดฟอนต์แบบไม่บล็อก FCP/LCP (media=print แล้วสลับเป็น all เมื่อโหลดเสร็จ) -->
     <link href={fontStylesheet} rel="stylesheet" media="print" onload="this.media='all'" />

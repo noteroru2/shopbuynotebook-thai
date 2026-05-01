@@ -30,6 +30,11 @@ const title = 'รับซื้อโน๊ตบุ๊ค ราคาดี 
 const description =
   'ร้านรับซื้อโน๊ตบุ๊ค รับซื้อโน๊ตบุ๊คมือสองทุกยี่ห้อ รับซื้อ Notebook, MacBook, Gaming Notebook และเครื่องเสียบางอาการ ส่งรูปเช็คราคาโน๊ตบุ๊คฟรีผ่าน LINE จ่ายเงินสดหรือโอนทันที';
 
+const heroImageSrc = '/images/home/rubsue-notebook-hero-team-640.webp';
+const heroImageSrcset =
+  '/images/home/rubsue-notebook-hero-team-640.webp 640w, /images/rubsue-notebook-hero-team.webp 1024w';
+const heroImageSizes = '(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 480px';
+
 const faqs = [
   {
     question: 'รับซื้อโน๊ตบุ๊คเสียไหม?',
@@ -77,14 +82,20 @@ const faqs = [
   title={title}
   description={description}
   schemas={[faqPageSchema(faqs)]}
-  lcpImageSrc="/images/rubsue-notebook-hero-team.webp"
+  lcpImageSrc={heroImageSrc}
+  lcpImageSrcset={heroImageSrcset}
+  lcpImageSizes={heroImageSizes}
 >
   <div class="absolute inset-x-0 top-0 -z-10 h-[520px] bg-gradient-to-b from-slate-50/80 to-transparent"></div>
   <Hero
     title="รับซื้อโน๊ตบุ๊คมือสอง ประเมินไว จ่ายเงินสด"
     titleHtml={`<span class="block"><span class="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">รับซื้อโน๊ตบุ๊ค</span>มือสอง</span><span class="mt-1 block">ประเมินไว <span class="relative inline-flex items-center rounded-full bg-[#FACC15]/45 px-3 py-1 text-slate-900">จ่ายเงินสด</span></span>`}
     subtitle="ส่งรูปเครื่องผ่าน LINE เพื่อเช็คราคาเบื้องต้นฟรี รับซื้อทั้งเครื่องดี เครื่องเก่า และเครื่องเสียบางอาการ"
-    imageSrc="/images/rubsue-notebook-hero-team.webp"
+    imageSrc={heroImageSrc}
+    imageSrcset={heroImageSrcset}
+    imageSizes={heroImageSizes}
+    imageWidth={640}
+    imageHeight={480}
     imageAlt="ทีมงานตรวจสภาพโน๊ตบุ๊คก่อนประเมินราคา"
   />
   <MiniProcessBarDark />
