@@ -1,8 +1,8 @@
 # Cloudflare Pages (และโฮสต์ที่รองรับไฟล์ _headers)
-# ลดปัญหา Lighthouse "ใช้อายุการใช้งานแคชที่มีประสิทธิภาพ" — เดิมมักได้ ~4 ชม. จาก edge
+# ลดปัญหา Lighthouse / แนวทาง Google: Cache-Control max-age=31536000 (1 ปี) สำหรับสแตติก
 
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
 /images/*
-  Cache-Control: public, max-age=2592000
+  Cache-Control: public, max-age=31536000
