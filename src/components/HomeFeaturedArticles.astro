@@ -1,0 +1,62 @@
+---
+import { getCollection } from 'astro:content';
+import { HOME_FEATURED_BLOG_SLUGS } from '../data/home-featured-blog';
+
+const toSlug = (p: { id: string; data: { slug?: string } }) =>
+  p.data.slug ? p.data.slug : String(p.id).replace(/\.(md|mdx)$/i, '');
+
+const all = await getCollection('blog');
+const bySlug = new Map(all.map((p) => [toSlug(p), p]));
+const posts = HOME_FEATURED_BLOG_SLUGS.map((s) => bySlug.get(s)).filter(Boolean);
+---
+
+{
+  posts.length > 0 && (
+    <section
+      id="featured-articles"
+      class="mx-auto w-full max-w-6xl px-4 pt-10"
+      aria-labelledby="home-featured-articles-heading"
+    >
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2
+              id="home-featured-articles-heading"
+              class="text-xl font-extrabold tracking-tight text-slate-900 sm:text-2xl"
+            >
+              บทความแนะนำ: รับซื้อโน๊ตบุ๊ค เช็คราคา และประเมินราคา
+            </h2>
+            <p class="mt-2 max-w-3xl text-sm leading-relaxed text-slate-600">
+              สรุปขั้นตอนและคำศัพท์ที่คนหาบ่อยก่อนขายมือสอง — อ่านสั้น ๆ แล้วส่งรูปประเมินต่อได้ทันที
+            </p>
+          </div>
+          <a
+            class="mt-3 inline-flex shrink-0 text-sm font-extrabold text-emerald-700 underline underline-offset-4 hover:text-emerald-800 sm:mt-0"
+            href="/blog/"
+          >
+            ดูบทความทั้งหมด
+          </a>
+        </div>
+
+        <ul class="mt-6 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((p) => {
+            const slug = toSlug(p);
+            return (
+              <li>
+                <a
+                  href={`/blog/${slug}/`}
+                  class="flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50/80 p-4 transition hover:border-emerald-200 hover:bg-emerald-50/60"
+                >
+                  <span class="text-xs font-semibold text-slate-500">{p.data.category}</span>
+                  <span class="mt-1 text-base font-extrabold leading-snug text-slate-900">{p.data.title}</span>
+                  <span class="mt-2 line-clamp-2 flex-1 text-sm text-slate-600">{p.data.description}</span>
+                  <span class="mt-3 text-sm font-semibold text-emerald-700">อ่านบทความ →</span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
+  )
+}

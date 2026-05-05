@@ -24,11 +24,26 @@ import CTAButtons from '../components/CTAButtons.astro';
 import FinalCtaBanner from '../components/FinalCtaBanner.astro';
 import ServiceAreasSection from '../components/ServiceAreasSection.astro';
 import PopularServicesLinks from '../components/PopularServicesLinks.astro';
-import { faqPageSchema } from '../lib/seo';
+import HomeFeaturedArticles from '../components/HomeFeaturedArticles.astro';
+import { getCollection } from 'astro:content';
+import { HOME_FEATURED_BLOG_SLUGS } from '../data/home-featured-blog';
+import { faqPageSchema, absoluteUrl } from '../lib/seo';
+import { itemListSchema } from '../lib/schema';
 
 const title = 'รับซื้อโน๊ตบุ๊ค ราคาดี ประเมินฟรี จ่ายเงินสด | ร้านรับซื้อโน๊ตบุ๊ค.com';
 const description =
-  'ร้านรับซื้อโน๊ตบุ๊ค รับซื้อโน๊ตบุ๊คมือสองทุกยี่ห้อ รับซื้อ Notebook, MacBook, Gaming Notebook และเครื่องเสียบางอาการ ส่งรูปเช็คราคาโน๊ตบุ๊คฟรีผ่าน LINE จ่ายเงินสดหรือโอนทันที';
+  'ร้านรับซื้อโน๊ตบุ๊ค รับซื้อโน๊ตบุ๊คมือสองทุกยี่ห้อ รับซื้อ Notebook, MacBook, Gaming Notebook และเครื่องเสียบางอาการ ส่งรูปเช็คราคาโน๊ตบุ๊ค ประเมินราคาโน๊ตบุ๊คฟรีผ่าน LINE จ่ายเงินสดหรือโอนทันที';
+
+const toSlug = (p: { id: string; data: { slug?: string } }) =>
+  p.data.slug ? p.data.slug : String(p.id).replace(/\.(md|mdx)$/i, '');
+
+const allBlogPosts = await getCollection('blog');
+const postBySlug = new Map(allBlogPosts.map((p) => [toSlug(p), p]));
+const homeFeaturedPosts = HOME_FEATURED_BLOG_SLUGS.map((s) => postBySlug.get(s)).filter(Boolean);
+const featuredArticleListItems = homeFeaturedPosts.map((p) => ({
+  name: p.data.title,
+  url: absoluteUrl(`/blog/${toSlug(p)}/`),
+}));
 
 const heroImageSrc = '/images/home/rubsue-notebook-hero-team-640.webp';
 const heroImageSrcset =
@@ -77,11 +92,24 @@ const faqs = [
       'กรณีติดรหัส Windows/Apple ID ต้องปลดล็อกได้ก่อนเพื่อความถูกต้องในการรับซื้อ แนะนำเตรียมข้อมูลบัญชีเพื่อปลดก่อนนัดส่งเครื่อง',
   },
 ];
+
+const schemas = [
+  faqPageSchema(faqs),
+  ...(featuredArticleListItems.length > 0
+    ? [
+        itemListSchema({
+          name: 'บทความแนะนำเกี่ยวกับรับซื้อโน๊ตบุ๊ค เช็คราคา และประเมินราคา',
+          url: absoluteUrl('/#featured-articles'),
+          items: featuredArticleListItems,
+        }),
+      ]
+    : []),
+];
 ---
 <BaseLayout
   title={title}
   description={description}
-  schemas={[faqPageSchema(faqs)]}
+  schemas={schemas}
   lcpImageSrc={heroImageSrc}
   lcpImageSrcset={heroImageSrcset}
   lcpImageSizes={heroImageSizes}
@@ -102,6 +130,7 @@ const faqs = [
 
   <TrustBadges />
   <SeoIntroSection />
+  <HomeFeaturedArticles />
   <SoftImageStrip />
   <ProcessSteps />
   <PhotoGuide />
