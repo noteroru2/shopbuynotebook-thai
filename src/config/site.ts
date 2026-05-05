@@ -2,6 +2,19 @@ import { flattenServiceAreas, serviceAreaGroups } from '../data/service-areas';
 
 export const SITE = {
   name: 'ร้านรับซื้อโน๊ตบุ๊ค.com',
+  /** นิติบุคคลผู้ดำเนินเว็บไซต์ / ใช้อ้างอิงที่อยู่จดทะเบียน */
+  companyLegalName: 'บริษัท อำพล เทรดดิ้ง จำกัด',
+  /** ที่อยู่จดทะเบียน (แสดงบนเว็บและ structured data) */
+  companyRegisteredAddress:
+    '740/8 ถนนชยางกูร ตำบลในเมือง อำเภอเมืองอุบลราชธานี จังหวัดอุบลราชธานี 34000',
+  /** แยกฟิลด์สำหรับ Schema.org PostalAddress */
+  companyPostalAddress: {
+    streetAddress: '740/8 ถนนชยางกูร ตำบลในเมือง',
+    addressLocality: 'เมืองอุบลราชธานี',
+    addressRegion: 'อุบลราชธานี',
+    postalCode: '34000',
+    addressCountry: 'TH',
+  },
   /** ชื่อหน้าร้านจริงบน Google Maps / Google Business Profile */
   physicalStoreName: 'ร้านอำพล เทรดดิ้ง',
   /** ลิงก์ไปที่หน้าร้านจริง (Google Maps) */
@@ -18,6 +31,9 @@ export const SITE = {
   lineHandle: '@webuy',
   logo: '/images/logo-ranrubsue-notebook-black.webp',
   ogImage: '/images/rubsue-notebook-og.webp',
+  /** ขนาดรูป OG เริ่มต้น (ใช้ใน meta og:image:width/height) */
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
   language: 'th-TH',
   localeOg: 'th_TH',
   sameAs: {

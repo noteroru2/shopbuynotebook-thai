@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { absoluteUrl } from '../lib/seo';
+import { SITE, absoluteUrl } from '../lib/seo';
 
 const title = 'นโยบายความเป็นส่วนตัว | ร้านรับซื้อโน๊ตบุ๊ค.com';
 const description =
@@ -49,6 +49,11 @@ const canonical = absoluteUrl('/นโยบายความเป็นส่
     <h2>การติดต่อ</h2>
     <p>
       หากมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัว สามารถติดต่อได้ที่หน้า <a href="/ติดต่อเรา/">ติดต่อเรา</a>
+    </p>
+    <p class="mt-4 text-sm text-slate-600">
+      ผู้ควบคุมข้อมูลส่วนบุคคลตามเว็บไซต์นี้: <strong>{SITE.companyLegalName}</strong>
+      <br />
+      ที่อยู่จดทะเบียน: {SITE.companyRegisteredAddress}
     </p>
   </article>
 </BaseLayout>

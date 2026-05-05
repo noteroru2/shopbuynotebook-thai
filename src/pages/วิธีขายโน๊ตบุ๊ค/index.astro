@@ -4,6 +4,7 @@ import FAQ from '../../components/FAQ.astro';
 import SeoCTA from '../../components/SeoCTA.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
 import { absoluteUrl, breadcrumbListSchema, faqPageSchema } from '../../lib/seo';
+import { howToSchema } from '../../lib/schema';
 import { pricingFaqs, generalFaqs } from '../../data/faqs';
 
 const title = 'วิธีขายโน๊ตบุ๊คมือสองให้ได้ราคาดีและปลอดภัย | ร้านรับซื้อโน๊ตบุ๊ค.com';
@@ -17,7 +18,43 @@ const breadcrumbs = [
 ];
 
 const faqs = [...generalFaqs, ...pricingFaqs].slice(0, 8);
-const schemas = [breadcrumbListSchema(breadcrumbs), faqPageSchema(faqs)];
+const howToSteps = [
+  {
+    name: 'รวบรวมข้อมูลรุ่น/สเปก',
+    text: 'ระบุ CPU, RAM, SSD และถ้ามี GPU — ช่วยให้ประเมินราคาใกล้เคียงขึ้น',
+  },
+  {
+    name: 'ถ่ายรูป 3–5 รูป',
+    text: 'หน้าเครื่องเปิดจอ คีย์บอร์ด ใต้เครื่อง/สติ๊กเกอร์รุ่น มุมเครื่อง และรอยตำหนิ (ถ้ามี)',
+  },
+  {
+    name: 'แจ้งสภาพ/อาการตรง ๆ',
+    text: 'เช่น แบตเสื่อม จอเป็นเส้น เปิดไม่ติด หรือไม่มีที่ชาร์จ — ลดการถามซ้ำและได้กรอบราคาใกล้เคียงขึ้น',
+  },
+  {
+    name: 'ส่งประเมินราคาเบื้องต้นผ่าน LINE',
+    text: 'คุยช่วงราคาและเงื่อนไขก่อนนัดรับหรือส่งเครื่อง',
+  },
+  {
+    name: 'สำรองและล้างข้อมูล',
+    text: 'เพื่อความปลอดภัยของข้อมูลส่วนตัวก่อนส่งมอบจริง',
+  },
+  {
+    name: 'นัดรับ/ส่งเครื่อง',
+    text: 'เลือกวิธีที่เหมาะกับพื้นที่และความสะดวก แล้วรับเงินทันทีตามที่ตกลง',
+  },
+];
+const schemas = [
+  breadcrumbListSchema(breadcrumbs),
+  faqPageSchema(faqs),
+  howToSchema({
+    name: 'วิธีขายโน๊ตบุ๊คมือสองให้ได้ราคาดีและประเมินไว',
+    description:
+      'ขั้นตอนส่งข้อมูล ถ่ายรูป แจ้งสภาพ ประเมินผ่าน LINE ล้างข้อมูล และนัดรับหรือส่งเครื่องเพื่อรับเงิน',
+    url: canonical,
+    steps: howToSteps,
+  }),
+];
 ---
 
 <BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>

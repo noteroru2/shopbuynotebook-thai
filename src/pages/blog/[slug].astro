@@ -33,6 +33,10 @@ const breadcrumbs = [
   { name: post.data.title, url: canonical },
 ];
 const isoDate = (d: Date) => d.toISOString();
+const articleMeta = {
+  publishedTime: isoDate(post.data.date),
+  modifiedTime: post.data.dateModified ? isoDate(post.data.dateModified) : undefined,
+};
 const schemas = [
   breadcrumbListSchema(breadcrumbs),
   ...(post.data.faqs?.length ? [faqPageSchema(post.data.faqs)] : []),
@@ -43,6 +47,7 @@ const schemas = [
     datePublished: isoDate(post.data.date),
     dateModified: post.data.dateModified ? isoDate(post.data.dateModified) : undefined,
     image: post.data.featuredImage ? absoluteUrl(post.data.featuredImage) : undefined,
+    articleSection: post.data.category,
   }),
 ];
 ---
@@ -52,13 +57,17 @@ const schemas = [
   description={post.data.description}
   canonical={canonical}
   ogImage={post.data.ogImage ? absoluteUrl(post.data.ogImage) : post.data.featuredImage ? absoluteUrl(post.data.featuredImage) : undefined}
+  article={articleMeta}
   schemas={schemas}
 >
   <Breadcrumbs items={breadcrumbs} />
   <article class="mx-auto w-full max-w-6xl px-4 pb-10 pt-10">
     <header class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
       <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-        {post.data.category} • {post.data.date.toLocaleDateString('th-TH')}
+        {post.data.category} • เผยแพร่ {post.data.date.toLocaleDateString('th-TH')}
+        {post.data.dateModified ? (
+          <> • อัปเดตล่าสุด {post.data.dateModified.toLocaleDateString('th-TH')}</>
+        ) : null}
       </p>
       <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{post.data.title}</h1>
       <p class="mt-4 text-base leading-relaxed text-slate-600">{post.data.description}</p>

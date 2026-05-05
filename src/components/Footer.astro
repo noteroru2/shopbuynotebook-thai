@@ -42,6 +42,11 @@ import PartnerSites from './PartnerSites.astro';
           </p>
         </div>
         <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+          <p class="text-sm font-semibold text-slate-900">ที่อยู่จดทะเบียน</p>
+          <p class="mt-1 text-sm font-semibold text-slate-800">{SITE.companyLegalName}</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">{SITE.companyRegisteredAddress}</p>
+        </div>
+        <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4">
           <p class="text-sm font-semibold text-slate-900">หน้าร้านจริง</p>
           <p class="mt-1 text-sm text-slate-600">{SITE.physicalStoreName}</p>
           <a
@@ -79,6 +84,9 @@ import PartnerSites from './PartnerSites.astro';
           <li><a class="text-slate-600 hover:text-slate-900" href="/รับซื้อโน๊ตบุ๊ค/">รับซื้อโน๊ตบุ๊ค (รวมบริการ)</a></li>
           <li><a class="text-slate-600 hover:text-slate-900" href="/คำถามที่พบบ่อย/">คำถามที่พบบ่อย</a></li>
           <li><a class="text-slate-600 hover:text-slate-900" href="/นโยบายความเป็นส่วนตัว/">นโยบายความเป็นส่วนตัว</a></li>
+          <li>
+            <a class="text-slate-600 hover:text-slate-900" href="/ขั้นตอนและเงื่อนไขการให้บริการ/">ขั้นตอนและเงื่อนไขการให้บริการ</a>
+          </li>
           <li><a class="text-slate-600 hover:text-slate-900" href="/เว็บไซต์ในเครือ/">เว็บไซต์ในเครือ</a></li>
         </ul>
       </div>
@@ -128,7 +136,8 @@ import PartnerSites from './PartnerSites.astro';
     </div>
 
     <div class="mt-10 border-t border-slate-200 pt-6 text-xs text-slate-500">
-      <p>2026 ร้านรับซื้อโน๊ตบุ๊ค.com โดย บริษัท อำพล เทรดดิ้ง จำกัด</p>
+      <p>2026 ร้านรับซื้อโน๊ตบุ๊ค.com โดย {SITE.companyLegalName}</p>
+      <p class="mt-2 max-w-3xl leading-relaxed">{SITE.companyRegisteredAddress}</p>
     </div>
   </div>
 </footer>

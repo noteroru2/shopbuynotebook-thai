@@ -10,12 +10,18 @@ export async function GET(context: { site: URL }) {
     title: `${SITE.name} — บทความ`,
     description: 'บทความแนะนำเกี่ยวกับการขายโน๊ตบุ๊คมือสอง การเช็คราคา และการเตรียมเครื่องก่อนขาย',
     site: context.site,
-    items: posts.map((p) => ({
-      title: p.data.title,
-      description: p.data.description,
-      pubDate: p.data.date,
-      link: `/blog/${toSlug(p)}/`,
-    })),
+    xmlns: {
+      atom: 'http://www.w3.org/2005/Atom',
+    },
+    items: posts.map((p) => {
+      const updated = p.data.dateModified ?? p.data.date;
+      return {
+        title: p.data.title,
+        description: p.data.description,
+        pubDate: p.data.date,
+        link: `/blog/${toSlug(p)}/`,
+        customData: `<atom:updated>${updated.toUTCString()}</atom:updated>`,
+      };
+    }),
   });
 }
-

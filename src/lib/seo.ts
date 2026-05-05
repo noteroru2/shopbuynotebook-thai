@@ -25,6 +25,19 @@ export function absoluteSrcset(srcset: string) {
     .join(', ');
 }
 
+/** PostalAddress ตามที่อยู่จดทะเบียน — ใช้ใน Organization / LocalBusiness */
+export function companyPostalAddressSchema() {
+  const a = SITE.companyPostalAddress;
+  return {
+    '@type': 'PostalAddress',
+    streetAddress: a.streetAddress,
+    addressLocality: a.addressLocality,
+    addressRegion: a.addressRegion,
+    postalCode: a.postalCode,
+    addressCountry: a.addressCountry,
+  };
+}
+
 export function localBusinessSchema(opts?: { description?: string }) {
   const description = opts?.description ?? SITE.description;
 
@@ -35,6 +48,7 @@ export function localBusinessSchema(opts?: { description?: string }) {
     alternateName: SITE.physicalStoreName,
     url: SITE.url,
     telephone: SITE.telephone,
+    address: companyPostalAddressSchema(),
     areaServed: SITE.areaServed,
     description,
     hasMap: SITE.googleMapsUrl,
@@ -82,6 +96,7 @@ export function serviceSchema(opts: { name: string; url: string; description: st
       name: SITE.name,
       url: SITE.url,
       telephone: SITE.telephone,
+      address: companyPostalAddressSchema(),
     },
     areaServed: SITE.areaServed,
   };
