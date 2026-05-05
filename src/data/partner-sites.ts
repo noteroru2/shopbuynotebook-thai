@@ -28,6 +28,14 @@ export const partnerSites: PartnerSite[] = [
     recommendedAnchors: ['AMPHON TRADING', 'อำพล เทรดดิ้ง', 'เว็บไซต์บริษัทแม่'],
   },
   {
+    id: 'rubsoo-iphone',
+    brand: 'ร้านรับซื้อไอโฟน.com',
+    url: 'https://xn--c3c1abc0aub6fa0bi9d0h0a0eh.com/',
+    description: 'บริการรับซื้อ iPhone มือสอง ประเมินฟรีผ่านไลน์ เหมาะสำหรับผู้ที่ต้องการขายไอโฟนแบบรวดเร็ว',
+    category: 'broad-it',
+    recommendedAnchors: ['ร้านรับซื้อไอโฟน.com', 'รับซื้อไอโฟน', 'เช็คราคาไอโฟน'],
+  },
+  {
     id: 'wortrub',
     brand: 'เรารับซื้อ.com',
     url: 'https://xn--c3c3a0aa6cvaf8b9dze.com/',
@@ -79,7 +87,7 @@ export const partnerSites: PartnerSite[] = [
 ];
 
 /** ลำดับแสดงใน footer (brand anchor) */
-export const partnerFooterIds = ['amphon-trading', 'wortrub', 'webuy-hub', 'rubsoo-camera'] as const;
+export const partnerFooterIds = ['amphon-trading', 'wortrub', 'rubsoo-iphone', 'webuy-hub', 'rubsoo-camera'] as const;
 
 export const partnerCategoryThai: Record<PartnerCategory, string> = {
   corporate: 'บริษัท',
