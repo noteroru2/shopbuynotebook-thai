@@ -17,6 +17,25 @@ faqs:
     answer: มีผลครับ เพราะสะท้อนการใช้งานและสุขภาพแบต ถ้าสุขภาพแบตดีมักประเมินได้ดีกว่า
   - question: ล้างเครื่องแบบไหนถึงจะปลอดภัย
     answer: สำรองข้อมูลก่อน แล้วทำการ Erase/ติดตั้ง macOS ใหม่ตามขั้นตอนมาตรฐาน เพื่อไม่ให้ข้อมูลส่วนตัวค้างอยู่
+relatedLinks:
+  - label: รับซื้อ MacBook
+    href: /รับซื้อโน๊ตบุ๊ค/macbook/
+    description: หน้าหลักของบริการรับซื้อ MacBook
+  - label: รับซื้อ MacBook Air M5 ราคาเท่าไหร่
+    href: /blog/รับซื้อ-macbook-air-m5-ราคาเท่าไหร่/
+    description: ตัวอย่างรุ่น Air ที่คนค้นตรง
+  - label: รับซื้อ MacBook Pro M5 ราคาเท่าไหร่
+    href: /blog/รับซื้อ-macbook-pro-m5-ราคาเท่าไหร่/
+    description: ตัวอย่างรุ่น Pro ที่คนค้นตรง
+  - label: ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร
+    href: /blog/ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร/
+    description: คู่มือเรื่องความปลอดภัยของข้อมูลก่อนขาย
+  - label: รับซื้อ MacBook Battery Health มีผลต่อราคาไหม
+    href: /รับซื้อโน๊ตบุ๊ค/macbook-battery-health/
+    description: ทางลัดไปหน้า intent ที่คนขาย MacBook มักกังวลก่อนเช็กราคา
+  - label: รับซื้อ MacBook Pro M5 มือสอง
+    href: /รับซื้อโน๊ตบุ๊ค/macbook-pro-m5/
+    description: หน้า money page ตรงสำหรับคนต้องการส่งประเมินรุ่น Pro ล่าสุด
 ctaText: แอดไลน์ @webuy ส่งรูปประเมินราคา
 ---
 

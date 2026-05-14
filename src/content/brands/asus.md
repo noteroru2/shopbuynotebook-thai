@@ -30,3 +30,21 @@ ctaText: ส่งรูป Asus เพื่อประเมินไว
 - รูปหน้าจอขณะเปิดใช้งาน
 - รูปสเปก (CPU/RAM/SSD/GPU)
 
+## บทความที่เกี่ยวข้องกับ Asus Gaming
+
+- [รับซื้อ Asus TUF A15 และ F15](/รับซื้อโน๊ตบุ๊ค/asus-tuf-a15-f15/)
+- [รับซื้อ Asus ROG Strix](/รับซื้อโน๊ตบุ๊ค/asus-rog-strix/)
+- [รับซื้อ Asus Zephyrus](/รับซื้อโน๊ตบุ๊ค/asus-zephyrus/)
+- [รับซื้อ Asus Zephyrus G14](/รับซื้อโน๊ตบุ๊ค/asus-zephyrus-g14/)
+- [รับซื้อ Asus Zephyrus G16](/รับซื้อโน๊ตบุ๊ค/asus-zephyrus-g16/)
+- [รับซื้อ Asus ROG Flow](/รับซื้อโน๊ตบุ๊ค/asus-rog-flow/)
+- [รับซื้อ Asus TUF และ ROG ราคาเท่าไหร่](/blog/รับซื้อ-asus-tuf-rog-ราคาเท่าไหร่/)
+- [รับซื้อ Gaming Notebook RTX 3050 4050 4060 ราคาเท่าไหร่](/blog/รับซื้อ-gaming-notebook-rtx-3050-4050-4060-ราคาเท่าไหร่/)
+- [Gaming Notebook มือสองขายได้ราคาดีกว่าไหม](/blog/gaming-notebook-มือสองขายได้ราคาดีกว่าไหม/)
+
+## บทความและหน้า keyword สำหรับ Asus สายทำงาน
+
+- [รับซื้อ Asus Zenbook](/รับซื้อโน๊ตบุ๊ค/asus-zenbook/)
+- [รับซื้อ Asus Vivobook](/รับซื้อโน๊ตบุ๊ค/asus-vivobook/)
+- [รับซื้อ Asus Zenbook และ Vivobook ราคาเท่าไหร่](/blog/รับซื้อ-asus-zenbook-vivobook-ราคาเท่าไหร่/)
+

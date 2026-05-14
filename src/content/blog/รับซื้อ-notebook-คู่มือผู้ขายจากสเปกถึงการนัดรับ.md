@@ -16,6 +16,21 @@ faqs:
     answer: รู้รุ่น CPU RAM SSD และสภาพจอแบตเป็นพื้นฐานก็เพียงพอสำหรับการเริ่มประเมิน
 ctaText: ไปหน้ารับซื้อ Notebook
 relatedLinks:
+  - label: หน้าเงินหลักรับซื้อโน๊ตบุ๊ค
+    href: /รับซื้อโน๊ตบุ๊ค/
+    description: รวมหน้า money page ทั้งแบรนด์ รุ่น และเงื่อนไขหลัก
+  - label: รับซื้อ MacBook ทุกรุ่น
+    href: /รับซื้อโน๊ตบุ๊ค/macbook/
+    description: เชื่อม cluster MacBook สำหรับผู้ขายที่ใช้เครื่อง Apple
+  - label: รับซื้อ Gaming Notebook
+    href: /รับซื้อโน๊ตบุ๊ค/gaming/
+    description: เชื่อม cluster เกมมิ่งสำหรับผู้ขายที่ต้องการตีราคาตามสเปก
+  - label: พื้นที่ให้บริการ
+    href: /พื้นที่ให้บริการ/
+    description: ปิด intent เรื่องพื้นที่และการนัดรับในจังหวัดต่าง ๆ
+  - label: ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร
+    href: /blog/ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร/
+    description: support article สำหรับปิดข้อกังวลก่อนนัดส่งมอบ
   - label: รับซื้อ Notebook
     href: /รับซื้อ-notebook/
   - label: รับซื้อโน๊ตบุ๊คทุกยี่ห้อ

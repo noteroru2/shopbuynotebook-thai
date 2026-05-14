@@ -23,3 +23,18 @@ ctaText: ส่งรูป Surface เพื่อประเมินไว
 
 Surface มีหลายรุ่นและอุปกรณ์เสริมหลากหลาย. แนะนำส่งรูปอุปกรณ์ที่มีให้ครบเพื่อให้ประเมินได้ไวขึ้น
 
+## หน้า keyword รับซื้อตรง
+
+- [รับซื้อ Surface Laptop](/รับซื้อโน๊ตบุ๊ค/surface-laptop/)
+- [รับซื้อ Surface Pro](/รับซื้อโน๊ตบุ๊ค/surface-pro/)
+
+## บทความที่เกี่ยวข้อง
+
+- [รับซื้อ Surface Laptop และ Surface Pro ราคาเท่าไหร่](/blog/รับซื้อ-surface-laptop-pro-ราคาเท่าไหร่/)
+- [รับซื้อ Surface Laptop Go Book และ Pro ราคาเท่าไหร่](/blog/รับซื้อ-surface-laptop-go-book-pro-ราคาเท่าไหร่/)
+
+## หน้ารับซื้อตรงที่เพิ่มล่าสุด
+
+- [รับซื้อ Surface Laptop Go](/รับซื้อโน๊ตบุ๊ค/surface-laptop-go/)
+- [รับซื้อ Surface Book](/รับซื้อโน๊ตบุ๊ค/surface-book/)
+

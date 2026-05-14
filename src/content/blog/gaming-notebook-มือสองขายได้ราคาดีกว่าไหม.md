@@ -16,6 +16,25 @@ faqs:
     answer: ขายได้ครับ แต่อาจมีผลต่อราคาเพราะเกี่ยวกับการใช้งานจริงและความเสี่ยง แนะนำแจ้งตรง ๆ เพื่อประเมินตามสภาพจริง
   - question: เปิดไม่ติดหรือจอแตกยังรับซื้อไหม
     answer: หลายกรณียังส่งประเมินได้ครับ แนะนำส่งวิดีโออาการและรูปสติ๊กเกอร์รุ่น เพื่อประเมินเบื้องต้นให้ตรงขึ้น
+relatedLinks:
+  - label: รับซื้อ Gaming Notebook
+    href: /รับซื้อโน๊ตบุ๊ค/gaming/
+    description: หน้ารวมบริการสำหรับสายเกมมิ่ง
+  - label: รับซื้อ Gaming Notebook RTX 3050 4050 4060 ราคาเท่าไหร่
+    href: /blog/รับซื้อ-gaming-notebook-rtx-3050-4050-4060-ราคาเท่าไหร่/
+    description: ดูผลของ GPU ระดับกลางต่อราคา
+  - label: รับซื้อ Gaming Notebook RTX 4070 4080 4090 ราคาเท่าไหร่
+    href: /blog/รับซื้อ-gaming-notebook-rtx-4070-4080-4090-ราคาเท่าไหร่/
+    description: ดูกลุ่มสเปกสูงต่อราคา
+  - label: รับซื้อ Asus ROG Strix และ Zephyrus ราคาเท่าไหร่
+    href: /blog/รับซื้อ-asus-rog-strix-zephyrus-ราคาเท่าไหร่/
+    description: ตัวอย่างรุ่นย่อยเกมมิ่งยอดนิยม
+  - label: รับซื้อ ASUS ROG Strix มือสอง
+    href: /รับซื้อโน๊ตบุ๊ค/asus-rog-strix/
+    description: หน้า money page ตรงสำหรับคนขาย ROG Strix
+  - label: รับซื้อ Alienware m16 มือสอง
+    href: /รับซื้อโน๊ตบุ๊ค/alienware-m16/
+    description: หน้า money page สำหรับสายเกมมิ่งสเปกสูงที่ต้องการเช็กราคาไว
 ctaText: แอดไลน์ @webuy ส่งรูปประเมินราคา
 ---
 
