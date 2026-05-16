@@ -7,6 +7,8 @@ import sitemap from '@astrojs/sitemap';
 
 import mdx from '@astrojs/mdx';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/',
@@ -24,4 +26,6 @@ export default defineConfig({
       assetsInlineLimit: 20480,
     },
   },
+
+  adapter: cloudflare(),
 });
