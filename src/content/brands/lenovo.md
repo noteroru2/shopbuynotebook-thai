@@ -40,7 +40,9 @@ Lenovo มีรุ่นยอดนิยมหลายกลุ่ม ทั
 - [รับซื้อ ThinkPad T14](/รับซื้อโน๊ตบุ๊ค/thinkpad-t14/)
 - [รับซื้อ ThinkPad X1 Carbon](/รับซื้อโน๊ตบุ๊ค/thinkpad-x1-carbon/)
 - [รับซื้อ ThinkPad E14 และ E15](/รับซื้อโน๊ตบุ๊ค/thinkpad-e14-e15/)
+- [รับซื้อ Lenovo ThinkBook](/รับซื้อโน๊ตบุ๊ค/lenovo-thinkbook/)
 - [รับซื้อ ThinkPad X1 Carbon T14 และ E14 E15 ราคาเท่าไหร่](/blog/รับซื้อ-thinkpad-x1-carbon-t14-e14-e15-ราคาเท่าไหร่/)
+- [รับซื้อ Lenovo ThinkBook ราคาเท่าไหร่](/blog/รับซื้อ-lenovo-thinkbook-ราคาเท่าไหร่/)
 
 ## บทความและหน้า keyword สำหรับ Lenovo สายใช้งานทั่วไป
 

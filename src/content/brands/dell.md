@@ -38,7 +38,9 @@ ctaText: ส่งรูป Dell เพื่อประเมินไว
 
 - [รับซื้อ Dell Latitude](/รับซื้อโน๊ตบุ๊ค/dell-latitude/)
 - [รับซื้อ Dell XPS 13 และ 15](/รับซื้อโน๊ตบุ๊ค/dell-xps-13-15/)
+- [รับซื้อ Dell Vostro](/รับซื้อโน๊ตบุ๊ค/dell-vostro/)
 - [รับซื้อ Dell Latitude และ XPS ราคาเท่าไหร่](/blog/รับซื้อ-dell-latitude-xps-ราคาเท่าไหร่/)
 - [รับซื้อ Dell Inspiron 15](/รับซื้อโน๊ตบุ๊ค/dell-inspiron-15/)
 - [รับซื้อ Dell Inspiron Latitude และ XPS ราคาเท่าไหร่](/blog/รับซื้อ-dell-inspiron-latitude-xps-ราคาเท่าไหร่/)
+- [รับซื้อ Dell Vostro ราคาเท่าไหร่](/blog/รับซื้อ-dell-vostro-ราคาเท่าไหร่/)
 

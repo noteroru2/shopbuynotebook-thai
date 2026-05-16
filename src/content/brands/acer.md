@@ -39,5 +39,7 @@ ctaText: ส่งรูป Acer เพื่อประเมินไว
 
 - [รับซื้อ Acer Swift](/รับซื้อโน๊ตบุ๊ค/acer-swift/)
 - [รับซื้อ Acer Aspire 5](/รับซื้อโน๊ตบุ๊ค/acer-aspire-5/)
+- [รับซื้อ Acer TravelMate](/รับซื้อโน๊ตบุ๊ค/acer-travelmate/)
 - [รับซื้อ Acer Swift และ Aspire ราคาเท่าไหร่](/blog/รับซื้อ-acer-swift-aspire-ราคาเท่าไหร่/)
+- [รับซื้อ Acer TravelMate ราคาเท่าไหร่](/blog/รับซื้อ-acer-travelmate-ราคาเท่าไหร่/)
 

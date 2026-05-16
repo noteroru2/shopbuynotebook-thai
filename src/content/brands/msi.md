@@ -32,6 +32,8 @@ ctaText: ส่งรูป MSI เพื่อประเมินไว
 - [รับซื้อ MSI Stealth 14](/รับซื้อโน๊ตบุ๊ค/msi-stealth-14/)
 - [รับซื้อ MSI Stealth 16](/รับซื้อโน๊ตบุ๊ค/msi-stealth-16/)
 - [รับซื้อ MSI Vector 16 HX](/รับซื้อโน๊ตบุ๊ค/msi-vector-16-hx/)
+- [รับซื้อ MSI Modern](/รับซื้อโน๊ตบุ๊ค/msi-modern/)
 - [รับซื้อ MSI Katana Cyborg Stealth Raider ราคาเท่าไหร่](/blog/รับซื้อ-msi-katana-cyborg-stealth-raider-ราคาเท่าไหร่/)
 - [รับซื้อ Gaming Notebook RTX 3050 4050 4060 ราคาเท่าไหร่](/blog/รับซื้อ-gaming-notebook-rtx-3050-4050-4060-ราคาเท่าไหร่/)
+- [รับซื้อ MSI Modern ราคาเท่าไหร่](/blog/รับซื้อ-msi-modern-ราคาเท่าไหร่/)
 

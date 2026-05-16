@@ -6,7 +6,7 @@ export type ServiceAreaGroup = {
 export const serviceAreaGroups: ServiceAreaGroup[] = [
   {
     group: 'กรุงเทพและปริมณฑล',
-    areas: ['กรุงเทพมหานคร', 'นนทบุรี', 'ปทุมธานี', 'สมุทรปราการ', 'นครปฐม', 'สมุทรสาคร'],
+    areas: ['กรุงเทพ', 'นนทบุรี', 'ปทุมธานี', 'สมุทรปราการ', 'นครปฐม', 'สมุทรสาคร'],
   },
   {
     group: 'ภาคอีสาน',
@@ -48,4 +48,3 @@ export function flattenServiceAreas(groups: ServiceAreaGroup[] = serviceAreaGrou
   for (const g of groups) out.push(...g.areas);
   return Array.from(new Set(out));
 }
-

@@ -38,6 +38,7 @@ ctaText: ส่งรูป Asus เพื่อประเมินไว
 - [รับซื้อ Asus Zephyrus G14](/รับซื้อโน๊ตบุ๊ค/asus-zephyrus-g14/)
 - [รับซื้อ Asus Zephyrus G16](/รับซื้อโน๊ตบุ๊ค/asus-zephyrus-g16/)
 - [รับซื้อ Asus ROG Flow](/รับซื้อโน๊ตบุ๊ค/asus-rog-flow/)
+- [รับซื้อ Asus ROG Ally X](/รับซื้อโน๊ตบุ๊ค/asus-rog-ally-x/)
 - [รับซื้อ Asus TUF และ ROG ราคาเท่าไหร่](/blog/รับซื้อ-asus-tuf-rog-ราคาเท่าไหร่/)
 - [รับซื้อ Gaming Notebook RTX 3050 4050 4060 ราคาเท่าไหร่](/blog/รับซื้อ-gaming-notebook-rtx-3050-4050-4060-ราคาเท่าไหร่/)
 - [Gaming Notebook มือสองขายได้ราคาดีกว่าไหม](/blog/gaming-notebook-มือสองขายได้ราคาดีกว่าไหม/)
@@ -46,5 +47,7 @@ ctaText: ส่งรูป Asus เพื่อประเมินไว
 
 - [รับซื้อ Asus Zenbook](/รับซื้อโน๊ตบุ๊ค/asus-zenbook/)
 - [รับซื้อ Asus Vivobook](/รับซื้อโน๊ตบุ๊ค/asus-vivobook/)
+- [รับซื้อ Asus ExpertBook](/รับซื้อโน๊ตบุ๊ค/asus-expertbook/)
 - [รับซื้อ Asus Zenbook และ Vivobook ราคาเท่าไหร่](/blog/รับซื้อ-asus-zenbook-vivobook-ราคาเท่าไหร่/)
+- [รับซื้อ Asus ExpertBook ราคาเท่าไหร่](/blog/รับซื้อ-asus-expertbook-ราคาเท่าไหร่/)
 

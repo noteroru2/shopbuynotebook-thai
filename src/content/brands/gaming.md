@@ -32,6 +32,7 @@ ctaText: ส่งรูป Gaming Notebook เพื่อประเมิน
 - [รับซื้อ Asus Zephyrus G14](/รับซื้อโน๊ตบุ๊ค/asus-zephyrus-g14/)
 - [รับซื้อ Asus Zephyrus G16](/รับซื้อโน๊ตบุ๊ค/asus-zephyrus-g16/)
 - [รับซื้อ Asus ROG Flow](/รับซื้อโน๊ตบุ๊ค/asus-rog-flow/)
+- [รับซื้อ Asus ROG Ally X](/รับซื้อโน๊ตบุ๊ค/asus-rog-ally-x/)
 - [รับซื้อ Acer Nitro V](/รับซื้อโน๊ตบุ๊ค/acer-nitro-v/)
 - [รับซื้อ Acer Nitro 16](/รับซื้อโน๊ตบุ๊ค/acer-nitro-16/)
 - [รับซื้อ Acer Nitro 17](/รับซื้อโน๊ตบุ๊ค/acer-nitro-17/)
@@ -60,6 +61,8 @@ ctaText: ส่งรูป Gaming Notebook เพื่อประเมิน
 - [รับซื้อ MSI Stealth 14](/รับซื้อโน๊ตบุ๊ค/msi-stealth-14/)
 - [รับซื้อ MSI Stealth 16](/รับซื้อโน๊ตบุ๊ค/msi-stealth-16/)
 - [รับซื้อ MSI Vector 16 HX](/รับซื้อโน๊ตบุ๊ค/msi-vector-16-hx/)
+- [รับซื้อ Razer Blade](/รับซื้อโน๊ตบุ๊ค/razer-blade/)
+- [รับซื้อ Gigabyte Aorus](/รับซื้อโน๊ตบุ๊ค/gigabyte-aorus/)
 
 ## บทความแยกตามแบรนด์เกมมิ่ง
 
@@ -69,6 +72,8 @@ ctaText: ส่งรูป Gaming Notebook เพื่อประเมิน
 - [รับซื้อ HP Victus และ OMEN ราคาเท่าไหร่](/blog/รับซื้อ-hp-victus-omen-ราคาเท่าไหร่/)
 - [รับซื้อ Dell Alienware และ G Series ราคาเท่าไหร่](/blog/รับซื้อ-dell-alienware-g-series-ราคาเท่าไหร่/)
 - [รับซื้อ MSI Katana Cyborg Stealth Raider ราคาเท่าไหร่](/blog/รับซื้อ-msi-katana-cyborg-stealth-raider-ราคาเท่าไหร่/)
+- [รับซื้อ Gigabyte Aorus ราคาเท่าไหร่](/blog/รับซื้อ-gigabyte-aorus-ราคาเท่าไหร่/)
+- [รับซื้อ Razer Blade ราคาเท่าไหร่](/blog/รับซื้อ-razer-blade-ราคาเท่าไหร่/)
 
 ## บทความแยกตาม GPU
 

@@ -99,5 +99,33 @@
 - `รับซื้อ HP Victus 17`
 - `รับซื้อ Dell G15 และ G16`
 - `รับซื้อ MSI Vector 16 HX`
+- `รับซื้อ Asus ROG Ally X`
+- `รับซื้อ Asus ExpertBook`
+- `รับซื้อ Dell Vostro`
+- `รับซื้อ Lenovo ThinkBook`
+- `รับซื้อ Acer TravelMate`
+- `รับซื้อ MSI Modern`
+- `รับซื้อ HP Spectre x360`
+- `รับซื้อ Samsung Galaxy Book`
+- `รับซื้อ Huawei MateBook`
+- `รับซื้อ LG Gram`
+- `รับซื้อ Razer Blade`
+- `รับซื้อ Gigabyte Aorus`
+- `รับซื้อ Honor MagicBook`
 
 ชุดนี้ทำให้คลัสเตอร์ gaming direct pages ครอบคลุมมากขึ้นทั้งสายบางเบา สายคุ้มค่า และสายสเปกสูง โดยยังคงใช้บทความ GPU/แบรนด์เป็น support content และ internal link feeder
+
+บทความ support ที่เพิ่มต่อจากชุดนี้:
+
+- `รับซื้อ Asus ExpertBook ราคาเท่าไหร่`
+- `รับซื้อ Dell Vostro ราคาเท่าไหร่`
+- `รับซื้อ Lenovo ThinkBook ราคาเท่าไหร่`
+- `รับซื้อ Acer TravelMate ราคาเท่าไหร่`
+- `รับซื้อ MSI Modern ราคาเท่าไหร่`
+- `รับซื้อ HP Spectre x360 ราคาเท่าไหร่`
+- `รับซื้อ Samsung Galaxy Book ราคาเท่าไหร่`
+- `รับซื้อ Huawei MateBook ราคาเท่าไหร่`
+- `รับซื้อ LG Gram ราคาเท่าไหร่`
+- `รับซื้อ Honor MagicBook ราคาเท่าไหร่`
+- `รับซื้อ Gigabyte Aorus ราคาเท่าไหร่`
+- `รับซื้อ Razer Blade ราคาเท่าไหร่`

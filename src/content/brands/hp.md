@@ -42,5 +42,7 @@ ctaText: ส่งรูป HP เพื่อประเมินไว
 - [รับซื้อ HP EliteBook และ ProBook ราคาเท่าไหร่](/blog/รับซื้อ-hp-elitebook-probook-ราคาเท่าไหร่/)
 - [รับซื้อ HP Pavilion](/รับซื้อโน๊ตบุ๊ค/hp-pavilion/)
 - [รับซื้อ HP Envy x360](/รับซื้อโน๊ตบุ๊ค/hp-envy-x360/)
+- [รับซื้อ HP Spectre x360](/รับซื้อโน๊ตบุ๊ค/hp-spectre-x360/)
 - [รับซื้อ HP Pavilion Envy EliteBook และ ProBook ราคาเท่าไหร่](/blog/รับซื้อ-hp-pavilion-envy-elitebook-probook-ราคาเท่าไหร่/)
+- [รับซื้อ HP Spectre x360 ราคาเท่าไหร่](/blog/รับซื้อ-hp-spectre-x360-ราคาเท่าไหร่/)
 
