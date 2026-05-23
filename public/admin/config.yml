@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway # หรือ github
+  name: github
   branch: main
-  # repo: owner/repo  # ถ้าใช้ github ให้ปลดคอมเมนต์และใส่ repo จริง
-  # base_url: https://YOUR-OAUTH-SERVER  # ถ้าใช้ OAuth ภายนอก
-  # auth_endpoint: auth
+  repo: noteroru2/shopbuynotebook-thai
 
 local_backend: true
 

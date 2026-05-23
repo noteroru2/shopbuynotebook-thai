@@ -39,6 +39,8 @@ ctaText: แอดไลน์ @webuy ส่งรูปประเมินร
 
 ถ่ายภาพหน้าจอส่วนที่มี “Device name / Processor / Installed RAM / Device specifications” แล้วส่งให้ร้านได้เลย
 
+![โน๊ตบุ๊ค ASUS VivoBook OLED ที่เปิดแสดงหน้าจอ Windows อย่างชัดเจนสำหรับตรวจสอบรุ่นและสเปกเครื่อง](/images/blog/asus-vivobook-oled.webp)
+
 ### 2) ดูจาก System Information (ละเอียดขึ้น)
 
 1. กดปุ่ม Windows แล้วพิมพ์ `msinfo32`
