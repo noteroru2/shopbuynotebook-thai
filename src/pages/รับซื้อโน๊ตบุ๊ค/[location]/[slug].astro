@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProcessSteps from '../../../components/ProcessSteps.astro';
+import CTAButtons from '../../../components/CTAButtons.astro';
+import FAQ from '../../../components/FAQ.astro';
+import { getCollection } from 'astro:content';
+import { absoluteUrl, SITE, serviceSchema, breadcrumbListSchema } from '../../../lib/seo';
+
+export async function getStaticPaths() {
+  const [brands, conditions, locations] = await Promise.all([
+    getCollection('brands'),
+    getCollection('conditions'),
+    getCollection('locations'),
+  ]);
+
+  const paths = [];
+  for (const loc of locations) {
+    for (const brand of brands) {
+      paths.push({
+        params: { location: loc.data.slug, slug: brand.data.slug },
+        props: { location: loc, item: brand, type: 'brand' },
+      });
+    }
+    for (const cond of conditions) {
+      paths.push({
+        params: { location: loc.data.slug, slug: cond.data.slug },
+        props: { location: loc, item: cond, type: 'condition' },
+      });
+    }
+  }
+  return paths;
+}
+
+const { location, item, type } = Astro.props;
+
+const isBrand = type === 'brand';
+const itemName = item.data.title;
+const locName = location.data.title;
+
+const pageTitle = isBrand 
+  ? `รับซื้อโน๊ตบุ๊ค ${itemName} ${locName} ตีราคาไว ให้ราคาสูง | ร้านรับซื้อโน๊ตบุ๊ค.com`
+  : `รับซื้อโน๊ตบุ๊ค ${itemName} ${locName} ประเมินไวตามสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com`;
+
+const pageDescription = isBrand
+  ? `หาร้านรับซื้อโน๊ตบุ๊ค ${itemName} ใน ${locName} อยู่ใช่ไหม? เรารับซื้อ ${itemName} มือสอง ตีราคาไวผ่าน LINE นัดรับถึงที่ใน ${locName} จ่ายเงินสดทันที ไม่มีหักค่าใช้จ่าย`
+  : `รับซื้อโน๊ตบุ๊ค ${itemName} นัดรับถึงที่ใน ${locName} ประเมินราคาฟรีผ่าน LINE ถ่ายรูปแจ้งอาการ ส่งเช็คราคาได้เลย จ่ายเงินสดทันที`;
+
+const canonical = absoluteUrl(`/รับซื้อโน๊ตบุ๊ค/${location.data.slug}/${item.data.slug}/`);
+const h1 = `รับซื้อโน๊ตบุ๊ค ${itemName} ${locName}`;
+
+const breadcrumbs = [
+  { name: 'หน้าแรก', url: absoluteUrl('/') },
+  { name: 'รับซื้อโน๊ตบุ๊ค', url: absoluteUrl('/รับซื้อโน๊ตบุ๊ค/') },
+  { name: `รับซื้อโน๊ตบุ๊ค ${locName}`, url: absoluteUrl(`/รับซื้อโน๊ตบุ๊ค/${location.data.slug}/`) },
+  { name: `${itemName} ${locName}`, url: canonical },
+];
+
+const faqs = [
+  {
+    question: `รับซื้อโน๊ตบุ๊ค ${itemName} ใน ${locName} นัดรับที่ไหนได้บ้าง?`,
+    answer: `เรามีบริการนัดรับในเขต ${locName} ตามจุดที่ลูกค้าสะดวก เช่น ห้างสรรพสินค้า, ปั๊มน้ำมัน, หรือจุดนัดพบที่ปลอดภัย สามารถส่งโลเคชั่นให้ทีมงานผ่าน LINE เพื่อประเมินการเดินทางได้เลยครับ`
+  },
+  {
+    question: `ใช้เวลาประเมินราคานานไหม?`,
+    answer: `ปกติหากส่งรูปและข้อมูลครบถ้วน ทีมงานจะใช้เวลาประเมินราคาเพียง 5-10 นาทีเท่านั้นครับ หลังจากตกลงราคาได้แล้ว สามารถนัดรับใน ${locName} ได้ทันที หรือส่งเครื่องตามสะดวก`
+  },
+  {
+    question: `ต้องเตรียมอะไรบ้างก่อนขายให้ได้ราคาดี?`,
+    answer: `1. ถ่ายรูปเครื่องทุกมุมให้ชัดเจน 2. แจ้งสเปก (CPU, RAM, SSD, GPU) 3. เตรียมที่ชาร์จแท้ และกล่อง (ถ้ามี) 4. แจ้งตำหนิตามจริง หากข้อมูลครบถ้วน ทีมงานใน ${locName} จะสามารถตีราคาได้รวดเร็วและแม่นยำที่สุดครับ`
+  }
+];
+
+const schemas = [
+  breadcrumbListSchema(breadcrumbs),
+  serviceSchema({
+    name: `รับซื้อโน๊ตบุ๊ค ${itemName} ${locName}`,
+    description: pageDescription,
+    url: canonical,
+  }),
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  }
+];
+
+const meetingOptions = location.data.meetingOptions ?? [];
+const subAreas = location.data.subAreas ?? [];
+const detailsList = isBrand ? (item.data.popularModels ?? []) : (item.data.whatWeBuy ?? []);
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonical={canonical} schemas={schemas}>
+  <!-- Hero Section -->
+  <section class="relative bg-slate-900 text-white overflow-hidden py-16 sm:py-24">
+    <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/40 to-slate-900/90 z-0"></div>
+    <div class="relative z-10 mx-auto w-full max-w-6xl px-4 text-center">
+      <div class="inline-flex items-center rounded-full bg-emerald-500/20 px-4 py-1.5 text-sm font-bold text-emerald-300 ring-1 ring-inset ring-emerald-500/30 mb-6">
+        📍 พื้นที่ให้บริการ: {locName}
+      </div>
+      <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl max-w-4xl mx-auto leading-tight">
+        {h1} <br class="hidden sm:block" /> <span class="text-emerald-400">ประเมินไว จ่ายเงินสด</span>
+      </h1>
+      <p class="mt-6 text-lg leading-relaxed text-slate-300 max-w-2xl mx-auto font-medium">
+        บริการรับซื้อ {itemName} มือสอง หรือเครื่องเสียบางอาการ นัดรับถึงที่ใน <strong>{locName}</strong> ทีมงานประเมินราคาไวผ่าน LINE ทราบผลใน 5 นาที
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <CTAButtons primaryText={`ขาย ${itemName} ด่วน`} secondaryText="โทรสอบถาม" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="bg-slate-50 py-16">
+    <div class="mx-auto w-full max-w-6xl px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- Item Info -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+          <div class="h-12 w-12 rounded-xl bg-emerald-100 flex items-center justify-center mb-6 text-emerald-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-extrabold text-slate-900 mb-4">
+            {isBrand ? `รับซื้อ ${itemName} รุ่นไหนบ้าง?` : `อาการ ${itemName} เช็คราคาได้ไหม?`}
+          </h2>
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            {isBrand 
+              ? `เรามีความเชี่ยวชาญในการรับซื้อ ${itemName} มือสองทุกซีรีส์ ทั้งรุ่นทำงาน เครื่ององค์กร หรือเกมมิ่งสเปกสูง ให้ราคาอ้างอิงตามตลาดจริง`
+              : `เรารับประเมินเครื่องสภาพ ${itemName} โดยตีราคาตามมูลค่าอะไหล่และสภาพเครื่องรวม แนะนำให้ส่งรูปพร้อมแจ้งอาการตามตรงเพื่อประเมินได้รวดเร็ว`}
+          </p>
+          {detailsList.length > 0 && (
+            <div>
+              <h3 class="font-bold text-slate-900 mb-3">{isBrand ? 'รุ่นฮิต:' : 'เงื่อนไขที่เราประเมินบ่อย:'}</h3>
+              <ul class="space-y-2 text-sm text-slate-600">
+                {detailsList.map((detail: string) => (
+                  <li class="flex items-center gap-2">
+                    <span class="text-emerald-500">✓</span> {detail}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <!-- Location Info -->
+        <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+          <div class="h-12 w-12 rounded-xl bg-blue-100 flex items-center justify-center mb-6 text-blue-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h2 class="text-2xl font-extrabold text-slate-900 mb-4">จุดนัดรับใน {locName}</h2>
+          <p class="text-slate-600 mb-6 leading-relaxed">
+            เพื่อความสะดวกสูงสุดของคุณ เรามีบริการนัดรับเครื่องถึงที่ หรือจุดนัดพบที่เดินทางสะดวกใน <strong>{locName}</strong> ตรวจเช็คเครื่องเสร็จจ่ายเงินทันที
+          </p>
+          
+          {meetingOptions.length > 0 && (
+            <div class="mb-6">
+              <h3 class="font-bold text-slate-900 mb-3">สถานที่นัดเจอที่แนะนำ:</h3>
+              <div class="flex flex-wrap gap-2">
+                {meetingOptions.map((opt: string) => (
+                  <span class="inline-flex items-center rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-700">
+                    {opt}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {subAreas.length > 0 && (
+            <div>
+              <h3 class="font-bold text-slate-900 mb-3">ครอบคลุมพื้นที่ย่อย:</h3>
+              <div class="flex flex-wrap gap-2">
+                {subAreas.map((area: string) => (
+                  <span class="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                    {area}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Process & FAQs -->
+  <ProcessSteps />
+  <div class="py-16 bg-white border-t border-slate-100">
+    <div class="mx-auto w-full max-w-6xl px-4 text-center mb-10">
+      <h2 class="text-2xl font-extrabold text-slate-900">คำถามที่พบบ่อย (รับซื้อ {itemName} {locName})</h2>
+    </div>
+    <FAQ faqs={faqs} />
+  </div>
+
+  <!-- Internal Linking Footer -->
+  <section class="bg-slate-50 py-12 border-t border-slate-200">
+    <div class="mx-auto w-full max-w-6xl px-4">
+      <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4">ค้นหาบริการอื่นที่เกี่ยวข้อง</h3>
+      <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+        <a href={`/รับซื้อโน๊ตบุ๊ค/${location.data.slug}/`} class="text-emerald-700 hover:text-emerald-900 font-medium">ดูบริการรับซื้อใน {locName} ทั้งหมด</a>
+        <span class="text-slate-300">|</span>
+        <a href={`/รับซื้อโน๊ตบุ๊ค/${item.data.slug}/`} class="text-emerald-700 hover:text-emerald-900 font-medium">ดูบริการรับซื้อ {itemName} ทั่วประเทศ</a>
+        <span class="text-slate-300">|</span>
+        <a href="/พื้นที่ให้บริการ/" class="text-emerald-700 hover:text-emerald-900 font-medium">พื้นที่นัดรับอื่นๆ</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
