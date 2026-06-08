@@ -73,8 +73,8 @@ const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.s
               <a
                 href={item.href}
                 class:list={[
-                  'rounded-xl px-3 py-2 text-sm font-semibold',
-                  isActive(item.href) ? 'bg-slate-900 text-white' : 'text-slate-900 hover:bg-slate-50',
+                  'rounded-xl px-3 py-2 text-sm font-semibold transition-colors',
+                  isActive(item.href) ? 'bg-emerald-50 text-emerald-700' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900',
                 ]}
                 aria-current={isActive(item.href) ? 'page' : undefined}
               >
@@ -102,13 +102,13 @@ const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.s
       </details>
     </div>
 
-    <nav aria-label="เมนูหลัก" class="hidden items-center gap-1 lg:flex lg:min-w-0 lg:flex-1 lg:justify-center">
+    <nav aria-label="เมนูหลัก" class="hidden items-center gap-0.5 lg:flex lg:min-w-0 lg:flex-1 lg:justify-center">
       {nav.map((item) => (
         <a
           href={item.href}
           class:list={[
-            'rounded-xl px-2.5 py-1.5 text-[13px] font-semibold transition-colors',
-            isActive(item.href) ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-50 hover:text-slate-900',
+            'rounded-xl px-2 py-1.5 text-[13px] font-semibold whitespace-nowrap transition-colors xl:px-3',
+            isActive(item.href) ? 'bg-emerald-50 text-emerald-700' : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900',
           ]}
           aria-current={isActive(item.href) ? 'page' : undefined}
         >
