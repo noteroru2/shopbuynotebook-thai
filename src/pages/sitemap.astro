@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { absoluteUrl } from '../lib/seo';
+
+const title = 'แผนผังเว็บไซต์ (HTML Sitemap) | ร้านรับซื้อโน๊ตบุ๊ค.com';
+const description = 'แผนผังเว็บไซต์รวบรวมลิงก์บริการรับซื้อโน๊ตบุ๊ค พื้นที่ให้บริการ 77 จังหวัด และบทความทั้งหมด';
+const canonical = absoluteUrl('/sitemap/');
+
+// ดึงข้อมูลทั้งหมด
+const allLocations = await getCollection('locations');
+const allBlogs = await getCollection('blog');
+const allBrands = await getCollection('brands');
+const allConditions = await getCollection('conditions');
+
+// เรียงลำดับตามชื่อ
+allLocations.sort((a, b) => a.data.title.localeCompare(b.data.title, 'th'));
+allBlogs.sort((a, b) => a.data.title.localeCompare(b.data.title, 'th'));
+allBrands.sort((a, b) => a.data.title.localeCompare(b.data.title, 'th'));
+allConditions.sort((a, b) => a.data.title.localeCompare(b.data.title, 'th'));
+
+const mainPages = [
+  { label: 'หน้าแรก', href: '/' },
+  { label: 'รับซื้อโน๊ตบุ๊ค (รวมบริการ)', href: '/รับซื้อโน๊ตบุ๊ค/' },
+  { label: 'รับซื้อโน๊ตบุ๊คมือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/' },
+  { label: 'รับซื้อ Notebook', href: '/รับซื้อ-notebook/' },
+  { label: 'เช็คราคาโน๊ตบุ๊ค', href: '/เช็คราคาโน๊ตบุ๊ค/' },
+  { label: 'ตีราคาโน๊ตบุ๊ค', href: '/ตีราคาโน๊ตบุ๊ค/' },
+  { label: 'ขายโน๊ตบุ๊ค', href: '/ขายโน๊ตบุ๊ค/' },
+  { label: 'พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค', href: '/พื้นที่ให้บริการ/' },
+  { label: 'คำถามที่พบบ่อย', href: '/คำถามที่พบบ่อย/' },
+  { label: 'นโยบายความเป็นส่วนตัว', href: '/นโยบายความเป็นส่วนตัว/' },
+  { label: 'ขั้นตอนและเงื่อนไขการให้บริการ', href: '/ขั้นตอนและเงื่อนไขการให้บริการ/' },
+  { label: 'เกี่ยวกับเรา', href: '/เกี่ยวกับเรา/' },
+  { label: 'ติดต่อเรา', href: '/ติดต่อเรา/' },
+  { label: 'เว็บไซต์ในเครือ', href: '/เว็บไซต์ในเครือ/' },
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10 pb-16">
+    <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">แผนผังเว็บไซต์ (Sitemap)</h1>
+    <p class="mt-4 text-base leading-relaxed text-slate-600">
+      รวบรวมหน้าเว็บทั้งหมดของ ร้านรับซื้อโน๊ตบุ๊ค.com เพื่อให้ง่ายต่อการค้นหาบริการและพื้นที่ของคุณ
+    </p>
+
+    <div class="mt-10 grid gap-8 lg:grid-cols-2">
+      <!-- Main Pages -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2">หน้าหลักและบริการ</h2>
+        <ul class="space-y-2 text-sm">
+          {mainPages.map((page) => (
+            <li><a href={page.href} class="text-emerald-700 hover:text-emerald-800 underline underline-offset-4">{page.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Brands & Conditions -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2">แบรนด์และอาการยอดนิยม</h2>
+        <div class="space-y-6">
+          <div>
+            <h3 class="font-semibold text-slate-800 mb-2">รับซื้อตามแบรนด์:</h3>
+            <ul class="grid grid-cols-2 gap-2 text-sm">
+              {allBrands.map((b) => (
+                <li><a href={`/รับซื้อโน๊ตบุ๊ค/${b.data.slug}/`} class="text-emerald-700 hover:text-emerald-800 underline underline-offset-4">{b.data.title}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-slate-800 mb-2">รับซื้อเครื่องเสียและอาการต่างๆ:</h3>
+            <ul class="grid grid-cols-2 gap-2 text-sm">
+              {allConditions.map((c) => (
+                <li><a href={`/รับซื้อโน๊ตบุ๊ค/${c.data.slug}/`} class="text-emerald-700 hover:text-emerald-800 underline underline-offset-4">{c.data.title}</a></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Locations -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
+        <h2 class="text-xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2">พื้นที่ให้บริการ ({allLocations.length} พื้นที่)</h2>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-y-3 gap-x-2 text-sm">
+          {allLocations.map((loc) => (
+            <li><a href={`/รับซื้อโน๊ตบุ๊ค/${loc.data.slug}/`} class="text-emerald-700 hover:text-emerald-800 underline underline-offset-4">{loc.data.title}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Blog Posts -->
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
+        <h2 class="text-xl font-bold text-slate-900 mb-4 border-b border-slate-100 pb-2">บทความและสาระน่ารู้ ({allBlogs.length} บทความ)</h2>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-4 text-sm">
+          {allBlogs.map((post) => (
+            <li class="truncate"><a href={`/blog/${post.data.slug ? post.data.slug : post.id.replace(/\.(md|mdx)$/i, '')}/`} class="text-emerald-700 hover:text-emerald-800 underline underline-offset-4">{post.data.title}</a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
