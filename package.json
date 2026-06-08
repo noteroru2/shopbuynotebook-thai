@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "cross-env NODE_OPTIONS=--max_old_space_size=8192 astro build",
     "preview": "astro preview",
     "astro": "astro",
     "gen:isan-svgs": "node scripts/gen-isan-location-svgs.mjs",
@@ -23,6 +23,7 @@
     "tailwindcss": "^4.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19"
+    "@tailwindcss/typography": "^0.5.19",
+    "cross-env": "^10.1.0"
   }
 }
