@@ -11,7 +11,30 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/',
   trailingSlash: 'always',
-  integrations: [sitemap(), mdx()],
+  integrations: [
+    sitemap({
+      serialize(item) {
+        if (item.url === 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/') {
+          item.changefreq = 'daily';
+          item.priority = 1.0;
+        } else if (item.url.includes('/ขายโน๊ตบุ๊คด่วน/')) {
+          item.changefreq = 'daily';
+          item.priority = 0.9;
+        } else if (item.url.includes('/รับซื้อโน๊ตบุ๊ค/')) {
+          item.changefreq = 'weekly';
+          item.priority = 0.8;
+        } else if (item.url.includes('/blog/')) {
+          item.changefreq = 'monthly';
+          item.priority = 0.7;
+        } else {
+          item.changefreq = 'monthly';
+          item.priority = 0.6;
+        }
+        return item;
+      },
+    }),
+    mdx(),
+  ],
 
   /** ลด render-blocking: อินไลน์ CSS ชุดหลักถ้าเล็กกว่า assetsInlineLimit */
   build: {

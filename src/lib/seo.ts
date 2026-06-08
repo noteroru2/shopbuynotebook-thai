@@ -44,6 +44,7 @@ export function localBusinessSchema(opts?: { description?: string }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
+    '@id': `${SITE.url}#localbusiness`,
     name: SITE.name,
     alternateName: SITE.physicalStoreName,
     url: SITE.url,

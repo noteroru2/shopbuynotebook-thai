@@ -5,6 +5,7 @@ export function organizationSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${SITE.url}#organization`,
     legalName: SITE.companyLegalName,
     name: SITE.name,
     alternateName: SITE.physicalStoreName,
@@ -21,9 +22,11 @@ export function webSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${SITE.url}#website`,
     name: SITE.name,
     url: SITE.url,
     inLanguage: SITE.language,
+    publisher: { '@id': `${SITE.url}#organization` },
   };
 }
 
@@ -31,11 +34,13 @@ export function webPageSchema(opts: { title: string; description: string; url: s
   return {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
+    '@id': `${opts.url}#webpage`,
     name: opts.title,
     description: opts.description,
     url: opts.url,
     inLanguage: SITE.language,
-    isPartOf: { '@type': 'WebSite', name: SITE.name, url: SITE.url },
+    isPartOf: { '@id': `${SITE.url}#website` },
+    about: { '@id': `${SITE.url}#organization` },
   };
 }
 

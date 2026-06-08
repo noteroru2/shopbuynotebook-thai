@@ -49,9 +49,8 @@ const resolvedOgWidth = ogImageWidth ?? SITE.ogImageWidth;
 const resolvedOgHeight = ogImageHeight ?? SITE.ogImageHeight;
 const isArticle = !!article;
 
-const fontStylesheet =
-  'https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap';
 ---
+
 
 <!doctype html>
 <html lang="th">
@@ -69,8 +68,6 @@ const fontStylesheet =
     <meta name="apple-mobile-web-app-title" content={SITE.shortName} />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     {
       lcpImageSrc &&
         (lcpImageSrcset && lcpImageSizes ? (
@@ -86,11 +83,7 @@ const fontStylesheet =
           <link rel="preload" as="image" href={absoluteUrl(lcpImageSrc)} fetchpriority="high" />
         ))
     }
-    <!-- โหลดฟอนต์แบบไม่บล็อก FCP/LCP (media=print แล้วสลับเป็น all เมื่อโหลดเสร็จ) -->
-    <link href={fontStylesheet} rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href={fontStylesheet} />
-    </noscript>
+
 
     <meta property="og:type" content={isArticle ? 'article' : 'website'} />
     <meta property="og:title" content={title} />
