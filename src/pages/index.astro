@@ -31,9 +31,9 @@ import { HOME_FEATURED_BLOG_SLUGS } from '../data/home-featured-blog';
 import { faqPageSchema, absoluteUrl } from '../lib/seo';
 import { itemListSchema } from '../lib/schema';
 
-const title = 'รับซื้อโน๊ตบุ๊ค ราคาดี ประเมินฟรี จ่ายเงินสด | ร้านรับซื้อโน๊ตบุ๊ค.com';
+const title = 'รับซื้อโน๊ตบุ๊ค รับซื้อ Notebook ราคาดี ประเมินฟรี จ่ายเงินสด | ร้านรับซื้อโน๊ตบุ๊ค.com';
 const description =
-  'ร้านรับซื้อโน๊ตบุ๊ค รับซื้อโน๊ตบุ๊คมือสองทุกยี่ห้อ รับซื้อ Notebook, MacBook, Gaming Notebook และเครื่องเสียบางอาการ ส่งรูปเช็คราคาโน๊ตบุ๊ค ประเมินราคาโน๊ตบุ๊คฟรีผ่าน LINE จ่ายเงินสดหรือโอนทันที';
+  'ร้านรับซื้อโน๊ตบุ๊ค รับซื้อ Notebook มือสองทุกยี่ห้อ ประเมินราคาโน๊ตบุ๊คฟรีผ่าน LINE ให้ราคาสูง จ่ายเงินสดหรือโอนทันที รับทั้ง MacBook, Gaming Notebook และเครื่องเก่า';
 
 const toSlug = (p: { id: string; data: { slug?: string } }) =>
   p.data.slug ? p.data.slug : String(p.id).replace(/\.(md|mdx)$/i, '');
@@ -117,8 +117,8 @@ const schemas = [
 >
   <div class="absolute inset-x-0 top-0 -z-10 h-[520px] bg-gradient-to-b from-slate-50/80 to-transparent"></div>
   <Hero
-    title="รับซื้อโน๊ตบุ๊คมือสอง ประเมินไว จ่ายเงินสด"
-    titleHtml={`<span class="block"><span class="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">รับซื้อโน๊ตบุ๊ค</span>มือสอง</span><span class="mt-1 block">ประเมินไว <span class="relative inline-flex items-center rounded-full bg-[#FACC15]/45 px-3 py-1 text-slate-900">จ่ายเงินสด</span></span>`}
+    title="รับซื้อโน๊ตบุ๊ค รับซื้อ Notebook มือสอง ประเมินไว จ่ายเงินสด"
+    titleHtml={`<span class="block"><span class="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">รับซื้อโน๊ตบุ๊ค และ Notebook</span>มือสอง</span><span class="mt-1 block">ประเมินไว <span class="relative inline-flex items-center rounded-full bg-[#FACC15]/45 px-3 py-1 text-slate-900">จ่ายเงินสด</span></span>`}
     subtitle="ส่งรูปเครื่องผ่าน LINE เพื่อเช็คราคาเบื้องต้นฟรี รับซื้อทั้งเครื่องดี เครื่องเก่า และเครื่องเสียบางอาการ"
     imageSrc={heroImageSrc}
     imageSrcset={heroImageSrcset}
