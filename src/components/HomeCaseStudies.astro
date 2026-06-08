@@ -1,0 +1,81 @@
+---
+import { getCollection } from 'astro:content';
+
+const allBlogPosts = await getCollection('blog');
+// Filter for posts with category "กรณีศึกษา", sort by date (newest first), take top 3
+const caseStudies = allBlogPosts
+  .filter((post) => post.data.category === 'กรณีศึกษา')
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf())
+  .slice(0, 3);
+
+const toSlug = (p: { id: string; data: { slug?: string } }) =>
+  p.data.slug ? p.data.slug : String(p.id).replace(/\.(md|mdx)$/i, '');
+---
+
+{
+  caseStudies.length > 0 && (
+    <section class="mx-auto w-full max-w-6xl px-4 py-16" aria-labelledby="home-case-studies-heading">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-sm font-semibold text-indigo-700 ring-1 ring-inset ring-indigo-600/20 mb-4">
+          Experience & Expertise
+        </div>
+        <h2
+          id="home-case-studies-heading"
+          class="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl"
+        >
+          ผลงานรับซื้อล่าสุด (Case Studies)
+        </h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600">
+          รวมประสบการณ์จริงจากการรับซื้อโน๊ตบุ๊คทุกรูปแบบ ทั้งเครื่องเสีย เครื่องบอร์ดช็อต โดนน้ำ หรือเครื่องเหมาบริษัท เราประเมินให้อย่างเป็นธรรมและจบงานได้จริง
+        </p>
+      </div>
+
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {caseStudies.map((post) => {
+          const slug = toSlug(post);
+          return (
+            <a href={`/blog/${slug}/`} class="group flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-slate-200 transition-all hover:shadow-md hover:ring-indigo-300">
+              {post.data.featuredImage && (
+                <div class="aspect-[16/9] w-full overflow-hidden bg-slate-100">
+                  <img
+                    src={post.data.featuredImage}
+                    alt={post.data.title}
+                    loading="lazy"
+                    decoding="async"
+                    class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+              )}
+              <div class="flex flex-1 flex-col p-6">
+                <div class="mb-3 flex items-center gap-2 text-xs font-semibold text-slate-500">
+                  <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-slate-700">{post.data.category}</span>
+                  <time datetime={new Date(post.data.date).toISOString()}>
+                    {new Date(post.data.date).toLocaleDateString('th-TH', { year: 'numeric', month: 'short', day: 'numeric' })}
+                  </time>
+                </div>
+                <h3 class="mb-2 text-lg font-bold leading-snug text-slate-900 group-hover:text-indigo-700 transition-colors">
+                  {post.data.title}
+                </h3>
+                <p class="mb-6 line-clamp-3 text-sm text-slate-600 leading-relaxed">
+                  {post.data.description}
+                </p>
+                <div class="mt-auto flex items-center text-sm font-semibold text-indigo-600 group-hover:text-indigo-800">
+                  อ่านกรณีศึกษาเพิ่มเติม 
+                  <svg class="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+      
+      <div class="mt-12 text-center">
+        <a href="/blog/" class="inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-all hover:bg-slate-50 hover:text-slate-900">
+          ดูบทความและผลงานทั้งหมด
+        </a>
+      </div>
+    </section>
+  )
+}
