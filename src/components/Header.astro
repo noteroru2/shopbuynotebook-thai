@@ -4,15 +4,13 @@ import { SITE } from '../lib/seo';
 const pathname = Astro.url.pathname;
 
 const nav = [
-  { label: 'หน้าแรก', short: 'หน้าแรก', href: '/' },
-  { label: 'ขายโน๊ตบุ๊คด่วน 🔥', short: 'ขายด่วน 🔥', href: '/ขายโน๊ตบุ๊คด่วน/' },
-  { label: 'สำหรับองค์กร (B2B) 💼', short: 'รับเหมา 💼', href: '/รับเหมาโน๊ตบุ๊ค/' },
-  { label: 'รับซื้อโน๊ตบุ๊ค', short: 'รับซื้อ', href: '/รับซื้อโน๊ตบุ๊ค/' },
-  { label: 'รับซื้อโน๊ตบุ๊คมือสอง', short: 'มือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/' },
-  { label: 'เช็คราคา', short: 'เช็คราคา', href: '/เช็คราคาโน๊ตบุ๊ค/' },
-  { label: 'พื้นที่ให้บริการ', short: 'พื้นที่', href: '/พื้นที่ให้บริการ/' },
-  { label: 'บทความ', short: 'บทความ', href: '/blog/' },
-  { label: 'ติดต่อเรา', short: 'ติดต่อ', href: '/ติดต่อเรา/' },
+  { label: 'ขายด่วน 🔥', href: '/ขายโน๊ตบุ๊คด่วน/' },
+  { label: 'บริการรับซื้อ', href: '/รับซื้อโน๊ตบุ๊ค/' },
+  { label: 'เช็คราคา', href: '/เช็คราคาโน๊ตบุ๊ค/' },
+  { label: 'รับเหมา (B2B)', href: '/รับเหมาโน๊ตบุ๊ค/' },
+  { label: 'พื้นที่บริการ', href: '/พื้นที่ให้บริการ/' },
+  { label: 'บทความ', href: '/blog/' },
+  { label: 'ติดต่อเรา', href: '/ติดต่อเรา/' },
 ];
 
 const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
@@ -112,8 +110,7 @@ const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.s
           ]}
           aria-current={isActive(item.href) ? 'page' : undefined}
         >
-          <span class="xl:hidden">{item.short ?? item.label}</span>
-          <span class="hidden xl:inline">{item.label}</span>
+          <span class="inline-block">{item.label}</span>
         </a>
       ))}
     </nav>
