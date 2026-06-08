@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import SafetySection from '../components/SafetySection.astro';
+import FAQ from '../components/FAQ.astro';
+import { SITE, absoluteUrl, breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
+
+const title = 'รับประมูลคอม รับประมูลคอมพิวเตอร์ อุปกรณ์ไอทีราชการ/เอกชน';
+const description =
+  'บริการรับประมูลคอมพิวเตอร์ โน๊ตบุ๊ค อุปกรณ์ไอที จากหน่วยงานราชการ องค์กร และบริษัทเอกชน พร้อมประมูลสู้ราคา มีเอกสารรับรองบริษัทถูกต้องตามกฎหมาย ทุนหนาจ่ายเงินสด';
+const canonical = absoluteUrl('/รับประมูลคอม/');
+
+const breadcrumbs = [
+  { name: 'หน้าแรก', url: absoluteUrl('/') },
+  { name: 'รับประมูลคอมพิวเตอร์', url: canonical },
+];
+
+const faqs = [
+  { question: 'รับประมูลจากหน่วยงานราชการหรือไม่?', answer: 'รับครับ เราเป็นบริษัทจดทะเบียนที่ถูกต้องตามกฎหมาย สามารถเข้าร่วมประมูลงานขายทอดตลาดพัสดุชำรุดเสื่อมสภาพของหน่วยงานราชการ มหาวิทยาลัย และโรงพยาบาลได้' },
+  { question: 'ต้องเตรียมเอกสารอะไรบ้างเพื่อเชิญเข้าร่วมประมูล?', answer: 'ขอเพียงแค่มีหนังสือเชิญประมูล/หนังสือประกาศขายทอดตลาด พร้อมรายละเอียดครุภัณฑ์ (สเปกและจำนวน) เราพร้อมส่งตัวแทนเข้าร่วมเสนอราคาทันทีครับ' },
+  { question: 'หากประมูลชนะ สามารถชำระเงินและขนย้ายได้เร็วแค่ไหน?', answer: 'เรามีเงินทุนหมุนเวียนพร้อมจ่ายเช็คเงินสดหรือโอนเข้าบัญชีหน่วยงานทันทีที่ชนะการประมูล และสามารถเข้าพื้นที่ขนย้ายครุภัณฑ์ออกได้ทั้งหมดภายใน 1-3 วันทำการตามระเบียบราชการ' },
+  { question: 'รับประมูลเศษซากอะไหล่คอมพิวเตอร์ด้วยไหม?', answer: 'รับครับ ในกรณีขายทอดตลาดเป็นลักษณะเศษซากกองรวมกัน (Scrap) เราก็สามารถไปดูหน้างานและเสนอราคาเหมารวมซากได้เช่นกัน' },
+];
+
+const schemas = [
+  breadcrumbListSchema(breadcrumbs),
+  faqPageSchema(faqs),
+  serviceSchema({
+    name: 'บริการรับประมูลคอมพิวเตอร์และครุภัณฑ์ไอที (IT Equipment Auction)',
+    url: canonical,
+    description: 'รับประมูลคอมพิวเตอร์ โน๊ตบุ๊ค อุปกรณ์ไอที และครุภัณฑ์อิเล็กทรอนิกส์ จากหน่วยงานราชการ รัฐวิสาหกิจ และบริษัทเอกชน',
+  })
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
+  <!-- Hero Section -->
+  <section class="relative mx-auto w-full max-w-6xl px-4 pt-12 pb-8 sm:pt-20 lg:pt-24 lg:pb-16 text-center">
+    <div class="inline-flex items-center rounded-full bg-orange-100 px-3 py-1 text-sm font-semibold text-orange-800 ring-1 ring-inset ring-orange-600/20 mb-6">
+      🏛️ Government & Corporate Auctions - รับประมูลพัสดุชำรุดเสื่อมสภาพ
+    </div>
+    <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl max-w-4xl mx-auto leading-tight">
+      รับประมูลคอมพิวเตอร์ <br class="hidden sm:block" /> <span class="text-orange-600">สู้ราคา ทุนหนา เอกสารครบ</span>
+    </h1>
+    <p class="mt-6 text-lg leading-relaxed text-slate-600 max-w-3xl mx-auto font-medium">
+      พันธมิตรที่ไว้วางใจได้สำหรับหน่วยงานราชการ รัฐวิสาหกิจ สถาบันการศึกษา และบริษัทมหาชน ในการรับซื้อทอดตลาดครุภัณฑ์ไอที คอมพิวเตอร์ และโน๊ตบุ๊คที่ปลดระวาง มีเอกสารนิติบุคคลถูกต้อง พร้อมเข้าประมูลแข่งขันและขนย้ายอย่างรวดเร็ว
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        class="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-orange-600 px-8 py-4 text-base font-extrabold text-white shadow-lg shadow-orange-500/30 hover:bg-orange-700 transition-all hover:scale-105"
+        href={SITE.lineUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ส่งหนังสือเชิญประมูล (LINE)
+      </a>
+      <a
+        class="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-slate-900 px-8 py-4 text-base font-extrabold text-white shadow-lg hover:bg-slate-800 transition-all"
+        href={`tel:${SITE.phone.replace(/[^0-9]/g, '')}`}
+      >
+        ติดต่อฝ่ายประมูล: {SITE.phone}
+      </a>
+    </div>
+  </section>
+
+  <TrustBadges />
+
+  <!-- Comprehensive Content Section -->
+  <section class="bg-white py-16 border-t border-slate-100">
+    <div class="mx-auto max-w-4xl px-4 prose prose-lg prose-slate prose-headings:font-extrabold prose-headings:text-slate-900 prose-a:text-orange-600">
+      
+      <h2>ทำไมต้องเชิญเราเข้าร่วมประมูลคอมพิวเตอร์?</h2>
+      <p>
+        การขายทอดตลาดครุภัณฑ์ไอที (IT Equipment Auction) ของหน่วยงานราชการและองค์กรขนาดใหญ่นั้น เป็นกระบวนการที่มีระเบียบแบบแผนชัดเจน ต้องการผู้เข้าร่วมประมูลที่มีความพร้อมทั้งด้านเอกสาร เงินทุน และศักยภาพในการจัดการเศษซาก (e-Waste) อย่างถูกวิธี
+      </p>
+      <p>
+        เราคือบริษัทที่มีประสบการณ์สูงในการเข้าร่วมประมูลรับซื้ออุปกรณ์ไอทีทั่วประเทศ เรามีความพร้อมในทุกมิติที่จะทำให้กระบวนการขายทอดตลาดของท่านลุล่วงไปได้ด้วยดี ได้ราคาที่สูงที่สุดตามระเบียบพัสดุ
+      </p>
+
+      <h3>ศักยภาพและความพร้อมของเรา (Our Strengths)</h3>
+      <ul>
+        <li><strong>ความถูกต้องทางกฎหมาย:</strong> เราดำเนินธุรกิจในรูปแบบบริษัทจำกัด มีหนังสือรับรองนิติบุคคล ทะเบียนการค้า และภ.พ.20 ถูกต้องครบถ้วน สามารถยื่นซองเสนอราคาและทำสัญญาซื้อขายกับหน่วยงานรัฐได้ทันที (Vendor Registered)</li>
+        <li><strong>ความพร้อมด้านเงินทุน (Financial Stability):</strong> เราเป็นผู้รับซื้อโดยตรง (Direct Buyer) ไม่ใช่นายหน้าจับเสือมือเปล่า จึงมีเงินทุนหมุนเวียนที่พร้อมชำระค่าพัสดุทันทีที่ชนะการประมูล ไม่ว่าจะเป็นยอดหลักแสนหรือหลักล้านบาท</li>
+        <li><strong>ประเมินราคากลางได้แม่นยำ:</strong> ด้วยฐานข้อมูลราคารับซื้อคอมพิวเตอร์และโน๊ตบุ๊คมือสองระดับประเทศ เราสามารถตีราคาซากหรือเครื่องเก่าของท่านได้อย่างรวดเร็ว ทำให้สามารถยื่นข้อเสนอราคาสู้ประมูลได้อย่างสูสีและเป็นธรรมกับรัฐที่สุด</li>
+        <li><strong>มีทีมรื้อถอนและขนย้ายขนาดใหญ่:</strong> การซื้อทอดตลาดราชการมักมีเงื่อนไขให้ผู้ชนะประมูลต้องขนย้ายพัสดุออกให้หมดภายในเวลาที่กำหนด เรามีทั้งทีมงานขนย้าย รถบรรทุก 6 ล้อ/4 ล้อ ที่พร้อมลุยงานทันที ไม่ทิ้งงาน ไม่สร้างความเดือดร้อนในพื้นที่</li>
+        <li><strong>รับประมูลเหมารวม (Lot Bidding):</strong> ไม่ได้เลือกเอาเฉพาะของดี เราประมูลเหมารวมทั้งลอต ไม่ว่าในกองนั้นจะมี โน๊ตบุ๊ค, เครื่องคอมประกอบ, จอ CRT รุ่นเก่า, เครื่องปริ้นเตอร์เสีย, แอร์, หรือเศษซากสายไฟ เราสามารถรับจบได้ในสัญญาเดียว</li>
+      </ul>
+
+      <h2>อุปกรณ์ไอทีที่เรารับประมูล</h2>
+      <p>เรารับประมูลพัสดุชำรุดเสื่อมสภาพทุกประเภทที่เกี่ยวข้องกับระบบเทคโนโลยีสารสนเทศ ได้แก่:</p>
+      <div class="grid sm:grid-cols-2 gap-4 my-6">
+        <div class="p-5 border border-orange-200 rounded-xl bg-orange-50/50">
+          <h4 class="mt-0 mb-2 text-orange-800">💻 คอมพิวเตอร์และโน๊ตบุ๊ค</h4>
+          <p class="text-sm mb-0">เครื่องคอมพิวเตอร์ตั้งโต๊ะทุกยี่ห้อ (Dell, HP, Acer, Lenovo), โน๊ตบุ๊คแจกพนักงาน, แท็บเล็ต (iPad), และเครื่อง Mac ทุกประเภท</p>
+        </div>
+        <div class="p-5 border border-orange-200 rounded-xl bg-orange-50/50">
+          <h4 class="mt-0 mb-2 text-orange-800">🖧 เซิร์ฟเวอร์และเน็ตเวิร์ก</h4>
+          <p class="text-sm mb-0">ตู้ Server Rack, อุปกรณ์ Switch, Router, อุปกรณ์ Firewall และสายสัญญาณต่างๆ ที่โล๊ะออกจากห้อง Data Center</p>
+        </div>
+        <div class="p-5 border border-orange-200 rounded-xl bg-orange-50/50">
+          <h4 class="mt-0 mb-2 text-orange-800">🖨️ เครื่องพิมพ์และโปรเจคเตอร์</h4>
+          <p class="text-sm mb-0">เครื่องถ่ายเอกสาร, เครื่องปริ้นเตอร์ Laser/Inkjet, โปรเจคเตอร์ และทีวีห้องประชุมที่พังหรือตกรุ่น</p>
+        </div>
+        <div class="p-5 border border-orange-200 rounded-xl bg-orange-50/50">
+          <h4 class="mt-0 mb-2 text-orange-800">📦 อุปกรณ์จ่ายไฟสำรอง</h4>
+          <p class="text-sm mb-0">เครื่องสำรองไฟฟ้า (UPS) ทั้งขนาดเล็กและขนาดใหญ่ประจำตึก รวมถึงแบตเตอรี่เสื่อมสภาพ</p>
+        </div>
+      </div>
+
+      <h2>ขั้นตอนการเชิญประมูล</h2>
+      <p>
+        เพื่อให้การทำงานเป็นไปอย่างราบรื่นและถูกต้องตามระเบียบพัสดุ ท่านสามารถส่งเรื่องเชิญเราเข้าร่วมประมูลได้ตามขั้นตอนดังนี้:
+      </p>
+      <ol>
+        <li><strong>ส่งประกาศ:</strong> ส่งหนังสือประกาศขายทอดตลาดพัสดุชำรุดเสื่อมสภาพ พร้อมบัญชีรายชื่อพัสดุ (File PDF/Excel) มาที่ช่องทางติดต่อของเรา (LINE หรืออีเมล)</li>
+        <li><strong>ดูของจริง (Site Visit):</strong> แจ้งวันและเวลาที่หน่วยงานเปิดให้เข้าดูสภาพครุภัณฑ์จริง (ถ้ามี) ทีมประเมินราคาของเราจะเดินทางไปตรวจสอบสภาพเพื่อคำนวณราคาประมูล</li>
+        <li><strong>ยื่นซอง/เคาะราคา:</strong> เราจะจัดเตรียมเอกสารบริษัทและหลักประกันซองเข้าร่วมยื่นซองเสนอราคาตามวันเวลาที่กำหนดในประกาศ</li>
+        <li><strong>ชำระเงินและขนของ:</strong> เมื่อได้รับการประกาศให้เป็นผู้ชนะการประมูล เราจะดำเนินการชำระเงินตามช่องทางที่รัฐกำหนด และส่งทีมงานเข้าขนย้ายของออกให้หมดจดรวดเร็ว</li>
+      </ol>
+
+      <div class="bg-slate-900 p-8 rounded-2xl text-white my-8 shadow-xl text-center">
+        <h3 class="text-orange-400 mt-0">พร้อมเป็นผู้เสนอราคาที่ดีที่สุดให้องค์กรของคุณ</h3>
+        <p class="text-slate-300">
+          หากหน่วยงานของท่านกำลังเตรียมตั้งคณะกรรมการขายทอดตลาดพัสดุประจำปี สามารถติดต่อเราเพื่อขอให้ส่งบริษัทเข้าเป็นหนึ่งในผู้เสนอราคาเพื่อประกอบการเปรียบเทียบและเพิ่มการแข่งขันได้ทันที
+        </p>
+        <p class="text-white mt-6 font-semibold">
+          ส่งประกาศประมูลได้ที่ LINE: <a href={SITE.lineUrl} class="text-orange-300 hover:text-orange-200">@webuy</a> <br/>หรือโทรสายด่วน B2B: {SITE.phone}
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="mx-auto w-full max-w-6xl px-4 py-16 border-t border-slate-100 bg-slate-50 rounded-3xl my-10">
+    <FAQ faqs={faqs} />
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TrustBadges from '../components/TrustBadges.astro';
+import SafetySection from '../components/SafetySection.astro';
+import FAQ from '../components/FAQ.astro';
+import { SITE, absoluteUrl, breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
+
+const title = 'รับเหมาคอมพิวเตอร์ รับซื้อคอมสำนักงาน ร้านเกม ให้ราคาสูง';
+const description =
+  'รับเหมาคอมพิวเตอร์มือสอง รับซื้อคอมพิวเตอร์สำนักงาน รับเหมาคอมร้านเกม โละสต็อกเก่า อุปกรณ์ไอทีครบวงจร มีทีมรื้อถอนและขนย้ายถึงที่ ให้ราคาสูง จ่ายเงินสดหน้างาน';
+const canonical = absoluteUrl('/รับเหมาคอมพิวเตอร์/');
+
+const breadcrumbs = [
+  { name: 'หน้าแรก', url: absoluteUrl('/') },
+  { name: 'รับเหมาคอมพิวเตอร์องค์กร', url: canonical },
+];
+
+const faqs = [
+  { question: 'รับเหมาคอมพิวเตอร์ประกอบ หรือแค่แบรนด์เนม?', answer: 'เรารับทั้งคอมพิวเตอร์ประกอบ (Custom PC) และคอมพิวเตอร์แบรนด์เนม (Dell, HP, Lenovo) ไม่ว่าจะเป็นเครื่องสำนักงานขนาดเล็ก เครื่อง Workstation หรือเครื่อง Server เราประเมินรับซื้อทั้งหมดครับ' },
+  { question: 'รับรื้อถอนสายไฟและสายแลนด้วยหรือไม่?', answer: 'ทีมงานของเรามีบริการช่วยรื้อถอนและตัดเก็บสายไฟ สายสัญญาณต่างๆ ออกจากโต๊ะทำงาน เพื่อเคลียร์พื้นที่ให้ท่านพร้อมสำหรับการปรับปรุงสำนักงาน หรือส่งมอบพื้นที่คืนครับ' },
+  { question: 'นอกจากตัวเครื่องแล้ว รับซื้อหน้าจอและอุปกรณ์เสริมไหม?', answer: 'รับครับ เรารับเหมาทั้งเซ็ต รวมถึงหน้าจอคอมพิวเตอร์ (Monitor), คีย์บอร์ด, เมาส์, เครื่องสำรองไฟ (UPS) และสายเคเบิลต่างๆ เพื่อให้ท่านจัดการของทั้งหมดได้ในคราวเดียว' },
+  { question: 'คอมพิวเตอร์เสียชิ้นส่วนบางตัว เปิดไม่ติด รับซื้อไหม?', answer: 'รับแน่นอนครับ ในคอมพิวเตอร์ประกอบแบบตั้งโต๊ะ (Desktop PC) หากชิ้นส่วนใดเสีย เรายังสามารถประเมินราคาชิ้นส่วนที่เหลือ เช่น CPU, แรม, การ์ดจอ ที่ยังใช้งานได้ให้ราคาดีครับ' },
+  { question: 'รับเหมาคอมพิวเตอร์จากร้านอินเทอร์เน็ตคาเฟ่หรือไม่?', answer: 'รับครับ เรามีประสบการณ์รับเหมาร้านเกม/ร้านเน็ตขนาดใหญ่ทั่วประเทศ ประเมินเครื่องลูก เครื่องเซิร์ฟเวอร์ ระบบดิสก์เลส (Diskless) และระบบเน็ตเวิร์กทั้งหมดในราคายุติธรรม' },
+];
+
+const schemas = [
+  breadcrumbListSchema(breadcrumbs),
+  faqPageSchema(faqs),
+  serviceSchema({
+    name: 'บริการรับเหมาคอมพิวเตอร์สำนักงานและร้านเกม (B2B PC ITAD)',
+    url: canonical,
+    description: 'รับเหมาซื้อคอมพิวเตอร์สำนักงาน ออฟฟิศ ร้านเกม คอมประกอบ อุปกรณ์ไอทีเครือข่ายจำนวนมาก',
+  })
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
+  <!-- Hero Section -->
+  <section class="relative mx-auto w-full max-w-6xl px-4 pt-12 pb-8 sm:pt-20 lg:pt-24 lg:pb-16 text-center">
+    <div class="inline-flex items-center rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-600/20 mb-6">
+      🖥️ Corporate PC & IT Asset Buyer - ทีมรับเหมารื้อถอนไอที
+    </div>
+    <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl max-w-4xl mx-auto leading-tight">
+      รับเหมาคอมพิวเตอร์ <br class="hidden sm:block" /> <span class="text-emerald-700">เคลียร์ออฟฟิศ ร้านเกม จ่ายสด</span>
+    </h1>
+    <p class="mt-6 text-lg leading-relaxed text-slate-600 max-w-3xl mx-auto font-medium">
+      ผู้ให้บริการรับซื้อเหมาคอมพิวเตอร์ตั้งโต๊ะ (Desktop PC), Workstation, จอภาพ, เซิร์ฟเวอร์ และอุปกรณ์ไอทีครบวงจร เหมาะสำหรับองค์กรที่ย้ายออฟฟิศ ปิดกิจการ หรืออัปเกรดระบบใหม่ มีทีมเข้ารื้อถอนถึงที่ทั่วประเทศ
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        class="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-emerald-700 px-8 py-4 text-base font-extrabold text-white shadow-lg shadow-emerald-500/30 hover:bg-emerald-800 transition-all hover:scale-105"
+        href={SITE.lineUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        นัดหมายดูหน้างานประเมินราคา
+      </a>
+      <a
+        class="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full bg-slate-100 border border-slate-300 px-8 py-4 text-base font-extrabold text-slate-800 shadow-sm hover:bg-slate-200 transition-all"
+        href={`tel:${SITE.phone.replace(/[^0-9]/g, '')}`}
+      >
+        โทรสอบถามด่วน: {SITE.phone}
+      </a>
+    </div>
+  </section>
+
+  <TrustBadges />
+
+  <!-- Comprehensive Content Section -->
+  <section class="bg-white py-16 border-t border-slate-100">
+    <div class="mx-auto max-w-4xl px-4 prose prose-lg prose-slate prose-headings:font-extrabold prose-headings:text-slate-900 prose-a:text-emerald-600">
+      
+      <h2>บริการรับเหมาคอมพิวเตอร์ที่ตอบโจทย์ทุกกลุ่มธุรกิจ</h2>
+      <p>
+        เครื่องคอมพิวเตอร์ตั้งโต๊ะ (Desktop PC) มักใช้พื้นที่ในการจัดเก็บค่อนข้างมาก และประกอบไปด้วยชิ้นส่วนหลากหลาย ทั้งเคส (Case), หน้าจอ (Monitor), และอุปกรณ์ต่อพ่วงต่างๆ เมื่อบริษัทมีความจำเป็นต้องอัปเกรดคอมพิวเตอร์ หรือย้ายสถานที่ตั้งสำนักงาน การจัดการของเหล่านี้ด้วยตัวเองมักเป็นภาระหนักของฝ่ายบุคคลและฝ่ายไอที
+      </p>
+      <p>
+        เราเข้าใจในความยุ่งยากนี้ จึงเปิดให้บริการ <strong>"รับเหมาคอมพิวเตอร์แบบครบวงจร" (Turnkey PC Buyback)</strong> ซึ่งไม่ได้มีเพียงแค่การจ่ายเงินซื้อของ แต่ครอบคลุมไปถึงการเข้าไปช่วยจัดการรื้อถอน ณ จุดติดตั้ง เพื่อคืนพื้นที่ว่างให้กับองค์กรของคุณอย่างรวดเร็วที่สุด
+      </p>
+
+      <h3>เรารับเหมาคอมพิวเตอร์ประเภทใดบ้าง?</h3>
+      <div class="grid sm:grid-cols-2 gap-4 my-6">
+        <div class="p-4 border border-slate-200 rounded-xl bg-slate-50">
+          <h4 class="mt-0 mb-2 text-emerald-800">1. คอมพิวเตอร์สำนักงาน (Office PC)</h4>
+          <p class="text-sm mb-0">รับซื้อเครื่องแบรนด์เนม (Dell OptiPlex, HP ProDesk, Lenovo ThinkCentre) ที่ปลดระวางจากการใช้งานทั่วไปในบริษัท</p>
+        </div>
+        <div class="p-4 border border-slate-200 rounded-xl bg-slate-50">
+          <h4 class="mt-0 mb-2 text-emerald-800">2. คอมพิวเตอร์ประกอบ (Custom PC)</h4>
+          <p class="text-sm mb-0">รับเหมาคอมประกอบตามสเปก เครื่องตัดต่อวิดีโอ เครื่องเรนเดอร์กราฟิก ที่มีชิ้นส่วนสเปกสูง เช่น CPU Core i7/i9, Ryzen, และการ์ดจอแยก</p>
+        </div>
+        <div class="p-4 border border-slate-200 rounded-xl bg-slate-50">
+          <h4 class="mt-0 mb-2 text-emerald-800">3. เครื่องจากร้านเน็ต/ร้านเกม (Internet Cafe)</h4>
+          <p class="text-sm mb-0">รับซื้อระบบคอมพิวเตอร์จากร้านเกมที่ต้องการเลิกกิจการหรืออัปเกรดเครื่องใหม่ เหมาจบทั้งเครื่องลูก (Client) เครื่องแม่ข่าย (Server No-HDD) และสวิตช์ฮับ</p>
+        </div>
+        <div class="p-4 border border-slate-200 rounded-xl bg-slate-50">
+          <h4 class="mt-0 mb-2 text-emerald-800">4. อุปกรณ์ต่อพ่วง (Peripherals)</h4>
+          <p class="text-sm mb-0">รับซื้อเหมาหน้าจอคอมพิวเตอร์ (Monitor), UPS เครื่องสำรองไฟ, สายไฟ, เซิร์ฟเวอร์แร็ค และขยะอิเล็กทรอนิกส์อื่นๆ</p>
+        </div>
+      </div>
+
+      <h2>จุดเด่นบริการ "รับเหมาคอมพิวเตอร์" ของเรา</h2>
+      <ul>
+        <li><strong>มีทีมงานรื้อถอนมืออาชีพ (Dismantling Team):</strong> เราไม่ได้ให้คุณถอดมากองรอไว้ แต่เราส่งทีมช่างเข้าไปถอดปลั๊ก รื้อสายไฟ ยกหน้าจอ และจัดเรียงขึ้นรถด้วยตัวเอง ประหยัดแรงงานและเวลาของบริษัทคุณ 100%</li>
+        <li><strong>ความเร็วในการเคลียร์พื้นที่:</strong> หากคุณมีเวลาจำกัดในการคืนพื้นที่เช่าสำนักงาน เรามีรถบรรทุกหลายคันและกำลังคนเพียงพอที่จะขนย้ายเครื่องนับร้อยภายในเวลา 1-2 วันทำการ</li>
+        <li><strong>แยกประเมินราคาตามชิ้นส่วน (Component Valuation):</strong> สำหรับคอมประกอบ ทีมงานจะแยกราคา CPU, RAM, การ์ดจอ (VGA), และเมนบอร์ดออกจากกัน เพื่อให้ได้ราคาที่เป็นธรรมสูงสุด มากกว่าการตีราคาเหมาเป็นเคสรวมๆ</li>
+        <li><strong>ทำลายฮาร์ดดิสก์เพื่อความปลอดภัย:</strong> คอมพิวเตอร์ออฟฟิศมักมีไฟล์บัญชีและไฟล์ลูกค้า เรามีกระบวนการล้างข้อมูลอย่างสมบูรณ์แบบก่อนนำไปขายต่อ หรือหากลูกค้าต้องการให้ทำลายตัวฮาร์ดดิสก์ทิ้งทางกายภาพ (Physical Destruction) ก็สามารถสั่งได้เช่นกัน</li>
+      </ul>
+
+      <div class="bg-slate-900 p-8 rounded-2xl text-white my-8 shadow-xl">
+        <h3 class="text-emerald-400 mt-0">ข้อแนะนำก่อนเรียกเราประเมินราคา</h3>
+        <ol class="text-slate-300">
+          <li>ถ่ายรูปสภาพหน้างานและตัวเครื่องโดยรวมว่ามีประมาณกี่ชุด</li>
+          <li>แจ้งสเปกเครื่องคร่าวๆ หรือสุ่มถ่ายรูปหน้าจอ System Information มาสัก 1-2 เครื่อง</li>
+          <li>แจ้งที่อยู่ สถานที่ตั้ง และข้อจำกัดในการขนย้าย (เช่น มีลิฟต์ขนของไหม ต้องทำเรื่องเข้าตึกหลังเวลางานหรือไม่)</li>
+        </ol>
+        <p class="text-white mt-4 font-semibold">
+          เพียงเท่านี้ ทีมงานจะประเมินกรอบราคาและระยะเวลาปฏิบัติงานส่งให้ท่านทันที ติดต่อ LINE: <a href={SITE.lineUrl} class="text-emerald-300 hover:text-emerald-200">@webuy</a>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Process & Safety integration -->
+  <div class="bg-white py-12">
+    <SafetySection />
+  </div>
+
+  <section class="mx-auto w-full max-w-6xl px-4 py-16 border-t border-slate-100 bg-slate-50 rounded-3xl my-10">
+    <FAQ faqs={faqs} />
+  </section>
+
+</BaseLayout>

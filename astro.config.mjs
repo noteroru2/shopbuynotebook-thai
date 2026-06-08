@@ -17,7 +17,7 @@ export default defineConfig({
         if (item.url === 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/') {
           item.changefreq = 'daily';
           item.priority = 1.0;
-        } else if (item.url.includes('/ขายโน๊ตบุ๊คด่วน/')) {
+        } else if (item.url.includes('/ขายโน๊ตบุ๊คด่วน/') || item.url.includes('/รับเหมาโน๊ตบุ๊ค/') || item.url.includes('/รับเหมาคอมพิวเตอร์/') || item.url.includes('/รับประมูลคอม/')) {
           item.changefreq = 'daily';
           item.priority = 0.9;
         } else if (item.url.includes('/รับซื้อโน๊ตบุ๊ค/')) {
