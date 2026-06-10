@@ -7,11 +7,21 @@ import { getCollection } from 'astro:content';
 import { absoluteUrl, SITE, serviceSchema, breadcrumbListSchema } from '../../../lib/seo';
 
 export async function getStaticPaths() {
-  const [brands, conditions, locations] = await Promise.all([
+  const [allBrands, allConditions, locations] = await Promise.all([
     getCollection('brands'),
     getCollection('conditions'),
     getCollection('locations'),
   ]);
+
+  const TOP_BRANDS = ['asus', 'acer', 'lenovo', 'hp', 'dell', 'msi', 'macbook', 'surface', 'gaming'];
+  const TOP_CONDITIONS = [
+    'จอแตก', 'เปิดไม่ติด', 'เครื่องเสีย', 'แบตเสื่อม', 'เมนบอร์ดเสีย', 
+    'โดนน้ำ', 'ตกรุ่น', 'เครื่องเก่า', 'ไม่มีที่ชาร์จ', 'ใช้งานปกติ', 
+    'ไฟไม่เข้า', 'บานพับแตก', 'ฮาร์ดดิสก์เสีย', 'คีย์บอร์ดเสีย', 'ทัชสกรีนเสีย'
+  ];
+
+  const brands = allBrands.filter(b => TOP_BRANDS.includes(b.data.slug));
+  const conditions = allConditions.filter(c => TOP_CONDITIONS.includes(c.data.slug));
 
   const paths = [];
   for (const loc of locations) {
