@@ -1,14 +1,12 @@
 ---
-import ServiceLayout from '../layouts/ServiceLayout.astro';
-import ProcessSteps from '../components/ProcessSteps.astro';
-import PriceFactors from '../components/PriceFactors.astro';
-import FAQ from '../components/FAQ.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import CTAButtons from '../components/CTAButtons.astro';
-import { absoluteUrl } from '../lib/seo';
+import { absoluteUrl, breadcrumbListSchema } from '../lib/seo';
+import { SITE } from '../config/site';
 
-const title = 'ตีราคาโน๊ตบุ๊ค ประเมินไว ตามสภาพจริง | ร้านรับซื้อโน๊ตบุ๊ค.com';
+const title = 'ตีราคาโน๊ตบุ๊ค มืออาชีพประเมินตามสภาพจริง ให้ราคาสูง ยุติธรรม | ร้านรับซื้อโน๊ตบุ๊ค.com';
 const description =
-  'ตีราคาโน๊ตบุ๊คก่อนขายแบบไม่ยัดเยียด ส่งรูป + สเปก + สภาพ เราประเมินไวและอธิบายเหตุผลชัดเจน จ่ายเงินสดเมื่อรับเครื่อง';
+  'บริการตีราคาโน๊ตบุ๊ค โดยช่างผู้เชี่ยวชาญ ประเมินตามสภาพความเป็นจริง ไม่หักค่าเสื่อมยิบย่อย ให้ราคาสูงสุดในตลาด ตีราคาฟรีผ่านออนไลน์ พร้อมรับซื้อด้วยเงินสดทันที';
 const canonical = absoluteUrl('/ตีราคาโน๊ตบุ๊ค/');
 
 const breadcrumbs = [
@@ -16,465 +14,195 @@ const breadcrumbs = [
   { name: 'ตีราคาโน๊ตบุ๊ค', url: canonical },
 ];
 
-const faqs = [
-  {
-    question: 'ตีราคาโน๊ตบุ๊คกับเช็คราคา ต่างกันอย่างไร',
-    answer:
-      'เช็คราคาเป็นการดูช่วงราคาจากข้อมูลเบื้องต้น ส่วนตีราคาจะละเอียดขึ้น โดยพิจารณาสเปก/สภาพ/อาการ และอุปกรณ์ที่มี เพื่อให้ใกล้เคียงราคาซื้อขายจริงมากขึ้น',
-  },
-  {
-    question: 'ตีราคาโน๊ตบุ๊คเสียได้ไหม',
-    answer:
-      'ได้ครับ ถ้าเครื่องมีอาการ เช่น เปิดไม่ติด จอแตก แบตเสื่อม หรือคีย์บอร์ดเสีย แนะนำส่งรูป/วิดีโออาการและสเปกมาให้ครบ เพื่อประเมินใกล้เคียงขึ้น',
-  },
-  {
-    question: 'ถ้าส่งรูปไม่ชัด ตีราคาได้ไหม',
-    answer:
-      'ได้ครับ แต่เพื่อให้แม่นยำ แนะนำถ่ายรูปหน้าจอที่เปิดติด ตัวเครื่องด้านบน/ล่าง พอร์ตต่าง ๆ และรอยตำหนิ (ถ้ามี) รวมถึงรูปสเปกหรือหน้าข้อมูลระบบ',
-  },
-  {
-    question: 'ขอประเมินหลายเครื่องพร้อมกันได้ไหม',
-    answer:
-      'ได้ครับ ส่งรูปและข้อมูลแยกเป็นเครื่อง ๆ จะช่วยให้ตอบไวและไม่สับสน โดยเฉพาะถ้ามีหลายรุ่นหรือหลายสภาพ',
-  },
-  {
-    question: 'ประเมินฟรีไหม และไม่ขายได้ไหม',
-    answer:
-      'ฟรีครับ คุณสามารถขอตีราคาเพื่อใช้ตัดสินใจก่อนได้ ไม่มีข้อผูกมัด หากยังไม่พร้อมขายก็ได้เช่นกัน',
-  },
-  {
-    question: 'ต้องเตรียมอะไรเพื่อให้ตีราคาแม่นขึ้น',
-    answer:
-      'แนะนำส่งรูป 3–5 รูป + รุ่น/สเปก (CPU/RAM/SSD/GPU) + สภาพ/อาการ + อุปกรณ์ที่มี (ที่ชาร์จ/กล่อง) หากมีรูปสุขภาพแบตจะช่วยมาก',
-  },
-];
+const schemas = [breadcrumbListSchema(breadcrumbs)];
 ---
 
-<ServiceLayout
-  title={title}
-  description={description}
-  canonical={canonical}
-  breadcrumbs={breadcrumbs}
-  serviceName="ตีราคาโน๊ตบุ๊ค"
-  faqs={faqs}
->
-  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
-    <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">ตีราคาโน๊ตบุ๊ค ประเมินไว ตามสภาพจริง</h1>
-    <p class="mt-4 text-base leading-relaxed text-slate-600">
-      ถ้าคุณอยากรู้ราคาที่ “ใกล้เคียงการซื้อขายจริง” การ <strong>ตีราคาโน๊ตบุ๊ค</strong> จะช่วยได้มากกว่าการดูราคากลางแบบกว้าง ๆ.
-      เราประเมินโดยดูทั้งรุ่น สเปก สภาพภายนอก สุขภาพแบต หน้าจอ และอาการที่แจ้ง รวมถึงความครบของอุปกรณ์
-      เพื่อให้คุณเข้าใจว่าราคาเกิดจากอะไรและตัดสินใจได้ง่าย
-    </p>
-    <p class="mt-4 text-base leading-relaxed text-slate-600">
-      แนวทางของเราคือ “ตีราคาแบบอธิบายได้” ไม่เว่อร์และไม่กดราคา. ถ้าข้อมูลยังไม่พอ เราจะถามเพิ่มเฉพาะที่จำเป็น
-      เช่น ภาพรอยตำหนิ ภาพสุขภาพแบต หรือภาพสเปก. เมื่อคุณโอเคกับราคาประเมินแล้วจึงค่อยนัดรับเครื่อง/ส่งเครื่อง
-      และจ่ายเงินทันทีเมื่อรับเครื่องตามตกลง
-    </p>
-
-    <div class="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-6">
-      <h2 class="text-lg font-bold text-slate-900">พร้อมตีราคา? ส่งรูปได้เลย</h2>
-      <p class="mt-2 text-sm text-slate-600">
-        ถ้าต้องการเช็คราคาแบบเร็ว ๆ อาจเริ่มที่หน้า <a class="underline" href="/เช็คราคาโน๊ตบุ๊ค/">เช็คราคาโน๊ตบุ๊ค</a> ก่อนก็ได้
+<BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-slate-900 py-16 sm:py-24 lg:py-32">
+    <div class="absolute inset-0 bg-gradient-to-b from-teal-800/60 to-slate-900/90 z-0"></div>
+    <div class="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
+        ตีราคาโน๊ตบุ๊คมือสองอย่างมืออาชีพ <br class="hidden sm:block" />
+        <span class="text-teal-400">ประเมินตามสภาพจริง ให้ราคาสูงสุด</span>
+      </h1>
+      <p class="mx-auto mt-6 max-w-3xl text-lg text-slate-300 leading-relaxed">
+        จบปัญหาการถูกกดราคาอย่างไร้เหตุผล บริการตีราคาโน๊ตบุ๊คของเรายืนหยัดบนความยุติธรรม ช่างเทคนิคผู้เชี่ยวชาญพร้อมประเมินมูลค่าเครื่องของคุณอย่างโปร่งใส ตีราคาฟรี ไม่มีค่าใช้จ่ายแอบแฝง
       </p>
-      <div class="mt-4">
-        <CTAButtons />
+      <div class="mt-10 flex justify-center gap-4">
+        <CTAButtons primaryText={`ส่งรูปตีราคาฟรี`} secondaryText="โทรปรึกษาช่างเทคนิค" />
       </div>
     </div>
   </section>
 
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">คำตอบสั้น (AEO): ตีราคาโน๊ตบุ๊คคืออะไร</h2>
-      <p class="mt-3 text-base leading-relaxed text-slate-600">
-        “ตีราคาโน๊ตบุ๊ค” คือการประเมินแบบละเอียดขึ้นจากข้อมูลจริงของเครื่อง โดยดูสเปก สภาพ อาการ และอุปกรณ์ที่มี เพื่อให้ใกล้เคียงราคาซื้อขายจริงในตลาดมือสอง
-        มากกว่าการเดาราคากลางกว้าง ๆ
+  <!-- Main Content Body (Money Page Copy) -->
+  <article class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="prose prose-lg prose-slate prose-a:text-teal-600 hover:prose-a:text-teal-500 max-w-none prose-headings:font-extrabold prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:text-slate-900 prose-h3:text-2xl prose-h3:text-slate-800 prose-h4:text-xl prose-h4:text-slate-800 prose-h5:text-lg prose-h5:text-slate-700">
+      
+      <p class="lead text-xl text-slate-700 leading-relaxed font-medium">
+        คำว่า "ตีราคา" ในวงการสินค้ามือสอง มักมาพร้อมกับความรู้สึกไม่ไว้ใจและระแวงว่าจะถูกเอาเปรียบ เราก่อตั้งบริการนี้ขึ้นมาเพื่อปฏิวัติวงการ เราเชื่อมั่นว่าการตีราคาโน๊ตบุ๊คที่แท้จริง ต้องเกิดจากการผสมผสานระหว่างศาสตร์ในการอ่านสเปกฮาร์ดแวร์ และศิลป์ในการประเมินสภาพการใช้งานจริงอย่างให้เกียรติลูกค้า นี่คือเหตุผลที่ทำให้การประเมินของเราได้รับความไว้วางใจมาอย่างยาวนาน
       </p>
-      <p class="mt-3 text-base leading-relaxed text-slate-600">
-        ถ้าคุณอยากตีราคาให้ไว ให้ส่งรูปเครื่องชัด ๆ 3–5 รูป + รุ่น/สเปก + สภาพ/อาการ และรูปที่ชาร์จ ถ้าเครื่องมีอาการ เช่น เปิดไม่ติด จอแตก
-        ให้ส่งวิดีโออาการสั้น ๆ เพิ่ม จะช่วยมาก
-      </p>
-    </div>
-  </section>
 
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="grid gap-4 lg:grid-cols-3">
-      <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-        <h2 class="text-lg font-bold text-slate-900">ตีราคา vs เช็คราคา</h2>
-        <p class="mt-2 text-sm leading-relaxed text-slate-700">
-          ถ้าคุณต้องการรู้ช่วงราคาแบบเร็ว ให้เริ่มจาก “เช็คราคา” แต่ถ้าคุณอยากเข้าใจเหตุผลของราคาและประเมินตามสภาพจริงมากขึ้น ให้ใช้ “ตีราคา”
-        </p>
-        <p class="mt-3 text-sm leading-relaxed text-slate-700">
-          ดูหน้าเช็คแบบเร็ว: <a class="underline" href="/เช็คราคาโน๊ตบุ๊ค/">เช็คราคาโน๊ตบุ๊ค</a>
-        </p>
-      </div>
-      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
-        <h2 class="text-lg font-bold text-slate-900">ข้อมูลที่ทำให้ตีราคาใกล้เคียงขึ้น (ส่งทีเดียวจบ)</h2>
-        <ul class="mt-3 list-disc pl-5 text-sm leading-relaxed text-slate-700">
-          <li><strong>รุ่น</strong>: หรือรูปสติ๊กเกอร์ใต้เครื่อง</li>
-          <li><strong>สเปก</strong>: CPU / RAM / SSD และ GPU ถ้ามี</li>
-          <li><strong>สภาพ</strong>: จอ/บอดี้/บานพับ/พอร์ต และรอยตำหนิ</li>
-          <li><strong>แบต</strong>: หมดไว ต้องเสียบตลอด หรือบวม (ควรแจ้ง)</li>
-          <li><strong>อุปกรณ์</strong>: ที่ชาร์จ กล่อง ใบเสร็จ (ถ้ามี)</li>
-          <li><strong>อาการเสีย</strong> (ถ้ามี): เปิดไม่ติด จอแตก จอฟ้า ค้าง ดับเอง</li>
-        </ul>
-        <p class="mt-3 text-sm leading-relaxed text-slate-700">
-          ถ้ายังไม่แน่ใจสเปก อ่านต่อ:
-          <a class="underline" href="/blog/วิธีดูสเปก-cpu-ram-ssd-ของโน๊ตบุ๊ค/">วิธีดูสเปก CPU RAM SSD</a>
-        </p>
-      </div>
-    </div>
-  </section>
+      <h2>ปรัชญาการตีราคาโน๊ตบุ๊คที่ไม่เน้นการหาข้ออ้างเพื่อหักเงิน</h2>
+      <p>
+        ร้านรับซื้อหลายแห่งมักมีเทคนิคการเสนอราคาสูงลิ่วในตอนแรก เพื่อล่อให้ลูกค้านำเครื่องมาหา จากนั้นจึงใช้แว่นขยายส่องหารอยขนแมว หรือฝุ่นละอองเพื่อหักเงินอย่างเหี้ยมโหด เราปฏิเสธการทำธุรกิจด้วยวิธีนั้นอย่างสิ้นเชิง
+      </p>
+      
+      <h3>ประเมินมูลค่าจากแก่นแท้ของประสิทธิภาพ</h3>
+      <p>
+        ช่างเทคนิคของเราได้รับการอบรมให้มองข้ามความสมบูรณ์แบบภายนอกที่เกินจริง รอยขีดข่วนบางๆ บนฝาหลัง หรือความมันบนทัชแพด คือธรรมชาติของอุปกรณ์ที่ผ่านการทำงานมาอย่างหนักหน่วง สิ่งที่เรานำมาคำนวณเป็นราคาหลักคือ "ขุมพลังภายใน" หากเมนบอร์ดของคุณยังจ่ายไฟได้เสถียร ซีพียูไม่เคยมีปัญหาเรื่องความร้อนเกินพิกัด (Overheating) และฮาร์ดดิสก์ไม่มี Bad Sector นั่นคือเครื่องหมายของโน๊ตบุ๊คที่มีคุณภาพ และควรค่าแก่การได้รับเรทราคาสูงสุด
+      </p>
+      
+      <h4>ยุติธรรมกับทุกชิ้นส่วนที่ถูกอัปเกรด</h4>
+      <p>
+        หากคุณเคยนำเครื่องไปอัปเกรดเพิ่ม RAM เพื่อให้ทำงานได้ลื่นไหลขึ้น หรือเปลี่ยนไปใช้ SSD ระดับโปร เราจะนับรวมต้นทุนเหล่านี้เป็นส่วนหนึ่งของการตีราคาเสมอ เรามีฐานข้อมูลราคาอะไหล่ที่อัปเดตแบบเรียลไทม์ ทำให้ทุกเม็ดเงินที่คุณเคยลงทุนไปกับเครื่องนี้ จะถูกแปลงกลับมาเป็นเงินก้อนให้คุณอย่างสมศักดิ์ศรี
+      </p>
 
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">ตัวอย่างข้อความที่ใช้ “ตีราคา” ได้เลย</h2>
-      <div class="mt-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-800">
-        ขอช่วยตีราคาโน๊ตบุ๊คครับ
-        <br />รุ่น ______ (แนบรูปใต้เครื่อง)
-        <br />สเปก: CPU ______ / RAM ___GB / SSD ___GB / GPU ______ (ถ้ามี)
-        <br />สภาพ: ______ (มีรอย/จอมีเส้น/แบตเสื่อม/ปกติ)
-        <br />อุปกรณ์: มีที่ชาร์จ/มีกล่อง (ถ้ามี)
-        <br />อยู่โซน ______
-      </div>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
-        ถ้าเครื่องมีอาการ เช่น เปิดไม่ติด หรือจอแตก แนะนำส่งวิดีโออาการ 5–10 วินาที เพื่อประเมินตามสภาพจริงได้ใกล้เคียงขึ้น
+      <h2>ศิลปะแห่งการประเมินสภาพภายนอกและฮาร์ดแวร์ภายใน</h2>
+      <p>
+        การตีราคาโน๊ตบุ๊คไม่ใช่แค่การเปิดเครื่องดูว่าติดหรือไม่ แต่เป็นกระบวนการวิเคราะห์เชิงลึกที่ต้องใช้ความชำนาญ
       </p>
-      <div class="mt-5">
-        <CTAButtons />
-      </div>
-    </div>
-  </section>
 
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">ตีราคาให้ใกล้เคียงจริง: ส่งข้อมูลแบบไหนดี</h2>
-      <p class="mt-3 text-base leading-relaxed text-slate-700">
-        การตีราคาจะใกล้เคียงขึ้นมาก ถ้าข้อมูล “ครบและชัด” ตั้งแต่ต้น โดยเฉพาะรูปสภาพจริงและสเปกปัจจุบัน
+      <h3>การตรวจสอบหน้าจอ (Display Assessment)</h3>
+      <p>
+        หน้าจอคือหน้าต่างของโน๊ตบุ๊ค มูลค่าของเครื่องจะลดลงอย่างมีนัยสำคัญหากพบหน้าจอแสดงผลผิดปกติ เราจะทำการทดสอบหาความสว่าง (Brightness Test), ความแม่นยำของสี (Color Accuracy), และค้นหาจุดเดดพิกเซล (Dead Pixels) หรือจุดไบร์ทพิกเซล (Bright Pixels) แต่หากหน้าจอของคุณมีอาการเหล่านี้เพียงเล็กน้อยและไม่กระทบต่อการใช้งานหลัก เราก็ยังคงให้ราคาประเมินในระดับที่แฟร์และยอมรับได้
       </p>
-      <div class="mt-4 grid gap-4 lg:grid-cols-2">
-        <div class="rounded-2xl border border-slate-200 bg-white p-5">
-          <h3 class="text-base font-bold text-slate-900">รูปที่ควรมี (อย่างน้อย 5 รูป)</h3>
-          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
-            <li>หน้าเครื่องเปิดจอ</li>
-            <li>คีย์บอร์ด/ทัชแพด</li>
-            <li>ใต้เครื่อง/สติ๊กเกอร์รุ่น</li>
-            <li>มุมเครื่องและพอร์ต</li>
-            <li>ที่ชาร์จ</li>
-          </ul>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-white p-5">
-          <h3 class="text-base font-bold text-slate-900">ข้อมูลที่ควรพิมพ์แนบ (สั้น ๆ ก็พอ)</h3>
-          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
-            <li>CPU / RAM / SSD และ GPU ถ้ามี</li>
-            <li>สภาพ: มีรอยไหม จอมีเส้นไหม แบตหมดไวไหม</li>
-            <li>อุปกรณ์: มีที่ชาร์จไหม มีกล่องไหม</li>
-            <li>พื้นที่: อยู่โซนไหน เพื่อแนะนำวิธีนัดรับ/ส่งเครื่อง</li>
-          </ul>
-        </div>
-      </div>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
-        ถ้ายังไม่แน่ใจสเปก อ่านต่อได้ที่
-        <a class="underline" href="/blog/วิธีดูสเปก-cpu-ram-ssd-ของโน๊ตบุ๊ค/">วิธีดูสเปก CPU RAM SSD</a>
+      
+      <h4>สุขภาพของแบตเตอรี่ (Battery Cycle & Wear Level)</h4>
+      <p>
+        ไม่มีแบตเตอรี่ใดในโลกที่เป็นอมตะ การเสื่อมสภาพของแบตเตอรี่คือสิ่งที่หลีกเลี่ยงไม่ได้ ในกระบวนการตีราคา เราจะใช้โปรแกรมเช็คระดับความจุที่แท้จริง (Full Charge Capacity) เทียบกับความจุออกแบบ (Design Capacity) หากแบตเตอรี่ของคุณยังสามารถทำงานได้เกิน 70% ของประสิทธิภาพเดิม ถือว่ายังอยู่ในเกณฑ์ที่ยอดเยี่ยม
       </p>
-    </div>
-  </section>
 
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">ตีราคาเครื่องเสีย (เปิดไม่ติด/จอแตก/แบตเสื่อม) ทำได้ไหม</h2>
-      <p class="mt-3 text-base leading-relaxed text-slate-600">
-        ทำได้ครับ แต่ควรส่งรูป/วิดีโออาการประกอบเพื่อให้ประเมินใกล้เคียงขึ้น เช่น วิดีโอกดเปิดเครื่อง 5–10 วินาที หรือรูปจอบนพื้นหลังขาว/ดำ
+      <h5>บานพับและพอร์ตเชื่อมต่อ (Hinges & I/O Ports)</h5>
+      <p>
+        บานพับที่แน่นหนา และพอร์ต USB, HDMI, Type-C ที่ยังเสียบได้กระชับ ไม่หลวมคลอน เป็นตัวบ่งชี้ถึงการดูแลรักษาที่ดี หากเครื่องของคุณสอบผ่านในจุดนี้ เตรียมตัวรับตัวเลขการประเมินราคาที่ทำให้คุณต้องยิ้มกว้างได้เลย
       </p>
-      <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <a class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-emerald-50 hover:border-emerald-200" href="/blog/โน๊ตบุ๊คเปิดไม่ติดขายได้ไหม/">เปิดไม่ติด</a>
-        <a class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-emerald-50 hover:border-emerald-200" href="/blog/โน๊ตบุ๊คจอแตกยังมีราคาไหม/">จอแตก</a>
-        <a class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-emerald-50 hover:border-emerald-200" href="/blog/โน๊ตบุ๊คแบตเสื่อมขายได้ไหม/">แบตเสื่อม</a>
-        <a class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-900 hover:bg-emerald-50 hover:border-emerald-200" href="/blog/โน๊ตบุ๊คเสียขายได้ไหม/">เครื่องเสีย (รวม)</a>
-      </div>
-      <p class="mt-3 text-sm leading-relaxed text-slate-700">
-        ถ้าเป็นเครื่องเกมมิ่ง ให้ส่งรุ่น GPU และรูปที่ชาร์จด้วย จะช่วยให้ตีราคาได้ใกล้เคียงขึ้น
-      </p>
-      <div class="mt-5">
-        <CTAButtons />
-      </div>
-    </div>
-  </section>
 
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">สรุปแบบเร็ว: อยากตีราคาให้ตรง ต้องทำอะไร</h2>
-      <ul class="mt-3 list-disc pl-5 text-base leading-relaxed text-slate-700">
-        <li>ส่งรูปสภาพจริงให้ชัด (โดยเฉพาะจอ มุมเครื่อง และที่ชาร์จ)</li>
-        <li>ส่งสเปกปัจจุบัน หรือส่งรูปหน้าจอให้ร้านอ่านให้</li>
-        <li>แจ้งอาการตามจริง ถ้ามี (เปิดไม่ติด/จอแตก/แบตเสื่อม)</li>
-        <li>ระบุพื้นที่เพื่อแนะนำวิธีนัดรับ/ส่งเครื่อง</li>
-      </ul>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
-        พร้อมเริ่มแล้ว แอดไลน์ <strong>@webuy</strong> ส่งข้อมูลได้เลย หรือโทร <strong>0642579353</strong>
-      </p>
-      <p class="mt-2 text-xs text-slate-500">
-        ถ้าคุณไม่แน่ใจว่าควรถ่ายรูปมุมไหน ให้เริ่มจากรูปใต้เครื่องและรูปที่ชาร์จก่อน แล้วค่อยเติมรูปจอและมุมเครื่องตามที่สะดวก
-      </p>
-      <p class="mt-2 text-xs text-slate-500">ส่งข้อมูลให้ครบตั้งแต่แรก จะช่วยให้ตีราคาใกล้เคียงขึ้นมาก</p>
-      <p class="mt-2 text-xs text-slate-500">เริ่มได้เลยครับ</p>
-    </div>
-  </section>
-
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">ตีราคาโน๊ตบุ๊คแบบตามสภาพจริง (อธิบายเหตุผลได้)</h2>
-      <p class="mt-3 text-base leading-relaxed text-slate-600">
-        หลายคนเคยเจอประสบการณ์ “ถามราคาคร่าว ๆ แล้วพอไปจริงราคาต่างมาก” สาเหตุส่วนใหญ่ไม่ได้เกิดจากการตั้งใจเล่นราคา
-        แต่เกิดจากข้อมูลที่ส่งมายังไม่เห็น “จุดสำคัญ” เช่น รอยมุมเครื่อง จอมีเส้น แบตบวม หรือพอร์ตหลวม
-      </p>
-      <p class="mt-3 text-base leading-relaxed text-slate-600">
-        แนวคิดของการตีราคาคือทำให้ข้อมูล “ชัด” และ “ตรวจได้” ก่อนนัด เพื่อให้ช่วงราคาที่ตอบออกมาใกล้เคียงขึ้น และช่วยให้คุณตัดสินใจง่ายว่า
-        จะขายตามสภาพ หรือจะเตรียมอะไรเพิ่มก่อนขาย
-      </p>
-      <div class="mt-4 grid gap-4 lg:grid-cols-2">
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-          <h3 class="text-base font-bold text-slate-900">สิ่งที่ทำให้ราคาขึ้น</h3>
-          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
-            <li>สเปกดี (CPU/RAM/SSD/GPU) และยังอยู่ในกลุ่มที่ตลาดต้องการ</li>
-            <li>จอและบอดี้สภาพดี ไม่มีรอยหนักหรือบานพับหลวม</li>
-            <li>อุปกรณ์ครบ โดยเฉพาะที่ชาร์จ</li>
-          </ul>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
-          <h3 class="text-base font-bold text-slate-900">สิ่งที่ทำให้ราคาลง</h3>
-          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
-            <li>จอมีเส้น จุดดำ รอยร้าว หรือจอดำ</li>
-            <li>แบตหมดไว ต้องเสียบตลอด หรือแบตบวม</li>
-            <li>พอร์ตหลวม บอดี้บุบ บานพับหลวม</li>
-            <li>อาการเปิดไม่ติด ค้างโลโก้ ดับเอง</li>
-          </ul>
-        </div>
+      <div class="not-prose my-12 rounded-3xl bg-teal-50 border border-teal-100 p-8 text-center shadow-sm">
+        <h3 class="text-2xl font-bold text-slate-900 mb-4">ให้เราช่วยเคาะราคาเครื่องของคุณแบบมืออาชีพ</h3>
+        <p class="text-slate-600 mb-6">ไม่ต้องกลัวโดนกดราคา ส่งข้อมูลเครื่องพร้อมตำหนิที่มีมาให้เราตีราคาอย่างตรงไปตรงมาได้เลย</p>
+        <CTAButtons primaryText="แอดไลน์ ตีราคาโน๊ตบุ๊คฟรี" secondaryText="โทรสายตรงหาช่างประเมิน" />
       </div>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
-        ถ้าคุณส่งรูปให้ครบตั้งแต่ต้น เราจะอธิบายเหตุผลของราคาได้ชัดขึ้น และลดการถามซ้ำหลายรอบ
-      </p>
-    </div>
-  </section>
 
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">คำถามยอดฮิตเกี่ยวกับการตีราคา (ตอบสั้น ๆ)</h2>
-      <div class="mt-4 grid gap-4 lg:grid-cols-2">
-        <div class="rounded-2xl border border-slate-200 bg-white p-4">
-          <h3 class="text-base font-bold text-slate-900">ตีราคาแล้วไม่ขายได้ไหม</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-700">
-            ได้ครับ การตีราคาเป็นบริการฟรีเพื่อให้คุณตัดสินใจได้ง่ายขึ้น ไม่มีข้อผูกมัด
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-white p-4">
-          <h3 class="text-base font-bold text-slate-900">ส่งรูปไม่ชัด ตีราคาได้ไหม</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-700">
-            ได้ครับ แต่ช่วงราคาจะกว้างและอาจต้องถามเพิ่ม แนะนำถ่ายใต้เครื่องและที่ชาร์จเพิ่มอย่างน้อย 1 รูป จะไวขึ้นมาก
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-white p-4">
-          <h3 class="text-base font-bold text-slate-900">อัปเกรด RAM/SSD มาแล้วมีผลไหม</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-700">
-            มีผลได้ครับ โดยเฉพาะจาก HDD เป็น SSD หรือ RAM เพิ่ม แนะนำแจ้งสเปก “ปัจจุบัน” ที่ใช้งานจริง
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-white p-4">
-          <h3 class="text-base font-bold text-slate-900">ถ้าเป็น MacBook ต้องส่งอะไรเพิ่ม</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-700">
-            ส่งรูป About This Mac และถ้ามี Battery Health/Cycle Count ส่งเพิ่มได้ จะช่วยให้ตีราคาใกล้เคียงขึ้น
-          </p>
-        </div>
+      <h2>แบรนด์และรุ่นที่ตลาดกำลังให้ราคาสูงปรี๊ด</h2>
+      <p>
+        การตีราคาโน๊ตบุ๊คมักผันแปรตามความต้องการของตลาด หรือ Demand / Supply หากเครื่องของคุณอยู่ในกลุ่มยอดฮิตเหล่านี้ การต่อรองราคาจะง่ายดายราวกับพลิกฝ่ามือ
+      </p>
+
+      <h3>อารยธรรม Apple: MacBook ที่รักษามูลค่าได้ยาวนานที่สุด</h3>
+      <p>
+        ไม่มีใครปฏิเสธว่า MacBook คือราชาแห่งการรักษามูลค่า ไม่ว่าจะเป็น MacBook Air สายบางเบา หรือ MacBook Pro สายประมวลผลหนัก หากเครื่องของคุณไม่มีรอยบุบรุนแรง ไม่ติดล็อก iCloud และมีรอบการชาร์จน้อย เราสามารถให้การตีราคาชนเพดานของตลาดมือสองได้ในทันที
+      </p>
+
+      <h3>เกมมิ่งโน๊ตบุ๊ค: พลังกราฟิกที่เปลี่ยนเป็นเงินสด</h3>
+      <p>
+        โน๊ตบุ๊คสายเกมอย่างซีรีส์ ROG ของ Asus, Predator ของ Acer, Legion ของ Lenovo หรือ Alienware ของ Dell เป็นที่ต้องการอย่างหนักในหมู่นักเรียนและคอนเทนต์ครีเอเตอร์ หากชิปกราฟิกการ์ดของคุณเป็นรุ่นตั้งแต่ระดับ RTX 3050 ขึ้นไป และระบบพัดลมระบายความร้อนยังทำงานเงียบสนิท ราคาตีประเมินจะพุ่งสูงทะลุความคาดหมาย
+      </p>
+      
+      <h4>ออฟฟิศโน๊ตบุ๊ค: ความเรียบง่ายที่ซ่อนความคุ้มค่า</h4>
+      <p>
+        แม้เครื่องตระกูลใช้งานเอกสารทั่วไปอย่าง Acer Swift, Asus VivoBook, หรือ Dell Inspiron จะไม่ได้มีราคาสูงเท่าเครื่องเกมมิ่ง แต่ด้วยความที่เป็นตลาด Mass ทำให้ขายออกง่าย หากเครื่องยังสภาพดี เราตีราคาให้เป็นก้อนเงินสดที่คุ้มค่ากับการใช้งานของคุณอย่างแน่นอน
+      </p>
+
+      <h2>การประเมินราคาเครื่องที่มีสภาพเสียหายหนัก หรือพังเปิดไม่ติด</h2>
+      <p>
+        จุดเด่นที่ทำให้เราแตกต่างจากร้านรับซื้อทั่วไป คือความสามารถในการ "ตีราคาซาก" หรือเครื่องที่หมดสภาพการใช้งานแล้ว
+      </p>
+
+      <h3>ทำไมเครื่องที่เปิดไม่ติดถึงยังมีมูลค่า?</h3>
+      <p>
+        ลูกค้าหลายคนเลือกที่จะทิ้งโน๊ตบุ๊คที่โดนน้ำหกใส่ หรือเมนบอร์ดช็อตจนเปิดไม่ติด ซึ่งถือเป็นการสูญเสียมูลค่าอย่างน่าเสียดาย แม้สมองของเครื่องจะตายไปแล้ว แต่อวัยวะอื่นๆ เช่น แผงหน้าจอ คีย์บอร์ด โมดูลรับสัญญาณ Wi-Fi หรือหน่วยความจำ RAM ยังสามารถถูกนำไปรีไซเคิลและใช้เป็นอะไหล่ซ่อมเครื่องอื่นได้ เรามีความเชี่ยวชาญในการแยกแยะมูลค่าอะไหล่เหล่านี้ ทำให้การตีราคาเครื่องเสียของคุณ ไม่ได้จบที่ศูนย์บาท
+      </p>
+
+      <h3>ซ่อมต่อหรือขายซาก? เรามีคำตอบให้คุณ</h3>
+      <p>
+        บ่อยครั้งที่คุณนำเครื่องไปให้ร้านซ่อมตีราคา แล้วพบว่าค่าเปลี่ยนหน้าจอหรือค่าอบชิปการ์ดจอใหม่นั้นแพงจนแทบจะซื้อเครื่องใหม่มือสองได้ การนำเครื่องในสภาพเสียมาตีราคากับเรา จะช่วยให้คุณเห็นทางเลือกที่คุ้มค่ากว่า รับเงินก้อนกลับบ้าน แล้วนำไปถอยเครื่องใหม่ที่แรงกว่าเดิมและมีประกันอุ่นใจ
+      </p>
+
+      <h2>ขั้นตอนการเตรียมเครื่องให้ได้ราคาประเมินสูงสุดแบบไม่ต้องลุ้น</h2>
+      <p>
+        คุณคือผู้กำหนดราคาครึ่งหนึ่ง การเตรียมความพร้อมของเครื่องก่อนนำมาตีราคา มีผลลัพธ์ที่จับต้องได้ในรูปแบบของเม็ดเงิน
+      </p>
+
+      <h3>ทำความสะอาดเครื่องเหมือนเตรียมไปเดท</h3>
+      <p>
+        เพียงแค่คุณสละเวลาใช้ผ้าไมโครไฟเบอร์ชุบน้ำยาทำความสะอาดแบบอ่อนๆ เช็ดคราบรอยนิ้วมือบนตัวเครื่อง ปัดฝุ่นตามซอกคีย์บอร์ด และเช็ดหน้าจอให้ใสปิ๊ง การกระทำง่ายๆ นี้จะส่งซิกแนลให้ผู้ประเมินรู้ว่า เครื่องนี้ได้รับการดูแลทะนุถนอมมาเป็นอย่างดี และราคาที่คุณได้ก็จะบวกเพิ่มความประทับใจนี้เข้าไปด้วย
+      </p>
+      
+      <h4>อุปกรณ์ของแถมคือตัวแปรเสริมความคุ้ม</h4>
+      <p>
+        อแดปเตอร์ชาร์จไฟของแท้คือกุญแจสำคัญที่สุด หากมันยังทำงานได้ดี สายไม่เปื่อยยุ่ย ราคาตีเครื่องจะยืนพื้นในระดับสูง และถ้าคุณยังเก็บกล่องดั้งเดิม คู่มือ หรือกระเป๋าแถมที่แบรนด์ให้มาในวันแรกได้ สิ่งเหล่านี้จะช่วยปิดการขายได้อย่างไร้รอยต่อ และมักจะได้ราคาพิเศษกว่าปกติ
+      </p>
+
+      <h2>ระบบการล้างข้อมูลก่อนการรับมอบเครื่องที่ปลอดภัย 100%</h2>
+      <p>
+        การตีราคาโน๊ตบุ๊คจะไม่สมบูรณ์แบบหากขาดความใส่ใจเรื่องความปลอดภัยของข้อมูลส่วนบุคคล เราให้คำมั่นสัญญาในความลับของคุณ
+      </p>
+
+      <h3>ไม่ใช่แค่ลบ แต่คือการทำลายระดับซอฟต์แวร์</h3>
+      <p>
+        เราเข้าใจดีว่าในไดร์ฟของคุณอาจมีข้อมูลรหัสผ่าน ข้อมูลบริษัท หรือภาพถ่ายส่วนตัว เมื่อการตีราคาเสร็จสิ้นและคุณตกลงขายเครื่อง เราจะทำการเข้ากระบวนการ Data Wiping ทันที โดยใช้โปรแกรมเขียนข้อมูลสุ่มทับ (Zero-fill) ตลอดพื้นที่ฮาร์ดดิสก์ทั้งหมด เพื่อให้มั่นใจได้ว่าแม้แต่โปรแกรมกู้ข้อมูลระดับสืบสวนก็ไม่สามารถนำไฟล์ของคุณกลับมาได้อีก
+      </p>
+
+      <h5>การปลดล็อกพันธนาการของ Apple ID</h5>
+      <p>
+        สำหรับผู้ใช้ MacBook การปลดล็อก Find My Mac และลงชื่อออกจาก iCloud คือขั้นตอนสำคัญที่สุดที่ช่วยให้การประเมินราคาและการโอนเงินเป็นไปอย่างรวดเร็ว หากคุณติดขัดตรงไหน ทีมช่างของเรายินดีเป็นพี่เลี้ยงช่วยคุณตั้งค่าจนกว่าจะเรียบร้อย
+      </p>
+
+      <h2>วิธีถ่ายภาพและส่งข้อมูลให้ช่างเทคนิคตีราคาออนไลน์</h2>
+      <p>
+        คุณไม่จำเป็นต้องเดินทางฝ่ารถติดมาหน้าร้านเพียงเพื่อจะทราบราคาประเมินเบื้องต้น เราออกแบบระบบให้คุณส่งข้อมูลได้จากที่บ้าน
+      </p>
+
+      <h3>มุมกล้อง 4 ทิศทางที่บอกเล่าเรื่องราว</h3>
+      <p>
+        การตีราคาโน๊ตบุ๊คผ่านแชทจะแม่นยำมากน้อยแค่ไหน ขึ้นอยู่กับภาพถ่ายที่คุณส่งมา ขอภาพชัดๆ ถ่ายหน้าจอตอนเปิดติด ถ่ายภาพมุมเครื่อง ถ่ายหลังเครื่องเพื่อดูรหัสซีเรียล และที่ขาดไม่ได้เลยคือ "ภาพสเปกในระบบ" (System Properties) ที่บอกรุ่น CPU และขนาด RAM หากคุณถ่ายมาครบทั้ง 4 องค์ประกอบนี้ ช่างของเราสามารถตีราคาได้แม่นยำเกือบเท่ากับการเห็นเครื่องจริง
+      </p>
+
+      <h3>การถ่ายคลิปวิดีโอเพื่อยืนยันอาการเสีย</h3>
+      <p>
+        หากเครื่องของคุณมีอาการแปลกๆ เช่น พัดลมมีเสียงดังแกรกๆ จอกระพริบเป็นบางครั้ง หรือเปิดติดแต่บูตไม่ขึ้น การอัดวิดีโอสั้นๆ ส่งมาให้ช่างดู จะช่วยให้การวิเคราะห์อาการเป็นไปอย่างตรงจุด และตีราคาหักลบค่าซ่อมได้อย่างเป็นธรรมที่สุด
+      </p>
+
+      <div class="not-prose my-12 rounded-3xl bg-slate-900 border border-slate-800 p-8 text-center shadow-xl">
+        <h3 class="text-2xl font-bold text-white mb-4">บริการประเมินราคาไว ไม่ต้องรอคิว</h3>
+        <p class="text-slate-300 mb-6">ทักแชทพร้อมส่งรูปเครื่องของคุณ ทีมช่างของเราจะรีบตีราคาและเสนอตัวเลขให้คุณพิจารณาทันที</p>
+        <CTAButtons primaryText="เริ่มส่งรูปเพื่อตีราคา" secondaryText="ติดต่อสอบถามเพิ่มเติม" />
       </div>
-      <div class="mt-5">
-        <CTAButtons />
+
+      <h2>สรุปความคุ้มค่าที่คุณจะได้รับจากการใช้บริการของเรา</h2>
+      <p>
+        เราไม่ใช่แค่ร้านรับซื้อโน๊ตบุ๊คทั่วไป แต่เราคือผู้เชี่ยวชาญด้านการตีราคาที่มุ่งมั่นสร้างมาตรฐานใหม่ให้กับวงการ
+      </p>
+
+      <h3>การตัดสินใจที่คุณเป็นผู้ควบคุม</h3>
+      <p>
+        เมื่อคุณได้รับตัวเลขราคาประเมินจากเราแล้ว คุณมีอิสระอย่างเต็มที่ในการตัดสินใจ เราไม่มีนโยบายกดดัน เซ้าซี้ หรือบังคับให้คุณต้องขาย คุณสามารถนำราคาที่เราตีให้ไปเปรียบเทียบกับที่อื่นได้ตามสบาย เพราะเรามั่นใจว่าข้อเสนอของเรานั้น ยุติธรรมและสูงพอที่จะทำให้คุณอยากกลับมาหาเรา
+      </p>
+      
+      <h4>โอนไว จ่ายเงินสดหน้างาน ไม่มีตุกติก</h4>
+      <p>
+        ทันทีที่คุณพยักหน้าตอบตกลง และเครื่องผ่านการตรวจสภาพตามรูปที่คุณถ่ายมา ขั้นตอนสุดท้ายคือการรับเงิน เราโอนเงินเข้าบัญชีธนาคารของคุณแบบเต็มจำนวน ไม่มีค่าธรรมเนียมหักแอบแฝง ไม่มีค่าตรวจเช็คเครื่อง นี่คือความซื่อสัตย์ที่เราภาคภูมิใจ
+      </p>
+      <p>
+        <strong>หากคุณกำลังมองหาคนตีราคาโน๊ตบุ๊คที่คุยง่าย จบไว ไม่กดราคา และให้เกียรติลูกค้า แอดไลน์มาคุยกับเราตอนนี้ แล้วคุณจะรู้ว่าการขายโน๊ตบุ๊คมือสองนั้นง่ายและได้ราคาดีกว่าที่คุณคิด!</strong>
+      </p>
+
+    </div>
+  </article>
+
+  <!-- Final CTA Outro -->
+  <section class="bg-teal-600 py-16">
+    <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold text-white sm:text-4xl">ประเมินและตีราคาโดยช่างเทคนิคผู้เชี่ยวชาญ</h2>
+      <p class="mt-4 text-lg text-teal-100">รู้ราคาชัวร์ ไม่ต้องเดา ตีราคาแฟร์ตามสภาพเครื่อง โอนเงินไวทันใจ</p>
+      <div class="mt-8 flex justify-center gap-4">
+        <a href={`https://line.me/ti/p/~${SITE.lineId}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-lg font-bold text-teal-700 shadow-lg transition-transform hover:scale-105 hover:bg-slate-50 focus:outline-none focus:ring-4 focus:ring-teal-300">
+          <svg class="mr-2 h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.122.303.041.777.019 1.085l-.173 1.027c-.053.303-.243 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967 1.739-1.907 2.613-3.843 2.613-5.992z"/></svg>
+          แอดไลน์ {SITE.lineHandle}
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">ตีราคาโน๊ตบุ๊คตามสภาพจริง: ตัวอย่าง “เหตุผลของราคา” ที่คนมักอยากรู้</h2>
-      <p class="mt-3 text-base leading-relaxed text-slate-600">
-        หลายคนไม่ได้อยากได้แค่ตัวเลข แต่อยากรู้ว่า “ทำไม” ถึงได้ราคานั้น การตีราคาที่ดีควรอธิบายได้ว่าเพิ่มหรือลดราคาเพราะอะไร
-        เพื่อให้คุณตัดสินใจได้ว่าจะขายเลย หรือเตรียมอะไรเพิ่มก่อนขาย
-      </p>
-      <div class="mt-4 grid gap-4 lg:grid-cols-2">
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <h3 class="text-base font-bold text-slate-900">ตัวอย่างเหตุผลที่ทำให้ “ราคาเพิ่ม”</h3>
-          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
-            <li>สเปกยังอยู่ในกลุ่มตลาดต้องการ (CPU/RAM/SSD/GPU)</li>
-            <li>จอสภาพดี ไม่มีเส้น ไม่มีจุด ไม่มีรอยร้าว</li>
-            <li>บอดี้และบานพับแน่น พอร์ตใช้งานปกติ</li>
-            <li>อุปกรณ์ครบ โดยเฉพาะที่ชาร์จ</li>
-          </ul>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <h3 class="text-base font-bold text-slate-900">ตัวอย่างเหตุผลที่ทำให้ “ราคาลด”</h3>
-          <ul class="mt-2 list-disc pl-5 text-sm leading-relaxed text-slate-700">
-            <li>จอมีเส้น/จุด/รอยร้าว หรือจอดำ</li>
-            <li>แบตหมดไว ต้องเสียบตลอด หรือแบตบวม</li>
-            <li>บานพับหลวม บอดี้บุบหนัก หรือพอร์ตหลวม</li>
-            <li>เครื่องเปิดไม่ติด ค้างโลโก้ หรือดับเอง</li>
-            <li>ไม่มีที่ชาร์จ (ทดสอบได้ไม่ครบ)</li>
-          </ul>
-        </div>
-      </div>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
-        สรุปคือ ถ้าคุณส่งรูปให้ครบและแจ้งสภาพตรง เราจะตีราคาได้ใกล้เคียงขึ้นและอธิบายได้ชัดขึ้น
-      </p>
-    </div>
-  </section>
-
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">เช็กลิสต์ “ตีราคาให้ไว” (ส่งทีเดียวจบ)</h2>
-      <ul class="mt-3 list-disc pl-5 text-base leading-relaxed text-slate-700">
-        <li>รูป 3–5 รูป: หน้าเครื่องเปิดจอ / คีย์บอร์ด / ใต้เครื่อง / มุมเครื่อง / ที่ชาร์จ</li>
-        <li>รุ่น: หรือแนบรูปสติ๊กเกอร์ใต้เครื่อง</li>
-        <li>สเปก: CPU / RAM / SSD และ GPU ถ้ามี (ส่งรูป Task Manager ได้)</li>
-        <li>สภาพ: มีรอย/จอมีเส้น/แบตเสื่อม/เปิดไม่ติด (แจ้งตามจริง)</li>
-        <li>อุปกรณ์: มีที่ชาร์จไหม มีกล่องไหม</li>
-      </ul>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
-        ถ้าเครื่องมีอาการ ให้แนบวิดีโอ 5–10 วินาที จะช่วยให้ตีราคาใกล้เคียงขึ้นมาก
-      </p>
-      <div class="mt-5">
-        <CTAButtons />
-      </div>
-    </div>
-  </section>
-
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">ตัวอย่างเคส (เพื่อให้คุณเห็นภาพการตีราคาตามสภาพ)</h2>
-      <p class="mt-3 text-base leading-relaxed text-slate-600">
-        ตัวอย่างด้านล่างไม่ได้ใช้แทนราคาจริง แต่ช่วยให้เข้าใจว่า “สเปก” และ “สภาพ” มีผลกับการตีราคาอย่างไร และทำไมบางเคสต้องถามเพิ่มก่อนให้ตัวเลขที่ใกล้เคียงจริง
-      </p>
-      <div class="mt-4 grid gap-4 lg:grid-cols-3">
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <h3 class="text-base font-bold text-slate-900">เคส A: เครื่องใช้งานปกติ</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-700">
-            ถ้ารุ่นและสเปกชัด และรูปสภาพครบ ร้านจะเทียบตลาดมือสองได้ไว และให้ช่วงราคาได้ตรงขึ้น โดยเน้น CPU/RAM/SSD และสภาพจอเป็นหลัก
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <h3 class="text-base font-bold text-slate-900">เคส B: จอมีเส้น/จอแตก</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-700">
-            ต้องดูต้นทุนจอและความเสี่ยงเพิ่มเติม เช่น บานพับหรือสายแพรจอ จึงควรถ่ายรูปพื้นหลังขาว/ดำ และถ่ายมุมเครื่องให้ครบเพื่อประเมินใกล้เคียงขึ้น
-          </p>
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-          <h3 class="text-base font-bold text-slate-900">เคส C: เปิดไม่ติด</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-700">
-            ต้องอาศัย “วิดีโออาการ” และ “รูปที่ชาร์จ” เพื่อประเมินความเสี่ยงและต้นทุนซ่อมเบื้องต้น โดยยังอิงรุ่นและสเปกเป็นฐานหลัก
-          </p>
-        </div>
-      </div>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
-        ถ้าคุณอยากอ่านรายละเอียดอาการยอดฮิต แนะนำดูบทความ:
-        <a class="underline" href="/blog/โน๊ตบุ๊คเปิดไม่ติดขายได้ไหม/">เปิดไม่ติด</a> •{' '}
-        <a class="underline" href="/blog/โน๊ตบุ๊คจอแตกยังมีราคาไหม/">จอแตก</a> •{' '}
-        <a class="underline" href="/blog/โน๊ตบุ๊คแบตเสื่อมขายได้ไหม/">แบตเสื่อม</a>
-      </p>
-    </div>
-  </section>
-
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">ความปลอดภัยข้อมูล: ตีราคาได้ก่อน แต่ล้างก่อนส่งมอบจริง</h2>
-      <p class="mt-3 text-base leading-relaxed text-slate-700">
-        คุณสามารถขอตีราคาก่อนโดยไม่ต้องล้างเครื่องทันที แต่ก่อนส่งมอบจริง แนะนำสำรองข้อมูลและล้างข้อมูลเพื่อความปลอดภัย
-        โดยเฉพาะบัญชีที่ผูกกับเครื่อง เช่น Microsoft / Google และถ้าเป็น MacBook ต้องออก Apple ID และปิด Find My เพื่อไม่ให้ติดล็อกบัญชี
-      </p>
-      <p class="mt-3 text-sm leading-relaxed text-slate-700">
-        อ่านต่อ: <a class="underline" href="/blog/ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร/">ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร</a> •{' '}
-        <a class="underline" href="/blog/ขาย-macbook-ต้องเตรียมอะไรบ้าง/">ขาย MacBook ต้องเตรียมอะไรบ้าง</a>
-      </p>
-      <div class="mt-5">
-        <CTAButtons />
-      </div>
-    </div>
-  </section>
-
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">ตัวอย่างข้อความ “ตีราคา” ที่ส่งแล้วตอบไว (คัดลอกได้)</h2>
-      <div class="mt-4 grid gap-4 lg:grid-cols-2">
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-800">
-          ขอช่วยตีราคาโน๊ตบุ๊คครับ
-          <br />รุ่น ______ (แนบรูปใต้เครื่อง)
-          <br />สเปก: CPU ______ / RAM ___GB / SSD ___GB
-          <br />สภาพ: ใช้งานปกติ / มีรอยเล็กน้อย
-          <br />อุปกรณ์: มีที่ชาร์จ
-          <br />อยู่โซน ______
-        </div>
-        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-slate-800">
-          ขอช่วยตีราคาโน๊ตบุ๊คตามสภาพครับ
-          <br />รุ่น ______ (แนบรูปใต้เครื่อง)
-          <br />อาการ: ______ (เปิดไม่ติด/จอแตก/แบตเสื่อม)
-          <br />มีที่ชาร์จครับ (แนบรูป)
-          <br />แนบรูปตำหนิ/วิดีโออาการ 5–10 วินาที
-          <br />อยู่โซน ______
-        </div>
-      </div>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
-        ส่งข้อมูลครบตั้งแต่ต้น จะช่วยให้ตีราคาใกล้เคียงขึ้นและลดการถามซ้ำหลายรอบ
-      </p>
-      <div class="mt-5">
-        <CTAButtons />
-      </div>
-    </div>
-  </section>
-
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-900">สรุป: ตีราคาให้ใกล้เคียง และทำให้ขายจบไว</h2>
-      <p class="mt-3 text-base leading-relaxed text-slate-700">
-        ถ้าคุณอยากให้ตีราคาใกล้เคียง และไม่ต้องคุยย้อนหลายรอบ ให้ส่งข้อมูลให้ครบตั้งแต่ต้น โดยเฉพาะรูปใต้เครื่อง รูปที่ชาร์จ และรูปจอ
-        เพราะเป็นจุดที่ช่วยยืนยันรุ่นและสะท้อนสภาพการใช้งานจริงได้ชัดที่สุด
-      </p>
-      <ul class="mt-3 list-disc pl-5 text-base leading-relaxed text-slate-700">
-        <li>รูปสภาพจริง 3–5 รูป (จอ/คีย์บอร์ด/ใต้เครื่อง/มุมเครื่อง/ที่ชาร์จ)</li>
-        <li>สเปก CPU/RAM/SSD/GPU หรือส่งรูปหน้าจอให้ร้านอ่านให้</li>
-        <li>แจ้งอาการตรง ๆ (ถ้ามี) และแนบวิดีโออาการเมื่อจำเป็น</li>
-        <li>ระบุโซน/โลเคชัน เพื่อแนะนำวิธีนัดรับหรือส่งเครื่องที่เหมาะสม</li>
-      </ul>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700">
-        พร้อมเริ่มแล้ว แอดไลน์ <strong>@webuy</strong> ส่งข้อมูลได้เลย หรือโทร <strong>0642579353</strong>
-      </p>
-    </div>
-  </section>
-
-  <section class="mx-auto w-full max-w-6xl px-4 pt-12">
-    <div class="grid gap-4 lg:grid-cols-3">
-      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
-        <h2 class="text-lg font-bold text-slate-900">ตีราคาแบบเข้าใจง่าย (ดูอะไรบ้าง)</h2>
-        <p class="mt-2 text-sm leading-relaxed text-slate-700">
-          เราตีราคาโดยอิงจากรุ่นและสเปกจริง บวก/ลบตามสภาพการใช้งาน เพื่อให้ใกล้เคียงราคาซื้อขายจริงในตลาดมือสอง
-          และช่วยให้คุณตัดสินใจได้ง่ายขึ้นว่าควรขายตามสภาพหรือเตรียมอะไรเพิ่มก่อนขาย
-        </p>
-        <ul class="mt-3 list-disc pl-5 text-sm text-slate-700">
-          <li>รุ่น/ปี/สเปก (CPU/RAM/SSD/GPU)</li>
-          <li>สภาพจอ/คีย์บอร์ด/พอร์ต และรอยตำหนิ</li>
-          <li>สุขภาพแบตเตอรี่ และการใช้งานจริง</li>
-          <li>อุปกรณ์ที่มี (ที่ชาร์จ/กล่อง/ใบเสร็จ ถ้ามี)</li>
-          <li>อาการเสีย (ถ้ามี) และความเสี่ยงที่กระทบราคา</li>
-        </ul>
-      </div>
-      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 class="text-lg font-bold text-slate-900">Internal links</h2>
-        <ul class="mt-3 space-y-2 text-sm">
-          <li><a class="text-slate-700 underline underline-offset-4 hover:text-slate-900" href="/เช็คราคาโน๊ตบุ๊ค/">เช็คราคาโน๊ตบุ๊ค</a></li>
-          <li><a class="text-slate-700 underline underline-offset-4 hover:text-slate-900" href="/รับซื้อโน๊ตบุ๊คมือสอง/">รับซื้อโน๊ตบุ๊คมือสอง</a></li>
-          <li><a class="text-slate-700 underline underline-offset-4 hover:text-slate-900" href="/รับซื้อ-notebook/">รับซื้อ notebook</a></li>
-          <li><a class="text-slate-700 underline underline-offset-4 hover:text-slate-900" href="/รับซื้อโน๊ตบุ๊ค/เครื่องเสีย/">รับซื้อโน๊ตบุ๊คเสีย</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <ProcessSteps />
-  <PriceFactors />
-  <FAQ faqs={faqs} />
-</ServiceLayout>
-
+</BaseLayout>
