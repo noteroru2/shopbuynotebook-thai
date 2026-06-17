@@ -37,7 +37,7 @@ const canonical = absoluteUrl(`/รับซื้อโน๊ตบุ๊ค/${
 
 const breadcrumbs = [
   { name: 'หน้าแรก', url: absoluteUrl('/') },
-  { name: 'รับซื้อโน๊ตบุ๊ค', url: absoluteUrl('/รับซื้อโน๊ตบุ๊ค/') },
+  { name: 'รับซื้อโน๊ตบุ๊ค', url: absoluteUrl('/') },
   { name: entry.data.title, url: canonical },
 ];
 
@@ -63,7 +63,7 @@ const serviceName =
 
 const internalLinks = [
   { label: 'หน้าแรก', href: '/' },
-  { label: 'บริการรับซื้อโน๊ตบุ๊คทุกยี่ห้อ', href: '/รับซื้อโน๊ตบุ๊ค/' },
+  { label: 'รับซื้อโน๊ตบุ๊ค', href: '/' },
   { label: 'รับซื้อโน๊ตบุ๊คมือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/' },
   { label: 'เช็คราคาโน๊ตบุ๊คก่อนขาย', href: '/เช็คราคาโน๊ตบุ๊ค/' },
   { label: 'ตีราคาโน๊ตบุ๊ค', href: '/ตีราคาโน๊ตบุ๊ค/' },
@@ -235,7 +235,7 @@ function getBrandFeaturedLinks(slug: string, title: string): RelatedLink[] {
     const officePrefix = slug.split('-')[0];
     return [
       { label: 'รับซื้อโน๊ตบุ๊คราคาดี เริ่มจากหน้าเช็กราคา', href: '/เช็คราคาโน๊ตบุ๊ค/', description: 'ทางลัดสำหรับส่งรูป รุ่น สเปก และรับกรอบราคาเบื้องต้น' },
-      { label: `รับซื้อ ${title.split(' ')[0]} รุ่นใกล้เคียง`, href: officeHubMap[officePrefix] ?? '/รับซื้อโน๊ตบุ๊ค/', description: 'กลับไปหน้าแบรนด์เพื่อเชื่อมรุ่นงานและรุ่นใกล้เคียง' },
+      { label: `รับซื้อ ${title.split(' ')[0]} รุ่นใกล้เคียง`, href: officeHubMap[officePrefix] ?? '/', description: 'กลับไปหน้าแบรนด์เพื่อเชื่อมรุ่นงานและรุ่นใกล้เคียง' },
       { label: 'บทความราคาในกลุ่มเดียวกัน', href: officeBlogMap[slug] ?? '/blog/รับซื้อโน๊ตบุ๊ค-ราคาเท่าไหร่/', description: 'Intent เชิงราคาและปัจจัยที่ร้านใช้ประเมินในกลุ่ม office' },
       { label: 'แบตเสื่อมหรือใช้งานมานาน ยังขายได้ไหม', href: '/รับซื้อโน๊ตบุ๊ค/แบตเสื่อม/', description: 'เหมาะกับเครื่องทำงานที่สภาพรวมดีแต่แบตเริ่มเสื่อม' },
       { label: 'ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร', href: '/blog/ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร/', description: 'คู่มือสั้นสำหรับเครื่องงาน เครื่องบริษัท และข้อมูลส่วนตัว' },

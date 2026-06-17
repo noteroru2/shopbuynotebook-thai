@@ -11,6 +11,9 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   site: 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/',
   trailingSlash: 'always',
+  redirects: {
+    '/รับซื้อโน๊ตบุ๊ค/': '/',
+  },
   integrations: [
     sitemap({
       serialize(item) {

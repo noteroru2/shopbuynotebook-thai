@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButtons from './CTAButtons.astro';
+import FAQ from './FAQ.astro';
+import { absoluteUrl, breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
+import type { FaqItem } from '../lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  breadcrumbLabel: string;
+  serviceName: string;
+  h1: string;
+  h1Accent?: string;
+  heroSubtitle: string;
+  accentClass?: string;
+  gradientFrom?: string;
+  proseLinkClass?: string;
+  faqs?: FaqItem[];
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  breadcrumbLabel,
+  serviceName,
+  h1,
+  h1Accent,
+  heroSubtitle,
+  accentClass = 'text-emerald-400',
+  gradientFrom = 'from-emerald-900/60',
+  proseLinkClass = 'prose-a:text-emerald-600 hover:prose-a:text-emerald-500',
+  faqs = [],
+} = Astro.props;
+
+const canonical = absoluteUrl(canonicalPath);
+const breadcrumbs = [
+  { name: 'หน้าแรก', url: absoluteUrl('/') },
+  { name: breadcrumbLabel, url: canonical },
+];
+const schemas = [
+  breadcrumbListSchema(breadcrumbs),
+  serviceSchema({ name: serviceName, url: canonical, description }),
+  ...(faqs.length ? [faqPageSchema(faqs)] : []),
+];
+---
+
+<BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
+  <section class="relative overflow-hidden bg-slate-900 py-16 sm:py-24 lg:py-32">
+    <div class={`absolute inset-0 bg-gradient-to-b ${gradientFrom} to-slate-900/90 z-0`}></div>
+    <div class="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
+      <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
+        {h1}
+        {h1Accent ? (
+          <>
+            <br class="hidden sm:block" />
+            <span class={accentClass}>{h1Accent}</span>
+          </>
+        ) : null}
+      </h1>
+      <p class="mx-auto mt-6 max-w-3xl text-lg text-slate-300 leading-relaxed">{heroSubtitle}</p>
+      <div class="mt-10 flex justify-center gap-4">
+        <CTAButtons primaryText="แอดไลน์ @webuy ส่งรูปประเมินราคา" secondaryText="โทร" />
+      </div>
+    </div>
+  </section>
+
+  <article class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+    <div
+      class={`prose prose-lg prose-slate ${proseLinkClass} max-w-none prose-headings:font-extrabold prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-6 prose-h2:text-slate-900 prose-h3:text-xl prose-h3:text-slate-800`}
+    >
+      <slot />
+      <p>
+        ต้องการภาพรวมบริการหลัก ดูหน้า <a href="/">รับซื้อโน๊ตบุ๊ค</a> หรือเลือกบริการเฉพาะทาง เช่น
+        <a href="/รับซื้อ-notebook/">รับซื้อ Notebook</a>,
+        <a href="/รับซื้อโน๊ตบุ๊คมือสอง/">รับซื้อโน๊ตบุ๊คมือสอง</a>,
+        <a href="/เช็คราคาโน๊ตบุ๊ค/">เช็คราคาโน๊ตบุ๊ค</a> และ
+        <a href="/ขายโน๊ตบุ๊ค/">ขายโน๊ตบุ๊ค</a>
+      </p>
+    </div>
+  </article>
+
+  {faqs.length ? <FAQ faqs={faqs} /> : null}
+</BaseLayout>
