@@ -9,6 +9,7 @@ import RelatedLinks from '../../components/RelatedLinks.astro';
 import { getCollection, render } from 'astro:content';
 import { absoluteUrl } from '../../lib/seo';
 import { SITE } from '../../lib/seo';
+import { SPECIALIST_PAGE_LINKS } from '../../data/specialist-pages';
 
 export async function getStaticPaths() {
   const [brands, conditions, locations] = await Promise.all([
@@ -70,6 +71,8 @@ const internalLinks = [
   { label: 'พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค', href: '/พื้นที่ให้บริการ/' },
   { label: 'ขายโน๊ตบุ๊ค', href: '/ขายโน๊ตบุ๊ค/' },
 ];
+
+const SPECIALIST_SLUGS = new Set(['เครื่องเสีย', 'gaming']);
 
 const prepChecklist = [
   'ถ่ายรูป 3–5 รูป (หน้าเครื่อง/คีย์บอร์ด/ฝาหลัง/อุปกรณ์)',
@@ -489,6 +492,29 @@ const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs
         <Content />
       </div>
     </section>
+
+    {SPECIALIST_SLUGS.has(slug) ? (
+      <section class="mx-auto w-full max-w-6xl px-4 pt-12">
+        <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+          <h2 class="text-lg font-bold text-slate-900">หน้าที่เกี่ยวข้อง</h2>
+          <ul class="mt-3 grid gap-2 sm:grid-cols-2">
+            <li>
+              <a class="font-semibold text-emerald-700 underline underline-offset-4" href="/">
+                รับซื้อโน๊ตบุ๊ค
+              </a>
+              <span class="text-sm text-slate-600"> — หน้าหลักบริการ</span>
+            </li>
+            {SPECIALIST_PAGE_LINKS.map((l) => (
+              <li>
+                <a class="font-semibold text-emerald-700 underline underline-offset-4" href={l.href}>
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    ) : null}
 
         {brandFeaturedLinks.length ? (
       <RelatedLinks title="ทางลัดในคลัสเตอร์รับซื้อรุ่นใกล้เคียง" links={brandFeaturedLinks} />
