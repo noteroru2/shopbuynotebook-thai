@@ -70,6 +70,23 @@ MacBook ถือเป็นหนึ่งในแล็ปท็อปที
 
 ## บริการและข้อมูลที่เกี่ยวข้องกับการรับซื้อ MacBook
 
+## วิธีดูรุ่น MacBook ก่อนส่งประเมิน
+
+- **Apple menu → About This Mac** — ชิป RAM SSD ปีโดยประมาณ
+- **Serial number** ใต้เครื่องหรือใน About — ใช้เช็ครุ่นที่ checkcoverage.apple.com
+- Intel vs Apple Silicon มีผลต่อราคามาก
+
+## จุดตรวจเฉพาะ MacBook
+
+- Battery Health % และ Cycle Count
+- จอ: รอยขีด, coating ลอก, bright spot
+- คีย์บอร์ด butterfly (รุ่นเก่า) — ทดสอบทุกปุ่ม
+- Find My / Apple ID ต้องปิดก่อนส่งมอบ
+
+## อาการที่เกี่ยวข้อง
+
+- [MacBook ไม่มีกล่อง](/รับซื้อโน๊ตบุ๊ค/macbook-no-box-no-receipt/) · [แบตเสื่อม](/รับซื้อโน๊ตบุ๊ค/แบตเสื่อม/) · [กรณีศึกษา โดนน้ำหก](/blog/กรณีศึกษา-รับซื้อโน๊ตบุ๊คโดนน้ำหก-บอร์ดช็อตเปิดไม่ติด/)
+
 ### หน้า keyword รับซื้อตรงตามรุ่น
 - [รับซื้อ MacBook Air M1](/รับซื้อโน๊ตบุ๊ค/macbook-air-m1/)
 - [รับซื้อ MacBook Air M2](/รับซื้อโน๊ตบุ๊ค/macbook-air-m2/)
