@@ -10,6 +10,7 @@ import { getCollection, render } from 'astro:content';
 import { absoluteUrl } from '../../lib/seo';
 import { SITE } from '../../lib/seo';
 import { SPECIALIST_PAGE_LINKS } from '../../data/specialist-pages';
+import { BRAND_HUB_SLUGS } from '../../data/seo-index-tier';
 
 export async function getStaticPaths() {
   const [brands, conditions, locations] = await Promise.all([
@@ -53,7 +54,7 @@ const locationH1 =
     : '';
 const brandOrConditionH1 =
   kind === 'brand'
-    ? (entry.data.pageH1 ?? `รับซื้อโน๊ตบุ๊ค ${entry.data.title} มือสอง ทุกรุ่น`)
+    ? (entry.data.pageH1 ?? getBrandH1Default(slug, entry.data.title))
     : (entry.data.pageH1 ?? `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ประเมินไว จ่ายเงินสด`);
 const description = entry.data.description;
 const ogImage = entry.data.featuredImage ? absoluteUrl(entry.data.featuredImage) : undefined;
@@ -133,17 +134,66 @@ const OFFICE_FOCUS_SLUGS = new Set([
   'surface-laptop',
 ]);
 
+function getBrandPageKind(slug: string): 'brand' | 'series' | 'model' {
+  if (BRAND_HUB_SLUGS.has(slug)) return 'brand';
+  const parts = slug.split('-');
+  if (parts.length >= 3 || /m\d|rtx|gen/i.test(slug)) return 'model';
+  return 'series';
+}
+
+function getBrandH1Default(slug: string, title: string): string {
+  const pageKind = getBrandPageKind(slug);
+  if (pageKind === 'brand') return `รับซื้อโน๊ตบุ๊ค ${title} หลายรุ่นยอดนิยม`;
+  if (pageKind === 'series') return `รับซื้อ ${title} มือสอง ประเมินตามสเปกและสภาพ`;
+  return `รับซื้อ ${title} มือสอง ประเมินตามรุ่น ปี และสเปกจริง`;
+}
+
+function getBrandIntroExtra(slug: string, title: string, pageKind: 'brand' | 'series' | 'model'): string {
+  if (pageKind === 'brand') {
+    return `หน้านี้รวมซีรีส์หลักของ ${title} ที่ลูกค้าส่งประเมินบ่อย ส่งรูปพร้อมรุ่นย่อยและสเปกเพื่อให้กรอบราคาใกล้เคียงขึ้น`;
+  }
+  if (pageKind === 'series') {
+    return `ซีรีส์ ${title} มักมีหลายรุ่นย่อย CPU/GPU และปีที่ต่างกัน แจ้งสเปกจริงและอาการที่พบ (เช่น ร้อน แบตเสื่อม จอเป็นเส้น) เพื่อประเมินได้ตรงขึ้น`;
+  }
+  return `รุ่น ${title} ควรแจ้งปีที่ซื้อ ชิป CPU/GPU RAM SSD และอาการเฉพาะ เช่น แบต Battery Health จอรอย หรือพอร์ตชาร์จ`;
+}
+
+function getSymptomRepairAdvice(symptom: string): { assess: string; repair: string } {
+  const map: Record<string, { assess: string; repair: string }> = {
+    'จอแตก': {
+      assess: 'ดูขนาดรอยแตก จอดำบางส่วน และรุ่นจอ',
+      repair: 'ถ้าจอแตกรุนแรง ซ่อมแพงกว่ามูลค่าเครื่อง — มักขายตามสภาพดีกว่า',
+    },
+    'เปิดไม่ติด': {
+      assess: 'ดูว่ามีไฟเข้า แบตบวม หรือเสียงพัดลม',
+      repair: 'ถ้าเป็นเมนบอร์ด ซ่อมอาจไม่คุ้ม — แจ้งอาการตรง ๆ เพื่อประเมินรับซื้อ',
+    },
+    'แบตเสื่อม': {
+      assess: 'ดู Battery Health อาการชาร์จไม่เข้า หรือแบตบวม',
+      repair: 'แบตเสื่อมเล็กน้อยยังใช้ได้ — แบตบวมควรหยุดใช้และแจ้งทันที',
+    },
+    'เครื่องเสีย': {
+      assess: 'ส่งวิดีโอ/รูปให้เห็นอาการชัด เช่น จอ แบต พอร์ต',
+      repair: 'ซ่อมหรือขายขึ้นกับต้นทุนซ่อมเทียบราคารับซื้อ — ส่งข้อมูลมาก่อนเพื่อเช็ค',
+    },
+  };
+  return map[symptom] ?? {
+    assess: 'ส่งรูปและวิดีโอสั้น ๆ ให้เห็นอาการชัด พร้อมรุ่นและสเปก',
+    repair: 'ถ้าซ่อมแพงกว่ามูลค่าเครื่อง การขายตามสภาพอาจเหมาะกว่า — ประเมินก่อนตัดสินใจ',
+  };
+}
+
 function getEnhancedBrandSeoTitle(slug: string, title: string, fallback: string) {
   if (MACBOOK_FOCUS_SLUGS.has(slug)) {
-    return `รับซื้อ ${title} มือสอง ราคาดี เช็กฟรี | ร้านรับซื้อโน๊ตบุ๊ค.com`;
+    return `รับซื้อ ${title} มือสอง ประเมินฟรี | ร้านรับซื้อโน๊ตบุ๊ค.com`;
   }
 
   if (GAMING_FOCUS_SLUGS.has(slug)) {
-    return `รับซื้อ ${title} มือสอง ราคาดี ประเมินฟรี | ร้านรับซื้อโน๊ตบุ๊ค.com`;
+    return `รับซื้อ ${title} มือสอง ประเมินตามสเปก | ร้านรับซื้อโน๊ตบุ๊ค.com`;
   }
 
   if (OFFICE_FOCUS_SLUGS.has(slug)) {
-    return `รับซื้อ ${title} มือสอง ราคาดี ประเมินฟรี | ร้านรับซื้อโน๊ตบุ๊ค.com`;
+    return `รับซื้อ ${title} มือสอง ประเมินตามรุ่น | ร้านรับซื้อโน๊ตบุ๊ค.com`;
   }
 
   return fallback;
@@ -184,7 +234,7 @@ function getEnhancedBrandDescription(slug: string, title: string, fallback: stri
 function getBrandFeaturedLinks(slug: string, title: string): RelatedLink[] {
   if (slug.startsWith('macbook-')) {
     return [
-      { label: 'รับซื้อ MacBook ทุกรุ่น', href: '/รับซื้อโน๊ตบุ๊ค/macbook/', description: 'หน้า hub หลักของ MacBook พร้อมลิงก์รุ่นและเคสที่เกี่ยวข้อง' },
+      { label: 'รับซื้อ MacBook หลายรุ่นยอดนิยม', href: '/รับซื้อโน๊ตบุ๊ค/macbook/', description: 'หน้า hub หลักของ MacBook พร้อมลิงก์รุ่นและเคสที่เกี่ยวข้อง' },
       {
         label: slug.includes('air') ? 'รับซื้อ MacBook Air ราคาเท่าไหร่' : 'รับซื้อ MacBook Pro ราคาเท่าไหร่',
         href: slug.includes('air') ? '/blog/รับซื้อ-macbook-air-13-15-ราคาเท่าไหร่/' : '/blog/รับซื้อ-macbook-pro-14-16-ราคาเท่าไหร่/',
@@ -237,7 +287,7 @@ function getBrandFeaturedLinks(slug: string, title: string): RelatedLink[] {
     };
     const officePrefix = slug.split('-')[0];
     return [
-      { label: 'รับซื้อโน๊ตบุ๊คราคาดี เริ่มจากหน้าเช็กราคา', href: '/เช็คราคาโน๊ตบุ๊ค/', description: 'ทางลัดสำหรับส่งรูป รุ่น สเปก และรับกรอบราคาเบื้องต้น' },
+      { label: 'รับซื้อโน๊ตบุ๊ค เริ่มจากหน้าเช็กราคา', href: '/เช็คราคาโน๊ตบุ๊ค/', description: 'ทางลัดสำหรับส่งรูป รุ่น สเปก และรับกรอบราคาเบื้องต้น' },
       { label: `รับซื้อ ${title.split(' ')[0]} รุ่นใกล้เคียง`, href: officeHubMap[officePrefix] ?? '/', description: 'กลับไปหน้าแบรนด์เพื่อเชื่อมรุ่นงานและรุ่นใกล้เคียง' },
       { label: 'บทความราคาในกลุ่มเดียวกัน', href: officeBlogMap[slug] ?? '/blog/รับซื้อโน๊ตบุ๊ค-ราคาเท่าไหร่/', description: 'Intent เชิงราคาและปัจจัยที่ร้านใช้ประเมินในกลุ่ม office' },
       { label: 'แบตเสื่อมหรือใช้งานมานาน ยังขายได้ไหม', href: '/รับซื้อโน๊ตบุ๊ค/แบตเสื่อม/', description: 'เหมาะกับเครื่องทำงานที่สภาพรวมดีแต่แบตเริ่มเสื่อม' },
@@ -281,6 +331,9 @@ function getAutoBrandFaqs(slug: string, title: string) {
 }
 
 const enhancedLayoutTitle = kind === 'brand' ? getEnhancedBrandSeoTitle(slug, entry.data.title, layoutTitle) : layoutTitle;
+const brandPageKind = kind === 'brand' ? getBrandPageKind(slug) : null;
+const brandIntroExtra = brandPageKind ? getBrandIntroExtra(slug, entry.data.title, brandPageKind) : '';
+const symptomAdvice = kind === 'condition' ? getSymptomRepairAdvice(entry.data.title) : null;
 const enhancedBrandOrConditionH1 =
   kind === 'brand' ? getEnhancedBrandH1(slug, entry.data.title, brandOrConditionH1) : brandOrConditionH1;
 const pageDescription =
@@ -399,13 +452,28 @@ const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs
         {enhancedBrandOrConditionH1}
       </h1>
       <p class="mt-4 text-base leading-relaxed text-slate-600">{pageDescription}</p>
+      {brandIntroExtra ? (
+        <p class="mt-4 text-base leading-relaxed text-slate-600">{brandIntroExtra}</p>
+      ) : null}
+      {symptomAdvice ? (
+        <div class="mt-4 rounded-2xl border border-amber-100 bg-amber-50/80 p-4 text-sm text-slate-700">
+          <p><strong>ประเมินจากอะไร:</strong> {symptomAdvice.assess}</p>
+          <p class="mt-2"><strong>ควรซ่อมก่อนขายไหม:</strong> {symptomAdvice.repair}</p>
+        </div>
+      ) : null}
       <p class="mt-4 text-base leading-relaxed text-slate-600">
         ประเมินราคาเบื้องต้นได้ฟรีจากรูปเครื่อง โดยดูรุ่น/สเปก/สภาพและอุปกรณ์ที่มี เพื่อให้คุณตัดสินใจได้ง่ายก่อนนัดรับหรือส่งเครื่อง
       </p>
 
       <div class="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-6">
         <h2 class="text-lg font-bold text-slate-900">
-          {kind === 'brand' ? 'รุ่นยอดนิยมที่ลูกค้าส่งประเมินบ่อย' : 'สภาพที่รับซื้อและแนวทางประเมิน'}
+          {kind === 'brand'
+            ? brandPageKind === 'brand'
+              ? `ซีรีส์ ${entry.data.title} ที่รับประเมินบ่อย`
+              : brandPageKind === 'series'
+                ? `รุ่นย่อยและสเปก ${entry.data.title} ที่มีผลต่อราคา`
+                : `สเปกและอาการเฉพาะ ${entry.data.title}`
+            : 'สภาพที่รับซื้อและแนวทางประเมิน'}
         </h2>
         {kind === 'brand' ? (
           <ul class="mt-3 list-disc pl-5 text-sm text-slate-700">

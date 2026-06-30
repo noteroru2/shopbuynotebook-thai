@@ -24,7 +24,7 @@ const mapping = [
   {
     inputBasenameContains: '14_22_58',
     output: 'rubsue-notebook-banner-notebook.webp',
-    alt: 'รับซื้อ Notebook ทุกยี่ห้อ ทุกสภาพ ติดต่อผ่าน LINE',
+    alt: 'รับซื้อ Notebook หลายยี่ห้อ หลายสภาพตามเงื่อนไข ติดต่อผ่าน LINE',
     width: 1200,
   },
   {
@@ -42,7 +42,7 @@ const mapping = [
   {
     inputBasenameContains: '14_16_39',
     output: 'rubsue-notebook-og.webp',
-    alt: 'รับซื้อโน๊ตบุ๊ค ให้ราคาสูง จ่ายเงินไว',
+    alt: 'รับซื้อโน๊ตบุ๊ค ประเมินตามรุ่น สเปก และสภาพจริง จ่ายเงินไว',
     width: 1200,
   },
 ];

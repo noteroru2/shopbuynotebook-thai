@@ -1,8 +1,10 @@
 ---
 kind: brand
 title: MacBook
-description: รับซื้อ MacBook มือสองทุกรุ่น ประเมินไวตามสเปกและสุขภาพแบต จ่ายเงินสด/โอนทันทีเมื่อรับเครื่อง
+description: รับซื้อ MacBook มือสองหลายรุ่นยอดนิยม ประเมินไวตามสเปกและสุขภาพแบต จ่ายเงินหลังตรวจรับและตกลงราคา
 slug: macbook
+seoTitle: รับซื้อ MacBook มือสอง ประเมินตามชิปและแบต | ร้านรับซื้อโน๊ตบุ๊ค.com
+pageH1: รับซื้อ MacBook มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/macbook.svg
 popularModels:
   - MacBook Air M1 / M2

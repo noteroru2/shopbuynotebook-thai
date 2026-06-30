@@ -6,7 +6,6 @@ import TrustBadges from '../components/TrustBadges.astro';
 import SeoIntroSection from '../components/SeoIntroSection.astro';
 import SoftImageStrip from '../components/SoftImageStrip.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
-import PopularModelChips from '../components/PopularModelChips.astro';
 import BrandGrid from '../components/BrandGrid.astro';
 import NotebookTypesSection from '../components/NotebookTypesSection.astro';
 import ConditionGrid from '../components/ConditionGrid.astro';
@@ -33,7 +32,7 @@ import { itemListSchema } from '../lib/schema';
 
 const title = 'รับซื้อโน๊ตบุ๊ค ประเมินฟรี จ่ายเงินสด | ร้านรับซื้อโน๊ตบุ๊ค.com';
 const description =
-  'ร้านรับซื้อโน๊ตบุ๊ค รับซื้อ Notebook มือสองทุกยี่ห้อ ประเมินตามสภาพจริงผ่าน LINE แจ้งราคาก่อนตัดสินใจขาย จ่ายเงินสดหรือโอน รับ MacBook Gaming และเครื่องเสียบางอาการ';
+  'ร้านรับซื้อโน๊ตบุ๊ค รับซื้อ Notebook มือสองหลายยี่ห้อ ประเมินตามสภาพจริงผ่าน LINE แจ้งราคาก่อนตัดสินใจขาย จ่ายเงินสดหรือโอน รับ MacBook Gaming และเครื่องเสียบางอาการ';
 
 const toSlug = (p: { id: string; data: { slug?: string } }) =>
   p.data.slug ? p.data.slug : String(p.id).replace(/\.(md|mdx)$/i, '');
@@ -136,7 +135,6 @@ const schemas = [
   <ProcessSteps />
   <PhotoGuide />
   <BrandGrid />
-  <PopularModelChips />
   <NotebookTypesSection />
   <ConditionGrid />
   <PriceFactors />

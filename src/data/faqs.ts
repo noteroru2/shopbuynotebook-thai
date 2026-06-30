@@ -2,7 +2,7 @@ import type { FaqItem } from '../lib/seo';
 
 export const generalFaqs: FaqItem[] = [
   {
-    question: 'รับซื้อโน๊ตบุ๊คทุกยี่ห้อไหม',
+    question: 'รับซื้อโน๊ตบุ๊คหลายยี่ห้อไหม',
     answer:
       'รับหลายยี่ห้อครับ ทั้ง Windows Notebook และ MacBook รวมถึงเครื่องทำงานทั่วไปและ Gaming Notebook แนะนำส่งรูป + รุ่น/สเปก + สภาพเพื่อประเมินได้ไวขึ้น',
   },

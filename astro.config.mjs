@@ -16,6 +16,22 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
+      filter(page) {
+        try {
+          const pathname = page.startsWith('http')
+            ? decodeURIComponent(new URL(page).pathname)
+            : decodeURIComponent(page);
+          const hubPrefix = '/รับซื้อโน๊ตบุ๊ค/';
+          if (pathname.startsWith(hubPrefix)) {
+            const rest = pathname.slice(hubPrefix.length);
+            const segments = rest.split('/').filter(Boolean);
+            if (segments.length >= 2) return false;
+          }
+        } catch {
+          /* keep page if URL parsing fails */
+        }
+        return true;
+      },
       serialize(item) {
         if (item.url === 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/') {
           item.changefreq = 'daily';

@@ -48,12 +48,12 @@ const itemName = item.data.title;
 const locName = location.data.title;
 
 const pageTitle = isBrand 
-  ? `รับซื้อโน๊ตบุ๊ค ${itemName} ${locName} ตีราคาไว ให้ราคาสูง | ร้านรับซื้อโน๊ตบุ๊ค.com`
+  ? `รับซื้อโน๊ตบุ๊ค ${itemName} ${locName} ประเมินตามสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com`
   : `รับซื้อโน๊ตบุ๊ค ${itemName} ${locName} ประเมินไวตามสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com`;
 
 const pageDescription = isBrand
-  ? `หาร้านรับซื้อโน๊ตบุ๊ค ${itemName} ใน ${locName} อยู่ใช่ไหม? เรารับซื้อ ${itemName} มือสอง ตีราคาไวผ่าน LINE นัดรับถึงที่ใน ${locName} จ่ายเงินสดทันที ไม่มีหักค่าใช้จ่าย`
-  : `รับซื้อโน๊ตบุ๊ค ${itemName} นัดรับถึงที่ใน ${locName} ประเมินราคาฟรีผ่าน LINE ถ่ายรูปแจ้งอาการ ส่งเช็คราคาได้เลย จ่ายเงินสดทันที`;
+  ? `หาร้านรับซื้อโน๊ตบุ๊ค ${itemName} ใน ${locName}? ส่งรูปและสเปกผ่าน LINE เพื่อประเมินเบื้องต้น แจ้งราคาก่อนตัดสินใจ นัดรับตามพื้นที่ที่สะดวก`
+  : `รับซื้อโน๊ตบุ๊คอาการ ${itemName} ใน ${locName} ส่งรูปแจ้งอาการผ่าน LINE เพื่อเช็คราคาเบื้องต้น แจ้งเงื่อนไขชัดเจนก่อนนัดรับ`;
 
 const canonical = absoluteUrl(`/รับซื้อโน๊ตบุ๊ค/${location.data.slug}/${item.data.slug}/`);
 const h1 = `รับซื้อโน๊ตบุ๊ค ${itemName} ${locName}`;
@@ -72,11 +72,11 @@ const faqs = [
   },
   {
     question: `ใช้เวลาประเมินราคานานไหม?`,
-    answer: `ปกติหากส่งรูปและข้อมูลครบถ้วน ทีมงานจะใช้เวลาประเมินราคาเพียง 5-10 นาทีเท่านั้นครับ หลังจากตกลงราคาได้แล้ว สามารถนัดรับใน ${locName} ได้ทันที หรือส่งเครื่องตามสะดวก`
+    answer: `หากส่งรูปและข้อมูลครบ ทีมงานจะตอบกลับเร็วขึ้นเมื่อข้อมูลครบ หลังตกลงราคาแล้วสามารถนัดรับใน ${locName} หรือส่งเครื่องตามสะดวก`
   },
   {
-    question: `ต้องเตรียมอะไรบ้างก่อนขายให้ได้ราคาดี?`,
-    answer: `1. ถ่ายรูปเครื่องทุกมุมให้ชัดเจน 2. แจ้งสเปก (CPU, RAM, SSD, GPU) 3. เตรียมที่ชาร์จแท้ และกล่อง (ถ้ามี) 4. แจ้งตำหนิตามจริง หากข้อมูลครบถ้วน ทีมงานใน ${locName} จะสามารถตีราคาได้รวดเร็วและแม่นยำที่สุดครับ`
+    question: `ต้องเตรียมอะไรบ้างก่อนขาย?`,
+    answer: `1. ถ่ายรูปเครื่องทุกมุมให้ชัดเจน 2. แจ้งสเปก (CPU, RAM, SSD, GPU) 3. เตรียมที่ชาร์จแท้ และกล่อง (ถ้ามี) 4. แจ้งตำหนิตามจริง หากข้อมูลครบ ทีมงานใน ${locName} จะประเมินได้ตรงขึ้น`
   }
 ];
 
@@ -106,7 +106,7 @@ const subAreas = location.data.subAreas ?? [];
 const detailsList = isBrand ? (item.data.popularModels ?? []) : (item.data.whatWeBuy ?? []);
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} canonical={canonical} schemas={schemas}>
+<BaseLayout title={pageTitle} description={pageDescription} canonical={canonical} noindex={true} schemas={schemas}>
   <!-- Hero Section -->
   <section class="relative bg-slate-900 text-white overflow-hidden py-16 sm:py-24">
     <div class="absolute inset-0 bg-gradient-to-br from-emerald-900/40 to-slate-900/90 z-0"></div>
@@ -118,7 +118,7 @@ const detailsList = isBrand ? (item.data.popularModels ?? []) : (item.data.whatW
         {h1} <br class="hidden sm:block" /> <span class="text-emerald-400">ประเมินไว จ่ายเงินสด</span>
       </h1>
       <p class="mt-6 text-lg leading-relaxed text-slate-300 max-w-2xl mx-auto font-medium">
-        บริการรับซื้อ {itemName} มือสอง หรือเครื่องเสียบางอาการ นัดรับถึงที่ใน <strong>{locName}</strong> ทีมงานประเมินราคาไวผ่าน LINE ทราบผลใน 5 นาที
+        บริการรับซื้อ {itemName} มือสอง หรือเครื่องเสียบางอาการ นัดรับตามพื้นที่ใน <strong>{locName}</strong> ส่งรูปและสเปกผ่าน LINE เพื่อประเมินเบื้องต้น
       </p>
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
         <CTAButtons primaryText={`ขาย ${itemName} ด่วน`} secondaryText="โทรสอบถาม" />
@@ -170,7 +170,7 @@ const detailsList = isBrand ? (item.data.popularModels ?? []) : (item.data.whatW
           </div>
           <h2 class="text-2xl font-extrabold text-slate-900 mb-4">จุดนัดรับใน {locName}</h2>
           <p class="text-slate-600 mb-6 leading-relaxed">
-            เพื่อความสะดวกสูงสุดของคุณ เรามีบริการนัดรับเครื่องถึงที่ หรือจุดนัดพบที่เดินทางสะดวกใน <strong>{locName}</strong> ตรวจเช็คเครื่องเสร็จจ่ายเงินทันที
+            เพื่อความสะดวก เรามีบริการนัดรับเครื่องหรือจุดนัดพบที่เดินทางสะดวกใน <strong>{locName}</strong> ตรวจเช็คเครื่องแล้วจ่ายเงินหลังตรวจรับและตกลงราคา
           </p>
           
           {meetingOptions.length > 0 && (
