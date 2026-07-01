@@ -2,6 +2,9 @@
 import csv
 import pathlib
 import re
+import sys
+
+sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / 'src'
@@ -33,6 +36,13 @@ MONEY_PAGES = {
     '/เช็คราคาโน๊ตบุ๊ค/': ('money', 'เช็คราคาโน๊ตบุ๊ค.astro'),
     '/ขายโน๊ตบุ๊ค/': ('money', 'ขายโน๊ตบุ๊ค.astro'),
     '/รับซื้อโน๊ตบุ๊ค/macbook/': ('money', 'brands/macbook.md'),
+    '/ขายโน๊ตบุ๊คด่วน/': ('money', 'ขายโน๊ตบุ๊คด่วน.astro'),
+    '/ตีราคาโน๊ตบุ๊ค/': ('money', 'ตีราคาโน๊ตบุ๊ค.astro'),
+    '/รับซื้อโน๊ตบุ๊คบริษัท/': ('money', 'รับซื้อโน๊ตบุ๊คบริษัท.astro'),
+    '/รับประมูลคอม/': ('money', 'รับประมูลคอม.astro'),
+    '/รับเหมาคอมพิวเตอร์/': ('money', 'รับเหมาคอมพิวเตอร์.astro'),
+    '/รับเหมาโน๊ตบุ๊ค/': ('money', 'รับเหมาโน๊ตบุ๊ค.astro'),
+    '/เช็คราคาโน๊ตบุ๊คมือสอง/': ('money', 'เช็คราคาโน๊ตบุ๊คมือสอง.astro'),
 }
 
 UTILITY_PAGES = [

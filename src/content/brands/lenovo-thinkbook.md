@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Lenovo ThinkBook
-description: รับซื้อ Lenovo ThinkBook มือสอง ทุกรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของเครื่องทำงาน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาผ่าน LINE @webuy ได้ทันที
+description: รับซื้อ Lenovo ThinkBook มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของเครื่องทำงาน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาผ่าน LINE @webuy ได้อย่างรวดเร็ว
 slug: lenovo-thinkbook
 seoTitle: รับซื้อ Lenovo ThinkBook มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Lenovo ThinkBook มือสอง ทุกรุ่นยอดนิยม
+pageH1: รับซื้อ Lenovo ThinkBook มือสอง หลายรุ่นยอดนิยมยอดนิยม
 featuredImage: /images/brands/lenovo.svg
 popularModels:
   - ThinkBook 14 / 15

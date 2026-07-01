@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Lenovo Yoga
-description: รับซื้อ Lenovo Yoga มือสอง ทุกรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพบานพับ 360 องศา ระบบทัชสกรีน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาผ่าน LINE @webuy ได้ทันที
+description: รับซื้อ Lenovo Yoga มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพบานพับ 360 องศา ระบบทัชสกรีน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาผ่าน LINE @webuy ได้อย่างรวดเร็ว
 slug: lenovo-yoga
 seoTitle: รับซื้อ Lenovo Yoga มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Lenovo Yoga มือสอง ทุกรุ่นยอดนิยม
+pageH1: รับซื้อ Lenovo Yoga มือสอง หลายรุ่นยอดนิยมยอดนิยม
 featuredImage: /images/brands/lenovo.svg
 popularModels:
   - Yoga 7 / 7i (พับหมุน 360 องศา)

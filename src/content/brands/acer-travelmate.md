@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Acer TravelMate
-description: รับซื้อ Acer TravelMate มือสอง ทุกรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพตัวเครื่องทนทานเกรดธุรกิจ และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคากลางทาง LINE @webuy ได้ทันที
+description: รับซื้อ Acer TravelMate มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพตัวเครื่องทนทานเกรดธุรกิจ และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: acer-travelmate
 seoTitle: รับซื้อ Acer TravelMate มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Acer TravelMate มือสอง ทุกรุ่นยอดนิยม
+pageH1: รับซื้อ Acer TravelMate มือสอง หลายรุ่นยอดนิยมยอดนิยม
 featuredImage: /images/brands/acer.svg
 popularModels:
   - TravelMate P2 / P4 / P6

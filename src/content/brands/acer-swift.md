@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Acer Swift
-description: รับซื้อ Acer Swift มือสอง ทุกรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพตัวเครื่องบางเบา และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคากลางทาง LINE @webuy ได้ทันที ตอบกลับรวดเร็ว
+description: รับซื้อ Acer Swift มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพตัวเครื่องบางเบา และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว ตอบกลับรวดเร็ว
 slug: acer-swift
 seoTitle: รับซื้อ Acer Swift มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Acer Swift มือสอง ทุกรุ่นยอดนิยม
+pageH1: รับซื้อ Acer Swift มือสอง หลายรุ่นยอดนิยมยอดนิยม
 featuredImage: /images/brands/acer.svg
 popularModels:
   - Swift 3 / Swift 5

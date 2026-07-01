@@ -44,9 +44,9 @@ function provinceSvg(title, fileBase) {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${escapeXml(line1)}">
   <defs>
-    <linearGradient id="${gid}" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="${gid}" x1="0%" y1="0%" x2="ทั้งหมด" y2="ทั้งหมด">
       <stop offset="0%" style="stop-color:hsl(${hue1} 42% 24%)"/>
-      <stop offset="100%" style="stop-color:hsl(${hue2} 48% 12%)"/>
+      <stop offset="ทั้งหมด" style="stop-color:hsl(${hue2} 48% 12%)"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#${gid})"/>
@@ -67,9 +67,9 @@ function hubSvg() {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="${escapeXml(line1)}">
   <defs>
-    <linearGradient id="${gid}" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="${gid}" x1="0%" y1="0%" x2="ทั้งหมด" y2="ทั้งหมด">
       <stop offset="0%" style="stop-color:hsl(${hue1} 42% 24%)"/>
-      <stop offset="100%" style="stop-color:hsl(${hue2} 48% 12%)"/>
+      <stop offset="ทั้งหมด" style="stop-color:hsl(${hue2} 48% 12%)"/>
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#${gid})"/>

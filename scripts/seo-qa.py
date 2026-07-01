@@ -4,6 +4,8 @@ import pathlib
 import urllib.parse
 import sys
 
+sys.stdout.reconfigure(encoding='utf-8')
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DIST = ROOT / 'dist'
 SRC = ROOT / 'src'

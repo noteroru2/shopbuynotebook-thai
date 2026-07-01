@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Surface Laptop
-description: รับซื้อ Surface Laptop มือสอง ทุกรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพหน้าจอทัชสกรีน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคากลางทาง LINE @webuy ได้ทันที
+description: รับซื้อ Surface Laptop มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพหน้าจอทัชสกรีน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: surface-laptop
 seoTitle: รับซื้อ Surface Laptop มือสอง | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Surface Laptop มือสอง ทุกรุ่นยอดนิยม
+pageH1: รับซื้อ Surface Laptop มือสอง หลายรุ่นยอดนิยมยอดนิยม
 featuredImage: /images/brands/surface.svg
 popularModels:
   - Surface Laptop 3 / 4 / 5

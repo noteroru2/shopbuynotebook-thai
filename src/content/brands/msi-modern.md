@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: MSI Modern
-description: รับซื้อ MSI Modern มือสอง ทุกรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของบอดี้ และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคากลางทาง LINE @webuy ได้ทันที
+description: รับซื้อ MSI Modern มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของบอดี้ และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: msi-modern
 seoTitle: รับซื้อ MSI Modern มือสอง | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ MSI Modern มือสอง ทุกรุ่นยอดนิยม
+pageH1: รับซื้อ MSI Modern มือสอง หลายรุ่นยอดนิยมยอดนิยม
 featuredImage: /images/brands/msi.svg
 popularModels:
   - Modern 14 (C11M / C12M / C13M)

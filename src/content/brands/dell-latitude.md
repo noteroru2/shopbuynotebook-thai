@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Dell Latitude
-description: รับซื้อ Dell Latitude มือสอง ทุกรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของตัวเครื่ององค์กร และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาผ่าน LINE @webuy ได้ทันที
+description: รับซื้อ Dell Latitude มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของตัวเครื่ององค์กร และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาผ่าน LINE @webuy ได้อย่างรวดเร็ว
 slug: dell-latitude
 seoTitle: รับซื้อ Dell Latitude มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Dell Latitude มือสอง ทุกรุ่นยอดนิยม
+pageH1: รับซื้อ Dell Latitude มือสอง หลายรุ่นยอดนิยมยอดนิยม
 featuredImage: /images/brands/dell.svg
 popularModels:
   - Latitude 3420 / 3430

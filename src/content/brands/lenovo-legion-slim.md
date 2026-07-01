@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Lenovo Legion Slim
-description: รับซื้อ Lenovo Legion Slim มือสอง ทุกรุ่นยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และบอดี้บางเบา ส่งรูปเช็คราคากลางทาง LINE @webuy ได้ทันที
+description: รับซื้อ Lenovo Legion Slim มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และบอดี้บางเบา ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: lenovo-legion-slim
 seoTitle: รับซื้อ Lenovo Legion Slim มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Lenovo Legion Slim มือสอง ทุกรุ่นยอดนิยม
+pageH1: รับซื้อ Lenovo Legion Slim มือสอง หลายรุ่นยอดนิยมยอดนิยม
 featuredImage: /images/brands/lenovo.svg
 popularModels:
   - Legion Slim 5 / 5i

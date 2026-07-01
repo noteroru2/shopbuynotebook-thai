@@ -4,6 +4,8 @@ import pathlib
 import re
 import sys
 
+sys.stdout.reconfigure(encoding='utf-8')
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 DIST = ROOT / 'dist'
 AUDIT = ROOT / 'seo-url-audit.csv'
@@ -11,6 +13,8 @@ AUDIT = ROOT / 'seo-url-audit.csv'
 RISKY = [
     'รับทุกยี่ห้อ', 'รับทุกสภาพ', 'ราคาดีที่สุด', 'ราคาสูงสุด', 'ให้ราคาสูง',
     'ไม่กดราคา', 'รับประกันราคา', 'จ่ายเงินทันที', 'อันดับ 1',
+    'ทันที', 'สูงสุด', '100%', 'ราคาตลาด', 'ราคากลาง', 'ทุกรุ่น', 'ทุกอาการ',
+    'ชัวร์', 'แน่นอน', '24 ชั่วโมง', 'ลบข้อมูลถาวร', 'รับประกันการลบ',
 ]
 
 results: dict = {}

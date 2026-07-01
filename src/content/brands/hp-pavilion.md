@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: HP Pavilion
-description: รับซื้อ HP Pavilion มือสอง ทุกรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพการใช้งานจริง และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคากลางทาง LINE @webuy ได้ทันที
+description: รับซื้อ HP Pavilion มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพการใช้งานจริง และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: hp-pavilion
 seoTitle: รับซื้อ HP Pavilion มือสอง | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ HP Pavilion มือสอง ทุกรุ่นยอดนิยม
+pageH1: รับซื้อ HP Pavilion มือสอง หลายรุ่นยอดนิยมยอดนิยม
 featuredImage: /images/brands/hp.svg
 popularModels:
   - Pavilion 14 / 15

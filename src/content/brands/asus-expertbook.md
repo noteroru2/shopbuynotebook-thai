@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Asus ExpertBook
-description: รับซื้อ Asus ExpertBook มือสอง ทุกรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของเครื่องธุรกิจ และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคากลางผ่าน LINE @webuy ได้ทันที
+description: รับซื้อ Asus ExpertBook มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของเครื่องธุรกิจ และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงผ่าน LINE @webuy ได้อย่างรวดเร็ว
 slug: asus-expertbook
 seoTitle: รับซื้อ Asus ExpertBook มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Asus ExpertBook มือสอง ทุกรุ่นยอดนิยม
+pageH1: รับซื้อ Asus ExpertBook มือสอง หลายรุ่นยอดนิยมยอดนิยม
 featuredImage: /images/brands/asus.svg
 popularModels:
   - ExpertBook B1 / B3 / B5
