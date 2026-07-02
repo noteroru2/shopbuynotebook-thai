@@ -10,7 +10,6 @@ import BrandGrid from '../components/BrandGrid.astro';
 import NotebookTypesSection from '../components/NotebookTypesSection.astro';
 import ConditionGrid from '../components/ConditionGrid.astro';
 import PriceFactors from '../components/PriceFactors.astro';
-import HomeConditionPricingSection from '../components/HomeConditionPricingSection.astro';
 import HomeNotebookTerminologySection from '../components/HomeNotebookTerminologySection.astro';
 import HomeSellPrepSection from '../components/HomeSellPrepSection.astro';
 import PhotoGuide from '../components/PhotoGuide.astro';
@@ -138,7 +137,6 @@ const schemas = [
   <NotebookTypesSection />
   <ConditionGrid />
   <PriceFactors />
-  <HomeConditionPricingSection />
   <HomeNotebookTerminologySection />
   <HomeSellPrepSection />
   <TrustGallery />
@@ -149,47 +147,6 @@ const schemas = [
   <FAQ faqs={faqs} />
   <ServiceAreasSection />
   <PopularServicesLinks />
-
-  <section class="mx-auto w-full max-w-6xl px-4 pt-10" aria-labelledby="home-models-heading">
-    <div class="rounded-2xl border border-emerald-200 bg-white px-6 py-6 sm:px-8">
-      <h2 id="home-models-heading" class="text-xl font-extrabold text-slate-900">
-        รุ่นที่รับประเมินบ่อยและเกณฑ์การพิจารณาเบื้องต้น
-      </h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        เราให้บริการประเมินราคารับซื้อโน๊ตบุ๊คมือสองโดยอิงตามสเปก สภาพการใช้งานจริง และกลไกราคาประเมินอ้างอิง โดยกลุ่มเครื่องยอดนิยมที่มีการส่งเช็คราคาบ่อย ได้แก่:
-      </p>
-      <ul class="mt-3 list-disc pl-5 text-sm text-slate-600 space-y-1">
-        <li><strong>สายทำงานพรีเมียม:</strong> <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/dell-latitude/">Dell Latitude</a>, <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/lenovo/">Lenovo ThinkPad</a>, <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/hp-elitebook/">HP EliteBook</a> และ <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/asus-zenbook/">Asus ZenBook</a></li>
-        <li><strong>สายเกมมิ่งและกราฟิก:</strong> <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/gaming/">Gaming Notebook</a> หลายรุ่นยอดนิยม เช่น <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/asus-tuf-a15-f15/">Asus TUF</a>, <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/lenovo-legion-5/">Lenovo Legion</a> และ <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/dell-g15-g16/">Dell G Series</a></li>
-        <li><strong>สาย Apple:</strong> <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/macbook/">MacBook Air</a> และ MacBook Pro ชิป Apple Silicon</li>
-      </ul>
-
-      <h3 class="mt-6 text-base font-bold text-slate-900">ข้อมูลที่ควรส่งใน LINE @webuy เพื่อประเมินราคา</h3>
-      <p class="mt-1 text-sm text-slate-600">
-        เพื่อความรวดเร็ว แนะนำส่ง: 1) รูปตัวเครื่องรอบด้านตอนเปิดจอ 2) หน้าจอสเปก (ดูวิธีที่ <a class="text-emerald-700 underline" href="/blog/วิธีดูสเปก-cpu-ram-ssd-ของโน๊ตบุ๊ค/">วิธีดูสเปกโน๊ตบุ๊ค</a>) 3) ข้อมูลอาการเสื่อมเฉพาะจุด เช่น แบตเตอรี่เก็บไฟได้น้อยลง หรือหน้าจอมีรอยร้าว (ดูเพิ่มที่ <a class="text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/จอแตก/">โน๊ตบุ๊คจอแตก</a>) และ 4) อุปกรณ์ที่มี เช่น สายชาร์จแท้ หรือกล่อง
-      </p>
-
-      <h3 class="mt-6 text-base font-bold text-slate-900">ตัวอย่างเคสประเมินราคา (จำลองสถานการณ์ทั่วไป)</h3>
-      <div class="mt-3 grid gap-4 sm:grid-cols-3 text-sm text-slate-600">
-        <div class="rounded-xl border border-slate-100 bg-slate-50/50 p-4">
-          <p class="font-semibold text-slate-900">เคสที่ 1: โน๊ตบุ๊คทำงานปกติ</p>
-          <p class="mt-1 text-xs">ThinkPad สภาพบอดี้มีรอยขนแมวเล็กน้อย จอแสดงผลปกติ อุปกรณ์สายชาร์จครบถ้วน แบตเตอรี่เสื่อมตามอายุการใช้งาน — <em>ประเมินตามราคาประเมินอ้างอิงเครื่องทำงานปกติโดยปรับลดส่วนต่างตามค่าชิ้นส่วนแบตเตอรี่</em></p>
-        </div>
-        <div class="rounded-xl border border-slate-100 bg-slate-50/50 p-4">
-          <p class="font-semibold text-slate-900">เคสที่ 2: โน๊ตบุ๊คเล่นเกมสเปกสูง</p>
-          <p class="mt-1 text-xs">Asus TUF สเปกการ์ดจอแยก บอดี้ภายนอกสมบูรณ์ มีฝุ่นสะสมในพัดลม หน้าจอปกติ มีสายชาร์จและกล่องตรงรุ่น — <em>ประเมินราคาประเมินอ้างอิงระดับสูงของรุ่นเนื่องจากอุปกรณ์เสริมครบและสภาพจอสมบูรณ์</em></p>
-        </div>
-        <div class="rounded-xl border border-slate-100 bg-slate-50/50 p-4">
-          <p class="font-semibold text-slate-900">เคสที่ 3: โน๊ตบุ๊คชำรุดชิ้นส่วน</p>
-          <p class="mt-1 text-xs">โน๊ตบุ๊คทั่วไปเปิดติดปกติ แต่หน้าจอร้าวบางส่วน อุปกรณ์สายชาร์จแท้ยังใช้งานได้ปกติ — <em>อาจมีผลต่อราคาประเมินตามสภาพจริงหลังตรวจรับ โดยพิจารณาจากตำแหน่งและขนาดของรอยร้าว</em></p>
-        </div>
-      </div>
-
-      <p class="mt-4 text-xs text-slate-500">
-        *การประเมินราคาเบื้องต้นผ่าน LINE เป็นไปเพื่ออำนวยความสะดวกในการตัดสินใจของผู้ขาย โดยไม่มีข้อผูกมัดหรือค่าใช้จ่ายใด ๆ ยินดีให้คำแนะนำตลอดเวลาทำการ*
-      </p>
-    </div>
-  </section>
 
   <section class="mx-auto w-full max-w-6xl px-4 pt-10" aria-labelledby="partner-it-heading">
     <div class="rounded-2xl border border-slate-200 bg-slate-50/90 px-4 py-5 sm:px-6">
