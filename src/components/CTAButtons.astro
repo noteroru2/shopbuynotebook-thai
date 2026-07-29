@@ -4,11 +4,13 @@ import { SITE } from '../lib/seo';
 interface Props {
   primaryText?: string;
   secondaryText?: string;
+  secondaryHref?: string;
 }
 
 const {
   primaryText = `แอดไลน์ ${SITE.lineHandle} ส่งรูปประเมินราคา`,
   secondaryText = `โทร`,
+  secondaryHref = `tel:${SITE.telephone}`,
 } = Astro.props;
 ---
 
@@ -25,9 +27,9 @@ const {
   </a>
   <a
     class="inline-flex items-center justify-center rounded-2xl bg-slate-900 px-5 py-3 text-base font-semibold text-white shadow-lg shadow-slate-900/20 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:bg-slate-800 hover:shadow-xl hover:shadow-slate-900/30 focus-visible:outline-none"
-    href={`tel:${SITE.telephone}`}
+    href={secondaryHref}
   >
-    {secondaryText} {SITE.telephone}
+    {secondaryText}{secondaryHref.startsWith('tel:') ? ` ${SITE.telephone}` : ''}
   </a>
 </div>
 

@@ -4,6 +4,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
+import { EnumChangefreq } from 'sitemap';
 
 import mdx from '@astrojs/mdx';
 
@@ -34,19 +35,19 @@ export default defineConfig({
       },
       serialize(item) {
         if (item.url === 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/') {
-          item.changefreq = 'daily';
+          item.changefreq = EnumChangefreq.DAILY;
           item.priority = 1.0;
         } else if (item.url.includes('/ขายโน๊ตบุ๊คด่วน/') || item.url.includes('/รับเหมาโน๊ตบุ๊ค/') || item.url.includes('/รับเหมาคอมพิวเตอร์/') || item.url.includes('/รับประมูลคอม/')) {
-          item.changefreq = 'daily';
+          item.changefreq = EnumChangefreq.DAILY;
           item.priority = 0.9;
         } else if (item.url.includes('/รับซื้อโน๊ตบุ๊ค/')) {
-          item.changefreq = 'weekly';
+          item.changefreq = EnumChangefreq.WEEKLY;
           item.priority = 0.8;
         } else if (item.url.includes('/blog/')) {
-          item.changefreq = 'monthly';
+          item.changefreq = EnumChangefreq.MONTHLY;
           item.priority = 0.7;
         } else {
-          item.changefreq = 'monthly';
+          item.changefreq = EnumChangefreq.MONTHLY;
           item.priority = 0.6;
         }
         return item;

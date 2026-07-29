@@ -22,6 +22,7 @@ interface Props {
     modifiedTime?: string;
   };
   noindex?: boolean;
+  includeLocalBusiness?: boolean;
   schemas?: Record<string, any>[];
   /** path เช่น /images/hero.webp — preload เพื่อช่วย LCP บนหน้าที่กำหนด */
   lcpImageSrc?: string;
@@ -39,6 +40,7 @@ const {
   ogImageHeight,
   article,
   noindex = false,
+  includeLocalBusiness = false,
   schemas = [],
   lcpImageSrc,
   lcpImageSrcset,
@@ -116,7 +118,7 @@ const isArticle = !!article;
     <JsonLd
       schema={[
         organizationSchema(),
-        localBusinessSchema({ description }),
+        ...(includeLocalBusiness ? [localBusinessSchema({ description })] : []),
         webSiteSchema(),
         webPageSchema({ title, description, url: canonical }),
         ...schemas,
@@ -130,4 +132,3 @@ const isArticle = !!article;
     <StickyMobileCTA />
   </body>
 </html>
-

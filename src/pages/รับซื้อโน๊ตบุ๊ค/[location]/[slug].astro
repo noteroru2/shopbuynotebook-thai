@@ -4,7 +4,7 @@ import ProcessSteps from '../../../components/ProcessSteps.astro';
 import CTAButtons from '../../../components/CTAButtons.astro';
 import FAQ from '../../../components/FAQ.astro';
 import { getCollection } from 'astro:content';
-import { absoluteUrl, SITE, serviceSchema, breadcrumbListSchema } from '../../../lib/seo';
+import { absoluteUrl, serviceSchema, breadcrumbListSchema } from '../../../lib/seo';
 
 export async function getStaticPaths() {
   const [allBrands, allConditions, locations] = await Promise.all([
@@ -103,7 +103,9 @@ const schemas = [
 
 const meetingOptions = location.data.meetingOptions ?? [];
 const subAreas = location.data.subAreas ?? [];
-const detailsList = isBrand ? (item.data.popularModels ?? []) : (item.data.whatWeBuy ?? []);
+const detailsList = isBrand
+  ? ('popularModels' in item.data ? item.data.popularModels ?? [] : [])
+  : ('whatWeBuy' in item.data ? item.data.whatWeBuy ?? [] : []);
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} canonical={canonical} noindex={true} schemas={schemas}>

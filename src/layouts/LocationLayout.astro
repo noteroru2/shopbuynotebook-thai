@@ -13,9 +13,10 @@ interface Props {
   breadcrumbs: BreadcrumbItem[];
   faqs?: FaqItem[];
   serviceName?: string;
+  includeLocalBusiness?: boolean;
 }
 
-const { title, description, canonical, ogImage, noindex, breadcrumbs, faqs = [], serviceName } = Astro.props;
+const { title, description, canonical, ogImage, noindex, breadcrumbs, faqs = [], serviceName, includeLocalBusiness = false } = Astro.props;
 const schemas = [
   breadcrumbListSchema(breadcrumbs),
   ...(serviceName && canonical ? [serviceSchema({ name: serviceName, url: canonical, description })] : []),
@@ -23,8 +24,7 @@ const schemas = [
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogImage={ogImage} noindex={noindex} schemas={schemas}>
+<BaseLayout title={title} description={description} canonical={canonical} ogImage={ogImage} noindex={noindex} schemas={schemas} includeLocalBusiness={includeLocalBusiness}>
   <Breadcrumbs items={breadcrumbs} />
   <slot />
 </BaseLayout>
-

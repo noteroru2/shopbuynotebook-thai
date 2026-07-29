@@ -7,7 +7,9 @@ const toSlug = (p: { id: string; data: { slug?: string } }) =>
 
 const all = await getCollection('blog');
 const bySlug = new Map(all.map((p) => [toSlug(p), p]));
-const posts = HOME_FEATURED_BLOG_SLUGS.map((s) => bySlug.get(s)).filter(Boolean);
+const posts = HOME_FEATURED_BLOG_SLUGS
+  .map((s) => bySlug.get(s))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
 ---
 
 {

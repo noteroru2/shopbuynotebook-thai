@@ -1,44 +1,36 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import MiniProcessBarDark from '../components/MiniProcessBarDark.astro';
-import TrustBadges from '../components/TrustBadges.astro';
-import SeoIntroSection from '../components/SeoIntroSection.astro';
-import SoftImageStrip from '../components/SoftImageStrip.astro';
 import ProcessSteps from '../components/ProcessSteps.astro';
 import BrandGrid from '../components/BrandGrid.astro';
 import NotebookTypesSection from '../components/NotebookTypesSection.astro';
 import ConditionGrid from '../components/ConditionGrid.astro';
 import PriceFactors from '../components/PriceFactors.astro';
-import HomeNotebookTerminologySection from '../components/HomeNotebookTerminologySection.astro';
-import HomeSellPrepSection from '../components/HomeSellPrepSection.astro';
 import PhotoGuide from '../components/PhotoGuide.astro';
 import TrustGallery from '../components/TrustGallery.astro';
-import ReviewCards from '../components/ReviewCards.astro';
-import HomeCaseStudies from '../components/HomeCaseStudies.astro';
 import SafetySection from '../components/SafetySection.astro';
-import WhyChooseUs from '../components/WhyChooseUs.astro';
 import FAQ from '../components/FAQ.astro';
 import CTAButtons from '../components/CTAButtons.astro';
 import FinalCtaBanner from '../components/FinalCtaBanner.astro';
 import ServiceAreasSection from '../components/ServiceAreasSection.astro';
-import PopularServicesLinks from '../components/PopularServicesLinks.astro';
 import HomeFeaturedArticles from '../components/HomeFeaturedArticles.astro';
 import { getCollection } from 'astro:content';
 import { HOME_FEATURED_BLOG_SLUGS } from '../data/home-featured-blog';
 import { faqPageSchema, absoluteUrl } from '../lib/seo';
 import { itemListSchema } from '../lib/schema';
 
-const title = 'รับซื้อโน๊ตบุ๊ค ส่งรูปประเมินตามรุ่น สเปก และสภาพเครื่อง | ร้านรับซื้อโน๊ตบุ๊ค.com';
+const title = 'รับซื้อโน๊ตบุ๊ค ประเมินตามรุ่น สเปก และสภาพจริง | ร้านรับซื้อโน๊ตบุ๊ค.com';
 const description =
-  'ร้านรับซื้อโน๊ตบุ๊ค รับซื้อ Notebook มือสองหลายยี่ห้อ ประเมินตามสภาพจริงผ่าน LINE แจ้งราคาก่อนตัดสินใจขาย จ่ายเงินสดหรือโอน รับ MacBook Gaming และเครื่องเสียบางอาการ';
+  'รับซื้อโน๊ตบุ๊ค ส่งรูป รุ่น สเปก และสภาพเพื่อประเมินเบื้องต้น ราคาสุดท้ายยืนยันหลังตรวจเครื่อง มีหน้าร้านอุบลราชธานี จังหวัดอื่นนัดหรือจัดส่งตามเงื่อนไข';
 
 const toSlug = (p: { id: string; data: { slug?: string } }) =>
   p.data.slug ? p.data.slug : String(p.id).replace(/\.(md|mdx)$/i, '');
 
 const allBlogPosts = await getCollection('blog');
 const postBySlug = new Map(allBlogPosts.map((p) => [toSlug(p), p]));
-const homeFeaturedPosts = HOME_FEATURED_BLOG_SLUGS.map((s) => postBySlug.get(s)).filter(Boolean);
+const homeFeaturedPosts = HOME_FEATURED_BLOG_SLUGS
+  .map((s) => postBySlug.get(s))
+  .filter((post): post is NonNullable<typeof post> => Boolean(post));
 const featuredArticleListItems = homeFeaturedPosts.map((p) => ({
   name: p.data.title,
   url: absoluteUrl(`/blog/${toSlug(p)}/`),
@@ -63,22 +55,17 @@ const faqs = [
   {
     question: 'เช็คราคาโน๊ตบุ๊คก่อนขายได้ไหม?',
     answer:
-      'ได้ครับ ส่งรูป + รุ่น + สเปก + สภาพ/อาการ (ถ้ามี) มาทาง LINE เราช่วยเช็คราคาและประเมินเบื้องต้นให้ฟรี',
+      'ได้ครับ ส่งรูป รุ่น สเปก สภาพและอาการทาง LINE เพื่อประเมินเบื้องต้น ราคาสุดท้ายจะยืนยันหลังตรวจเครื่องจริง',
   },
   {
-    question: 'ขายโน๊ตบุ๊คมือสองต้องเตรียมอะไร?',
+    question: 'อยู่จังหวัดอื่นขายโน๊ตบุ๊คอย่างไร?',
     answer:
-      'แนะนำเตรียมรูปเครื่องชัด ๆ 3–5 รูป แจ้งรุ่น/สเปก อุปกรณ์ที่มี (ที่ชาร์จ/กล่อง/ใบเสร็จถ้ามี) และอาการที่พบ ถ้าล้างข้อมูลได้ก่อนจะช่วยให้ปิดงานเร็วขึ้น',
+      'ส่งรูปและข้อมูลประเมินเบื้องต้นก่อน การนัดรับขึ้นอยู่กับพื้นที่ ตารางงาน และการยืนยันจากทีมงาน หรือสอบถามขั้นตอนจัดส่งเครื่องมาตรวจได้ หน้าร้านจริงอยู่จังหวัดอุบลราชธานี',
   },
   {
-    question: 'รับซื้อโน๊ตบุ๊คถึงที่ไหม?',
+    question: 'ราคาประเมินจากรูปเป็นราคาสุดท้ายหรือไม่?',
     answer:
-      'แล้วแต่พื้นที่และเงื่อนไขครับ บางพื้นที่สามารถนัดรับได้ หรือเลือกส่งเครื่องผ่านขนส่ง/นัดเจอจุดที่สะดวก เพื่อให้เหมาะกับเคสของคุณ',
-  },
-  {
-    question: 'ประเมินราคาโน๊ตบุ๊คฟรีหรือไม่?',
-    answer:
-      'ฟรีครับ เราประเมินเบื้องต้นจากรูป/สเปก/สภาพ และจะแจ้งขั้นตอนให้ชัดเจนก่อนตกลงขายเสมอ',
+      'ไม่ใช่ครับ ราคาเบื้องต้นอ้างอิงข้อมูลที่ส่งมา ราคาสุดท้ายยืนยันหลังตรวจรุ่น สเปก สภาพและอาการจริง โดยลูกค้าไม่จำเป็นต้องตกลงขาย',
   },
   {
     question: 'ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลไหม?',
@@ -109,6 +96,7 @@ const schemas = [
   title={title}
   description={description}
   schemas={schemas}
+  includeLocalBusiness={true}
   lcpImageSrc={heroImageSrc}
   lcpImageSrcset={heroImageSrcset}
   lcpImageSizes={heroImageSizes}
@@ -117,7 +105,7 @@ const schemas = [
   <Hero
     title="รับซื้อโน๊ตบุ๊ค ประเมินตามรุ่น สเปก และสภาพจริง"
     titleHtml={`<span class="block"><span class="bg-gradient-to-r from-emerald-600 to-sky-600 bg-clip-text text-transparent">รับซื้อโน๊ตบุ๊ค</span></span><span class="mt-1 block">ประเมินตามรุ่น สเปก <span class="relative inline-flex items-center rounded-full bg-[#FACC15]/45 px-3 py-1 text-slate-900">และสภาพจริง</span></span>`}
-    subtitle="ส่งรูปเครื่องผ่าน LINE เพื่อเช็คราคาเบื้องต้นฟรี รับซื้อทั้งเครื่องดี เครื่องเก่า และเครื่องเสียบางอาการ"
+    subtitle="รับซื้อเฉพาะโน๊ตบุ๊คและเครื่องพกพาในหมวดที่เว็บไซต์รองรับ ส่งรูปทาง LINE เพื่อประเมินเบื้องต้น ราคาสุดท้ายยืนยันหลังตรวจเครื่องจริง หน้าร้านอยู่จังหวัดอุบลราชธานี ส่วนจังหวัดอื่นต้องยืนยันวิธีนัดหรือจัดส่งก่อน"
     imageSrc={heroImageSrc}
     imageSrcset={heroImageSrcset}
     imageSizes={heroImageSizes}
@@ -125,43 +113,43 @@ const schemas = [
     imageHeight={480}
     imageAlt="ทีมงานตรวจสภาพโน๊ตบุ๊คก่อนประเมินราคา"
   />
-  <MiniProcessBarDark />
 
-  <TrustBadges />
-  <SeoIntroSection />
-  <HomeFeaturedArticles />
-  <SoftImageStrip />
-  <ProcessSteps />
-  <PhotoGuide />
-  <BrandGrid />
-  <NotebookTypesSection />
-  <ConditionGrid />
-  <PriceFactors />
-  <HomeNotebookTerminologySection />
-  <HomeSellPrepSection />
-  <TrustGallery />
-  <ReviewCards />
-  <HomeCaseStudies />
-  <SafetySection />
-  <WhyChooseUs />
-  <FAQ faqs={faqs} />
-  <ServiceAreasSection />
-  <PopularServicesLinks />
-
-  <section class="mx-auto w-full max-w-6xl px-4 pt-10" aria-labelledby="partner-it-heading">
-    <div class="rounded-2xl border border-slate-200 bg-slate-50/90 px-4 py-5 sm:px-6">
-      <h2 id="partner-it-heading" class="text-lg font-extrabold text-slate-900">
-        บริการรับซื้อสินค้าไอทีอื่นในเครือ
-      </h2>
-      <p class="mt-2 max-w-3xl text-sm leading-relaxed text-slate-600">
-        หากคุณมีอุปกรณ์ไอทีอื่นนอกจากโน๊ตบุ๊ค เช่น คอมพิวเตอร์ iPhone iPad MacBook กล้อง หรือเลนส์ เรามีเว็บไซต์ในเครือที่แยกตามประเภทสินค้าและพื้นที่ให้บริการ
-        — ดูรายการลิงก์ที่โปร่งใสและเลือกช่องทางที่เหมาะได้ที่หน้า{' '}
-        <a class="font-semibold text-emerald-700 underline underline-offset-4 hover:text-emerald-800" href="/เว็บไซต์ในเครือ/">
-          เว็บไซต์ในเครือทั้งหมด
-        </a>
-      </p>
+  <section id="evaluation-checklist" class="mx-auto w-full max-w-6xl scroll-mt-24 px-4 pt-12" aria-labelledby="evaluation-checklist-heading">
+    <div class="rounded-3xl border border-emerald-200 bg-emerald-50/60 p-6 shadow-sm sm:p-8">
+      <h2 id="evaluation-checklist-heading" class="text-xl font-extrabold text-slate-900">ข้อมูลที่ต้องส่งเพื่อประเมินเบื้องต้น</h2>
+      <p class="mt-2 text-sm leading-relaxed text-slate-700">ข้อมูลครบช่วยให้ตรวจรุ่นและสภาพได้ตรงขึ้น แต่ยังไม่ใช่ราคาสุดท้าย</p>
+      <ol class="mt-5 grid gap-3 text-sm text-slate-800 sm:grid-cols-2 lg:grid-cols-3">
+        {[
+          'ยี่ห้อและรุ่นเต็ม',
+          'CPU',
+          'GPU ถ้ามี',
+          'RAM และ SSD',
+          'สภาพจอและตัวเครื่อง',
+          'สุขภาพแบตเตอรี่หรืออาการแบต',
+          'อาการเสียหรือตำหนิ',
+          'Adapter กล่อง ใบเสร็จ หรืออุปกรณ์ที่มี',
+          'จังหวัดหรือวิธีที่สะดวกในการส่งมอบ',
+        ].map((item, index) => (
+          <li class="flex gap-3 rounded-2xl border border-emerald-100 bg-white p-4">
+            <span class="font-extrabold text-emerald-700">{index + 1}</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
+
+  <PhotoGuide />
+  <NotebookTypesSection />
+  <PriceFactors />
+  <ProcessSteps />
+  <ConditionGrid />
+  <BrandGrid />
+  <ServiceAreasSection />
+  <TrustGallery />
+  <SafetySection />
+  <FAQ faqs={faqs} />
+  <HomeFeaturedArticles />
 
   <FinalCtaBanner>
     <CTAButtons primaryText="แอดไลน์ @webuy ส่งรูปประเมินราคา" secondaryText="โทร" />

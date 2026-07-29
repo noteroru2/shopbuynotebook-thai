@@ -93,13 +93,9 @@ export function serviceSchema(opts: { name: string; url: string; description: st
     url: opts.url,
     description: opts.description,
     provider: {
-      '@type': 'LocalBusiness',
-      name: SITE.name,
-      url: SITE.url,
-      telephone: SITE.telephone,
-      address: companyPostalAddressSchema(),
+      '@type': 'Organization',
+      '@id': `${SITE.url}#organization`,
     },
     areaServed: SITE.areaServed,
   };
 }
-

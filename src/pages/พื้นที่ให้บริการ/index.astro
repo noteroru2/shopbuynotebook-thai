@@ -7,9 +7,9 @@ import { SITE } from '../../config/site';
 import { absoluteUrl, breadcrumbListSchema, faqPageSchema } from '../../lib/seo';
 import { locationFaqs } from '../../data/faqs';
 
-const title = 'พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค | กรุงเทพ ปริมณฑล อีสาน เหนือ กลาง ใต้ และทุกจังหวัด';
+const title = 'พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค | นัดหรือจัดส่งตามเงื่อนไข';
 const description =
-  'ดูพื้นที่ให้บริการรับซื้อโน๊ตบุ๊คครอบคลุมทุกภาค 77 จังหวัดทั่วไทย พร้อมหน้าพื้นที่ให้บริการแต่ละจังหวัดสำหรับเช็กราคาโน๊ตบุ๊คก่อนขาย';
+  'ส่งรูปประเมินได้จากทั่วประเทศ พร้อมตรวจสอบวิธีนัดรับหรือจัดส่งตามพื้นที่ ตารางงาน และเงื่อนไข หน้าร้านจริงอยู่จังหวัดอุบลราชธานี';
 const canonical = absoluteUrl('/พื้นที่ให้บริการ/');
 
 const breadcrumbs = [
@@ -61,13 +61,12 @@ const sortedRegions = Object.keys(locationsByRegion).sort((a, b) => {
 
 <BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
   <section class="mx-auto w-full max-w-6xl px-4 pt-10">
-    <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค ทั่วประเทศ</h1>
+    <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค</h1>
     <p class="mt-4 text-base leading-relaxed text-slate-600">
-      ไม่ว่าคุณจะอยู่พื้นที่ไหน แนะนำเริ่มจาก <strong>ส่งรูปประเมินราคา</strong> ผ่าน LINE ก่อน เพื่อให้เช็คราคาเบื้องต้นได้ไว
-      จากนั้นค่อยเลือกวิธีรับเครื่องที่เหมาะกับพื้นที่ เช่น นัดรับ/นัดเจอในโซนที่สะดวก หรือส่งเครื่องผ่านขนส่ง
+      ลูกค้าส่งรูป รุ่น สเปก อาการ และจังหวัดผ่าน LINE เพื่อประเมินเบื้องต้นก่อน จากนั้นทีมงานจึงตรวจสอบวิธีนัดหรือจัดส่งตามพื้นที่ ตารางงาน และเงื่อนไข
     </p>
     <p class="mt-4 text-base leading-relaxed text-slate-600">
-      ปัจจุบันเรารองรับพื้นที่ให้บริการครอบคลุมทุกภูมิภาคทั่วไทยกว่า 77 จังหวัด และพื้นที่สำคัญต่างๆ ลองเลือกพื้นที่ของคุณจากรายการด้านล่างได้เลย
+      หน้าร้านจริงอยู่จังหวัดอุบลราชธานี จังหวัดอื่นเป็นพื้นที่ให้บริการตามการนัดหมายหรือการจัดส่ง ไม่ใช่ที่ตั้งสาขา และต้องยืนยันก่อนทุกครั้ง
     </p>
   </section>
 
@@ -76,7 +75,7 @@ const sortedRegions = Object.keys(locationsByRegion).sort((a, b) => {
       <h2 class="text-xl font-extrabold text-slate-900">คำตอบสั้น (AEO): อยู่ต่างจังหวัดขายโน๊ตบุ๊คได้ไหม</h2>
       <p class="mt-3 text-base leading-relaxed text-slate-700">
         ได้ครับ คุณสามารถเริ่มจากส่งรูปเครื่อง รุ่น/สเปก และสภาพผ่าน LINE เพื่อเช็คราคาเบื้องต้นก่อน จากนั้นเราจะแนะนำวิธีที่เหมาะกับพื้นที่ของคุณ
-        เช่น นัดเจอในโซนที่สะดวก หรือส่งเครื่องผ่านขนส่งตามขั้นตอนที่ตกลงกัน
+        เช่น นัดตามจุดที่ตกลงร่วมกันเมื่อมีรอบ หรือส่งเครื่องผ่านขนส่งตามขั้นตอนที่ยืนยันกัน
       </p>
       <p class="mt-3 text-sm leading-relaxed text-slate-700">
         พร้อมเริ่ม แอดไลน์ <strong>{SITE.lineHandle}</strong> หรือโทร <strong>{SITE.phone}</strong>
@@ -138,7 +137,7 @@ const sortedRegions = Object.keys(locationsByRegion).sort((a, b) => {
     <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
       <h2 class="text-xl font-extrabold text-slate-900">นัดรับ/นัดเจอ vs ส่งขนส่ง (เลือกแบบไหนดี)</h2>
       <p class="mt-3 text-base leading-relaxed text-slate-600">
-        วิธีรับเครื่องที่เหมาะสมขึ้นกับพื้นที่และความสะดวกของคุณ โดยทั่วไปมี 2 แนวทางหลัก คือ “นัดรับ/นัดเจอ” และ “ส่งเครื่องทางขนส่ง”
+        วิธีรับเครื่องที่เหมาะสมขึ้นกับพื้นที่ ตารางงาน และการยืนยัน โดยมี 2 แนวทาง คือ “นัดตามที่ตกลง” และ “ส่งเครื่องทางขนส่ง”
         ทั้งสองแบบสามารถเริ่มจากการส่งรูปเพื่อเช็คราคาเบื้องต้นได้เหมือนกัน
       </p>
       <div class="mt-4 grid gap-4 lg:grid-cols-2">

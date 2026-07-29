@@ -56,7 +56,10 @@ const brandOrConditionH1 =
   kind === 'brand'
     ? (entry.data.pageH1 ?? getBrandH1Default(slug, entry.data.title))
     : (entry.data.pageH1 ?? `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ประเมินไว จ่ายเงินสด`);
-const description = entry.data.description;
+const description =
+  kind === 'location' && slug !== 'อุบลราชธานี'
+    ? `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ส่งรูป รุ่น สเปก และอาการเพื่อประเมินเบื้องต้น การนัดรับขึ้นอยู่กับพื้นที่ ตารางงาน และการยืนยัน หรือสอบถามขั้นตอนจัดส่งเครื่องมาตรวจได้`
+    : entry.data.description;
 const ogImage = entry.data.featuredImage ? absoluteUrl(entry.data.featuredImage) : undefined;
 const serviceName =
   kind === 'location'
@@ -243,7 +246,6 @@ function getBrandFeaturedLinks(slug: string, title: string): RelatedLink[] {
       { label: 'MacBook Battery Health มีผลกับราคาไหม', href: '/รับซื้อโน๊ตบุ๊ค/macbook-battery-health/', description: 'เหมาะกับเคสที่แบตเริ่มเสื่อมหรือใช้มานาน' },
       { label: 'MacBook ติด MDM หรือบัญชีองค์กร', href: '/รับซื้อโน๊ตบุ๊ค/macbook-mdm/', description: 'เช็กเงื่อนไขก่อนส่งประเมินสำหรับเครื่ององค์กร' },
       { label: 'ขาย MacBook ต้องเตรียมอะไรบ้าง', href: '/blog/ขาย-macbook-ต้องเตรียมอะไรบ้าง/', description: 'คู่มือปิด Apple ID, Find My, กล่อง และอุปกรณ์' },
-      { question: `ประเมิน ${title} แล้ว ถ้าราคายังไม่ตรงใจ ต้องขายอย่างรวดเร็วไหม`, answer: 'ไม่จำเป็นต้องขายอย่างรวดเร็วครับ คุณสามารถส่งรุ่น สเปก รูปเครื่องเพื่อรับกรอบราคาก่อนได้ แล้วค่อยตัดสินใจหลังตรวจสภาพจริง จุดประสงค์คือให้คุณเห็นกรอบราคาชัดเจนก่อนนัดรับหรือส่งเครื่อง' },
     ];
   }
 
@@ -263,7 +265,6 @@ function getBrandFeaturedLinks(slug: string, title: string): RelatedLink[] {
       { label: 'Gaming Notebook ตามสเปก GPU', href: '/blog/รับซื้อ-gaming-notebook-rtx-4070-4080-4090-ราคาเท่าไหร่/', description: 'เหมาะกับเคสที่ราคาขึ้นกับ GPU และสเปกเกมมิ่งโดยตรง' },
       { label: 'Gaming Notebook มือสองขายได้ราคาดีกว่าไหม', href: '/blog/gaming-notebook-มือสองขายได้ราคาดีกว่าไหม/', description: 'มุมมองเรื่องสภาพ ความร้อน และความต้องการของตลาด' },
       { label: 'เครื่องร้อนจัด ดับเอง ยังรับซื้อไหม', href: '/รับซื้อโน๊ตบุ๊ค/ร้อนจัดดับเอง/', description: 'ลิงก์รองสำหรับเครื่องเกมมิ่งที่มีอาการด้านความร้อน' },
-      { question: `ส่งประเมิน ${title} แล้ว ร้านจะนัดตรวจแบบไหน`, answer: 'ทั่วไปเริ่มจากกรอบราคาจากรูปและสเปกก่อน หากคุยกรอบราคาได้แล้วจึงนัดตรวจสภาพจริงอีกครั้ง จุดนี้ช่วยให้คุณรู้ทิศทางราคาก่อนโดยไม่ต้องหอบเครื่องไปหลายรอบ' },
     ];
   }
 
@@ -292,7 +293,6 @@ function getBrandFeaturedLinks(slug: string, title: string): RelatedLink[] {
       { label: 'บทความราคาในกลุ่มเดียวกัน', href: officeBlogMap[slug] ?? '/blog/รับซื้อโน๊ตบุ๊ค-ราคาเท่าไหร่/', description: 'Intent เชิงราคาและปัจจัยที่ร้านใช้ประเมินในกลุ่ม office' },
       { label: 'แบตเสื่อมหรือใช้งานมานาน ยังขายได้ไหม', href: '/รับซื้อโน๊ตบุ๊ค/แบตเสื่อม/', description: 'เหมาะกับเครื่องทำงานที่สภาพรวมดีแต่แบตเริ่มเสื่อม' },
       { label: 'ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร', href: '/blog/ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร/', description: 'คู่มือสั้นสำหรับเครื่องงาน เครื่องบริษัท และข้อมูลส่วนตัว' },
-      { question: `ถ้าจะขาย ${title} แบบไม่เสียเวลา ควรเตรียมอะไรเพิ่ม`, answer: 'แนะนำให้เตรียมรูปเครื่องทุกมุม รูปสเปก อะแดปเตอร์เดิม และแจ้งอาการจุดที่มีตรง ๆ ตั้งแต่ต้น วิธีนี้ช่วยให้ร้านให้กรอบราคาได้ไวขึ้นและลดรอบการถามกลับ' },
     ];
   }
 
@@ -344,7 +344,7 @@ const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs
 ---
 
 {kind === 'location' ? (
-  <LocationLayout
+      <LocationLayout
     title={layoutTitle}
     description={description}
     canonical={canonical}
@@ -352,12 +352,22 @@ const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs
     breadcrumbs={breadcrumbs}
     faqs={faqs}
     serviceName={`รับซื้อโน๊ตบุ๊ค ${entry.data.title}`}
+    includeLocalBusiness={slug === 'อุบลราชธานี'}
   >
     <section class="mx-auto w-full max-w-6xl px-4 pt-10">
       <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
         {locationH1}
       </h1>
       <p class="mt-4 text-base leading-relaxed text-slate-600">{description}</p>
+      {slug !== 'อุบลราชธานี' ? (
+        <aside class="mt-5 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm leading-relaxed text-slate-800">
+          <strong>ข้อมูลพื้นที่:</strong> หน้าร้านจริงของร้านอยู่จังหวัดอุบลราชธานี จังหวัดนี้เป็นพื้นที่ให้บริการตามการนัดหมายหรือการจัดส่ง ไม่ใช่ที่ตั้งสาขา การนัดรับขึ้นอยู่กับพื้นที่ ตารางงาน และการยืนยันจากทีมงาน กรุณาสอบถามรอบก่อนนัดทุกครั้ง
+        </aside>
+      ) : (
+        <aside class="mt-5 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm leading-relaxed text-slate-800">
+          จังหวัดอุบลราชธานีเป็นที่ตั้งหน้าร้านจริง โปรดส่งรูปและนัดหมายก่อนเข้ารับบริการเพื่อให้ทีมงานเตรียมการตรวจเครื่อง
+        </aside>
+      )}
       <p class="mt-4 text-base leading-relaxed text-slate-600">
         ถ้าต้องการเช็คราคาไว แนะนำส่งรูป 3–5 รูป + รุ่น/สเปก + สภาพ/อาการ ผ่าน LINE ก่อนนัดรับหรือส่งเครื่อง
         เพื่อให้ประเมินเบื้องต้นได้ตรงขึ้นและลดเวลาหน้างาน
@@ -403,7 +413,7 @@ const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs
           <h2 class="text-lg font-bold text-slate-900">ส่งรูปประเมินก่อนนัดได้ไหม</h2>
           <p class="mt-2 text-sm leading-relaxed text-slate-700">
             ได้ครับ ส่งรูปหน้าเครื่องเปิดจอ, คีย์บอร์ด, ฝาหลัง/สติ๊กเกอร์รุ่น และอุปกรณ์ที่มี พร้อมพิมพ์สเปกคร่าว ๆ
-            เราจะช่วยประเมินราคาโน๊ตบุ๊คเบื้องต้นให้ฟรีผ่าน LINE แล้วค่อยนัดรับ/ส่งเครื่องตามสะดวก
+            เราจะประเมินราคาเบื้องต้นผ่าน LINE แล้วตรวจสอบวิธีนัดหรือจัดส่งตามพื้นที่ ตารางงาน และเงื่อนไขก่อนยืนยัน
           </p>
           <div class="mt-4 flex flex-wrap gap-2">
             <a

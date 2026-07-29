@@ -38,7 +38,7 @@ const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.s
           ร้านรับซื้อโน๊ตบุ๊ค.com
         </span>
         <span class="hidden truncate text-xs font-medium text-slate-500 xl:block">
-          รับซื้อโน๊ตบุ๊คมือสอง • ประเมินไว • จ่ายเงินสด
+          ประเมินจากรุ่น สเปก และสภาพจริง
         </span>
       </span>
     </a>
@@ -156,8 +156,17 @@ const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.s
 <style>
   /* Optional: Custom animation for the shiny button effect */
   @keyframes shimmer {
-    ทั้งหมด {
-      transform: translateX(ทั้งหมด);
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(200%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-\[shimmer_2s_infinite\] {
+      animation: none;
     }
   }
 </style>
