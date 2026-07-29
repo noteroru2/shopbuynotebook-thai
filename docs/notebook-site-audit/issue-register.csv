@@ -1,0 +1,23 @@
+ID,Severity,Category,URL/File,Evidence,Impact,Recommended Fix,Batch,Requires GSC,Risk
+AUD-001,High,Location,src/content/locations/*.md,"กระบี่.md:45-58 สื่อรับถึงที่และจุดนัดยอดฮิต",ผู้ใช้เข้าใจว่ามีทีมประจำพื้นที่,ใช้ conditional wording และย้ำหน้าร้านอุบล,1,No,Medium
+AUD-002,High,Content,/รับเหมาคอมพิวเตอร์/,"Money page เน้น desktop/office PC",ขยาย topical scope เกิน notebook specialist,ทบทวนบทบาทและ ownership ก่อน consolidate,2,Yes,High
+AUD-003,High,Content,/รับประมูลคอม/,"Intent งานประมูลคอมทั่วไป",ดึง authority ออกจาก notebook,Hold และประเมิน GSC/conversion,2,Yes,High
+AUD-004,High,Cannibalization,"/, /รับซื้อโน๊ตบุ๊คมือสอง/, /รับซื้อ-notebook/","คำหลักและ commercial intent ใกล้กัน",สัญญาณ ranking แตกหลาย URL,กำหนด / เป็น primary owner,1,Yes,High
+AUD-005,High,Cannibalization,"/เช็คราคาโน๊ตบุ๊ค/, /เช็คราคาโน๊ตบุ๊คมือสอง/, /ตีราคาโน๊ตบุ๊ค/","Pricing intent overlap",query ownership ไม่ชัด,แยก estimate vs valuation methodology,2,Yes,High
+AUD-006,High,Cannibalization,condition pages + blog,"หลายคู่หัวข้ออาการเดียวกัน",service และ informational page แข่งขันกัน,ให้ condition เป็น conversion owner,2,Yes,Medium
+AUD-007,Medium,Build,src/components/Header.astro:158,"Build warning Expected percentage found ทั้งหมด",CSS animation อาจไม่ทำงานและ baseline ไม่สะอาด,แก้ keyframe token และเพิ่ม build warning gate,0,No,Low
+AUD-008,Medium,Build,package.json,"ไม่มี @astrojs/check/typescript และ check script",ตรวจ type/content diagnostics ไม่ครบ,เพิ่ม dependency/script ใน implementation,0,No,Low
+AUD-009,Medium,Routing,/รับซื้อโน๊ตบุ๊ค/[location]/[slug]/,"2,090 generated noindex pages",build/crawl footprint สูง,คง noindexและทบทวนการสร้าง route,4,Yes,High
+AUD-010,Medium,Robots,src/layouts/BaseLayout.astro:62,"noindex,nofollow",อาจตัด link discovery/equity,ประเมิน noindex,follow หรือหยุดสร้าง route,1,No,Medium
+AUD-011,Medium,Schema,src/layouts/BaseLayout.astro:116-123,"LocalBusiness inject ทุก BaseLayout page",schema อาจกว้างเกิน page context,กำหนด schema ตาม page type,1,No,Low
+AUD-012,Medium,Duplicate,src/content/locations/*.md,"โครงสร้าง location ซ้ำสูงแม้ exact hash ไม่ซ้ำ",คุณค่าหน้าพื้นที่บางหน้าอาจต่ำ,quality gate + local evidence,4,Yes,High
+AUD-013,Medium,Content,src/pages/รับซื้อโน๊ตบุ๊ค/[slug].astro:137-148,"default brand/model H1 และ intro",semantic template footprint,เพิ่ม model-specific evidence,3,Yes,Medium
+AUD-014,Medium,Trust,core/location pages,"คำไว/ราคาดี/ผู้เชี่ยวชาญมีหลายจุด",claim บางส่วนไม่มีหลักฐานใกล้ข้อความ,ใช้ process-based proof,1,No,Low
+AUD-015,Medium,Performance,All routes,"2,460 pages ต่อ build",scaling cost เพิ่มเร็ว,หยุด expansion และตั้ง route budget,0,No,Low
+AUD-016,Low,Metadata,/admin/,"ไม่มี canonical description H1 schema",surface คุณภาพต่ำหากเข้าถึงได้,ยืนยัน noindex/access control,1,No,Low
+AUD-017,Low,Routing,/รับซื้อโน๊ตบุ๊ค/,"redirect artifact ไม่มี content metadata/H1",scanner อาจรายงาน false positive,verify live 301/308 ไป /,1,No,Low
+AUD-018,Informational,Internal Link,dist HTML,"broken internal href = 0",link integrity ปัจจุบันดี,รักษา regression check,0,No,Low
+AUD-019,Informational,Metadata,dist HTML,"duplicate title/description = 0",metadata uniqueness ดี,รักษา automated check,0,No,Low
+AUD-020,Medium,Accessibility,sitewide,"ไม่มี axe/Lighthouse/assistive-tech run",ยังไม่ทราบ keyboard/contrast/ARIA defects,เพิ่ม a11y validation,6,No,Low
+AUD-021,Medium,Performance,sitewide,"ไม่มี field CWV หรือ Lighthouse",ประเมิน UX performance ไม่ครบ,เก็บ Lighthouse + CrUX/GSC CWV,6,No,Low
+AUD-022,Medium,Content,/เว็บไซต์ในเครือ/,"กล่าวถึง iPhone iPad กล้องและสินค้า IT อื่น",ทำให้ topical scope ไม่ชัด,ทำให้เป็น corporate disclosure ไม่ใช่ landing intent,1,No,Medium
