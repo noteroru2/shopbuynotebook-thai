@@ -10,7 +10,6 @@
     "build": "cross-env NODE_OPTIONS=--max_old_space_size=8192 astro build",
     "check": "astro check",
     "validate:seo": "node scripts/validate-seo.mjs",
-    "validate:worker-routing": "node scripts/validate-worker-routing.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "gen:isan-svgs": "node scripts/gen-isan-location-svgs.mjs",
