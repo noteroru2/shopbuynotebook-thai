@@ -1,0 +1,113 @@
+name: Deploy Cloudflare Production
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "src/**"
+      - "public/**"
+      - "worker/**"
+      - "scripts/**"
+      - "package.json"
+      - "package-lock.json"
+      - "npm-shrinkwrap.json"
+      - "astro.config.*"
+      - "wrangler.toml"
+      - "wrangler.json"
+      - "wrangler.jsonc"
+      - ".github/workflows/deploy-cloudflare-production.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Validate, deploy, and verify production
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ASTRO_TELEMETRY_DISABLED: "1"
+      PRODUCTION_BASE_URL: "https://xn--42cn4aobed0eb6hubj4es0m5dhvd.com"
+
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.12.0"
+          cache: npm
+
+      - name: Verify required secrets
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          if [[ -z "${CLOUDFLARE_API_TOKEN:-}" ]]; then
+            echo "::error::Required GitHub Actions secret CLOUDFLARE_API_TOKEN is missing."
+            exit 1
+          fi
+          if [[ -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
+            echo "::error::Required GitHub Actions secret CLOUDFLARE_ACCOUNT_ID is missing."
+            exit 1
+          fi
+          echo "Required Cloudflare secret names are configured."
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Astro check
+        run: npm run check
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Validate SEO
+        run: npm run validate:seo
+
+      - name: Enforce duplicate wording gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          phrase='ยอดนิยมยอดนิยม'
+          if grep -RFn --exclude-dir=node_modules -- "$phrase" src public; then
+            echo "::error::Duplicated wording remains in source."
+            exit 1
+          fi
+          if grep -RFn -- "$phrase" dist; then
+            echo "::error::Duplicated wording remains in dist."
+            exit 1
+          fi
+          echo "Duplicate wording gate passed for source and dist."
+
+      - name: Deploy Cloudflare Worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --message "github-actions ${{ github.sha }}"
+
+      - name: Run production HTTP QA
+        run: node scripts/production-qa.mjs
+
+      - name: Upload production QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-qa-${{ github.run_id }}
+          path: qa-artifacts/
+          if-no-files-found: error
+          retention-days: 30
+
