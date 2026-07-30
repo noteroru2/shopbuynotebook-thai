@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Dell Vostro
-description: รับซื้อ Dell Vostro มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของเครื่องธุรกิจ และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ Dell Vostro มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของเครื่องธุรกิจ และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: dell-vostro
 seoTitle: รับซื้อ Dell Vostro มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Dell Vostro มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Dell Vostro มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/dell.svg
 popularModels:
   - Vostro 14 / 15

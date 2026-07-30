@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Asus Zenbook
-description: รับซื้อ Asus Zenbook มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพตัวเครื่องโลหะพรีเมียม และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาผ่าน LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ Asus Zenbook มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพตัวเครื่องโลหะพรีเมียม และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาผ่าน LINE @webuy ได้อย่างรวดเร็ว
 slug: asus-zenbook
 seoTitle: รับซื้อ Asus Zenbook มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Asus Zenbook มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Asus Zenbook มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/asus.svg
 popularModels:
   - Zenbook 13 / 14

@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Acer Nitro V
-description: รับซื้อ Acer Nitro V มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ Acer Nitro V มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: acer-nitro-v
 seoTitle: รับซื้อ Acer Nitro V มือสอง | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Acer Nitro V มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Acer Nitro V มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/acer.svg
 popularModels:
   - Nitro V 15 (Intel Core)

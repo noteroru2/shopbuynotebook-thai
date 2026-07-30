@@ -1,7 +1,7 @@
 ---
 kind: brand
 title: ThinkPad X1 Carbon
-description: รับซื้อ Lenovo ThinkPad X1 Carbon มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพตัวเครื่องคาร์บอนไฟเบอร์ และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาผ่าน LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ Lenovo ThinkPad X1 Carbon มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพตัวเครื่องคาร์บอนไฟเบอร์ และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาผ่าน LINE @webuy ได้อย่างรวดเร็ว
 slug: thinkpad-x1-carbon
 seoTitle: รับซื้อ Lenovo ThinkPad X1 Carbon มือสอง | ร้านรับซื้อโน๊ตบุ๊ค.com
 pageH1: รับซื้อ Lenovo ThinkPad X1 Carbon มือสอง

@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Lenovo Legion Pro
-description: รับซื้อ Lenovo Legion Pro มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ Lenovo Legion Pro มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: lenovo-legion-pro
 seoTitle: รับซื้อ Lenovo Legion Pro มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Lenovo Legion Pro มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Lenovo Legion Pro มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/lenovo.svg
 popularModels:
   - Legion Pro 5 / 5i

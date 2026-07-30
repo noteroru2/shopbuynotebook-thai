@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Asus ROG Strix
-description: รับซื้อ Asus ROG Strix มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และบอดี้พรีเมียม ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ Asus ROG Strix มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และบอดี้พรีเมียม ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: asus-rog-strix
 seoTitle: รับซื้อ Asus ROG Strix มือสอง | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Asus ROG Strix มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Asus ROG Strix มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/asus.svg
 popularModels:
   - ROG Strix G15 / G16
