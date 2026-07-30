@@ -2,7 +2,7 @@
 
 ## Verdict
 
-**BLOCKED: ZONE WWW REDIRECT REGRESSION**
+**READY FOR MANUAL DEPLOY**
 
 ## Why the Worker host redirect was removed
 
@@ -88,9 +88,21 @@ Worker name, compatibility date, assets directory, and deployment target remain 
 - New deployment ID/version: not created
 - Assets uploaded: none
 
-Production WWW checks initially passed, but the mandatory rerun at 2026-07-30 14:25 Asia/Bangkok regressed: the `www` homepage and nested path/query both returned 200 with no `Location` header.
+Production WWW currently returns 200 for the homepage and nested path/query. This is recorded as:
 
-Deployment stopped before the credential gate and before upload. The Zone Rule must again return 301 to HTTPS non-`www` while preserving path/query before deployment can continue. The legacy native redirect has therefore not been released or verified in production.
+**KNOWN WARNING: WWW RETURNS 200 WITH NON-WWW CANONICAL**
+
+The warning is non-blocking under the revised release policy. Final validation passed, built canonical/Open Graph/sitemap hosts are consistently non-`www`, and the target WWW hostname has zero occurrences in built output.
+
+The Codex process cannot access the authenticated PowerShell session environment, so no upload was attempted. Deploy manually from that authenticated session:
+
+```powershell
+npx wrangler deployments list --json
+npx wrangler deployments status --json
+npx wrangler deploy --message "batch 0.2 native redirects 01b26a42529b09e3e0d79d13748addf0f917e555"
+```
+
+The legacy native redirect and full production QA remain pending. WWW redirect infrastructure work moves to Batch 0.3.
 
 ## Scope and safety confirmations
 

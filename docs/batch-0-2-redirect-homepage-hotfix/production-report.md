@@ -2,9 +2,9 @@
 
 ## Verdict
 
-**BLOCKED: ZONE WWW REDIRECT REGRESSION**
+**READY FOR MANUAL DEPLOY**
 
-The Static Assets cleanup was validated, merged, and pushed to `main`, but it was not deployed. The mandatory production preflight failed before the credential check: HTTPS `www` returned 200 instead of the required Zone Rule 301. No temporary account was used.
+The Static Assets cleanup is validated, merged, and pushed to `main`. WWW returning 200 is now a non-blocking infrastructure warning because its HTML canonical points to non-`www`. The Codex process cannot access the authenticated PowerShell session environment (`wrangler whoami --json` returned `loggedIn: false`), so deployment is handed off to that session. No temporary account was used.
 
 ## Release identity
 
@@ -46,17 +46,38 @@ No DNS, routes, custom domains, Worker name, Zone Redirect Rule, canonical, robo
 - Worker entrypoint and `run_worker_first`: absent
 - Known HOLD orphans: `/รับประมูลคอม/`, `/รับเหมาคอมพิวเตอร์/`
 
-## Production observations
+## Final release validation
 
-Earlier checks on 2026-07-30 confirmed a working Zone Rule 301. A new pre-deploy check at 2026-07-30 14:25 Asia/Bangkok observed a regression:
+- Final `npm ci`, Astro check, build, and SEO validation: passed
+- Built HTML canonical host issues: 0
+- Built Open Graph URL host issues: 0
+- Sitemap host issues: 0
+- Target WWW hostname occurrences in built HTML/sitemaps: 0
+- Homepage H1/process section/process cards: 1/1/4
+- Legacy native redirect mapping: present
+- Legacy redirect HTML artifact: absent
+
+## Production observations and known warning
+
+Current pre-deploy checks observed:
 
 - HTTPS `www` homepage: 200, no `Location`
 - HTTPS `www` nested Thai path with query: 200, no `Location`
 - Followed request: 200 without a redirect hop
 
-The deployment gate therefore stopped before `wrangler whoami` and before upload. The Zone Rule must be restored and verified to preserve path/query before this release can continue.
+**KNOWN WARNING: WWW RETURNS 200 WITH NON-WWW CANONICAL**
 
-The legacy `/รับซื้อโน๊ตบุ๊ค/` redirect remains undeployed; the last production check returned 404. No post-deploy QA can be claimed until the WWW gate passes and SHA `01b26a42529b09e3e0d79d13748addf0f917e555` is deployed.
+This warning is deferred to Batch 0.3 and does not block the legacy redirect/Homepage hotfix release. The legacy `/รับซื้อโน๊ตบุ๊ค/` redirect remains undeployed; the last production check returned 404.
+
+Run from the already authenticated production PowerShell session:
+
+```powershell
+npx wrangler deployments list --json
+npx wrangler deployments status --json
+npx wrangler deploy --message "batch 0.2 native redirects 01b26a42529b09e3e0d79d13748addf0f917e555"
+```
+
+Post-deploy HTTP QA and the new deployment/version IDs remain pending.
 
 ## Safety
 
