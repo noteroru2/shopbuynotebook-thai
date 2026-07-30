@@ -9,6 +9,7 @@ const expectedHomepageTitle =
   'รับซื้อโน๊ตบุ๊ค ประเมินตามรุ่น สเปก และสภาพจริง | ร้านรับซื้อโน๊ตบุ๊ค.com';
 const expectedHomepageDescription =
   'รับซื้อโน๊ตบุ๊ค ส่งรูป รุ่น สเปก และสภาพเพื่อประเมินเบื้องต้น ราคาสุดท้ายยืนยันหลังตรวจเครื่อง มีหน้าร้านอุบลราชธานี จังหวัดอื่นนัดหรือจัดส่งตามเงื่อนไข';
+const wranglerConfigPath = path.join(root, 'wrangler.toml');
 
 if (!fs.existsSync(dist)) {
   console.error('SEO validation requires dist/. Run npm run build first.');
@@ -81,6 +82,27 @@ const pageByRoute = new Map(pages.map((page) => [page.route, page]));
 const inbound = new Map(pages.map((page) => [page.route, 0]));
 const errors = [];
 const warnings = [];
+
+if (!fs.existsSync(wranglerConfigPath)) {
+  errors.push('missing wrangler.toml');
+} else {
+  const wranglerConfig = fs.readFileSync(wranglerConfigPath, 'utf8');
+  if (!/^\s*name\s*=\s*"shopbuynotebook-thai"\s*$/m.test(wranglerConfig)) {
+    errors.push('wrangler.toml: unexpected Worker target');
+  }
+  if (!/^\s*directory\s*=\s*"dist"\s*$/m.test(wranglerConfig)) {
+    errors.push('wrangler.toml: static assets directory must be dist');
+  }
+  if (/^\s*main\s*=/m.test(wranglerConfig)) {
+    errors.push('wrangler.toml: Worker entrypoint is not allowed for static assets-first routing');
+  }
+  if (/^\s*run_worker_first\s*=\s*true\s*$/m.test(wranglerConfig)) {
+    errors.push('wrangler.toml: run_worker_first must not be enabled');
+  }
+  if (/^\s*binding\s*=\s*"ASSETS"\s*$/m.test(wranglerConfig)) {
+    errors.push('wrangler.toml: unused ASSETS binding must not be configured');
+  }
+}
 
 const redirectsFile = path.join(dist, '_redirects');
 if (!fs.existsSync(redirectsFile)) {
