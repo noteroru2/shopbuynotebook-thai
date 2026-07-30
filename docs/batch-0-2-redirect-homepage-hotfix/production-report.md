@@ -2,28 +2,41 @@
 
 ## Verdict
 
-**READY FOR MANUAL DEPLOY**
+**PASS WITH WARNING — SELECTIVE LEGACY REDIRECT DEPLOYED AND VERIFIED**
 
-The selective legacy redirect implementation is validated, merged, and pushed to `main`. The Codex process cannot access the authenticated production PowerShell environment (`wrangler whoami --json` returned `loggedIn: false`), so no deployment was attempted and no temporary account was used.
+The selective Worker is deployed at 100% traffic and Production HTTP QA passed. The remaining WWW canonical-host redirect is a known, non-blocking infrastructure warning.
 
-## Release identity
+## Production deployment
 
 - Batch: `Batch 0.2.2 — Selective Legacy Redirect Worker`
-- Implementation commit: `d05efb3ed37e17ed48f17457fe20ad5001d9db5c`
-- Merge/production candidate SHA: `a0bbf70d0b7b69de11d3801bf17aee1e2ad11e04`
 - Worker target: `shopbuynotebook-thai` (unchanged)
-- Previous failed deployment ID: `54d2318f-da67-44f8-ab70-86cc66888f36`
-- Previous failed Worker version / rollback version: `c01d9d3b-1a19-462e-b8fe-54587751b224`
-- Previous version number: `51`
+- Implementation commit: `d05efb3ed37e17ed48f17457fe20ad5001d9db5c`
+- Production implementation/merge SHA: `a0bbf70d0b7b69de11d3801bf17aee1e2ad11e04`
+- Deployment ID: `2866bbea-91eb-4954-b37f-4a03b7fce4e4`
+- Worker Version ID: `4799fe33-415a-4c8c-bedc-f893c2779cfc`
+- Worker version number: `55`
+- Traffic: `100%`
+- Deployment strategy: `percentage`
+- Deployment source: `wrangler`
+- Deployment message: `batch 0.2.2 selective legacy redirect a0bbf70d0b7b69de11d3801bf17aee1e2ad11e04`
+- Version created UTC: `2026-07-30T08:58:10.734426Z`
+- Deployment created UTC: `2026-07-30T08:58:12.049393Z`
+- Deployment time Asia/Bangkok: `2026-07-30 15:58:12`
+
+## Immediate rollback reference
+
+- Previous Deployment ID: `eff48f97-44fe-4200-bc92-0cadde728631`
+- Previous Worker Version ID: `2083cbaa-fa6c-46a3-9533-73c335a87c81`
+- Previous version number: `54`
 - Previous traffic: `100%`
-- Previous deployment time: `2026-07-30T08:03:26.068167Z`
-- New deployment ID/version: pending manual deploy
+- Previous deployment created UTC: `2026-07-30T08:24:32.908462Z`
+- Previous deployment time Asia/Bangkok: `2026-07-30 15:24:32`
 
-## Redirect ownership and selective scope
+Version 54 is the immediate rollback reference, but it predates the production fix for the Legacy Thai redirect. Use it only if Version 55 causes a serious regression in Static Assets or core pages.
 
-The production failure showed that Workers Static Assets `_redirects` did not match the legacy Thai URL. Batch 0.2.2 removes the single native rule and assigns only this legacy path to a selective Worker.
+## Selective routing configuration
 
-Worker-first patterns:
+The Worker-first scope contains only two exact Unicode route patterns:
 
 ```toml
 run_worker_first = [
@@ -32,17 +45,14 @@ run_worker_first = [
 ]
 ```
 
-Wrangler rejected percent-encoded patterns because each exceeded the 100-character route-pattern limit. Local Wrangler QA proved that the two Unicode patterns also match percent-encoded requests after routing normalization.
+- `run_worker_first = true` is not used.
+- No wildcard is configured.
+- No WWW, core-page, or asset-extension route is configured.
+- The Worker does not run before every Static Asset request.
+- Percent-encoded legacy requests are normalized by routing and match the exact Unicode patterns.
+- All non-target requests retain asset-first behavior.
 
-The Worker:
-
-- matches the production apex host only;
-- matches the legacy path with or without a trailing slash;
-- returns 301 to the HTTPS non-WWW homepage;
-- preserves the complete query string;
-- forwards all other requests unchanged to `env.ASSETS.fetch(request)`.
-
-`run_worker_first = true`, `/*`, WWW paths, core paths, and asset-extension paths are not configured. Static Assets across the rest of the site remain asset-first.
+The Worker matches the production apex hostname and legacy path only, redirects to the HTTPS non-WWW homepage with status 301, preserves the query string, and forwards every non-target request unchanged to the Static Assets binding.
 
 ## Validation
 
@@ -63,45 +73,52 @@ The Worker:
 - Native `_redirects` legacy owner: removed
 - Known HOLD orphans: `/รับประมูลคอม/`, `/รับเหมาคอมพิวเตอร์/`
 
-## Local Wrangler QA
+## Production HTTP QA
 
-Wrangler 4.115.0 accepted the Unicode-only route array and local runtime verified:
+### Legacy redirect
 
-- Legacy encoded path with slash: 301
-- Legacy encoded path without slash: 301
-- Legacy encoded path with query: 301; query preserved
-- Homepage: 200
-- Core page: 200
-- CSS: 200
-- Image: 200
-- Missing-page control: 404
-
-Wrangler local rewrites the redirect scheme to the local request scheme; the handler unit tests independently verify the production destination is HTTPS.
-
-## Manual deployment
-
-Run from the authenticated production PowerShell session:
-
-```powershell
-npx wrangler deployments list --json
-npx wrangler deployments status --json
-npx wrangler deploy --message "batch 0.2.2 selective legacy redirect a0bbf70d0b7b69de11d3801bf17aee1e2ad11e04"
-```
-
-Expected deployment message:
+All target forms return `301 Moved Permanently` to:
 
 ```text
-batch 0.2.2 selective legacy redirect a0bbf70d0b7b69de11d3801bf17aee1e2ad11e04
+https://xn--42cn4aobed0eb6hubj4es0m5dhvd.com/
 ```
 
-New deployment ID, Worker version, production timestamp, and production QA remain pending.
+Verified:
 
-## Production state and safety
+- `/รับซื้อโน๊ตบุ๊ค/`: 301
+- `/รับซื้อโน๊ตบุ๊ค`: 301
+- Percent-encoded legacy URL: 301
+- `?source=test`: preserved in `Location`
+- Redirect chain: `301 → 200`
+- Redirect loop: absent
+- Meta Refresh: absent
+- Redirect HTML artifact: absent
 
-- Before Batch 0.2.2, the legacy URL returned 404.
-- WWW returning 200 with a non-WWW canonical remains a known warning and is outside this batch.
+Before Version 55, the legacy URL returned 404. After Version 55, Unicode, no-trailing-slash, percent-encoded, and query-string requests all pass.
+
+### Regression controls
+
+- Homepage: 200
+- `/รับซื้อ-notebook/`: 200
+- `/robots.txt`: 200
+- `/sitemap-index.xml`: 200
+- Missing-page control: 404
+- Non-target redirects: none observed
+- Static Assets behavior: no regression observed
+- Homepage process hotfix: unchanged
+- Canonical, sitemap, robots, and indexability: unchanged
+
+## Known warning
+
+**KNOWN WARNING: WWW RETURNS 200 WITH NON-WWW CANONICAL**
+
+The WWW response retains a canonical link to the non-WWW production homepage. WWW HTTP redirection remains deferred infrastructure work and does not invalidate this Batch 0.2.2 release.
+
+## Safety confirmations
+
 - `seo-url-audit.csv` remains the user's modified file and was not staged or committed.
-- User-owned Lighthouse, PageSpeed, and analysis files were not changed or committed.
-- No URL, canonical, robots, sitemap, index/noindex, homepage content, DNS, custom domain, Zone Rule, or Worker name was changed.
-- No token or `.env` file was written, logged, staged, or committed.
+- User-owned Lighthouse, PageSpeed, and analysis files were not changed, staged, or committed.
+- No source code or Wrangler configuration was changed while closing this report.
+- No DNS, custom domain, Zone Rule, Worker name, canonical, sitemap, robots, URL, or index/noindex policy was changed.
 - No temporary Cloudflare account was used.
+- The Cloudflare token was not read back, written to a file, logged in this report, staged, or committed.
