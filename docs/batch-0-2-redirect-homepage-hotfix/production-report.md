@@ -2,9 +2,9 @@
 
 ## Verdict
 
-**BLOCKED: CLOUDFLARE AUTHENTICATION**
+**BLOCKED: ZONE WWW REDIRECT REGRESSION**
 
-The Static Assets cleanup was validated, merged, and pushed to `main`, but it was not deployed. `wrangler whoami --json` returned `{"loggedIn":false}` in the production deploy session. No temporary account was used.
+The Static Assets cleanup was validated, merged, and pushed to `main`, but it was not deployed. The mandatory production preflight failed before the credential check: HTTPS `www` returned 200 instead of the required Zone Rule 301. No temporary account was used.
 
 ## Release identity
 
@@ -48,16 +48,15 @@ No DNS, routes, custom domains, Worker name, Zone Redirect Rule, canonical, robo
 
 ## Production observations
 
-Before cleanup, production checks confirmed:
+Earlier checks on 2026-07-30 confirmed a working Zone Rule 301. A new pre-deploy check at 2026-07-30 14:25 Asia/Bangkok observed a regression:
 
-- HTTPS `www` homepage: 301 to HTTPS apex
-- HTTPS `www` nested path: 301 with path preserved
-- HTTPS `www` query request: 301 with path/query preserved
-- Redirect chain: one redirect, final 200, no loop
+- HTTPS `www` homepage: 200, no `Location`
+- HTTPS `www` nested Thai path with query: 200, no `Location`
+- Followed request: 200 without a redirect hop
 
-These responses predate deployment of this candidate and confirm the Zone Rule owns the canonical-host redirect.
+The deployment gate therefore stopped before `wrangler whoami` and before upload. The Zone Rule must be restored and verified to preserve path/query before this release can continue.
 
-The legacy `/รับซื้อโน๊ตบุ๊ค/` redirect remains undeployed; the last production check returned 404. No post-deploy QA can be claimed until authentication succeeds and SHA `01b26a42529b09e3e0d79d13748addf0f917e555` is deployed.
+The legacy `/รับซื้อโน๊ตบุ๊ค/` redirect remains undeployed; the last production check returned 404. No post-deploy QA can be claimed until the WWW gate passes and SHA `01b26a42529b09e3e0d79d13748addf0f917e555` is deployed.
 
 ## Safety
 

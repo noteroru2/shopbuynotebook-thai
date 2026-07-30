@@ -2,7 +2,7 @@
 
 ## Verdict
 
-**BLOCKED: CLOUDFLARE AUTHENTICATION**
+**BLOCKED: ZONE WWW REDIRECT REGRESSION**
 
 ## Why the Worker host redirect was removed
 
@@ -88,9 +88,9 @@ Worker name, compatibility date, assets directory, and deployment target remain 
 - New deployment ID/version: not created
 - Assets uploaded: none
 
-Production WWW preflight passed: homepage, nested path, and query requests returned 301 to HTTPS non-`www`; the followed chain ended at 200 without a loop.
+Production WWW checks initially passed, but the mandatory rerun at 2026-07-30 14:25 Asia/Bangkok regressed: the `www` homepage and nested path/query both returned 200 with no `Location` header.
 
-Deployment stopped at the credential gate because `wrangler whoami --json` reported `loggedIn: false`. The legacy native redirect has therefore not been released or verified in production.
+Deployment stopped before the credential gate and before upload. The Zone Rule must again return 301 to HTTPS non-`www` while preserving path/query before deployment can continue. The legacy native redirect has therefore not been released or verified in production.
 
 ## Scope and safety confirmations
 
