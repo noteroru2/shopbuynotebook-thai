@@ -4,6 +4,11 @@ import path from 'node:path';
 const root = process.cwd();
 const dist = path.join(root, 'dist');
 const expectedHost = 'xn--42cn4aobed0eb6hubj4es0m5dhvd.com';
+const legacyHomepagePath = '/รับซื้อโน๊ตบุ๊ค/';
+const expectedHomepageTitle =
+  'รับซื้อโน๊ตบุ๊ค ประเมินตามรุ่น สเปก และสภาพจริง | ร้านรับซื้อโน๊ตบุ๊ค.com';
+const expectedHomepageDescription =
+  'รับซื้อโน๊ตบุ๊ค ส่งรูป รุ่น สเปก และสภาพเพื่อประเมินเบื้องต้น ราคาสุดท้ายยืนยันหลังตรวจเครื่อง มีหน้าร้านอุบลราชธานี จังหวัดอื่นนัดหรือจัดส่งตามเงื่อนไข';
 
 if (!fs.existsSync(dist)) {
   console.error('SEO validation requires dist/. Run npm run build first.');
@@ -76,6 +81,26 @@ const pageByRoute = new Map(pages.map((page) => [page.route, page]));
 const inbound = new Map(pages.map((page) => [page.route, 0]));
 const errors = [];
 const warnings = [];
+
+const redirectsFile = path.join(dist, '_redirects');
+if (!fs.existsSync(redirectsFile)) {
+  errors.push('missing dist/_redirects');
+} else {
+  const redirectLines = fs
+    .readFileSync(redirectsFile, 'utf8')
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith('#'));
+  const legacyRules = redirectLines.filter((line) => line.split(/\s+/)[0] === legacyHomepagePath);
+  if (legacyRules.length !== 1) {
+    errors.push(`expected exactly one ${legacyHomepagePath} redirect rule, found ${legacyRules.length}`);
+  } else {
+    const [source, destination, status] = legacyRules[0].split(/\s+/);
+    if (source !== legacyHomepagePath || destination !== '/' || !['301', '308'].includes(status)) {
+      errors.push(`invalid legacy homepage redirect rule: ${legacyRules[0]}`);
+    }
+  }
+}
 
 const excludedUtility = new Set(['/404.html', '/admin/', '/รับซื้อโน๊ตบุ๊ค/']);
 const indexable = pages.filter(
@@ -168,11 +193,58 @@ for (const forbidden of ['/รับเหมาคอมพิวเตอร�
 const homepage = pageByRoute.get('/');
 if (!homepage?.title.startsWith('รับซื้อโน๊ตบุ๊ค')) errors.push('/: primary owner title is missing');
 if (homepage?.h1Count !== 1) errors.push('/: primary owner must have exactly one H1');
+if (homepage?.title !== expectedHomepageTitle) errors.push('/: homepage title changed unexpectedly');
+if (homepage?.description !== expectedHomepageDescription) {
+  errors.push('/: homepage description changed unexpectedly');
+}
+if (homepage?.canonical !== 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/') {
+  errors.push(`/: unexpected canonical ${homepage?.canonical}`);
+}
+if (homepage) {
+  const processSections = homepage.html.match(/\bdata-home-process(?:\s|>)/g) || [];
+  const processCards = homepage.html.match(/\bdata-home-process-card(?:\s|>)/g) || [];
+  if (processSections.length !== 1) {
+    errors.push(`/: expected one marked process section, found ${processSections.length}`);
+  }
+  if (processCards.length !== 4) {
+    errors.push(`/: expected four marked process cards, found ${processCards.length}`);
+  }
+  const processHeadingPatterns = [/4 ขั้นตอน/i, /4 ขั้น(?!ตอน)/i, /ขั้นตอนขาย/i, /ขายโน๊ตบุ๊คกับเรา/i];
+  const headingTexts = [...homepage.html.matchAll(/<h[2-3]\b[^>]*>([\s\S]*?)<\/h[2-3]>/gi)].map(
+    (match) => match[1].replace(/<[^>]+>/g, '').trim(),
+  );
+  const processHeadings = headingTexts.filter((heading) =>
+    processHeadingPatterns.some((pattern) => pattern.test(heading)),
+  );
+  if (processHeadings.length !== 1) {
+    errors.push(`/: expected one process heading, found ${processHeadings.length}`);
+  }
+  for (const phrase of ['ให้ราคาสูงสุด', 'รับถึงที่ทุกจังหวัด']) {
+    if (homepage.html.includes(phrase)) errors.push(`/: prohibited homepage phrase ${phrase}`);
+  }
+  if (homepage.hrefs.includes(legacyHomepagePath)) {
+    errors.push(`/: internal link points to redirect source ${legacyHomepagePath}`);
+  }
+}
+if (pageByRoute.has(legacyHomepagePath)) {
+  errors.push(`${legacyHomepagePath}: redirect source must not have an HTML artifact`);
+}
+if (sitemapPaths.has(legacyHomepagePath)) {
+  errors.push(`${legacyHomepagePath}: redirect source must not be in sitemap`);
+}
 
 const orphans = indexable
   .filter((page) => page.route !== '/' && (inbound.get(page.route) || 0) === 0)
   .map((page) => page.route);
-if (orphans.length) warnings.push(`indexable orphan pages (${orphans.length}): ${orphans.join(', ')}`);
+const knownHoldOrphans = new Set(['/รับประมูลคอม/', '/รับเหมาคอมพิวเตอร์/']);
+const unexpectedOrphans = orphans.filter((route) => !knownHoldOrphans.has(route));
+const presentKnownHoldOrphans = orphans.filter((route) => knownHoldOrphans.has(route));
+if (presentKnownHoldOrphans.length) {
+  warnings.push(`KNOWN HOLD ORPHANS: ${presentKnownHoldOrphans.join(', ')}`);
+}
+if (unexpectedOrphans.length) {
+  warnings.push(`unexpected indexable orphan pages (${unexpectedOrphans.length}): ${unexpectedOrphans.join(', ')}`);
+}
 
 const summary = {
   routes: pages.length,
