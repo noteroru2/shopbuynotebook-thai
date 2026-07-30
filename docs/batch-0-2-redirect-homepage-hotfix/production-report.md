@@ -1,89 +1,107 @@
-# Batch 0.2.1 Production Report
+# Batch 0.2.2 Production Report
 
 ## Verdict
 
 **READY FOR MANUAL DEPLOY**
 
-The Static Assets cleanup is validated, merged, and pushed to `main`. WWW returning 200 is now a non-blocking infrastructure warning because its HTML canonical points to non-`www`. The Codex process cannot access the authenticated PowerShell session environment (`wrangler whoami --json` returned `loggedIn: false`), so deployment is handed off to that session. No temporary account was used.
+The selective legacy redirect implementation is validated, merged, and pushed to `main`. The Codex process cannot access the authenticated production PowerShell environment (`wrangler whoami --json` returned `loggedIn: false`), so no deployment was attempted and no temporary account was used.
 
 ## Release identity
 
-- Cleanup branch: `codex/batch-0-2-1-static-assets-redirect-cleanup`
-- Cleanup commit: `71e801f5eeeaa5f9c7a404603837c07d08a836d1`
-- Merge/production candidate SHA: `01b26a42529b09e3e0d79d13748addf0f917e555`
+- Batch: `Batch 0.2.2 — Selective Legacy Redirect Worker`
+- Implementation commit: `d05efb3ed37e17ed48f17457fe20ad5001d9db5c`
+- Merge/production candidate SHA: `a0bbf70d0b7b69de11d3801bf17aee1e2ad11e04`
 - Worker target: `shopbuynotebook-thai` (unchanged)
-- Last known deployed implementation SHA: `2c351744adad1415854a5d47fd118e7a69db9e74`
-- Previous/current deployment ID: `a3257653-c97b-4d37-8168-4eb095749668`
-- Previous/current Worker version and rollback version: `9721267c-41a2-4392-99e3-6839cbbccf97`
-- New deployment ID/version: not created
-- Deployment timestamp/assets uploaded: not applicable
+- Previous failed deployment ID: `54d2318f-da67-44f8-ab70-86cc66888f36`
+- Previous failed Worker version / rollback version: `c01d9d3b-1a19-462e-b8fe-54587751b224`
+- Previous version number: `51`
+- Previous traffic: `100%`
+- Previous deployment time: `2026-07-30T08:03:26.068167Z`
+- New deployment ID/version: pending manual deploy
 
-## Architecture and redirect ownership
+## Redirect ownership and selective scope
 
-- Cloudflare Zone Redirect Rule owns HTTPS `www` to HTTPS non-`www`.
-- Native Static Assets `public/_redirects` owns `/รับซื้อโน๊ตบุ๊ค/` to `/`.
-- Worker host redirect, Worker routing validator, Worker entrypoint, `main`, `ASSETS` binding, and `run_worker_first` were removed.
-- Static Assets remains configured with `directory = "dist"`.
+The production failure showed that Workers Static Assets `_redirects` did not match the legacy Thai URL. Batch 0.2.2 removes the single native rule and assigns only this legacy path to a selective Worker.
 
-No DNS, routes, custom domains, Worker name, Zone Redirect Rule, canonical, robots, sitemap inclusion, or index/noindex policy was changed.
+Worker-first patterns:
+
+```toml
+run_worker_first = [
+  "/รับซื้อโน๊ตบุ๊ค",
+  "/รับซื้อโน๊ตบุ๊ค/"
+]
+```
+
+Wrangler rejected percent-encoded patterns because each exceeded the 100-character route-pattern limit. Local Wrangler QA proved that the two Unicode patterns also match percent-encoded requests after routing normalization.
+
+The Worker:
+
+- matches the production apex host only;
+- matches the legacy path with or without a trailing slash;
+- returns 301 to the HTTPS non-WWW homepage;
+- preserves the complete query string;
+- forwards all other requests unchanged to `env.ASSETS.fetch(request)`.
+
+`run_worker_first = true`, `/*`, WWW paths, core paths, and asset-extension paths are not configured. Static Assets across the rest of the site remain asset-first.
 
 ## Validation
 
 - `npm ci`: passed
-- Astro: 0 errors, 0 warnings, 85 hints
+- Astro check: 0 errors, 0 warnings, 85 hints
 - Build: 2,460 generated pages
 - HTML artifacts: 2,461
 - Sitemap/indexable: 371/371
 - Noindex: 2,089
-- Broken links: 0
+- Broken internal links: 0
 - Duplicate titles/descriptions: 0/0
 - LocalBusiness pages: 4
-- Validator: 0 errors, 1 known warning
+- SEO validator: 0 errors, 1 known warning
+- Worker unit/config validation: 8 request cases passed
 - Homepage H1/process section/process cards: 1/1/4
-- Native redirect mapping: present exactly once
 - Legacy redirect HTML artifact: absent
-- Legacy redirect source in sitemap: absent
-- Worker entrypoint and `run_worker_first`: absent
+- Legacy URL in sitemap: absent
+- Native `_redirects` legacy owner: removed
 - Known HOLD orphans: `/รับประมูลคอม/`, `/รับเหมาคอมพิวเตอร์/`
 
-## Final release validation
+## Local Wrangler QA
 
-- Final `npm ci`, Astro check, build, and SEO validation: passed
-- Built HTML canonical host issues: 0
-- Built Open Graph URL host issues: 0
-- Sitemap host issues: 0
-- Target WWW hostname occurrences in built HTML/sitemaps: 0
-- Homepage H1/process section/process cards: 1/1/4
-- Legacy native redirect mapping: present
-- Legacy redirect HTML artifact: absent
+Wrangler 4.115.0 accepted the Unicode-only route array and local runtime verified:
 
-## Production observations and known warning
+- Legacy encoded path with slash: 301
+- Legacy encoded path without slash: 301
+- Legacy encoded path with query: 301; query preserved
+- Homepage: 200
+- Core page: 200
+- CSS: 200
+- Image: 200
+- Missing-page control: 404
 
-Current pre-deploy checks observed:
+Wrangler local rewrites the redirect scheme to the local request scheme; the handler unit tests independently verify the production destination is HTTPS.
 
-- HTTPS `www` homepage: 200, no `Location`
-- HTTPS `www` nested Thai path with query: 200, no `Location`
-- Followed request: 200 without a redirect hop
+## Manual deployment
 
-**KNOWN WARNING: WWW RETURNS 200 WITH NON-WWW CANONICAL**
-
-This warning is deferred to Batch 0.3 and does not block the legacy redirect/Homepage hotfix release. The legacy `/รับซื้อโน๊ตบุ๊ค/` redirect remains undeployed; the last production check returned 404.
-
-Run from the already authenticated production PowerShell session:
+Run from the authenticated production PowerShell session:
 
 ```powershell
 npx wrangler deployments list --json
 npx wrangler deployments status --json
-npx wrangler deploy --message "batch 0.2 native redirects 01b26a42529b09e3e0d79d13748addf0f917e555"
+npx wrangler deploy --message "batch 0.2.2 selective legacy redirect a0bbf70d0b7b69de11d3801bf17aee1e2ad11e04"
 ```
 
-Post-deploy HTTP QA and the new deployment/version IDs remain pending.
+Expected deployment message:
 
-## Safety
+```text
+batch 0.2.2 selective legacy redirect a0bbf70d0b7b69de11d3801bf17aee1e2ad11e04
+```
 
-- `seo-url-audit.csv` remains the user's pre-existing modified file and was not staged or committed.
+New deployment ID, Worker version, production timestamp, and production QA remain pending.
+
+## Production state and safety
+
+- Before Batch 0.2.2, the legacy URL returned 404.
+- WWW returning 200 with a non-WWW canonical remains a known warning and is outside this batch.
+- `seo-url-audit.csv` remains the user's modified file and was not staged or committed.
 - User-owned Lighthouse, PageSpeed, and analysis files were not changed or committed.
-- No other content URL changed.
-- No canonical, robots, or noindex behavior changed.
+- No URL, canonical, robots, sitemap, index/noindex, homepage content, DNS, custom domain, Zone Rule, or Worker name was changed.
 - No token or `.env` file was written, logged, staged, or committed.
 - No temporary Cloudflare account was used.
