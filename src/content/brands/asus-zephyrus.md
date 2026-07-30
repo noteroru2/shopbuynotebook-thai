@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Asus Zephyrus
-description: รับซื้อ Asus Zephyrus มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และบอดี้พรีเมียม ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว ตอบกลับไว
+description: รับซื้อ Asus Zephyrus มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และบอดี้พรีเมียม ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว ตอบกลับไว
 slug: asus-zephyrus
 seoTitle: รับซื้อ Asus Zephyrus มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Asus Zephyrus มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Asus Zephyrus มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/asus.svg
 popularModels:
   - ROG Zephyrus G14

@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: HP EliteBook
-description: รับซื้อ HP EliteBook มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของเครื่องระดับองค์กร และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ HP EliteBook มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของเครื่องระดับองค์กร และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: hp-elitebook
 seoTitle: รับซื้อ HP EliteBook มือสอง | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ HP EliteBook มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ HP EliteBook มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/hp.svg
 popularModels:
   - EliteBook 600 ซีรีส์

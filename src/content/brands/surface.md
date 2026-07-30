@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Microsoft Surface
-description: รับซื้อ Microsoft Surface มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามซีรีส์ สเปก สภาพจอทัชสกรีน และระดับสุขภาพแบตเตอรี่จริง ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว ตอบกลับไว
+description: รับซื้อ Microsoft Surface มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามซีรีส์ สเปก สภาพจอทัชสกรีน และระดับสุขภาพแบตเตอรี่จริง ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว ตอบกลับไว
 slug: surface
 seoTitle: รับซื้อ Microsoft Surface มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Microsoft Surface มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Microsoft Surface มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/surface.svg
 popularModels:
   - Surface Laptop / Laptop Go

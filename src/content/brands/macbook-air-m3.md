@@ -4,7 +4,7 @@ title: MacBook Air M3
 description: "รับซื้อ MacBook Air M3 มือสอง ประเมินราคาตามชิปเซ็ต ขนาดหน้าจอ (13/15 นิ้ว) ความจุหน่วยความจำ RAM/SSD และสุขภาพแบตเตอรี่ ส่งรูปเช็คฟรี"
 slug: macbook-air-m3
 seoTitle: "รับซื้อ MacBook Air M3 มือสอง ประเมินตามความจุและสภาพเครื่อง | ร้านรับซื้อโน๊ตบุ๊ค.com"
-pageH1: "รับซื้อ MacBook Air M3 มือสอง หลายรุ่นยอดนิยมยอดนิยม"
+pageH1: "รับซื้อ MacBook Air M3 มือสอง หลายรุ่นยอดนิยม"
 serviceName: รับซื้อ MacBook Air M3
 featuredImage: /images/brands/macbook.svg
 popularModels:

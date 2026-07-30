@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Acer Predator Helios Neo
-description: รับซื้อ Acer Predator Helios Neo มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และบอดี้พรีเมียม ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ Acer Predator Helios Neo มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และบอดี้พรีเมียม ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: acer-predator-neo
 seoTitle: รับซื้อ Acer Predator Helios Neo มือสอง | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Acer Predator Helios Neo มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Acer Predator Helios Neo มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/acer.svg
 popularModels:
   - Predator Helios Neo 16 (Intel Core i5)

@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Acer Nitro 16
-description: รับซื้อ Acer Nitro 16 มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ Acer Nitro 16 มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปกการ์ดจอแยก สภาพพัดลมระบายความร้อน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: acer-nitro-16
 seoTitle: รับซื้อ Acer Nitro 16 มือสอง | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Acer Nitro 16 มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Acer Nitro 16 มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/acer.svg
 popularModels:
   - Nitro 16 AN16-41 (AMD Ryzen)

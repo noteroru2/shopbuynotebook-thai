@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: ThinkPad E14 / E15
-description: รับซื้อ Lenovo ThinkPad E14 / E15 มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของเครื่องทำงาน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ Lenovo ThinkPad E14 / E15 มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพความแข็งแรงของเครื่องทำงาน และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงทาง LINE @webuy ได้อย่างรวดเร็ว
 slug: thinkpad-e14-e15
 seoTitle: รับซื้อ Lenovo ThinkPad E14 / E15 มือสอง | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Lenovo ThinkPad E14 / E15 มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Lenovo ThinkPad E14 / E15 มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/lenovo.svg
 popularModels:
   - ThinkPad E14 Gen 1 / Gen 2 / Gen 3 / Gen 4

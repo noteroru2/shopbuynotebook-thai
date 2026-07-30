@@ -1,10 +1,10 @@
 ---
 kind: brand
 title: Asus Vivobook
-description: รับซื้อ Asus Vivobook มือสอง หลายรุ่นยอดนิยมยอดนิยม ประเมินราคาตามสเปก สภาพการใช้งานจริง และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงผ่าน LINE @webuy ได้อย่างรวดเร็ว
+description: รับซื้อ Asus Vivobook มือสอง หลายรุ่นยอดนิยม ประเมินราคาตามสเปก สภาพการใช้งานจริง และระดับสุขภาพแบตเตอรี่ ส่งรูปเช็คราคาประเมินอ้างอิงผ่าน LINE @webuy ได้อย่างรวดเร็ว
 slug: asus-vivobook
 seoTitle: รับซื้อ Asus Vivobook มือสอง ประเมินตามสเปกและสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com
-pageH1: รับซื้อ Asus Vivobook มือสอง หลายรุ่นยอดนิยมยอดนิยม
+pageH1: รับซื้อ Asus Vivobook มือสอง หลายรุ่นยอดนิยม
 featuredImage: /images/brands/asus.svg
 popularModels:
   - Vivobook 14 / 15
