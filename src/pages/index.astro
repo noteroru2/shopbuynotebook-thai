@@ -114,11 +114,13 @@ const schemas = [
     imageAlt="ทีมงานตรวจสภาพโน๊ตบุ๊คก่อนประเมินราคา"
   />
 
+  <ProcessSteps />
+
   <section id="evaluation-checklist" class="mx-auto w-full max-w-6xl scroll-mt-24 px-4 pt-12" aria-labelledby="evaluation-checklist-heading">
     <div class="rounded-3xl border border-emerald-200 bg-emerald-50/60 p-6 shadow-sm sm:p-8">
-      <h2 id="evaluation-checklist-heading" class="text-xl font-extrabold text-slate-900">ข้อมูลที่ต้องส่งเพื่อประเมินเบื้องต้น</h2>
+      <h2 id="evaluation-checklist-heading" class="text-xl font-extrabold text-slate-900">เตรียมข้อมูลก่อนประเมิน</h2>
       <p class="mt-2 text-sm leading-relaxed text-slate-700">ข้อมูลครบช่วยให้ตรวจรุ่นและสภาพได้ตรงขึ้น แต่ยังไม่ใช่ราคาสุดท้าย</p>
-      <ol class="mt-5 grid gap-3 text-sm text-slate-800 sm:grid-cols-2 lg:grid-cols-3">
+      <ul class="mt-5 grid gap-3 text-sm text-slate-800 sm:grid-cols-2 lg:grid-cols-3">
         {[
           'ยี่ห้อและรุ่นเต็ม',
           'CPU',
@@ -129,20 +131,19 @@ const schemas = [
           'อาการเสียหรือตำหนิ',
           'Adapter กล่อง ใบเสร็จ หรืออุปกรณ์ที่มี',
           'จังหวัดหรือวิธีที่สะดวกในการส่งมอบ',
-        ].map((item, index) => (
+        ].map((item) => (
           <li class="flex gap-3 rounded-2xl border border-emerald-100 bg-white p-4">
-            <span class="font-extrabold text-emerald-700">{index + 1}</span>
+            <span class="font-extrabold text-emerald-700" aria-hidden="true">✓</span>
             <span>{item}</span>
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
   </section>
 
   <PhotoGuide />
   <NotebookTypesSection />
   <PriceFactors />
-  <ProcessSteps />
   <ConditionGrid />
   <BrandGrid />
   <ServiceAreasSection />
