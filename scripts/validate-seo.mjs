@@ -93,34 +93,21 @@ if (!fs.existsSync(wranglerConfigPath)) {
   if (!/^\s*directory\s*=\s*"dist"\s*$/m.test(wranglerConfig)) {
     errors.push('wrangler.toml: static assets directory must be dist');
   }
-  if (/^\s*main\s*=/m.test(wranglerConfig)) {
-    errors.push('wrangler.toml: Worker entrypoint is not allowed for static assets-first routing');
-  }
   if (/^\s*run_worker_first\s*=\s*true\s*$/m.test(wranglerConfig)) {
     errors.push('wrangler.toml: run_worker_first must not be enabled');
-  }
-  if (/^\s*binding\s*=\s*"ASSETS"\s*$/m.test(wranglerConfig)) {
-    errors.push('wrangler.toml: unused ASSETS binding must not be configured');
   }
 }
 
 const redirectsFile = path.join(dist, '_redirects');
-if (!fs.existsSync(redirectsFile)) {
-  errors.push('missing dist/_redirects');
-} else {
+if (fs.existsSync(redirectsFile)) {
   const redirectLines = fs
     .readFileSync(redirectsFile, 'utf8')
     .split(/\r?\n/)
     .map((line) => line.trim())
     .filter((line) => line && !line.startsWith('#'));
   const legacyRules = redirectLines.filter((line) => line.split(/\s+/)[0] === legacyHomepagePath);
-  if (legacyRules.length !== 1) {
-    errors.push(`expected exactly one ${legacyHomepagePath} redirect rule, found ${legacyRules.length}`);
-  } else {
-    const [source, destination, status] = legacyRules[0].split(/\s+/);
-    if (source !== legacyHomepagePath || destination !== '/' || !['301', '308'].includes(status)) {
-      errors.push(`invalid legacy homepage redirect rule: ${legacyRules[0]}`);
-    }
+  if (legacyRules.length !== 0) {
+    errors.push(`${legacyHomepagePath}: native redirect rule must be removed; selective Worker owns it`);
   }
 }
 
