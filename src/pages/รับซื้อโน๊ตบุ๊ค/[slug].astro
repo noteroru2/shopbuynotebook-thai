@@ -47,7 +47,10 @@ const layoutTitle =
   kind === 'location'
     ? (entry.data.seoTitle ??
         `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ประเมินฟรีผ่านไลน์ @webuy | ร้านรับซื้อโน๊ตบุ๊ค.com`)
-    : (entry.data.seoTitle ?? `${entry.data.title} | ร้านรับซื้อโน๊ตบุ๊ค.com`);
+    : kind === 'condition'
+      ? (entry.data.seoTitle ??
+          `รับซื้อโน๊ตบุ๊ค${entry.data.title} ประเมินตามรุ่นและสภาพเครื่อง | ร้านรับซื้อโน๊ตบุ๊ค.com`)
+      : (entry.data.seoTitle ?? `${entry.data.title} | ร้านรับซื้อโน๊ตบุ๊ค.com`);
 const locationH1 =
   kind === 'location'
     ? (entry.data.h1 ?? `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ประเมินไว ส่งรูปเช็คราคาฟรี`)
@@ -55,7 +58,7 @@ const locationH1 =
 const brandOrConditionH1 =
   kind === 'brand'
     ? (entry.data.pageH1 ?? getBrandH1Default(slug, entry.data.title))
-    : (entry.data.pageH1 ?? `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ประเมินไว จ่ายเงินสด`);
+    : (entry.data.pageH1 ?? `รับซื้อโน๊ตบุ๊ค${entry.data.title} ส่งรูปประเมินตามสภาพจริง`);
 const description =
   kind === 'location' && slug !== 'อุบลราชธานี'
     ? `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ส่งรูป รุ่น สเปก และอาการเพื่อประเมินเบื้องต้น การนัดรับขึ้นอยู่กับพื้นที่ ตารางงาน และการยืนยัน หรือสอบถามขั้นตอนจัดส่งเครื่องมาตรวจได้`
