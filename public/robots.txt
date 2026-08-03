@@ -2,4 +2,8 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
+# AI crawlers: this file does NOT disallow GPTBot/Google-Extended/ClaudeBot.
+# Production may still apply Cloudflare Managed robots (see docs/seo-aeo-geo-remediation/04-batch-4-ai-crawler-policy.md).
+# Policy: keep Search bots (Googlebot/Bingbot) allowed; training bots are an owner decision in Cloudflare; /admin stays blocked.
+
 Sitemap: https://ร้านรับซื้อโน๊ตบุ๊ค.com/sitemap-index.xml
