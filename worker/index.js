@@ -13,6 +13,10 @@ function normalizeTrailingSlash(pathname) {
   return pathname.endsWith("/") ? pathname : `${pathname}/`;
 }
 
+function isAdminPath(pathname) {
+  return pathname === "/admin" || pathname === "/admin/" || pathname.startsWith("/admin/");
+}
+
 export default {
   async fetch(request, env) {
     const requestUrl = new URL(request.url);
@@ -32,6 +36,18 @@ export default {
       return Response.redirect(destination.toString(), 301);
     }
 
-    return env.ASSETS.fetch(request);
+    const response = await env.ASSETS.fetch(request);
+
+    if (isAdminPath(decodedPath)) {
+      const headers = new Headers(response.headers);
+      headers.set("X-Robots-Tag", "noindex, nofollow");
+      return new Response(response.body, {
+        status: response.status,
+        statusText: response.statusText,
+        headers,
+      });
+    }
+
+    return response;
   },
 };
