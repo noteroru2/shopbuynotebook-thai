@@ -24,8 +24,8 @@ relatedLinks:
   - label: "ตีราคาโน๊ตบุ๊ค"
     href: "/ตีราคาโน๊ตบุ๊ค/"
     description: "อ่านกรอบคิดเรื่องปัจจัยที่สะท้อนในการซื้อ"
-featuredImage: "/images/blog/ฮาร์ดดิสก์กับ-ssd-ผลต่อราคารับซื้อโน๊ตบุ๊คมือสอง/cover.png"
-ogImage: "/images/blog/ฮาร์ดดิสก์กับ-ssd-ผลต่อราคารับซื้อโน๊ตบุ๊คมือสอง/cover.png"
+featuredImage: "/images/blog/ฮาร์ดดิสก์กับ-ssd-ผลต่อราคารับซื้อโน๊ตบุ๊คมือสอง/cover.webp"
+ogImage: "/images/blog/ฮาร์ดดิสก์กับ-ssd-ผลต่อราคารับซื้อโน๊ตบุ๊คมือสอง/cover.webp"
 ctaText: "แอดไลน์ @webuy ส่งรูปเช็คราคา"
 ---
 
