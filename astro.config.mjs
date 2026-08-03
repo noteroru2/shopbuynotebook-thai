@@ -19,6 +19,7 @@ export default defineConfig({
           const pathname = page.startsWith('http')
             ? decodeURIComponent(new URL(page).pathname)
             : decodeURIComponent(page);
+          if (pathname === '/admin' || pathname.startsWith('/admin/')) return false;
           const hubPrefix = '/รับซื้อโน๊ตบุ๊ค/';
           if (pathname.startsWith(hubPrefix)) {
             const rest = pathname.slice(hubPrefix.length);

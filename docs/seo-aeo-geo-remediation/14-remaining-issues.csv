@@ -1,0 +1,19 @@
+issue_id,severity_was,severity_now,status,commit_sha,verification,production_status,remaining_risk
+ISS-001,P1,P1,fixed_in_repo,a6e40da,dist admin noindex + not in sitemap,pending_deploy,indexed until deploy+GSC drop
+ISS-002,P1,P2_policy,documented_blocked_cf,b48d6dd,policy table in batch-4 doc,cf_auth_blocked,AI citation limited until CF change
+ISS-003,P1,P1,fixed_in_repo,a1f69ca,0 exact hub hrefs; broken links 0,pending_deploy,legacy external links still 301 (OK)
+ISS-004,P1,P1,fixed_in_repo,4419906,18 titles rebuilt in dist,pending_deploy,low
+ISS-005,P2,P2,partial,07ba8b3,template summary added,pending_deploy,doorway residual on Priority C
+ISS-006,P2,P2,deferred,,candidate merge only,n/a,thin blogs remain
+ISS-007,P2,P3,deferred,,,no lastmod yet
+ISS-008,P2,P3,accepted_risk,,,punycode vs unicode host equivalence
+ISS-009,P2,P2,mitigated,22f6b30,hours removed until GBP,pending_deploy,need GBP confirm
+ISS-010,P2,P2,partial,8bbcab4,intent clarified no merges,pending_deploy,needs GSC
+ISS-011,P2,P2,fixed_in_repo,4419906,default H1 softened,pending_deploy,low
+ISS-012,P2,P2,fixed_in_repo,a1f69ca,seo-qa Worker-aware,n/a,low
+ISS-013,P2,P2,monitored,,,combos still noindex
+ISS-014,P3,P3,fixed_in_repo,f5cc1b8,PNG→WebP,pending_deploy,low
+ISS-015,P3,P3,deferred,,,no fake authors
+ISS-016,P3,P3,accepted,,,PopularServicesLinks intentionally unused
+ISS-017,P3,P3,mitigated,22f6b30,hours ask-first,pending_deploy,GBP
+ISS-018,P3,P3,ok,,,custom 404 remains

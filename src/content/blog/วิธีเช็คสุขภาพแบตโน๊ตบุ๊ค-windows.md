@@ -24,8 +24,8 @@ relatedLinks:
   - label: "เช็คราคาโน๊ตบุ๊ค (ส่งรูปประเมินฟรี)"
     href: "/เช็คราคาโน๊ตบุ๊ค/"
     description: "ส่งข้อมูลแบบหลักฐาน + รุ่นเพื่อรับกรอบราคาเบื้องต้น"
-featuredImage: "/images/blog/วิธีเช็คสุขภาพแบตโน๊ตบุ๊ค-windows/cover.png"
-ogImage: "/images/blog/วิธีเช็คสุขภาพแบตโน๊ตบุ๊ค-windows/cover.png"
+featuredImage: "/images/blog/วิธีเช็คสุขภาพแบตโน๊ตบุ๊ค-windows/cover.webp"
+ogImage: "/images/blog/วิธีเช็คสุขภาพแบตโน๊ตบุ๊ค-windows/cover.webp"
 ctaText: "แอดไลน์ @webuy ส่งรูปเช็คราคา"
 ---
 

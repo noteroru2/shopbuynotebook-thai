@@ -3,6 +3,8 @@ kind: condition
 title: พอร์ต USB เสีย
 description: รับซื้อโน๊ตบุ๊คพอร์ต USB เสีย ใช้งานไม่ได้ หรือหลวม ประเมินตามรุ่นและสภาพจริงได้ฟรี
 slug: พอร์ต-usb-เสีย
+pageH1: "รับซื้อโน๊ตบุ๊คพอร์ต USB เสีย ส่งรายละเอียดพอร์ตและสเปกเพื่อประเมิน"
+seoTitle: "รับซื้อโน๊ตบุ๊คพอร์ต USB เสีย ประเมินตามพอร์ตและรุ่น | ร้านรับซื้อโน๊ตบุ๊ค.com"
 featuredImage: /images/conditions/no-charger.webp
 whatWeBuy:
   - พอร์ต USB ใช้งานไม่ได้

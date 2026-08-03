@@ -1,0 +1,10 @@
+url,change_type,batch,notes
+/admin/,noindex+headers+robots,1,CMS shell remains reachable
+/robots.txt,updated,1+4,Disallow /admin; AI policy comments
+/,internal_link_equity,2,exact hub links now point here
+/รับซื้อโน๊ตบุ๊ค/,external_redirect_kept,2,Worker 301 unchanged for backlinks
+/รับซื้อโน๊ตบุ๊ค/จอแตก/,title+h1,3,and 17 other conditions
+/รับซื้อโน๊ตบุ๊ค/{locations}/,template_summary,6,all location pages via template
+/รับซื้อโน๊ตบุ๊คมือสอง/,meta_desc,7,points overview to home
+/#intro,aeo_copy,9,SeoIntroSection definitional answers
+/images/blog/*/cover.webp,perf,8,replaced 7 PNG covers

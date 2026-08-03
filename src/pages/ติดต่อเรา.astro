@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: 'เวลาทำการคือช่วงไหน',
-    answer: 'ทุกวัน 10:00–20:00 ครับ หากนอกเวลาสามารถทิ้งข้อความในไลน์ @webuy ได้',
+    answer: 'กรุณาสอบถามเวลาทำการก่อนนัดผ่าน LINE @webuy หรือโทรตามเบอร์ที่ระบุ หากนอกเวลาสามารถทิ้งข้อความในไลน์ได้ ทีมงานจะติดต่อกลับตามคิว',
   },
 ];
 
@@ -50,7 +50,7 @@ const schemas = [breadcrumbListSchema(breadcrumbs), faqPageSchema(faqs)];
         <a class="mt-2 inline-flex text-lg font-bold text-slate-900 underline underline-offset-4" href={`tel:${SITE.telephone}`}>
           {SITE.telephone}
         </a>
-        <p class="mt-2 text-sm text-slate-600">เวลาแนะนำ: ทุกวัน 10:00–20:00</p>
+        <p class="mt-2 text-sm text-slate-600">สอบถามเวลาทำการก่อนนัดผ่าน LINE หรือโทร</p>
       </div>
       <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <p class="text-sm font-semibold text-slate-900">LINE</p>

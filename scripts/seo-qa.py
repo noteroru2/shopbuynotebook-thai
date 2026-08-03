@@ -82,21 +82,23 @@ def test_home_canonical():
 
 
 def test_child_routes_unaffected():
-    print('4. Redirect must not break child routes')
+    print('4. Hub redirect is Worker-only; child routes must still build')
     redirect = DIST / 'รับซื้อโน๊ตบุ๊ค' / 'index.html'
     children = [
         DIST / 'รับซื้อโน๊ตบุ๊ค' / 'macbook' / 'index.html',
         DIST / 'รับซื้อโน๊ตบุ๊ค' / 'gaming' / 'index.html',
         DIST / 'รับซื้อโน๊ตบุ๊ค' / 'กรุงเทพ' / 'index.html',
     ]
-    if not redirect.exists():
-        errors.append('redirect page missing at /รับซื้อโน๊ตบุ๊ค/index.html')
+    # Production uses Cloudflare Worker 301 for /รับซื้อโน๊ตบุ๊ค/ → /
+    # Local static dist intentionally has NO hub index.html
+    if redirect.exists():
+        errors.append(
+            'unexpected static hub page at /รับซื้อโน๊ตบุ๊ค/index.html '
+            '(redirect should be Worker-only)'
+        )
+        print('   static hub page: unexpected (should be absent)')
     else:
-        rhtml = redirect.read_text(encoding='utf-8')
-        if 'url=/' not in rhtml and 'href="/"' not in rhtml:
-            errors.append('redirect page does not point to /')
-        if 'noindex' not in rhtml:
-            errors.append('redirect page missing noindex')
+        print('   static hub page: absent (Worker-only redirect) OK')
     for child in children:
         if not child.exists():
             errors.append(f'missing child route: {child.relative_to(DIST)}')
@@ -104,7 +106,6 @@ def test_child_routes_unaffected():
             html = child.read_text(encoding='utf-8')
             if '<h1' not in html:
                 errors.append(f'child route has no H1: {child.relative_to(DIST)}')
-    print(f'   redirect ok: {redirect.exists()}')
     print(f'   children ok: {sum(1 for c in children if c.exists())}/{len(children)}')
 
 
@@ -152,6 +153,42 @@ def test_page_qa():
     print(f'   pages checked: {len(pages)}')
 
 
+def test_no_exact_hub_internal_links():
+    print('6. Source must not link exactly to /รับซื้อโน๊ตบุ๊ค/ (use /)')
+    bad = []
+    exact = re.compile(
+        r"""(?:href\s*[:=]\s*[\"']|/|\()(/รับซื้อโน๊ตบุ๊ค/?)(?=[\"'\s\)]|$)"""
+    )
+    for path in SRC.rglob('*'):
+        if path.suffix not in {'.astro', '.ts', '.tsx', '.md', '.mdx'}:
+            continue
+        text = path.read_text(encoding='utf-8')
+        for i, line in enumerate(text.splitlines(), 1):
+            for m in exact.finditer(line):
+                href = m.group(1).rstrip('/')
+                if href == '/รับซื้อโน๊ตบุ๊ค':
+                    after = line[m.end():m.end()+1]
+                    if after == '/':
+                        continue
+                    bad.append(f'{path.relative_to(ROOT)}:{i}')
+                    break
+    if bad:
+        errors.append(f'exact hub internal links remain: {bad[:20]}')
+    print(f'   exact hub link hits: {len(bad)} (want 0)')
+
+
+def test_admin_noindex():
+    print('7. /admin/ must be noindex in dist')
+    admin = DIST / 'admin' / 'index.html'
+    if not admin.exists():
+        print('   admin page absent (OK if removed)')
+        return
+    html = admin.read_text(encoding='utf-8')
+    if 'noindex' not in html.lower():
+        errors.append('/admin/ missing noindex meta')
+    print(f'   admin noindex: {"yes" if "noindex" in html.lower() else "NO"}')
+
+
 def main():
     if not DIST.exists():
         print('dist/ missing — run npm run build first')
@@ -161,6 +198,8 @@ def main():
     test_home_canonical()
     test_child_routes_unaffected()
     test_page_qa()
+    test_no_exact_hub_internal_links()
+    test_admin_noindex()
     print()
     if errors:
         print('SMOKE TEST FAILED:')

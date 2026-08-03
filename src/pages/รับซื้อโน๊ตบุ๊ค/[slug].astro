@@ -47,7 +47,10 @@ const layoutTitle =
   kind === 'location'
     ? (entry.data.seoTitle ??
         `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ประเมินฟรีผ่านไลน์ @webuy | ร้านรับซื้อโน๊ตบุ๊ค.com`)
-    : (entry.data.seoTitle ?? `${entry.data.title} | ร้านรับซื้อโน๊ตบุ๊ค.com`);
+    : kind === 'condition'
+      ? (entry.data.seoTitle ??
+          `รับซื้อโน๊ตบุ๊ค${entry.data.title} ประเมินตามรุ่นและสภาพเครื่อง | ร้านรับซื้อโน๊ตบุ๊ค.com`)
+      : (entry.data.seoTitle ?? `${entry.data.title} | ร้านรับซื้อโน๊ตบุ๊ค.com`);
 const locationH1 =
   kind === 'location'
     ? (entry.data.h1 ?? `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ประเมินไว ส่งรูปเช็คราคาฟรี`)
@@ -55,7 +58,7 @@ const locationH1 =
 const brandOrConditionH1 =
   kind === 'brand'
     ? (entry.data.pageH1 ?? getBrandH1Default(slug, entry.data.title))
-    : (entry.data.pageH1 ?? `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ประเมินไว จ่ายเงินสด`);
+    : (entry.data.pageH1 ?? `รับซื้อโน๊ตบุ๊ค${entry.data.title} ส่งรูปประเมินตามสภาพจริง`);
 const description =
   kind === 'location' && slug !== 'อุบลราชธานี'
     ? `รับซื้อโน๊ตบุ๊ค ${entry.data.title} ส่งรูป รุ่น สเปก และอาการเพื่อประเมินเบื้องต้น การนัดรับขึ้นอยู่กับพื้นที่ ตารางงาน และการยืนยัน หรือสอบถามขั้นตอนจัดส่งเครื่องมาตรวจได้`
@@ -372,6 +375,29 @@ const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs
         ถ้าต้องการเช็คราคาไว แนะนำส่งรูป 3–5 รูป + รุ่น/สเปก + สภาพ/อาการ ผ่าน LINE ก่อนนัดรับหรือส่งเครื่อง
         เพื่อให้ประเมินเบื้องต้นได้ตรงขึ้นและลดเวลาหน้างาน
       </p>
+
+      <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-slate-900">สรุปบริการสำหรับพื้นที่ {entry.data.title}</h2>
+        <ol class="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-slate-700">
+          <li>
+            ส่งรูปและข้อมูลเครื่องผ่าน LINE เพื่อประเมินเบื้องต้นก่อนตัดสินใจขาย — รายละเอียดขั้นตอนดูที่{' '}
+            <a class="font-semibold text-emerald-700 underline" href="/">หน้าหลักรับซื้อโน๊ตบุ๊ค</a>
+            {' '}และ{' '}
+            <a class="font-semibold text-emerald-700 underline" href="/เช็คราคาโน๊ตบุ๊ค/">เช็คราคาโน๊ตบุ๊ค</a>
+          </li>
+          <li>
+            หลังได้กรอบราคา แจ้งว่าต้องการนัดหรือจัดส่งตามตัวเลือกด้านล่าง (ข้อมูลจากหน้านี้เท่านั้น ไม่ได้หมายความว่ามีสาขาในพื้นที่)
+          </li>
+          {entry.data.region ? (
+            <li>
+              พื้นที่นี้ถูกจัดอยู่ในกลุ่มภูมิภาค: <strong>{entry.data.region}</strong> — ใช้ประกอบการสอบถามวิธีรับเครื่องเท่านั้น
+            </li>
+          ) : null}
+          <li>
+            ราคาสุดท้ายยืนยันหลังตรวจเครื่องจริง ลูกค้าไม่จำเป็นต้องตกลงขายหากเงื่อนไขไม่ตรง
+          </li>
+        </ol>
+      </div>
 
       <div class="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-6">
         <h2 class="text-lg font-bold text-slate-900">นัดรับ/นัดเจอในพื้นที่</h2>

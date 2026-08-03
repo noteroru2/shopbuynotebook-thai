@@ -3,6 +3,8 @@ kind: condition
 title: WiFi ไม่ติด
 description: รับซื้อโน๊ตบุ๊ค WiFi ไม่ติด เชื่อมต่อไม่ได้ หรือบลูทูธมีปัญหา ประเมินตามรุ่นและสภาพจริงได้ฟรี
 slug: wifi-ไม่ติด
+pageH1: "รับซื้อโน๊ตบุ๊ค WiFi ไม่ติด แจ้งอาการเชื่อมต่อและรุ่นเพื่อประเมิน"
+seoTitle: "รับซื้อโน๊ตบุ๊ค WiFi ไม่ติด ประเมินอาการเครือข่ายและรุ่น | ร้านรับซื้อโน๊ตบุ๊ค.com"
 featuredImage: /images/conditions/normal.webp
 whatWeBuy:
   - WiFi ไม่ติด
