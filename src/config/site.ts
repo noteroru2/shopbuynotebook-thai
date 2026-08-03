@@ -42,6 +42,11 @@ export const SITE = {
   },
   serviceAreaGroups,
   areaServed: Array.from(new Set(['ภาคอีสาน', ...flattenServiceAreas(serviceAreaGroups)])),
-  /** TODO_OWNER: เพิ่ม openingHoursSpecification ใน schema เมื่อมีเวลาเปิด-ปิดจาก Google Business Profile จริง */
+  /**
+   * TODO_OWNER: ยืนยันเวลาเปิด-ปิดจาก Google Business Profile แล้วค่อย
+   * 1) ใส่ข้อความเวลาทำการใน Footer/ติดต่อเรา และ
+   * 2) เพิ่ม openingHoursSpecification ใน LocalBusiness schema
+   * ห้ามใช้เวลางานพนักงานแทนเวลาร้าน
+   */
 } as const;
 
