@@ -30,6 +30,10 @@ jobs:
   deploy:
     name: Validate, deploy, and verify production
     runs-on: ubuntu-latest
+    # Bind GitHub Environment so Environment-scoped secrets resolve.
+    # Historical deployments used the Production environment; repo-level
+    # secret resolution alone returned empty CLOUDFLARE_API_TOKEN.
+    environment: Production
     timeout-minutes: 30
     env:
       ASTRO_TELEMETRY_DISABLED: "1"
@@ -56,14 +60,14 @@ jobs:
         run: |
           set -euo pipefail
           if [[ -z "${CLOUDFLARE_API_TOKEN:-}" ]]; then
-            echo "::error::Required GitHub Actions secret CLOUDFLARE_API_TOKEN is missing."
+            echo "::error::Required secret CLOUDFLARE_API_TOKEN is missing in the Production environment (or repository secrets). Do not paste values into logs."
             exit 1
           fi
           if [[ -z "${CLOUDFLARE_ACCOUNT_ID:-}" ]]; then
-            echo "::error::Required GitHub Actions secret CLOUDFLARE_ACCOUNT_ID is missing."
+            echo "::error::Required secret CLOUDFLARE_ACCOUNT_ID is missing in the Production environment (or repository secrets). Do not paste values into logs."
             exit 1
           fi
-          echo "Required Cloudflare secret names are configured."
+          echo "Required Cloudflare secret names are configured for environment Production."
 
       - name: Install dependencies
         run: npm ci
@@ -103,7 +107,7 @@ jobs:
         run: node scripts/production-qa.mjs
 
       - name: Upload production QA evidence
-        if: always()
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: production-qa-${{ github.run_id }}
