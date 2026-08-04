@@ -57,6 +57,16 @@ Required GitHub Environment (preferred) or Repository Secrets:
 
 Preferred location: **Environment `Production`**, matching historical deployment environment and the workflow fix.
 
+## Follow-up after workflow fix (`69eb245`)
+
+| Run ID | Result |
+|--------|--------|
+| `30901148649` | Still FAIL at Verify required secrets |
+
+Annotation confirms Environment binding is active, but `CLOUDFLARE_API_TOKEN` remains empty → credentials were never provisioned (or not under these exact names).
+
+**Status:** `BLOCKED: DEPLOYMENT CREDENTIALS UNAVAILABLE`
+
 ## Out of scope
 
 No Cloudflare Managed AI Bot Policy changes. No SEO content/URL changes in this recovery.
