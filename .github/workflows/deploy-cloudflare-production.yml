@@ -101,11 +101,11 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # wrangler-action@v3 installs Wrangler 3.90 by default; that CLI
-          # rejects `--message` ("Unknown argument: message"). Pin Wrangler 4
-          # so deploy + version message work with Workers Assets.
+          # Pin Wrangler 4 for Workers Assets. Do not pass `--message`:
+          # both Wrangler 3.90 (action default) and 4.28 reject it as
+          # "Unknown argument: message" for `wrangler deploy`.
           wranglerVersion: "4.28.0"
-          command: deploy --message "github-actions ${{ github.sha }}"
+          command: deploy
 
       - name: Run production HTTP QA
         run: node scripts/production-qa.mjs
