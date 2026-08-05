@@ -1,0 +1,14 @@
+cluster,representative_query,query_variants,intent,clicks,impressions,weighted_avg_position,ctr,ranking_urls_known,primary_current_url,recommended_target_url,classification,confidence
+irrelevant_review,รับรีวิวโน้ตบุ๊ค,รับรีวิวโน้ตบุ๊ค | รับรีวิว notebook,Irrelevant,0.0,26.0,61.54,0.0,0,UNKNOWN,no money-page action,Insufficient Evidence,Insufficient evidence
+brand_surface,microsoft surface มือสอง,microsoft surface มือสอง,Brand/model-specific,0.0,6.0,35.0,0.0,0,UNKNOWN,matching brand/model URL; UNVERIFIED,Insufficient Evidence,Insufficient evidence
+brand_rog_flow_z13,asus rog flow z13 มือสอง,asus rog flow z13 มือสอง | rog flow z13 มือสอง,Brand/model-specific,1.0,5.0,38.6,0.2,0,UNKNOWN,matching brand/model URL; UNVERIFIED,Insufficient Evidence,Insufficient evidence
+valuation_acer,โน๊ ต บุ๊ค acer ขายได้ เท่า ไหร่,โน๊ ต บุ๊ค acer ขายได้ เท่า ไหร่,Valuation,0.0,5.0,52.0,0.0,0,UNKNOWN,/เช็คราคาโน๊ตบุ๊ค/ or /ตีราคาโน๊ตบุ๊ค/; UNVERIFIED,Insufficient Evidence,Insufficient evidence
+commercial_where_to_sell,ขายโน๊ตบุ๊คที่ไหนดี,ขายโน๊ตบุ๊คที่ไหนดี,Commercial investigation,0.0,4.0,48.0,0.0,0,UNKNOWN,INSUFFICIENT_EVIDENCE,Insufficient Evidence,Insufficient evidence
+local_khonkaen_used,โน๊ตบุ๊คมือสอง ขอนแก่น,โน๊ตบุ๊คมือสอง ขอนแก่น,Local intent,0.0,2.0,42.5,0.0,0,UNKNOWN,location/condition page matching modifier; UNVERIFIED,Insufficient Evidence,Insufficient evidence
+core_notebook_en,รับซื้อ notebook,รับซื้อ notebook,Transactional,0.0,2.0,95.0,0.0,0,UNKNOWN,/รับซื้อ-notebook/ (candidate) OR / if query×page shows root; UNVERIFIED,Insufficient Evidence,Insufficient evidence
+irrelevant_auction,ขายทอดตลาดครุภัณฑ์,ขายทอดตลาดครุภัณฑ์ | ขายทอดตลาดพัสดุ,Irrelevant,0.0,2.0,64.0,0.0,0,UNKNOWN,no money-page action,Insufficient Evidence,Insufficient evidence
+local_krabi,รับซื้อโน๊ตบุ๊ค กระบี่,รับซื้อโน๊ตบุ๊ค กระบี่,Local intent,0.0,1.0,17.0,0.0,0,UNKNOWN,location/condition page matching modifier; UNVERIFIED,Insufficient Evidence,Insufficient evidence
+condition_liquid,น้ำหกใส่ โน๊ ต. บุค ซ่อม กี่ บาท,น้ำหกใส่ โน๊ ต. บุค ซ่อม กี่ บาท,Condition-specific,0.0,1.0,45.0,0.0,0,UNKNOWN,matching condition URL; UNVERIFIED,Insufficient Evidence,Insufficient evidence
+local_near_me,รับซื้อ ฮาร์ดดิสก์ ใกล้ฉัน,รับซื้อ ฮาร์ดดิสก์ ใกล้ฉัน,Local intent,0.0,1.0,65.0,0.0,0,UNKNOWN,location/condition page matching modifier; UNVERIFIED,Insufficient Evidence,Insufficient evidence
+local_near_broken,ร้านรับซื้อโน๊ตบุ๊คเสีย ใกล้ฉัน,ร้านรับซื้อโน๊ตบุ๊คเสีย ใกล้ฉัน,Local intent,0.0,1.0,74.0,0.0,0,UNKNOWN,location/condition page matching modifier; UNVERIFIED,Insufficient Evidence,Insufficient evidence
+brand_macbook,รับซื้อmacbook,รับซื้อmacbook,Brand/model-specific,0.0,1.0,93.0,0.0,0,UNKNOWN,matching brand/model URL; UNVERIFIED,Insufficient Evidence,Insufficient evidence
