@@ -1,0 +1,5 @@
+slug,classification,notes,action
+hp-omen-16,POSSIBLE_VARIANT,Old content omitted RTX 4070/4080; MSG sample includes them as family options,UPDATED_TO_VERIFIED_OPTIONS
+asus-tuf-a15-f15,CONFIRMED_CONFLICT,Old content claimed GTX 1650 / RTX 2060 without official sample evidence used here,REMOVED_UNSUPPORTED_CLAIMS
+lenovo-loq-15-16,NO_CONFLICT,Existing RTX 3050/4050/4060 family claims align with PSREF samples when scoped as series,NONE
+hp-victus-17,INSUFFICIENT_EVIDENCE,No official Victus 17 matrix; deferred,DEFER_NO_CONTENT_CHANGE
