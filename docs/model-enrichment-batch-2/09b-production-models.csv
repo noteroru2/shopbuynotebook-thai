@@ -1,0 +1,9 @@
+slug,http_status,verified_panel,unsupported_claim,pass
+macbook-air-m1,200,true,false,PASS
+macbook-air-m2,200,true,false,PASS
+macbook-pro-m1,200,true,false,PASS
+macbook-pro-m2,200,true,false,PASS
+acer-nitro-17,200,true,false,PASS
+acer-nitro-v,200,true,false,PASS
+asus-zephyrus-g16,200,true,false,PASS
+hp-victus-16,200,true,false,PASS

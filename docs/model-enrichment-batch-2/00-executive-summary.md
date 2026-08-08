@@ -1,8 +1,10 @@
 # Verified Model Enrichment — Batch 2 Executive Summary
 
-## Verdict (local)
+## Verdict
 
-**PASS** pending production crawl after merge/deploy.
+**PASS**
+
+Runtime Production SHA: `fd10ae3175fa244bbf48743a9386566b6d4cf9a2`
 
 ## Scope
 
@@ -39,12 +41,17 @@ Total models enriched: **8**
 - Critical similarity: 0
 - High similarity: 0
 
-## Freeze / URL gate (local)
+## Freeze / URL gate
 
 - Homepage / Money / Province / Condition / Blog: unchanged
 - Routes: 2460
-- Sitemap URLs: 371
-- Indexable policy: unchanged
+- Indexable / Sitemap: 371
+- Production crawl: 371/371 PASS
+
+## Deploy
+
+- Workflow run: https://github.com/noteroru2/shopbuynotebook-thai/actions/runs/31240005385
+- Models manually verified on production: 8/8 PASS
 
 ## GSC freeze
 
