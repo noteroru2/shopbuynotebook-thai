@@ -37,3 +37,19 @@ ctaText: ส่งรูป Battery Health และ About This Mac เพื่
 - **หน้าบริการรับซื้อย่อย:** [รับซื้อ MacBook Battery Health ต่ำ](/รับซื้อโน๊ตบุ๊ค/macbook-battery-health/)
 - **หน้าหมวดหมู่รับซื้อตรง:** [รับซื้อ MacBook หลายรุ่นยอดนิยมย่อย](/รับซื้อโน๊ตบุ๊ค/macbook/)
 - **บทความแนะนำเพิ่มเติม:** [ขั้นตอนการออกจากระบบ Apple ID ก่อนขายเครื่อง](/blog/ขาย-macbook-ต้องเตรียมอะไรบ้าง/)
+
+<!-- authority-blog-append -->
+## วิธีเช็ก Battery Health อย่างปลอดภัย
+
+1. ไปที่ System Settings → Battery → Battery Health (ชื่อเมนูอาจต่างตาม macOS)
+2. หรือดูผ่าน System Information → Power
+3. ถ่ายรูปเปอร์เซ็นต์ Maximum Capacity และ Cycle Count ถ้ามี
+4. ส่งพร้อมรูป About This Mac
+
+บทความนี้ไม่แนะนำให้รีเซ็ต SMC/PRAM เป็นขั้นตอนบังคับก่อนขาย หากไม่จำเป็น และไม่รับประกันผลต่อราคา
+
+## เชื่อมไปหน้ารับซื้อและรุ่น
+
+- [รับซื้อ MacBook Battery Health](/รับซื้อโน๊ตบุ๊ค/macbook-battery-health/)
+- [Cycle Count เท่าไหร่ถึงราคาตก](/blog/macbook-cycle-count-เท่าไหร่ถึงราคาตก/)
+- [รับซื้อ MacBook Air 13](/รับซื้อโน๊ตบุ๊ค/macbook-air-13/)
