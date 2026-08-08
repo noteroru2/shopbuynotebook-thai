@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ร้านรับซื้อโน๊ตบุ๊ค.com/schemas/notebook-spec.schema.json",
+  "title": "VerifiedNotebookSpec",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "brand",
+    "series",
+    "model",
+    "slug",
+    "pageType",
+    "configurationScope",
+    "eligibility",
+    "sources",
+    "retrievedDate"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "brand": { "type": "string", "minLength": 1 },
+    "series": { "type": "string" },
+    "model": { "type": "string" },
+    "slug": { "type": "string", "minLength": 1 },
+    "pageType": { "type": "string", "enum": ["Series", "Model"] },
+    "marketingName": { "type": "string" },
+    "modelFamily": { "type": "string" },
+    "modelCode": { "type": ["string", "null"] },
+    "machineType": { "type": ["string", "null"] },
+    "productNumber": { "type": ["string", "null"] },
+    "generation": { "type": ["string", "null"] },
+    "category": {
+      "type": ["string", "null"],
+      "enum": ["gaming", "ultrabook", "business", "creator", "mainstream", "convertible", "handheld", "chrome", null]
+    },
+    "configurationScope": {
+      "type": "string",
+      "enum": ["EXACT_SKU", "MODEL_FAMILY", "SERIES", "UNKNOWN"]
+    },
+    "eligibility": {
+      "type": "string",
+      "enum": [
+        "READY_HIGH_CONFIDENCE",
+        "READY_FAMILY_LEVEL",
+        "LIMITED_DATA",
+        "AMBIGUOUS_MODEL",
+        "UNVERIFIED"
+      ]
+    },
+    "officialUrl": { "type": ["string", "null"], "format": "uri" },
+    "cpuOptions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "gpuOptions": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "memory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "ramType": { "type": ["string", "null"] },
+        "ramSpeed": { "type": ["string", "null"] },
+        "ramSlots": { "type": ["integer", "null"], "minimum": 0 },
+        "ramSoldered": { "type": ["boolean", "null"] },
+        "ramMax": { "type": ["string", "null"] },
+        "ramConfigurations": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "storageInterface": { "type": ["string", "null"] },
+        "storageSlots": { "type": ["integer", "null"], "minimum": 0 },
+        "storageOptions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "display": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "displaySizes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "resolutions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "panelTypes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        },
+        "refreshRates": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true
+        }
+      }
+    },
+    "wifi": { "type": ["string", "null"] },
+    "bluetooth": { "type": ["string", "null"] },
+    "ports": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "weightRange": { "type": ["string", "null"] },
+    "dimensions": { "type": ["string", "null"] },
+    "batteryCapacity": { "type": ["string", "null"] },
+    "chargerWattageOptions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "operatingSystemOptions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "knownModelFamilies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "resaleRelevance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "high": { "type": "array", "items": { "type": "string" } },
+        "medium": { "type": "array", "items": { "type": "string" } },
+        "low": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "sourceType", "verificationStatus"],
+        "properties": {
+          "url": { "type": "string", "format": "uri" },
+          "sourceType": {
+            "type": "string",
+            "enum": [
+              "official_product",
+              "official_spec_db",
+              "official_pdf",
+              "official_support",
+              "repository_verified"
+            ]
+          },
+          "title": { "type": "string" },
+          "verificationStatus": {
+            "type": "string",
+            "enum": ["VERIFIED", "PARTIAL", "UNVERIFIED", "BROKEN_LINK"]
+          }
+        }
+      }
+    },
+    "retrievedDate": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "notes": { "type": "string" }
+  }
+}
