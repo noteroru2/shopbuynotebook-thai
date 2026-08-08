@@ -1,0 +1,10 @@
+page_type,total_pages,changed_pages,percentage_changed,reason
+Homepage,1,0,0%,Frozen — no major rewrite
+Money (notebook/second-hand/price/valuation/seller),~10,0,0%,Frozen for consolidation until T+56 GSC evidence
+Province,87,0,0%,Frozen — no province rewrite this phase
+Condition,44,0,0%,Frozen — no major condition rewrite
+Series,24,24,100%,Series Authority Hub sections + hierarchy links (verified-data only)
+Model,57,38,67%,Thin stub rewrite + mid-tier append using popularModels only
+Blog,122,21,17%,Priority A/B selective enrichment from GSC/strategic signals
+Brand hubs,15,0,0%,No brand hub body rewrite; hierarchy links via template only
+Template slug.astro,1,1,100%,Brand→Series→Model related links only

@@ -1,0 +1,8 @@
+item,reason,earliest_action
+Series average to 88+,Need official structured SKU dataset or manufacturer-verified fields — no filler,After verified data import
+Blog average to 83+,Selective-only policy; remaining Priority C posts deferred,Next GSC T+28 review
+Money page consolidation,Frozen pending Query×Page evidence,2026-10-03 earliest
+Official manufacturer spec ingestion pipeline,Out of scope this phase,Future data workstream
+Cloudflare AI crawler policy,Owner decision — frozen,Owner decision
+Raw GSC Excel in repo,Not committed by policy,Import via monitor script only
+Priority C model padding,Would require unsupported specs or filler,Do not force

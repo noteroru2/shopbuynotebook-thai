@@ -334,6 +334,52 @@ const pageDescription =
 
 const brandFeaturedLinks = kind === 'brand' ? getBrandFeaturedLinks(slug, entry.data.title) : [];
 const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs(slug, entry.data.title)] : (entry.data.faqs ?? []);
+
+/** Brand → Series → Model hierarchy links (no money-page churn). */
+const brandCollection = kind === 'brand' ? await getCollection('brands') : [];
+function resolveParentSeries(modelSlug: string): string | null {
+  const parts = modelSlug.split('-');
+  for (let i = parts.length - 1; i >= 2; i--) {
+    const cand = parts.slice(0, i).join('-');
+    const hit = brandCollection.find((b) => b.data.slug === cand);
+    if (!hit) continue;
+    if (BRAND_HUB_SLUGS.has(cand)) continue;
+    const kindOf = getBrandPageKind(cand);
+    if (kindOf === 'series') return cand;
+  }
+  return null;
+}
+function resolveBrandHub(entitySlug: string): string | null {
+  if (entitySlug.startsWith('macbook')) return 'macbook';
+  if (entitySlug.startsWith('thinkpad')) return 'lenovo';
+  if (entitySlug.startsWith('alienware')) return 'dell';
+  if (entitySlug.startsWith('surface')) return 'surface';
+  const first = entitySlug.split('-')[0];
+  return BRAND_HUB_SLUGS.has(first) ? first : null;
+}
+const hierarchyLinks: RelatedLink[] = [];
+if (kind === 'brand' && brandPageKind === 'series') {
+  const hub = resolveBrandHub(slug);
+  if (hub) hierarchyLinks.push({ label: `แบรนด์ ${hub}`, href: `/รับซื้อโน๊ตบุ๊ค/${hub}/`, description: 'ขึ้นไปหน้าแบรนด์' });
+  const children = brandCollection
+    .filter((b) => getBrandPageKind(b.data.slug) === 'model' && resolveParentSeries(b.data.slug) === slug)
+    .slice(0, 8);
+  for (const child of children) {
+    hierarchyLinks.push({
+      label: child.data.title,
+      href: `/รับซื้อโน๊ตบุ๊ค/${child.data.slug}/`,
+      description: 'รุ่นย่อยในซีรีส์นี้',
+    });
+  }
+}
+if (kind === 'brand' && brandPageKind === 'model') {
+  const hub = resolveBrandHub(slug);
+  const parent = resolveParentSeries(slug);
+  if (hub) hierarchyLinks.push({ label: `แบรนด์ ${hub}`, href: `/รับซื้อโน๊ตบุ๊ค/${hub}/`, description: 'ขึ้นไปหน้าแบรนด์' });
+  if (parent) hierarchyLinks.push({ label: `ซีรีส์ ${parent}`, href: `/รับซื้อโน๊ตบุ๊ค/${parent}/`, description: 'ขึ้นไปหน้าซีรีส์' });
+  hierarchyLinks.push({ label: 'หน้าหลักรับซื้อโน๊ตบุ๊ค', href: '/', description: 'บริการหลัก' });
+  hierarchyLinks.push({ label: 'ตีราคาโน๊ตบุ๊ค', href: '/ตีราคาโน๊ตบุ๊ค/', description: 'ปัจจัยประเมินราคา' });
+}
 ---
 
 {kind === 'location' ? (
@@ -618,6 +664,9 @@ const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs
       </section>
     ) : null}
 
+        {hierarchyLinks.length ? (
+      <RelatedLinks title="โครงสร้างแบรนด์ → ซีรีส์ → รุ่น" links={hierarchyLinks} />
+    ) : null}
         {brandFeaturedLinks.length ? (
       <RelatedLinks title="ทางลัดในคลัสเตอร์รับซื้อรุ่นใกล้เคียง" links={brandFeaturedLinks} />
     ) : null}

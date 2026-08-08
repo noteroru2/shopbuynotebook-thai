@@ -1,0 +1,12 @@
+query_cluster,example_queries,intended_url_type,intended_url_example,status,notes
+core_transactional,"รับซื้อโน๊ตบุ๊ค|รับซื้อโน้ตบุ๊ก|ร้านรับซื้อโน๊ตบุ๊ค",Homepage,/,POLICY_MAP,Not GSC-confirmed; consolidation frozen
+notebook_english,"รับซื้อ notebook|รับซื้อ notebook มือสอง",Notebook-English,/รับซื้อ-notebook/,POLICY_MAP,Frozen money page
+second_hand,"รับซื้อโน๊ตบุ๊คมือสอง|ขายโน๊ตบุ๊คมือสอง",Second-hand,/รับซื้อโน๊ตบุ๊คมือสอง/,POLICY_MAP,Frozen money page
+price_check,"เช็คราคาโน๊ตบุ๊ค|โน๊ตบุ๊คขายได้เท่าไหร่",Price-check,/เช็คราคาโน๊ตบุ๊ค/,POLICY_MAP,Frozen; do not merge with valuation before T+56 evidence
+valuation,"ตีราคาโน๊ตบุ๊ค|ประเมินราคาโน๊ตบุ๊ค",Valuation,/ตีราคาโน๊ตบุ๊ค/,POLICY_MAP,Frozen money page
+seller_info,"ขายโน๊ตบุ๊ค|วิธีขายโน๊ตบุ๊ค",Seller,/ขายโน๊ตบุ๊ค/,POLICY_MAP,Frozen for consolidation
+condition,"รับซื้อโน๊ตบุ๊คเสีย|รับซื้อโน๊ตบุ๊คจอแตก|รับซื้อโน๊ตบุ๊คเปิดไม่ติด",Condition,/รับซื้อโน๊ตบุ๊ค/{condition}/,POLICY_MAP,No mass rewrite this phase
+brand,"รับซื้อโน๊ตบุ๊ค ASUS|Acer|Lenovo|HP|Dell|MSI",Brand,/รับซื้อโน๊ตบุ๊ค/{brand}/,POLICY_MAP,Hub pages
+series,"รับซื้อ Zephyrus|รับซื้อ Legion|รับซื้อ ThinkPad",Series,/รับซื้อโน๊ตบุ๊ค/{series}/,POLICY_MAP,Authority enrichment target
+model,"รับซื้อ MacBook Air M3|Zephyrus G14|Katana 15",Model,/รับซื้อโน๊ตบุ๊ค/{model}/,POLICY_MAP,Authority enrichment target
+local_province,"รับซื้อโน๊ตบุ๊ค + จังหวัด|รับซื้อโน๊ตบุ๊คใกล้ฉัน",Province,/รับซื้อโน๊ตบุ๊ค/{province}/,POLICY_MAP,Frozen; no province rewrite this phase

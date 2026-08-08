@@ -1,0 +1,13 @@
+check,baseline,final,delta
+indexable_urls,371,371,0
+sitemap_urls_expected,371,371,0
+urls_removed,0,0,0
+urls_renamed,0,0,0
+redirects_added,0,0,0
+unexpected_noindex,0,0,0
+unexpected_canonical_architecture,0,0,0
+routes_build_expected,2460,2460,0
+homepage_primary_url,/,/,unchanged
+money_pages_frozen,yes,yes,unchanged
+province_rewrites,0,0,0
+condition_major_rewrites,0,0,0

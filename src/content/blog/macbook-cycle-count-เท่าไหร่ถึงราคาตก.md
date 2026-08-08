@@ -34,3 +34,21 @@ ctaText: ส่งรูป Cycle Count เพื่อประเมินร�
 - **หน้าบริการรับซื้อย่อย:** [รับซื้อ MacBook Cycle Count สูง](/รับซื้อโน๊ตบุ๊ค/macbook-cycle-count/)
 - **หน้าหมวดหมู่รับซื้อตรง:** [รับซื้อ MacBook หลายรุ่นยอดนิยมย่อย](/รับซื้อโน๊ตบุ๊ค/macbook/)
 - **บทความแนะนำเพิ่มเติม:** [MacBook Battery Health ต่ำมีผลต่อราคาแค่ไหน](/blog/macbook-battery-health-มีผลต่อราคาไหม/)
+
+<!-- authority-blog-append -->
+## Cycle Count ใช้อย่างไรตอนประเมิน
+
+Cycle Count ช่วยเล่าประวัติการใช้งาน แต่ไม่ได้ตัดสิทธิ์การขายโดยอัตโนมัติ ร้านดูร่วมกับ Battery Health, ปีรุ่น, ความจุ และสภาพภายนอก
+
+## ส่งข้อมูลคู่กันเสมอ
+
+- Cycle Count
+- Maximum Capacity
+- About This Mac
+- รูปเครื่องรอบด้าน
+
+## ลิงก์ต่อ
+
+- [Battery Health มีผลไหม](/blog/macbook-battery-health-มีผลต่อราคาไหม/)
+- [รับซื้อ MacBook Cycle Count](/รับซื้อโน๊ตบุ๊ค/macbook-cycle-count/)
+- [ขาย MacBook ต้องเตรียมอะไร](/blog/ขาย-macbook-ต้องเตรียมอะไรบ้าง/)
