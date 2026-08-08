@@ -1,0 +1,4535 @@
+{
+  "version": 1,
+  "retrievedDate": "2026-08-08",
+  "models": [
+    {
+      "id": "acer-aspire-5",
+      "brand": "Acer",
+      "series": "acer-aspire",
+      "model": "acer-aspire-5",
+      "slug": "acer-aspire-5",
+      "pageType": "Model",
+      "marketingName": "acer-aspire-5",
+      "modelFamily": "acer-aspire-5",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "acer-nitro-16",
+      "brand": "Acer",
+      "series": "acer-nitro",
+      "model": "acer-nitro-16",
+      "slug": "acer-nitro-16",
+      "pageType": "Model",
+      "marketingName": "acer-nitro-16",
+      "modelFamily": "acer-nitro-16",
+      "modelCode": "AN16-41 / AN16-51 families",
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "gaming",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://www.acer.com/us-en/laptops/nitro/nitro-16-amd/pdp/NH.QLJAA.001",
+      "cpuOptions": [
+        "AMD Ryzen 5 7640HS",
+        "AMD Ryzen 7 7735HS",
+        "AMD Ryzen 9 7940HS"
+      ],
+      "gpuOptions": [
+        "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "NVIDIA GeForce RTX 4070 Laptop GPU"
+      ],
+      "memory": {
+        "ramType": "DDR5 SDRAM",
+        "ramSpeed": null,
+        "ramSlots": 2,
+        "ramSoldered": false,
+        "ramMax": null,
+        "ramConfigurations": [
+          "8GB",
+          "16GB",
+          "32GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": "PCIe NVMe M.2",
+        "storageSlots": null,
+        "storageOptions": [
+          "512GB",
+          "1TB"
+        ]
+      },
+      "display": {
+        "displaySizes": [
+          "16-inch"
+        ],
+        "resolutions": [
+          "1920x1200",
+          "2560x1600"
+        ],
+        "panelTypes": [
+          "IPS"
+        ],
+        "refreshRates": [
+          "165Hz"
+        ]
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": "90Wh (AN16-41 official PDP listings)",
+      "chargerWattageOptions": [
+        "230W",
+        "330W"
+      ],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://www.acer.com/us-en/laptops/nitro/nitro-16-amd/pdp/NH.QLJAA.001",
+          "sourceType": "official_product",
+          "title": "Nitro 16 AN16-41-R5KC",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://www.acer.com/us-en/laptops/nitro/nitro-16-amd/pdp/NH.QLKAA.002",
+          "sourceType": "official_product",
+          "title": "Nitro 16 AN16-41-R148",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://www.acer.com/gb-en/laptops/nitro/nitro-16-intel/pdp/NH.QKCEK.001",
+          "sourceType": "official_product",
+          "title": "Nitro 16 AN16-41-R8P9",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://store.acer.com/en-gb/acer-acer-nitro-16-gaming-laptop-an16-41-black-nh-qkdek-005",
+          "sourceType": "official_product",
+          "title": "Acer Store UK Nitro 16 AN16-41",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Verified from Acer.com Nitro 16 AN16-41 PDPs (multiple SKUs). RTX 4080 not present on sampled official AN16-41 pages — treat content claims of RTX 4080 as conflict candidates until another official machine type is verified."
+    },
+    {
+      "id": "acer-nitro-17",
+      "brand": "Acer",
+      "series": "acer-nitro",
+      "model": "acer-nitro-17",
+      "slug": "acer-nitro-17",
+      "pageType": "Model",
+      "marketingName": "acer-nitro-17",
+      "modelFamily": "acer-nitro-17",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "acer-nitro-v",
+      "brand": "Acer",
+      "series": "acer-nitro",
+      "model": "acer-nitro-v",
+      "slug": "acer-nitro-v",
+      "pageType": "Model",
+      "marketingName": "acer-nitro-v",
+      "modelFamily": "acer-nitro-v",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "acer-predator-helios",
+      "brand": "Acer",
+      "series": "acer-predator",
+      "model": "acer-predator-helios",
+      "slug": "acer-predator-helios",
+      "pageType": "Model",
+      "marketingName": "acer-predator-helios",
+      "modelFamily": "acer-predator-helios",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "acer-predator-neo",
+      "brand": "Acer",
+      "series": "acer-predator",
+      "model": "acer-predator-neo",
+      "slug": "acer-predator-neo",
+      "pageType": "Model",
+      "marketingName": "acer-predator-neo",
+      "modelFamily": "acer-predator-neo",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "acer-predator-triton",
+      "brand": "Acer",
+      "series": "acer-predator",
+      "model": "acer-predator-triton",
+      "slug": "acer-predator-triton",
+      "pageType": "Model",
+      "marketingName": "acer-predator-triton",
+      "modelFamily": "acer-predator-triton",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "alienware-m15-r7-r8",
+      "brand": "Dell",
+      "series": "alienware-m15",
+      "model": "alienware-m15-r7-r8",
+      "slug": "alienware-m15-r7-r8",
+      "pageType": "Model",
+      "marketingName": "alienware-m15-r7-r8",
+      "modelFamily": "alienware-m15-r7-r8",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "alienware-m16",
+      "brand": "Dell",
+      "series": "alienware-m16",
+      "model": "alienware-m16",
+      "slug": "alienware-m16",
+      "pageType": "Model",
+      "marketingName": "alienware-m16",
+      "modelFamily": "alienware-m16",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "alienware-m18",
+      "brand": "Dell",
+      "series": "alienware-m18",
+      "model": "alienware-m18",
+      "slug": "alienware-m18",
+      "pageType": "Model",
+      "marketingName": "alienware-m18",
+      "modelFamily": "alienware-m18",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "asus-rog-ally-x",
+      "brand": "ASUS",
+      "series": "asus-rog",
+      "model": "asus-rog-ally-x",
+      "slug": "asus-rog-ally-x",
+      "pageType": "Model",
+      "marketingName": "asus-rog-ally-x",
+      "modelFamily": "asus-rog-ally-x",
+      "modelCode": "RC72LA",
+      "machineType": null,
+      "productNumber": null,
+      "generation": "2024",
+      "category": "handheld",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_HIGH_CONFIDENCE",
+      "officialUrl": "https://rog.asus.com/us/gaming-handhelds/rog-ally/rog-ally-x-2024/spec/",
+      "cpuOptions": [
+        "AMD Ryzen Z1 Extreme"
+      ],
+      "gpuOptions": [
+        "AMD Radeon Graphics (RDNA 3, 12 CU)"
+      ],
+      "memory": {
+        "ramType": "LPDDR5X",
+        "ramSpeed": "7500",
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "24GB",
+        "ramConfigurations": [
+          "24GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": "PCIe 4.0 NVMe M.2 2280",
+        "storageSlots": 1,
+        "storageOptions": [
+          "1TB",
+          "2TB"
+        ]
+      },
+      "display": {
+        "displaySizes": [
+          "7-inch"
+        ],
+        "resolutions": [
+          "1920x1080"
+        ],
+        "panelTypes": [
+          "IPS-level touch"
+        ],
+        "refreshRates": [
+          "120Hz"
+        ]
+      },
+      "wifi": "Wi-Fi 6E",
+      "bluetooth": "Bluetooth 5.4",
+      "ports": [
+        "USB-C with DisplayPort/PD",
+        "USB4 / Thunderbolt 4 capable Type-C",
+        "3.5mm combo",
+        "UHS-II microSD"
+      ],
+      "weightRange": "678 g",
+      "dimensions": "28.0 x 11.1 x 2.47-3.69 cm",
+      "batteryCapacity": "80Wh",
+      "chargerWattageOptions": [
+        "65W USB-C"
+      ],
+      "operatingSystemOptions": [
+        "Windows 11 Home"
+      ],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://rog.asus.com/us/gaming-handhelds/rog-ally/rog-ally-x-2024/spec/",
+          "sourceType": "official_product",
+          "title": "ROG Ally X (2024) RC72LA Spec",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Official ROG Ally X (2024) RC72LA spec page. Narrow config surface (storage variants) — high confidence for resale enrichment."
+    },
+    {
+      "id": "asus-rog-flow",
+      "brand": "ASUS",
+      "series": "asus-rog",
+      "model": "asus-rog-flow",
+      "slug": "asus-rog-flow",
+      "pageType": "Model",
+      "marketingName": "asus-rog-flow",
+      "modelFamily": "asus-rog-flow",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "asus-rog-strix",
+      "brand": "ASUS",
+      "series": "asus-rog",
+      "model": "asus-rog-strix",
+      "slug": "asus-rog-strix",
+      "pageType": "Model",
+      "marketingName": "asus-rog-strix",
+      "modelFamily": "asus-rog-strix",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "asus-tuf-a15-f15",
+      "brand": "ASUS",
+      "series": "asus-tuf",
+      "model": "asus-tuf-a15-f15",
+      "slug": "asus-tuf-a15-f15",
+      "pageType": "Model",
+      "marketingName": "asus-tuf-a15-f15",
+      "modelFamily": "asus-tuf-a15-f15",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "asus-zephyrus-g14",
+      "brand": "ASUS",
+      "series": "asus-zephyrus",
+      "model": "asus-zephyrus-g14",
+      "slug": "asus-zephyrus-g14",
+      "pageType": "Model",
+      "marketingName": "asus-zephyrus-g14",
+      "modelFamily": "asus-zephyrus-g14",
+      "modelCode": "GA403 (2024 reference) / multi-year GA402 family also exists",
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "gaming",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-g14-2024/spec/",
+      "cpuOptions": [
+        "AMD Ryzen 9 8945HS",
+        "AMD Ryzen 9 7940HS",
+        "AMD Ryzen 7 7735HS"
+      ],
+      "gpuOptions": [
+        "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "NVIDIA GeForce RTX 4070 Laptop GPU"
+      ],
+      "memory": {
+        "ramType": "LPDDR5X / DDR5 (varies by year)",
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": [
+          "16GB",
+          "32GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": "PCIe 4.0 NVMe",
+        "storageSlots": null,
+        "storageOptions": [
+          "1TB PCIe 4.0 NVMe (common 2024 SKU listing)"
+        ]
+      },
+      "display": {
+        "displaySizes": [
+          "14-inch"
+        ],
+        "resolutions": [
+          "2880x1800"
+        ],
+        "panelTypes": [
+          "OLED (Nebula Display options on 2024)"
+        ],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": "73Wh (2024 GA403 listing)",
+      "chargerWattageOptions": [
+        "180W"
+      ],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-g14-2024/spec/",
+          "sourceType": "official_product",
+          "title": "ROG Zephyrus G14 (2024) GA403 Spec",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g14-2023-series/spec/",
+          "sourceType": "official_product",
+          "title": "ROG Zephyrus G14 (2023) Spec",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Official ROG pages show multiple years (2022–2024) under G14 marketing name. Do not treat as Exact SKU."
+    },
+    {
+      "id": "asus-zephyrus-g16",
+      "brand": "ASUS",
+      "series": "asus-zephyrus",
+      "model": "asus-zephyrus-g16",
+      "slug": "asus-zephyrus-g16",
+      "pageType": "Model",
+      "marketingName": "asus-zephyrus-g16",
+      "modelFamily": "asus-zephyrus-g16",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "dell-g15-g16",
+      "brand": "Dell",
+      "series": "dell-g15",
+      "model": "dell-g15-g16",
+      "slug": "dell-g15-g16",
+      "pageType": "Model",
+      "marketingName": "dell-g15-g16",
+      "modelFamily": "dell-g15-g16",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "dell-inspiron-15",
+      "brand": "Dell",
+      "series": "dell-inspiron",
+      "model": "dell-inspiron-15",
+      "slug": "dell-inspiron-15",
+      "pageType": "Model",
+      "marketingName": "dell-inspiron-15",
+      "modelFamily": "dell-inspiron-15",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "dell-xps-13-15",
+      "brand": "Dell",
+      "series": "dell-xps",
+      "model": "dell-xps-13-15",
+      "slug": "dell-xps-13-15",
+      "pageType": "Model",
+      "marketingName": "dell-xps-13-15",
+      "modelFamily": "dell-xps-13-15",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "ultrabook",
+      "configurationScope": "SERIES",
+      "eligibility": "AMBIGUOUS_MODEL",
+      "officialUrl": "https://www.dell.com/en-us/shop/dell-laptops/xps-13-laptop-2024/spd/xps-13-9350-intel-laptop",
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://www.dell.com/en-us/shop/dell-laptops/xps-13-laptop-2024/spd/xps-13-9350-intel-laptop",
+          "sourceType": "official_product",
+          "title": "Dell XPS 13 (9350) product page",
+          "verificationStatus": "PARTIAL"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Repository slug merges XPS 13 and XPS 15 across many generations/processors (Intel Core Ultra, Snapdragon X, older XPS 15 discrete GPU gens). Ambiguous — do not enrich with a single CPU/GPU claim."
+    },
+    {
+      "id": "hp-envy-x360",
+      "brand": "HP",
+      "series": "hp-envy",
+      "model": "hp-envy-x360",
+      "slug": "hp-envy-x360",
+      "pageType": "Model",
+      "marketingName": "hp-envy-x360",
+      "modelFamily": "hp-envy-x360",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "hp-omen-16",
+      "brand": "HP",
+      "series": "hp-omen",
+      "model": "hp-omen-16",
+      "slug": "hp-omen-16",
+      "pageType": "Model",
+      "marketingName": "hp-omen-16",
+      "modelFamily": "hp-omen-16",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "hp-omen-17",
+      "brand": "HP",
+      "series": "hp-omen",
+      "model": "hp-omen-17",
+      "slug": "hp-omen-17",
+      "pageType": "Model",
+      "marketingName": "hp-omen-17",
+      "modelFamily": "hp-omen-17",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "hp-omen-transcend",
+      "brand": "HP",
+      "series": "hp-omen",
+      "model": "hp-omen-transcend",
+      "slug": "hp-omen-transcend",
+      "pageType": "Model",
+      "marketingName": "hp-omen-transcend",
+      "modelFamily": "hp-omen-transcend",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "hp-spectre-x360",
+      "brand": "HP",
+      "series": "hp-spectre",
+      "model": "hp-spectre-x360",
+      "slug": "hp-spectre-x360",
+      "pageType": "Model",
+      "marketingName": "hp-spectre-x360",
+      "modelFamily": "hp-spectre-x360",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "hp-victus-15",
+      "brand": "HP",
+      "series": "hp-victus",
+      "model": "hp-victus-15",
+      "slug": "hp-victus-15",
+      "pageType": "Model",
+      "marketingName": "hp-victus-15",
+      "modelFamily": "hp-victus-15",
+      "modelCode": "15-fb3xxx / 15-fa2xxx / 15-fa3xxx families",
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "gaming",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://kaas.hpcloud.hp.com/pdf-public/pdf_11551834_en-US-1.pdf",
+      "cpuOptions": [
+        "AMD Ryzen 5 8645HS",
+        "AMD Ryzen 7 8845HS",
+        "AMD Ryzen 9 8945HS",
+        "Intel Core i5-13420H class options (fa series MSG)",
+        "Intel Core i7-13620H class options (fa series MSG)"
+      ],
+      "gpuOptions": [
+        "NVIDIA GeForce RTX 2050",
+        "NVIDIA GeForce RTX 3050",
+        "NVIDIA GeForce RTX 4050",
+        "NVIDIA GeForce RTX 4060",
+        "NVIDIA GeForce RTX 5050",
+        "NVIDIA GeForce RTX 5060"
+      ],
+      "memory": {
+        "ramType": "DDR5",
+        "ramSpeed": "DDR5-5600 (fb3xxx MSG)",
+        "ramSlots": 2,
+        "ramSoldered": false,
+        "ramMax": "16GB (per cited MSG listing — verify newer CTO)",
+        "ramConfigurations": [
+          "8GB",
+          "16GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": "M.2 NVMe",
+        "storageSlots": null,
+        "storageOptions": [
+          "512GB",
+          "1TB"
+        ]
+      },
+      "display": {
+        "displaySizes": [
+          "15.6-inch"
+        ],
+        "resolutions": [
+          "1920x1080"
+        ],
+        "panelTypes": [
+          "FHD anti-glare LCD"
+        ],
+        "refreshRates": [
+          "144Hz"
+        ]
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://kaas.hpcloud.hp.com/pdf-public/pdf_11551834_en-US-1.pdf",
+          "sourceType": "official_pdf",
+          "title": "Victus 15-fb3xxx Maintenance and Service Guide",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://kaas.hpcloud.hp.com/pdf-public/pdf_11551870_en-US-1.pdf",
+          "sourceType": "official_pdf",
+          "title": "Victus 15-fa2xxx/fa3xxx Maintenance and Service Guide",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Verified from official HP Maintenance and Service Guides (family-level). Exact SKU still required for a single config claim."
+    },
+    {
+      "id": "hp-victus-16",
+      "brand": "HP",
+      "series": "hp-victus",
+      "model": "hp-victus-16",
+      "slug": "hp-victus-16",
+      "pageType": "Model",
+      "marketingName": "hp-victus-16",
+      "modelFamily": "hp-victus-16",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "hp-victus-17",
+      "brand": "HP",
+      "series": "hp-victus",
+      "model": "hp-victus-17",
+      "slug": "hp-victus-17",
+      "pageType": "Model",
+      "marketingName": "hp-victus-17",
+      "modelFamily": "hp-victus-17",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "lenovo-ideapad-3-5",
+      "brand": "Lenovo",
+      "series": "lenovo-ideapad",
+      "model": "lenovo-ideapad-3-5",
+      "slug": "lenovo-ideapad-3-5",
+      "pageType": "Model",
+      "marketingName": "lenovo-ideapad-3-5",
+      "modelFamily": "lenovo-ideapad-3-5",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "lenovo-legion-5",
+      "brand": "Lenovo",
+      "series": "lenovo-legion",
+      "model": "lenovo-legion-5",
+      "slug": "lenovo-legion-5",
+      "pageType": "Model",
+      "marketingName": "lenovo-legion-5",
+      "modelFamily": "lenovo-legion-5",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "gaming",
+      "configurationScope": "SERIES",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://psref.lenovo.com/",
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": "DDR5 SODIMM (recent gens)",
+        "ramSpeed": null,
+        "ramSlots": 2,
+        "ramSoldered": false,
+        "ramMax": "up to 64GB (recent PSREF gens)",
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": "PCIe NVMe",
+        "storageSlots": 2,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [
+        "Legion 5 15",
+        "Legion 5 16",
+        "Legion 5i"
+      ],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://psref.lenovo.com/",
+          "sourceType": "official_spec_db",
+          "title": "Lenovo PSREF",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://psref.lenovo.com/syspool/Sys/PDF/Legion/Legion_5_15AKP10/Legion_5_15AKP10_Spec.pdf",
+          "sourceType": "official_pdf",
+          "title": "Legion 5 15AKP10 Spec PDF",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Legion 5 is a multi-generation family on Lenovo PSREF (many machine types). Site slug is family-level. Exact SKU research required per unit (e.g. 15ACH6 / 15IRX9 / 15AKP10)."
+    },
+    {
+      "id": "lenovo-legion-pro-7",
+      "brand": "Lenovo",
+      "series": "lenovo-legion",
+      "model": "lenovo-legion-pro-7",
+      "slug": "lenovo-legion-pro-7",
+      "pageType": "Model",
+      "marketingName": "lenovo-legion-pro-7",
+      "modelFamily": "lenovo-legion-pro-7",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "lenovo-legion-pro",
+      "brand": "Lenovo",
+      "series": "lenovo-legion",
+      "model": "lenovo-legion-pro",
+      "slug": "lenovo-legion-pro",
+      "pageType": "Model",
+      "marketingName": "lenovo-legion-pro",
+      "modelFamily": "lenovo-legion-pro",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "lenovo-legion-slim",
+      "brand": "Lenovo",
+      "series": "lenovo-legion",
+      "model": "lenovo-legion-slim",
+      "slug": "lenovo-legion-slim",
+      "pageType": "Model",
+      "marketingName": "lenovo-legion-slim",
+      "modelFamily": "lenovo-legion-slim",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "lenovo-loq-15-16",
+      "brand": "Lenovo",
+      "series": "lenovo-loq",
+      "model": "lenovo-loq-15-16",
+      "slug": "lenovo-loq-15-16",
+      "pageType": "Model",
+      "marketingName": "lenovo-loq-15-16",
+      "modelFamily": "lenovo-loq-15-16",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "macbook-air-13",
+      "brand": "Apple",
+      "series": "MacBook Air",
+      "model": "macbook-air-13",
+      "slug": "macbook-air-13",
+      "pageType": "Model",
+      "marketingName": "macbook-air-13",
+      "modelFamily": "MacBook Air 13",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "ultrabook",
+      "configurationScope": "SERIES",
+      "eligibility": "AMBIGUOUS_MODEL",
+      "officialUrl": "https://support.apple.com/en-us/102869",
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/102869",
+          "sourceType": "official_support",
+          "title": "Identify your MacBook Air model",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "URL is size-based marketing page spanning M1–M5 generations. Not an Exact SKU. Require chip generation from About This Mac before enrichment."
+    },
+    {
+      "id": "macbook-air-15",
+      "brand": "Apple",
+      "series": "MacBook Air",
+      "model": "macbook-air-15",
+      "slug": "macbook-air-15",
+      "pageType": "Model",
+      "marketingName": "macbook-air-15",
+      "modelFamily": "MacBook Air 15",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "ultrabook",
+      "configurationScope": "SERIES",
+      "eligibility": "AMBIGUOUS_MODEL",
+      "officialUrl": "https://support.apple.com/en-us/102869",
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/102869",
+          "sourceType": "official_support",
+          "title": "Identify your MacBook Air model",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Size page spanning M2/M3/M4/M5 15-inch Air. Ambiguous without chip generation."
+    },
+    {
+      "id": "macbook-air-m1",
+      "brand": "Apple",
+      "series": "MacBook Air",
+      "model": "macbook-air-m1",
+      "slug": "macbook-air-m1",
+      "pageType": "Model",
+      "marketingName": "macbook-air-m1",
+      "modelFamily": "MacBook Air M1",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": "M1",
+      "category": "ultrabook",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://support.apple.com/en-us/102869",
+      "cpuOptions": [
+        "Apple M1 8-core CPU"
+      ],
+      "gpuOptions": [
+        "Apple M1 7-core GPU",
+        "Apple M1 8-core GPU"
+      ],
+      "memory": {
+        "ramType": "Unified memory",
+        "ramSpeed": null,
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "16GB",
+        "ramConfigurations": [
+          "8GB",
+          "16GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": "Apple SSD",
+        "storageSlots": null,
+        "storageOptions": [
+          "256GB",
+          "512GB",
+          "1TB",
+          "2TB"
+        ]
+      },
+      "display": {
+        "displaySizes": [
+          "13.3-inch"
+        ],
+        "resolutions": [],
+        "panelTypes": [
+          "Retina"
+        ],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/102869",
+          "sourceType": "official_support",
+          "title": "Identify your MacBook Air model",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Identity confirmed via Apple identify-your-Mac; detailed numeric fields kept conservative."
+    },
+    {
+      "id": "macbook-air-m2",
+      "brand": "Apple",
+      "series": "MacBook Air",
+      "model": "macbook-air-m2",
+      "slug": "macbook-air-m2",
+      "pageType": "Model",
+      "marketingName": "macbook-air-m2",
+      "modelFamily": "MacBook Air M2",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": "M2",
+      "category": "ultrabook",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://support.apple.com/en-us/111867",
+      "cpuOptions": [
+        "Apple M2 8-core CPU"
+      ],
+      "gpuOptions": [
+        "Apple M2 8-core GPU",
+        "Apple M2 10-core GPU"
+      ],
+      "memory": {
+        "ramType": "Unified memory",
+        "ramSpeed": null,
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "24GB",
+        "ramConfigurations": [
+          "8GB",
+          "16GB",
+          "24GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": "Apple SSD",
+        "storageSlots": null,
+        "storageOptions": [
+          "256GB",
+          "512GB",
+          "1TB",
+          "2TB"
+        ]
+      },
+      "display": {
+        "displaySizes": [
+          "13.6-inch",
+          "15.3-inch"
+        ],
+        "resolutions": [
+          "2560x1664",
+          "2880x1864"
+        ],
+        "panelTypes": [
+          "Liquid Retina IPS"
+        ],
+        "refreshRates": []
+      },
+      "wifi": "Wi-Fi 6",
+      "bluetooth": null,
+      "ports": [
+        "MagSafe 3",
+        "2x Thunderbolt / USB 4",
+        "3.5mm headphone"
+      ],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": "52.6Wh (13-inch M2)",
+      "chargerWattageOptions": [
+        "30W USB-C",
+        "35W Dual USB-C",
+        "70W USB-C (fast charge capable)"
+      ],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/111867",
+          "sourceType": "official_support",
+          "title": "MacBook Air (M2, 2022) - Tech Specs",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://support.apple.com/en-us/111346",
+          "sourceType": "official_support",
+          "title": "MacBook Air (15-inch, M2, 2023) - Tech Specs",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "M2 Air exists as 13-inch (2022) and 15-inch (2023). Confirm size."
+    },
+    {
+      "id": "macbook-air-m3",
+      "brand": "Apple",
+      "series": "MacBook Air",
+      "model": "macbook-air-m3",
+      "slug": "macbook-air-m3",
+      "pageType": "Model",
+      "marketingName": "macbook-air-m3",
+      "modelFamily": "MacBook Air M3",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": "M3",
+      "category": "ultrabook",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://support.apple.com/en-us/118551",
+      "cpuOptions": [
+        "Apple M3 8-core CPU"
+      ],
+      "gpuOptions": [
+        "Apple M3 8-core GPU",
+        "Apple M3 10-core GPU"
+      ],
+      "memory": {
+        "ramType": "Unified memory",
+        "ramSpeed": null,
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "24GB",
+        "ramConfigurations": [
+          "8GB",
+          "16GB",
+          "24GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": "Apple SSD",
+        "storageSlots": null,
+        "storageOptions": [
+          "256GB",
+          "512GB",
+          "1TB",
+          "2TB"
+        ]
+      },
+      "display": {
+        "displaySizes": [
+          "13.6-inch",
+          "15.3-inch"
+        ],
+        "resolutions": [
+          "2560x1664",
+          "2880x1864"
+        ],
+        "panelTypes": [
+          "Liquid Retina IPS"
+        ],
+        "refreshRates": []
+      },
+      "wifi": "Wi-Fi 6E",
+      "bluetooth": "Bluetooth 5.3",
+      "ports": [
+        "MagSafe 3",
+        "2x Thunderbolt / USB 4",
+        "3.5mm headphone"
+      ],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": "52.6Wh (13-inch) / see 15-inch support page for 15-inch battery",
+      "chargerWattageOptions": [
+        "30W USB-C",
+        "35W Dual USB-C",
+        "70W USB-C (fast charge capable)"
+      ],
+      "operatingSystemOptions": [
+        "macOS"
+      ],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/118551",
+          "sourceType": "official_support",
+          "title": "MacBook Air (13-inch, M3, 2024) - Tech Specs",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://support.apple.com/en-us/118552",
+          "sourceType": "official_support",
+          "title": "MacBook Air (15-inch, M3, 2024) - Tech Specs (companion size page)",
+          "verificationStatus": "PARTIAL"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Site slug is chip-family (M3) spanning 13/15 sizes. Use MODEL_FAMILY scope; confirm size from machine."
+    },
+    {
+      "id": "macbook-air-m4",
+      "brand": "Apple",
+      "series": "MacBook Air",
+      "model": "macbook-air-m4",
+      "slug": "macbook-air-m4",
+      "pageType": "Model",
+      "marketingName": "macbook-air-m4",
+      "modelFamily": "MacBook Air M4",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": "M4",
+      "category": "ultrabook",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://support.apple.com/en-gb/122210",
+      "cpuOptions": [
+        "Apple M4 10-core CPU"
+      ],
+      "gpuOptions": [
+        "Apple M4 8-core GPU",
+        "Apple M4 10-core GPU"
+      ],
+      "memory": {
+        "ramType": "Unified memory",
+        "ramSpeed": null,
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "32GB",
+        "ramConfigurations": [
+          "16GB",
+          "24GB",
+          "32GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": "Apple SSD",
+        "storageSlots": null,
+        "storageOptions": [
+          "256GB",
+          "512GB",
+          "1TB",
+          "2TB"
+        ]
+      },
+      "display": {
+        "displaySizes": [
+          "13.6-inch",
+          "15.3-inch"
+        ],
+        "resolutions": [
+          "2880x1864"
+        ],
+        "panelTypes": [
+          "Liquid Retina IPS"
+        ],
+        "refreshRates": []
+      },
+      "wifi": "Wi-Fi 6E",
+      "bluetooth": "Bluetooth 5.3",
+      "ports": [
+        "MagSafe 3",
+        "Thunderbolt / USB-C",
+        "3.5mm headphone"
+      ],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": "66.5Wh (15-inch reference)",
+      "chargerWattageOptions": [
+        "35W Dual USB-C",
+        "70W USB-C (fast charge capable)"
+      ],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-gb/122210",
+          "sourceType": "official_support",
+          "title": "MacBook Air (15-inch, M4, 2025) - Tech Specs",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://support.apple.com/en-us/102869",
+          "sourceType": "official_support",
+          "title": "Identify your MacBook Air model",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Official 15-inch M4 tech specs page used; 13-inch sibling exists per Apple identify-your-Mac page."
+    },
+    {
+      "id": "macbook-air-m5",
+      "brand": "Apple",
+      "series": "MacBook Air",
+      "model": "macbook-air-m5",
+      "slug": "macbook-air-m5",
+      "pageType": "Model",
+      "marketingName": "macbook-air-m5",
+      "modelFamily": "MacBook Air M5",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": "M5",
+      "category": "ultrabook",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://support.apple.com/en-us/126321",
+      "cpuOptions": [
+        "Apple M5 10-core CPU"
+      ],
+      "gpuOptions": [
+        "Apple M5 8-core GPU",
+        "Apple M5 10-core GPU"
+      ],
+      "memory": {
+        "ramType": "Unified memory",
+        "ramSpeed": null,
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "32GB",
+        "ramConfigurations": [
+          "16GB",
+          "24GB",
+          "32GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": "Apple SSD",
+        "storageSlots": null,
+        "storageOptions": [
+          "512GB",
+          "1TB",
+          "2TB",
+          "4TB"
+        ]
+      },
+      "display": {
+        "displaySizes": [
+          "13.6-inch",
+          "15.3-inch"
+        ],
+        "resolutions": [
+          "2880x1864"
+        ],
+        "panelTypes": [
+          "Liquid Retina IPS"
+        ],
+        "refreshRates": []
+      },
+      "wifi": "Wi-Fi 7",
+      "bluetooth": "Bluetooth 6",
+      "ports": [
+        "MagSafe 3",
+        "2x Thunderbolt 4",
+        "3.5mm headphone"
+      ],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": "66.5Wh (15-inch)",
+      "chargerWattageOptions": [
+        "40W Dynamic Power Adapter (60W Max)",
+        "35W Dual USB-C",
+        "70W USB-C"
+      ],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/126321",
+          "sourceType": "official_support",
+          "title": "MacBook Air (15-inch, M5) - Tech Specs",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://www.apple.com/newsroom/2026/03/apple-introduces-the-new-macbook-air-with-m5/",
+          "sourceType": "official_product",
+          "title": "Apple introduces the new MacBook Air with M5",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://www.apple.com/macbook-air/specs/",
+          "sourceType": "official_product",
+          "title": "MacBook Air Technical Specifications",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Official Apple Support + Newsroom 2026-03. Confirm 13 vs 15 size on device."
+    },
+    {
+      "id": "macbook-pro-14",
+      "brand": "Apple",
+      "series": "MacBook Pro",
+      "model": "macbook-pro-14",
+      "slug": "macbook-pro-14",
+      "pageType": "Model",
+      "marketingName": "macbook-pro-14",
+      "modelFamily": "MacBook Pro 14",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "creator",
+      "configurationScope": "SERIES",
+      "eligibility": "AMBIGUOUS_MODEL",
+      "officialUrl": "https://support.apple.com/en-us/108052",
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/108052",
+          "sourceType": "official_support",
+          "title": "Identify your MacBook Pro model",
+          "verificationStatus": "PARTIAL"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "14-inch Pro spans multiple Apple silicon generations (M1 Pro/Max through newer). Ambiguous without chip/SKU."
+    },
+    {
+      "id": "macbook-pro-16",
+      "brand": "Apple",
+      "series": "MacBook Pro",
+      "model": "macbook-pro-16",
+      "slug": "macbook-pro-16",
+      "pageType": "Model",
+      "marketingName": "macbook-pro-16",
+      "modelFamily": "MacBook Pro 16",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "creator",
+      "configurationScope": "SERIES",
+      "eligibility": "AMBIGUOUS_MODEL",
+      "officialUrl": "https://support.apple.com/en-us/108052",
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/108052",
+          "sourceType": "official_support",
+          "title": "Identify your MacBook Pro model",
+          "verificationStatus": "PARTIAL"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "16-inch Pro spans multiple generations. Ambiguous without chip/SKU."
+    },
+    {
+      "id": "macbook-pro-m1",
+      "brand": "Apple",
+      "series": "MacBook Pro",
+      "model": "macbook-pro-m1",
+      "slug": "macbook-pro-m1",
+      "pageType": "Model",
+      "marketingName": "macbook-pro-m1",
+      "modelFamily": "MacBook Pro M1",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": "M1",
+      "category": "creator",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://support.apple.com/en-us/108052",
+      "cpuOptions": [
+        "Apple M1 Pro",
+        "Apple M1 Max"
+      ],
+      "gpuOptions": [
+        "Apple M1 Pro GPU options",
+        "Apple M1 Max GPU options"
+      ],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/108052",
+          "sourceType": "official_support",
+          "title": "Identify your MacBook Pro model",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Identity via Apple identify-your-Mac. 13-inch M1 Pro and 14/16 M1 Pro/Max exist — confirm exact machine before numeric claims."
+    },
+    {
+      "id": "macbook-pro-m2",
+      "brand": "Apple",
+      "series": "MacBook Pro",
+      "model": "macbook-pro-m2",
+      "slug": "macbook-pro-m2",
+      "pageType": "Model",
+      "marketingName": "macbook-pro-m2",
+      "modelFamily": "MacBook Pro M2",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": "M2",
+      "category": "creator",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://support.apple.com/en-us/108052",
+      "cpuOptions": [
+        "Apple M2",
+        "Apple M2 Pro",
+        "Apple M2 Max"
+      ],
+      "gpuOptions": [
+        "Apple M2 GPU options",
+        "Apple M2 Pro GPU options",
+        "Apple M2 Max GPU options"
+      ],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/108052",
+          "sourceType": "official_support",
+          "title": "Identify your MacBook Pro model",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Chip family spans multiple sizes. Confirm chip/size before enrichment of exact numeric specs."
+    },
+    {
+      "id": "macbook-pro-m3",
+      "brand": "Apple",
+      "series": "MacBook Pro",
+      "model": "macbook-pro-m3",
+      "slug": "macbook-pro-m3",
+      "pageType": "Model",
+      "marketingName": "macbook-pro-m3",
+      "modelFamily": "MacBook Pro M3",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": "M3",
+      "category": "creator",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://support.apple.com/en-us/117735",
+      "cpuOptions": [
+        "Apple M3 8-core CPU",
+        "Apple M3 Pro 11-core CPU",
+        "Apple M3 Pro 12-core CPU",
+        "Apple M3 Max 14-core CPU",
+        "Apple M3 Max 16-core CPU"
+      ],
+      "gpuOptions": [
+        "Apple M3 10-core GPU",
+        "Apple M3 Pro 14-core GPU",
+        "Apple M3 Pro 18-core GPU",
+        "Apple M3 Max 30-core GPU",
+        "Apple M3 Max 40-core GPU"
+      ],
+      "memory": {
+        "ramType": "Unified memory",
+        "ramSpeed": null,
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "128GB (M3 Max CTO)",
+        "ramConfigurations": [
+          "8GB",
+          "16GB",
+          "18GB",
+          "24GB",
+          "36GB",
+          "48GB",
+          "64GB",
+          "96GB",
+          "128GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": "Apple SSD",
+        "storageSlots": null,
+        "storageOptions": [
+          "512GB",
+          "1TB",
+          "2TB",
+          "4TB",
+          "8TB"
+        ]
+      },
+      "display": {
+        "displaySizes": [
+          "14.2-inch",
+          "16.2-inch"
+        ],
+        "resolutions": [
+          "3024x1964",
+          "3456x2234"
+        ],
+        "panelTypes": [
+          "Liquid Retina XDR"
+        ],
+        "refreshRates": [
+          "ProMotion up to 120Hz"
+        ]
+      },
+      "wifi": "Wi-Fi 6E",
+      "bluetooth": "Bluetooth 5.3",
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": "70Wh class (14-inch M3) / larger on 16-inch — confirm size",
+      "chargerWattageOptions": [
+        "70W USB-C",
+        "96W USB-C"
+      ],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/117735",
+          "sourceType": "official_support",
+          "title": "MacBook Pro (14-inch, M3, Nov 2023) Tech Specs",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://support.apple.com/en-us/117736",
+          "sourceType": "official_support",
+          "title": "MacBook Pro (14-inch, M3 Pro or M3 Max, Nov 2023) Tech Specs",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Chip-family page spanning base M3 / M3 Pro / M3 Max and 14/16 sizes. Confirm chip + size from About This Mac."
+    },
+    {
+      "id": "macbook-pro-m4",
+      "brand": "Apple",
+      "series": "MacBook Pro",
+      "model": "macbook-pro-m4",
+      "slug": "macbook-pro-m4",
+      "pageType": "Model",
+      "marketingName": "macbook-pro-m4",
+      "modelFamily": "MacBook Pro M4",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": "M4",
+      "category": "creator",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "LIMITED_DATA",
+      "officialUrl": "https://support.apple.com/en-us/108052",
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/108052",
+          "sourceType": "official_support",
+          "title": "Identify your MacBook Pro model",
+          "verificationStatus": "PARTIAL"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Official identify-your-Mac confirms M4 Pro lineage exists; detailed CTO matrix not fully ingested this pass. Defer numeric hardware until Support tech-spec pages are attached per size/chip."
+    },
+    {
+      "id": "macbook-pro-m5",
+      "brand": "Apple",
+      "series": "MacBook Pro",
+      "model": "macbook-pro-m5",
+      "slug": "macbook-pro-m5",
+      "pageType": "Model",
+      "marketingName": "macbook-pro-m5",
+      "modelFamily": "MacBook Pro M5",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": "M5",
+      "category": "creator",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "LIMITED_DATA",
+      "officialUrl": "https://support.apple.com/en-us/108052",
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://support.apple.com/en-us/108052",
+          "sourceType": "official_support",
+          "title": "Identify your MacBook Pro model",
+          "verificationStatus": "PARTIAL"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Repository has MacBook Pro M5 page; official Support identify page is the safe identity anchor. Full tech-spec matrix deferred to next research batch."
+    },
+    {
+      "id": "msi-cyborg-15",
+      "brand": "MSI",
+      "series": "msi-cyborg",
+      "model": "msi-cyborg-15",
+      "slug": "msi-cyborg-15",
+      "pageType": "Model",
+      "marketingName": "msi-cyborg-15",
+      "modelFamily": "msi-cyborg-15",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "msi-katana-15",
+      "brand": "MSI",
+      "series": "msi-katana",
+      "model": "msi-katana-15",
+      "slug": "msi-katana-15",
+      "pageType": "Model",
+      "marketingName": "msi-katana-15",
+      "modelFamily": "msi-katana-15",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "gaming",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "LIMITED_DATA",
+      "officialUrl": "https://in.msi.com/Laptop/Katana-15-B13UX/Gallery",
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [
+          "15.6-inch"
+        ],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://in.msi.com/Laptop/Katana-15-B13UX/Gallery",
+          "sourceType": "official_product",
+          "title": "MSI Katana 15 B13U",
+          "verificationStatus": "PARTIAL"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Official MSI pages confirm Katana 15 as a multi-SKU family (B13U/B14/HX/A15 AI variants). Exact CPU/GPU cannot be collapsed. Regional store SKUs exist but are SKU-specific — not applied as universal family defaults."
+    },
+    {
+      "id": "msi-raider-18",
+      "brand": "MSI",
+      "series": "msi-raider",
+      "model": "msi-raider-18",
+      "slug": "msi-raider-18",
+      "pageType": "Model",
+      "marketingName": "msi-raider-18",
+      "modelFamily": "msi-raider-18",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "msi-stealth-14",
+      "brand": "MSI",
+      "series": "msi-stealth",
+      "model": "msi-stealth-14",
+      "slug": "msi-stealth-14",
+      "pageType": "Model",
+      "marketingName": "msi-stealth-14",
+      "modelFamily": "msi-stealth-14",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "msi-stealth-16",
+      "brand": "MSI",
+      "series": "msi-stealth",
+      "model": "msi-stealth-16",
+      "slug": "msi-stealth-16",
+      "pageType": "Model",
+      "marketingName": "msi-stealth-16",
+      "modelFamily": "msi-stealth-16",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "msi-vector-16-hx",
+      "brand": "MSI",
+      "series": "msi-vector",
+      "model": "msi-vector-16-hx",
+      "slug": "msi-vector-16-hx",
+      "pageType": "Model",
+      "marketingName": "msi-vector-16-hx",
+      "modelFamily": "msi-vector-16-hx",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "samsung-galaxy-book",
+      "brand": "Samsung",
+      "series": "samsung-galaxy",
+      "model": "samsung-galaxy-book",
+      "slug": "samsung-galaxy-book",
+      "pageType": "Model",
+      "marketingName": "samsung-galaxy-book",
+      "modelFamily": "samsung-galaxy-book",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "surface-laptop-go",
+      "brand": "Microsoft",
+      "series": "surface-laptop",
+      "model": "surface-laptop-go",
+      "slug": "surface-laptop-go",
+      "pageType": "Model",
+      "marketingName": "surface-laptop-go",
+      "modelFamily": "surface-laptop-go",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "thinkpad-e14-e15",
+      "brand": "Lenovo",
+      "series": "thinkpad-e14",
+      "model": "thinkpad-e14-e15",
+      "slug": "thinkpad-e14-e15",
+      "pageType": "Model",
+      "marketingName": "thinkpad-e14-e15",
+      "modelFamily": "thinkpad-e14-e15",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": null,
+      "configurationScope": "UNKNOWN",
+      "eligibility": "UNVERIFIED",
+      "officialUrl": null,
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": null,
+        "ramSpeed": null,
+        "ramSlots": null,
+        "ramSoldered": null,
+        "ramMax": null,
+        "ramConfigurations": []
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [],
+      "retrievedDate": "2026-08-08",
+      "notes": "No official manufacturer verification completed in this pass."
+    },
+    {
+      "id": "thinkpad-x1-carbon",
+      "brand": "Lenovo",
+      "series": "thinkpad-x1",
+      "model": "thinkpad-x1-carbon",
+      "slug": "thinkpad-x1-carbon",
+      "pageType": "Model",
+      "marketingName": "thinkpad-x1-carbon",
+      "modelFamily": "thinkpad-x1-carbon",
+      "modelCode": null,
+      "machineType": null,
+      "productNumber": null,
+      "generation": null,
+      "category": "business",
+      "configurationScope": "SERIES",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_X1_Carbon_Gen_12/ThinkPad_X1_Carbon_Gen_12_Spec.pdf",
+      "cpuOptions": [],
+      "gpuOptions": [],
+      "memory": {
+        "ramType": "LPDDR5x soldered",
+        "ramSpeed": null,
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "64GB (Gen 12 PSREF/datasheet class)",
+        "ramConfigurations": [
+          "16GB",
+          "32GB",
+          "64GB"
+        ]
+      },
+      "storage": {
+        "storageInterface": null,
+        "storageSlots": null,
+        "storageOptions": []
+      },
+      "display": {
+        "displaySizes": [
+          "14-inch"
+        ],
+        "resolutions": [],
+        "panelTypes": [],
+        "refreshRates": []
+      },
+      "wifi": null,
+      "bluetooth": null,
+      "ports": [],
+      "weightRange": null,
+      "dimensions": null,
+      "batteryCapacity": null,
+      "chargerWattageOptions": [],
+      "operatingSystemOptions": [],
+      "knownModelFamilies": [
+        "X1 Carbon Gen 12 (21KC/21KD)",
+        "prior X1 Carbon generations"
+      ],
+      "resaleRelevance": {
+        "high": [
+          "cpuOptions",
+          "gpuOptions",
+          "memory",
+          "storage",
+          "display",
+          "generation",
+          "chargerWattageOptions",
+          "batteryCapacity"
+        ],
+        "medium": [
+          "ports",
+          "wifi",
+          "dimensions",
+          "weightRange"
+        ],
+        "low": []
+      },
+      "sources": [
+        {
+          "url": "https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_X1_Carbon_Gen_12/ThinkPad_X1_Carbon_Gen_12_Spec.pdf",
+          "sourceType": "official_pdf",
+          "title": "ThinkPad X1 Carbon Gen 12 Spec PDF",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://pcsupport.lenovo.com/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x1-carbon-12th-gen-type-21kc-21kd/21kc",
+          "sourceType": "official_support",
+          "title": "X1 Carbon Gen 12 support",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
+      "retrievedDate": "2026-08-08",
+      "notes": "Multi-generation ThinkPad X1 Carbon family. Gen 12 PSREF used as verified generation sample; do not flatten all gens to one CPU list."
+    }
+  ]
+}
