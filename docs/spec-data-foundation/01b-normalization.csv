@@ -1,0 +1,82 @@
+slug,page_type,brand,family,series,marketing_name,model_family,model_code,machine_type,product_number,region_code,generation,normalization_status
+acer-aspire-5,Model,Acer,acer-aspire-5,acer-aspire,acer-aspire-5,acer-aspire-5,5,,,,,OK
+acer-nitro-16,Model,Acer,acer-nitro-16,acer-nitro,acer-nitro-16,acer-nitro-16,16,,,,,OK
+acer-nitro-17,Model,Acer,acer-nitro-17,acer-nitro,acer-nitro-17,acer-nitro-17,17,,,,,OK
+acer-nitro-v,Model,Acer,acer-nitro-v,acer-nitro,acer-nitro-v,acer-nitro-v,v,,,,,OK
+acer-predator-helios,Model,Acer,acer-predator-helios,acer-predator,acer-predator-helios,acer-predator-helios,helios,,,,,OK
+acer-predator-neo,Model,Acer,acer-predator-neo,acer-predator,acer-predator-neo,acer-predator-neo,neo,,,,,OK
+acer-predator-triton,Model,Acer,acer-predator-triton,acer-predator,acer-predator-triton,acer-predator-triton,triton,,,,,OK
+acer-swift,Series,Acer,acer-swift,acer-swift,acer-swift,acer-swift,,,,,,OK
+acer-travelmate,Series,Acer,acer-travelmate,acer-travelmate,acer-travelmate,acer-travelmate,,,,,,OK
+alienware-m15-r7-r8,Model,Dell,Alienware,alienware-m15,alienware-m15-r7-r8,alienware-m15-r7-r8,r7-r8,,,,,OK
+alienware-m16,Model,Dell,Alienware,alienware-m16,alienware-m16,alienware-m16,,,,,,OK
+alienware-m18,Model,Dell,Alienware,alienware-m18,alienware-m18,alienware-m18,,,,,,OK
+alienware-x16,Series,Dell,Alienware,alienware-x16,alienware-x16,alienware-x16,,,,,,OK
+asus-expertbook,Series,ASUS,asus-expertbook,asus-expertbook,asus-expertbook,asus-expertbook,,,,,,OK
+asus-rog-ally-x,Model,ASUS,asus-rog-ally-x,asus-rog,asus-rog-ally-x,asus-rog-ally-x,ally-x,,,,,OK
+asus-rog-flow,Model,ASUS,asus-rog-flow,asus-rog,asus-rog-flow,asus-rog-flow,flow,,,,,OK
+asus-rog-strix,Model,ASUS,asus-rog-strix,asus-rog,asus-rog-strix,asus-rog-strix,strix,,,,,OK
+asus-tuf-a15-f15,Model,ASUS,asus-tuf-a15-f15,asus-tuf,asus-tuf-a15-f15,asus-tuf-a15-f15,a15-f15,,,,,OK
+asus-vivobook,Series,ASUS,asus-vivobook,asus-vivobook,asus-vivobook,asus-vivobook,,,,,,OK
+asus-zenbook,Series,ASUS,asus-zenbook,asus-zenbook,asus-zenbook,asus-zenbook,,,,,,OK
+asus-zephyrus-g14,Model,ASUS,asus-zephyrus-g14,asus-zephyrus,asus-zephyrus-g14,asus-zephyrus-g14,g14,,,,,OK
+asus-zephyrus-g16,Model,ASUS,asus-zephyrus-g16,asus-zephyrus,asus-zephyrus-g16,asus-zephyrus-g16,g16,,,,,OK
+asus-zephyrus,Series,ASUS,asus-zephyrus,asus-zephyrus,asus-zephyrus,asus-zephyrus,,,,,,OK
+dell-g15-g16,Model,Dell,dell-g15-g16,dell-g15,dell-g15-g16,dell-g15-g16,g16,,,,,OK
+dell-inspiron-15,Model,Dell,dell-inspiron-15,dell-inspiron,dell-inspiron-15,dell-inspiron-15,15,,,,,OK
+dell-latitude,Series,Dell,dell-latitude,dell-latitude,dell-latitude,dell-latitude,,,,,,OK
+dell-vostro,Series,Dell,dell-vostro,dell-vostro,dell-vostro,dell-vostro,,,,,,OK
+dell-xps-13-15,Model,Dell,dell-xps-13-15,dell-xps,dell-xps-13-15,dell-xps-13-15,13-15,,,,,OK
+gigabyte-aorus,Series,Gigabyte,gigabyte-aorus,gigabyte-aorus,gigabyte-aorus,gigabyte-aorus,,,,,,OK
+honor-magicbook,Series,Honor,honor-magicbook,honor-magicbook,honor-magicbook,honor-magicbook,,,,,,OK
+hp-elitebook,Series,HP,hp-elitebook,hp-elitebook,hp-elitebook,hp-elitebook,,,,,,OK
+hp-envy-x360,Model,HP,hp-envy-x360,hp-envy,hp-envy-x360,hp-envy-x360,x360,,,,,OK
+hp-omen-16,Model,HP,hp-omen-16,hp-omen,hp-omen-16,hp-omen-16,16,,,,,OK
+hp-omen-17,Model,HP,hp-omen-17,hp-omen,hp-omen-17,hp-omen-17,17,,,,,OK
+hp-omen-transcend,Model,HP,hp-omen-transcend,hp-omen,hp-omen-transcend,hp-omen-transcend,transcend,,,,,OK
+hp-pavilion,Series,HP,hp-pavilion,hp-pavilion,hp-pavilion,hp-pavilion,,,,,,OK
+hp-probook,Series,HP,hp-probook,hp-probook,hp-probook,hp-probook,,,,,,OK
+hp-spectre-x360,Model,HP,hp-spectre-x360,hp-spectre,hp-spectre-x360,hp-spectre-x360,x360,,,,,OK
+hp-victus-15,Model,HP,hp-victus-15,hp-victus,hp-victus-15,hp-victus-15,15,,,,,OK
+hp-victus-16,Model,HP,hp-victus-16,hp-victus,hp-victus-16,hp-victus-16,16,,,,,OK
+hp-victus-17,Model,HP,hp-victus-17,hp-victus,hp-victus-17,hp-victus-17,17,,,,,OK
+huawei-matebook,Series,Huawei,huawei-matebook,huawei-matebook,huawei-matebook,huawei-matebook,,,,,,OK
+lenovo-ideapad-3-5,Model,Lenovo,lenovo-ideapad-3-5,lenovo-ideapad,lenovo-ideapad-3-5,lenovo-ideapad-3-5,3-5,,,,,OK
+lenovo-legion-5,Model,Lenovo,lenovo-legion-5,lenovo-legion,lenovo-legion-5,lenovo-legion-5,5,,,,,OK
+lenovo-legion-pro-7,Model,Lenovo,lenovo-legion-pro-7,lenovo-legion,lenovo-legion-pro-7,lenovo-legion-pro-7,pro-7,,,,,OK
+lenovo-legion-pro,Model,Lenovo,lenovo-legion-pro,lenovo-legion,lenovo-legion-pro,lenovo-legion-pro,pro,,,,,OK
+lenovo-legion-slim,Model,Lenovo,lenovo-legion-slim,lenovo-legion,lenovo-legion-slim,lenovo-legion-slim,slim,,,,,OK
+lenovo-loq-15-16,Model,Lenovo,lenovo-loq-15-16,lenovo-loq,lenovo-loq-15-16,lenovo-loq-15-16,15-16,,,,,OK
+lenovo-thinkbook,Series,Lenovo,lenovo-thinkbook,lenovo-thinkbook,lenovo-thinkbook,lenovo-thinkbook,,,,,,OK
+lenovo-yoga,Series,Lenovo,lenovo-yoga,lenovo-yoga,lenovo-yoga,lenovo-yoga,,,,,,OK
+lg-gram,Series,LG,lg-gram,lg-gram,lg-gram,lg-gram,,,,,,OK
+macbook-air-13,Model,Apple,MacBook Air,MacBook Air,macbook-air-13,MacBook Air 13,,,,,,OK
+macbook-air-15,Model,Apple,MacBook Air,MacBook Air,macbook-air-15,MacBook Air 15,,,,,,OK
+macbook-air-m1,Model,Apple,MacBook Air,MacBook Air,macbook-air-m1,MacBook Air M1,,,,,M1,OK
+macbook-air-m2,Model,Apple,MacBook Air,MacBook Air,macbook-air-m2,MacBook Air M2,,,,,M2,OK
+macbook-air-m3,Model,Apple,MacBook Air,MacBook Air,macbook-air-m3,MacBook Air M3,,,,,M3,OK
+macbook-air-m4,Model,Apple,MacBook Air,MacBook Air,macbook-air-m4,MacBook Air M4,,,,,M4,OK
+macbook-air-m5,Model,Apple,MacBook Air,MacBook Air,macbook-air-m5,MacBook Air M5,,,,,M5,OK
+macbook-pro-14,Model,Apple,MacBook Pro,MacBook Pro,macbook-pro-14,MacBook Pro 14,,,,,,OK
+macbook-pro-16,Model,Apple,MacBook Pro,MacBook Pro,macbook-pro-16,MacBook Pro 16,,,,,,OK
+macbook-pro-m1,Model,Apple,MacBook Pro,MacBook Pro,macbook-pro-m1,MacBook Pro M1,,,,,M1,OK
+macbook-pro-m2,Model,Apple,MacBook Pro,MacBook Pro,macbook-pro-m2,MacBook Pro M2,,,,,M2,OK
+macbook-pro-m3,Model,Apple,MacBook Pro,MacBook Pro,macbook-pro-m3,MacBook Pro M3,,,,,M3,OK
+macbook-pro-m4,Model,Apple,MacBook Pro,MacBook Pro,macbook-pro-m4,MacBook Pro M4,,,,,M4,OK
+macbook-pro-m5,Model,Apple,MacBook Pro,MacBook Pro,macbook-pro-m5,MacBook Pro M5,,,,,M5,OK
+msi-cyborg-15,Model,MSI,msi-cyborg-15,msi-cyborg,msi-cyborg-15,msi-cyborg-15,15,,,,,OK
+msi-katana-15,Model,MSI,msi-katana-15,msi-katana,msi-katana-15,msi-katana-15,15,,,,,OK
+msi-modern,Series,MSI,msi-modern,msi-modern,msi-modern,msi-modern,,,,,,OK
+msi-raider-18,Model,MSI,msi-raider-18,msi-raider,msi-raider-18,msi-raider-18,18,,,,,OK
+msi-stealth-14,Model,MSI,msi-stealth-14,msi-stealth,msi-stealth-14,msi-stealth-14,14,,,,,OK
+msi-stealth-16,Model,MSI,msi-stealth-16,msi-stealth,msi-stealth-16,msi-stealth-16,16,,,,,OK
+msi-vector-16-hx,Model,MSI,msi-vector-16-hx,msi-vector,msi-vector-16-hx,msi-vector-16-hx,16-hx,,,,,OK
+razer-blade,Series,Razer,razer-blade,razer-blade,razer-blade,razer-blade,,,,,,OK
+samsung-galaxy-book,Model,Samsung,samsung-galaxy-book,samsung-galaxy,samsung-galaxy-book,samsung-galaxy-book,book,,,,,OK
+surface-book,Series,Microsoft,Surface,surface-book,surface-book,surface-book,,,,,,OK
+surface-laptop-go,Model,Microsoft,Surface,surface-laptop,surface-laptop-go,surface-laptop-go,,,,,,OK
+surface-laptop,Series,Microsoft,Surface,surface-laptop,surface-laptop,surface-laptop,,,,,,OK
+surface-pro,Series,Microsoft,Surface,surface-pro,surface-pro,surface-pro,,,,,,OK
+thinkpad-e14-e15,Model,Lenovo,ThinkPad,thinkpad-e14,thinkpad-e14-e15,thinkpad-e14-e15,e15,,,,,OK
+thinkpad-t14,Series,Lenovo,ThinkPad,thinkpad-t14,thinkpad-t14,thinkpad-t14,,,,,,OK
+thinkpad-x1-carbon,Model,Lenovo,ThinkPad,thinkpad-x1,thinkpad-x1-carbon,thinkpad-x1-carbon,carbon,,,,,OK
