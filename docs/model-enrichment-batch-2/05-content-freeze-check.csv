@@ -1,0 +1,10 @@
+path,changed,result
+src/pages/index.astro,NO,PASS
+src/pages/รับซื้อโน๊ตบุ๊ค.astro,NO,PASS
+src/pages/รับซื้อโน๊ตบุ๊คมือสอง.astro,NO,PASS
+src/pages/เช็คราคาโน๊ตบุ๊ค.astro,NO,PASS
+src/pages/ตีราคาโน๊ตบุ๊ค.astro,NO,PASS
+src/pages/ขายโน๊ตบุ๊ค.astro,NO,PASS
+src/content/blog,NO,PASS
+src/content/conditions,NO,PASS
+src/content/locations,NO,PASS

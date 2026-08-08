@@ -203,16 +203,22 @@
       "pageType": "Model",
       "marketingName": "acer-nitro-17",
       "modelFamily": "acer-nitro-17",
-      "modelCode": null,
+      "modelCode": "AN17-51 / AN17-42 families",
       "machineType": null,
       "productNumber": null,
       "generation": null,
-      "category": null,
-      "configurationScope": "UNKNOWN",
-      "eligibility": "UNVERIFIED",
-      "officialUrl": null,
-      "cpuOptions": [],
-      "gpuOptions": [],
+      "category": "gaming",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://www.acer.com/us-en/laptops/nitro/nitro-17-intel/pdp/NH.QK6AA.001",
+      "cpuOptions": [
+        "Intel Core i7-14700HX class (AN17-51 family marketing/PDP)",
+        "AMD Ryzen 5 (AN17-42 AMD PDP sample)"
+      ],
+      "gpuOptions": [
+        "NVIDIA GeForce RTX 4050 Laptop GPU",
+        "NVIDIA GeForce RTX 4060 Laptop GPU"
+      ],
       "memory": {
         "ramType": null,
         "ramSpeed": null,
@@ -227,8 +233,12 @@
         "storageOptions": []
       },
       "display": {
-        "displaySizes": [],
-        "resolutions": [],
+        "displaySizes": [
+          "17.3-inch"
+        ],
+        "resolutions": [
+          "2560x1440"
+        ],
         "panelTypes": [],
         "refreshRates": []
       },
@@ -260,9 +270,28 @@
         ],
         "low": []
       },
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.acer.com/us-en/laptops/nitro/nitro-17-intel/pdp/NH.QK6AA.001",
+          "sourceType": "official_product",
+          "title": "Nitro 17 AN17-51-70XP",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://www.acer.com/us-en/laptops/nitro/nitro-17-amd/pdp/NH.QPBAA.001",
+          "sourceType": "official_product",
+          "title": "Nitro 17 AN17-42-R61S",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://www.acer.com/gb-en/laptops/nitro/nitro-17-intel/pdp/NH.QK6EK.001",
+          "sourceType": "official_product",
+          "title": "Nitro 17 AN17-51-781V",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
       "retrievedDate": "2026-08-08",
-      "notes": "No official manufacturer verification completed in this pass."
+      "notes": "Verified from Acer.com Nitro 17 Intel AN17-51 and AMD AN17-42 PDPs. Family has multiple SKUs; do not collapse to one Exact CPU/GPU. RTX 4070+ not asserted from sampled official PDPs."
     },
     {
       "id": "acer-nitro-v",
@@ -273,44 +302,76 @@
       "pageType": "Model",
       "marketingName": "acer-nitro-v",
       "modelFamily": "acer-nitro-v",
-      "modelCode": null,
+      "modelCode": "ANV15 / ANV16 families",
       "machineType": null,
       "productNumber": null,
       "generation": null,
-      "category": null,
-      "configurationScope": "UNKNOWN",
-      "eligibility": "UNVERIFIED",
-      "officialUrl": null,
-      "cpuOptions": [],
-      "gpuOptions": [],
+      "category": "gaming",
+      "configurationScope": "SERIES",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://www.acer.com/us-en/laptops/nitro/nitro-v-15/pdp/NH.QN8AA.004",
+      "cpuOptions": [
+        "Intel Core i5-13420H",
+        "Intel Core i7-13620H",
+        "Intel Core 7 240H (ANV15-52 store/PDP class)",
+        "AMD Ryzen 5 8645HS (ANV16)",
+        "AMD Ryzen 7 8845HS (ANV16)"
+      ],
+      "gpuOptions": [
+        "NVIDIA GeForce RTX 3050",
+        "NVIDIA GeForce RTX 4050",
+        "NVIDIA GeForce RTX 5060"
+      ],
       "memory": {
-        "ramType": null,
+        "ramType": "DDR5 / DDR4 (varies by ANV15 SKU listing)",
         "ramSpeed": null,
         "ramSlots": null,
         "ramSoldered": null,
-        "ramMax": null,
-        "ramConfigurations": []
+        "ramMax": "32GB (some ANV15 listings)",
+        "ramConfigurations": [
+          "16GB",
+          "32GB"
+        ]
       },
       "storage": {
-        "storageInterface": null,
+        "storageInterface": "PCIe NVMe",
         "storageSlots": null,
-        "storageOptions": []
+        "storageOptions": [
+          "512GB",
+          "1TB"
+        ]
       },
       "display": {
-        "displaySizes": [],
-        "resolutions": [],
-        "panelTypes": [],
-        "refreshRates": []
+        "displaySizes": [
+          "15.6-inch",
+          "16-inch"
+        ],
+        "resolutions": [
+          "1920x1080"
+        ],
+        "panelTypes": [
+          "IPS"
+        ],
+        "refreshRates": [
+          "144Hz",
+          "165Hz",
+          "180Hz"
+        ]
       },
       "wifi": null,
       "bluetooth": null,
       "ports": [],
       "weightRange": null,
       "dimensions": null,
-      "batteryCapacity": null,
-      "chargerWattageOptions": [],
+      "batteryCapacity": "57Wh / 76Wh (ANV15 PDP samples)",
+      "chargerWattageOptions": [
+        "135W"
+      ],
       "operatingSystemOptions": [],
-      "knownModelFamilies": [],
+      "knownModelFamilies": [
+        "Nitro V 15 (ANV15)",
+        "Nitro V 16 (ANV16)"
+      ],
       "resaleRelevance": {
         "high": [
           "cpuOptions",
@@ -330,9 +391,40 @@
         ],
         "low": []
       },
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://www.acer.com/us-en/laptops/nitro/nitro-v-15/pdp/NH.QN8AA.004",
+          "sourceType": "official_product",
+          "title": "Nitro V 15 ANV15-51-515P",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://www.acer.com/us-en/laptops/nitro/nitro-v-15/pdp/NH.QN9AA.002",
+          "sourceType": "official_product",
+          "title": "Nitro V 15 ANV15-51-54UL",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://www.acer.com/gb-en/laptops/nitro/nitro-v-15/pdp/NH.QZAEK.004",
+          "sourceType": "official_product",
+          "title": "Nitro V 15 ANV15-52-76VD",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://www.acer.com/us-en/laptops/nitro/nitro-v-16-amd/pdp/NH.QP0AA.001",
+          "sourceType": "official_product",
+          "title": "Nitro V 16 ANV16-41-R5J0",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://www.acer.com/us-en/laptops/nitro/nitro-v-16-amd",
+          "sourceType": "official_product",
+          "title": "Nitro V 16 AMD family hub",
+          "verificationStatus": "PARTIAL"
+        }
+      ],
       "retrievedDate": "2026-08-08",
-      "notes": "No official manufacturer verification completed in this pass."
+      "notes": "Site slug spans Nitro V 15 and Nitro V 16. Verified from Acer.com ANV15 and ANV16 official pages. Confirm 15 vs 16 and machine code before Exact SKU claims. RTX 2050/4060 not asserted from sampled official PDPs."
     },
     {
       "id": "acer-predator-helios",
@@ -1180,42 +1272,66 @@
       "pageType": "Model",
       "marketingName": "asus-zephyrus-g16",
       "modelFamily": "asus-zephyrus-g16",
-      "modelCode": null,
+      "modelCode": "GA605 / GU605 (2024) multi-year family",
       "machineType": null,
       "productNumber": null,
       "generation": null,
-      "category": null,
-      "configurationScope": "UNKNOWN",
-      "eligibility": "UNVERIFIED",
-      "officialUrl": null,
-      "cpuOptions": [],
-      "gpuOptions": [],
+      "category": "gaming",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024-ga605/spec/",
+      "cpuOptions": [
+        "AMD Ryzen AI 9 HX 370 (GA605 2024)",
+        "Intel Core Ultra 9 185H (GU605 2024)"
+      ],
+      "gpuOptions": [
+        "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "NVIDIA GeForce RTX 4070 Laptop GPU",
+        "NVIDIA GeForce RTX 4080 Laptop GPU",
+        "NVIDIA GeForce RTX 4090 Laptop GPU"
+      ],
       "memory": {
-        "ramType": null,
+        "ramType": "LPDDR5X onboard",
         "ramSpeed": null,
-        "ramSlots": null,
-        "ramSoldered": null,
-        "ramMax": null,
-        "ramConfigurations": []
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "32GB",
+        "ramConfigurations": [
+          "16GB",
+          "32GB"
+        ]
       },
       "storage": {
-        "storageInterface": null,
+        "storageInterface": "PCIe 4.0 NVMe M.2",
         "storageSlots": null,
-        "storageOptions": []
+        "storageOptions": [
+          "1TB",
+          "2TB"
+        ]
       },
       "display": {
-        "displaySizes": [],
-        "resolutions": [],
-        "panelTypes": [],
-        "refreshRates": []
+        "displaySizes": [
+          "16-inch"
+        ],
+        "resolutions": [
+          "2560x1600"
+        ],
+        "panelTypes": [
+          "OLED Nebula Display options"
+        ],
+        "refreshRates": [
+          "240Hz"
+        ]
       },
       "wifi": null,
       "bluetooth": null,
       "ports": [],
-      "weightRange": null,
+      "weightRange": "1.85 kg (GA605 listing)",
       "dimensions": null,
-      "batteryCapacity": null,
-      "chargerWattageOptions": [],
+      "batteryCapacity": "90Wh (2024 GA605 listing)",
+      "chargerWattageOptions": [
+        "200W"
+      ],
       "operatingSystemOptions": [],
       "knownModelFamilies": [],
       "resaleRelevance": {
@@ -1237,9 +1353,22 @@
         ],
         "low": []
       },
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024-ga605/spec/",
+          "sourceType": "official_product",
+          "title": "ROG Zephyrus G16 (2024) GA605 Spec",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024/spec/",
+          "sourceType": "official_product",
+          "title": "ROG Zephyrus G16 (2024) GU605 Spec",
+          "verificationStatus": "VERIFIED"
+        }
+      ],
       "retrievedDate": "2026-08-08",
-      "notes": "No official manufacturer verification completed in this pass."
+      "notes": "Official ROG pages show AMD GA605 and Intel GU605 2024 lines under Zephyrus G16 marketing name. Multi-year family — confirm year/code before Exact SKU claims."
     },
     {
       "id": "dell-g15-g16",
@@ -1927,41 +2056,66 @@
       "pageType": "Model",
       "marketingName": "hp-victus-16",
       "modelFamily": "hp-victus-16",
-      "modelCode": null,
+      "modelCode": "16-s0xxx family (sample MSG)",
       "machineType": null,
       "productNumber": null,
       "generation": null,
-      "category": null,
-      "configurationScope": "UNKNOWN",
-      "eligibility": "UNVERIFIED",
-      "officialUrl": null,
-      "cpuOptions": [],
-      "gpuOptions": [],
+      "category": "gaming",
+      "configurationScope": "MODEL_FAMILY",
+      "eligibility": "READY_FAMILY_LEVEL",
+      "officialUrl": "https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf",
+      "cpuOptions": [
+        "AMD Ryzen 7 PRO 7840HS",
+        "AMD Ryzen 7 PRO 7840H",
+        "AMD Ryzen 5 PRO 7640HS",
+        "AMD Ryzen 5 PRO 7640H"
+      ],
+      "gpuOptions": [
+        "NVIDIA GeForce RTX 3050",
+        "NVIDIA GeForce RTX 4050",
+        "NVIDIA GeForce RTX 4060",
+        "NVIDIA GeForce RTX 4070"
+      ],
       "memory": {
-        "ramType": null,
-        "ramSpeed": null,
-        "ramSlots": null,
-        "ramSoldered": null,
+        "ramType": "DDR5-5600",
+        "ramSpeed": "DDR5-5600",
+        "ramSlots": 2,
+        "ramSoldered": false,
         "ramMax": null,
-        "ramConfigurations": []
+        "ramConfigurations": [
+          "8GB",
+          "16GB"
+        ]
       },
       "storage": {
-        "storageInterface": null,
+        "storageInterface": "PCIe NVMe",
         "storageSlots": null,
-        "storageOptions": []
+        "storageOptions": [
+          "1TB"
+        ]
       },
       "display": {
-        "displaySizes": [],
-        "resolutions": [],
-        "panelTypes": [],
-        "refreshRates": []
+        "displaySizes": [
+          "16.1-inch"
+        ],
+        "resolutions": [
+          "1920x1080",
+          "2560x1440"
+        ],
+        "panelTypes": [
+          "antiglare WLED"
+        ],
+        "refreshRates": [
+          "144Hz",
+          "165Hz"
+        ]
       },
       "wifi": null,
       "bluetooth": null,
       "ports": [],
       "weightRange": null,
       "dimensions": null,
-      "batteryCapacity": null,
+      "batteryCapacity": "70Wh / 83Wh (MSG options)",
       "chargerWattageOptions": [],
       "operatingSystemOptions": [],
       "knownModelFamilies": [],
@@ -1984,9 +2138,22 @@
         ],
         "low": []
       },
-      "sources": [],
+      "sources": [
+        {
+          "url": "https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf",
+          "sourceType": "official_pdf",
+          "title": "Victus 16-s0xxx Maintenance and Service Guide",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://support.hp.com/us-en/product/troubleshooting/victus-by-hp-16.1-inch-gaming-laptop-pc-16-e0000/2100371512",
+          "sourceType": "official_support",
+          "title": "Victus 16.1 support hub example",
+          "verificationStatus": "PARTIAL"
+        }
+      ],
       "retrievedDate": "2026-08-08",
-      "notes": "No official manufacturer verification completed in this pass."
+      "notes": "Verified from official HP Victus 16-s0xxx Maintenance and Service Guide. Other Victus 16 letter families (d/r/e) exist — treat site slug as MODEL_FAMILY, confirm exact model number."
     },
     {
       "id": "hp-victus-17",
@@ -3370,43 +3537,87 @@
       "category": "creator",
       "configurationScope": "MODEL_FAMILY",
       "eligibility": "READY_FAMILY_LEVEL",
-      "officialUrl": "https://support.apple.com/en-us/108052",
+      "officialUrl": "https://support.apple.com/en-us/111893",
       "cpuOptions": [
-        "Apple M1 Pro",
-        "Apple M1 Max"
+        "Apple M1 8-core CPU (13-inch 2020)",
+        "Apple M1 Pro 8-core CPU (14/16 2021)",
+        "Apple M1 Pro 10-core CPU (14/16 2021)",
+        "Apple M1 Max 10-core CPU (14/16 2021)"
       ],
       "gpuOptions": [
-        "Apple M1 Pro GPU options",
-        "Apple M1 Max GPU options"
+        "Apple M1 8-core GPU (13-inch 2020)",
+        "Apple M1 Pro 14-core GPU",
+        "Apple M1 Pro 16-core GPU",
+        "Apple M1 Max 24-core GPU",
+        "Apple M1 Max 32-core GPU"
       ],
       "memory": {
-        "ramType": null,
+        "ramType": "Unified memory",
         "ramSpeed": null,
-        "ramSlots": null,
-        "ramSoldered": null,
-        "ramMax": null,
-        "ramConfigurations": []
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "64GB (M1 Max)",
+        "ramConfigurations": [
+          "8GB",
+          "16GB",
+          "32GB",
+          "64GB"
+        ]
       },
       "storage": {
-        "storageInterface": null,
+        "storageInterface": "Apple SSD",
         "storageSlots": null,
-        "storageOptions": []
+        "storageOptions": [
+          "256GB",
+          "512GB",
+          "1TB",
+          "2TB",
+          "4TB",
+          "8TB"
+        ]
       },
       "display": {
-        "displaySizes": [],
-        "resolutions": [],
-        "panelTypes": [],
-        "refreshRates": []
+        "displaySizes": [
+          "13.3-inch",
+          "14.2-inch",
+          "16.2-inch"
+        ],
+        "resolutions": [
+          "2560x1600",
+          "3024x1964"
+        ],
+        "panelTypes": [
+          "Retina (13-inch M1)",
+          "Liquid Retina XDR (14/16)"
+        ],
+        "refreshRates": [
+          "60Hz",
+          "120Hz"
+        ]
       },
-      "wifi": null,
-      "bluetooth": null,
-      "ports": [],
+      "wifi": "Wi-Fi 6",
+      "bluetooth": "Bluetooth 5.0",
+      "ports": [
+        "2x Thunderbolt / USB 4 (13-inch M1)",
+        "MagSafe 3 (14/16)",
+        "Thunderbolt 4 (14/16)",
+        "HDMI (14/16)",
+        "SDXC (14/16)",
+        "3.5mm headphone"
+      ],
       "weightRange": null,
       "dimensions": null,
-      "batteryCapacity": null,
-      "chargerWattageOptions": [],
+      "batteryCapacity": "58.2Wh (13-inch M1) / 70Wh class (14-inch M1 Pro/Max reference)",
+      "chargerWattageOptions": [
+        "61W USB-C",
+        "67W USB-C",
+        "96W USB-C"
+      ],
       "operatingSystemOptions": [],
-      "knownModelFamilies": [],
+      "knownModelFamilies": [
+        "MacBook Pro 13-inch M1 (2020)",
+        "MacBook Pro 14/16-inch M1 Pro/Max (2021)"
+      ],
       "resaleRelevance": {
         "high": [
           "cpuOptions",
@@ -3428,6 +3639,18 @@
       },
       "sources": [
         {
+          "url": "https://support.apple.com/en-us/111893",
+          "sourceType": "official_support",
+          "title": "MacBook Pro (13-inch, M1, 2020) Tech Specs",
+          "verificationStatus": "VERIFIED"
+        },
+        {
+          "url": "https://support.apple.com/en-us/111902",
+          "sourceType": "official_support",
+          "title": "MacBook Pro (14-inch, 2021) Tech Specs",
+          "verificationStatus": "VERIFIED"
+        },
+        {
           "url": "https://support.apple.com/en-us/108052",
           "sourceType": "official_support",
           "title": "Identify your MacBook Pro model",
@@ -3435,7 +3658,7 @@
         }
       ],
       "retrievedDate": "2026-08-08",
-      "notes": "Identity via Apple identify-your-Mac. 13-inch M1 Pro and 14/16 M1 Pro/Max exist — confirm exact machine before numeric claims."
+      "notes": "Marketing family slug. Verified from Apple Tech Specs 13-inch M1 2020 + 14-inch 2021 M1 Pro/Max. Confirm chip and screen size on About This Mac; do not treat as one Exact SKU."
     },
     {
       "id": "macbook-pro-m2",
@@ -3453,45 +3676,87 @@
       "category": "creator",
       "configurationScope": "MODEL_FAMILY",
       "eligibility": "READY_FAMILY_LEVEL",
-      "officialUrl": "https://support.apple.com/en-us/108052",
+      "officialUrl": "https://support.apple.com/en-us/111340",
       "cpuOptions": [
-        "Apple M2",
-        "Apple M2 Pro",
-        "Apple M2 Max"
+        "Apple M2 8-core CPU (13-inch class)",
+        "Apple M2 Pro 10-core CPU (14/16 2023)",
+        "Apple M2 Pro 12-core CPU (14/16 2023)",
+        "Apple M2 Max 12-core CPU (14/16 2023)"
       ],
       "gpuOptions": [
-        "Apple M2 GPU options",
-        "Apple M2 Pro GPU options",
-        "Apple M2 Max GPU options"
+        "Apple M2 10-core GPU (13-inch class)",
+        "Apple M2 Pro 16-core GPU",
+        "Apple M2 Pro 19-core GPU",
+        "Apple M2 Max 30-core GPU",
+        "Apple M2 Max 38-core GPU"
       ],
       "memory": {
-        "ramType": null,
+        "ramType": "Unified memory",
         "ramSpeed": null,
-        "ramSlots": null,
-        "ramSoldered": null,
-        "ramMax": null,
-        "ramConfigurations": []
+        "ramSlots": 0,
+        "ramSoldered": true,
+        "ramMax": "96GB (M2 Max CTO)",
+        "ramConfigurations": [
+          "8GB",
+          "16GB",
+          "24GB",
+          "32GB",
+          "64GB",
+          "96GB"
+        ]
       },
       "storage": {
-        "storageInterface": null,
+        "storageInterface": "Apple SSD",
         "storageSlots": null,
-        "storageOptions": []
+        "storageOptions": [
+          "256GB",
+          "512GB",
+          "1TB",
+          "2TB",
+          "4TB",
+          "8TB"
+        ]
       },
       "display": {
-        "displaySizes": [],
-        "resolutions": [],
-        "panelTypes": [],
-        "refreshRates": []
+        "displaySizes": [
+          "13.3-inch",
+          "14.2-inch",
+          "16.2-inch"
+        ],
+        "resolutions": [
+          "2560x1600",
+          "3024x1964"
+        ],
+        "panelTypes": [
+          "Liquid Retina (13-inch M2)",
+          "Liquid Retina XDR (14/16)"
+        ],
+        "refreshRates": [
+          "60Hz",
+          "120Hz"
+        ]
       },
-      "wifi": null,
+      "wifi": "Wi-Fi 6 / Wi-Fi 6E (varies by 13 vs 14/16 class pages)",
       "bluetooth": null,
-      "ports": [],
+      "ports": [
+        "MagSafe 3",
+        "Thunderbolt / USB-C family ports",
+        "HDMI (14/16)",
+        "SDXC (14/16)",
+        "Touch Bar (13-inch M2 class)"
+      ],
       "weightRange": null,
       "dimensions": null,
       "batteryCapacity": null,
-      "chargerWattageOptions": [],
+      "chargerWattageOptions": [
+        "67W USB-C",
+        "96W USB-C"
+      ],
       "operatingSystemOptions": [],
-      "knownModelFamilies": [],
+      "knownModelFamilies": [
+        "MacBook Pro 13-inch M2",
+        "MacBook Pro 14/16-inch M2 Pro/Max (2023)"
+      ],
       "resaleRelevance": {
         "high": [
           "cpuOptions",
@@ -3513,6 +3778,12 @@
       },
       "sources": [
         {
+          "url": "https://support.apple.com/en-us/111340",
+          "sourceType": "official_support",
+          "title": "MacBook Pro (14-inch, 2023) Tech Specs",
+          "verificationStatus": "VERIFIED"
+        },
+        {
           "url": "https://support.apple.com/en-us/108052",
           "sourceType": "official_support",
           "title": "Identify your MacBook Pro model",
@@ -3520,7 +3791,7 @@
         }
       ],
       "retrievedDate": "2026-08-08",
-      "notes": "Chip family spans multiple sizes. Confirm chip/size before enrichment of exact numeric specs."
+      "notes": "Marketing family slug spanning 13-inch M2 and 14/16 M2 Pro/Max. Primary numeric matrix from Apple 14-inch 2023 Tech Specs; confirm chip/size on About This Mac."
     },
     {
       "id": "macbook-pro-m3",
