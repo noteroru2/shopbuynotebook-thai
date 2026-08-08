@@ -14,9 +14,19 @@ function csvEscape(v) {
   const t = String(v ?? '');
   return /[",\r\n]/.test(t) ? `"${t.replaceAll('"', '""')}"` : t;
 }
-async function fetchText(url) {
-  const res = await fetch(url, { redirect: 'manual', headers: { 'cache-control': 'no-cache', 'user-agent': 'Batch3-Production-Crawl' } });
-  return { res, text: await res.text() };
+async function fetchText(url, attempt = 1) {
+  try {
+    const res = await fetch(url, {
+      redirect: 'manual',
+      signal: AbortSignal.timeout(60000),
+      headers: { 'cache-control': 'no-cache', 'user-agent': 'Batch3-Production-Crawl' },
+    });
+    return { res, text: await res.text() };
+  } catch (err) {
+    if (attempt >= 3) throw err;
+    await new Promise((r) => setTimeout(r, 2000 * attempt));
+    return fetchText(url, attempt + 1);
+  }
 }
 
 const smIndex = await fetchText(`${base}/sitemap-index.xml?qa=${Date.now()}`);

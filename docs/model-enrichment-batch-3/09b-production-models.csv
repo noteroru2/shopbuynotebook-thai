@@ -1,0 +1,4 @@
+slug,http_status,verified_panel,unsupported_claim,pass
+hp-omen-16,200,true,false,PASS
+asus-tuf-a15-f15,200,true,false,PASS
+lenovo-loq-15-16,200,true,false,PASS
