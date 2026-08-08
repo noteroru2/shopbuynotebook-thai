@@ -1,0 +1,5 @@
+slug,classification,notes,action
+asus-rog-strix,CONFIRMED_CONFLICT,Old content listed Scar + RTX 3070/3080/4090 as if family-wide without G614-scoped official evidence,UPDATED_TO_SERIES_G16_SAMPLE_AND_SCAR_WARNING
+hp-omen-17,POSSIBLE_VARIANT,Old content listed RTX 3070/3080/4070/4080 together; verified split by letter family/generation,UPDATED_TO_MULTI_FAMILY_SCOPED_OPTIONS
+dell-g15-g16,NO_CONFLICT,Existing page already treated G15 and G16 as separate lines (5510/5520/5530 vs 7620/7630),STRENGTHENED_WITH_OFFICIAL_SPLIT_SOURCES
+lenovo-legion-pro,CONFIRMED_CONFLICT,Old content mixed RTX 3070–4090 as if all Legion Pro share one GPU ladder,SPLIT_PRO5_AND_PRO7_PSREF_SAMPLES
