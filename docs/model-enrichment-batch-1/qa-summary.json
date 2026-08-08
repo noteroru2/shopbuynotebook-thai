@@ -1,0 +1,20 @@
+{
+  "batch": [
+    "asus-rog-ally-x",
+    "acer-nitro-16",
+    "asus-zephyrus-g14",
+    "hp-victus-15",
+    "lenovo-legion-5",
+    "thinkpad-x1-carbon",
+    "macbook-pro-m3",
+    "macbook-air-m3",
+    "macbook-air-m4",
+    "macbook-air-m5"
+  ],
+  "nitro4080_after": 0,
+  "critical_similarity": 0,
+  "high_similarity": 0,
+  "errors": [],
+  "provenance_rows": 56,
+  "provenance_fail": 0
+}

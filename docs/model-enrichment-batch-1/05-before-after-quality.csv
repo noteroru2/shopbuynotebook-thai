@@ -1,0 +1,11 @@
+slug,score_before,score_after,status,word_count,delta
+asus-rog-ally-x,87,93,Strong,376,6
+acer-nitro-16,91,95,Strong,502,4
+asus-zephyrus-g14,87,91,Strong,368,4
+hp-victus-15,91,91,Strong,378,0
+lenovo-legion-5,88,91,Strong,376,3
+thinkpad-x1-carbon,91,91,Strong,318,0
+macbook-pro-m3,91,91,Strong,317,0
+macbook-air-m3,87,91,Strong,272,4
+macbook-air-m4,84,91,Strong,263,7
+macbook-air-m5,84,91,Strong,286,7

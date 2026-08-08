@@ -20,7 +20,8 @@
     "spec:inventory": "node scripts/spec-data/build-existing-inventory.mjs",
     "spec:build": "node scripts/spec-data/build-verified-dataset.mjs",
     "spec:validate": "node scripts/spec-data/validate-specs.mjs",
-    "spec:reports": "node scripts/spec-data/write-reports.mjs"
+    "spec:reports": "node scripts/spec-data/write-reports.mjs",
+    "qa:model-batch1": "node scripts/seo/model-enrichment-batch1-qa.mjs && node scripts/seo/score-batch1-models.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",
