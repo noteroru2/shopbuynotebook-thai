@@ -1,0 +1,23 @@
+{
+  "researched": [
+    "asus-rog-strix",
+    "hp-omen-17",
+    "dell-g15-g16",
+    "lenovo-legion-pro"
+  ],
+  "enriched": [
+    "asus-rog-strix",
+    "hp-omen-17",
+    "dell-g15-g16",
+    "lenovo-legion-pro"
+  ],
+  "deferred": [],
+  "avg_before": 93,
+  "avg_after": 95.5,
+  "fields_used": 28,
+  "provenance_fail": 0,
+  "critical_similarity": 0,
+  "high_similarity": 0,
+  "frozen_changed": [],
+  "errors": []
+}

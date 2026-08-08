@@ -1,0 +1,7 @@
+page_a,page_b,jaccard,level
+asus-rog-strix,hp-omen-17,0.232,LOW
+asus-rog-strix,dell-g15-g16,0.246,LOW
+asus-rog-strix,lenovo-legion-pro,0.298,LOW
+hp-omen-17,dell-g15-g16,0.236,LOW
+hp-omen-17,lenovo-legion-pro,0.206,LOW
+dell-g15-g16,lenovo-legion-pro,0.255,LOW
