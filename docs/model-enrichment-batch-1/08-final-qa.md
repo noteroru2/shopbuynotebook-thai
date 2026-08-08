@@ -10,6 +10,17 @@
 | Nitro 16 RTX 4080 unsupported | 0 |
 | Critical/High similarity | 0 / 0 |
 | Homepage/Money/Province/Condition/Blog diffs | none |
+| `npm run check` | PASS (0 errors) |
+| `npm run build` | PASS — 2460 pages / sitemap 371 |
+
+## Production gates
+
+| Gate | Result |
+| --- | --- |
+| Deploy workflow | success (`31239195256`) |
+| Sitemap crawl | 371 / 371 PASS |
+| Batch model pages on production | 10 / 10 PASS |
+| Nitro 16 RTX 4080 on production | 0 |
 
 ## Content rules
 
@@ -20,11 +31,4 @@
 
 ## Freeze
 
-See `02-content-freeze-check.csv` and `git diff --name-only` against money/home/blog/condition/location paths.
-
-## Remaining before PASS
-
-1. `npm ci && npm run check && npm run build`
-2. Merge to main + deploy via GitHub Actions
-3. Production crawl 371/371
-4. Manual read of all 10 enriched URLs on production
+See `02-content-freeze-check.csv`. Money/Home/Province/Condition/Blog bodies unchanged.
