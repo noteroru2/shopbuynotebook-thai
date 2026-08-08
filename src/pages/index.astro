@@ -77,6 +77,16 @@ const faqs = [
     answer:
       'กรณีติดรหัส Windows/Apple ID ต้องปลดล็อกได้ก่อนเพื่อความถูกต้องในการรับซื้อ แนะนำเตรียมข้อมูลบัญชีเพื่อปลดก่อนนัดส่งเครื่อง',
   },
+  {
+    question: 'โน๊ตบุ๊คเก่าหลายปียังขายได้ไหม?',
+    answer:
+      'ส่งประเมินได้ครับ อายุเครื่องมีผลต่อกรอบราคา แต่รุ่น สเปกที่ยังใช้งานได้ และสภาพจริงสำคัญกว่าปีผลิตเพียงอย่างเดียว ส่งรูปมาดูก่อนได้โดยไม่ต้องขายทันที',
+  },
+  {
+    question: 'โน๊ตบุ๊คไม่มีประกันหรือประกันหมดแล้วรับซื้อไหม?',
+    answer:
+      'รับประเมินครับ การรับซื้อมือสองดูจากรุ่น สเปก สภาพ และอุปกรณ์เป็นหลัก ไม่จำเป็นต้องมีประกันเหลืออยู่ แต่ถ้ายังมีใบเสร็จหรือหลักฐานการซื้อ แจ้งมาประกอบได้',
+  },
 ];
 
 const schemas = [
@@ -139,6 +149,38 @@ const schemas = [
         ))}
       </ul>
     </div>
+  </section>
+
+  <section id="quick-answers" class="mx-auto w-full max-w-6xl scroll-mt-24 px-4 pt-12" aria-labelledby="quick-answers-heading">
+    <h2 id="quick-answers-heading" class="text-xl font-extrabold text-slate-900">คำตอบสั้นก่อนส่งประเมิน</h2>
+    <p class="mt-2 max-w-3xl text-sm leading-relaxed text-slate-700">
+      ร้านรับซื้อโน๊ตบุ๊คมือสองและเครื่องพกพาในหมวดที่เว็บไซต์รองรับ ประเมินจากรุ่น สเปก สภาพ แบตเตอรี่ อุปกรณ์ และความต้องการตลาด
+      หน้าร้านจริงอยู่จังหวัดอุบลราชธานี จังหวัดอื่นเป็นพื้นที่ให้บริการผ่านนัดหมายหรือจัดส่งหลังยืนยันเงื่อนไข
+    </p>
+    <dl class="mt-6 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-2xl border border-slate-200 bg-white p-5">
+        <dt class="font-bold text-slate-900">โน๊ตบุ๊คมือสองขายได้ไหม?</dt>
+        <dd class="mt-2 text-sm leading-relaxed text-slate-700">ขายประเมินได้ตามสภาพจริง ดูรายละเอียดที่ <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊คมือสอง/">รับซื้อโน๊ตบุ๊คมือสอง</a></dd>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-5">
+        <dt class="font-bold text-slate-900">ราคาประเมินจากอะไร?</dt>
+        <dd class="mt-2 text-sm leading-relaxed text-slate-700">ดูปัจจัยการตีราคาที่ <a class="font-semibold text-emerald-700 underline" href="/ตีราคาโน๊ตบุ๊ค/">ตีราคาโน๊ตบุ๊ค</a> หรือขอกรอบราคาก่อนที่ <a class="font-semibold text-emerald-700 underline" href="/เช็คราคาโน๊ตบุ๊ค/">เช็คราคาโน๊ตบุ๊ค</a></dd>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-5">
+        <dt class="font-bold text-slate-900">เครื่องเสียขายได้ไหม?</dt>
+        <dd class="mt-2 text-sm leading-relaxed text-slate-700">หลายอาการยังรับประเมินได้ เช่น <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/จอแตก/">จอแตก</a> หรือ <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/เปิดไม่ติด/">เปิดไม่ติด</a> — แจ้งอาการตรง ๆ</dd>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-white p-5">
+        <dt class="font-bold text-slate-900">ต้องส่งข้อมูลอะไร / ต่างจังหวัดทำอย่างไร?</dt>
+        <dd class="mt-2 text-sm leading-relaxed text-slate-700">ส่งรูป รุ่น สเปก สภาพ ผ่าน LINE @webuy แล้วสอบถามวิธีนัดหรือจัดส่ง — ดูพื้นที่ที่ <a class="font-semibold text-emerald-700 underline" href="/พื้นที่ให้บริการ/">พื้นที่ให้บริการ</a> และคู่มือที่ <a class="font-semibold text-emerald-700 underline" href="/ขายโน๊ตบุ๊ค/">ขายโน๊ตบุ๊ค</a></dd>
+      </div>
+    </dl>
+    <p class="mt-4 text-sm text-slate-600">
+      ค้นหาด้วยคำ Notebook ภาษาอังกฤษดูได้ที่ <a class="font-semibold text-emerald-700 underline" href="/รับซื้อ-notebook/">รับซื้อ Notebook</a>
+      · ยี่ห้อหลักเช่น <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/asus/">Asus</a>,
+      <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/lenovo/">Lenovo</a>,
+      <a class="font-semibold text-emerald-700 underline" href="/รับซื้อโน๊ตบุ๊ค/macbook/">MacBook</a>
+    </p>
   </section>
 
   <PhotoGuide />

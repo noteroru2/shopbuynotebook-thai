@@ -1,0 +1,12 @@
+check,baseline,final,delta
+indexable_content_urls_inventory,371,371,0
+urls_removed,0,0,0
+urls_renamed,0,0,0
+money_page_redirects_added,0,0,0
+mass_noindex_applied_to_indexable,0,0,0
+province_location_slugs_preserved,87,87,0
+condition_slugs_preserved,44,44,0
+brand_series_model_slugs_preserved,96,96,0
+blog_slugs_preserved,122,122,0
+combo_tier_c_policy,noindex+sitemap_excluded,noindex+sitemap_excluded,unchanged
+gsc_driven_deletions,0,0,0

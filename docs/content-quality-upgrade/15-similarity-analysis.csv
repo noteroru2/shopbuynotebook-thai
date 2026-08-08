@@ -1,0 +1,10 @@
+page_type,before_risk,after_risk,notes
+Province/Location,High,Low,"87 bodies rewritten via 8 archetypes; doorway phrases/star tables removed; district stuffing capped; storefront clarity (Ubon)"
+Money (home+core),Medium,Low,"Intent split: Notebook EN / มือสอง / เช็คราคา / ตีราคา / ขาย; homepage FAQ expanded"
+Condition,Medium,Low,"Symptom-specific deepen; unique titles/H1; residual shared CTA OK"
+Brand hub,Low,Low,"Entity hubs; select pages deepened; no mass template"
+Series,Medium,Low,"Series entity + model links; residual sell-flow overlap acceptable"
+Model,Medium,Low,"Select models deepened; some MacBook/MSI stubs remain Good not Strong"
+Blog (symptom),Medium,Low,"Sellability posts paired with conditions; relatedLinks added"
+Noindex combo (Tier C),Critical,Critical,"Unchanged — deferred for content depth; still noindex/sitemap-excluded"
+Utility/Legal,Low,Low,"No material change this round"
