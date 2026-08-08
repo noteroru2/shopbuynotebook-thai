@@ -1,0 +1,69 @@
+claim,url_or_file,snippet,status
+has_branch,src/content/brands/surface-laptop-go.md,"ร 0642579353 ร้านตั้งที่อุบลราชธานี ไม่มีสาขาจังหวัดอื่น ## ลิงก์รุ่นใกล้เคียง - [S",Valid_negation
+has_branch,src/content/conditions/กล้องเสีย.md,"0642579353 — หน้าร้านอยู่อุบลราชธานี ไม่มีสาขาจังหวัดอื่น ## ปัจจัยราคาเฉพาะอาการกล้อ",Valid_negation
+has_branch,src/content/conditions/ตกรุ่น.md,"ebuy หรือโทร 0642579353 ร้านอยู่อุบล ไม่มีสาขาอื่น ## อะไรกำหนดราคาเครื่องตกรุ่น - ร",Valid_negation
+has_branch,src/content/locations/กระบี่.md,"บเขตบริการในพื้นที่นี้ จังหวัดกระบี่ไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+branch_office,src/content/locations/กาญจนบุรี.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## เครื่องเรียน/มหาวิทยาลัยในกา",Valid_negation
+has_branch,src/content/locations/กาฬสินธุ์.md," สาขาหรือแค่พื้นที่บริการ อย่าเข้าใจว่ามีสาขาในกาฬสินธุ์ บริการในพื้นที่นี้คือประเมิน",Valid_negation
+has_branch,src/content/locations/กำแพงเพชร.md,"รือแค่พื้นที่บริการ จังหวัดกำแพงเพชรไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/ขอนแก่น.md,"เขตบริการในพื้นที่นี้ จังหวัดขอนแก่นไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/จันทบุรี.md,"ขตบริการในพื้นที่นี้ จังหวัดจันทบุรีไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/ฉะเชิงเทรา.md," ขอบเขตบริการในพื้นที่นี้ อย่าเข้าใจว่ามีสาขาในฉะเชิงเทรา บริการในพื้นที่นี้คือประเมิ",Valid_negation
+has_branch,src/content/locations/ชลบุรี.md," ## หน้าร้านอยู่ที่ไหน จังหวัดชลบุรีไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/ชัยนาท.md,"ขาหรือแค่พื้นที่บริการ จังหวัดชัยนาทไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/ชัยภูมิ.md,"าหรือแค่พื้นที่บริการ จังหวัดชัยภูมิไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/ชุมพร.md,"น้าร้านอยู่อุบลราชธานี ไม่ได้แปลว่าชุมพรมีสาขา ไม่ต้องลิสต์ทุกตำบล แค่บอกว่าใกล้ เมือง",Valid_negation
+has_branch,src/content/locations/ตรัง.md," สาขาหรือแค่พื้นที่บริการ อย่าเข้าใจว่ามีสาขาในตรัง บริการในพื้นที่นี้คือประเมินจากรู",Valid_negation
+has_branch,src/content/locations/ตราด.md," ขอบเขตบริการในพื้นที่นี้ อย่าเข้าใจว่ามีสาขาในตราด บริการในพื้นที่นี้คือประเมินจากรู",Valid_negation
+has_branch,src/content/locations/ตาก.md," หน้าร้านอยู่อุบลราชธานี ไม่ได้แปลว่าตากมีสาขา แอด @webuy ส่งรูปได้ทันที เบอร์ 0642579",Valid_negation
+has_branch,src/content/locations/นครพนม.md," สาขาหรือแค่พื้นที่บริการ อย่าเข้าใจว่ามีสาขาในนครพนม บริการในพื้นที่นี้คือประเมินจาก",Valid_negation
+has_branch,src/content/locations/นครราชสีมา.md,"บริการในพื้นที่นี้ จังหวัดนครราชสีมาไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/นครศรีธรรมราช.md," สาขาหรือแค่พื้นที่บริการ อย่าเข้าใจว่ามีสาขาในนครศรีธรรมราช บริการในพื้นที่นี้คือประ",Valid_negation
+branch_office,src/content/locations/นครสวรรค์.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## แนวทางแพ็กและจัดส่งหลังตกลงเ",Valid_negation
+has_branch,src/content/locations/นนทบุรี.md,"าหรือแค่พื้นที่บริการ จังหวัดนนทบุรีไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/นราธิวาส.md,"# หน้าร้านอยู่ที่ไหน จังหวัดนราธิวาสไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/น่าน.md," ขอบเขตบริการในพื้นที่นี้ อย่าเข้าใจว่ามีสาขาในน่าน บริการในพื้นที่นี้คือประเมินจากรู",Valid_negation
+has_branch,src/content/locations/บึงกาฬ.md," สาขาหรือแค่พื้นที่บริการ อย่าเข้าใจว่ามีสาขาในบึงกาฬ บริการในพื้นที่นี้คือประเมินจาก",Valid_negation
+branch_office,src/content/locations/บุรีรัมย์.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## เครื่องเรียน/มหาวิทยาลัยในบุ",Valid_negation
+has_branch,src/content/locations/ปทุมธานี.md,"หรือแค่พื้นที่บริการ จังหวัดปทุมธานีไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/ประจวบคีรีขันธ์.md,"่อุบลราชธานี ไม่ได้แปลว่าประจวบคีรีขันธ์มีสาขา อย่าใส่ราคาที่คาดหวังอย่างเดียวโดยไม่มี",Valid_negation
+has_branch,src/content/locations/พระราม2.md,"าหรือแค่พื้นที่บริการ จังหวัดพระราม2ไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/พังงา.md," ## หน้าร้านอยู่ที่ไหน จังหวัดพังงาไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/พัทลุง.md,"้าร้านอยู่อุบลราชธานี ไม่ได้แปลว่าพัทลุงมีสาขา โซนที่มักอ้างในแชท เช่น เมืองพัทลุง, คว",Valid_negation
+has_branch,src/content/locations/ภาคอีสาน.md,"บริการผ่านไลน์นัดหมายหรือขนส่ง ไม่ใช่การมีสาขาครบทุกจังหวัด ## เมื่อต้องส่งเครื่องจาก",Valid_negation
+has_branch,src/content/locations/มุกดาหาร.md,"ขา ## หน้าร้านอยู่ที่ไหน อย่าเข้าใจว่ามีสาขาในมุกดาหาร บริการในพื้นที่นี้คือประเมินจ",Valid_negation
+has_branch,src/content/locations/ยะลา.md,"ขอบเขตบริการในพื้นที่นี้ จังหวัดยะลาไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+branch_office,src/content/locations/ยโสธร.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## โน๊ตบุ๊คองค์กรและฟรีแลนซ์ที่",Valid_negation
+has_branch,src/content/locations/ระนอง.md," ขอบเขตบริการในพื้นที่นี้ อย่าเข้าใจว่ามีสาขาในระนอง บริการในพื้นที่นี้คือประเมินจากร",Valid_negation
+has_branch,src/content/locations/ระยอง.md,"อบเขตบริการในพื้นที่นี้ จังหวัดระยองไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/ราชบุรี.md,"## หน้าร้านอยู่ที่ไหน จังหวัดราชบุรีไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/รามคำแหง.md," สาขาหรือแค่พื้นที่บริการ อย่าเข้าใจว่ามีสาขาในรามคำแหง บริการในพื้นที่นี้คือประเมินจ",Valid_negation
+branch_office,src/content/locations/ร้อยเอ็ด.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## จุดตรวจสำคัญของเครื่อง Apple",Valid_negation
+branch_office,src/content/locations/ลพบุรี.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## จุดตรวจสำคัญของเครื่อง Apple",Valid_negation
+has_branch,src/content/locations/ลาดพร้าว.md," ขอบเขตบริการในพื้นที่นี้ อย่าเข้าใจว่ามีสาขาในลาดพร้าว บริการในพื้นที่นี้คือประเมินจ",Valid_negation
+has_branch,src/content/locations/ลำปาง.md," สาขาหรือแค่พื้นที่บริการ อย่าเข้าใจว่ามีสาขาในลำปาง บริการในพื้นที่นี้คือประเมินจากร",Valid_negation
+has_branch,src/content/locations/ศรีสะเกษ.md,"ขา ## หน้าร้านอยู่ที่ไหน อย่าเข้าใจว่ามีสาขาในศรีสะเกษ บริการในพื้นที่นี้คือประเมินจ",Valid_negation
+has_branch,src/content/locations/สตูล.md,"ป ## หน้าร้านอยู่ที่ไหน จังหวัดสตูลไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+branch_office,src/content/locations/สมุทรปราการ.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## เมื่อต้องส่งเครื่องจากสมุทรป",Valid_negation
+has_branch,src/content/locations/สมุทรสงคราม.md," สาขาหรือแค่พื้นที่บริการ อย่าเข้าใจว่ามีสาขาในสมุทรสงคราม บริการในพื้นที่นี้คือประเม",Valid_negation
+has_branch,src/content/locations/สระบุรี.md,"าหรือแค่พื้นที่บริการ จังหวัดสระบุรีไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+branch_office,src/content/locations/สระแก้ว.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## ขั้นตอนมาตรฐานที่ใช้อธิบายให",Valid_negation
+has_branch,src/content/locations/สิงห์บุรี.md," ขอบเขตบริการในพื้นที่นี้ อย่าเข้าใจว่ามีสาขาในสิงห์บุรี บริการในพื้นที่นี้คือประเมิน",Valid_negation
+has_branch,src/content/locations/สุพรรณบุรี.md,"ือแค่พื้นที่บริการ จังหวัดสุพรรณบุรีไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+branch_office,src/content/locations/สุราษฎร์ธานี.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## เครื่องทำงาน/ออฟฟิศจากสุราษฎ",Valid_negation
+has_branch,src/content/locations/สุโขทัย.md,"ูป ## หน้าร้านอยู่ที่ไหน อย่าเข้าใจว่ามีสาขาในสุโขทัย บริการในพื้นที่นี้คือประเมินจา",Valid_negation
+has_branch,src/content/locations/หนองบัวลำภู.md,"ริการในพื้นที่นี้ จังหวัดหนองบัวลำภูไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/หาดใหญ่.md," ขอบเขตบริการในพื้นที่นี้ อย่าเข้าใจว่ามีสาขาในหาดใหญ่ บริการในพื้นที่นี้คือประเมินจา",Valid_negation
+has_branch,src/content/locations/ห้วยขวาง.md,"ขตบริการในพื้นที่นี้ จังหวัดห้วยขวางไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+branch_office,src/content/locations/อยุธยา.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## เคสนักศึกษาและผู้ปกครองที่พบ",Valid_negation
+has_branch,src/content/locations/อำนาจเจริญ.md,"ือแค่พื้นที่บริการ จังหวัดอำนาจเจริญไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/อุดรธานี.md," ขอบเขตบริการในพื้นที่นี้ อย่าเข้าใจว่ามีสาขาในอุดรธานี บริการในพื้นที่นี้คือประเมินจ",Valid_negation
+has_branch,src/content/locations/อุทัยธานี.md,"รือแค่พื้นที่บริการ จังหวัดอุทัยธานีไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+branch_office,src/content/locations/อ่างทอง.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## จุดที่ควรบอกเมื่อเป็น Gaming",Valid_negation
+has_branch,src/content/locations/เชียงราย.md,"หรือแค่พื้นที่บริการ จังหวัดเชียงรายไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/เชียงใหม่.md,"รือแค่พื้นที่บริการ จังหวัดเชียงใหม่ไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/เพชรบุรี.md,"ขตบริการในพื้นที่นี้ จังหวัดเพชรบุรีไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
+has_branch,src/content/locations/เพชรบูรณ์.md,"ไป ## หน้าร้านอยู่ที่ไหน อย่าเข้าใจว่ามีสาขาในเพชรบูรณ์ บริการในพื้นที่นี้คือประเมิน",Valid_negation
+branch_office,src/content/locations/เลย.md,"บริการผ่านการนัดหมายหรือการจัดส่ง ไม่ใช่สาขาประจำจังหวัด ## จากไลน์ประเมินถึงส่งมอบ ไม่",Valid_negation
+has_branch,src/content/locations/แม่ฮ่องสอน.md,"53 ## หน้าร้านอยู่ที่ไหน อย่าเข้าใจว่ามีสาขาในแม่ฮ่องสอน บริการในพื้นที่นี้คือประเมิ",Valid_negation
+has_branch,src/content/locations/ใกล้ฉัน.md,"าหรือแค่พื้นที่บริการ จังหวัดใกล้ฉันไม่มีสาขาของร้าน — การรับซื้อทำผ่านไลน์ @webuy เป",Valid_negation
