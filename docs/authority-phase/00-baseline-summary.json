@@ -1,0 +1,15 @@
+{
+  "baseline_rows": 372,
+  "indexable_approx": 371,
+  "series_count": 24,
+  "model_count": 57,
+  "series_avg": 90.2,
+  "model_avg": 90.1,
+  "priority_counts": {
+    "A": 71,
+    "B": 10,
+    "C": 0
+  },
+  "thin_models": [],
+  "low_series": []
+}
