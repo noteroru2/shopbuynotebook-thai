@@ -1,0 +1,9 @@
+surface,indexable,sitemap,robots_meta,notes
+homepage_and_money_static,yes,yes,index,Intent-differentiated; URLs preserved
+brands_series_models_collection,yes,yes,index,Tier A hubs / Tier B series-model
+conditions_collection,yes,yes,index,All 44 indexable
+locations_provinces_collection,yes,yes,index,Rewritten bodies; still indexable
+blog_collection,yes,yes,index,Hub + posts indexable
+combo_location_x_topic_tier_c,no,excluded,noindex,Unchanged policy (getLocationComboTier=C)
+admin_cms_shell,no,excluded,noindex,Prior SEO batch; unchanged this round
+404,no,n/a,noindex,Unchanged
