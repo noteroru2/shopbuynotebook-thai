@@ -69,16 +69,6 @@ const serviceName =
     ? `รับซื้อโน๊ตบุ๊ค ${entry.data.title}`
     : (entry.data.serviceName ?? `รับซื้อโน๊ตบุ๊ค ${entry.data.title}`);
 
-const internalLinks = [
-  { label: 'หน้าแรก', href: '/' },
-  { label: 'รับซื้อโน๊ตบุ๊ค', href: '/' },
-  { label: 'รับซื้อโน๊ตบุ๊คมือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/' },
-  { label: 'เช็คราคาโน๊ตบุ๊คก่อนขาย', href: '/เช็คราคาโน๊ตบุ๊ค/' },
-  { label: 'ตีราคาโน๊ตบุ๊ค', href: '/ตีราคาโน๊ตบุ๊ค/' },
-  { label: 'พื้นที่ให้บริการรับซื้อโน๊ตบุ๊ค', href: '/พื้นที่ให้บริการ/' },
-  { label: 'ขายโน๊ตบุ๊ค', href: '/ขายโน๊ตบุ๊ค/' },
-];
-
 const SPECIALIST_SLUGS = new Set(['เครื่องเสีย', 'gaming']);
 
 const prepChecklist = [
@@ -415,15 +405,16 @@ const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs
     <section class="mx-auto w-full max-w-6xl px-4 pt-12">
       <div class="grid gap-4 lg:grid-cols-3">
         <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 class="text-lg font-bold text-slate-900">พื้นที่ย่อย</h2>
+          <h2 class="text-lg font-bold text-slate-900">โซนอ้างอิงตอนคุยนัด</h2>
+          <p class="mt-2 text-xs text-slate-500">ใช้ระบุตำแหน่งคร่าว ๆ เท่านั้น ไม่ได้หมายถึงมีจุดบริการครบทุกแห่ง</p>
           <ul class="mt-3 list-disc pl-5 text-sm text-slate-700">
-            {(entry.data.subAreas ?? []).map((a: string) => (
+            {(entry.data.subAreas ?? []).slice(0, 6).map((a: string) => (
               <li>{a}</li>
             ))}
           </ul>
         </div>
         <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
-          <h2 class="text-lg font-bold text-slate-900">จุดเด่นของพื้นที่</h2>
+          <h2 class="text-lg font-bold text-slate-900">บริบทพื้นที่นี้ในการประเมิน</h2>
           <ul class="mt-3 list-disc pl-5 text-sm text-slate-700">
             {(entry.data.highlights ?? []).map((h: string) => (
               <li>{h}</li>
@@ -453,9 +444,16 @@ const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs
           </div>
         </div>
         <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 class="text-lg font-bold text-slate-900">Internal links</h2>
+          <h2 class="text-lg font-bold text-slate-900">หน้าที่เกี่ยวข้อง</h2>
           <ul class="mt-3 space-y-2 text-sm">
-            {internalLinks.map((l) => (
+            {[
+              { label: 'บริการรับซื้อหลัก', href: '/' },
+              { label: 'ขอเช็คราคาก่อนขาย', href: '/เช็คราคาโน๊ตบุ๊ค/' },
+              { label: 'โน๊ตบุ๊คมือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/' },
+              { label: 'ปัจจัยตีราคา', href: '/ตีราคาโน๊ตบุ๊ค/' },
+              { label: 'รายการพื้นที่ให้บริการ', href: '/พื้นที่ให้บริการ/' },
+              { label: 'เตรียมเครื่องก่อนขาย', href: '/ขายโน๊ตบุ๊ค/' },
+            ].map((l) => (
               <li><a class="text-slate-700 underline underline-offset-4 hover:text-slate-900" href={l.href}>{l.label}</a></li>
             ))}
           </ul>
