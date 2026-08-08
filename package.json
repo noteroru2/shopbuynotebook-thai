@@ -16,7 +16,11 @@
     "gen:isan-svgs": "node scripts/gen-isan-location-svgs.mjs",
     "gen:isan-pages": "node scripts/isan-build.mjs",
     "inventory:content": "node scripts/seo/build-url-inventory.mjs",
-    "gate:content": "node scripts/seo/content-quality-gate.mjs"
+    "gate:content": "node scripts/seo/content-quality-gate.mjs",
+    "spec:inventory": "node scripts/spec-data/build-existing-inventory.mjs",
+    "spec:build": "node scripts/spec-data/build-verified-dataset.mjs",
+    "spec:validate": "node scripts/spec-data/validate-specs.mjs",
+    "spec:reports": "node scripts/spec-data/write-reports.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.4",
