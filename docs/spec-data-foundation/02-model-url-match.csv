@@ -1,0 +1,58 @@
+slug,URL,brand,match_status,configuration_scope,eligibility,official_url,notes
+acer-aspire-5,/รับซื้อโน๊ตบุ๊ค/acer-aspire-5/,Acer,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+acer-nitro-16,/รับซื้อโน๊ตบุ๊ค/acer-nitro-16/,Acer,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://www.acer.com/us-en/laptops/nitro/nitro-16-amd/pdp/NH.QLJAA.001,Verified from Acer.com Nitro 16 AN16-41 PDPs (multiple SKUs). RTX 4080 not present on sampled official AN16-41 pages — treat content claims of RTX 4080 as conflict candidates until another official machine type is verified.
+acer-nitro-17,/รับซื้อโน๊ตบุ๊ค/acer-nitro-17/,Acer,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+acer-nitro-v,/รับซื้อโน๊ตบุ๊ค/acer-nitro-v/,Acer,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+acer-predator-helios,/รับซื้อโน๊ตบุ๊ค/acer-predator-helios/,Acer,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+acer-predator-neo,/รับซื้อโน๊ตบุ๊ค/acer-predator-neo/,Acer,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+acer-predator-triton,/รับซื้อโน๊ตบุ๊ค/acer-predator-triton/,Acer,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+alienware-m15-r7-r8,/รับซื้อโน๊ตบุ๊ค/alienware-m15-r7-r8/,Dell,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+alienware-m16,/รับซื้อโน๊ตบุ๊ค/alienware-m16/,Dell,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+alienware-m18,/รับซื้อโน๊ตบุ๊ค/alienware-m18/,Dell,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+asus-rog-ally-x,/รับซื้อโน๊ตบุ๊ค/asus-rog-ally-x/,ASUS,FAMILY_MATCH,MODEL_FAMILY,READY_HIGH_CONFIDENCE,https://rog.asus.com/us/gaming-handhelds/rog-ally/rog-ally-x-2024/spec/,Official ROG Ally X (2024) RC72LA spec page. Narrow config surface (storage variants) — high confidence for resale enrichment.
+asus-rog-flow,/รับซื้อโน๊ตบุ๊ค/asus-rog-flow/,ASUS,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+asus-rog-strix,/รับซื้อโน๊ตบุ๊ค/asus-rog-strix/,ASUS,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+asus-tuf-a15-f15,/รับซื้อโน๊ตบุ๊ค/asus-tuf-a15-f15/,ASUS,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+asus-zephyrus-g14,/รับซื้อโน๊ตบุ๊ค/asus-zephyrus-g14/,ASUS,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-g14-2024/spec/,Official ROG pages show multiple years (2022–2024) under G14 marketing name. Do not treat as Exact SKU.
+asus-zephyrus-g16,/รับซื้อโน๊ตบุ๊ค/asus-zephyrus-g16/,ASUS,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+dell-g15-g16,/รับซื้อโน๊ตบุ๊ค/dell-g15-g16/,Dell,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+dell-inspiron-15,/รับซื้อโน๊ตบุ๊ค/dell-inspiron-15/,Dell,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+dell-xps-13-15,/รับซื้อโน๊ตบุ๊ค/dell-xps-13-15/,Dell,AMBIGUOUS,SERIES,AMBIGUOUS_MODEL,https://www.dell.com/en-us/shop/dell-laptops/xps-13-laptop-2024/spd/xps-13-9350-intel-laptop,"Repository slug merges XPS 13 and XPS 15 across many generations/processors (Intel Core Ultra, Snapdragon X, older XPS 15 discrete GPU gens). Ambiguous — do not enrich with a single CPU/GPU claim."
+hp-envy-x360,/รับซื้อโน๊ตบุ๊ค/hp-envy-x360/,HP,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+hp-omen-16,/รับซื้อโน๊ตบุ๊ค/hp-omen-16/,HP,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+hp-omen-17,/รับซื้อโน๊ตบุ๊ค/hp-omen-17/,HP,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+hp-omen-transcend,/รับซื้อโน๊ตบุ๊ค/hp-omen-transcend/,HP,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+hp-spectre-x360,/รับซื้อโน๊ตบุ๊ค/hp-spectre-x360/,HP,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+hp-victus-15,/รับซื้อโน๊ตบุ๊ค/hp-victus-15/,HP,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://kaas.hpcloud.hp.com/pdf-public/pdf_11551834_en-US-1.pdf,Verified from official HP Maintenance and Service Guides (family-level). Exact SKU still required for a single config claim.
+hp-victus-16,/รับซื้อโน๊ตบุ๊ค/hp-victus-16/,HP,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+hp-victus-17,/รับซื้อโน๊ตบุ๊ค/hp-victus-17/,HP,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+lenovo-ideapad-3-5,/รับซื้อโน๊ตบุ๊ค/lenovo-ideapad-3-5/,Lenovo,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+lenovo-legion-5,/รับซื้อโน๊ตบุ๊ค/lenovo-legion-5/,Lenovo,FAMILY_MATCH,SERIES,READY_FAMILY_LEVEL,https://psref.lenovo.com/,Legion 5 is a multi-generation family on Lenovo PSREF (many machine types). Site slug is family-level. Exact SKU research required per unit (e.g. 15ACH6 / 15IRX9 / 15AKP10).
+lenovo-legion-pro-7,/รับซื้อโน๊ตบุ๊ค/lenovo-legion-pro-7/,Lenovo,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+lenovo-legion-pro,/รับซื้อโน๊ตบุ๊ค/lenovo-legion-pro/,Lenovo,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+lenovo-legion-slim,/รับซื้อโน๊ตบุ๊ค/lenovo-legion-slim/,Lenovo,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+lenovo-loq-15-16,/รับซื้อโน๊ตบุ๊ค/lenovo-loq-15-16/,Lenovo,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+macbook-air-13,/รับซื้อโน๊ตบุ๊ค/macbook-air-13/,Apple,AMBIGUOUS,SERIES,AMBIGUOUS_MODEL,https://support.apple.com/en-us/102869,URL is size-based marketing page spanning M1–M5 generations. Not an Exact SKU. Require chip generation from About This Mac before enrichment.
+macbook-air-15,/รับซื้อโน๊ตบุ๊ค/macbook-air-15/,Apple,AMBIGUOUS,SERIES,AMBIGUOUS_MODEL,https://support.apple.com/en-us/102869,Size page spanning M2/M3/M4/M5 15-inch Air. Ambiguous without chip generation.
+macbook-air-m1,/รับซื้อโน๊ตบุ๊ค/macbook-air-m1/,Apple,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://support.apple.com/en-us/102869,Identity confirmed via Apple identify-your-Mac; detailed numeric fields kept conservative.
+macbook-air-m2,/รับซื้อโน๊ตบุ๊ค/macbook-air-m2/,Apple,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://support.apple.com/en-us/111867,M2 Air exists as 13-inch (2022) and 15-inch (2023). Confirm size.
+macbook-air-m3,/รับซื้อโน๊ตบุ๊ค/macbook-air-m3/,Apple,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://support.apple.com/en-us/118551,Site slug is chip-family (M3) spanning 13/15 sizes. Use MODEL_FAMILY scope; confirm size from machine.
+macbook-air-m4,/รับซื้อโน๊ตบุ๊ค/macbook-air-m4/,Apple,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://support.apple.com/en-gb/122210,Official 15-inch M4 tech specs page used; 13-inch sibling exists per Apple identify-your-Mac page.
+macbook-air-m5,/รับซื้อโน๊ตบุ๊ค/macbook-air-m5/,Apple,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://support.apple.com/en-us/126321,Official Apple Support + Newsroom 2026-03. Confirm 13 vs 15 size on device.
+macbook-pro-14,/รับซื้อโน๊ตบุ๊ค/macbook-pro-14/,Apple,AMBIGUOUS,SERIES,AMBIGUOUS_MODEL,https://support.apple.com/en-us/108052,14-inch Pro spans multiple Apple silicon generations (M1 Pro/Max through newer). Ambiguous without chip/SKU.
+macbook-pro-16,/รับซื้อโน๊ตบุ๊ค/macbook-pro-16/,Apple,AMBIGUOUS,SERIES,AMBIGUOUS_MODEL,https://support.apple.com/en-us/108052,16-inch Pro spans multiple generations. Ambiguous without chip/SKU.
+macbook-pro-m1,/รับซื้อโน๊ตบุ๊ค/macbook-pro-m1/,Apple,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://support.apple.com/en-us/108052,Identity via Apple identify-your-Mac. 13-inch M1 Pro and 14/16 M1 Pro/Max exist — confirm exact machine before numeric claims.
+macbook-pro-m2,/รับซื้อโน๊ตบุ๊ค/macbook-pro-m2/,Apple,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://support.apple.com/en-us/108052,Chip family spans multiple sizes. Confirm chip/size before enrichment of exact numeric specs.
+macbook-pro-m3,/รับซื้อโน๊ตบุ๊ค/macbook-pro-m3/,Apple,FAMILY_MATCH,MODEL_FAMILY,READY_FAMILY_LEVEL,https://support.apple.com/en-us/117735,Chip-family page spanning base M3 / M3 Pro / M3 Max and 14/16 sizes. Confirm chip + size from About This Mac.
+macbook-pro-m4,/รับซื้อโน๊ตบุ๊ค/macbook-pro-m4/,Apple,FAMILY_MATCH,MODEL_FAMILY,LIMITED_DATA,https://support.apple.com/en-us/108052,Official identify-your-Mac confirms M4 Pro lineage exists; detailed CTO matrix not fully ingested this pass. Defer numeric hardware until Support tech-spec pages are attached per size/chip.
+macbook-pro-m5,/รับซื้อโน๊ตบุ๊ค/macbook-pro-m5/,Apple,FAMILY_MATCH,MODEL_FAMILY,LIMITED_DATA,https://support.apple.com/en-us/108052,Repository has MacBook Pro M5 page; official Support identify page is the safe identity anchor. Full tech-spec matrix deferred to next research batch.
+msi-cyborg-15,/รับซื้อโน๊ตบุ๊ค/msi-cyborg-15/,MSI,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+msi-katana-15,/รับซื้อโน๊ตบุ๊ค/msi-katana-15/,MSI,FAMILY_MATCH,MODEL_FAMILY,LIMITED_DATA,https://in.msi.com/Laptop/Katana-15-B13UX/Gallery,Official MSI pages confirm Katana 15 as a multi-SKU family (B13U/B14/HX/A15 AI variants). Exact CPU/GPU cannot be collapsed. Regional store SKUs exist but are SKU-specific — not applied as universal family defaults.
+msi-raider-18,/รับซื้อโน๊ตบุ๊ค/msi-raider-18/,MSI,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+msi-stealth-14,/รับซื้อโน๊ตบุ๊ค/msi-stealth-14/,MSI,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+msi-stealth-16,/รับซื้อโน๊ตบุ๊ค/msi-stealth-16/,MSI,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+msi-vector-16-hx,/รับซื้อโน๊ตบุ๊ค/msi-vector-16-hx/,MSI,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+samsung-galaxy-book,/รับซื้อโน๊ตบุ๊ค/samsung-galaxy-book/,Samsung,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+surface-laptop-go,/รับซื้อโน๊ตบุ๊ค/surface-laptop-go/,Microsoft,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+thinkpad-e14-e15,/รับซื้อโน๊ตบุ๊ค/thinkpad-e14-e15/,Lenovo,NO_OFFICIAL_MATCH,UNKNOWN,UNVERIFIED,,No official manufacturer verification completed in this pass.
+thinkpad-x1-carbon,/รับซื้อโน๊ตบุ๊ค/thinkpad-x1-carbon/,Lenovo,FAMILY_MATCH,SERIES,READY_FAMILY_LEVEL,https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_X1_Carbon_Gen_12/ThinkPad_X1_Carbon_Gen_12_Spec.pdf,Multi-generation ThinkPad X1 Carbon family. Gen 12 PSREF used as verified generation sample; do not flatten all gens to one CPU list.

@@ -1,0 +1,82 @@
+slug,action,priority,eligibility,official_url,notes
+acer-aspire-5,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+acer-nitro-16,official_research_applied,A,READY_FAMILY_LEVEL,https://www.acer.com/us-en/laptops/nitro/nitro-16-amd/pdp/NH.QLJAA.001,Verified from Acer.com Nitro 16 AN16-41 PDPs (multiple SKUs). RTX 4080 not present on sampled official AN16-41 pages — treat content claims of RTX 4080 as conflict candidates until another official machine type is verified.
+acer-nitro-17,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+acer-nitro-v,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+acer-predator-helios,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+acer-predator-neo,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+acer-predator-triton,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+alienware-m15-r7-r8,deferred_unverified,B,UNVERIFIED,,No official source captured in this foundation pass
+alienware-m16,deferred_unverified,B,UNVERIFIED,,No official source captured in this foundation pass
+alienware-m18,deferred_unverified,B,UNVERIFIED,,No official source captured in this foundation pass
+asus-rog-ally-x,official_research_applied,A,READY_HIGH_CONFIDENCE,https://rog.asus.com/us/gaming-handhelds/rog-ally/rog-ally-x-2024/spec/,Official ROG Ally X (2024) RC72LA spec page. Narrow config surface (storage variants) — high confidence for resale enrichment.
+asus-rog-flow,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+asus-rog-strix,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+asus-tuf-a15-f15,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+asus-zephyrus-g14,official_research_applied,A,READY_FAMILY_LEVEL,https://rog.asus.com/laptops/rog-zephyrus/rog-zephyrus-g14-2024/spec/,Official ROG pages show multiple years (2022–2024) under G14 marketing name. Do not treat as Exact SKU.
+asus-zephyrus-g16,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+dell-g15-g16,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+dell-inspiron-15,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+dell-xps-13-15,official_research_applied,A,AMBIGUOUS_MODEL,https://www.dell.com/en-us/shop/dell-laptops/xps-13-laptop-2024/spd/xps-13-9350-intel-laptop,"Repository slug merges XPS 13 and XPS 15 across many generations/processors (Intel Core Ultra, Snapdragon X, older XPS 15 discrete GPU gens). Ambiguous — do not enrich with a single CPU/GPU claim."
+hp-envy-x360,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+hp-omen-16,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+hp-omen-17,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+hp-omen-transcend,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+hp-spectre-x360,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+hp-victus-15,official_research_applied,A,READY_FAMILY_LEVEL,https://kaas.hpcloud.hp.com/pdf-public/pdf_11551834_en-US-1.pdf,Verified from official HP Maintenance and Service Guides (family-level). Exact SKU still required for a single config claim.
+hp-victus-16,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+hp-victus-17,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+lenovo-ideapad-3-5,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+lenovo-legion-5,official_research_applied,A,READY_FAMILY_LEVEL,https://psref.lenovo.com/,Legion 5 is a multi-generation family on Lenovo PSREF (many machine types). Site slug is family-level. Exact SKU research required per unit (e.g. 15ACH6 / 15IRX9 / 15AKP10).
+lenovo-legion-pro-7,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+lenovo-legion-pro,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+lenovo-legion-slim,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+lenovo-loq-15-16,deferred_unverified,B,UNVERIFIED,,No official source captured in this foundation pass
+macbook-air-13,official_research_applied,A,AMBIGUOUS_MODEL,https://support.apple.com/en-us/102869,URL is size-based marketing page spanning M1–M5 generations. Not an Exact SKU. Require chip generation from About This Mac before enrichment.
+macbook-air-15,official_research_applied,A,AMBIGUOUS_MODEL,https://support.apple.com/en-us/102869,Size page spanning M2/M3/M4/M5 15-inch Air. Ambiguous without chip generation.
+macbook-air-m1,official_research_applied,A,READY_FAMILY_LEVEL,https://support.apple.com/en-us/102869,Identity confirmed via Apple identify-your-Mac; detailed numeric fields kept conservative.
+macbook-air-m2,official_research_applied,A,READY_FAMILY_LEVEL,https://support.apple.com/en-us/111867,M2 Air exists as 13-inch (2022) and 15-inch (2023). Confirm size.
+macbook-air-m3,official_research_applied,A,READY_FAMILY_LEVEL,https://support.apple.com/en-us/118551,Site slug is chip-family (M3) spanning 13/15 sizes. Use MODEL_FAMILY scope; confirm size from machine.
+macbook-air-m4,official_research_applied,A,READY_FAMILY_LEVEL,https://support.apple.com/en-gb/122210,Official 15-inch M4 tech specs page used; 13-inch sibling exists per Apple identify-your-Mac page.
+macbook-air-m5,official_research_applied,A,READY_FAMILY_LEVEL,https://support.apple.com/en-us/126321,Official Apple Support + Newsroom 2026-03. Confirm 13 vs 15 size on device.
+macbook-pro-14,official_research_applied,A,AMBIGUOUS_MODEL,https://support.apple.com/en-us/108052,14-inch Pro spans multiple Apple silicon generations (M1 Pro/Max through newer). Ambiguous without chip/SKU.
+macbook-pro-16,official_research_applied,A,AMBIGUOUS_MODEL,https://support.apple.com/en-us/108052,16-inch Pro spans multiple generations. Ambiguous without chip/SKU.
+macbook-pro-m1,official_research_applied,A,READY_FAMILY_LEVEL,https://support.apple.com/en-us/108052,Identity via Apple identify-your-Mac. 13-inch M1 Pro and 14/16 M1 Pro/Max exist — confirm exact machine before numeric claims.
+macbook-pro-m2,official_research_applied,A,READY_FAMILY_LEVEL,https://support.apple.com/en-us/108052,Chip family spans multiple sizes. Confirm chip/size before enrichment of exact numeric specs.
+macbook-pro-m3,official_research_applied,A,READY_FAMILY_LEVEL,https://support.apple.com/en-us/117735,Chip-family page spanning base M3 / M3 Pro / M3 Max and 14/16 sizes. Confirm chip + size from About This Mac.
+macbook-pro-m4,official_research_applied,A,LIMITED_DATA,https://support.apple.com/en-us/108052,Official identify-your-Mac confirms M4 Pro lineage exists; detailed CTO matrix not fully ingested this pass. Defer numeric hardware until Support tech-spec pages are attached per size/chip.
+macbook-pro-m5,official_research_applied,A,LIMITED_DATA,https://support.apple.com/en-us/108052,Repository has MacBook Pro M5 page; official Support identify page is the safe identity anchor. Full tech-spec matrix deferred to next research batch.
+msi-cyborg-15,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+msi-katana-15,official_research_applied,A,LIMITED_DATA,https://in.msi.com/Laptop/Katana-15-B13UX/Gallery,Official MSI pages confirm Katana 15 as a multi-SKU family (B13U/B14/HX/A15 AI variants). Exact CPU/GPU cannot be collapsed. Regional store SKUs exist but are SKU-specific — not applied as universal family defaults.
+msi-raider-18,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+msi-stealth-14,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+msi-stealth-16,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+msi-vector-16-hx,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+samsung-galaxy-book,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+surface-laptop-go,deferred_unverified,C,UNVERIFIED,,No official source captured in this foundation pass
+thinkpad-e14-e15,deferred_unverified,A,UNVERIFIED,,No official source captured in this foundation pass
+thinkpad-x1-carbon,official_research_applied,A,READY_FAMILY_LEVEL,https://psref.lenovo.com/syspool/Sys/PDF/ThinkPad/ThinkPad_X1_Carbon_Gen_12/ThinkPad_X1_Carbon_Gen_12_Spec.pdf,Multi-generation ThinkPad X1 Carbon family. Gen 12 PSREF used as verified generation sample; do not flatten all gens to one CPU list.
+acer-swift,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+acer-travelmate,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+alienware-x16,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+asus-expertbook,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+asus-vivobook,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+asus-zenbook,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+asus-zephyrus,series_official_partial,A,READY_FAMILY_LEVEL,https://rog.asus.com/laptops/rog-zephyrus/,Series identity from repository URL inventory; SKU flattening forbidden.
+dell-latitude,series_official_partial,A,LIMITED_DATA,https://www.dell.com/en-us/shop/dell-laptops/scrrel/latitude-laptops,Official Dell Latitude hub confirms series existence; SKU-level PS not ingested this pass.
+dell-vostro,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+gigabyte-aorus,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+honor-magicbook,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+hp-elitebook,series_official_partial,A,LIMITED_DATA,https://www.hp.com/us-en/shop/vwa/laptops/EliteBook,Series identity from repository URL inventory; SKU flattening forbidden.
+hp-pavilion,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+hp-probook,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+huawei-matebook,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+lenovo-thinkbook,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+lenovo-yoga,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+lg-gram,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+msi-modern,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+razer-blade,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+surface-book,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+surface-laptop,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+surface-pro,series_deferred,B,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.
+thinkpad-t14,series_deferred,A,UNVERIFIED,,Series identity from repository URL inventory; SKU flattening forbidden.

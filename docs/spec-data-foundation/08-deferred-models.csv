@@ -1,0 +1,44 @@
+slug,eligibility,priority,reason,next_action
+acer-aspire-5,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+acer-nitro-17,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+acer-nitro-v,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+acer-predator-helios,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+acer-predator-neo,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+acer-predator-triton,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+alienware-m15-r7-r8,UNVERIFIED,B,No official manufacturer verification completed in this pass.,official_source_research
+alienware-m16,UNVERIFIED,B,No official manufacturer verification completed in this pass.,official_source_research
+alienware-m18,UNVERIFIED,B,No official manufacturer verification completed in this pass.,official_source_research
+asus-rog-flow,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+asus-rog-strix,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+asus-tuf-a15-f15,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+asus-zephyrus-g16,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+dell-g15-g16,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+dell-inspiron-15,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+dell-xps-13-15,AMBIGUOUS_MODEL,A,"Repository slug merges XPS 13 and XPS 15 across many generations/processors (Intel Core Ultra, Snapdragon X, older XPS 15 discrete GPU gens). Ambiguous — do not enrich with a single CPU/GPU claim.",require_chip_or_sku_from_device
+hp-envy-x360,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+hp-omen-16,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+hp-omen-17,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+hp-omen-transcend,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+hp-spectre-x360,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+hp-victus-16,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+hp-victus-17,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+lenovo-ideapad-3-5,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+lenovo-legion-pro-7,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+lenovo-legion-pro,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+lenovo-legion-slim,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+lenovo-loq-15-16,UNVERIFIED,B,No official manufacturer verification completed in this pass.,official_source_research
+macbook-air-13,AMBIGUOUS_MODEL,A,URL is size-based marketing page spanning M1–M5 generations. Not an Exact SKU. Require chip generation from About This Mac before enrichment.,require_chip_or_sku_from_device
+macbook-air-15,AMBIGUOUS_MODEL,A,Size page spanning M2/M3/M4/M5 15-inch Air. Ambiguous without chip generation.,require_chip_or_sku_from_device
+macbook-pro-14,AMBIGUOUS_MODEL,A,14-inch Pro spans multiple Apple silicon generations (M1 Pro/Max through newer). Ambiguous without chip/SKU.,require_chip_or_sku_from_device
+macbook-pro-16,AMBIGUOUS_MODEL,A,16-inch Pro spans multiple generations. Ambiguous without chip/SKU.,require_chip_or_sku_from_device
+macbook-pro-m4,LIMITED_DATA,A,Official identify-your-Mac confirms M4 Pro lineage exists; detailed CTO matrix not fully ingested this pass. Defer numeric hardware until Support tech-spec pages are attached per size/chip.,official_source_research
+macbook-pro-m5,LIMITED_DATA,A,Repository has MacBook Pro M5 page; official Support identify page is the safe identity anchor. Full tech-spec matrix deferred to next research batch.,official_source_research
+msi-cyborg-15,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+msi-katana-15,LIMITED_DATA,A,Official MSI pages confirm Katana 15 as a multi-SKU family (B13U/B14/HX/A15 AI variants). Exact CPU/GPU cannot be collapsed. Regional store SKUs exist but are SKU-specific — not applied as universal family defaults.,official_source_research
+msi-raider-18,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+msi-stealth-14,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+msi-stealth-16,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
+msi-vector-16-hx,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+samsung-galaxy-book,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+surface-laptop-go,UNVERIFIED,C,No official manufacturer verification completed in this pass.,official_source_research
+thinkpad-e14-e15,UNVERIFIED,A,No official manufacturer verification completed in this pass.,official_source_research
