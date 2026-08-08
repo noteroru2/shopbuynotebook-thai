@@ -1,0 +1,78 @@
+{
+  "sitemap_urls": 371,
+  "crawl_pass": 371,
+  "crawl_fail": 0,
+  "model_pass": 10,
+  "model_checks": [
+    {
+      "slug": "asus-rog-ally-x",
+      "http_status": 200,
+      "verified_panel": true,
+      "rtx4080_mentions": 0,
+      "pass": "PASS"
+    },
+    {
+      "slug": "acer-nitro-16",
+      "http_status": 200,
+      "verified_panel": true,
+      "rtx4080_mentions": 0,
+      "pass": "PASS"
+    },
+    {
+      "slug": "asus-zephyrus-g14",
+      "http_status": 200,
+      "verified_panel": true,
+      "rtx4080_mentions": 0,
+      "pass": "PASS"
+    },
+    {
+      "slug": "hp-victus-15",
+      "http_status": 200,
+      "verified_panel": true,
+      "rtx4080_mentions": 0,
+      "pass": "PASS"
+    },
+    {
+      "slug": "lenovo-legion-5",
+      "http_status": 200,
+      "verified_panel": true,
+      "rtx4080_mentions": 0,
+      "pass": "PASS"
+    },
+    {
+      "slug": "thinkpad-x1-carbon",
+      "http_status": 200,
+      "verified_panel": true,
+      "rtx4080_mentions": 0,
+      "pass": "PASS"
+    },
+    {
+      "slug": "macbook-pro-m3",
+      "http_status": 200,
+      "verified_panel": true,
+      "rtx4080_mentions": 0,
+      "pass": "PASS"
+    },
+    {
+      "slug": "macbook-air-m3",
+      "http_status": 200,
+      "verified_panel": true,
+      "rtx4080_mentions": 0,
+      "pass": "PASS"
+    },
+    {
+      "slug": "macbook-air-m4",
+      "http_status": 200,
+      "verified_panel": true,
+      "rtx4080_mentions": 0,
+      "pass": "PASS"
+    },
+    {
+      "slug": "macbook-air-m5",
+      "http_status": 200,
+      "verified_panel": true,
+      "rtx4080_mentions": 0,
+      "pass": "PASS"
+    }
+  ]
+}

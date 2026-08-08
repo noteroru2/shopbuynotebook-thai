@@ -4,9 +4,11 @@
 **Branch:** `content/verified-model-enrichment-batch-1`  
 **Dataset foundation:** merged from `data/verified-notebook-spec-foundation`
 
-## Verdict candidate
+## Verdict
 
-**PASS** (pending production crawl after deploy)
+**PASS**
+
+Production deploy succeeded. Sitemap crawl **371/371 PASS**. Nitro 16 unsupported RTX 4080 = **0** on production.
 
 ## Scope
 

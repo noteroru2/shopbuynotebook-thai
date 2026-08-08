@@ -1,18 +1,40 @@
 # Production Verification — Batch 1
 
-## Local pre-deploy evidence
+## Deploy
 
-- Build pages: **2460**
-- Sitemap URLs: **371**
-- Dist check `acer-nitro-16`: unsupported `RTX 4080` = **0**
-- Dist includes `data-verified-spec="acer-nitro-16"` panel
+| Item | Value |
+| --- | --- |
+| Workflow | Deploy Cloudflare Production |
+| Workflow Run | https://github.com/noteroru2/shopbuynotebook-thai/actions/runs/31239195256 |
+| Conclusion | success |
+| Checkout / Deployed SHA | `1c4f9da5fd380f84443ae2e9c04d49f00c806548` |
+| Artifact | production-qa-31239195256 |
 
-## Post-deploy checklist
+## Crawl
 
-1. Confirm GitHub Actions deploy success and record Deployment ID / Checkout SHA
-2. Crawl all 371 sitemap URLs (HTTP/canonical/robots/title/H1/assets)
-3. Manually open all 10 enriched model URLs on production
-4. Re-confirm Nitro 16 has no unsupported RTX 4080 claim
-5. Append crawl results to `09-production-crawl.csv` and finalize verdict
+- Sitemap URLs crawled: **371 / 371 PASS**
+- Failures: **0**
+- Evidence: `09-production-crawl.csv`, `09-production-crawl-summary.json`
 
-Status at commit time: **pending deploy**
+## Manual model verification (production)
+
+All 10 enriched models opened/fetched on production:
+
+| Slug | HTTP | Verified panel | Unsupported RTX 4080 |
+| --- | ---: | --- | --- |
+| asus-rog-ally-x | 200 | yes | 0 |
+| acer-nitro-16 | 200 | yes | **0** |
+| asus-zephyrus-g14 | 200 | yes | 0 |
+| hp-victus-15 | 200 | yes | 0 |
+| lenovo-legion-5 | 200 | yes | 0 |
+| thinkpad-x1-carbon | 200 | yes | 0 |
+| macbook-pro-m3 | 200 | yes | 0 |
+| macbook-air-m3 | 200 | yes | 0 |
+| macbook-air-m4 | 200 | yes | 0 |
+| macbook-air-m5 | 200 | yes | 0 |
+
+Production content failures: **0**
+
+## Freeze confirmation
+
+Homepage / Money / Province / Condition / Blog bodies were not part of this release content churn.
