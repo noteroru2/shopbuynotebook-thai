@@ -1,0 +1,83 @@
+---
+import {
+  getVerifiedModelSpec,
+  hasRenderableVerifiedFacts,
+  scopeLabelTh,
+  type VerifiedModelSpec,
+} from '../lib/verified-notebook-specs';
+
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+const spec: VerifiedModelSpec | null = getVerifiedModelSpec(slug);
+const show = hasRenderableVerifiedFacts(spec);
+---
+
+{show && spec ? (
+  <section class="mx-auto w-full max-w-6xl px-4 pt-10" data-verified-spec={slug}>
+    <div class="rounded-3xl border border-emerald-100 bg-emerald-50/40 p-6">
+      <h2 class="text-lg font-bold text-slate-900">ข้อมูลจากผู้ผลิตที่ตรวจแล้ว (ใช้ประกอบการประเมิน)</h2>
+      <p class="mt-2 text-sm leading-relaxed text-slate-700">
+        ขอบเขตข้อมูล: <strong>{scopeLabelTh(spec.configurationScope)}</strong>
+        {spec.eligibility === 'READY_FAMILY_LEVEL'
+          ? ' — ไม่ใช่การยืนยันว่าเครื่องทุกเครื่องมีสเปกเดียวกัน'
+          : ''}
+      </p>
+
+      <ul class="mt-4 space-y-2 text-sm text-slate-700">
+        {spec.generation ? (
+          <li><strong>Generation / ชิปตระกูล:</strong> {spec.generation}</li>
+        ) : null}
+        {spec.modelCode ? <li><strong>รหัสอ้างอิง:</strong> {spec.modelCode}</li> : null}
+        {spec.cpuOptions?.length ? (
+          <li><strong>ตัวเลือก CPU ที่พบในแหล่งผู้ผลิต:</strong> {spec.cpuOptions.join(' · ')}</li>
+        ) : null}
+        {spec.gpuOptions?.length ? (
+          <li><strong>ตัวเลือก GPU ที่พบในแหล่งผู้ผลิต:</strong> {spec.gpuOptions.join(' · ')}</li>
+        ) : null}
+        {spec.memory?.ramConfigurations?.length ? (
+          <li>
+            <strong>ตัวเลือก RAM:</strong> {spec.memory.ramConfigurations.join(' · ')}
+            {spec.memory.ramType ? ` (${spec.memory.ramType})` : ''}
+            {spec.memory.ramSoldered === true ? ' — ฝังบอร์ด อัปเกรดไม่ได้' : ''}
+            {spec.memory.ramSlots != null ? ` — ช่อง SODIMM ${spec.memory.ramSlots}` : ''}
+          </li>
+        ) : null}
+        {spec.storage?.storageOptions?.length ? (
+          <li>
+            <strong>ตัวเลือก SSD:</strong> {spec.storage.storageOptions.join(' · ')}
+            {spec.storage.storageInterface ? ` (${spec.storage.storageInterface})` : ''}
+          </li>
+        ) : null}
+        {spec.display?.displaySizes?.length ? (
+          <li>
+            <strong>จอที่พบ:</strong> {spec.display.displaySizes.join(' · ')}
+            {spec.display.resolutions?.length ? ` · ${spec.display.resolutions.join(' / ')}` : ''}
+            {spec.display.refreshRates?.length ? ` · ${spec.display.refreshRates.join(' / ')}` : ''}
+          </li>
+        ) : null}
+        {spec.batteryCapacity ? <li><strong>แบตเตอรี่ (อ้างอิงผู้ผลิต):</strong> {spec.batteryCapacity}</li> : null}
+        {spec.chargerWattageOptions?.length ? (
+          <li><strong>อะแดปเตอร์ที่พบ:</strong> {spec.chargerWattageOptions.join(' · ')}</li>
+        ) : null}
+        {spec.knownModelFamilies?.length ? (
+          <li><strong>ตระกูลย่อยที่ระบุได้:</strong> {spec.knownModelFamilies.join(' · ')}</li>
+        ) : null}
+      </ul>
+
+      <p class="mt-4 text-xs leading-relaxed text-slate-600">
+        ใช้เป็นกรอบตรวจสเปกเครื่องจริงเท่านั้น ไม่ใช่ใบเสนอราคา และไม่ยืนยันว่าเครื่องของคุณตรงกับทุกตัวเลือกด้านบน
+        {spec.officialUrl ? (
+          <>
+            {' '}แหล่งอ้างอิงผู้ผลิต:{' '}
+            <a class="underline underline-offset-2" href={spec.officialUrl} rel="noopener noreferrer" target="_blank">
+              เปิดหน้าอย่างเป็นทางการ
+            </a>
+          </>
+        ) : null}
+      </p>
+    </div>
+  </section>
+) : null}
