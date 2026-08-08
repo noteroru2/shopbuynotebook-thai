@@ -1,0 +1,45 @@
+slug,reason
+macbook-air-m1,READY_* but held for Batch 2 capacity
+macbook-air-m2,READY_* but held for Batch 2 capacity
+macbook-pro-m1,READY_* but held for Batch 2 capacity
+macbook-pro-m2,READY_* but held for Batch 2 capacity
+acer-aspire-5,UNVERIFIED
+acer-nitro-17,UNVERIFIED
+acer-nitro-v,UNVERIFIED
+acer-predator-helios,UNVERIFIED
+acer-predator-neo,UNVERIFIED
+acer-predator-triton,UNVERIFIED
+alienware-m15-r7-r8,UNVERIFIED
+alienware-m16,UNVERIFIED
+alienware-m18,UNVERIFIED
+asus-rog-flow,UNVERIFIED
+asus-rog-strix,UNVERIFIED
+asus-tuf-a15-f15,UNVERIFIED
+asus-zephyrus-g16,UNVERIFIED
+dell-g15-g16,UNVERIFIED
+dell-inspiron-15,UNVERIFIED
+dell-xps-13-15,AMBIGUOUS_MODEL
+hp-envy-x360,UNVERIFIED
+hp-omen-16,UNVERIFIED
+hp-omen-17,UNVERIFIED
+hp-omen-transcend,UNVERIFIED
+hp-spectre-x360,UNVERIFIED
+hp-victus-16,UNVERIFIED
+hp-victus-17,UNVERIFIED
+lenovo-ideapad-3-5,UNVERIFIED
+lenovo-legion-pro-7,UNVERIFIED
+lenovo-legion-pro,UNVERIFIED
+lenovo-legion-slim,UNVERIFIED
+lenovo-loq-15-16,UNVERIFIED
+macbook-air-13,AMBIGUOUS_MODEL
+macbook-air-15,AMBIGUOUS_MODEL
+macbook-pro-14,AMBIGUOUS_MODEL
+macbook-pro-16,AMBIGUOUS_MODEL
+macbook-pro-m4,LIMITED_DATA
+macbook-pro-m5,LIMITED_DATA
+msi-cyborg-15,UNVERIFIED
+msi-katana-15,LIMITED_DATA
+msi-raider-18,UNVERIFIED
+msi-stealth-14,UNVERIFIED
+msi-stealth-16,UNVERIFIED
+msi-vector-16-hx,UNVERIFIED

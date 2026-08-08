@@ -1,0 +1,7 @@
+metric,value,status
+routes_built,2460,PASS
+sitemap_urls,371,PASS
+indexable_target,371,PASS
+nitro16_rtx4080_in_dist,0,PASS
+verified_panel_in_nitro_dist,yes,PASS
+production_crawl_371,pending_after_deploy,PENDING

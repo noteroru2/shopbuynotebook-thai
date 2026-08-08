@@ -1,0 +1,11 @@
+page,path,status,note
+Homepage,src/pages/index.astro,UNCHANGED,git diff clean vs HEAD for this path
+Money-รับซื้อ-notebook,src/pages/รับซื้อโน๊ตบุ๊ค.astro,UNCHANGED,git diff clean
+Money-มือสอง,src/pages/รับซื้อโน๊ตบุ๊คมือสอง.astro,UNCHANGED,git diff clean
+Money-เช็คราคา,src/pages/เช็คราคาโน๊ตบุ๊ค.astro,UNCHANGED,git diff clean
+Money-ตีราคา,src/pages/ตีราคาโน๊ตบุ๊ค.astro,UNCHANGED,git diff clean
+Money-ขาย,src/pages/ขายโน๊ตบุ๊ค.astro,UNCHANGED,git diff clean
+Blogs,src/content/blog,UNCHANGED,no blog files in batch diff
+Conditions,src/content/conditions,UNCHANGED,no condition files in batch diff
+Provinces/Locations,src/content/locations,UNCHANGED,no location files in batch diff
+Model route template,src/pages/รับซื้อโน๊ตบุ๊ค/[slug].astro,EXPECTED_SHARED_DELTA,VerifiedModelFacts mount for READY_* models only; money/home bodies untouched

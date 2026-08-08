@@ -1,0 +1,57 @@
+slug,field,in_dataset,mentioned_in_page,sample
+asus-rog-ally-x,cpuOptions,yes,yes,AMD Ryzen Z1 Extreme
+asus-rog-ally-x,gpuOptions,yes,yes,"AMD Radeon Graphics (RDNA 3, 12 CU)"
+asus-rog-ally-x,memory.ramConfigurations,yes,yes,24GB
+asus-rog-ally-x,storage.storageOptions,yes,yes,1TB | 2TB
+asus-rog-ally-x,display.displaySizes,yes,partial_or_summary,7-inch
+asus-rog-ally-x,batteryCapacity,yes,yes,80Wh
+asus-rog-ally-x,chargerWattageOptions,yes,partial_or_summary,65W USB-C
+acer-nitro-16,cpuOptions,yes,yes,AMD Ryzen 5 7640HS | AMD Ryzen 7 7735HS | AMD Ryzen 9 7940HS
+acer-nitro-16,gpuOptions,yes,yes,NVIDIA GeForce RTX 4050 Laptop GPU | NVIDIA GeForce RTX 4060 Laptop GPU | NVIDIA GeForce RTX 4070 Laptop GPU
+acer-nitro-16,memory.ramConfigurations,yes,yes,8GB | 16GB | 32GB
+acer-nitro-16,storage.storageOptions,yes,yes,512GB | 1TB
+acer-nitro-16,display.displaySizes,yes,partial_or_summary,16-inch
+acer-nitro-16,batteryCapacity,yes,partial_or_summary,90Wh (AN16-41 official PDP listings)
+acer-nitro-16,chargerWattageOptions,yes,yes,230W | 330W
+asus-zephyrus-g14,cpuOptions,yes,yes,AMD Ryzen 9 8945HS | AMD Ryzen 9 7940HS | AMD Ryzen 7 7735HS
+asus-zephyrus-g14,gpuOptions,yes,yes,NVIDIA GeForce RTX 4050 Laptop GPU | NVIDIA GeForce RTX 4060 Laptop GPU | NVIDIA GeForce RTX 4070 Laptop GPU
+asus-zephyrus-g14,memory.ramConfigurations,yes,yes,16GB | 32GB
+asus-zephyrus-g14,storage.storageOptions,yes,partial_or_summary,1TB PCIe 4.0 NVMe (common 2024 SKU listing)
+asus-zephyrus-g14,display.displaySizes,yes,partial_or_summary,14-inch
+asus-zephyrus-g14,batteryCapacity,yes,partial_or_summary,73Wh (2024 GA403 listing)
+asus-zephyrus-g14,chargerWattageOptions,yes,yes,180W
+hp-victus-15,cpuOptions,yes,yes,AMD Ryzen 5 8645HS | AMD Ryzen 7 8845HS | AMD Ryzen 9 8945HS | Intel Core i5-13420H class options (fa series MSG) | Intel Core i7-13620H class options (fa series MSG)
+hp-victus-15,gpuOptions,yes,yes,NVIDIA GeForce RTX 2050 | NVIDIA GeForce RTX 3050 | NVIDIA GeForce RTX 4050 | NVIDIA GeForce RTX 4060 | NVIDIA GeForce RTX 5050 | NVIDIA GeForce RTX 5060
+hp-victus-15,memory.ramConfigurations,yes,yes,8GB | 16GB
+hp-victus-15,storage.storageOptions,yes,yes,512GB | 1TB
+hp-victus-15,display.displaySizes,yes,partial_or_summary,15.6-inch
+thinkpad-x1-carbon,memory.ramConfigurations,yes,yes,16GB | 32GB | 64GB
+thinkpad-x1-carbon,display.displaySizes,yes,partial_or_summary,14-inch
+macbook-pro-m3,cpuOptions,yes,yes,Apple M3 8-core CPU | Apple M3 Pro 11-core CPU | Apple M3 Pro 12-core CPU | Apple M3 Max 14-core CPU | Apple M3 Max 16-core CPU
+macbook-pro-m3,gpuOptions,yes,partial_or_summary,Apple M3 10-core GPU | Apple M3 Pro 14-core GPU | Apple M3 Pro 18-core GPU | Apple M3 Max 30-core GPU | Apple M3 Max 40-core GPU
+macbook-pro-m3,memory.ramConfigurations,yes,yes,8GB | 16GB | 18GB | 24GB | 36GB | 48GB | 64GB | 96GB | 128GB
+macbook-pro-m3,storage.storageOptions,yes,yes,512GB | 1TB | 2TB | 4TB | 8TB
+macbook-pro-m3,display.displaySizes,yes,partial_or_summary,14.2-inch | 16.2-inch
+macbook-pro-m3,batteryCapacity,yes,partial_or_summary,70Wh class (14-inch M3) / larger on 16-inch — confirm size
+macbook-pro-m3,chargerWattageOptions,yes,partial_or_summary,70W USB-C | 96W USB-C
+macbook-air-m3,cpuOptions,yes,yes,Apple M3 8-core CPU
+macbook-air-m3,gpuOptions,yes,yes,Apple M3 8-core GPU | Apple M3 10-core GPU
+macbook-air-m3,memory.ramConfigurations,yes,yes,8GB | 16GB | 24GB
+macbook-air-m3,storage.storageOptions,yes,yes,256GB | 512GB | 1TB | 2TB
+macbook-air-m3,display.displaySizes,yes,partial_or_summary,13.6-inch | 15.3-inch
+macbook-air-m3,batteryCapacity,yes,partial_or_summary,52.6Wh (13-inch) / see 15-inch support page for 15-inch battery
+macbook-air-m3,chargerWattageOptions,yes,partial_or_summary,30W USB-C | 35W Dual USB-C | 70W USB-C (fast charge capable)
+macbook-air-m4,cpuOptions,yes,yes,Apple M4 10-core CPU
+macbook-air-m4,gpuOptions,yes,yes,Apple M4 8-core GPU | Apple M4 10-core GPU
+macbook-air-m4,memory.ramConfigurations,yes,yes,16GB | 24GB | 32GB
+macbook-air-m4,storage.storageOptions,yes,yes,256GB | 512GB | 1TB | 2TB
+macbook-air-m4,display.displaySizes,yes,partial_or_summary,13.6-inch | 15.3-inch
+macbook-air-m4,batteryCapacity,yes,partial_or_summary,66.5Wh (15-inch reference)
+macbook-air-m4,chargerWattageOptions,yes,yes,35W Dual USB-C | 70W USB-C (fast charge capable)
+macbook-air-m5,cpuOptions,yes,yes,Apple M5 10-core CPU
+macbook-air-m5,gpuOptions,yes,yes,Apple M5 8-core GPU | Apple M5 10-core GPU
+macbook-air-m5,memory.ramConfigurations,yes,yes,16GB | 24GB | 32GB
+macbook-air-m5,storage.storageOptions,yes,yes,512GB | 1TB | 2TB | 4TB
+macbook-air-m5,display.displaySizes,yes,partial_or_summary,13.6-inch | 15.3-inch
+macbook-air-m5,batteryCapacity,yes,partial_or_summary,66.5Wh (15-inch)
+macbook-air-m5,chargerWattageOptions,yes,yes,40W Dynamic Power Adapter (60W Max) | 35W Dual USB-C | 70W USB-C

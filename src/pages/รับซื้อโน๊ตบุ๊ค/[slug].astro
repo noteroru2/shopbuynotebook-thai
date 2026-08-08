@@ -6,11 +6,13 @@ import FAQ from '../../components/FAQ.astro';
 import ProcessSteps from '../../components/ProcessSteps.astro';
 import PriceFactors from '../../components/PriceFactors.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
+import VerifiedModelFacts from '../../components/VerifiedModelFacts.astro';
 import { getCollection, render } from 'astro:content';
 import { absoluteUrl } from '../../lib/seo';
 import { SITE } from '../../lib/seo';
 import { SPECIALIST_PAGE_LINKS } from '../../data/specialist-pages';
 import { BRAND_HUB_SLUGS } from '../../data/seo-index-tier';
+import { getVerifiedModelSpec } from '../../lib/verified-notebook-specs';
 
 export async function getStaticPaths() {
   const [brands, conditions, locations] = await Promise.all([
@@ -334,6 +336,8 @@ const pageDescription =
 
 const brandFeaturedLinks = kind === 'brand' ? getBrandFeaturedLinks(slug, entry.data.title) : [];
 const faqs = kind === 'brand' ? [...(entry.data.faqs ?? []), ...getAutoBrandFaqs(slug, entry.data.title)] : (entry.data.faqs ?? []);
+const verifiedModelSpec =
+  kind === 'brand' && brandPageKind === 'model' ? getVerifiedModelSpec(slug) : null;
 
 /** Brand → Series → Model hierarchy links (no money-page churn). */
 const brandCollection = kind === 'brand' ? await getCollection('brands') : [];
@@ -634,6 +638,8 @@ if (kind === 'brand' && brandPageKind === 'model') {
         </aside>
       </div>
     </section>
+
+    {verifiedModelSpec ? <VerifiedModelFacts slug={slug} /> : null}
 
     <section class="mx-auto w-full max-w-6xl px-4 pt-12">
       <div class="prose prose-slate max-w-none prose-headings:tracking-tight prose-a:underline-offset-4">

@@ -1,0 +1,58 @@
+URL,slug,conflict_type,detail,severity
+/รับซื้อโน๊ตบุ๊ค/acer-aspire-5/,acer-aspire-5,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/acer-nitro-16/,acer-nitro-16,CONFIRMED_CONFLICT,Repo GPU tokens RTX 4080 not present in verified gpuOptions [NVIDIA GeForce RTX 4050 Laptop GPU; NVIDIA GeForce RTX 4060 Laptop GPU; NVIDIA GeForce RTX 4070 Laptop GPU],P1
+/รับซื้อโน๊ตบุ๊ค/acer-nitro-17/,acer-nitro-17,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4050,RTX 4060,RTX 4050,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/acer-nitro-v/,acer-nitro-v,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 2050,RTX 3050,RTX 4050,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/acer-predator-helios/,acer-predator-helios,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4070,RTX 4070; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/acer-predator-neo/,acer-predator-neo,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4050,RTX 4060,RTX 4070,RTX 4080; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/acer-predator-triton/,acer-predator-triton,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4070,RTX 4070; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/alienware-m15-r7-r8/,alienware-m15-r7-r8,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 3060,RTX 3070,RTX 4060,RTX 3070,RTX 4070,RTX 3060,RTX 3070,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/alienware-m16/,alienware-m16,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4060,RTX 4070,RTX 4080,RTX 4060,RTX 4070,RTX 4080; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/alienware-m18/,alienware-m18,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4070,RTX 4080,RTX 4090,RTX 4070,RTX 4080,RTX 4090; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/asus-rog-ally-x/,asus-rog-ally-x,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/asus-rog-flow/,asus-rog-flow,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/asus-rog-strix/,asus-rog-strix,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 3070,RTX 3080,RTX 4060,RTX 4070,RTX 4080,RTX 4090; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/asus-tuf-a15-f15/,asus-tuf-a15-f15,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 2060,RTX 3050,RTX 3060,RTX 4050,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/asus-zephyrus-g14/,asus-zephyrus-g14,POSSIBLE_CONFIG_VARIANT,Repo GPU tokens RTX 3060 not present in verified gpuOptions [NVIDIA GeForce RTX 4050 Laptop GPU; NVIDIA GeForce RTX 4060 Laptop GPU; NVIDIA GeForce RTX 4070 Laptop GPU],P2
+/รับซื้อโน๊ตบุ๊ค/asus-zephyrus-g16/,asus-zephyrus-g16,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4060,RTX 4070,RTX 4060,RTX 4070; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/dell-g15-g16/,dell-g15-g16,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 3050,RTX 4060,RTX 3050,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/dell-inspiron-15/,dell-inspiron-15,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/dell-xps-13-15/,dell-xps-13-15,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/hp-envy-x360/,hp-envy-x360,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/hp-omen-16/,hp-omen-16,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4060,RTX 4070,RTX 3060,RTX 4050,RTX 4060,RTX 4070; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/hp-omen-17/,hp-omen-17,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4060,RTX 4070,RTX 4080,RTX 3070,RTX 4060,RTX 4070,RTX 4080; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/hp-omen-transcend/,hp-omen-transcend,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4060,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/hp-spectre-x360/,hp-spectre-x360,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/hp-victus-15/,hp-victus-15,NO_CONFLICT,Repo GPU tokens covered by verified options or naming variants,none
+/รับซื้อโน๊ตบุ๊ค/hp-victus-16/,hp-victus-16,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 3050,RTX 3060,RTX 4050,RTX 4060,RTX 4070; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/hp-victus-17/,hp-victus-17,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4050,RTX 4060,RTX 3050,RTX 4050,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/lenovo-ideapad-3-5/,lenovo-ideapad-3-5,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/lenovo-legion-5/,lenovo-legion-5,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4060,RTX 3060,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/lenovo-legion-pro-7/,lenovo-legion-pro-7,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4070,RTX 4080,RTX 4090,RTX 4070,RTX 4080,RTX 4090; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/lenovo-legion-pro/,lenovo-legion-pro,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 3070,RTX 3080,RTX 4060,RTX 4070,RTX 4080,RTX 4090; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/lenovo-legion-slim/,lenovo-legion-slim,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 3060,RTX 4060,RTX 4070; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/lenovo-loq-15-16/,lenovo-loq-15-16,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 3050,RTX 4050,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/macbook-air-13/,macbook-air-13,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-air-15/,macbook-air-15,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-air-m1/,macbook-air-m1,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-air-m2/,macbook-air-m2,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-air-m3/,macbook-air-m3,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-air-m4/,macbook-air-m4,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-air-m5/,macbook-air-m5,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-pro-14/,macbook-pro-14,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-pro-16/,macbook-pro-16,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-pro-m1/,macbook-pro-m1,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-pro-m2/,macbook-pro-m2,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-pro-m3/,macbook-pro-m3,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-pro-m4/,macbook-pro-m4,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/macbook-pro-m5/,macbook-pro-m5,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/msi-cyborg-15/,msi-cyborg-15,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4050,RTX 4060,RTX 4050,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/msi-katana-15/,msi-katana-15,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4050,RTX 4060,RTX 4050,RTX 4060; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/msi-raider-18/,msi-raider-18,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4080,RTX 4090,RTX 4080,RTX 4090; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/msi-stealth-14/,msi-stealth-14,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4060,RTX 4070,RTX 4060,RTX 4070; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/msi-stealth-16/,msi-stealth-16,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4060,RTX 4070,RTX 4060,RTX 4070; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/msi-vector-16-hx/,msi-vector-16-hx,INSUFFICIENT_EVIDENCE,"Repo mentions RTX 4070,RTX 4080,RTX 4070,RTX 4080; official GPU options not verified yet",monitor
+/รับซื้อโน๊ตบุ๊ค/samsung-galaxy-book/,samsung-galaxy-book,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/surface-laptop-go/,surface-laptop-go,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/thinkpad-e14-e15/,thinkpad-e14-e15,NO_CONFLICT,No discrete GPU token in repository mentions,none
+/รับซื้อโน๊ตบุ๊ค/thinkpad-x1-carbon/,thinkpad-x1-carbon,NO_CONFLICT,No discrete GPU token in repository mentions,none
