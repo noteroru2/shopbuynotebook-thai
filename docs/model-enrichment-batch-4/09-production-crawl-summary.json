@@ -1,0 +1,40 @@
+{
+  "total": 371,
+  "failures": 0,
+  "pass": 371,
+  "model_failures": 0,
+  "models": [
+    {
+      "slug": "asus-rog-strix",
+      "url": "https://xn--42cn4aobed0eb6hubj4es0m5dhvd.com/รับซื้อโน๊ตบุ๊ค/asus-rog-strix/",
+      "http_status": 200,
+      "h1": "รับซื้อ Asus ROG Strix มือสอง เช็กราคาไวตามสเปก",
+      "has_verified_panelish": "YES",
+      "pass": "PASS"
+    },
+    {
+      "slug": "hp-omen-17",
+      "url": "https://xn--42cn4aobed0eb6hubj4es0m5dhvd.com/รับซื้อโน๊ตบุ๊ค/hp-omen-17/",
+      "http_status": 200,
+      "h1": "รับซื้อ HP Omen 17 มือสอง ประเมินตามรหัสตระกูล",
+      "has_verified_panelish": "YES",
+      "pass": "PASS"
+    },
+    {
+      "slug": "dell-g15-g16",
+      "url": "https://xn--42cn4aobed0eb6hubj4es0m5dhvd.com/รับซื้อโน๊ตบุ๊ค/dell-g15-g16/",
+      "http_status": 200,
+      "h1": "รับซื้อ Dell G15 / G16 มือสอง ประเมินแยกกลุ่มย่อย",
+      "has_verified_panelish": "YES",
+      "pass": "PASS"
+    },
+    {
+      "slug": "lenovo-legion-pro",
+      "url": "https://xn--42cn4aobed0eb6hubj4es0m5dhvd.com/รับซื้อโน๊ตบุ๊ค/lenovo-legion-pro/",
+      "http_status": 200,
+      "h1": "รับซื้อ Lenovo Legion Pro มือสอง ประเมินตามสายย่อย",
+      "has_verified_panelish": "YES",
+      "pass": "PASS"
+    }
+  ]
+}
