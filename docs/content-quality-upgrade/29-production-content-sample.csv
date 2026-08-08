@@ -1,0 +1,77 @@
+URL,Type,Source,HTTP status,QA result,Matches source,Natural language,Local accuracy,Entity accuracy,Fake claims,Encoding,Placeholder,Notes
+/,Homepage,src/pages/index.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:รับซื้อโน๊ตบุ๊ค ประเมินตามรุ่น สเปก และสภาพจริง 
+/รับซื้อ-notebook/,Notebook-English,src/pages/รับซื้อ-notebook.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:คำว่า Notebook ในหน้านี้หมายถึงเครื่องคอมพิวเตอร
+/รับซื้อโน๊ตบุ๊คมือสอง/,Second-hand,src/pages/รับซื้อโน๊ตบุ๊คมือสอง.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:โน๊ตบุ๊คมือสองไม่ได้ถูกประเมินจาก “ชื่อรุ่นอย่าง
+/รับซื้อโน๊ตบุ๊คบริษัท/,Secondary service,src/pages/รับซื้อโน๊ตบุ๊คบริษัท.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:หน้านี้เน้นคำว่า รับซื้อโน๊ตบุ๊คบริษัท สำหรับองค
+/เช็คราคาโน๊ตบุ๊ค/,Price/valuation,src/pages/เช็คราคาโน๊ตบุ๊ค.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:หน้านี้สำหรับคนที่อยากรู้ประมาณมูลค่าเครื่อง ก่อ
+/เช็คราคาโน๊ตบุ๊คมือสอง/,Price/valuation,src/pages/เช็คราคาโน๊ตบุ๊คมือสอง.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:หน้านี้เน้นคำว่า เช็คราคาโน๊ตบุ๊คมือสอง สำหรับผู
+/ตีราคาโน๊ตบุ๊ค/,Price/valuation,src/pages/ตีราคาโน๊ตบุ๊ค.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ตีราคาโน๊ตบุ๊ค วิธีประเมินจากสเปกและจุดตรวจสภาพ 
+/ขายโน๊ตบุ๊ค/,Secondary service,src/pages/ขายโน๊ตบุ๊ค.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:หน้านี้เป็นคู่มือเตรียมตัวฝั่งผู้ขาย ไม่ใช่หน้าเ
+/วิธีขายโน๊ตบุ๊ค/,Guide,src/pages/วิธีขายโน๊ตบุ๊ค/index.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:วิธีขายโน๊ตบุ๊คมือสองให้ได้ราคาดีและปลอดภัย ถ้าค
+/ติดต่อเรา/,Contact,src/pages/ติดต่อเรา.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ติดต่อเรา วิธีที่เร็วที่สุดคือแอดไลน์ @webuy แล้
+/blog/,Blog,src/pages/blog/index.astro,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:บทความ รวมบทความสั้น ๆ เพื่อช่วยให้ขายโน๊ตบุ๊คมื
+/รับซื้อโน๊ตบุ๊ค/acer-aspire-5/,Model,src/content/brands/acer-aspire-5.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อโน๊ต
+/รับซื้อโน๊ตบุ๊ค/acer-nitro-16/,Model,src/content/brands/acer-nitro-16.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ข้อมูลสเปกหลักของรุ่น Acer Nitro 16 ที่มีผลต่อรา
+/รับซื้อโน๊ตบุ๊ค/acer-nitro-17/,Model,src/content/brands/acer-nitro-17.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อโน๊ต
+/รับซื้อโน๊ตบุ๊ค/acer-nitro-v/,Model,src/content/brands/acer-nitro-v.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ข้อมูลสเปกหลักของรุ่น Acer Nitro V ที่มีผลต่อราค
+/รับซื้อโน๊ตบุ๊ค/acer-predator-helios/,Model,src/content/brands/acer-predator-helios.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อเกมม
+/รับซื้อโน๊ตบุ๊ค/acer-predator-neo/,Model,src/content/brands/acer-predator-neo.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ข้อมูลสเปกหลักของรุ่น Acer Predator Helios Neo ท
+/รับซื้อโน๊ตบุ๊ค/acer-predator-triton/,Model,src/content/brands/acer-predator-triton.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อโน๊ต
+/รับซื้อโน๊ตบุ๊ค/acer-swift/,Series,src/content/brands/acer-swift.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:จุดเด่นและการตอบโจทย์การใช้งานของซีรีส์ Acer Swi
+/รับซื้อโน๊ตบุ๊ค/acer-travelmate/,Series,src/content/brands/acer-travelmate.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:จุดเด่นและการตอบโจทย์การใช้งานของซีรีส์ Acer Tra
+/รับซื้อโน๊ตบุ๊ค/acer/,Brand,src/content/brands/acer.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ภาพรวมของแบรนด์ Acer ในตลาดรับซื้อคอมพิวเตอร์มือ
+/รับซื้อโน๊ตบุ๊ค/alienware-m15-r7-r8/,Model,src/content/brands/alienware-m15-r7-r8.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อโน๊ต
+/รับซื้อโน๊ตบุ๊ค/alienware-m16/,Model,src/content/brands/alienware-m16.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อโน๊ต
+/รับซื้อโน๊ตบุ๊ค/alienware-m18/,Model,src/content/brands/alienware-m18.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อเกมม
+/รับซื้อโน๊ตบุ๊ค/alienware-x16/,Series,src/content/brands/alienware-x16.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อโน๊ต
+/รับซื้อโน๊ตบุ๊ค/asus-expertbook/,Series,src/content/brands/asus-expertbook.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:จุดเด่นและการตอบโจทย์การใช้งานของซีรีส์ Asus Exp
+/รับซื้อโน๊ตบุ๊ค/asus-vivobook/,Series,src/content/brands/asus-vivobook.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:จุดเด่นและการตอบโจทย์การใช้งานของซีรีส์ Asus Viv
+/รับซื้อโน๊ตบุ๊ค/asus-zenbook/,Series,src/content/brands/asus-zenbook.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:จุดเด่นและการตอบโจทย์การใช้งานของซีรีส์ Asus Zen
+/รับซื้อโน๊ตบุ๊ค/asus-zephyrus/,Series,src/content/brands/asus-zephyrus.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:จุดเด่นและการตอบโจทย์การใช้งานของซีรีส์ Asus Zep
+/รับซื้อโน๊ตบุ๊ค/asus/,Brand,src/content/brands/asus.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ภาพรวมของแบรนด์ Asus ในตลาดรับซื้อคอมพิวเตอร์มือ
+/รับซื้อโน๊ตบุ๊ค/dell-latitude/,Series,src/content/brands/dell-latitude.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:จุดเด่นและการตอบโจทย์การใช้งานของซีรีส์ Dell Lat
+/รับซื้อโน๊ตบุ๊ค/dell/,Brand,src/content/brands/dell.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ภาพรวมของแบรนด์ Dell ในตลาดรับซื้อคอมพิวเตอร์มือ
+/รับซื้อโน๊ตบุ๊ค/gaming/,Brand,src/content/brands/gaming.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:รับซื้อโน๊ตบุ๊ค Gaming — ประเมินตามสเปก GPU และส
+/รับซื้อโน๊ตบุ๊ค/gigabyte/,Brand,src/content/brands/gigabyte.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อโน๊ต
+/รับซื้อโน๊ตบุ๊ค/honor/,Brand,src/content/brands/honor.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการประเมินราคา
+/รับซื้อโน๊ตบุ๊ค/hp/,Brand,src/content/brands/hp.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ภาพรวมของแบรนด์ HP ในตลาดรับซื้อคอมพิวเตอร์มือสอ
+/รับซื้อโน๊ตบุ๊ค/huawei/,Brand,src/content/brands/huawei.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ภาพรวมของแบรนด์ Huawei ในตลาดรับซื้อคอมพิวเตอร์ม
+/รับซื้อโน๊ตบุ๊ค/hdmi-เสีย/,Condition,src/content/conditions/hdmi-เสีย.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:เสียคืออาการแบบไหน เสียบสาย HDMI แล้วจอนอกไม่ขึ้
+/รับซื้อโน๊ตบุ๊ค/macbook-battery-health/,Condition,src/content/conditions/macbook-battery-health.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:รับซื้อ MacBook ที่มีสุขภาพแบตเตอรี่ต่ำ ประเมินร
+/รับซื้อโน๊ตบุ๊ค/macbook-battery-swollen/,Condition,src/content/conditions/macbook-battery-swollen.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการประเมินราคา
+/รับซื้อโน๊ตบุ๊ค/macbook-charge-port/,Condition,src/content/conditions/macbook-charge-port.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการประเมินราคา
+/รับซื้อโน๊ตบุ๊ค/macbook-cycle-count/,Condition,src/content/conditions/macbook-cycle-count.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อ Mac
+/รับซื้อโน๊ตบุ๊ค/macbook-keyboard-issue/,Condition,src/content/conditions/macbook-keyboard-issue.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อและป
+/รับซื้อโน๊ตบุ๊ค/macbook-mdm/,Condition,src/content/conditions/macbook-mdm.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ทำความเข้าใจเกี่ยวกับระบบ MDM (Mobile Device Man
+/รับซื้อโน๊ตบุ๊ค/macbook-no-box-no-receipt/,Condition,src/content/conditions/macbook-no-box-no-receipt.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อและป
+/รับซื้อโน๊ตบุ๊ค/macbook-screen-crack/,Condition,src/content/conditions/macbook-screen-crack.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:แนวทางการรับซื้อและประเมินราคา บริการรับซื้อ Mac
+/รับซื้อโน๊ตบุ๊ค/ssd-เสีย/,Condition,src/content/conditions/ssd-เสีย.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:เสียมีอาการอย่างไร เครื่องค้างที่โลโก้ ขึ้นว่าไม
+/รับซื้อโน๊ตบุ๊ค/กระบี่/,Province,src/content/locations/กระบี่.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:รับซื้อโน๊ตบุ๊คกระบี่ เริ่มจากความชัดของข้อมูล ไ
+/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/,Province,src/content/locations/กรุงเทพ.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:บริการรับซื้อโน๊ตบุ๊คสำหรับลูกค้าในกรุงเทพ ถ้าเป
+/รับซื้อโน๊ตบุ๊ค/กาญจนบุรี/,Province,src/content/locations/กาญจนบุรี.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:กาญจนบุรี: ช่องทางรับซื้อโน๊ตบุ๊คผ่านไลน์ @webuy
+/รับซื้อโน๊ตบุ๊ค/กาฬสินธุ์/,Province,src/content/locations/กาฬสินธุ์.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ขายโน๊ตบุ๊คในกาฬสินธุ์ — เริ่มจากประเมินออนไลน์ 
+/รับซื้อโน๊ตบุ๊ค/กำแพงเพชร/,Province,src/content/locations/กำแพงเพชร.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:รับซื้อโน๊ตบุ๊คกำแพงเพชร ไม่ต้องรอให้เครื่องสวยไ
+/รับซื้อโน๊ตบุ๊ค/ขอนแก่น/,Province,src/content/locations/ขอนแก่น.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:รับซื้อโน๊ตบุ๊คขอนแก่น ลูกค้าในขอนแก่นหลายคนจบงา
+/รับซื้อโน๊ตบุ๊ค/จันทบุรี/,Province,src/content/locations/จันทบุรี.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:รับซื้อโน๊ตบุ๊คจันทบุรี ถ้าคุณอยู่จันทบุรีและลัง
+/รับซื้อโน๊ตบุ๊ค/ฉะเชิงเทรา/,Province,src/content/locations/ฉะเชิงเทรา.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ขายโน๊ตบุ๊คในฉะเชิงเทรา — เริ่มจากประเมินออนไลน์
+/รับซื้อโน๊ตบุ๊ค/ชลบุรี/,Province,src/content/locations/ชลบุรี.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:รับซื้อโน๊ตบุ๊คชลบุรี รับซื้อในที่นี้หมายถึงประเ
+/รับซื้อโน๊ตบุ๊ค/ชัยนาท/,Province,src/content/locations/ชัยนาท.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:รับซื้อโน๊ตบุ๊คชัยนาท เริ่มคุยจากของที่มีอยู่จริ
+/รับซื้อโน๊ตบุ๊ค/ชัยภูมิ/,Province,src/content/locations/ชัยภูมิ.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:รับซื้อโน๊ตบุ๊คชัยภูมิ ใครที่ค้นหาช่องทางจากชัยภ
+/รับซื้อโน๊ตบุ๊ค/ชุมพร/,Province,src/content/locations/ชุมพร.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:บริการรับซื้อโน๊ตบุ๊คสำหรับลูกค้าในชุมพร ขั้นตอน
+/รับซื้อโน๊ตบุ๊ค/ตรัง/,Province,src/content/locations/ตรัง.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:บริการรับซื้อโน๊ตบุ๊คสำหรับลูกค้าในตรัง หน้าท้อง
+/รับซื้อโน๊ตบุ๊ค/ตราด/,Province,src/content/locations/ตราด.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:บริการรับซื้อโน๊ตบุ๊คสำหรับลูกค้าในตราด ถ้าเพิ่ง
+/รับซื้อโน๊ตบุ๊ค/ตาก/,Province,src/content/locations/ตาก.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:บริการรับซื้อโน๊ตบุ๊คสำหรับลูกค้าในตาก เคสพกเครื
+/รับซื้อโน๊ตบุ๊ค/นครนายก/,Province,src/content/locations/นครนายก.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ขายโน๊ตบุ๊คในนครนายก — เริ่มจากประเมินออนไลน์ คว
+/รับซื้อโน๊ตบุ๊ค/นครปฐม/,Province,src/content/locations/นครปฐม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ขายโน๊ตบุ๊คในนครปฐม — เริ่มจากประเมินออนไลน์ เริ
+/รับซื้อโน๊ตบุ๊ค/นครพนม/,Province,src/content/locations/นครพนม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:บริการรับซื้อโน๊ตบุ๊คสำหรับลูกค้าในนครพนม บางคนใ
+/blog/gaming-notebook-มือสองขายได้ราคาดีกว่าไหม/,Blog,src/content/blog/gaming-notebook-มือสองขายได้ราคาดีกว่าไหม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:หลายคนสงสัยว่า “ Gaming Notebook มือสองขายได้ราค
+/blog/macbook-battery-health-มีผลต่อราคาไหม/,Blog,src/content/blog/macbook-battery-health-มีผลต่อราคาไหม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ข้อมูลประกอบบทความ บทความให้ความรู้สำหรับผู้ใช้ง
+/blog/macbook-cycle-count-เท่าไหร่ถึงราคาตก/,Blog,src/content/blog/macbook-cycle-count-เท่าไหร่ถึงราคาตก.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ข้อมูลประกอบบทความ บทความไขข้อข้องใจเรื่อง MacBo
+/blog/macbook-คีย์บอร์ดเสีย-ขายได้ไหม/,Blog,src/content/blog/macbook-คีย์บอร์ดเสีย-ขายได้ไหม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ข้อมูลประกอบบทความ บทความแนะแนวทางสำหรับเจ้าของเ
+/blog/macbook-จอร้าว-ขายได้ไหม/,Blog,src/content/blog/macbook-จอร้าว-ขายได้ไหม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ถ้า MacBook จอร้าว ยังขายได้ครับ แต่ร้านจะดูว่าเ
+/blog/macbook-ชาร์จไม่เข้า-ขายได้ไหม/,Blog,src/content/blog/macbook-ชาร์จไม่เข้า-ขายได้ไหม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ข้อมูลประกอบบทความ บทความแนะนำแนวทางการวิเคราะห์
+/blog/macbook-ติด-mdm-ขายได้ไหม/,Blog,src/content/blog/macbook-ติด-mdm-ขายได้ไหม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ถ้า MacBook ติด MDM ปกติควรปลดระบบจัดการให้เรียบ
+/blog/macbook-แบตบวม-ขายได้ไหม/,Blog,src/content/blog/macbook-แบตบวม-ขายได้ไหม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ข้อมูลประกอบบทความ บทความเตือนภัยและให้ความรู้เร
+/blog/macbook-ไม่มีกล่อง-ไม่มีใบเสร็จ-ขายได้ไหม/,Blog,src/content/blog/macbook-ไม่มีกล่อง-ไม่มีใบเสร็จ-ขายได้ไหม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ที่ ไม่มีกล่องบรรจุภัณฑ์ หรือไม่มีใบเสร็จรับเงิน
+/blog/macbook-ไม่มีที่ชาร์จ-ขายได้ไหม/,Blog,src/content/blog/macbook-ไม่มีที่ชาร์จ-ขายได้ไหม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:ขายได้ครับ ถึง MacBook ไม่มีที่ชาร์จ ก็ยังส่งประ
+/blog/ram-8gb-กับ-16gb-มีผลต่อราคารับซื้อไหม/,Blog,src/content/blog/ram-8gb-กับ-16gb-มีผลต่อราคารับซื้อไหม.md,200,PASS,yes,ok,ok,ok,none,ok,none,title/h1 match; marker:คำถามว่า RAM 8GB กับ 16GB มีผลต่อราคารับซื้อโน๊ต

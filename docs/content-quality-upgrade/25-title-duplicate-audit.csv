@@ -1,1 +1,5 @@
-title,count,urls,classification
+title,count,urls,classification,notes
+(none exact problematic),(0),,Exact duplicate,Pre-merge scan found 0 exact duplicate titles among indexable URLs that share different intents
+Valid pattern: province template,many,/รับซื้อโน๊ตบุ๊ค/{province}/,Valid repeated pattern,Titles differ by province entity; intentional
+Valid pattern: model/brand template,many,/รับซื้อโน๊ตบุ๊ค/{brand-or-model}/,Valid repeated pattern,Entity-differentiated titles; no mass rewrite
+Deferred near-duplicate polish,n/a,,Near duplicate,Metadata polish deferred — not a release blocker

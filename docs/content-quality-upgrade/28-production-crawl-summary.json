@@ -1,0 +1,59 @@
+{
+  "base": "https://xn--42cn4aobed0eb6hubj4es0m5dhvd.com",
+  "crawled_at": "2026-08-08T02:57:46.865Z",
+  "sitemap_index": "https://xn--42cn4aobed0eb6hubj4es0m5dhvd.com/sitemap-index.xml",
+  "child_sitemaps": [
+    "https://xn--42cn4aobed0eb6hubj4es0m5dhvd.com/sitemap-0.xml"
+  ],
+  "sitemap_url_count": 371,
+  "crawled": 371,
+  "http_failures": 0,
+  "unexpected_noindex": 0,
+  "canonical_errors": 0,
+  "thin_main": 0,
+  "placeholders": 0,
+  "pass_count": 371,
+  "fail_count": 0,
+  "by_type": {
+    "Homepage": {
+      "n": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "Other": {
+      "n": 156,
+      "pass": 156,
+      "fail": 0
+    },
+    "Model": {
+      "n": 79,
+      "pass": 79,
+      "fail": 0
+    },
+    "Brand": {
+      "n": 11,
+      "pass": 11,
+      "fail": 0
+    },
+    "Condition": {
+      "n": 1,
+      "pass": 1,
+      "fail": 0
+    },
+    "Blog": {
+      "n": 123,
+      "pass": 123,
+      "fail": 0
+    }
+  },
+  "robots_status": 200,
+  "googlebot_blocked": false,
+  "broken_assets_sampled": 0,
+  "assets_checked": 4,
+  "broken_internal_links_sampled": 0,
+  "internal_links_checked": 58,
+  "sample_http_failures": [],
+  "sample_canonical_errors": [],
+  "sample_broken_assets": [],
+  "sample_broken_links": []
+}
