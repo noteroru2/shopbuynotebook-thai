@@ -1,0 +1,5 @@
+slug,URL,brand,series,dataset status,configuration scope,verified fields,provenance count,enrichment approved,notes
+hp-omen-16,/รับซื้อโน๊ตบุ๊ค/hp-omen-16/,HP,hp-omen,READY_FAMILY_LEVEL,MODEL_FAMILY,cpuOptions|gpuOptions|memory|storage|display|battery,16,true,Official HP MSG verifies CPU/GPU/display/battery options
+hp-victus-17,/รับซื้อโน๊ตบุ๊ค/hp-victus-17/,HP,hp-victus,AMBIGUOUS_MODEL,UNKNOWN,,0,false,Official HP Victus docs cover 15/16; defer enrichment
+asus-tuf-a15-f15,/รับซื้อโน๊ตบุ๊ค/asus-tuf-a15-f15/,ASUS,asus-tuf,READY_FAMILY_LEVEL,SERIES,cpuOptions|gpuOptions|memory|storage|display|battery|charger,19,true,Official ASUS techspec pages support SERIES-level READY
+lenovo-loq-15-16,/รับซื้อโน๊ตบุ๊ค/lenovo-loq-15-16/,Lenovo,lenovo-loq,READY_FAMILY_LEVEL,SERIES,cpuOptions|gpuOptions|memory|storage|display|battery|charger,19,true,Official Lenovo PSREF PDFs support SERIES-level READY

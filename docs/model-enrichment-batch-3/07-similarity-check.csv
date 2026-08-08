@@ -1,0 +1,4 @@
+page_a,page_b,jaccard,level
+hp-omen-16,asus-tuf-a15-f15,0.293,LOW
+hp-omen-16,lenovo-loq-15-16,0.315,LOW
+asus-tuf-a15-f15,lenovo-loq-15-16,0.389,LOW

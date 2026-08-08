@@ -1,0 +1,27 @@
+{
+  "researched": [
+    "hp-omen-16",
+    "hp-victus-17",
+    "asus-tuf-a15-f15",
+    "lenovo-loq-15-16"
+  ],
+  "enriched": [
+    "hp-omen-16",
+    "asus-tuf-a15-f15",
+    "lenovo-loq-15-16"
+  ],
+  "deferred": [
+    {
+      "slug": "hp-victus-17",
+      "reason": "AMBIGUOUS_MODEL — no official Victus 17 MSG/product matrix; HP Victus docs cover 15/16; 17-inch gaming docs are OMEN 17"
+    }
+  ],
+  "avg_before": 93.7,
+  "avg_after": 91,
+  "fields_used": 20,
+  "provenance_fail": 0,
+  "critical_similarity": 0,
+  "high_similarity": 0,
+  "frozen_changed": [],
+  "errors": []
+}
