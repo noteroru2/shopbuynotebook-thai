@@ -1,0 +1,57 @@
+model slug,field,rendered value,configuration scope,provenance record,official source,validation result
+macbook-air-m1,cpuOptions,Apple M1 8-core CPU,MODEL_FAMILY,macbook-air-m1:cpuOptions,https://support.apple.com/en-us/102869,PASS
+macbook-air-m1,gpuOptions,Apple M1 7-core GPU · Apple M1 8-core GPU,MODEL_FAMILY,macbook-air-m1:gpuOptions,https://support.apple.com/en-us/102869,PASS
+macbook-air-m1,memory.ramConfigurations,8GB · 16GB,MODEL_FAMILY,macbook-air-m1:memory.ramConfigurations,https://support.apple.com/en-us/102869,PASS
+macbook-air-m1,storage.storageOptions,256GB · 512GB · 1TB · 2TB,MODEL_FAMILY,macbook-air-m1:storage.storageOptions,https://support.apple.com/en-us/102869,PASS
+macbook-air-m1,display.displaySizes,13.3-inch,MODEL_FAMILY,macbook-air-m1:display.displaySizes,https://support.apple.com/en-us/102869,PASS
+macbook-air-m2,cpuOptions,Apple M2 8-core CPU,MODEL_FAMILY,macbook-air-m2:cpuOptions,https://support.apple.com/en-us/111867,PASS
+macbook-air-m2,gpuOptions,Apple M2 8-core GPU · Apple M2 10-core GPU,MODEL_FAMILY,macbook-air-m2:gpuOptions,https://support.apple.com/en-us/111867,PASS
+macbook-air-m2,memory.ramConfigurations,8GB · 16GB · 24GB,MODEL_FAMILY,macbook-air-m2:memory.ramConfigurations,https://support.apple.com/en-us/111867,PASS
+macbook-air-m2,storage.storageOptions,256GB · 512GB · 1TB · 2TB,MODEL_FAMILY,macbook-air-m2:storage.storageOptions,https://support.apple.com/en-us/111867,PASS
+macbook-air-m2,display.displaySizes,13.6-inch · 15.3-inch,MODEL_FAMILY,macbook-air-m2:display.displaySizes,https://support.apple.com/en-us/111867,PASS
+macbook-air-m2,batteryCapacity,52.6Wh (13-inch M2),MODEL_FAMILY,macbook-air-m2:batteryCapacity,https://support.apple.com/en-us/111867,PASS
+macbook-air-m2,chargerWattageOptions,30W USB-C · 35W Dual USB-C · 70W USB-C (fast charge capable),MODEL_FAMILY,macbook-air-m2:chargerWattageOptions,https://support.apple.com/en-us/111867,PASS
+macbook-pro-m1,cpuOptions,Apple M1 8-core CPU (13-inch 2020) · Apple M1 Pro 8-core CPU (14/16 2021) · Apple M1 Pro 10-core CPU (14/16 2021) · Apple M1 Max 10-core CPU (14/16 2021),MODEL_FAMILY,macbook-pro-m1:cpuOptions,https://support.apple.com/en-us/111893,PASS
+macbook-pro-m1,gpuOptions,Apple M1 8-core GPU (13-inch 2020) · Apple M1 Pro 14-core GPU · Apple M1 Pro 16-core GPU · Apple M1 Max 24-core GPU · Apple M1 Max 32-core GPU,MODEL_FAMILY,macbook-pro-m1:gpuOptions,https://support.apple.com/en-us/111902,PASS
+macbook-pro-m1,memory.ramConfigurations,8GB · 16GB · 32GB · 64GB,MODEL_FAMILY,macbook-pro-m1:memory.ramConfigurations,https://support.apple.com/en-us/111893,PASS
+macbook-pro-m1,storage.storageOptions,256GB · 512GB · 1TB · 2TB · 4TB · 8TB,MODEL_FAMILY,macbook-pro-m1:storage.storageOptions,https://support.apple.com/en-us/111902,PASS
+macbook-pro-m1,display.displaySizes,13.3-inch · 14.2-inch · 16.2-inch,MODEL_FAMILY,macbook-pro-m1:display.displaySizes,https://support.apple.com/en-us/111893,PASS
+macbook-pro-m1,display.refreshRates,60Hz · 120Hz,MODEL_FAMILY,macbook-pro-m1:display.refreshRates,https://support.apple.com/en-us/111902,PASS
+macbook-pro-m1,batteryCapacity,58.2Wh (13-inch M1) / 70Wh class (14-inch M1 Pro/Max reference),MODEL_FAMILY,macbook-pro-m1:batteryCapacity,https://support.apple.com/en-us/111893,PASS
+macbook-pro-m1,chargerWattageOptions,61W USB-C · 67W USB-C · 96W USB-C,MODEL_FAMILY,macbook-pro-m1:chargerWattageOptions,https://support.apple.com/en-us/111893,PASS
+macbook-pro-m1,knownModelFamilies,MacBook Pro 13-inch M1 (2020) · MacBook Pro 14/16-inch M1 Pro/Max (2021),MODEL_FAMILY,macbook-pro-m1:knownModelFamilies,https://support.apple.com/en-us/108052,PASS
+macbook-pro-m2,cpuOptions,Apple M2 8-core CPU (13-inch class) · Apple M2 Pro 10-core CPU (14/16 2023) · Apple M2 Pro 12-core CPU (14/16 2023) · Apple M2 Max 12-core CPU (14/16 2023),MODEL_FAMILY,macbook-pro-m2:cpuOptions,https://support.apple.com/en-us/111340,PASS
+macbook-pro-m2,gpuOptions,Apple M2 10-core GPU (13-inch class) · Apple M2 Pro 16-core GPU · Apple M2 Pro 19-core GPU · Apple M2 Max 30-core GPU · Apple M2 Max 38-core GPU,MODEL_FAMILY,macbook-pro-m2:gpuOptions,https://support.apple.com/en-us/111340,PASS
+macbook-pro-m2,memory.ramConfigurations,8GB · 16GB · 24GB · 32GB · 64GB · 96GB,MODEL_FAMILY,macbook-pro-m2:memory.ramConfigurations,https://support.apple.com/en-us/111340,PASS
+macbook-pro-m2,storage.storageOptions,256GB · 512GB · 1TB · 2TB · 4TB · 8TB,MODEL_FAMILY,macbook-pro-m2:storage.storageOptions,https://support.apple.com/en-us/111340,PASS
+macbook-pro-m2,display.displaySizes,13.3-inch · 14.2-inch · 16.2-inch,MODEL_FAMILY,macbook-pro-m2:display.displaySizes,https://support.apple.com/en-us/111340,PASS
+macbook-pro-m2,display.refreshRates,60Hz · 120Hz,MODEL_FAMILY,macbook-pro-m2:display.refreshRates,https://support.apple.com/en-us/111340,PASS
+macbook-pro-m2,chargerWattageOptions,67W USB-C · 96W USB-C,MODEL_FAMILY,macbook-pro-m2:chargerWattageOptions,https://support.apple.com/en-us/111340,PASS
+macbook-pro-m2,knownModelFamilies,MacBook Pro 13-inch M2 · MacBook Pro 14/16-inch M2 Pro/Max (2023),MODEL_FAMILY,macbook-pro-m2:knownModelFamilies,https://support.apple.com/en-us/108052,PASS
+acer-nitro-17,cpuOptions,Intel Core i7-14700HX class (AN17-51 family marketing/PDP) · AMD Ryzen 5 (AN17-42 AMD PDP sample),MODEL_FAMILY,acer-nitro-17:cpuOptions,https://www.acer.com/us-en/laptops/nitro/nitro-17-amd/pdp/NH.QPBAA.001,PASS
+acer-nitro-17,gpuOptions,NVIDIA GeForce RTX 4050 Laptop GPU · NVIDIA GeForce RTX 4060 Laptop GPU,MODEL_FAMILY,acer-nitro-17:gpuOptions,https://www.acer.com/us-en/laptops/nitro/nitro-17-intel/pdp/NH.QK6AA.001,PASS
+acer-nitro-17,display.displaySizes,17.3-inch,MODEL_FAMILY,acer-nitro-17:display.displaySizes,https://www.acer.com/gb-en/laptops/nitro/nitro-17-intel/pdp/NH.QK6EK.001,PASS
+acer-nitro-v,cpuOptions,Intel Core i5-13420H · Intel Core i7-13620H · Intel Core 7 240H (ANV15-52 store/PDP class) · AMD Ryzen 5 8645HS (ANV16) · AMD Ryzen 7 8845HS (ANV16),SERIES,acer-nitro-v:cpuOptions,https://www.acer.com/us-en/laptops/nitro/nitro-v-16-amd/pdp/NH.QP0AA.001,PASS
+acer-nitro-v,gpuOptions,NVIDIA GeForce RTX 3050 · NVIDIA GeForce RTX 4050 · NVIDIA GeForce RTX 5060,SERIES,acer-nitro-v:gpuOptions,https://www.acer.com/us-en/laptops/nitro/nitro-v-15/pdp/NH.QN8AA.004,PASS
+acer-nitro-v,memory.ramConfigurations,16GB · 32GB,SERIES,acer-nitro-v:memory.ramConfigurations,https://www.acer.com/us-en/laptops/nitro/nitro-v-15/pdp/NH.QN8AA.004,PASS
+acer-nitro-v,storage.storageOptions,512GB · 1TB,SERIES,acer-nitro-v:storage.storageOptions,https://www.acer.com/us-en/laptops/nitro/nitro-v-15/pdp/NH.QN8AA.004,PASS
+acer-nitro-v,display.displaySizes,15.6-inch · 16-inch,SERIES,acer-nitro-v:display.displaySizes,https://www.acer.com/us-en/laptops/nitro/nitro-v-16-amd,PASS
+acer-nitro-v,display.refreshRates,144Hz · 165Hz · 180Hz,SERIES,acer-nitro-v:display.refreshRates,https://www.acer.com/gb-en/laptops/nitro/nitro-v-15/pdp/NH.QZAEK.004,PASS
+acer-nitro-v,batteryCapacity,57Wh / 76Wh (ANV15 PDP samples),SERIES,acer-nitro-v:batteryCapacity,https://www.acer.com/us-en/laptops/nitro/nitro-v-15/pdp/NH.QN8AA.004,PASS
+acer-nitro-v,chargerWattageOptions,135W,SERIES,acer-nitro-v:chargerWattageOptions,https://www.acer.com/us-en/laptops/nitro/nitro-v-15/pdp/NH.QN8AA.004,PASS
+acer-nitro-v,knownModelFamilies,Nitro V 15 (ANV15) · Nitro V 16 (ANV16),SERIES,acer-nitro-v:knownModelFamilies,https://www.acer.com/us-en/laptops/nitro/nitro-v-16-amd,PASS
+asus-zephyrus-g16,cpuOptions,AMD Ryzen AI 9 HX 370 (GA605 2024) · Intel Core Ultra 9 185H (GU605 2024),MODEL_FAMILY,asus-zephyrus-g16:cpuOptions,https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024-ga605/spec/,PASS
+asus-zephyrus-g16,gpuOptions,NVIDIA GeForce RTX 4060 Laptop GPU · NVIDIA GeForce RTX 4070 Laptop GPU · NVIDIA GeForce RTX 4080 Laptop GPU · NVIDIA GeForce RTX 4090 Laptop GPU,MODEL_FAMILY,asus-zephyrus-g16:gpuOptions,https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024/spec/,PASS
+asus-zephyrus-g16,memory.ramConfigurations,16GB · 32GB,MODEL_FAMILY,asus-zephyrus-g16:memory.ramConfigurations,https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024-ga605/spec/,PASS
+asus-zephyrus-g16,storage.storageOptions,1TB · 2TB,MODEL_FAMILY,asus-zephyrus-g16:storage.storageOptions,https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024-ga605/spec/,PASS
+asus-zephyrus-g16,display.displaySizes,16-inch,MODEL_FAMILY,asus-zephyrus-g16:display.displaySizes,https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024-ga605/spec/,PASS
+asus-zephyrus-g16,display.refreshRates,240Hz,MODEL_FAMILY,asus-zephyrus-g16:display.refreshRates,https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024-ga605/spec/,PASS
+asus-zephyrus-g16,batteryCapacity,90Wh (2024 GA605 listing),MODEL_FAMILY,asus-zephyrus-g16:batteryCapacity,https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024-ga605/spec/,PASS
+asus-zephyrus-g16,chargerWattageOptions,200W,MODEL_FAMILY,asus-zephyrus-g16:chargerWattageOptions,https://rog.asus.com/us/laptops/rog-zephyrus/rog-zephyrus-g16-2024-ga605/spec/,PASS
+hp-victus-16,cpuOptions,AMD Ryzen 7 PRO 7840HS · AMD Ryzen 7 PRO 7840H · AMD Ryzen 5 PRO 7640HS · AMD Ryzen 5 PRO 7640H,MODEL_FAMILY,hp-victus-16:cpuOptions,https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf,PASS
+hp-victus-16,gpuOptions,NVIDIA GeForce RTX 3050 · NVIDIA GeForce RTX 4050 · NVIDIA GeForce RTX 4060 · NVIDIA GeForce RTX 4070,MODEL_FAMILY,hp-victus-16:gpuOptions,https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf,PASS
+hp-victus-16,memory.ramConfigurations,8GB · 16GB,MODEL_FAMILY,hp-victus-16:memory.ramConfigurations,https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf,PASS
+hp-victus-16,storage.storageOptions,1TB,MODEL_FAMILY,hp-victus-16:storage.storageOptions,https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf,PASS
+hp-victus-16,display.displaySizes,16.1-inch,MODEL_FAMILY,hp-victus-16:display.displaySizes,https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf,PASS
+hp-victus-16,display.refreshRates,144Hz · 165Hz,MODEL_FAMILY,hp-victus-16:display.refreshRates,https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf,PASS
+hp-victus-16,batteryCapacity,70Wh / 83Wh (MSG options),MODEL_FAMILY,hp-victus-16:batteryCapacity,https://kaas.hpcloud.hp.com/pdf-public/pdf_7911438_en-US-1.pdf,PASS

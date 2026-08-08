@@ -1,0 +1,9 @@
+slug,classification,notes,action
+macbook-air-m1,NO_CONFLICT,Claims align with Apple Support family options,NONE
+macbook-air-m2,POSSIBLE_VARIANT,Page previously emphasized 13.6-only; dataset includes 13.6 and 15.3 — content updated to dual-size family scope,NONE
+macbook-pro-m1,CONFIRMED_CONFLICT,Old page assumed only 13-inch Touch Bar M1; dataset+content now MODEL_FAMILY spanning 13 M1 and 14/16 M1 Pro/Max with official sources,FIXED_IN_BATCH_2
+macbook-pro-m2,CONFIRMED_CONFLICT,Old page assumed only 13-inch M2 Touch Bar; dataset+content now MODEL_FAMILY spanning 13 M2 and 14/16 M2 Pro/Max,FIXED_IN_BATCH_2
+acer-nitro-17,CONFIRMED_CONFLICT,Old content listed RTX 4070 without official sample evidence in this batch; removed unsupported 4070 claim,FIXED_IN_BATCH_2
+acer-nitro-v,CONFIRMED_CONFLICT,Old content claimed RTX 2050/4060; verified official samples support 3050/4050/5060 — updated to verified options,FIXED_IN_BATCH_2
+asus-zephyrus-g16,NO_CONFLICT,Existing RTX 4060/4070/4080 family claims align with official 2024 GU605/GA605 options when scoped as family,NONE
+hp-victus-16,CONFIRMED_CONFLICT,Old content claimed broad Intel + RTX 3060 without MSG evidence used here; narrowed to verified 16-s0xxx AMD MSG options,FIXED_IN_BATCH_2

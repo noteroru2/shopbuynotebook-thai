@@ -1,0 +1,33 @@
+{
+  "batch": [
+    "macbook-air-m1",
+    "macbook-air-m2",
+    "macbook-pro-m1",
+    "macbook-pro-m2",
+    "acer-nitro-17",
+    "acer-nitro-v",
+    "asus-zephyrus-g16",
+    "hp-victus-16"
+  ],
+  "group_a": [
+    "macbook-air-m1",
+    "macbook-air-m2",
+    "macbook-pro-m1",
+    "macbook-pro-m2"
+  ],
+  "group_b": [
+    "acer-nitro-17",
+    "acer-nitro-v",
+    "asus-zephyrus-g16",
+    "hp-victus-16"
+  ],
+  "avg_before": 94,
+  "avg_after": 91,
+  "fields_used": 56,
+  "provenance_fail": 0,
+  "critical_similarity": 0,
+  "high_similarity": 0,
+  "frozen_changed": [],
+  "exact_sku_violations": 0,
+  "errors": []
+}
