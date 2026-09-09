@@ -44,19 +44,17 @@ const R9_BLOG_SITEMAP_INCLUDED = new Set(
     .filter((item) => item.action === 'KEEP_INFORMATIONAL')
     .map((item) => item.slug),
 );
-const r12Budget = JSON.parse(
+const r13Budget = JSON.parse(
   fs.readFileSync(new URL('./src/data/rebuild-v2-index-budget.json', import.meta.url), 'utf8'),
 );
-const R12_CORE_PATHS = new Set(r12Budget.corePaths);
-const R12_STAGING_PREFIXES = r12Budget.alwaysExcludedPrefixes;
+const redirectManifest = JSON.parse(
+  fs.readFileSync(new URL('./src/data/rebuild-v2-production-redirects.json', import.meta.url), 'utf8'),
+);
+const R13_CORE_PATHS = new Set(r13Budget.corePaths);
+const R13_RELEASED_BRAND_PATHS = new Set(r13Budget.releasedV2BrandPaths);
+const R13_STAGING_PREFIXES = r13Budget.alwaysExcludedPrefixes;
+const R13_REDIRECT_SOURCES = new Set(redirectManifest.redirects.map((item) => item.source));
 const R5_LEGACY_BRANDS = new Set(['asus', 'acer', 'lenovo', 'hp', 'dell', 'msi', 'macbook', 'surface']);
-const R4_RETIRED_MONEY_PATHS = new Set([
-  '/รับซื้อ-notebook/',
-  '/เช็คราคาโน๊ตบุ๊ค/',
-  '/เช็คราคาโน๊ตบุ๊คมือสอง/',
-  '/ตีราคาโน๊ตบุ๊ค/',
-  '/ขายโน๊ตบุ๊คด่วน/',
-]);
 
 export default defineConfig({
   site: 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/',
@@ -70,8 +68,11 @@ export default defineConfig({
             : decodeURIComponent(page);
 
           if (pathname === '/admin' || pathname.startsWith('/admin/')) return false;
-          if (R4_RETIRED_MONEY_PATHS.has(pathname)) return false;
-          if (R12_STAGING_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(prefix))) return false;
+          if (R13_REDIRECT_SOURCES.has(pathname)) return false;
+          if (R13_STAGING_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(prefix))) return false;
+          if (R13_RELEASED_BRAND_PATHS.has(pathname)) return true;
+
+          if (pathname.startsWith('/แบรนด์/')) return false;
 
           if (pathname.startsWith('/blog/') && pathname !== '/blog/') {
             const blogSlug = pathname.slice('/blog/'.length).split('/').filter(Boolean)[0];
@@ -79,7 +80,8 @@ export default defineConfig({
           }
 
           const hubPrefix = '/รับซื้อโน๊ตบุ๊ค/';
-          if (pathname.startsWith(hubPrefix) && pathname !== hubPrefix) {
+          if (pathname.startsWith(hubPrefix)) {
+            if (pathname === hubPrefix) return false;
             const rest = pathname.slice(hubPrefix.length);
             const segments = rest.split('/').filter(Boolean);
             if (segments.length >= 2) return false;
@@ -94,7 +96,7 @@ export default defineConfig({
             }
           }
 
-          return R12_CORE_PATHS.has(pathname);
+          return R13_CORE_PATHS.has(pathname);
         } catch {
           return false;
         }
@@ -103,6 +105,9 @@ export default defineConfig({
         if (item.url === 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/') {
           item.changefreq = EnumChangefreq.DAILY;
           item.priority = 1.0;
+        } else if (item.url.includes('/ประเมินราคา/') || item.url.includes('/แบรนด์/')) {
+          item.changefreq = EnumChangefreq.WEEKLY;
+          item.priority = 0.9;
         } else if (item.url.includes('/รับเหมาโน๊ตบุ๊ค/') || item.url.includes('/รับเหมาคอมพิวเตอร์/') || item.url.includes('/รับประมูลคอม/')) {
           item.changefreq = EnumChangefreq.DAILY;
           item.priority = 0.9;
