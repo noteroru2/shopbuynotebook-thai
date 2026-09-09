@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="ประเมินราคาโน๊ตบุ๊คก่อนขาย | ร้านรับซื้อโน๊ตบุ๊ค.com"
+  description="ส่งรุ่น สเปก รูปสภาพ แบตเตอรี่ และอุปกรณ์เพื่อประเมินเบื้องต้น ราคาสุดท้ายยืนยันหลังตรวจเครื่องจริง"
+  noindex={true}
+>
+  <section class="mx-auto w-full max-w-5xl px-4 py-14 sm:py-20">
+    <p class="text-sm font-bold text-emerald-700">Valuation Owner</p>
+    <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">ประเมินราคาโน๊ตบุ๊คก่อนขาย</h1>
+    <p class="mt-5 text-base leading-8 text-slate-700">
+      หน้า V2 นี้จะเป็นเจ้าของคำค้นกลุ่ม เช็คราคา ตีราคา และประเมินราคา เพื่อลดการแย่ง intent ระหว่างหลาย Money Page เดิม
+      การประเมินเบื้องต้นอ้างอิงรุ่น สเปก สภาพ แบตเตอรี่ อาการ และอุปกรณ์ที่มี ส่วนราคาสุดท้ายต้องยืนยันหลังตรวจเครื่องจริง
+    </p>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2">
+      {[
+        ['1. รุ่นและรหัสเครื่อง','ถ่ายป้ายรุ่นหรือหน้าข้อมูลระบบให้เห็นรุ่นเต็ม'],
+        ['2. CPU / GPU / RAM / SSD','ส่งสเปกจริงของเครื่อง ไม่อ้างจากชื่อซีรีส์อย่างเดียว'],
+        ['3. สภาพและอาการ','รูปจอ คีย์บอร์ด ฝา ตัวเครื่อง และตำหนิที่เห็น'],
+        ['4. แบตเตอรี่และอุปกรณ์','แจ้ง Battery Health หรืออาการแบต พร้อมที่ชาร์จ กล่อง ใบเสร็จถ้ามี'],
+      ].map(([title, body]) => (
+        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+          <h2 class="font-extrabold text-slate-950">{title}</h2>
+          <p class="mt-2 text-sm leading-6 text-slate-600">{body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
