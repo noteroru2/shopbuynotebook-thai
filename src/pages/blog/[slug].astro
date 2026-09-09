@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FAQ from '../../components/FAQ.astro';
 import CTAButtons from '../../components/CTAButtons.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
+import blogTriage from '../../data/rebuild-v2-blog-triage.json';
 import { getCollection, render } from 'astro:content';
 import { absoluteUrl, breadcrumbListSchema, faqPageSchema } from '../../lib/seo';
 import { blogPostingSchema } from '../../lib/schema';
@@ -26,11 +27,19 @@ function normalizeCanonical(value: string) {
   return absoluteUrl(path.endsWith('/') ? path : `${path}/`);
 }
 
-const canonical = post.data.canonical ? normalizeCanonical(post.data.canonical) : absoluteUrl(`/blog/${toSlug(post)}/`);
+const slug = toSlug(post);
+const blogTriageItem = blogTriage.items.find((item) => item.slug === slug);
+const resolvedBlogAction = blogTriageItem?.action ?? blogTriage.policy.defaultForUnclassified;
+const lifecycleNoindex = resolvedBlogAction !== 'KEEP_INFORMATIONAL';
+const selfCanonical = post.data.canonical ? normalizeCanonical(post.data.canonical) : absoluteUrl(`/blog/${slug}/`);
+const lifecycleCanonical = resolvedBlogAction === 'MERGE_TO_OWNER' && blogTriageItem?.target
+  ? normalizeCanonical(blogTriageItem.target)
+  : selfCanonical;
+const canonical = lifecycleCanonical;
 const breadcrumbs = [
   { name: 'หน้าแรก', url: absoluteUrl('/') },
   { name: 'บทความ', url: absoluteUrl('/blog/') },
-  { name: post.data.title, url: canonical },
+  { name: post.data.title, url: selfCanonical },
 ];
 const isoDate = (d: Date) => d.toISOString();
 const articleMeta = {
@@ -43,7 +52,7 @@ const schemas = [
   blogPostingSchema({
     headline: post.data.title,
     description: post.data.description,
-    url: canonical,
+    url: selfCanonical,
     datePublished: isoDate(post.data.date),
     dateModified: post.data.dateModified ? isoDate(post.data.dateModified) : undefined,
     image: post.data.featuredImage ? absoluteUrl(post.data.featuredImage) : undefined,
@@ -56,6 +65,7 @@ const schemas = [
   title={`${post.data.title} | ร้านรับซื้อโน๊ตบุ๊ค.com`}
   description={post.data.description}
   canonical={canonical}
+  noindex={lifecycleNoindex}
   ogImage={post.data.ogImage ? absoluteUrl(post.data.ogImage) : post.data.featuredImage ? absoluteUrl(post.data.featuredImage) : undefined}
   article={articleMeta}
   schemas={schemas}
@@ -112,4 +122,3 @@ const schemas = [
     </div>
   </section>
 </BaseLayout>
-
