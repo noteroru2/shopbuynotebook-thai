@@ -2,7 +2,9 @@ import authority from '../data/rebuild-v2-internal-link-authority.json';
 
 const normalizeInternalPath = (value: string) => {
   if (!value || !value.startsWith('/')) return value;
-  const [path, suffix = ''] = value.split(/(?=[?#])/u, 2);
+  const suffixIndex = value.search(/[?#]/u);
+  const path = suffixIndex >= 0 ? value.slice(0, suffixIndex) : value;
+  const suffix = suffixIndex >= 0 ? value.slice(suffixIndex) : '';
   const normalized = path === '/' ? '/' : `${path.replace(/\/+$/, '')}/`;
   return `${normalized}${suffix}`;
 };
