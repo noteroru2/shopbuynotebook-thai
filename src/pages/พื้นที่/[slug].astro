@@ -5,11 +5,12 @@ import AuthorityLinks from '../../components/AuthorityLinks.astro';
 import { getCollection, render } from 'astro:content';
 import { absoluteUrl } from '../../lib/seo';
 
-const ALLOWED_LOCATIONS = new Set(['อุบลราชธานี']);
-
 export async function getStaticPaths() {
   const entries = await getCollection('locations');
-  return entries.filter((entry) => ALLOWED_LOCATIONS.has(entry.data.slug)).map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+  const allowedLocations = new Set(['อุบลราชธานี']);
+  return entries
+    .filter((entry) => allowedLocations.has(entry.data.slug))
+    .map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
