@@ -5,6 +5,7 @@ const readText = (p) => fs.readFileSync(new URL(`../../${p}`, import.meta.url), 
 
 const budget = readJson('src/data/rebuild-v2-index-budget.json');
 const r6 = readJson('src/data/rebuild-v2-model-series-triage.json');
+const r13ModelSupplement = readJson('src/data/rebuild-v2-model-series-r13-supplement.json');
 const r7 = readJson('src/data/rebuild-v2-condition-triage.json');
 const r8 = readJson('src/data/rebuild-v2-location-triage.json');
 const r9 = readJson('src/data/rebuild-v2-blog-triage.json');
@@ -12,7 +13,7 @@ const config = readText('astro.config.mjs');
 const fail = (message) => { console.error(`R12 FAIL: ${message}`); process.exitCode = 1; };
 const count = (items, allowed) => items.filter((item) => allowed.includes(item.action)).length;
 
-const modelSeries = count(r6.items, ['KEEP_CURRENT_URL', 'MIGRATE_LATER']);
+const modelSeries = count([...r6.items, ...r13ModelSupplement.items], ['KEEP_CURRENT_URL', 'MIGRATE_LATER']);
 const conditions = count(r7.items, ['KEEP_CURRENT_URL', 'MIGRATE_LATER']);
 const locations = count(r8.items, ['KEEP_CURRENT_URL', 'MIGRATE_LATER']);
 const blogs = count(r9.items, ['KEEP_INFORMATIONAL']);
@@ -39,7 +40,7 @@ if (release) {
   if (budget.corePaths.includes('/รับซื้อโน๊ตบุ๊ค/')) fail('redirecting generic legacy owner must not remain in release sitemap allowlist');
   if (!budget.corePaths.includes('/ประเมินราคา/')) fail('valuation owner missing from release sitemap allowlist');
   if (releasedBrands !== 9) fail(`release requires brand hub + 8 owners, got ${releasedBrands}`);
-  if (projected !== 112) fail(`R13 release surface must be 112, got ${projected}`);
+  if (projected !== 113) fail(`R13 release surface must be 113 after executable inventory closure, got ${projected}`);
 }
 
 for (const retired of ['/รับซื้อ-notebook/','/เช็คราคาโน๊ตบุ๊ค/','/เช็คราคาโน๊ตบุ๊คมือสอง/','/ตีราคาโน๊ตบุ๊ค/','/ขายโน๊ตบุ๊คด่วน/']) {
@@ -47,8 +48,8 @@ for (const retired of ['/รับซื้อ-notebook/','/เช็ครา�
 }
 
 const requiredSnippets = release
-  ? ['rebuild-v2-index-budget.json','R13_CORE_PATHS','R13_RELEASED_BRAND_PATHS','R13_REDIRECT_SOURCES','R6_SITEMAP_INCLUDED','R7_CONDITION_SITEMAP_INCLUDED','R8_LOCATION_SITEMAP_INCLUDED','R9_BLOG_SITEMAP_INCLUDED','return R13_CORE_PATHS.has(pathname)','catch {\n          return false;']
-  : ['rebuild-v2-index-budget.json','R12_CORE_PATHS','R6_SITEMAP_INCLUDED','R7_CONDITION_SITEMAP_INCLUDED','R8_LOCATION_SITEMAP_INCLUDED','R9_BLOG_SITEMAP_INCLUDED'];
+  ? ['rebuild-v2-index-budget.json','rebuild-v2-model-series-r13-supplement.json','R13_CORE_PATHS','R13_RELEASED_BRAND_PATHS','R13_REDIRECT_SOURCES','R6_SITEMAP_INCLUDED','R7_CONDITION_SITEMAP_INCLUDED','R8_LOCATION_SITEMAP_INCLUDED','R9_BLOG_SITEMAP_INCLUDED','return R13_CORE_PATHS.has(pathname)','catch {\n          return false;']
+  : ['rebuild-v2-index-budget.json','R6_SITEMAP_INCLUDED','R7_CONDITION_SITEMAP_INCLUDED','R8_LOCATION_SITEMAP_INCLUDED','R9_BLOG_SITEMAP_INCLUDED'];
 for (const snippet of requiredSnippets) if (!config.includes(snippet)) fail(`astro sitemap control missing: ${snippet}`);
 
 console.log(JSON.stringify({
