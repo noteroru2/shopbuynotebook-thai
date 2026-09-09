@@ -5,10 +5,10 @@
     "minIndexable": 80,
     "maxIndexable": 120,
     "hardCeiling": 120,
-    "projectedIndexable": 112
+    "projectedIndexable": 113
   },
   "controlledSurface": {
-    "modelSeries": { "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"], "projected": 45 },
+    "modelSeries": { "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"], "projected": 46 },
     "conditions": { "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"], "projected": 13 },
     "locations": { "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"], "projected": 7 },
     "blogs": { "eligibleActions": ["KEEP_INFORMATIONAL"], "projected": 22 }
