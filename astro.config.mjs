@@ -3,10 +3,8 @@ import { defineConfig } from 'astro/config';
 import fs from 'node:fs';
 
 import tailwindcss from '@tailwindcss/vite';
-
 import sitemap from '@astrojs/sitemap';
 import { EnumChangefreq } from 'sitemap';
-
 import mdx from '@astrojs/mdx';
 
 const r6Triage = JSON.parse(
@@ -14,6 +12,14 @@ const r6Triage = JSON.parse(
 );
 const R6_SITEMAP_EXCLUDED = new Set(
   r6Triage.items
+    .filter((item) => item.action === 'HOLD_NOINDEX' || item.action === 'MERGE')
+    .map((item) => item.slug),
+);
+const r7ConditionTriage = JSON.parse(
+  fs.readFileSync(new URL('./src/data/rebuild-v2-condition-triage.json', import.meta.url), 'utf8'),
+);
+const R7_CONDITION_SITEMAP_EXCLUDED = new Set(
+  r7ConditionTriage.items
     .filter((item) => item.action === 'HOLD_NOINDEX' || item.action === 'MERGE')
     .map((item) => item.slug),
 );
@@ -27,7 +33,6 @@ const R4_RETIRED_MONEY_PATHS = new Set([
   '/ขายโน๊ตบุ๊คด่วน/',
 ]);
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/',
   trailingSlash: 'always',
@@ -40,8 +45,6 @@ export default defineConfig({
             : decodeURIComponent(page);
           if (pathname === '/admin' || pathname.startsWith('/admin/')) return false;
           if (R4_RETIRED_MONEY_PATHS.has(pathname)) return false;
-
-          // V2 namespaces stay noindex and out of sitemap until migration release.
           if (V2_STAGING_PREFIXES.some((prefix) => pathname.startsWith(prefix))) return false;
 
           const hubPrefix = '/รับซื้อโน๊ตบุ๊ค/';
@@ -54,6 +57,7 @@ export default defineConfig({
               const slug = segments[0];
               if (R5_LEGACY_BRANDS.has(slug)) return false;
               if (R6_SITEMAP_EXCLUDED.has(slug)) return false;
+              if (R7_CONDITION_SITEMAP_EXCLUDED.has(slug)) return false;
             }
           }
         } catch {
@@ -83,12 +87,9 @@ export default defineConfig({
     }),
     mdx(),
   ],
-
-  /** ลด render-blocking: อินไลน์ CSS ชุดหลักถ้าเล็กกว่า assetsInlineLimit */
   build: {
     inlineStylesheets: 'auto',
   },
-
   vite: {
     plugins: [tailwindcss()],
     build: {
