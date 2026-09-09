@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const brands = [
+  ['asus', 'ASUS'], ['acer', 'Acer'], ['lenovo', 'Lenovo'], ['hp', 'HP'],
+  ['dell', 'Dell'], ['msi', 'MSI'], ['macbook', 'MacBook'], ['surface', 'Microsoft Surface'],
+];
 ---
 
 <BaseLayout
@@ -11,15 +16,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p class="text-sm font-bold text-emerald-700">Notebook Specialist</p>
     <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">รับซื้อโน๊ตบุ๊ค แยกตามแบรนด์</h1>
     <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">
-      โครงสร้างใหม่นี้จะแยก Brand Hub ออกจากรุ่น อาการ และพื้นที่อย่างชัดเจน เพื่อให้แต่ละหน้ามีหน้าที่เดียวและไม่แย่งคำค้นกันเอง
-      ก่อนส่งประเมินควรเตรียมชื่อรุ่น CPU GPU RAM SSD สภาพ แบตเตอรี่ และอุปกรณ์ที่มี
+      Brand Hub แยกออกจากรุ่น อาการ และพื้นที่อย่างชัดเจน แต่ละแบรนด์เป็น Parent ของหน้ารุ่นที่เกี่ยวข้องและไม่ใช้หน้าเดียวกันแย่งคำค้นกับ Model Page
     </p>
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {['ASUS','Acer','Lenovo','HP','Dell','MSI','MacBook','Microsoft Surface'].map((brand) => (
-        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h2 class="font-extrabold text-slate-950">{brand}</h2>
-          <p class="mt-2 text-sm leading-6 text-slate-600">หน้าแบรนด์จะเปิด index เมื่อผ่าน migration และ content gate เท่านั้น</p>
-        </div>
+      {brands.map(([slug, label]) => (
+        <a href={`/แบรนด์/${slug}/`} class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md">
+          <h2 class="font-extrabold text-slate-950 group-hover:text-emerald-700">{label}</h2>
+          <p class="mt-2 text-sm leading-6 text-slate-600">ดูข้อมูลที่ควรส่ง ร้านประเมินจากอะไร และไปต่อยังรุ่นที่เกี่ยวข้อง</p>
+          <span class="mt-4 inline-flex text-sm font-bold text-emerald-700">ดูแบรนด์ →</span>
+        </a>
       ))}
     </div>
   </section>
