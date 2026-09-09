@@ -11,12 +11,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p class="text-sm font-bold text-emerald-700">Area Hub</p>
     <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">พื้นที่รับประเมินโน๊ตบุ๊ค</h1>
     <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">
-      หน้าร้านจริงอยู่จังหวัดอุบลราชธานี ส่วนพื้นที่อื่นจะเปิดเป็น Landing Page เฉพาะเมื่อมีข้อมูล GSC หรือเหตุผลทางธุรกิจรองรับ และต้องระบุวิธีนัดหรือจัดส่งตามความจริง
-      โครงสร้างใหม่นี้จะไม่สร้างหน้า พื้นที่ × แบรนด์ × อาการ แบบอัตโนมัติอีก
+      V2 จะเปิด Area Page เฉพาะพื้นที่ที่มีข้อมูลค้นหาและบริการได้จริง ไม่สร้าง 77 จังหวัดพร้อมกัน และไม่สร้างจังหวัด × แบรนด์ × อาการแบบอัตโนมัติอีก
     </p>
-    <div class="mt-10 rounded-3xl border border-emerald-200 bg-emerald-50/60 p-6 sm:p-8">
-      <h2 class="text-xl font-extrabold text-slate-950">Tier แรก: อุบลราชธานี</h2>
+    <a href="/พื้นที่/อุบลราชธานี/" class="mt-10 block rounded-3xl border border-emerald-200 bg-emerald-50/60 p-6 transition hover:-translate-y-0.5 hover:shadow-md sm:p-8">
+      <p class="text-sm font-extrabold text-emerald-700">Tier A Local Owner</p>
+      <h2 class="mt-2 text-2xl font-extrabold text-slate-950">รับซื้อโน๊ตบุ๊ค อุบลราชธานี</h2>
       <p class="mt-3 leading-7 text-slate-700">อุบลราชธานีเป็น Local Owner หลักเพราะมีหน้าร้านจริง ส่วนจังหวัดอื่นต้องผ่าน evidence gate ก่อนเปิด index</p>
-    </div>
+      <span class="mt-5 inline-flex text-sm font-bold text-emerald-700">ดูหน้าพื้นที่อุบลราชธานี →</span>
+    </a>
   </section>
 </BaseLayout>
