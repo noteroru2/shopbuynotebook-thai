@@ -23,23 +23,10 @@ Strengthen trust through verifiable business identity and transparent evaluation
 7. Added `npm run gate:rebuild-v2:r11`.
 
 ## Explicit non-claims
-R11 does not invent or claim:
-- awards or certifications
-- years in business
-- review/customer counts
-- licenses not present in source data
-- nationwide physical branches
-- named individual expert credentials
-- guaranteed valuation or final purchase price from photos alone
+R11 does not invent or claim awards/certifications, years in business, review/customer counts, unverified licenses, nationwide physical branches, named individual expert credentials, or guaranteed final prices from photos alone.
 
 ## E-E-A-T interpretation
-R11 treats E-E-A-T as evidence and transparency rather than keyword decoration. The website now makes it easier to answer:
-- who operates the site,
-- where the physical shop actually is,
-- how the business can be contacted,
-- how valuation decisions are made,
-- where the limits of remote valuation are,
-- and which entity is responsible for editorial content.
+R11 treats E-E-A-T as evidence and transparency rather than keyword decoration. The website now makes it easier to verify who operates the site, where the physical shop is, how the business can be contacted, how valuation works, where remote valuation is limited, and which entity is responsible for editorial content.
 
 ## Safety
 - `main` remains unchanged.
@@ -48,4 +35,4 @@ R11 treats E-E-A-T as evidence and transparency rather than keyword decoration. 
 - Existing R4–R10 ownership/lifecycle decisions remain unchanged.
 
 ## Validation gap
-The source-level implementation was inspected through GitHub, but the connector environment does not execute Node/Astro commands. `gate:rebuild-v2:r11`, `astro check`, and full `astro build` still require executable evidence before production merge.
+The source implementation was inspected through GitHub. Current HEAD has no commit statuses and no PR-triggered workflow runs. The connector environment does not execute Node/Astro commands, so `gate:rebuild-v2:r11`, `astro check`, and full `astro build` still require executable evidence before production merge.
