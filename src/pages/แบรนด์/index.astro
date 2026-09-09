@@ -7,29 +7,21 @@ const brands = [...brandAuthority.brands].sort((a, b) => a.priority - b.priority
 
 <BaseLayout
   title="แบรนด์โน๊ตบุ๊คที่รับประเมิน | ร้านรับซื้อโน๊ตบุ๊ค.com"
-  description="ศูนย์รวมหน้ารับประเมินโน๊ตบุ๊คแยกตามแบรนด์ โดยจัดลำดับจากสัญญาณค้นหาและความสำคัญทางธุรกิจ ก่อนส่งต่อไปยังซีรีส์และรุ่นที่เกี่ยวข้อง"
-  noindex={true}
+  description="รวมหน้ารับประเมินโน๊ตบุ๊คแยกตามแบรนด์ เพื่อเลือกข้อมูลให้ตรงกับเครื่องก่อนส่งรุ่น สเปก รูปสภาพ แบตเตอรี่ และอาการให้ร้านประเมิน"
 >
   <section class="mx-auto w-full max-w-6xl px-4 py-14 sm:py-20">
-    <p class="text-sm font-bold text-emerald-700">Notebook Specialist · R5</p>
+    <p class="text-sm font-bold text-emerald-700">เลือกตามยี่ห้อของเครื่อง</p>
     <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">รับซื้อโน๊ตบุ๊ค แยกตามแบรนด์</h1>
     <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">
-      Brand Hub แยกออกจากรุ่น อาการ และพื้นที่อย่างชัดเจน แต่ละแบรนด์เป็น Parent ของหน้าซีรีส์/รุ่นที่เกี่ยวข้อง โดย R5 เลือกเฉพาะแบรนด์ที่มีสัญญาณจาก GSC หรือมีความสำคัญต่อสินค้าที่ร้านรับซื้อจริง
+      เลือกแบรนด์ให้ตรงกับเครื่องเพื่อดูข้อมูลรุ่นและซีรีส์ที่เกี่ยวข้อง การประเมินยังอิงรุ่นย่อย CPU GPU RAM SSD สภาพ แบตเตอรี่ อาการ และอุปกรณ์จริง ไม่ใช้ชื่อแบรนด์อย่างเดียวในการยืนยันราคา
     </p>
-
-    <div class="mt-8 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-950">
-      <strong>Staging rule:</strong> หน้ากลุ่มนี้ยัง noindex ทั้งหมดจนกว่า HTTP 301 จาก Brand URL เดิมจะถูกตรวจยืนยันใน Production Migration Gate
-    </div>
 
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
       {brands.map((brand) => (
         <a href={brand.ownerPath} class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md">
-          <div class="flex items-center justify-between gap-3">
-            <h2 class="font-extrabold text-slate-950 group-hover:text-emerald-700">{brand.label}</h2>
-            <span class="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-600">P{brand.priority}</span>
-          </div>
-          <p class="mt-3 text-sm leading-6 text-slate-600">{brand.evidence}</p>
-          <span class="mt-4 inline-flex text-sm font-bold text-emerald-700">ดู Brand Owner →</span>
+          <h2 class="font-extrabold text-slate-950 group-hover:text-emerald-700">{brand.label}</h2>
+          <p class="mt-3 text-sm leading-6 text-slate-600">ดูรุ่น ซีรีส์ และปัจจัยที่ควรแจ้งก่อนประเมินเครื่องแบรนด์นี้</p>
+          <span class="mt-4 inline-flex text-sm font-bold text-emerald-700">ดูข้อมูลแบรนด์ →</span>
         </a>
       ))}
     </div>
