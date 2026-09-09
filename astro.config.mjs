@@ -7,43 +7,54 @@ import sitemap from '@astrojs/sitemap';
 import { EnumChangefreq } from 'sitemap';
 import mdx from '@astrojs/mdx';
 
+/** @typedef {{ slug: string, action: string }} LifecycleItem */
+/** @typedef {{ source: string, target: string }} RedirectItem */
+
 const r6Triage = JSON.parse(
   fs.readFileSync(new URL('./src/data/rebuild-v2-model-series-triage.json', import.meta.url), 'utf8'),
 );
 const r13ModelSupplement = JSON.parse(
   fs.readFileSync(new URL('./src/data/rebuild-v2-model-series-r13-supplement.json', import.meta.url), 'utf8'),
 );
+/** @type {LifecycleItem[]} */
+const modelItems = [...r6Triage.items, ...r13ModelSupplement.items];
 const R6_SITEMAP_INCLUDED = new Set(
-  [...r6Triage.items, ...r13ModelSupplement.items]
+  modelItems
     .filter((item) => item.action === 'KEEP_CURRENT_URL' || item.action === 'MIGRATE_LATER')
     .map((item) => item.slug),
 );
 const r7ConditionTriage = JSON.parse(
   fs.readFileSync(new URL('./src/data/rebuild-v2-condition-triage.json', import.meta.url), 'utf8'),
 );
+/** @type {LifecycleItem[]} */
+const conditionItems = r7ConditionTriage.items;
 const R7_CONDITION_SITEMAP_INCLUDED = new Set(
-  r7ConditionTriage.items
+  conditionItems
     .filter((item) => item.action === 'KEEP_CURRENT_URL' || item.action === 'MIGRATE_LATER')
     .map((item) => item.slug),
 );
 const r8LocationTriage = JSON.parse(
   fs.readFileSync(new URL('./src/data/rebuild-v2-location-triage.json', import.meta.url), 'utf8'),
 );
+/** @type {LifecycleItem[]} */
+const locationItems = r8LocationTriage.items;
 const R8_LOCATION_SLUGS = new Set(
   fs.readdirSync(new URL('./src/content/locations/', import.meta.url))
     .filter((name) => name.endsWith('.md'))
     .map((name) => name.replace(/\.md$/, '')),
 );
 const R8_LOCATION_SITEMAP_INCLUDED = new Set(
-  r8LocationTriage.items
+  locationItems
     .filter((item) => item.action === 'KEEP_CURRENT_URL' || item.action === 'MIGRATE_LATER')
     .map((item) => item.slug),
 );
 const r9BlogTriage = JSON.parse(
   fs.readFileSync(new URL('./src/data/rebuild-v2-blog-triage.json', import.meta.url), 'utf8'),
 );
+/** @type {LifecycleItem[]} */
+const blogItems = r9BlogTriage.items;
 const R9_BLOG_SITEMAP_INCLUDED = new Set(
-  r9BlogTriage.items
+  blogItems
     .filter((item) => item.action === 'KEEP_INFORMATIONAL')
     .map((item) => item.slug),
 );
@@ -53,10 +64,18 @@ const r13Budget = JSON.parse(
 const redirectManifest = JSON.parse(
   fs.readFileSync(new URL('./src/data/rebuild-v2-production-redirects.json', import.meta.url), 'utf8'),
 );
-const R13_CORE_PATHS = new Set(r13Budget.corePaths);
-const R13_RELEASED_BRAND_PATHS = new Set(r13Budget.releasedV2BrandPaths);
-const R13_STAGING_PREFIXES = r13Budget.alwaysExcludedPrefixes;
-const R13_REDIRECT_SOURCES = new Set(redirectManifest.redirects.map((item) => item.source));
+/** @type {string[]} */
+const corePaths = r13Budget.corePaths;
+/** @type {string[]} */
+const releasedBrandPaths = r13Budget.releasedV2BrandPaths;
+/** @type {string[]} */
+const stagingPrefixes = r13Budget.alwaysExcludedPrefixes;
+/** @type {RedirectItem[]} */
+const redirectItems = redirectManifest.redirects;
+const R13_CORE_PATHS = new Set(corePaths);
+const R13_RELEASED_BRAND_PATHS = new Set(releasedBrandPaths);
+const R13_STAGING_PREFIXES = stagingPrefixes;
+const R13_REDIRECT_SOURCES = new Set(redirectItems.map((item) => item.source));
 const R5_LEGACY_BRANDS = new Set(['asus', 'acer', 'lenovo', 'hp', 'dell', 'msi', 'macbook', 'surface']);
 
 export default defineConfig({
