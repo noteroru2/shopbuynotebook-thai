@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MigrationNotice from '../components/MigrationNotice.astro';
+import { absoluteUrl } from '../lib/seo';
+
+const target = '/';
+---
+
+<BaseLayout
+  title="รับซื้อ Notebook | ย้ายรวมบริการหลักร้านรับซื้อโน๊ตบุ๊ค.com"
+  description="คำค้น รับซื้อ Notebook ถูกรวมเข้าหน้าบริการหลักเพื่อให้ Google และผู้ใช้พบข้อมูลรับซื้อโน๊ตบุ๊คจากเจ้าของหน้าเดียว"
+  canonical={absoluteUrl(target)}
+  noindex={true}
+>
+  <MigrationNotice
+    title="รับซื้อ Notebook ย้ายรวมเข้าหน้าบริการหลัก"
+    description="คำว่า Notebook และโน๊ตบุ๊คหมายถึง intent การขายเครื่องกลุ่มเดียวกันในบริบทนี้ จึงไม่แยก Money Page อีกต่อไป เพื่อให้หน้าแรกเป็นเจ้าของคำค้นรับซื้อโน๊ตบุ๊คเพียงหน้าเดียว"
+    targetHref={target}
+    targetLabel="ไปหน้ารับซื้อโน๊ตบุ๊ค"
+  />
+</BaseLayout>
