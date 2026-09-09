@@ -1,6 +1,6 @@
 # R11 — Trust / E-E-A-T / Entity Proof
 
-Status: `SOURCE_IMPLEMENTED / EXECUTABLE_GATE_NOT_VERIFIED / BUILD_NOT_VERIFIED / PRODUCTION_BLOCKED`
+Status: `R11_SOURCE_IMPLEMENTED / EXECUTABLE_GATE_NOT_VERIFIED / BUILD_NOT_VERIFIED / PRODUCTION_BLOCKED`
 
 ## Objective
 Strengthen trust through verifiable business identity and transparent evaluation/editorial processes. Do not manufacture expertise signals.
@@ -35,4 +35,4 @@ R11 treats E-E-A-T as evidence and transparency rather than keyword decoration. 
 - Existing R4–R10 ownership/lifecycle decisions remain unchanged.
 
 ## Validation gap
-The source implementation was inspected through GitHub. Current HEAD has no commit statuses and no PR-triggered workflow runs. The connector environment does not execute Node/Astro commands, so `gate:rebuild-v2:r11`, `astro check`, and full `astro build` still require executable evidence before production merge.
+The source implementation was inspected through GitHub. The last checked R11 head had no commit statuses and no PR-triggered workflow runs. The connector environment does not execute Node/Astro commands, so `gate:rebuild-v2:r11`, `astro check`, and full `astro build` still require executable evidence before production merge.
