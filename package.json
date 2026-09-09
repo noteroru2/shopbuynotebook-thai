@@ -21,6 +21,7 @@
     "gate:rebuild-v2:r5": "node scripts/seo/rebuild-v2-brand-gate.mjs",
     "gate:rebuild-v2:r6": "node scripts/seo/rebuild-v2-r6-gate.mjs",
     "gate:rebuild-v2:r7": "node scripts/seo/rebuild-v2-r7-gate.mjs",
+    "gate:rebuild-v2:r8": "node scripts/seo/rebuild-v2-r8-gate.mjs",
     "spec:inventory": "node scripts/spec-data/build-existing-inventory.mjs",
     "spec:build": "node scripts/spec-data/build-verified-dataset.mjs",
     "spec:validate": "node scripts/spec-data/validate-specs.mjs",
