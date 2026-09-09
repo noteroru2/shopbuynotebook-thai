@@ -11,6 +11,7 @@ const assert = (condition, message) => { if (!condition) errors.push(message); }
 const budget = json('src/data/rebuild-v2-index-budget.json');
 const redirectsManifest = json('src/data/rebuild-v2-production-redirects.json');
 const r6 = json('src/data/rebuild-v2-model-series-triage.json');
+const r13ModelSupplement = json('src/data/rebuild-v2-model-series-r13-supplement.json');
 const r7 = json('src/data/rebuild-v2-condition-triage.json');
 const r8 = json('src/data/rebuild-v2-location-triage.json');
 const r9 = json('src/data/rebuild-v2-blog-triage.json');
@@ -21,22 +22,24 @@ const brandHub = read('src/pages/แบรนด์/index.astro');
 const brandDetail = read('src/pages/แบรนด์/[slug].astro');
 const baseLayout = read('src/layouts/BaseLayout.astro');
 
-const countEligible = (manifest, actions) => manifest.items.filter((item) => actions.includes(item.action)).length;
+const countEligibleItems = (items, actions) => items.filter((item) => actions.includes(item.action)).length;
+const modelItems = [...r6.items, ...r13ModelSupplement.items];
 const calculated =
   budget.corePaths.length +
   budget.releasedV2BrandPaths.length +
-  countEligible(r6, ['KEEP_CURRENT_URL', 'MIGRATE_LATER']) +
-  countEligible(r7, ['KEEP_CURRENT_URL', 'MIGRATE_LATER']) +
-  countEligible(r8, ['KEEP_CURRENT_URL', 'MIGRATE_LATER']) +
-  countEligible(r9, ['KEEP_INFORMATIONAL']);
+  countEligibleItems(modelItems, ['KEEP_CURRENT_URL', 'MIGRATE_LATER']) +
+  countEligibleItems(r7.items, ['KEEP_CURRENT_URL', 'MIGRATE_LATER']) +
+  countEligibleItems(r8.items, ['KEEP_CURRENT_URL', 'MIGRATE_LATER']) +
+  countEligibleItems(r9.items, ['KEEP_INFORMATIONAL']);
 
 assert(budget.releaseState === 'PRODUCTION_MIGRATION_CANDIDATE', 'Budget must be in PRODUCTION_MIGRATION_CANDIDATE state.');
 assert(calculated === budget.target.projectedIndexable, `Declared index budget ${budget.target.projectedIndexable} != calculated ${calculated}.`);
 assert(calculated >= budget.target.minIndexable && calculated <= budget.target.hardCeiling, `Calculated release surface ${calculated} is outside ${budget.target.minIndexable}-${budget.target.hardCeiling}.`);
-assert(calculated === 112, `R13 immutable initial release surface must be 112 URLs, got ${calculated}.`);
+assert(calculated === 113, `R13 immutable initial release surface must be 113 URLs after executable inventory closure, got ${calculated}.`);
 assert(!budget.corePaths.includes('/รับซื้อโน๊ตบุ๊ค/'), 'Redirecting /รับซื้อโน๊ตบุ๊ค/ must not remain in core sitemap allowlist.');
 assert(budget.corePaths.includes('/ประเมินราคา/'), 'Valuation owner must be in release allowlist.');
 assert(budget.releasedV2BrandPaths.length === 9, 'Brand release must contain hub + 8 brand owners.');
+assert(r13ModelSupplement.items.length === 1 && r13ModelSupplement.items[0].slug === 'alienware-m16', 'R13 inventory supplement must contain only alienware-m16.');
 
 assert(!brandHub.includes('noindex={true}'), 'Released brand hub must not remain noindex.');
 assert(!brandDetail.includes('noindex={true}'), 'Released brand detail pages must not remain noindex.');
@@ -50,9 +53,7 @@ for (const row of redirectRows) {
   assert(!sourceSet.has(row.source), `Duplicate redirect source: ${row.source}`);
   sourceSet.add(row.source);
 }
-for (const row of redirectRows) {
-  assert(!sourceSet.has(row.target), `Redirect chain detected: ${row.source} -> ${row.target}, where target is another redirect source.`);
-}
+for (const row of redirectRows) assert(!sourceSet.has(row.target), `Redirect chain detected: ${row.source} -> ${row.target}, where target is another redirect source.`);
 assert(redirectRows.length === 31, `Expected 31 controlled migration redirects, got ${redirectRows.length}.`);
 assert(worker.includes('rebuild-v2-production-redirects.json'), 'Worker must consume the R13 redirect manifest.');
 assert(worker.includes('Response.redirect(destination.toString(), 301)'), 'Worker must emit HTTP 301 redirects.');
@@ -60,6 +61,7 @@ assert(wrangler.includes('run_worker_first = true'), 'Cloudflare Worker must run
 
 assert(astro.includes('R13_REDIRECT_SOURCES'), 'Sitemap must exclude R13 redirect sources.');
 assert(astro.includes('R13_RELEASED_BRAND_PATHS'), 'Sitemap must include only declared released V2 brand paths.');
+assert(astro.includes('rebuild-v2-model-series-r13-supplement.json'), 'Sitemap must consume R13 model inventory supplement.');
 assert(astro.includes('return false;') && astro.includes('catch'), 'Sitemap parser must fail closed.');
 
 const requireDist = process.argv.includes('--dist-required');
@@ -94,17 +96,11 @@ if (requireDist || exists('dist')) {
       pathToUrl.set(decoded === '/' ? '/' : `${decoded.replace(/\/+$/, '')}/`, loc);
     }
 
-    for (const source of sourceSet) {
-      assert(!pathToUrl.has(source), `Redirect source leaked into sitemap: ${source}`);
-    }
-    for (const target of redirectRows.map((row) => row.target)) {
-      assert(pathToUrl.has(target), `Redirect target is not in built sitemap/release surface: ${target}`);
-    }
-    for (const released of [...budget.corePaths, ...budget.releasedV2BrandPaths]) {
-      assert(pathToUrl.has(released), `Declared released path missing from built sitemap: ${released}`);
-    }
+    for (const source of sourceSet) assert(!pathToUrl.has(source), `Redirect source leaked into sitemap: ${source}`);
+    for (const target of redirectRows.map((row) => row.target)) assert(pathToUrl.has(target), `Redirect target is not in built sitemap/release surface: ${target}`);
+    for (const released of [...budget.corePaths, ...budget.releasedV2BrandPaths]) assert(pathToUrl.has(released), `Declared released path missing from built sitemap: ${released}`);
 
-    for (const [pathname, loc] of pathToUrl) {
+    for (const [pathname] of pathToUrl) {
       const rel = pathname === '/' ? 'index.html' : path.join(pathname.slice(1), 'index.html');
       const htmlPath = path.join(dist, rel);
       assert(fs.existsSync(htmlPath), `Sitemap URL has no generated HTML: ${pathname}`);
@@ -132,5 +128,4 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-
 console.log(`R13 PASS: source migration controls valid; projected indexable=${calculated}; redirects=${redirectRows.length}${requireDist || exists('dist') ? '; built sitemap verified' : '; dist verification pending'}.`);
