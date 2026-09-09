@@ -46,16 +46,19 @@ const legacySlug = currentPath.startsWith(legacyModelPrefix)
 
 type LifecycleAction = 'KEEP_CURRENT_URL' | 'MIGRATE_LATER' | 'HOLD_NOINDEX' | 'MERGE';
 type LifecycleItem = { slug: string; action: LifecycleAction; target?: string };
+const modelItems = modelSeriesTriage.items as LifecycleItem[];
+const conditionItems = conditionTriage.items as LifecycleItem[];
+const conditionTriageItem = conditionItems.find((item) => item.slug === legacySlug);
+const modelTriageItem = modelItems.find((item) => item.slug === legacySlug);
 
-const modelTriageItem = contentKind === 'brand'
-  ? (modelSeriesTriage.items as LifecycleItem[]).find((item) => item.slug === legacySlug)
-  : undefined;
-const conditionTriageItem = contentKind === 'condition'
-  ? (conditionTriage.items as LifecycleItem[]).find((item) => item.slug === legacySlug)
-  : undefined;
-const lifecycleItem = contentKind === 'condition' ? conditionTriageItem : modelTriageItem;
+// The manifests are disjoint by gate. contentKind is accepted for future route-level explicitness;
+// until every caller passes it, exact membership in the condition manifest safely identifies condition pages.
+const lifecycleItem = contentKind === 'condition'
+  ? conditionTriageItem
+  : contentKind === 'brand'
+    ? modelTriageItem
+    : (conditionTriageItem ?? modelTriageItem);
 
-// R6/R7 safety: only apply a lifecycle manifest to the matching collection kind.
 const lifecycleNoindex = lifecycleItem?.action === 'HOLD_NOINDEX' || lifecycleItem?.action === 'MERGE';
 const lifecycleCanonical = lifecycleItem?.action === 'MERGE' && lifecycleItem.target
   ? absoluteUrl(lifecycleItem.target)
