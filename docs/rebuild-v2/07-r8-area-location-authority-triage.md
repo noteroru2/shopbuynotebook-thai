@@ -1,6 +1,6 @@
 # R8 — Area / Location Authority Triage
 
-Status: `R8_SOURCE_PASS / EXECUTABLE_GATE_NOT_VERIFIED / BUILD_NOT_VERIFIED / PRODUCTION_BLOCKED`
+Status: `R8_SOURCE_IMPLEMENTED / EXECUTABLE_GATE_NOT_VERIFIED / BUILD_NOT_VERIFIED / PRODUCTION_BLOCKED`
 
 ## Goal
 
@@ -101,6 +101,8 @@ Before any migration release:
 
 ## R8 verdict
 
-`R8_SOURCE_PASS / EXECUTABLE_GATE_NOT_VERIFIED / BUILD_NOT_VERIFIED / PRODUCTION_BLOCKED`
+Source controls are implemented and structurally reviewed. The executable gate and build have not run in this connector runtime, so production release remains blocked.
+
+`R8_SOURCE_IMPLEMENTED / EXECUTABLE_GATE_NOT_VERIFIED / BUILD_NOT_VERIFIED / PRODUCTION_BLOCKED`
 
 Next logical batch: `R9 — Blog Cleanup / Informational Authority Triage`.
