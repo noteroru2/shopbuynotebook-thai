@@ -19,6 +19,13 @@ const R6_SITEMAP_EXCLUDED = new Set(
 );
 const R5_LEGACY_BRANDS = new Set(['asus', 'acer', 'lenovo', 'hp', 'dell', 'msi', 'macbook', 'surface']);
 const V2_STAGING_PREFIXES = ['/แบรนด์/', '/รุ่น/', '/อาการ/', '/พื้นที่/', '/ประเมินราคา/'];
+const R4_RETIRED_MONEY_PATHS = new Set([
+  '/รับซื้อ-notebook/',
+  '/เช็คราคาโน๊ตบุ๊ค/',
+  '/เช็คราคาโน๊ตบุ๊คมือสอง/',
+  '/ตีราคาโน๊ตบุ๊ค/',
+  '/ขายโน๊ตบุ๊คด่วน/',
+]);
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,6 +39,7 @@ export default defineConfig({
             ? decodeURIComponent(new URL(page).pathname)
             : decodeURIComponent(page);
           if (pathname === '/admin' || pathname.startsWith('/admin/')) return false;
+          if (R4_RETIRED_MONEY_PATHS.has(pathname)) return false;
 
           // V2 namespaces stay noindex and out of sitemap until migration release.
           if (V2_STAGING_PREFIXES.some((prefix) => pathname.startsWith(prefix))) return false;
@@ -57,7 +65,7 @@ export default defineConfig({
         if (item.url === 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/') {
           item.changefreq = EnumChangefreq.DAILY;
           item.priority = 1.0;
-        } else if (item.url.includes('/ขายโน๊ตบุ๊คด่วน/') || item.url.includes('/รับเหมาโน๊ตบุ๊ค/') || item.url.includes('/รับเหมาคอมพิวเตอร์/') || item.url.includes('/รับประมูลคอม/')) {
+        } else if (item.url.includes('/รับเหมาโน๊ตบุ๊ค/') || item.url.includes('/รับเหมาคอมพิวเตอร์/') || item.url.includes('/รับประมูลคอม/')) {
           item.changefreq = EnumChangefreq.DAILY;
           item.priority = 0.9;
         } else if (item.url.includes('/รับซื้อโน๊ตบุ๊ค/')) {
