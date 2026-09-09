@@ -14,6 +14,13 @@ export function organizationSchema() {
     telephone: SITE.telephone,
     address: companyPostalAddressSchema(),
     description: SITE.description,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: SITE.telephone,
+      contactType: 'customer service',
+      availableLanguage: ['th'],
+      url: SITE.lineUrl,
+    },
     sameAs: [SITE.sameAs.facebook, SITE.lineUrl, SITE.sameAs.tiktok, SITE.googleMapsUrl],
   };
 }
@@ -41,6 +48,7 @@ export function webPageSchema(opts: { title: string; description: string; url: s
     inLanguage: SITE.language,
     isPartOf: { '@id': `${SITE.url}#website` },
     about: { '@id': `${SITE.url}#organization` },
+    publisher: { '@id': `${SITE.url}#organization` },
   };
 }
 
@@ -64,8 +72,9 @@ export function blogPostingSchema(opts: {
     datePublished: opts.datePublished,
     dateModified: opts.dateModified ?? opts.datePublished,
     inLanguage: SITE.language,
-    author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
-    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url, logo: { '@type': 'ImageObject', url: absoluteUrl(SITE.logo) } },
+    author: { '@id': `${SITE.url}#organization` },
+    publisher: { '@id': `${SITE.url}#organization` },
+    isPartOf: { '@id': `${SITE.url}#website` },
     ...(opts.image ? { image: [opts.image] } : {}),
     ...(opts.articleSection ? { articleSection: opts.articleSection } : {}),
   };
@@ -108,4 +117,3 @@ export function itemListSchema(opts: { name: string; url: string; items: { name:
     })),
   };
 }
-
