@@ -51,13 +51,15 @@ const conditionItems = conditionTriage.items as LifecycleItem[];
 const conditionTriageItem = conditionItems.find((item) => item.slug === legacySlug);
 const modelTriageItem = modelItems.find((item) => item.slug === legacySlug);
 
-// The manifests are disjoint by gate. contentKind is accepted for future route-level explicitness;
-// until every caller passes it, exact membership in the condition manifest safely identifies condition pages.
-const lifecycleItem = contentKind === 'condition'
-  ? conditionTriageItem
-  : contentKind === 'brand'
-    ? modelTriageItem
-    : (conditionTriageItem ?? modelTriageItem);
+// R6/R7 manifests are required to be disjoint. Exact condition-manifest membership
+// identifies a condition page until all shared-route callers pass contentKind explicitly.
+const lifecycleItem = migratedOwner
+  ? undefined
+  : contentKind === 'condition'
+    ? conditionTriageItem
+    : contentKind === 'brand'
+      ? modelTriageItem
+      : (conditionTriageItem ?? modelTriageItem);
 
 const lifecycleNoindex = lifecycleItem?.action === 'HOLD_NOINDEX' || lifecycleItem?.action === 'MERGE';
 const lifecycleCanonical = lifecycleItem?.action === 'MERGE' && lifecycleItem.target
