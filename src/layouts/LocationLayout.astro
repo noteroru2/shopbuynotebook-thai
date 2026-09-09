@@ -2,7 +2,8 @@
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import type { BreadcrumbItem, FaqItem } from '../lib/seo';
-import { breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
+import { absoluteUrl, breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
+import locationTriage from '../data/rebuild-v2-location-triage.json';
 
 interface Props {
   title: string;
@@ -17,14 +18,45 @@ interface Props {
 }
 
 const { title, description, canonical, ogImage, noindex, breadcrumbs, faqs = [], serviceName, includeLocalBusiness = false } = Astro.props;
+
+const normalizePath = (value: string) => {
+  if (!value) return '/';
+  const withLeading = value.startsWith('/') ? value : `/${value}`;
+  return withLeading === '/' ? '/' : `${withLeading.replace(/\/+$/, '')}/`;
+};
+
+const currentPath = normalizePath(Astro.url.pathname);
+const legacyLocationPrefix = '/รับซื้อโน๊ตบุ๊ค/';
+const legacyLocationSlug = currentPath.startsWith(legacyLocationPrefix)
+  ? currentPath.slice(legacyLocationPrefix.length).replace(/\/$/, '')
+  : '';
+
+type LocationAction = 'KEEP_CURRENT_URL' | 'MIGRATE_LATER' | 'HOLD_NOINDEX' | 'MERGE';
+type LocationTriageItem = {
+  slug: string;
+  action: LocationAction;
+  target?: string;
+};
+
+const locationTriageItem = (locationTriage.items as LocationTriageItem[]).find((item) => item.slug === legacyLocationSlug);
+const defaultLocationAction = locationTriage.policy.defaultForUnclassified as LocationAction;
+const resolvedLocationAction = locationTriageItem?.action ?? defaultLocationAction;
+const lifecycleNoindex = resolvedLocationAction === 'HOLD_NOINDEX' || resolvedLocationAction === 'MERGE';
+const lifecycleCanonical = resolvedLocationAction === 'MERGE' && locationTriageItem?.target
+  ? absoluteUrl(locationTriageItem.target)
+  : undefined;
+
+const resolvedCanonical = lifecycleCanonical ?? canonical;
+const resolvedNoindex = lifecycleNoindex ? true : noindex;
+
 const schemas = [
   breadcrumbListSchema(breadcrumbs),
-  ...(serviceName && canonical ? [serviceSchema({ name: serviceName, url: canonical, description })] : []),
+  ...(serviceName && resolvedCanonical ? [serviceSchema({ name: serviceName, url: resolvedCanonical, description })] : []),
   ...(faqs.length ? [faqPageSchema(faqs)] : []),
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogImage={ogImage} noindex={noindex} schemas={schemas} includeLocalBusiness={includeLocalBusiness}>
+<BaseLayout title={title} description={description} canonical={resolvedCanonical} ogImage={ogImage} noindex={resolvedNoindex} schemas={schemas} includeLocalBusiness={includeLocalBusiness}>
   <Breadcrumbs items={breadcrumbs} />
   <slot />
 </BaseLayout>
