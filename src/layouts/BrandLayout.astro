@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import type { BreadcrumbItem, FaqItem } from '../lib/seo';
 import { absoluteUrl, breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
 import modelSeriesTriage from '../data/rebuild-v2-model-series-triage.json';
+import conditionTriage from '../data/rebuild-v2-condition-triage.json';
 
 interface Props {
   title: string;
@@ -14,9 +15,10 @@ interface Props {
   breadcrumbs: BreadcrumbItem[];
   faqs?: FaqItem[];
   serviceName?: string;
+  contentKind?: 'brand' | 'condition' | 'location';
 }
 
-const { title, description, canonical, ogImage, noindex, breadcrumbs, faqs = [], serviceName } = Astro.props;
+const { title, description, canonical, ogImage, noindex, breadcrumbs, faqs = [], serviceName, contentKind } = Astro.props;
 
 const normalizePath = (value: string) => {
   if (!value) return '/';
@@ -37,26 +39,32 @@ const legacyBrandOwners: Record<string, string> = {
 
 const currentPath = normalizePath(Astro.url.pathname);
 const migratedOwner = legacyBrandOwners[currentPath];
-
 const legacyModelPrefix = '/รับซื้อโน๊ตบุ๊ค/';
 const legacySlug = currentPath.startsWith(legacyModelPrefix)
   ? currentPath.slice(legacyModelPrefix.length).replace(/\/$/, '')
   : '';
-const triageItem = (modelSeriesTriage.items as Array<{
-  slug: string;
-  action: 'KEEP_CURRENT_URL' | 'MIGRATE_LATER' | 'HOLD_NOINDEX' | 'MERGE';
-  target?: string;
-}>).find((item) => item.slug === legacySlug);
 
-const triageNoindex = triageItem?.action === 'HOLD_NOINDEX' || triageItem?.action === 'MERGE';
-const triageCanonical = triageItem?.action === 'MERGE' && triageItem.target
-  ? absoluteUrl(triageItem.target)
+type LifecycleAction = 'KEEP_CURRENT_URL' | 'MIGRATE_LATER' | 'HOLD_NOINDEX' | 'MERGE';
+type LifecycleItem = { slug: string; action: LifecycleAction; target?: string };
+
+const modelTriageItem = contentKind === 'brand'
+  ? (modelSeriesTriage.items as LifecycleItem[]).find((item) => item.slug === legacySlug)
+  : undefined;
+const conditionTriageItem = contentKind === 'condition'
+  ? (conditionTriage.items as LifecycleItem[]).find((item) => item.slug === legacySlug)
+  : undefined;
+const lifecycleItem = contentKind === 'condition' ? conditionTriageItem : modelTriageItem;
+
+// R6/R7 safety: only apply a lifecycle manifest to the matching collection kind.
+const lifecycleNoindex = lifecycleItem?.action === 'HOLD_NOINDEX' || lifecycleItem?.action === 'MERGE';
+const lifecycleCanonical = lifecycleItem?.action === 'MERGE' && lifecycleItem.target
+  ? absoluteUrl(lifecycleItem.target)
   : undefined;
 
 const resolvedCanonical = migratedOwner
   ? absoluteUrl(migratedOwner)
-  : (triageCanonical ?? canonical);
-const resolvedNoindex = migratedOwner ? true : (triageNoindex ? true : noindex);
+  : (lifecycleCanonical ?? canonical);
+const resolvedNoindex = migratedOwner ? true : (lifecycleNoindex ? true : noindex);
 
 const schemas = [
   breadcrumbListSchema(breadcrumbs),
