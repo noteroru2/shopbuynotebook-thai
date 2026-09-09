@@ -4,6 +4,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import FAQ from '../../components/FAQ.astro';
 import CTAButtons from '../../components/CTAButtons.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
+import AuthorityLinks from '../../components/AuthorityLinks.astro';
 import blogTriage from '../../data/rebuild-v2-blog-triage.json';
 import { getCollection, render } from 'astro:content';
 import { absoluteUrl, breadcrumbListSchema, faqPageSchema } from '../../lib/seo';
@@ -17,7 +18,6 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-
 const toSlug = (p: any) => (p.data.slug ? p.data.slug : String(p.id).replace(/\.(md|mdx)$/i, ''));
 function normalizeCanonical(value: string) {
   const trimmed = value.trim();
@@ -32,32 +32,18 @@ const blogTriageItem = blogTriage.items.find((item) => item.slug === slug);
 const resolvedBlogAction = blogTriageItem?.action ?? blogTriage.policy.defaultForUnclassified;
 const lifecycleNoindex = resolvedBlogAction !== 'KEEP_INFORMATIONAL';
 const selfCanonical = post.data.canonical ? normalizeCanonical(post.data.canonical) : absoluteUrl(`/blog/${slug}/`);
-const lifecycleCanonical = resolvedBlogAction === 'MERGE_TO_OWNER' && blogTriageItem?.target
-  ? normalizeCanonical(blogTriageItem.target)
-  : selfCanonical;
-const canonical = lifecycleCanonical;
+const canonical = resolvedBlogAction === 'MERGE_TO_OWNER' && blogTriageItem?.target ? normalizeCanonical(blogTriageItem.target) : selfCanonical;
 const breadcrumbs = [
   { name: 'หน้าแรก', url: absoluteUrl('/') },
   { name: 'บทความ', url: absoluteUrl('/blog/') },
   { name: post.data.title, url: selfCanonical },
 ];
 const isoDate = (d: Date) => d.toISOString();
-const articleMeta = {
-  publishedTime: isoDate(post.data.date),
-  modifiedTime: post.data.dateModified ? isoDate(post.data.dateModified) : undefined,
-};
+const articleMeta = { publishedTime: isoDate(post.data.date), modifiedTime: post.data.dateModified ? isoDate(post.data.dateModified) : undefined };
 const schemas = [
   breadcrumbListSchema(breadcrumbs),
   ...(post.data.faqs?.length ? [faqPageSchema(post.data.faqs)] : []),
-  blogPostingSchema({
-    headline: post.data.title,
-    description: post.data.description,
-    url: selfCanonical,
-    datePublished: isoDate(post.data.date),
-    dateModified: post.data.dateModified ? isoDate(post.data.dateModified) : undefined,
-    image: post.data.featuredImage ? absoluteUrl(post.data.featuredImage) : undefined,
-    articleSection: post.data.category,
-  }),
+  blogPostingSchema({ headline: post.data.title, description: post.data.description, url: selfCanonical, datePublished: isoDate(post.data.date), dateModified: post.data.dateModified ? isoDate(post.data.dateModified) : undefined, image: post.data.featuredImage ? absoluteUrl(post.data.featuredImage) : undefined, articleSection: post.data.category }),
 ];
 ---
 
@@ -75,50 +61,39 @@ const schemas = [
     <header class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
       <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">
         {post.data.category} • เผยแพร่ {post.data.date.toLocaleDateString('th-TH')}
-        {post.data.dateModified ? (
-          <> • อัปเดตล่าสุด {post.data.dateModified.toLocaleDateString('th-TH')}</>
-        ) : null}
+        {post.data.dateModified ? <> • อัปเดตล่าสุด {post.data.dateModified.toLocaleDateString('th-TH')}</> : null}
       </p>
       <h1 class="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">{post.data.title}</h1>
       <p class="mt-4 text-base leading-relaxed text-slate-600">{post.data.description}</p>
-      <div class="mt-6 flex flex-wrap gap-3">
-        <CTAButtons primaryText={post.data.ctaText ?? 'แอดไลน์ @webuy ส่งรูปประเมินราคา'} secondaryText="โทร" />
-      </div>
+      <div class="mt-6 flex flex-wrap gap-3"><CTAButtons primaryText={post.data.ctaText ?? 'แอดไลน์ @webuy ส่งรูปประเมินราคา'} secondaryText="โทร" /></div>
     </header>
 
     <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
-      <div
-        class:list={[
-          'prose prose-slate max-w-none',
-          'prose-headings:scroll-mt-28 prose-headings:font-extrabold prose-headings:tracking-tight prose-headings:text-slate-900',
-          'prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3',
-          'prose-p:text-base prose-p:leading-relaxed prose-p:text-slate-700 prose-p:my-4',
-          'prose-li:my-1 prose-li:text-slate-700 prose-ul:my-4 prose-ol:my-4',
-          'prose-strong:text-slate-900 prose-strong:font-semibold',
-          'prose-a:font-semibold prose-a:text-emerald-700 prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-emerald-800',
-          'prose-hr:my-10 prose-hr:border-slate-200',
-          'prose-blockquote:border-l-emerald-500 prose-blockquote:text-slate-600 prose-blockquote:not-italic',
-          'prose-code:rounded prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-slate-800 prose-code:before:content-none prose-code:after:content-none',
-          'prose-pre:rounded-2xl prose-pre:border prose-pre:border-slate-200 prose-pre:bg-slate-50',
-        ]}
-      >
-        <Content />
-      </div>
+      <div class:list={[
+        'prose prose-slate max-w-none',
+        'prose-headings:scroll-mt-28 prose-headings:font-extrabold prose-headings:tracking-tight prose-headings:text-slate-900',
+        'prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3',
+        'prose-p:text-base prose-p:leading-relaxed prose-p:text-slate-700 prose-p:my-4',
+        'prose-li:my-1 prose-li:text-slate-700 prose-ul:my-4 prose-ol:my-4',
+        'prose-strong:text-slate-900 prose-strong:font-semibold',
+        'prose-a:font-semibold prose-a:text-emerald-700 prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-emerald-800',
+        'prose-hr:my-10 prose-hr:border-slate-200',
+        'prose-blockquote:border-l-emerald-500 prose-blockquote:text-slate-600 prose-blockquote:not-italic',
+        'prose-code:rounded prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-slate-800 prose-code:before:content-none prose-code:after:content-none',
+        'prose-pre:rounded-2xl prose-pre:border prose-pre:border-slate-200 prose-pre:bg-slate-50',
+      ]}><Content /></div>
     </div>
   </article>
 
   {post.data.faqs?.length ? <FAQ title="คำถามท้ายบทความ" faqs={post.data.faqs} /> : null}
   {post.data.relatedLinks?.length ? <RelatedLinks title="อ่านต่อ/หน้าที่เกี่ยวข้อง" links={post.data.relatedLinks} /> : null}
+  {resolvedBlogAction === 'KEEP_INFORMATIONAL' ? <AuthorityLinks context="blog" /> : null}
 
   <section class="mx-auto w-full max-w-6xl px-4 py-14">
     <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-10">
-      <h2 class="text-2xl font-bold tracking-tight text-slate-900">อยากขายโน๊ตบุ๊ควันนี้?</h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        ไปที่หน้า <a class="underline" href="/">รับซื้อโน๊ตบุ๊ค</a> หรือส่งรูปประเมินผ่าน LINE ได้เลย
-      </p>
-      <div class="mt-6">
-        <CTAButtons />
-      </div>
+      <h2 class="text-2xl font-bold tracking-tight text-slate-900">อยากขายโน๊ตบุ๊ค?</h2>
+      <p class="mt-3 text-sm leading-relaxed text-slate-600">ดูขั้นตอนที่หน้า <a class="underline" href="/ขายโน๊ตบุ๊ค/">ขายโน๊ตบุ๊ค</a> หรือส่งรูปและสเปกเพื่อประเมินเบื้องต้นผ่าน LINE</p>
+      <div class="mt-6"><CTAButtons /></div>
     </div>
   </section>
 </BaseLayout>
