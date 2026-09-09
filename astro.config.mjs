@@ -10,8 +10,11 @@ import mdx from '@astrojs/mdx';
 const r6Triage = JSON.parse(
   fs.readFileSync(new URL('./src/data/rebuild-v2-model-series-triage.json', import.meta.url), 'utf8'),
 );
+const r13ModelSupplement = JSON.parse(
+  fs.readFileSync(new URL('./src/data/rebuild-v2-model-series-r13-supplement.json', import.meta.url), 'utf8'),
+);
 const R6_SITEMAP_INCLUDED = new Set(
-  r6Triage.items
+  [...r6Triage.items, ...r13ModelSupplement.items]
     .filter((item) => item.action === 'KEEP_CURRENT_URL' || item.action === 'MIGRATE_LATER')
     .map((item) => item.slug),
 );
@@ -71,7 +74,6 @@ export default defineConfig({
           if (R13_REDIRECT_SOURCES.has(pathname)) return false;
           if (R13_STAGING_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(prefix))) return false;
           if (R13_RELEASED_BRAND_PATHS.has(pathname)) return true;
-
           if (pathname.startsWith('/แบรนด์/')) return false;
 
           if (pathname.startsWith('/blog/') && pathname !== '/blog/') {
@@ -126,13 +128,9 @@ export default defineConfig({
     }),
     mdx(),
   ],
-  build: {
-    inlineStylesheets: 'auto',
-  },
+  build: { inlineStylesheets: 'auto' },
   vite: {
     plugins: [tailwindcss()],
-    build: {
-      assetsInlineLimit: 20480,
-    },
+    build: { assetsInlineLimit: 20480 },
   },
 });
