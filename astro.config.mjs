@@ -10,17 +10,17 @@ import mdx from '@astrojs/mdx';
 const r6Triage = JSON.parse(
   fs.readFileSync(new URL('./src/data/rebuild-v2-model-series-triage.json', import.meta.url), 'utf8'),
 );
-const R6_SITEMAP_EXCLUDED = new Set(
+const R6_SITEMAP_INCLUDED = new Set(
   r6Triage.items
-    .filter((item) => item.action === 'HOLD_NOINDEX' || item.action === 'MERGE')
+    .filter((item) => item.action === 'KEEP_CURRENT_URL' || item.action === 'MIGRATE_LATER')
     .map((item) => item.slug),
 );
 const r7ConditionTriage = JSON.parse(
   fs.readFileSync(new URL('./src/data/rebuild-v2-condition-triage.json', import.meta.url), 'utf8'),
 );
-const R7_CONDITION_SITEMAP_EXCLUDED = new Set(
+const R7_CONDITION_SITEMAP_INCLUDED = new Set(
   r7ConditionTriage.items
-    .filter((item) => item.action === 'HOLD_NOINDEX' || item.action === 'MERGE')
+    .filter((item) => item.action === 'KEEP_CURRENT_URL' || item.action === 'MIGRATE_LATER')
     .map((item) => item.slug),
 );
 const r8LocationTriage = JSON.parse(
@@ -44,8 +44,12 @@ const R9_BLOG_SITEMAP_INCLUDED = new Set(
     .filter((item) => item.action === 'KEEP_INFORMATIONAL')
     .map((item) => item.slug),
 );
+const r12Budget = JSON.parse(
+  fs.readFileSync(new URL('./src/data/rebuild-v2-index-budget.json', import.meta.url), 'utf8'),
+);
+const R12_CORE_PATHS = new Set(r12Budget.corePaths);
+const R12_STAGING_PREFIXES = r12Budget.alwaysExcludedPrefixes;
 const R5_LEGACY_BRANDS = new Set(['asus', 'acer', 'lenovo', 'hp', 'dell', 'msi', 'macbook', 'surface']);
-const V2_STAGING_PREFIXES = ['/แบรนด์/', '/รุ่น/', '/อาการ/', '/พื้นที่/', '/ประเมินราคา/'];
 const R4_RETIRED_MONEY_PATHS = new Set([
   '/รับซื้อ-notebook/',
   '/เช็คราคาโน๊ตบุ๊ค/',
@@ -64,17 +68,18 @@ export default defineConfig({
           const pathname = page.startsWith('http')
             ? decodeURIComponent(new URL(page).pathname)
             : decodeURIComponent(page);
+
           if (pathname === '/admin' || pathname.startsWith('/admin/')) return false;
           if (R4_RETIRED_MONEY_PATHS.has(pathname)) return false;
-          if (V2_STAGING_PREFIXES.some((prefix) => pathname.startsWith(prefix))) return false;
+          if (R12_STAGING_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(prefix))) return false;
 
           if (pathname.startsWith('/blog/') && pathname !== '/blog/') {
             const blogSlug = pathname.slice('/blog/'.length).split('/').filter(Boolean)[0];
-            if (!R9_BLOG_SITEMAP_INCLUDED.has(blogSlug)) return false;
+            return R9_BLOG_SITEMAP_INCLUDED.has(blogSlug);
           }
 
           const hubPrefix = '/รับซื้อโน๊ตบุ๊ค/';
-          if (pathname.startsWith(hubPrefix)) {
+          if (pathname.startsWith(hubPrefix) && pathname !== hubPrefix) {
             const rest = pathname.slice(hubPrefix.length);
             const segments = rest.split('/').filter(Boolean);
             if (segments.length >= 2) return false;
@@ -82,15 +87,17 @@ export default defineConfig({
             if (segments.length === 1) {
               const slug = segments[0];
               if (R5_LEGACY_BRANDS.has(slug)) return false;
-              if (R6_SITEMAP_EXCLUDED.has(slug)) return false;
-              if (R7_CONDITION_SITEMAP_EXCLUDED.has(slug)) return false;
-              if (R8_LOCATION_SLUGS.has(slug) && !R8_LOCATION_SITEMAP_INCLUDED.has(slug)) return false;
+              if (R8_LOCATION_SLUGS.has(slug)) return R8_LOCATION_SITEMAP_INCLUDED.has(slug);
+              if (R7_CONDITION_SITEMAP_INCLUDED.has(slug)) return true;
+              if (R6_SITEMAP_INCLUDED.has(slug)) return true;
+              return false;
             }
           }
+
+          return R12_CORE_PATHS.has(pathname);
         } catch {
-          /* keep page if URL parsing fails */
+          return false;
         }
-        return true;
       },
       serialize(item) {
         if (item.url === 'https://ร้านรับซื้อโน๊ตบุ๊ค.com/') {
