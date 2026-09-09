@@ -7,11 +7,15 @@ import { absoluteUrl } from '../../lib/seo';
 import brandAuthority from '../../data/rebuild-v2-brand-authority.json';
 
 const authorityBySlug = new Map(brandAuthority.brands.map((brand) => [brand.slug, brand]));
-const ALLOWED_BRANDS = new Set(brandAuthority.brands.map((brand) => brand.slug));
 
 export async function getStaticPaths() {
   const entries = await getCollection('brands');
-  return entries.filter((entry) => ALLOWED_BRANDS.has(entry.data.slug)).map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+  // Keep the allowlist inside getStaticPaths: Astro extracts this function into
+  // the prerender bundle and does not reliably retain surrounding module locals.
+  const allowedBrands = new Set(brandAuthority.brands.map((brand) => brand.slug));
+  return entries
+    .filter((entry) => allowedBrands.has(entry.data.slug))
+    .map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
