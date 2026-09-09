@@ -1,5 +1,9 @@
+import redirectManifest from "../src/data/rebuild-v2-production-redirects.json";
+
 const APEX_HOST = "xn--42cn4aobed0eb6hubj4es0m5dhvd.com";
-const LEGACY_PATH = "/รับซื้อโน๊ตบุ๊ค/";
+const REDIRECTS = new Map(
+  redirectManifest.redirects.map(({ source, target }) => [source, target]),
+);
 
 function safeDecodePath(pathname) {
   try {
@@ -10,6 +14,7 @@ function safeDecodePath(pathname) {
 }
 
 function normalizeTrailingSlash(pathname) {
+  if (pathname === "/") return "/";
   return pathname.endsWith("/") ? pathname : `${pathname}/`;
 }
 
@@ -22,16 +27,14 @@ export default {
     const requestUrl = new URL(request.url);
     const decodedPath = safeDecodePath(requestUrl.pathname);
     const normalizedPath = normalizeTrailingSlash(decodedPath);
+    const redirectTarget = REDIRECTS.get(normalizedPath);
 
-    if (
-      requestUrl.hostname.toLowerCase() === APEX_HOST &&
-      normalizedPath === LEGACY_PATH
-    ) {
+    if (requestUrl.hostname.toLowerCase() === APEX_HOST && redirectTarget) {
       const destination = new URL(request.url);
       destination.protocol = "https:";
       destination.hostname = APEX_HOST;
       destination.port = "";
-      destination.pathname = "/";
+      destination.pathname = redirectTarget;
 
       return Response.redirect(destination.toString(), 301);
     }
