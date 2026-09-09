@@ -1,40 +1,26 @@
 ---
 const items = [
-  { title: 'ประเมินฟรี', desc: 'ส่งรูป/สเปก ประเมินเบื้องต้นให้อย่างรวดเร็ว', tone: 'emerald', icon: '💬' },
-  { title: 'ชำระเงินหลังตรวจรับและตกลงราคา', desc: 'ตกลงราคาแล้วจ่ายเงินสดหรือโอนชำระเงิน', tone: 'amber', icon: '💸' },
-  { title: 'รับซื้อหลายยี่ห้อ', desc: 'Windows, MacBook, Gaming Notebook', tone: 'sky', icon: '💻' },
-  { title: 'รับซื้อเครื่องดีและเครื่องเสีย', desc: 'เปิดไม่ติด จอแตก แบตเสื่อม ฯลฯ', tone: 'rose', icon: '🧰' },
-  { title: 'ขั้นตอนโปร่งใส', desc: 'แจ้งเงื่อนไขชัดก่อนตัดสินใจขาย', tone: 'violet', icon: '✅' },
+  { title: 'ประเมินจากข้อมูลเครื่อง', desc: 'ดูรุ่น สเปก สภาพ แบตเตอรี่ อาการ และอุปกรณ์ที่มี', tone: 'emerald', icon: '💬' },
+  { title: 'ราคาสุดท้ายหลังตรวจเครื่อง', desc: 'กรอบจากรูปเป็นข้อมูลเบื้องต้น ไม่ใช่ราคายืนยันสุดท้าย', tone: 'amber', icon: '🔎' },
+  { title: 'หน้าร้านจริงอุบลราชธานี', desc: 'ใช้ข้อมูลหน้าร้านเดียวกับ Google Maps และ structured data', tone: 'sky', icon: '📍' },
+  { title: 'แจ้งอาการตามจริง', desc: 'เครื่องมีปัญหายังประเมินได้หลายกรณี แต่ต้องแยกความเสี่ยงตามอาการ', tone: 'rose', icon: '🧰' },
+  { title: 'เงื่อนไขอ่านได้ก่อนตัดสินใจ', desc: 'ขั้นตอนประเมิน ตรวจเครื่อง และข้อจำกัดถูกแยกอธิบายบนเว็บไซต์', tone: 'violet', icon: '✅' },
 ];
 ---
 
 <section class="mx-auto w-full max-w-6xl px-4 pt-10">
   <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
     {items.map((it) => (
-      <div
-        class:list={[
-          'group rounded-3xl border bg-white/70 p-5 shadow-sm backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-md',
-          it.tone === 'emerald' && 'border-emerald-200 hover:border-emerald-300',
-          it.tone === 'sky' && 'border-sky-200 hover:border-sky-300',
-          it.tone === 'amber' && 'border-amber-200 hover:border-amber-300',
-          it.tone === 'rose' && 'border-rose-200 hover:border-rose-300',
-          it.tone === 'violet' && 'border-violet-200 hover:border-violet-300',
-        ]}
-      >
+      <div class:list={[
+        'group rounded-3xl border bg-white/70 p-5 shadow-sm backdrop-blur transition-all hover:-translate-y-0.5 hover:shadow-md',
+        it.tone === 'emerald' && 'border-emerald-200 hover:border-emerald-300',
+        it.tone === 'sky' && 'border-sky-200 hover:border-sky-300',
+        it.tone === 'amber' && 'border-amber-200 hover:border-amber-300',
+        it.tone === 'rose' && 'border-rose-200 hover:border-rose-300',
+        it.tone === 'violet' && 'border-violet-200 hover:border-violet-300',
+      ]}>
         <div class="flex items-center gap-2">
-          <span
-            class:list={[
-              'inline-flex h-10 w-10 items-center justify-center rounded-2xl border text-sm font-extrabold',
-              it.tone === 'emerald' && 'border-emerald-200 bg-emerald-50 text-emerald-700',
-              it.tone === 'sky' && 'border-sky-200 bg-sky-50 text-sky-700',
-              it.tone === 'amber' && 'border-amber-200 bg-amber-50 text-amber-700',
-              it.tone === 'rose' && 'border-rose-200 bg-rose-50 text-rose-700',
-              it.tone === 'violet' && 'border-violet-200 bg-violet-50 text-violet-700',
-            ]}
-            aria-hidden="true"
-          >
-            {it.icon}
-          </span>
+          <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50 text-sm" aria-hidden="true">{it.icon}</span>
           <p class="text-sm font-semibold text-slate-900">{it.title}</p>
         </div>
         <p class="mt-2 text-sm leading-relaxed text-slate-600">{it.desc}</p>
@@ -42,4 +28,3 @@ const items = [
     ))}
   </div>
 </section>
-
