@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTAButtons from '../../components/CTAButtons.astro';
+import AuthorityLinks from '../../components/AuthorityLinks.astro';
 import { getCollection, render } from 'astro:content';
 import { absoluteUrl } from '../../lib/seo';
 import brandAuthority from '../../data/rebuild-v2-brand-authority.json';
@@ -10,9 +11,7 @@ const ALLOWED_BRANDS = new Set(brandAuthority.brands.map((brand) => brand.slug))
 
 export async function getStaticPaths() {
   const entries = await getCollection('brands');
-  return entries
-    .filter((entry) => ALLOWED_BRANDS.has(entry.data.slug))
-    .map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+  return entries.filter((entry) => ALLOWED_BRANDS.has(entry.data.slug)).map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
@@ -30,51 +29,28 @@ const canonical = absoluteUrl(`/แบรนด์/${slug}/`);
       <a class="hover:text-emerald-700" href="/">หน้าแรก</a> / <a class="hover:text-emerald-700" href="/แบรนด์/">แบรนด์</a> / {entry.data.title}
     </nav>
 
-    <div class="mt-8 flex flex-wrap items-center gap-2">
-      <p class="text-sm font-bold text-emerald-700">Brand Owner</p>
-      {authority ? (
-        <span class="rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800">
-          R5 Priority {authority.priority}
-        </span>
-      ) : null}
-    </div>
-
+    <p class="mt-8 text-sm font-bold text-emerald-700">ประเมินตามแบรนด์</p>
     <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">รับซื้อโน๊ตบุ๊ค {entry.data.title} มือสอง</h1>
     <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">{description}</p>
-
-    {authority ? (
-      <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5">
-        <p class="text-xs font-bold uppercase tracking-wide text-slate-500">Why this brand is in R5</p>
-        <p class="mt-2 text-sm leading-7 text-slate-700">{authority.evidence}</p>
-      </div>
-    ) : null}
-
     <div class="mt-8"><CTAButtons primaryText={`ส่งรูป ${entry.data.title} เพื่อประเมิน`} secondaryText="โทรสอบถาม" /></div>
 
     {authority?.children?.length ? (
-      <section class="mt-12" aria-labelledby="brand-winners-heading">
-        <div class="flex items-end justify-between gap-4">
-          <div>
-            <p class="text-sm font-bold text-emerald-700">Brand → Series / Model</p>
-            <h2 id="brand-winners-heading" class="mt-1 text-2xl font-extrabold text-slate-950">รุ่นและซีรีส์ที่ควรไปต่อจากแบรนด์นี้</h2>
-          </div>
-        </div>
+      <section class="mt-12" aria-labelledby="brand-models-heading">
+        <p class="text-sm font-bold text-emerald-700">รุ่นและซีรีส์ที่เกี่ยวข้อง</p>
+        <h2 id="brand-models-heading" class="mt-1 text-2xl font-extrabold text-slate-950">เลือกให้ตรงรุ่นของเครื่อง</h2>
         <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {authority.children.map((child) => (
             <a href={child.href} class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md">
               <h3 class="font-extrabold text-slate-950">{child.label}</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-600">{child.signal}</p>
+              <p class="mt-2 text-sm leading-6 text-slate-600">ดูข้อมูลรุ่น สเปก และปัจจัยที่มีผลต่อการประเมิน</p>
               <span class="mt-4 inline-flex text-sm font-bold text-emerald-700">ดูรุ่น/ซีรีส์ →</span>
             </a>
           ))}
         </div>
-        <p class="mt-4 text-xs leading-6 text-slate-500">R5 ยังไม่ย้าย URL รุ่นที่มีสัญญาณเดิม เพื่อรักษาประวัติและลดความเสี่ยงจากการย้าย Brand + Model พร้อมกัน</p>
       </section>
     ) : null}
 
-    <article class="prose prose-slate mt-12 max-w-none prose-headings:font-extrabold prose-a:text-emerald-700">
-      <Content />
-    </article>
+    <article class="prose prose-slate mt-12 max-w-none prose-headings:font-extrabold prose-a:text-emerald-700"><Content /></article>
 
     <div class="mt-12 grid gap-4 md:grid-cols-2">
       <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
@@ -82,9 +58,10 @@ const canonical = absoluteUrl(`/แบรนด์/${slug}/`);
         <p class="mt-3 leading-7 text-slate-700">ส่งชื่อรุ่นเต็ม CPU GPU RAM SSD รูปสภาพ แบตเตอรี่ อาการ และอุปกรณ์ที่มี ราคาสุดท้ายยืนยันหลังตรวจเครื่องจริง</p>
       </div>
       <div class="rounded-3xl border border-slate-200 bg-white p-6">
-        <h2 class="text-xl font-extrabold text-slate-950">Owner ของคำค้นแบรนด์</h2>
-        <p class="mt-3 leading-7 text-slate-700">หน้านี้เป็น Parent ของคำค้นระดับแบรนด์ ส่วนคำค้นระดับซีรีส์หรือรุ่นจะส่งต่อให้หน้ารุ่นที่เกี่ยวข้อง ไม่สร้างหน้าแบรนด์มาทับ Model Intent</p>
+        <h2 class="text-xl font-extrabold text-slate-950">ถ้าทราบรุ่นย่อย ให้ดูหน้ารุ่นต่อ</h2>
+        <p class="mt-3 leading-7 text-slate-700">เครื่องแบรนด์เดียวกันมีหลายซีรีส์และหลายสเปก การระบุรุ่นย่อยช่วยให้ข้อมูลที่ใช้ประเมินตรงกับเครื่องมากขึ้น</p>
       </div>
     </div>
   </section>
+  <AuthorityLinks context="brand" />
 </BaseLayout>
