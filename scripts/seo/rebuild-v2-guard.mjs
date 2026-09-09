@@ -10,7 +10,6 @@ const comboPath = path.join(root, 'src/pages/รับซื้อโน๊ต�
 const astroConfigPath = path.join(root, 'astro.config.mjs');
 
 const errors = [];
-const warnings = [];
 
 if (!fs.existsSync(policyPath)) {
   errors.push('Missing src/data/rebuild-v2-policy.json');
@@ -90,22 +89,33 @@ if (!fs.existsSync(astroConfigPath)) {
   }
 }
 
-const expectedNoindexHubs = [
+const expectedNoindexRoutes = [
   'src/pages/แบรนด์/index.astro',
+  'src/pages/แบรนด์/[slug].astro',
+  'src/pages/รุ่น/index.astro',
+  'src/pages/รุ่น/[slug].astro',
   'src/pages/อาการ/index.astro',
+  'src/pages/อาการ/[slug].astro',
   'src/pages/พื้นที่/index.astro',
+  'src/pages/พื้นที่/[slug].astro',
   'src/pages/ประเมินราคา/index.astro',
 ];
-for (const rel of expectedNoindexHubs) {
+
+for (const rel of expectedNoindexRoutes) {
   const abs = path.join(root, rel);
   if (!fs.existsSync(abs)) {
-    errors.push(`Missing V2 staging hub: ${rel}`);
+    errors.push(`Missing V2 staging route: ${rel}`);
     continue;
   }
   const src = fs.readFileSync(abs, 'utf8');
   if (!src.includes('noindex={true}')) {
-    errors.push(`V2 staging hub must remain noindex: ${rel}`);
+    errors.push(`V2 staging route must remain noindex: ${rel}`);
   }
+}
+
+const comboDynamicSource = fs.existsSync(comboPath) ? fs.readFileSync(comboPath, 'utf8') : '';
+if (comboDynamicSource && !comboDynamicSource.includes('noindex={true}')) {
+  errors.push('Legacy combo route reopened to index');
 }
 
 if (errors.length) {
@@ -118,6 +128,5 @@ console.log('REBUILD V2 GATE: PASS');
 console.log('- Query ownership is deterministic');
 console.log('- Target index-surface ceiling is enforced');
 console.log('- Legacy combo routes remain noindex and sitemap-excluded');
-console.log('- V2 staging hubs remain noindex before migration release');
+console.log('- All V2 staging hubs and child routes remain noindex before migration release');
 console.log('- 410 is blocked until backlink review');
-for (const warning of warnings) console.warn(`WARNING: ${warning}`);

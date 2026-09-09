@@ -28,6 +28,7 @@
   ],
   "newHubRoutes": [
     {"path":"/แบรนด์/","indexable":false},
+    {"path":"/รุ่น/","indexable":false},
     {"path":"/อาการ/","indexable":false},
     {"path":"/พื้นที่/","indexable":false},
     {"path":"/ประเมินราคา/","indexable":false}
