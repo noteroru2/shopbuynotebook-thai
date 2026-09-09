@@ -1,0 +1,49 @@
+{
+  "version": "R13-2026-09-10",
+  "status": "PRODUCTION_MIGRATION_CANDIDATE",
+  "policy": {
+    "statusCode": 301,
+    "oneHopOnly": true,
+    "preserveQuery": true,
+    "redirectOnlyWhenTargetIsReleaseReady": true,
+    "holdNoindexNeverAutoRedirects": true
+  },
+  "redirects": [
+    {"source":"/รับซื้อโน๊ตบุ๊ค/","target":"/","batch":"R4"},
+    {"source":"/รับซื้อ-notebook/","target":"/","batch":"R4"},
+    {"source":"/เช็คราคาโน๊ตบุ๊ค/","target":"/ประเมินราคา/","batch":"R4"},
+    {"source":"/เช็คราคาโน๊ตบุ๊คมือสอง/","target":"/ประเมินราคา/","batch":"R4"},
+    {"source":"/ตีราคาโน๊ตบุ๊ค/","target":"/ประเมินราคา/","batch":"R4"},
+    {"source":"/ขายโน๊ตบุ๊คด่วน/","target":"/ขายโน๊ตบุ๊ค/","batch":"R4"},
+
+    {"source":"/รับซื้อโน๊ตบุ๊ค/asus/","target":"/แบรนด์/asus/","batch":"R5"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/acer/","target":"/แบรนด์/acer/","batch":"R5"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/lenovo/","target":"/แบรนด์/lenovo/","batch":"R5"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/hp/","target":"/แบรนด์/hp/","batch":"R5"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/dell/","target":"/แบรนด์/dell/","batch":"R5"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/msi/","target":"/แบรนด์/msi/","batch":"R5"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/macbook/","target":"/แบรนด์/macbook/","batch":"R5"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/surface/","target":"/แบรนด์/surface/","batch":"R5"},
+
+    {"source":"/รับซื้อโน๊ตบุ๊ค/macbook-air-13/","target":"/รับซื้อโน๊ตบุ๊ค/macbook-air-m1/","batch":"R6"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/macbook-air-15/","target":"/รับซื้อโน๊ตบุ๊ค/macbook-air-m2/","batch":"R6"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/macbook-pro-14/","target":"/แบรนด์/macbook/","batch":"R6"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/macbook-pro-16/","target":"/แบรนด์/macbook/","batch":"R6"},
+
+    {"source":"/รับซื้อโน๊ตบุ๊ค/macbook-screen-crack/","target":"/รับซื้อโน๊ตบุ๊ค/จอแตก/","batch":"R7"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/macbook-battery-health/","target":"/รับซื้อโน๊ตบุ๊ค/แบตเสื่อม/","batch":"R7"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/macbook-battery-swollen/","target":"/รับซื้อโน๊ตบุ๊ค/แบตเสื่อม/","batch":"R7"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/macbook-keyboard-issue/","target":"/รับซื้อโน๊ตบุ๊ค/คีย์บอร์ดเสีย/","batch":"R7"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/ฝาหลังบวม/","target":"/รับซื้อโน๊ตบุ๊ค/แบตเสื่อม/","batch":"R7"},
+
+    {"source":"/รับซื้อโน๊ตบุ๊ค/พระราม2/","target":"/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/","batch":"R8"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/ห้วยขวาง/","target":"/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/","batch":"R8"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/รามคำแหง/","target":"/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/","batch":"R8"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/ลาดพร้าว/","target":"/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/","batch":"R8"},
+    {"source":"/รับซื้อโน๊ตบุ๊ค/ใกล้ฉัน/","target":"/พื้นที่ให้บริการ/","batch":"R8"},
+
+    {"source":"/blog/รับซื้อโน๊ตบุ๊ค-คู่มือครบวงจรสำหรับผู้ขาย/","target":"/","batch":"R9"},
+    {"source":"/blog/ร้านรับซื้อโน๊ตบุ๊ค-เช็คราคาโน๊ตบุ๊ค-ประเมินราคา-คีย์หลัก/","target":"/","batch":"R9"},
+    {"source":"/blog/ขายโน๊ตบุ๊คที่ไหนดี-ได้ราคาและปลอดภัย/","target":"/ขายโน๊ตบุ๊ค/","batch":"R9"}
+  ]
+}
