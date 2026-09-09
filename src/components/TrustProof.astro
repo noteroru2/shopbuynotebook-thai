@@ -1,0 +1,56 @@
+---
+import { SITE } from '../config/site';
+import trustProof from '../data/rebuild-v2-trust-proof.json';
+
+interface Props {
+  compact?: boolean;
+  title?: string;
+}
+
+const { compact = false, title = 'ข้อมูลร้านและหลักการประเมินที่ตรวจสอบได้' } = Astro.props;
+---
+
+<section class="mx-auto w-full max-w-6xl px-4 py-10" aria-labelledby="trust-proof-heading">
+  <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-8">
+    <div class="grid gap-7 lg:grid-cols-[1.15fr_.85fr]">
+      <div>
+        <p class="text-sm font-extrabold text-emerald-700">ข้อมูลผู้ดำเนินเว็บไซต์</p>
+        <h2 id="trust-proof-heading" class="mt-2 text-2xl font-black tracking-tight text-slate-950 sm:text-3xl">{title}</h2>
+        <dl class="mt-6 grid gap-4 text-sm sm:grid-cols-2">
+          <div class="rounded-2xl border border-slate-200 bg-white p-4">
+            <dt class="font-bold text-slate-500">ผู้ดำเนินเว็บไซต์</dt>
+            <dd class="mt-1 font-extrabold text-slate-950">{SITE.companyLegalName}</dd>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-4">
+            <dt class="font-bold text-slate-500">หน้าร้านจริง</dt>
+            <dd class="mt-1 font-extrabold text-slate-950">{SITE.physicalStoreName} — อุบลราชธานี</dd>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-4">
+            <dt class="font-bold text-slate-500">ติดต่อประเมิน</dt>
+            <dd class="mt-1 text-slate-800">โทร {SITE.telephone} · LINE {SITE.lineHandle}</dd>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-4">
+            <dt class="font-bold text-slate-500">ตำแหน่งร้าน</dt>
+            <dd class="mt-1"><a class="font-bold text-emerald-700 underline underline-offset-4" href={SITE.googleMapsUrl} target="_blank" rel="noopener noreferrer">ดู Google Maps</a></dd>
+          </div>
+        </dl>
+        {!compact ? (
+          <p class="mt-5 text-sm leading-7 text-slate-600">ที่อยู่จดทะเบียน: {SITE.companyRegisteredAddress}</p>
+        ) : null}
+      </div>
+
+      <div class="rounded-2xl border border-emerald-200 bg-white p-5">
+        <h3 class="font-extrabold text-slate-950">ราคาประเมินเบื้องต้นไม่ใช่ราคาสุดท้าย</h3>
+        <ol class="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+          {trustProof.evaluationProcess.map((step, index) => (
+            <li class="flex gap-3"><span class="font-black text-emerald-700">{index + 1}.</span><span>{step}</span></li>
+          ))}
+        </ol>
+        <div class="mt-5 flex flex-wrap gap-4 text-sm font-bold">
+          <a class="text-emerald-700 underline underline-offset-4" href="/เกี่ยวกับเรา/">เกี่ยวกับผู้ดำเนินเว็บไซต์</a>
+          <a class="text-emerald-700 underline underline-offset-4" href="/ขั้นตอนและเงื่อนไขการให้บริการ/">ขั้นตอนและเงื่อนไข</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
