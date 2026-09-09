@@ -97,8 +97,9 @@ if (!fs.existsSync(astroConfigPath)) {
     'R6_SITEMAP_EXCLUDED',
     'V2_STAGING_PREFIXES',
     'R5_LEGACY_BRANDS',
+    'R4_RETIRED_MONEY_PATHS',
   ]) {
-    if (!src.includes(token)) errors.push(`Sitemap missing R6 enforcement token: ${token}`);
+    if (!src.includes(token)) errors.push(`Sitemap missing rebuild enforcement token: ${token}`);
   }
 }
 
@@ -115,4 +116,5 @@ for (const action of ['KEEP_CURRENT_URL', 'MIGRATE_LATER', 'HOLD_NOINDEX', 'MERG
 console.log('- Every authority Series/Model inventory row has an explicit R6 classification');
 console.log('- Protected historical winners remain on current URLs');
 console.log('- HOLD/MERGE are noindex and sitemap-excluded in staging');
+console.log('- Retired R4 money pages remain sitemap-excluded');
 console.log('- No model/series HTTP redirect is claimed in R6');
