@@ -5,11 +5,12 @@ import AuthorityLinks from '../../components/AuthorityLinks.astro';
 import { getCollection, render } from 'astro:content';
 import { absoluteUrl } from '../../lib/seo';
 
-const ALLOWED_CONDITIONS = new Set(['เปิดไม่ติด','จอแตก','แบตเสื่อม','โดนน้ำ','ไม่มีที่ชาร์จ','บานพับแตก','คีย์บอร์ดเสีย','เมนบอร์ดเสีย','เครื่องเก่า']);
-
 export async function getStaticPaths() {
   const entries = await getCollection('conditions');
-  return entries.filter((entry) => ALLOWED_CONDITIONS.has(entry.data.slug)).map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+  const allowedConditions = new Set(['เปิดไม่ติด','จอแตก','แบตเสื่อม','โดนน้ำ','ไม่มีที่ชาร์จ','บานพับแตก','คีย์บอร์ดเสีย','เมนบอร์ดเสีย','เครื่องเก่า']);
+  return entries
+    .filter((entry) => allowedConditions.has(entry.data.slug))
+    .map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
