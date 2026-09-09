@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import type { BreadcrumbItem, FaqItem } from '../lib/seo';
 import { absoluteUrl, breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
 import modelSeriesTriage from '../data/rebuild-v2-model-series-triage.json';
+import modelSeriesR13Supplement from '../data/rebuild-v2-model-series-r13-supplement.json';
 import conditionTriage from '../data/rebuild-v2-condition-triage.json';
 
 interface Props {
@@ -46,7 +47,10 @@ const legacySlug = currentPath.startsWith(legacyModelPrefix)
 
 type LifecycleAction = 'KEEP_CURRENT_URL' | 'MIGRATE_LATER' | 'HOLD_NOINDEX' | 'MERGE';
 type LifecycleItem = { slug: string; action: LifecycleAction; target?: string };
-const modelItems = modelSeriesTriage.items as LifecycleItem[];
+const modelItems = [
+  ...(modelSeriesTriage.items as LifecycleItem[]),
+  ...(modelSeriesR13Supplement.items as LifecycleItem[]),
+];
 const conditionItems = conditionTriage.items as LifecycleItem[];
 const conditionTriageItem = conditionItems.find((item) => item.slug === legacySlug);
 const modelTriageItem = modelItems.find((item) => item.slug === legacySlug);
