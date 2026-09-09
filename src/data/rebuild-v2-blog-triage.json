@@ -1,0 +1,208 @@
+{
+  "version": "R9",
+  "generatedAt": "2026-09-09",
+  "gscWindow": "2026-03-01..2026-09-06",
+  "policy": {
+    "defaultForUnclassified": "HOLD_NOINDEX",
+    "informationalOwnerIntent": "Keep only genuinely useful informational, preparation, diagnostic, data-safety and evidence/case-study content as independent blog owners.",
+    "commercialIntentPolicy": "Blogs whose primary intent isร้านรับซื้อ, รับซื้อราคาเท่าไหร่, เช็คราคา or direct selling should not compete with money, brand, model or condition owners.",
+    "winnerProtection": "A clicked or page-one blog is not retired blindly. If its intent is still informational it remains KEEP_INFORMATIONAL; if commercial overlap is material it is staged for MERGE_TO_OWNER and requires one-hop migration QA before any HTTP redirect.",
+    "releaseRule": "R9 is staging-only. MERGE_TO_OWNER means noindex plus canonical-to-owner staging signal; RETIRE_CANDIDATE means noindex only. No HTTP 301 or 410 is released in R9.",
+    "indexBudgetRule": "Unclassified blog posts default to HOLD_NOINDEX and are excluded from sitemap and blog index until reviewed."
+  },
+  "items": [
+    {
+      "slug": "โน๊ตบุ๊คติดรหัส-windows-ขายได้ไหม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "Strongest blog signal in the GSC window: 1 click / 6 impressions / CTR 16.67% / avg position 8.83. Distinct seller-preparation/security question; protect current URL."
+    },
+    {
+      "slug": "ก่อนขายโน๊ตบุ๊คต้องล้างข้อมูลอย่างไร",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "3 impressions / avg position 24. Data-erasure guidance is a distinct informational intent and supports trust without owning the commercial buy query."
+    },
+    {
+      "slug": "ขายโน๊ตบุ๊คนักศึกษา-ต้องล้างข้อมูลอะไรบ้าง",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "2 impressions / avg position 11.5. Specific data-preparation intent; retain as informational support."
+    },
+    {
+      "slug": "ขายโน๊ตบุ๊คบริษัท-ต้องเตรียมอะไร",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "1 impression / avg position 18. Operational preparation intent supports B2B authority without replacing the commercial company-buying owner."
+    },
+    {
+      "slug": "กรณีศึกษา-รับซื้อโน๊ตบุ๊คองค์กร-20-เครื่อง-ปลด-asset-tag",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "4 impressions / avg position 5.25. Page-one evidence/case-study signal and useful trust content; protect URL."
+    },
+    {
+      "slug": "กรณีศึกษา-รับซื้อโน๊ตบุ๊คบอร์ดเสียช็อต-ค่าซ่อมไม่คุ้ม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "6 impressions / avg position 5.5. Page-one diagnostic/case-study signal; preserve as evidence content rather than merge into a generic condition page."
+    },
+    {
+      "slug": "กรณีศึกษา-รับซื้อโน๊ตบุ๊คโดนน้ำหก-บอร์ดช็อตเปิดไม่ติด",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "8 impressions / avg position 17.38. Distinct real-world case intent; retain provisionally as evidence content."
+    },
+    {
+      "slug": "วิธีดูรุ่นโน๊ตบุ๊ค-windows-ก่อนส่งประเมินราคา",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "1 impression / avg position 19. Practical model-identification guide directly improves valuation input quality without competing for the core buy query."
+    },
+    {
+      "slug": "ฮาร์ดดิสก์กับ-ssd-ผลต่อราคารับซื้อโน๊ตบุ๊คมือสอง",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "1 impression / avg position 2.0. Page-one hardware-factor informational signal; protect URL."
+    },
+    {
+      "slug": "ram-8gb-กับ-16gb-มีผลต่อราคารับซื้อไหม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "1 impression / avg position 5.0. Page-one hardware-factor informational signal; protect URL."
+    },
+    {
+      "slug": "โน๊ตบุ๊คจอแตกยังมีราคาไหม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "2 impressions / avg position 1.5. Strong page-one question intent. Preserve current URL while R7 condition ownership is still staged."
+    },
+    {
+      "slug": "โน๊ตบุ๊คบูตวนขายได้ไหม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "5 impressions / avg position 8.4. Page-one diagnostic question signal; retain as informational support."
+    },
+    {
+      "slug": "โน๊ตบุ๊ครีสตาร์ทเองขายได้ไหม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "4 impressions / avg position 5.25. Page-one diagnostic question signal; retain."
+    },
+    {
+      "slug": "โน๊ตบุ๊คเสียขายได้ไหม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "2 impressions / avg position 1.5. Strong page-one question signal; protect until condition migration is proven."
+    },
+    {
+      "slug": "โน๊ตบุ๊คแบตเสื่อมขายได้ไหม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "2 impressions / avg position 4.5. Page-one condition-question signal; preserve current URL."
+    },
+    {
+      "slug": "โน๊ตบุ๊คไม่มีที่ชาร์จขายได้ไหม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "2 impressions / avg position 5.0. Page-one seller-preparation question; preserve current URL."
+    },
+    {
+      "slug": "macbook-จอร้าว-ขายได้ไหม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "1 impression / avg position 9.0. Page-one MacBook condition question; retain while brand/model architecture remains staged."
+    },
+    {
+      "slug": "macbook-battery-health-มีผลต่อราคาไหม",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "High-value MacBook valuation factor with genuinely distinct informational intent; retain even without visible GSC row in the current privacy-limited export."
+    },
+    {
+      "slug": "macbook-cycle-count-เท่าไหร่ถึงราคาตก",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "Distinct MacBook battery/cycle educational intent that supports valuation expertise without owning a commercial buy query."
+    },
+    {
+      "slug": "ขายโน๊ตบุ๊ค-ไม่มีกล่อง-ไม่มีใบเสร็จ",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "1 impression / avg position 3.0. Strong page-one seller-preparation question; protect current URL."
+    },
+    {
+      "slug": "ขาย-macbook-ต้องเตรียมอะไรบ้าง",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "1 impression / avg position 7.0. Page-one preparation intent; retain as supporting information."
+    },
+    {
+      "slug": "ขายโน๊ตบุ๊ค-และขายโน๊ตบุ๊คมือสอง-คู่มือเตรียมเครื่องและปิดดีล",
+      "action": "KEEP_INFORMATIONAL",
+      "evidence": "2 impressions / avg position 6.0. Page-one preparation-guide signal; retain only as a guide, not as the primary commercial owner."
+    },
+    {
+      "slug": "รับซื้อโน๊ตบุ๊ค-คู่มือครบวงจรสำหรับผู้ขาย",
+      "action": "MERGE_TO_OWNER",
+      "target": "/",
+      "evidence": "3 impressions / avg position 4.67, but title and intent directly overlap the homepage core รับซื้อโน๊ตบุ๊ค owner. Preserve signal through the homepage at migration instead of maintaining two commercial owners."
+    },
+    {
+      "slug": "ร้านรับซื้อโน๊ตบุ๊ค-เช็คราคาโน๊ตบุ๊ค-ประเมินราคา-คีย์หลัก",
+      "action": "MERGE_TO_OWNER",
+      "target": "/",
+      "evidence": "3 impressions / avg position 8.33. Explicit keyword-targeting article overlaps homepage/store-buy intent and should not remain an independent authority node."
+    },
+    {
+      "slug": "ขายโน๊ตบุ๊คที่ไหนดี-ได้ราคาและปลอดภัย",
+      "action": "MERGE_TO_OWNER",
+      "target": "/ขายโน๊ตบุ๊ค/",
+      "evidence": "9 impressions / avg position 34; query export also shows ขายโน๊ตบุ๊คที่ไหนดี. Primary intent is choosing where to sell, which belongs to the dedicated sell owner."
+    },
+    {
+      "slug": "รับซื้อโน๊ตบุ๊ค-ราคาเท่าไหร่",
+      "action": "HOLD_NOINDEX",
+      "evidence": "8 impressions / avg position 4.25 is valuable, but the intended V2 price owner /ประเมินราคา/ is still staging/noindex. Hold rather than canonicalize a page-one signal to an unreleased target; resolve in R13 migration QA."
+    },
+    {
+      "slug": "เช็คราคาโน๊ตบุ๊ค-ตีราคาโน๊ตบุ๊ค-ประเมินราคา-ต่างกันอย่างไร",
+      "action": "HOLD_NOINDEX",
+      "evidence": "1 impression / avg position 3.0 but heavily overlaps the future /ประเมินราคา/ owner. Hold until that owner is release-ready; do not create a premature canonical to a staging URL."
+    },
+    {
+      "slug": "รับซื้อ-surface-laptop-pro-ราคาเท่าไหร่",
+      "action": "HOLD_NOINDEX",
+      "evidence": "2 impressions / avg position 2.0, but this is model/brand commercial intent rather than blog informational intent. Protect signal for R13 mapping to the released Surface owner; do not retire."
+    },
+    {
+      "slug": "รับซื้อ-macbook-air-m1-ราคาเท่าไหร่",
+      "action": "HOLD_NOINDEX",
+      "evidence": "2 impressions / avg position 9.5. Commercial model-price intent belongs to the model/brand architecture; hold until the destination is migration-ready."
+    },
+    {
+      "slug": "รับซื้อ-macbook-air-m2-ราคาเท่าไหร่",
+      "action": "HOLD_NOINDEX",
+      "evidence": "1 impression / avg position 12. Commercial model-price intent; hold for model-owner migration."
+    },
+    {
+      "slug": "รับซื้อ-macbook-air-m4-ราคาเท่าไหร่",
+      "action": "HOLD_NOINDEX",
+      "evidence": "1 impression / avg position 10. Commercial model-price intent; hold for model-owner migration."
+    },
+    {
+      "slug": "รับซื้อ-gaming-notebook-rtx-3050-4050-4060-ราคาเท่าไหร่",
+      "action": "HOLD_NOINDEX",
+      "evidence": "7 impressions / avg position 17.57. Commercial hardware/model cluster intent should migrate into the Gaming/model authority structure rather than remain a blog owner."
+    },
+    {
+      "slug": "รับซื้อ-alienware-m16-x16-ราคาเท่าไหร่",
+      "action": "HOLD_NOINDEX",
+      "evidence": "2 impressions / avg position 22.5. Commercial model-price intent; hold pending model-owner release."
+    },
+    {
+      "slug": "รับซื้อ-asus-tuf-rog-ราคาเท่าไหร่",
+      "action": "HOLD_NOINDEX",
+      "evidence": "1 impression / avg position 31. Commercial brand/model intent; hold pending ASUS/TUF/ROG owner migration."
+    },
+    {
+      "slug": "รับซื้อ-dell-alienware-g-series-ราคาเท่าไหร่",
+      "action": "HOLD_NOINDEX",
+      "evidence": "1 impression / avg position 3.0. Strong page-one commercial model-family signal; explicitly protect for R13 mapping rather than deleting."
+    },
+    {
+      "slug": "โน๊ตบุ๊คแบตบวมขายได้ไหม",
+      "action": "HOLD_NOINDEX",
+      "evidence": "1 impression / avg position 55. Weak signal and overlaps the R7 battery-condition cluster; hold pending condition consolidation."
+    },
+    {
+      "slug": "โน๊ตบุ๊คโดนน้ำขายได้ไหม",
+      "action": "HOLD_NOINDEX",
+      "evidence": "1 impression / avg position 21. Condition overlap with stronger case-study content; hold pending R7/R13 consolidation."
+    },
+    {
+      "slug": "โน๊ตบุ๊คไฟไม่เข้าขายได้ไหม",
+      "action": "HOLD_NOINDEX",
+      "evidence": "1 impression / avg position 18. Condition overlap; hold until the condition owner is migration-ready."
+    }
+  ]
+}
