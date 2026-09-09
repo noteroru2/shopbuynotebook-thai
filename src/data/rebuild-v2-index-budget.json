@@ -1,0 +1,61 @@
+{
+  "version": "R12-2026-09-09",
+  "releaseState": "PRE_MIGRATION_INDEX_BUDGET",
+  "target": {
+    "minIndexable": 80,
+    "maxIndexable": 120,
+    "hardCeiling": 120,
+    "projectedIndexable": 103
+  },
+  "controlledSurface": {
+    "modelSeries": {
+      "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"],
+      "projected": 45
+    },
+    "conditions": {
+      "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"],
+      "projected": 13
+    },
+    "locations": {
+      "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"],
+      "projected": 7
+    },
+    "blogs": {
+      "eligibleActions": ["KEEP_INFORMATIONAL"],
+      "projected": 22
+    }
+  },
+  "corePaths": [
+    "/",
+    "/รับซื้อโน๊ตบุ๊ค/",
+    "/รับซื้อโน๊ตบุ๊คมือสอง/",
+    "/ขายโน๊ตบุ๊ค/",
+    "/พื้นที่ให้บริการ/",
+    "/รับซื้อโน๊ตบุ๊คบริษัท/",
+    "/รับเหมาโน๊ตบุ๊ค/",
+    "/รับเหมาคอมพิวเตอร์/",
+    "/รับประมูลคอม/",
+    "/คำถามที่พบบ่อย/",
+    "/ขั้นตอนและเงื่อนไขการให้บริการ/",
+    "/เกี่ยวกับเรา/",
+    "/ติดต่อเรา/",
+    "/นโยบายความเป็นส่วนตัว/",
+    "/blog/",
+    "/sitemap/"
+  ],
+  "alwaysExcludedPrefixes": [
+    "/admin/",
+    "/แบรนด์/",
+    "/รุ่น/",
+    "/อาการ/",
+    "/พื้นที่/",
+    "/ประเมินราคา/"
+  ],
+  "policy": {
+    "defaultStaticPage": "EXCLUDE_UNLESS_ALLOWLISTED",
+    "noindexMustNotAppearInSitemap": true,
+    "stagingNamespacesMustNotAppearInSitemap": true,
+    "legacyComboDepthTwoOrMore": "EXCLUDE",
+    "releaseRule": "Production migration is blocked if the projected or built sitemap surface exceeds 120 URLs, or if any HOLD/MERGE/noindex URL appears in sitemap."
+  }
+}
