@@ -23,6 +23,19 @@ const R7_CONDITION_SITEMAP_EXCLUDED = new Set(
     .filter((item) => item.action === 'HOLD_NOINDEX' || item.action === 'MERGE')
     .map((item) => item.slug),
 );
+const r8LocationTriage = JSON.parse(
+  fs.readFileSync(new URL('./src/data/rebuild-v2-location-triage.json', import.meta.url), 'utf8'),
+);
+const R8_LOCATION_SLUGS = new Set(
+  fs.readdirSync(new URL('./src/content/locations/', import.meta.url))
+    .filter((name) => name.endsWith('.md'))
+    .map((name) => name.replace(/\.md$/, '')),
+);
+const R8_LOCATION_SITEMAP_INCLUDED = new Set(
+  r8LocationTriage.items
+    .filter((item) => item.action === 'KEEP_CURRENT_URL' || item.action === 'MIGRATE_LATER')
+    .map((item) => item.slug),
+);
 const R5_LEGACY_BRANDS = new Set(['asus', 'acer', 'lenovo', 'hp', 'dell', 'msi', 'macbook', 'surface']);
 const V2_STAGING_PREFIXES = ['/แบรนด์/', '/รุ่น/', '/อาการ/', '/พื้นที่/', '/ประเมินราคา/'];
 const R4_RETIRED_MONEY_PATHS = new Set([
@@ -58,6 +71,7 @@ export default defineConfig({
               if (R5_LEGACY_BRANDS.has(slug)) return false;
               if (R6_SITEMAP_EXCLUDED.has(slug)) return false;
               if (R7_CONDITION_SITEMAP_EXCLUDED.has(slug)) return false;
+              if (R8_LOCATION_SLUGS.has(slug) && !R8_LOCATION_SITEMAP_INCLUDED.has(slug)) return false;
             }
           }
         } catch {
