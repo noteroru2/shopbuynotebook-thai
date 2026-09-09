@@ -23,6 +23,7 @@
     "gate:rebuild-v2:r9": "node scripts/seo/rebuild-v2-r9-gate.mjs",
     "gate:rebuild-v2:r10": "node scripts/seo/rebuild-v2-r10-gate.mjs",
     "gate:rebuild-v2:r11": "node scripts/seo/rebuild-v2-r11-gate.mjs",
+    "gate:rebuild-v2:r12": "node scripts/seo/rebuild-v2-r12-gate.mjs",
     "spec:inventory": "node scripts/spec-data/build-existing-inventory.mjs",
     "spec:build": "node scripts/spec-data/build-verified-dataset.mjs",
     "spec:validate": "node scripts/spec-data/validate-specs.mjs",
