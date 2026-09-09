@@ -36,6 +36,14 @@ const R8_LOCATION_SITEMAP_INCLUDED = new Set(
     .filter((item) => item.action === 'KEEP_CURRENT_URL' || item.action === 'MIGRATE_LATER')
     .map((item) => item.slug),
 );
+const r9BlogTriage = JSON.parse(
+  fs.readFileSync(new URL('./src/data/rebuild-v2-blog-triage.json', import.meta.url), 'utf8'),
+);
+const R9_BLOG_SITEMAP_INCLUDED = new Set(
+  r9BlogTriage.items
+    .filter((item) => item.action === 'KEEP_INFORMATIONAL')
+    .map((item) => item.slug),
+);
 const R5_LEGACY_BRANDS = new Set(['asus', 'acer', 'lenovo', 'hp', 'dell', 'msi', 'macbook', 'surface']);
 const V2_STAGING_PREFIXES = ['/แบรนด์/', '/รุ่น/', '/อาการ/', '/พื้นที่/', '/ประเมินราคา/'];
 const R4_RETIRED_MONEY_PATHS = new Set([
@@ -59,6 +67,11 @@ export default defineConfig({
           if (pathname === '/admin' || pathname.startsWith('/admin/')) return false;
           if (R4_RETIRED_MONEY_PATHS.has(pathname)) return false;
           if (V2_STAGING_PREFIXES.some((prefix) => pathname.startsWith(prefix))) return false;
+
+          if (pathname.startsWith('/blog/') && pathname !== '/blog/') {
+            const blogSlug = pathname.slice('/blog/'.length).split('/').filter(Boolean)[0];
+            if (!R9_BLOG_SITEMAP_INCLUDED.has(blogSlug)) return false;
+          }
 
           const hubPrefix = '/รับซื้อโน๊ตบุ๊ค/';
           if (pathname.startsWith(hubPrefix)) {
