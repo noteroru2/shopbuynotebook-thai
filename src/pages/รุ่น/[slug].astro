@@ -5,15 +5,16 @@ import AuthorityLinks from '../../components/AuthorityLinks.astro';
 import { getCollection, render } from 'astro:content';
 import { absoluteUrl } from '../../lib/seo';
 
-const ALLOWED_MODELS = new Set([
-  'macbook-pro-m3','macbook-pro-m4','macbook-air-m1','macbook-air-m2',
-  'hp-omen-16','lenovo-legion-pro-7','lenovo-legion-pro','thinkpad-x1-carbon',
-  'asus-rog-flow','asus-tuf-a15-f15','acer-nitro-v','lenovo-loq-15-16'
-]);
-
 export async function getStaticPaths() {
   const entries = await getCollection('brands');
-  return entries.filter((entry) => ALLOWED_MODELS.has(entry.data.slug)).map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
+  const allowedModels = new Set([
+    'macbook-pro-m3','macbook-pro-m4','macbook-air-m1','macbook-air-m2',
+    'hp-omen-16','lenovo-legion-pro-7','lenovo-legion-pro','thinkpad-x1-carbon',
+    'asus-rog-flow','asus-tuf-a15-f15','acer-nitro-v','lenovo-loq-15-16'
+  ]);
+  return entries
+    .filter((entry) => allowedModels.has(entry.data.slug))
+    .map((entry) => ({ params: { slug: entry.data.slug }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
