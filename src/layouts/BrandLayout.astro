@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import type { BreadcrumbItem, FaqItem } from '../lib/seo';
 import { absoluteUrl, breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
+import modelSeriesTriage from '../data/rebuild-v2-model-series-triage.json';
 
 interface Props {
   title: string;
@@ -36,8 +37,26 @@ const legacyBrandOwners: Record<string, string> = {
 
 const currentPath = normalizePath(Astro.url.pathname);
 const migratedOwner = legacyBrandOwners[currentPath];
-const resolvedCanonical = migratedOwner ? absoluteUrl(migratedOwner) : canonical;
-const resolvedNoindex = migratedOwner ? true : noindex;
+
+const legacyModelPrefix = '/รับซื้อโน๊ตบุ๊ค/';
+const legacySlug = currentPath.startsWith(legacyModelPrefix)
+  ? currentPath.slice(legacyModelPrefix.length).replace(/\/$/, '')
+  : '';
+const triageItem = (modelSeriesTriage.items as Array<{
+  slug: string;
+  action: 'KEEP_CURRENT_URL' | 'MIGRATE_LATER' | 'HOLD_NOINDEX' | 'MERGE';
+  target?: string;
+}>).find((item) => item.slug === legacySlug);
+
+const triageNoindex = triageItem?.action === 'HOLD_NOINDEX' || triageItem?.action === 'MERGE';
+const triageCanonical = triageItem?.action === 'MERGE' && triageItem.target
+  ? absoluteUrl(triageItem.target)
+  : undefined;
+
+const resolvedCanonical = migratedOwner
+  ? absoluteUrl(migratedOwner)
+  : (triageCanonical ?? canonical);
+const resolvedNoindex = migratedOwner ? true : (triageNoindex ? true : noindex);
 
 const schemas = [
   breadcrumbListSchema(breadcrumbs),
