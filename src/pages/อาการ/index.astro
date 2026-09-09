@@ -1,5 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const conditions = [
+  ['เปิดไม่ติด', 'เปิดไม่ติด'], ['จอแตก', 'จอแตก'], ['แบตเสื่อม', 'แบตเสื่อม'],
+  ['โดนน้ำ', 'โดนน้ำ'], ['ไม่มีที่ชาร์จ', 'ไม่มีที่ชาร์จ'], ['บานพับแตก', 'บานพับแตก'],
+  ['คีย์บอร์ดเสีย', 'คีย์บอร์ดเสีย'], ['เมนบอร์ดเสีย', 'เมนบอร์ดเสีย'], ['เครื่องเก่า', 'เครื่องเก่า'],
+];
 ---
 
 <BaseLayout
@@ -11,14 +17,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <p class="text-sm font-bold text-emerald-700">Condition Hub</p>
     <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">โน๊ตบุ๊คมีอาการเสีย ยังประเมินได้ไหม</h1>
     <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">
-      หน้านี้เป็น Hub สำหรับอาการของเครื่องโดยเฉพาะ ไม่ปนกับหน้าแบรนด์หรือพื้นที่ เพื่อให้ Google และผู้ใช้เข้าใจว่าแต่ละหน้าตอบคำถามด้านสภาพเครื่องโดยตรง
+      หน้านี้แยก intent ด้านอาการออกจากแบรนด์ รุ่น และพื้นที่ โดยแต่ละ Child Page ตอบอาการเดียวและส่ง authority กลับสู่ Hub ไม่สร้างหน้าอาการซ้อนจังหวัดแบบเดิม
     </p>
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {['เปิดไม่ติด','จอแตก','แบตเสื่อม','โดนน้ำ','ไม่มีที่ชาร์จ','บานพับแตก','คีย์บอร์ดเสีย','เมนบอร์ดเสีย','เครื่องเก่า'].map((condition) => (
-        <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-          <h2 class="font-extrabold text-slate-950">{condition}</h2>
-          <p class="mt-2 text-sm leading-6 text-slate-600">แยก intent เป็นอาการเดียวต่อหน้า และเปิด index เฉพาะอาการที่ผ่าน evidence gate</p>
-        </div>
+      {conditions.map(([slug, label]) => (
+        <a href={`/อาการ/${slug}/`} class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-emerald-300 hover:shadow-md">
+          <h2 class="font-extrabold text-slate-950 group-hover:text-emerald-700">{label}</h2>
+          <p class="mt-2 text-sm leading-6 text-slate-600">ดูว่าควรถ่ายรูปอะไร แจ้งอาการแบบไหน และปัจจัยใดมีผลต่อการประเมิน</p>
+          <span class="mt-4 inline-flex text-sm font-bold text-emerald-700">ดูอาการ →</span>
+        </a>
       ))}
     </div>
   </section>
