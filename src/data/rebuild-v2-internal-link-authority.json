@@ -1,0 +1,49 @@
+{
+  "version": "2026-09-09-r10",
+  "releaseState": "PRE_MIGRATION_INTERNAL_LINK_GRAPH",
+  "principles": [
+    "Link to the canonical query owner, not a retired synonym URL.",
+    "Hubs distribute authority to a small curated child set; child pages return to their parent and commercial owners.",
+    "Informational articles support commercial owners without becoming alternate commercial landing pages.",
+    "No internal navigation should promote HOLD_NOINDEX, MERGE, retired money pages, or legacy brand hubs after R10."
+  ],
+  "coreOwners": [
+    {"label":"รับซื้อโน๊ตบุ๊ค","href":"/","role":"generic-commercial"},
+    {"label":"ประเมินราคาโน๊ตบุ๊ค","href":"/ประเมินราคา/","role":"valuation"},
+    {"label":"ขายโน๊ตบุ๊ค","href":"/ขายโน๊ตบุ๊ค/","role":"seller-flow"},
+    {"label":"รับซื้อโน๊ตบุ๊คมือสอง","href":"/รับซื้อโน๊ตบุ๊คมือสอง/","role":"protected-used"},
+    {"label":"แบรนด์โน๊ตบุ๊ค","href":"/แบรนด์/","role":"brand-hub"},
+    {"label":"รุ่นและซีรีส์","href":"/รุ่น/","role":"model-hub"},
+    {"label":"ประเมินตามอาการ","href":"/อาการ/","role":"condition-hub"},
+    {"label":"พื้นที่ให้บริการ","href":"/พื้นที่/","role":"location-hub"},
+    {"label":"บทความความรู้","href":"/blog/","role":"informational-hub"}
+  ],
+  "priorityBrands": [
+    {"label":"MacBook","href":"/แบรนด์/macbook/"},
+    {"label":"ASUS","href":"/แบรนด์/asus/"},
+    {"label":"Lenovo","href":"/แบรนด์/lenovo/"},
+    {"label":"HP","href":"/แบรนด์/hp/"},
+    {"label":"Acer","href":"/แบรนด์/acer/"},
+    {"label":"Dell","href":"/แบรนด์/dell/"},
+    {"label":"Microsoft Surface","href":"/แบรนด์/surface/"},
+    {"label":"MSI","href":"/แบรนด์/msi/"}
+  ],
+  "rewriteMap": {
+    "/รับซื้อ-notebook/": "/",
+    "/เช็คราคาโน๊ตบุ๊ค/": "/ประเมินราคา/",
+    "/เช็คราคาโน๊ตบุ๊คมือสอง/": "/ประเมินราคา/",
+    "/ตีราคาโน๊ตบุ๊ค/": "/ประเมินราคา/",
+    "/ขายโน๊ตบุ๊คด่วน/": "/ขายโน๊ตบุ๊ค/",
+    "/รับซื้อโน๊ตบุ๊ค/asus/": "/แบรนด์/asus/",
+    "/รับซื้อโน๊ตบุ๊ค/acer/": "/แบรนด์/acer/",
+    "/รับซื้อโน๊ตบุ๊ค/lenovo/": "/แบรนด์/lenovo/",
+    "/รับซื้อโน๊ตบุ๊ค/hp/": "/แบรนด์/hp/",
+    "/รับซื้อโน๊ตบุ๊ค/dell/": "/แบรนด์/dell/",
+    "/รับซื้อโน๊ตบุ๊ค/msi/": "/แบรนด์/msi/",
+    "/รับซื้อโน๊ตบุ๊ค/macbook/": "/แบรนด์/macbook/",
+    "/รับซื้อโน๊ตบุ๊ค/surface/": "/แบรนด์/surface/",
+    "/blog/รับซื้อโน๊ตบุ๊ค-คู่มือครบวงจรสำหรับผู้ขาย/": "/",
+    "/blog/ร้านรับซื้อโน๊ตบุ๊ค-เช็คราคาโน๊ตบุ๊ค-ประเมินราคา-คีย์หลัก/": "/",
+    "/blog/ขายโน๊ตบุ๊คที่ไหนดี-ได้ราคาและปลอดภัย/": "/ขายโน๊ตบุ๊ค/"
+  }
+}

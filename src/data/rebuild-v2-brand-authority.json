@@ -1,0 +1,109 @@
+{
+  "version": "2026-09-09-r5",
+  "releaseState": "PRE_MIGRATION_NOINDEX",
+  "brands": [
+    {
+      "slug": "macbook",
+      "label": "MacBook",
+      "priority": 1,
+      "legacyPath": "/รับซื้อโน๊ตบุ๊ค/macbook/",
+      "ownerPath": "/แบรนด์/macbook/",
+      "evidence": "Brand hub had historical page-one signal; MacBook Pro M3/M4 also appeared around page one.",
+      "children": [
+        {"label":"MacBook Pro M3","href":"/รับซื้อโน๊ตบุ๊ค/macbook-pro-m3/","signal":"historical top-10 signal"},
+        {"label":"MacBook Pro M4","href":"/รับซื้อโน๊ตบุ๊ค/macbook-pro-m4/","signal":"historical top-10 signal"},
+        {"label":"MacBook Air M1","href":"/รับซื้อโน๊ตบุ๊ค/macbook-air-m1/","signal":"commercial model priority"}
+      ]
+    },
+    {
+      "slug": "asus",
+      "label": "ASUS",
+      "priority": 1,
+      "legacyPath": "/รับซื้อโน๊ตบุ๊ค/asus/",
+      "ownerPath": "/แบรนด์/asus/",
+      "evidence": "ROG Flow earned historical clicks; ASUS gaming and thin-light series remain core commercial inventory.",
+      "children": [
+        {"label":"ASUS ROG Flow","href":"/รับซื้อโน๊ตบุ๊ค/asus-rog-flow/","signal":"2 historical clicks"},
+        {"label":"ASUS ROG Strix","href":"/รับซื้อโน๊ตบุ๊ค/asus-rog-strix/","signal":"gaming series signal"},
+        {"label":"ASUS TUF A15/F15","href":"/รับซื้อโน๊ตบุ๊ค/asus-tuf-a15-f15/","signal":"high business value"}
+      ]
+    },
+    {
+      "slug": "lenovo",
+      "label": "Lenovo",
+      "priority": 1,
+      "legacyPath": "/รับซื้อโน๊ตบุ๊ค/lenovo/",
+      "ownerPath": "/แบรนด์/lenovo/",
+      "evidence": "Legion Pro and ThinkPad X1 Carbon earned historical clicks, so the brand hub should feed those winners rather than compete with them.",
+      "children": [
+        {"label":"Lenovo Legion Pro 7","href":"/รับซื้อโน๊ตบุ๊ค/lenovo-legion-pro-7/","signal":"2 historical clicks"},
+        {"label":"Lenovo Legion Pro","href":"/รับซื้อโน๊ตบุ๊ค/lenovo-legion-pro/","signal":"historical click signal"},
+        {"label":"ThinkPad X1 Carbon","href":"/รับซื้อโน๊ตบุ๊ค/thinkpad-x1-carbon/","signal":"historical click signal"}
+      ]
+    },
+    {
+      "slug": "hp",
+      "label": "HP",
+      "priority": 1,
+      "legacyPath": "/รับซื้อโน๊ตบุ๊ค/hp/",
+      "ownerPath": "/แบรนด์/hp/",
+      "evidence": "HP brand hub reached near page one historically and HP Omen 16 earned a click.",
+      "children": [
+        {"label":"HP Omen 16","href":"/รับซื้อโน๊ตบุ๊ค/hp-omen-16/","signal":"historical click; near page-one"},
+        {"label":"HP Victus 16","href":"/รับซื้อโน๊ตบุ๊ค/hp-victus-16/","signal":"gaming model signal"},
+        {"label":"HP EliteBook","href":"/รับซื้อโน๊ตบุ๊ค/hp-elitebook/","signal":"business-series priority"}
+      ]
+    },
+    {
+      "slug": "acer",
+      "label": "Acer",
+      "priority": 1,
+      "legacyPath": "/รับซื้อโน๊ตบุ๊ค/acer/",
+      "ownerPath": "/แบรนด์/acer/",
+      "evidence": "Acer hub had one of the larger brand impression pools; Predator Triton reached page-one territory historically.",
+      "children": [
+        {"label":"Acer Predator Triton","href":"/รับซื้อโน๊ตบุ๊ค/acer-predator-triton/","signal":"historical page-one signal"},
+        {"label":"Acer Nitro V","href":"/รับซื้อโน๊ตบุ๊ค/acer-nitro-v/","signal":"high business value"},
+        {"label":"Acer Swift","href":"/รับซื้อโน๊ตบุ๊ค/acer-swift/","signal":"office-series priority"}
+      ]
+    },
+    {
+      "slug": "dell",
+      "label": "Dell",
+      "priority": 2,
+      "legacyPath": "/รับซื้อโน๊ตบุ๊ค/dell/",
+      "ownerPath": "/แบรนด์/dell/",
+      "evidence": "Dell hub reached page one on a small sample; Latitude and Alienware cover business and gaming intents.",
+      "children": [
+        {"label":"Dell Latitude","href":"/รับซื้อโน๊ตบุ๊ค/dell-latitude/","signal":"business-series signal"},
+        {"label":"Alienware M16","href":"/รับซื้อโน๊ตบุ๊ค/alienware-m16/","signal":"gaming model signal"},
+        {"label":"Alienware X16","href":"/รับซื้อโน๊ตบุ๊ค/alienware-x16/","signal":"near page-one historical signal"}
+      ]
+    },
+    {
+      "slug": "surface",
+      "label": "Microsoft Surface",
+      "priority": 2,
+      "legacyPath": "/รับซื้อโน๊ตบุ๊ค/surface/",
+      "ownerPath": "/แบรนด์/surface/",
+      "evidence": "Surface had the largest explicit brand-hub impression pool in the historical sample; Surface Laptop and Pro reached top positions on small samples.",
+      "children": [
+        {"label":"Surface Laptop","href":"/รับซื้อโน๊ตบุ๊ค/surface-laptop/","signal":"historical top-3 signal"},
+        {"label":"Surface Pro","href":"/รับซื้อโน๊ตบุ๊ค/surface-pro/","signal":"historical position 1 sample"},
+        {"label":"Surface Laptop Go","href":"/รับซื้อโน๊ตบุ๊ค/surface-laptop-go/","signal":"historical visibility"}
+      ]
+    },
+    {
+      "slug": "msi",
+      "label": "MSI",
+      "priority": 3,
+      "legacyPath": "/รับซื้อโน๊ตบุ๊ค/msi/",
+      "ownerPath": "/แบรนด์/msi/",
+      "evidence": "MSI is retained for commercial completeness, but release priority stays below brands with stronger GSC evidence.",
+      "children": [
+        {"label":"MSI Katana 15","href":"/รับซื้อโน๊ตบุ๊ค/msi-katana-15/","signal":"historical impression signal"},
+        {"label":"MSI Gaming Notebook","href":"/รับซื้อโน๊ตบุ๊ค/gaming/","signal":"shared gaming cluster"}
+      ]
+    }
+  ]
+}

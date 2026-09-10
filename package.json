@@ -2,9 +2,7 @@
   "name": "ranrubsuenotebook-static-seo",
   "type": "module",
   "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
+  "engines": { "node": ">=22.12.0" },
   "scripts": {
     "dev": "astro dev",
     "build": "cross-env NODE_OPTIONS=--max_old_space_size=8192 astro build",
@@ -17,6 +15,17 @@
     "gen:isan-pages": "node scripts/isan-build.mjs",
     "inventory:content": "node scripts/seo/build-url-inventory.mjs",
     "gate:content": "node scripts/seo/content-quality-gate.mjs",
+    "gate:rebuild-v2": "node scripts/seo/rebuild-v2-guard.mjs",
+    "gate:rebuild-v2:r5": "node scripts/seo/rebuild-v2-brand-gate.mjs",
+    "gate:rebuild-v2:r6": "node scripts/seo/rebuild-v2-r6-gate.mjs",
+    "gate:rebuild-v2:r7": "node scripts/seo/rebuild-v2-r7-gate.mjs",
+    "gate:rebuild-v2:r8": "node scripts/seo/rebuild-v2-r8-gate.mjs",
+    "gate:rebuild-v2:r9": "node scripts/seo/rebuild-v2-r9-gate.mjs",
+    "gate:rebuild-v2:r10": "node scripts/seo/rebuild-v2-r10-gate.mjs",
+    "gate:rebuild-v2:r11": "node scripts/seo/rebuild-v2-r11-gate.mjs",
+    "gate:rebuild-v2:r12": "node scripts/seo/rebuild-v2-r12-gate.mjs",
+    "gate:rebuild-v2:r13": "node scripts/seo/rebuild-v2-r13-gate.mjs",
+    "gate:rebuild-v2:all": "npm run gate:rebuild-v2 && npm run gate:rebuild-v2:r5 && npm run gate:rebuild-v2:r6 && npm run gate:rebuild-v2:r7 && npm run gate:rebuild-v2:r8 && npm run gate:rebuild-v2:r9 && npm run gate:rebuild-v2:r10 && npm run gate:rebuild-v2:r11 && npm run gate:rebuild-v2:r12 && npm run gate:rebuild-v2:r13",
     "spec:inventory": "node scripts/spec-data/build-existing-inventory.mjs",
     "spec:build": "node scripts/spec-data/build-verified-dataset.mjs",
     "spec:validate": "node scripts/spec-data/validate-specs.mjs",

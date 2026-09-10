@@ -1,0 +1,62 @@
+---
+interface Props {
+  context: 'brand' | 'model' | 'condition' | 'location' | 'blog' | 'valuation' | 'sell';
+  brandHref?: string;
+}
+
+const { context, brandHref } = Astro.props;
+
+const presets = {
+  brand: [
+    { label: 'ดูรุ่นและซีรีส์', href: '/รุ่น/', text: 'เลือกหน้ารุ่นเมื่อทราบรุ่นย่อยของเครื่อง' },
+    { label: 'ประเมินตามอาการ', href: '/อาการ/', text: 'จอแตก แบตเสื่อม เปิดไม่ติด และอาการสำคัญ' },
+    { label: 'ประเมินราคา', href: '/ประเมินราคา/', text: 'ดูข้อมูลที่ควรส่งเพื่อขอกรอบราคาเบื้องต้น' },
+  ],
+  model: [
+    ...(brandHref ? [{ label: 'กลับไปดูแบรนด์', href: brandHref, text: 'ดูรุ่นอื่นในแบรนด์เดียวกัน' }] : []),
+    { label: 'ประเมินราคา', href: '/ประเมินราคา/', text: 'ส่งสเปกและสภาพจริงเพื่อประเมินเบื้องต้น' },
+    { label: 'เครื่องมีอาการ', href: '/อาการ/', text: 'แยกดูผลของอาการและความเสียหายต่อการประเมิน' },
+  ],
+  condition: [
+    { label: 'ประเมินราคา', href: '/ประเมินราคา/', text: 'รุ่น สเปก และสภาพรวมยังมีผลต่อราคา' },
+    { label: 'เลือกตามแบรนด์', href: '/แบรนด์/', text: 'ดูข้อมูลเฉพาะแบรนด์ของเครื่อง' },
+    { label: 'ดูรุ่นและซีรีส์', href: '/รุ่น/', text: 'ตรวจว่ามีหน้ารุ่นตรงกับเครื่องหรือไม่' },
+  ],
+  location: [
+    { label: 'ประเมินราคา', href: '/ประเมินราคา/', text: 'ส่งข้อมูลเครื่องก่อนนัดหรือตัดสินใจขาย' },
+    { label: 'ขายโน๊ตบุ๊ค', href: '/ขายโน๊ตบุ๊ค/', text: 'ดูขั้นตอนเตรียมเครื่องและการส่งมอบ' },
+    { label: 'รับซื้อโน๊ตบุ๊คมือสอง', href: '/รับซื้อโน๊ตบุ๊คมือสอง/', text: 'ข้อมูลบริการสำหรับเครื่องใช้งานแล้ว' },
+  ],
+  blog: [
+    { label: 'ประเมินราคาโน๊ตบุ๊ค', href: '/ประเมินราคา/', text: 'เมื่อพร้อมเช็คราคา ให้เตรียมรุ่น สเปก รูป และอาการ' },
+    { label: 'ขายโน๊ตบุ๊ค', href: '/ขายโน๊ตบุ๊ค/', text: 'ดูขั้นตอนก่อนส่งมอบเครื่อง' },
+    { label: 'ประเมินตามอาการ', href: '/อาการ/', text: 'ถ้าเครื่องมีปัญหา ให้ดูหน้าตามอาการก่อน' },
+  ],
+  valuation: [
+    { label: 'เลือกตามแบรนด์', href: '/แบรนด์/', text: 'เริ่มจากแบรนด์เมื่อยังไม่แน่ใจรุ่นย่อย' },
+    { label: 'ดูรุ่นและซีรีส์', href: '/รุ่น/', text: 'ใช้หน้ารุ่นเมื่อทราบชื่อรุ่นแล้ว' },
+    { label: 'ขายโน๊ตบุ๊ค', href: '/ขายโน๊ตบุ๊ค/', text: 'ขั้นตอนถัดไปเมื่อประเมินแล้วและต้องการขาย' },
+  ],
+  sell: [
+    { label: 'ประเมินราคา', href: '/ประเมินราคา/', text: 'เช็กราคาเบื้องต้นก่อนตัดสินใจ' },
+    { label: 'ประเมินตามอาการ', href: '/อาการ/', text: 'เครื่องเสียหรือมีตำหนิยังแยกประเมินได้' },
+    { label: 'บทความความรู้', href: '/blog/', text: 'การล้างข้อมูล บัญชี และการเตรียมเครื่องก่อนขาย' },
+  ],
+};
+
+const links = presets[context];
+---
+
+<section class="mx-auto w-full max-w-5xl px-4 pb-12" aria-label="หน้าที่เกี่ยวข้อง">
+  <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+    <h2 class="text-xl font-extrabold text-slate-950">ข้อมูลที่เกี่ยวข้อง</h2>
+    <div class="mt-5 grid gap-3 sm:grid-cols-3">
+      {links.map((link) => (
+        <a href={link.href} class="rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-emerald-300 hover:shadow-sm">
+          <span class="font-extrabold text-slate-950">{link.label}</span>
+          <span class="mt-2 block text-sm leading-6 text-slate-600">{link.text}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

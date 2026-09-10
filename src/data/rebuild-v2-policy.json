@@ -1,0 +1,85 @@
+{
+  "version": "2026-09-09-r4",
+  "releaseState": "PRE_MIGRATION_NOINDEX",
+  "productionBaselineSha": "7ffe148a6ceed8b9a6cb8d393f7d45adf6505259",
+  "targetIndexSurface": {
+    "min": 80,
+    "max": 120,
+    "expansionRequiresEvidence": true
+  },
+  "queryOwners": [
+    {"cluster":"core-buy","owner":"/","queries":["รับซื้อโน๊ตบุ๊ค","ร้านรับซื้อโน๊ตบุ๊ค","รับซื้อ notebook"]},
+    {"cluster":"used-notebook","owner":"/รับซื้อโน๊ตบุ๊คมือสอง/","queries":["รับซื้อโน๊ตบุ๊คมือสอง"]},
+    {"cluster":"valuation","owner":"/ประเมินราคา/","queries":["เช็คราคาโน๊ตบุ๊ค","เช็คราคาโน๊ตบุ๊คมือสอง","ตีราคาโน๊ตบุ๊ค","ประเมินราคาโน๊ตบุ๊ค"]},
+    {"cluster":"sell-notebook","owner":"/ขายโน๊ตบุ๊ค/","queries":["ขายโน๊ตบุ๊ค","ขายโน๊ตบุ๊คด่วน"]},
+    {"cluster":"corporate-bulk","owner":"/รับซื้อโน๊ตบุ๊คบริษัท/","queries":["รับซื้อโน๊ตบุ๊คบริษัท","เหมาโน๊ตบุ๊ค"]},
+    {"cluster":"brand-macbook","owner":"/แบรนด์/macbook/","queries":["รับซื้อ macbook"]},
+    {"cluster":"brand-asus","owner":"/แบรนด์/asus/","queries":["รับซื้อโน๊ตบุ๊ค asus"]},
+    {"cluster":"brand-acer","owner":"/แบรนด์/acer/","queries":["รับซื้อโน๊ตบุ๊ค acer"]},
+    {"cluster":"brand-lenovo","owner":"/แบรนด์/lenovo/","queries":["รับซื้อโน๊ตบุ๊ค lenovo"]},
+    {"cluster":"brand-hp","owner":"/แบรนด์/hp/","queries":["รับซื้อโน๊ตบุ๊ค hp"]},
+    {"cluster":"brand-dell","owner":"/แบรนด์/dell/","queries":["รับซื้อโน๊ตบุ๊ค dell"]},
+    {"cluster":"brand-msi","owner":"/แบรนด์/msi/","queries":["รับซื้อโน๊ตบุ๊ค msi"]},
+    {"cluster":"condition-no-power","owner":"/อาการ/เปิดไม่ติด/","queries":["โน๊ตบุ๊คเปิดไม่ติดขายได้ไหม"]},
+    {"cluster":"condition-broken-screen","owner":"/อาการ/จอแตก/","queries":["โน๊ตบุ๊คจอแตกขายได้ไหม"]},
+    {"cluster":"condition-battery","owner":"/อาการ/แบตเสื่อม/","queries":["โน๊ตบุ๊คแบตเสื่อมขายได้ไหม"]},
+    {"cluster":"condition-water","owner":"/อาการ/โดนน้ำ/","queries":["โน๊ตบุ๊คโดนน้ำขายได้ไหม"]},
+    {"cluster":"local-ubon","owner":"/พื้นที่/อุบลราชธานี/","queries":["รับซื้อโน๊ตบุ๊คอุบล","รับซื้อโน๊ตบุ๊คอุบลราชธานี"]}
+  ],
+  "newHubRoutes": [
+    {"path":"/แบรนด์/","indexable":false},
+    {"path":"/รุ่น/","indexable":false},
+    {"path":"/อาการ/","indexable":false},
+    {"path":"/พื้นที่/","indexable":false},
+    {"path":"/ประเมินราคา/","indexable":false}
+  ],
+  "moneyPageConsolidation": {
+    "state":"SOURCE_CONSOLIDATED_REDIRECT_LAYER_PENDING",
+    "http301RequiredBeforeProduction":true,
+    "losers":[
+      {"from":"/รับซื้อ-notebook/","to":"/","branchState":"NOINDEX_CANONICAL_STUB"},
+      {"from":"/เช็คราคาโน๊ตบุ๊ค/","to":"/ประเมินราคา/","branchState":"NOINDEX_CANONICAL_STUB"},
+      {"from":"/เช็คราคาโน๊ตบุ๊คมือสอง/","to":"/ประเมินราคา/","branchState":"NOINDEX_CANONICAL_STUB"},
+      {"from":"/ตีราคาโน๊ตบุ๊ค/","to":"/ประเมินราคา/","branchState":"NOINDEX_CANONICAL_STUB"},
+      {"from":"/ขายโน๊ตบุ๊คด่วน/","to":"/ขายโน๊ตบุ๊ค/","branchState":"NOINDEX_CANONICAL_STUB"}
+    ]
+  },
+  "legacyLifecycleSeeds": [
+    {"from":"/","action":"KEEP","to":"/","backlinkStatus":"UNKNOWN"},
+    {"from":"/รับซื้อ-notebook/","action":"MIGRATE_301_PLANNED","to":"/","backlinkStatus":"UNKNOWN"},
+    {"from":"/รับซื้อโน๊ตบุ๊คมือสอง/","action":"KEEP_PROTECTED","to":"/รับซื้อโน๊ตบุ๊คมือสอง/","backlinkStatus":"UNKNOWN"},
+    {"from":"/เช็คราคาโน๊ตบุ๊ค/","action":"MIGRATE_301_PLANNED","to":"/ประเมินราคา/","backlinkStatus":"UNKNOWN"},
+    {"from":"/เช็คราคาโน๊ตบุ๊คมือสอง/","action":"MIGRATE_301_PLANNED","to":"/ประเมินราคา/","backlinkStatus":"UNKNOWN"},
+    {"from":"/ตีราคาโน๊ตบุ๊ค/","action":"MIGRATE_301_PLANNED","to":"/ประเมินราคา/","backlinkStatus":"UNKNOWN"},
+    {"from":"/ขายโน๊ตบุ๊ค/","action":"KEEP_REBUILT_OWNER","to":"/ขายโน๊ตบุ๊ค/","backlinkStatus":"UNKNOWN"},
+    {"from":"/ขายโน๊ตบุ๊คด่วน/","action":"MIGRATE_301_PLANNED","to":"/ขายโน๊ตบุ๊ค/","backlinkStatus":"UNKNOWN"},
+    {"from":"/รับซื้อโน๊ตบุ๊ค/macbook/","action":"MIGRATE_301_CANDIDATE","to":"/แบรนด์/macbook/","backlinkStatus":"UNKNOWN"},
+    {"from":"/รับซื้อโน๊ตบุ๊ค/เปิดไม่ติด/","action":"MIGRATE_301_CANDIDATE","to":"/อาการ/เปิดไม่ติด/","backlinkStatus":"UNKNOWN"},
+    {"from":"/รับซื้อโน๊ตบุ๊ค/อุบลราชธานี/","action":"MIGRATE_301_CANDIDATE","to":"/พื้นที่/อุบลราชธานี/","backlinkStatus":"UNKNOWN"},
+    {"from":"/รับซื้อโน๊ตบุ๊ค/กาฬสินธุ์/คีย์บอร์ดเสีย/","action":"SIGNAL_REVIEW","to":"/อาการ/คีย์บอร์ดเสีย/","backlinkStatus":"UNKNOWN"},
+    {"from":"/รับซื้อโน๊ตบุ๊ค/ฉะเชิงเทรา/เครื่องเก่า/","action":"SIGNAL_REVIEW","to":"/อาการ/เครื่องเก่า/","backlinkStatus":"UNKNOWN"}
+  ],
+  "legacyComboDefault": {
+    "action":"HOLD_NOINDEX",
+    "sitemap":false,
+    "allow410OnlyAfterBacklinkAndGscReview":true
+  },
+  "protectedSignalPaths": [
+    "/รับซื้อโน๊ตบุ๊ค/macbook-pro-m3/",
+    "/รับซื้อโน๊ตบุ๊ค/macbook-pro-m4/",
+    "/รับซื้อโน๊ตบุ๊ค/hp-omen-16/",
+    "/รับซื้อโน๊ตบุ๊ค/lenovo-legion-pro-7/",
+    "/รับซื้อโน๊ตบุ๊ค/lenovo-legion-pro/",
+    "/รับซื้อโน๊ตบุ๊ค/thinkpad-x1-carbon/",
+    "/รับซื้อโน๊ตบุ๊ค/asus-rog-flow/",
+    "/รับซื้อโน๊ตบุ๊ค/เปิดไม่ติด/",
+    "/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/",
+    "/รับซื้อโน๊ตบุ๊ค/อุบลราชธานี/",
+    "/รับซื้อโน๊ตบุ๊ค/ภาคอีสาน/",
+    "/รับซื้อโน๊ตบุ๊ค/กาฬสินธุ์/คีย์บอร์ดเสีย/",
+    "/รับซื้อโน๊ตบุ๊ค/ฉะเชิงเทรา/เครื่องเก่า/",
+    "/ขายโน๊ตบุ๊ค/",
+    "/รับซื้อโน๊ตบุ๊คมือสอง/",
+    "/blog/โน๊ตบุ๊คติดรหัส-windows-ขายได้ไหม/"
+  ]
+}

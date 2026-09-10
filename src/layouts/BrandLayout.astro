@@ -2,7 +2,10 @@
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import type { BreadcrumbItem, FaqItem } from '../lib/seo';
-import { breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
+import { absoluteUrl, breadcrumbListSchema, faqPageSchema, serviceSchema } from '../lib/seo';
+import modelSeriesTriage from '../data/rebuild-v2-model-series-triage.json';
+import modelSeriesR13Supplement from '../data/rebuild-v2-model-series-r13-supplement.json';
+import conditionTriage from '../data/rebuild-v2-condition-triage.json';
 
 interface Props {
   title: string;
@@ -13,18 +16,79 @@ interface Props {
   breadcrumbs: BreadcrumbItem[];
   faqs?: FaqItem[];
   serviceName?: string;
+  contentKind?: 'brand' | 'condition' | 'location';
 }
 
-const { title, description, canonical, ogImage, noindex, breadcrumbs, faqs = [], serviceName } = Astro.props;
+const { title, description, canonical, ogImage, noindex, breadcrumbs, faqs = [], serviceName, contentKind } = Astro.props;
+
+const normalizePath = (value: string) => {
+  if (!value) return '/';
+  let decoded = value;
+  try {
+    decoded = decodeURI(value);
+  } catch {
+    decoded = value;
+  }
+  const withLeading = decoded.startsWith('/') ? decoded : `/${decoded}`;
+  return withLeading === '/' ? '/' : `${withLeading.replace(/\/+$/, '')}/`;
+};
+
+const legacyBrandOwners: Record<string, string> = {
+  '/รับซื้อโน๊ตบุ๊ค/asus/': '/แบรนด์/asus/',
+  '/รับซื้อโน๊ตบุ๊ค/acer/': '/แบรนด์/acer/',
+  '/รับซื้อโน๊ตบุ๊ค/lenovo/': '/แบรนด์/lenovo/',
+  '/รับซื้อโน๊ตบุ๊ค/hp/': '/แบรนด์/hp/',
+  '/รับซื้อโน๊ตบุ๊ค/dell/': '/แบรนด์/dell/',
+  '/รับซื้อโน๊ตบุ๊ค/msi/': '/แบรนด์/msi/',
+  '/รับซื้อโน๊ตบุ๊ค/macbook/': '/แบรนด์/macbook/',
+  '/รับซื้อโน๊ตบุ๊ค/surface/': '/แบรนด์/surface/',
+};
+
+const currentPath = normalizePath(Astro.url.pathname);
+const migratedOwner = legacyBrandOwners[currentPath];
+const legacyModelPrefix = '/รับซื้อโน๊ตบุ๊ค/';
+const legacySlug = currentPath.startsWith(legacyModelPrefix)
+  ? currentPath.slice(legacyModelPrefix.length).replace(/\/$/, '')
+  : '';
+
+type LifecycleAction = 'KEEP_CURRENT_URL' | 'MIGRATE_LATER' | 'HOLD_NOINDEX' | 'MERGE';
+type LifecycleItem = { slug: string; action: LifecycleAction; target?: string };
+const modelItems = [
+  ...(modelSeriesTriage.items as LifecycleItem[]),
+  ...(modelSeriesR13Supplement.items as LifecycleItem[]),
+];
+const conditionItems = conditionTriage.items as LifecycleItem[];
+const conditionTriageItem = conditionItems.find((item) => item.slug === legacySlug);
+const modelTriageItem = modelItems.find((item) => item.slug === legacySlug);
+
+// R6/R7 manifests are required to be disjoint. Exact condition-manifest membership
+// identifies a condition page until all shared-route callers pass contentKind explicitly.
+const lifecycleItem = migratedOwner
+  ? undefined
+  : contentKind === 'condition'
+    ? conditionTriageItem
+    : contentKind === 'brand'
+      ? modelTriageItem
+      : (conditionTriageItem ?? modelTriageItem);
+
+const lifecycleNoindex = lifecycleItem?.action === 'HOLD_NOINDEX' || lifecycleItem?.action === 'MERGE';
+const lifecycleCanonical = lifecycleItem?.action === 'MERGE' && lifecycleItem.target
+  ? absoluteUrl(lifecycleItem.target)
+  : undefined;
+
+const resolvedCanonical = migratedOwner
+  ? absoluteUrl(migratedOwner)
+  : (lifecycleCanonical ?? canonical);
+const resolvedNoindex = migratedOwner ? true : (lifecycleNoindex ? true : noindex);
+
 const schemas = [
   breadcrumbListSchema(breadcrumbs),
-  ...(serviceName && canonical ? [serviceSchema({ name: serviceName, url: canonical, description })] : []),
+  ...(serviceName && resolvedCanonical ? [serviceSchema({ name: serviceName, url: resolvedCanonical, description })] : []),
   ...(faqs.length ? [faqPageSchema(faqs)] : []),
 ];
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} ogImage={ogImage} noindex={noindex} schemas={schemas}>
+<BaseLayout title={title} description={description} canonical={resolvedCanonical} ogImage={ogImage} noindex={resolvedNoindex} schemas={schemas}>
   <Breadcrumbs items={breadcrumbs} />
   <slot />
 </BaseLayout>
-

@@ -1,14 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import blogTriage from '../../data/rebuild-v2-blog-triage.json';
 import { getCollection } from 'astro:content';
 import { absoluteUrl } from '../../lib/seo';
 import { itemListSchema } from '../../lib/schema';
 
-const posts = (await getCollection('blog')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 const toSlug = (p: any) => (p.data.slug ? p.data.slug : String(p.id).replace(/\.(md|mdx)$/i, ''));
+const keepSlugs = new Set(
+  blogTriage.items.filter((item) => item.action === 'KEEP_INFORMATIONAL').map((item) => item.slug),
+);
+const posts = (await getCollection('blog'))
+  .filter((post) => keepSlugs.has(toSlug(post)))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
 const title = 'บทความ | ร้านรับซื้อโน๊ตบุ๊ค.com';
-const description = 'บทความแนะนำเกี่ยวกับการขายโน๊ตบุ๊คมือสอง การเช็คราคา การล้างข้อมูล และคำถามที่พบบ่อย';
+const description = 'บทความความรู้เกี่ยวกับการเตรียมเครื่อง ความปลอดภัยข้อมูล อาการเสีย และปัจจัยที่มีผลต่อการประเมินโน๊ตบุ๊คมือสอง';
 const canonical = absoluteUrl('/blog/');
 
 const schemas = [
@@ -25,9 +31,9 @@ const schemas = [
 
 <BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
   <section class="mx-auto w-full max-w-6xl px-4 pt-10">
-    <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">บทความ</h1>
+    <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">บทความความรู้ก่อนขายโน๊ตบุ๊ค</h1>
     <p class="mt-4 text-base leading-relaxed text-slate-600">
-      รวมบทความสั้น ๆ เพื่อช่วยให้ขายโน๊ตบุ๊คมือสองได้ง่ายขึ้น ตั้งแต่เช็คราคา ไปจนถึงการล้างข้อมูลก่อนขาย
+      รวมคำแนะนำที่ช่วยเตรียมเครื่อง ตรวจข้อมูลสำคัญ เข้าใจอาการและปัจจัยที่มีผลต่อการประเมิน โดยแยกจากหน้าบริการรับซื้อและหน้าประเมินราคาอย่างชัดเจน
     </p>
   </section>
 
@@ -44,4 +50,3 @@ const schemas = [
     </div>
   </section>
 </BaseLayout>
-

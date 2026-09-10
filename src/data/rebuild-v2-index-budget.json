@@ -1,0 +1,61 @@
+{
+  "version": "R13-2026-09-10",
+  "releaseState": "PRODUCTION_MIGRATION_CANDIDATE",
+  "target": {
+    "minIndexable": 80,
+    "maxIndexable": 120,
+    "hardCeiling": 120,
+    "projectedIndexable": 113
+  },
+  "controlledSurface": {
+    "modelSeries": { "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"], "projected": 46 },
+    "conditions": { "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"], "projected": 13 },
+    "locations": { "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"], "projected": 7 },
+    "blogs": { "eligibleActions": ["KEEP_INFORMATIONAL"], "projected": 22 }
+  },
+  "corePaths": [
+    "/",
+    "/ประเมินราคา/",
+    "/รับซื้อโน๊ตบุ๊คมือสอง/",
+    "/ขายโน๊ตบุ๊ค/",
+    "/พื้นที่ให้บริการ/",
+    "/รับซื้อโน๊ตบุ๊คบริษัท/",
+    "/รับเหมาโน๊ตบุ๊ค/",
+    "/รับเหมาคอมพิวเตอร์/",
+    "/รับประมูลคอม/",
+    "/คำถามที่พบบ่อย/",
+    "/ขั้นตอนและเงื่อนไขการให้บริการ/",
+    "/เกี่ยวกับเรา/",
+    "/ติดต่อเรา/",
+    "/นโยบายความเป็นส่วนตัว/",
+    "/blog/",
+    "/sitemap/"
+  ],
+  "releasedV2BrandPaths": [
+    "/แบรนด์/",
+    "/แบรนด์/asus/",
+    "/แบรนด์/acer/",
+    "/แบรนด์/lenovo/",
+    "/แบรนด์/hp/",
+    "/แบรนด์/dell/",
+    "/แบรนด์/msi/",
+    "/แบรนด์/macbook/",
+    "/แบรนด์/surface/"
+  ],
+  "redirectingPathsMustNotBeInSitemap": [
+    "/รับซื้อโน๊ตบุ๊ค/",
+    "/รับซื้อ-notebook/",
+    "/เช็คราคาโน๊ตบุ๊ค/",
+    "/เช็คราคาโน๊ตบุ๊คมือสอง/",
+    "/ตีราคาโน๊ตบุ๊ค/",
+    "/ขายโน๊ตบุ๊คด่วน/"
+  ],
+  "alwaysExcludedPrefixes": ["/admin/", "/รุ่น/", "/อาการ/", "/พื้นที่/"],
+  "policy": {
+    "defaultStaticPage": "EXCLUDE_UNLESS_ALLOWLISTED",
+    "noindexMustNotAppearInSitemap": true,
+    "redirectSourcesMustNotAppearInSitemap": true,
+    "legacyComboDepthTwoOrMore": "EXCLUDE",
+    "releaseRule": "Production migration is blocked if the built sitemap differs from the declared release surface, exceeds 120 URLs, contains redirect sources, or includes HOLD/MERGE/noindex URLs."
+  }
+}

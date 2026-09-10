@@ -1,154 +1,21 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButtons from '../components/CTAButtons.astro';
-import { absoluteUrl, breadcrumbListSchema } from '../lib/seo';
-import { SITE } from '../config/site';
+import MigrationNotice from '../components/MigrationNotice.astro';
+import { absoluteUrl } from '../lib/seo';
 
-const title = 'ตีราคาโน๊ตบุ๊ค วิธีประเมินจากสเปกและจุดตรวจสภาพ | ร้านรับซื้อโน๊ตบุ๊ค.com';
-const description =
-  'อธิบายวิธีตีราคาโน๊ตบุ๊คของร้าน ปัจจัยที่ใช้ รุ่น สเปก จุดตรวจจอ แบต บานพับ พอร์ต และอุปกรณ์ ส่งรูปทาง LINE เพื่อรับราคาประเมินเบื้องต้น — ราคาสุดท้ายหลังตรวจเครื่องจริง';
-const canonical = absoluteUrl('/ตีราคาโน๊ตบุ๊ค/');
-
-const breadcrumbs = [
-  { name: 'หน้าแรก', url: absoluteUrl('/') },
-  { name: 'ตีราคาโน๊ตบุ๊ค', url: canonical },
-];
-
-const schemas = [breadcrumbListSchema(breadcrumbs)];
+const target = '/ประเมินราคา/';
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} schemas={schemas}>
-  <!-- Hero Section -->
-  <section class="relative overflow-hidden bg-slate-900 py-16 sm:py-24 lg:py-32">
-    <div class="absolute inset-0 bg-gradient-to-b from-teal-800/60 to-slate-900/90 z-0"></div>
-    <div class="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-      <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl leading-tight">
-        ตีราคาโน๊ตบุ๊ค <br class="hidden sm:block" />
-        <span class="text-teal-400">วิธีประเมินจากสเปกและจุดตรวจสภาพ</span>
-      </h1>
-      <p class="mx-auto mt-6 max-w-3xl text-lg text-slate-300 leading-relaxed">
-        หน้านี้เล่าว่า “ร้านดูอะไรบ้าง” ตอนตีราคา — ปัจจัย น้ำหนักของแต่ละจุด และลำดับการตรวจ ไม่ใช่แค่ส่งรูปแล้วได้ตัวเลขโดยไม่รู้ที่มา
-      </p>
-      <div class="mt-10 flex justify-center gap-4">
-        <CTAButtons primaryText={`ส่งรูปตีราคาฟรี`} secondaryText="โทรปรึกษาขั้นตอน" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Main Content Body (Money Page Copy) -->
-  <article class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="prose prose-lg prose-slate prose-a:text-teal-600 hover:prose-a:text-teal-500 max-w-none prose-headings:font-extrabold prose-h2:text-3xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:text-slate-900 prose-h3:text-2xl prose-h3:text-slate-800 prose-h4:text-xl prose-h4:text-slate-800 prose-h5:text-lg prose-h5:text-slate-700">
-      
-      <p class="lead text-xl text-slate-700 leading-relaxed font-medium">
-        การตีราคาโน๊ตบุ๊คของร้านเริ่มจากระเบียบวิธี ไม่ใช่เดาจากยี่ห้ออย่างเดียว: ตั้งกรอบจากรุ่นและสเปก → ปรับตามสภาพที่เห็นจากรูปและที่แจ้ง → ยืนยันหลังตรวจเครื่องจริง คนที่อยากได้ตัวเลขเพื่อตัดสินใจขายก่อน ใช้หน้า <a href="/เช็คราคาโน๊ตบุ๊ค/">เช็คราคาโน๊ตบุ๊ค</a> ส่วนหน้านี้อธิบายว่าแต่ละปัจจัยถูกนำไปใช้อย่างไร
-      </p>
-
-      <h2>ลำดับการตีราคาที่ใช้จริง</h2>
-      <ol>
-        <li><strong>ยืนยันรุ่นและสเปก:</strong> รุ่นย่อย CPU RAM SSD GPU (ถ้ามี) เป็นกรอบตั้งต้น</li>
-        <li><strong>อ่านสภาพจากรูปและคำอธิบาย:</strong> จอ บอดี้ แบต อุปกรณ์ อาการ</li>
-        <li><strong>ให้ราคาประเมินเบื้องต้น:</strong> พร้อมเงื่อนไขว่ายังต้องตรวจรับจริง</li>
-        <li><strong>ตรวจหน้างานหรือหลังได้รับเครื่อง:</strong> ยืนยันราคาสุดท้ายเมื่อสภาพตรงตามที่แจ้ง</li>
-      </ol>
-
-      <h2>ปัจจัยหลักที่ใช้ในการตีราคา</h2>
-      <p>
-        น้ำหนักของแต่ละปัจจัยไม่เท่ากันทุกเครื่อง — เกมมิ่งเน้น GPU และระบายความร้อน Ultrabook/MacBook เน้นแบตและรอยฝา เครื่ององค์กรเน้นพอร์ต บานพับ และสถานะบัญชี/สินทรัพย์
-      </p>
-      
-      <h3>รุ่นและสเปกฮาร์ดแวร์</h3>
-      <p>
-        สเปกกำหนดกรอบตั้งต้น: ชิปประมวลผลและรุ่นย่อย (เช่น Intel Core i5/i7 gen ต่างกัน หรือ Apple M-Series), RAM (8/16/32 GB), ความจุและประเภท SSD, และการ์ดจอแยกในเครื่องเกมมิ่ง หากเคยอัปเกรด RAM หรือ SSD ให้แจ้งพร้อมหลักฐาน เช่น ภาพ Task Manager หรือ CrystalDiskInfo
-      </p>
-
-      <h2>จุดตรวจสภาพที่ช่างดูเป็นพิเศษ</h2>
-      <p>
-        รูปชัดในแต่ละจุดช่วยให้การตีราคาเบื้องต้นใกล้ของจริงมากขึ้น
-      </p>
-
-      <h3>หน้าจอ</h3>
-      <p>
-        ดูความสม่ำเสมอของแสง จุดเดดพิกเซล แสงรั่วขอบจอ และรอยกระจก หากมีรอยร้าว เส้น หรือจอเหลือง ควรถ่ายใกล้และแจ้งก่อน — ดูแนวทางเครื่องจอมีปัญหาที่ <a href="/รับซื้อโน๊ตบุ๊ค/จอแตก/">รับซื้อโน๊ตบุ๊คจอแตก</a>
-      </p>
-      
-      <h3>สุขภาพแบตเตอรี่</h3>
-      <p>
-        แบตที่เก็บประจุได้ดีช่วยรักษากรอบราคา MacBook ดูได้จาก System Information → Power ส่วน Windows ใช้ <code>powercfg /batteryreport</code> หรือโปรแกรมตรวจแบต แบตเสื่อมมากหรือบวมจะปรับตามสภาพหลังตรวจรับ — ดูเพิ่มที่ <a href="/รับซื้อโน๊ตบุ๊ค/แบตเสื่อม/">โน๊ตบุ๊คแบตเสื่อม</a>
-      </p>
-
-      <h3>บานพับ พอร์ต และระบบเปิดเครื่อง</h3>
-      <p>
-        บานพับเปิดปิดได้เต็มมุมโดยไม่มีเสียงผิดปกติ พอร์ต USB/HDMI/Type-C ใช้งานได้ และเครื่องเปิดติดเสถียร เป็นจุดที่ตรวจยืนยันได้ชัด หากเปิดไม่ติดหรืออาการไม่คงที่ แจ้งตรง ๆ จะได้กรอบที่ไม่คาดหวังเกิน — ดู <a href="/รับซื้อโน๊ตบุ๊ค/เปิดไม่ติด/">โน๊ตบุ๊คเปิดไม่ติด</a>
-      </p>
-
-      <div class="not-prose my-12 rounded-3xl bg-teal-50 border border-teal-100 p-8 text-center shadow-sm">
-        <h3 class="text-2xl font-bold text-slate-900 mb-4">ส่งรูปเครื่องมาตีราคาเบื้องต้นฟรี</h3>
-        <p class="text-slate-600 mb-6">แจ้งรุ่น สเปก สภาพ และอุปกรณ์ที่มา เราประเมินตามปัจจัยด้านบนและแจ้งเงื่อนไขก่อนตัดสินใจ</p>
-        <CTAButtons primaryText="แอดไลน์ ตีราคาโน๊ตบุ๊คฟรี" secondaryText="โทรสอบถามขั้นตอน" />
-      </div>
-
-      <h2>กลุ่มเครื่องที่ตลาดมือสองมักมีผู้สนใจสม่ำเสมอ</h2>
-      <p>
-        ความต้องการตลาดช่วยกำหนดกรอบ แต่ยังต้องผ่านจุดตรวจสภาพเหมือนกันทุกกลุ่ม:
-      </p>
-
-      <h3>MacBook: Apple Silicon ที่ไม่ติดล็อก</h3>
-      <p>
-        <a href="/รับซื้อโน๊ตบุ๊ค/macbook/">MacBook Air และ MacBook Pro</a> ชิป M-Series ที่ไม่มีรอยบุบรุนแรง ไม่ติดล็อก iCloud และแบตยังใช้ได้ เป็นกลุ่มที่ตลาดสนใจต่อเนื่อง รูปชัดพร้อมสเปกและ cycle count ช่วยให้ตีราคาได้ตรงขึ้น
-      </p>
-
-      <h3>โน๊ตบุ๊คเกมมิ่ง</h3>
-      <p>
-        เครื่องอย่าง <a href="/รับซื้อโน๊ตบุ๊ค/asus-rog-strix/">Asus ROG Strix</a>, <a href="/รับซื้อโน๊ตบุ๊ค/lenovo-legion-pro/">Lenovo Legion</a> หรือ Acer Predator ที่มีการ์ดจอระดับ RTX 3050 ขึ้นไป ดูรุ่น GPU พัดลม และคราบการใช้งานหนักประกอบกัน
-      </p>
-
-      <h3>โน๊ตบุ๊คสายทำงานและเอกสาร</h3>
-      <p>
-        กลุ่ม <a href="/รับซื้อโน๊ตบุ๊ค/acer-swift/">Acer Swift</a>, <a href="/รับซื้อโน๊ตบุ๊ค/asus-vivobook/">Asus VivoBook</a> หรือ Dell Inspiron ที่สภาพดี ตลาดผู้ซื้อหลากหลาย กรอบสะท้อนสเปกและสภาพจริงหลังตรวจ
-      </p>
-
-      <h2>เครื่องมีอาการชำรุด ตีราคายังไง</h2>
-      <p>
-        ยังประเมินได้ตามสภาพจริง อาการที่พบจะถูกหักเข้าไปในกรอบ ไม่ใช่ตัดทิ้งทุกรุ่น อะไหล่ที่ยังดีในเครื่องเปิดไม่ติดอาจยังมีมูลค่า การแจ้งอาการตรงไปตรงมาช่วยลดความคาดหวังที่คลาดเคลื่อนตอนตรวจรับ
-      </p>
-
-      <h2>ข้อมูลที่ควรส่งให้ระเบียบวิธีทำงานได้</h2>
-      <ul>
-        <li>รูปด้านหน้าตอนเปิดจอ ฝาหลัง คีย์บอร์ด และจุดตำหนิ</li>
-        <li>หน้าจอสเปก (System Properties หรือ About This Mac)</li>
-        <li>รายการอุปกรณ์ที่มีจริง</li>
-        <li>คลิปสั้นถ้าอาการอธิบายยาก เช่น เสียงพัดลมผิดปกติหรือจอกระพริบ</li>
-      </ul>
-
-      <div class="not-prose my-12 rounded-3xl bg-slate-900 border border-slate-800 p-8 text-center shadow-xl">
-        <h3 class="text-2xl font-bold text-white mb-4">ส่งรูปเพื่อรับราคาประเมินเบื้องต้นฟรี</h3>
-        <p class="text-slate-300 mb-6">ส่งรูป รุ่น สเปก และสภาพเครื่อง ทีมงานจะประเมินตามปัจจัยด้านบนและแจ้งเงื่อนไขก่อนตัดสินใจ</p>
-        <CTAButtons primaryText="เริ่มส่งรูปเพื่อตีราคา" secondaryText="ติดต่อสอบถามเพิ่มเติม" />
-      </div>
-
-      <h2>สิ่งที่ควรทราบก่อนตัดสินใจขาย</h2>
-      <p>
-        ราคาจากแชทเป็นผลจากการตีราคาตามข้อมูลที่ได้รับ ราคาสุดท้ายหลังตรวจรับอาจต่างหากสภาพจริงไม่ตรง ซึ่งจะแจ้งให้ทราบก่อนเสมอ ลูกค้าไม่ถูกบังคับขาย หน้าร้านอยู่จังหวัดอุบลราชธานี จังหวัดอื่นนัดหรือจัดส่งตามเงื่อนไข ไม่ใช่สาขา
-      </p>
-      <p>
-        ต้องการเตรียมเครื่องก่อนส่งมอบ อ่านที่ <a href="/ขายโน๊ตบุ๊ค/">คู่มือขายโน๊ตบุ๊ค</a> หรือดูบริการหลักที่ <a href="/">รับซื้อโน๊ตบุ๊ค</a>
-      </p>
-
-    </div>
-  </article>
-
-  <!-- Final CTA Outro -->
-  <section class="bg-teal-600 py-16">
-    <div class="mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold text-white sm:text-4xl">ตีราคาโน๊ตบุ๊คตามสเปกและจุดตรวจจริง</h2>
-      <p class="mt-4 text-lg text-teal-100">ส่งรูปและข้อมูลเครื่อง รับราคาประเมินเบื้องต้นฟรี แจ้งเงื่อนไขชัดก่อนตัดสินใจ</p>
-      <div class="mt-8 flex justify-center gap-4">
-        <a href={`https://line.me/ti/p/~${SITE.lineId}`} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-lg font-bold text-teal-700 shadow-lg transition-transform hover:scale-105 hover:bg-slate-50 focus:outline-none focus:ring-4 focus:ring-teal-300">
-          <svg class="mr-2 h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.122.303.041.777.019 1.085l-.173 1.027c-.053.303-.243 1.186 1.039.647 1.281-.54 6.911-4.069 9.428-6.967 1.739-1.907 2.613-3.843 2.613-5.992z"/></svg>
-          แอดไลน์ {SITE.lineHandle}
-        </a>
-      </div>
-    </div>
-  </section>
-
+<BaseLayout
+  title="ตีราคาโน๊ตบุ๊ค | ย้ายรวมหน้าประเมินราคา"
+  description="วิธีตีราคาโน๊ตบุ๊คถูกรวมเข้าหน้าประเมินราคา เพื่อให้ปัจจัยราคาและขั้นตอนประเมินอยู่ใน owner เดียว"
+  canonical={absoluteUrl(target)}
+  noindex={true}
+>
+  <MigrationNotice
+    title="ตีราคาโน๊ตบุ๊ค ย้ายรวมเข้าหน้าประเมินราคา"
+    description="V2 ไม่แยกคำว่า ตีราคา ออกจาก เช็คราคา และ ประเมินราคา อีกต่อไป เนื้อหาวิธีประเมินถูกย้ายไปรวมกับหน้า owner เพื่อให้ Search Intent ชัดขึ้น"
+    targetHref={target}
+    targetLabel="ไปหน้าประเมินราคาโน๊ตบุ๊ค"
+  />
 </BaseLayout>

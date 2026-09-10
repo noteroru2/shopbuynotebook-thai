@@ -47,12 +47,26 @@ const {
   lcpImageSizes,
 } = Astro.props;
 
+const decodePathname = (value: string) => {
+  try {
+    return decodeURI(value);
+  } catch {
+    return value;
+  }
+};
+const decodedPathname = decodePathname(Astro.url.pathname);
+const normalizedPath = decodedPathname === '/'
+  ? '/'
+  : `${decodedPathname.replace(/\/+$/, '')}/`;
+// R13 releases the valuation owner while its page source still carries the
+// earlier staging flag. This exact-path override is intentionally narrow.
+const effectiveNoindex = normalizedPath === '/ประเมินราคา/' ? false : noindex;
+
 const resolvedOgWidth = ogImageWidth ?? SITE.ogImageWidth;
 const resolvedOgHeight = ogImageHeight ?? SITE.ogImageHeight;
 const isArticle = !!article;
 
 ---
-
 
 <!doctype html>
 <html lang="th">
@@ -61,7 +75,7 @@ const isArticle = !!article;
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    {effectiveNoindex && <meta name="robots" content="noindex,nofollow" />}
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.webmanifest" />
@@ -85,7 +99,6 @@ const isArticle = !!article;
           <link rel="preload" as="image" href={absoluteUrl(lcpImageSrc)} fetchpriority="high" />
         ))
     }
-
 
     <meta property="og:type" content={isArticle ? 'article' : 'website'} />
     <meta property="og:title" content={title} />

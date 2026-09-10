@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const ALLOWED_MODELS = new Set([
+  'macbook-pro-m3','macbook-pro-m4','macbook-air-m1','macbook-air-m2',
+  'hp-omen-16','lenovo-legion-pro-7','lenovo-legion-pro','thinkpad-x1-carbon',
+  'asus-rog-flow','asus-tuf-a15-f15','acer-nitro-v','lenovo-loq-15-16'
+]);
+const entries = (await getCollection('brands'))
+  .filter((entry) => ALLOWED_MODELS.has(entry.data.slug))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'th'));
+---
+
+<BaseLayout
+  title="รุ่นโน๊ตบุ๊คที่รับประเมิน | ร้านรับซื้อโน๊ตบุ๊ค.com"
+  description="รวมรุ่นโน๊ตบุ๊คที่มีเหตุผลด้านข้อมูลค้นหาและมูลค่าทางธุรกิจในการทำหน้ารับประเมินเฉพาะรุ่น"
+  noindex={true}
+>
+  <section class="mx-auto w-full max-w-6xl px-4 py-14 sm:py-20">
+    <p class="text-sm font-bold text-emerald-700">Model Allowlist</p>
+    <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-5xl">รุ่นโน๊ตบุ๊คที่รับประเมิน</h1>
+    <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">
+      V2 จะไม่เปิด index ทุก Model ที่มีไฟล์อยู่ในระบบ รุ่นที่จะขึ้นหน้าเฉพาะต้องผ่าน GSC demand, business value หรือ verified-content gate ก่อน
+    </p>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {entries.map((entry) => (
+        <a class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-emerald-300 hover:shadow-md" href={`/รุ่น/${entry.data.slug}/`}>
+          <h2 class="font-extrabold text-slate-950">{entry.data.title}</h2>
+          <p class="mt-2 line-clamp-3 text-sm leading-6 text-slate-600">{entry.data.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

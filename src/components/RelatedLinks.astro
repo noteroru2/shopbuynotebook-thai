@@ -1,4 +1,6 @@
 ---
+import { rewriteAuthorityHref } from '../lib/internal-links';
+
 export type RelatedLink = { label: string; href: string; description?: string };
 
 interface Props {
@@ -7,13 +9,16 @@ interface Props {
 }
 
 const { title = 'ลิงก์ที่เกี่ยวข้อง', links } = Astro.props;
+const resolvedLinks = links
+  .map((link) => ({ ...link, href: rewriteAuthorityHref(link.href) }))
+  .filter((link, index, all) => all.findIndex((candidate) => candidate.href === link.href) === index);
 ---
 
 <section class="mx-auto w-full max-w-6xl px-4 pt-10">
   <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
     <h2 class="text-lg font-extrabold text-slate-900">{title}</h2>
     <div class="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-      {links.map((l) => (
+      {resolvedLinks.map((l) => (
         <a
           href={l.href}
           class="group rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 hover:border-emerald-200 hover:bg-emerald-50"
@@ -25,4 +30,3 @@ const { title = 'ลิงก์ที่เกี่ยวข้อง', links 
     </div>
   </div>
 </section>
-

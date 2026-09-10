@@ -1,0 +1,80 @@
+{
+  "version": "R8",
+  "generatedAt": "2026-09-09",
+  "gscWindow": "2026-03-01..2026-09-06",
+  "policy": {
+    "defaultForUnclassified": "HOLD_NOINDEX",
+    "locationOwnerIntent": "Commercial local sell/buy intent for a genuinely useful service area.",
+    "serviceAreaHubIntent": "Broad service coverage, near-me and shipping/nationwide explanation belongs to /พื้นที่ให้บริการ/ rather than a synthetic local landing page.",
+    "neighborhoodPolicy": "Bangkok neighborhood pages do not become independent owners unless durable GSC demand and operational value justify them; otherwise merge into Bangkok.",
+    "releaseRule": "R8 is staging-only. MERGE means noindex + canonical staging signal, not an HTTP redirect. HTTP 301/410 decisions require migration QA.",
+    "v2LocationRelease": "Only Ubon Ratchathani is allowed in the staged /พื้นที่/ namespace in R8. Other candidates remain on legacy URLs until evidence supports migration."
+  },
+  "items": [
+    {
+      "slug": "อุบลราชธานี",
+      "action": "KEEP_CURRENT_URL",
+      "evidence": "Real storefront location and strongest useful local signal in the GSC window: 1 click / 4 impressions / CTR 25% / avg position 5.0. Protect current owner before eventual controlled migration to /พื้นที่/อุบลราชธานี/."
+    },
+    {
+      "slug": "นครนายก",
+      "action": "KEEP_CURRENT_URL",
+      "evidence": "Historical GSC click exists: 1 click / 1 impression / avg position 16. Preserve the clicked legacy URL during rebuild rather than deleting or moving it without redirect evidence."
+    },
+    {
+      "slug": "รังสิต",
+      "action": "KEEP_CURRENT_URL",
+      "evidence": "Historical GSC click exists: 1 click / 2 impressions / avg position 54. Preserve the clicked URL during triage even though ranking quality is weak; later consolidation needs redirect QA."
+    },
+    {
+      "slug": "กรุงเทพ",
+      "action": "MIGRATE_LATER",
+      "evidence": "No clicks but page-one test signal: 2 impressions / avg position 8.0. Strategic metro demand justifies retaining one Bangkok owner, but not multiple neighborhood owners."
+    },
+    {
+      "slug": "ภาคอีสาน",
+      "action": "MIGRATE_LATER",
+      "evidence": "Small but strong regional signal: 3 impressions / avg position 3.33. Retain as a regional service-area candidate while avoiding province x condition expansion."
+    },
+    {
+      "slug": "เลย",
+      "action": "MIGRATE_LATER",
+      "evidence": "One GSC impression at avg position 9.0. Keep as an evidence-backed candidate only; do not expand nearby district pages."
+    },
+    {
+      "slug": "สกลนคร",
+      "action": "MIGRATE_LATER",
+      "evidence": "Two GSC impressions at avg position 19.0. Weak but observable search signal; retain as candidate, not as a template for nationwide expansion."
+    },
+    {
+      "slug": "พระราม2",
+      "action": "MERGE",
+      "target": "/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/",
+      "evidence": "2 impressions / avg position 6.5, but this is a Bangkok sub-area. Preserve signal through the Bangkok owner instead of maintaining a separate thin local authority node."
+    },
+    {
+      "slug": "ห้วยขวาง",
+      "action": "MERGE",
+      "target": "/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/",
+      "evidence": "1 impression / avg position 3.0, but neighborhood-level intent should consolidate into the Bangkok owner until durable demand justifies a separate page."
+    },
+    {
+      "slug": "รามคำแหง",
+      "action": "MERGE",
+      "target": "/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/",
+      "evidence": "1 impression / avg position 13.0. Bangkok neighborhood page is over-segmentation relative to current authority; consolidate into Bangkok."
+    },
+    {
+      "slug": "ลาดพร้าว",
+      "action": "MERGE",
+      "target": "/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/",
+      "evidence": "1 impression / avg position 16.0. Bangkok neighborhood page is over-segmentation relative to current authority; consolidate into Bangkok."
+    },
+    {
+      "slug": "ใกล้ฉัน",
+      "action": "MERGE",
+      "target": "/พื้นที่ให้บริการ/",
+      "evidence": "Near-me intent is not a real geographic entity and the legacy near-me combo surface appeared in GSC. Route ownership belongs to the service-area hub rather than a synthetic location page."
+    }
+  ]
+}

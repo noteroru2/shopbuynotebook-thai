@@ -1,0 +1,72 @@
+name: Rebuild V2 Validation
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rebuild-v2-validation-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Gates, check, build, and migration surface
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ASTRO_TELEMETRY_DISABLED: "1"
+
+    steps:
+      - name: Checkout exact PR commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.12.0"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run rebuild gates R0-R13
+        run: npm run gate:rebuild-v2:all
+
+      - name: Astro check
+        run: npm run check
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Validate SEO
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run validate:seo 2>&1 | tee validate-seo.log
+
+      - name: Verify Worker routing source
+        run: npm run validate:worker-routing
+
+      - name: Verify built R13 migration surface
+        run: npm run gate:rebuild-v2:r13 -- --dist-required
+
+      - name: Upload migration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rebuild-v2-validation-${{ github.run_id }}
+          path: |
+            validate-seo.log
+            dist/sitemap*.xml
+            src/data/rebuild-v2-index-budget.json
+            src/data/rebuild-v2-production-redirects.json
+          if-no-files-found: warn
+          retention-days: 30

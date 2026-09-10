@@ -1,0 +1,31 @@
+{
+  "version": "R11",
+  "generatedAt": "2026-09-09",
+  "entity": {
+    "websiteName": "ร้านรับซื้อโน๊ตบุ๊ค.com",
+    "operatorLegalName": "บริษัท อำพล เทรดดิ้ง จำกัด",
+    "physicalStoreName": "ร้านอำพล เทรดดิ้ง",
+    "storeLocation": "อุบลราชธานี",
+    "phone": "0642579353",
+    "line": "@webuy"
+  },
+  "proofRules": [
+    "Only display business identity, address, phone, LINE, social profiles and map references already declared in SITE configuration.",
+    "Do not invent awards, years in business, review counts, customer counts, licenses, branches or nationwide storefronts.",
+    "A preliminary valuation is not a final purchase price; final price requires inspection of the actual device.",
+    "Only Ubon Ratchathani is represented as the physical storefront location.",
+    "Editorial and valuation content is attributed to the operating business/team, not to an invented individual expert."
+  ],
+  "evaluationProcess": [
+    "ยืนยันรุ่นและสเปกจากข้อมูลที่ลูกค้าส่ง",
+    "ตรวจรูปสภาพ จอ บอดี้ แบตเตอรี่ พอร์ต บานพับ และอาการที่แจ้ง",
+    "ให้กรอบราคาเบื้องต้นจากข้อมูลที่มี",
+    "ตรวจเครื่องจริงก่อนยืนยันราคาสุดท้ายและตกลงซื้อขาย"
+  ],
+  "editorialPrinciples": [
+    "แยกข้อมูลเชิงความรู้จากหน้ารับซื้อ/ประเมินราคาให้ชัด",
+    "ไม่รับรองราคาสุดท้ายจากชื่อรุ่นหรือรูปเพียงอย่างเดียว",
+    "ไม่สร้างสาขาหรือพื้นที่ให้บริการที่ไม่มีหลักฐานการดำเนินงานจริง",
+    "ระบุข้อจำกัดเมื่อข้อมูลเครื่องไม่ครบหรือยังไม่ได้ตรวจเครื่องจริง"
+  ]
+}

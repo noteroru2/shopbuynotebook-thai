@@ -1,0 +1,13 @@
+{
+  "version": "R13-2026-09-10",
+  "reason": "Executable R6 gate found alienware-m16 in the authority inventory without a lifecycle row. Keep the original R6 manifest auditable and add this explicit release-gate classification.",
+  "items": [
+    {
+      "slug": "alienware-m16",
+      "brand": "dell",
+      "type": "model",
+      "action": "MIGRATE_LATER",
+      "evidence": "High-value Alienware model already referenced by the Dell authority map; explicit classification required by executable inventory gate. No stable owner-level click evidence justifies moving its current URL during R13."
+    }
+  ]
+}

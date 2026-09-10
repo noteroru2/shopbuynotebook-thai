@@ -1,87 +1,61 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTAButtons from '../components/CTAButtons.astro';
-import PartnerSites from '../components/PartnerSites.astro';
-import TrustBadges from '../components/TrustBadges.astro';
-import { SITE, absoluteUrl } from '../lib/seo';
+import TrustProof from '../components/TrustProof.astro';
+import { SITE, absoluteUrl, breadcrumbListSchema } from '../lib/seo';
+import trustProof from '../data/rebuild-v2-trust-proof.json';
 
-const title = 'เกี่ยวกับเรา | ร้านรับซื้อโน๊ตบุ๊ค.com';
-const description =
-  'รู้จักร้านรับซื้อโน๊ตบุ๊ค.com — รับซื้อโน๊ตบุ๊คมือสองหลายยี่ห้อ ประเมินฟรี ตอบไว จ่ายเงินสดหรือโอนชำระเงิน เน้นความชัดเจนและปลอดภัย';
+const title = 'เกี่ยวกับร้านรับซื้อโน๊ตบุ๊ค.com และผู้ดำเนินเว็บไซต์';
+const description = 'ข้อมูลผู้ดำเนินเว็บไซต์ หน้าร้านจริง ช่องทางติดต่อ หลักการประเมินราคา และแนวทางจัดทำข้อมูลของร้านรับซื้อโน๊ตบุ๊ค.com';
 const canonical = absoluteUrl('/เกี่ยวกับเรา/');
+const schemas = [breadcrumbListSchema([
+  { name: 'หน้าแรก', url: absoluteUrl('/') },
+  { name: 'เกี่ยวกับเรา', url: canonical },
+])];
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical} includeLocalBusiness={true}>
-  <section class="mx-auto w-full max-w-6xl px-4 pt-10">
-    <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">เกี่ยวกับ ร้านรับซื้อโน๊ตบุ๊ค.com</h1>
-    <p class="mt-4 text-base leading-relaxed text-slate-600">
-      เราเป็นทีมรับซื้อโน๊ตบุ๊คมือสองที่โฟกัส “ความเร็ว + ความชัดเจน” ลูกค้าส่วนใหญ่ต้องการคำตอบง่าย ๆ: เครื่องรุ่นนี้ขายได้ไหม
-      ได้ราคาเท่าไร และจบงานอย่างปลอดภัย. เราจึงออกแบบขั้นตอนให้สั้น: ส่งรูป → ประเมิน → นัดรับ/ส่ง → ชำระเงินหลังตรวจรับและตกลงราคา
-    </p>
-    <p class="mt-4 text-base leading-relaxed text-slate-600">
-      สิ่งที่เรายึดคือการประเมินแบบตรงไปตรงมา อิงจากรุ่น สเปก สภาพ และราคาประเมินอ้างอิงมือสองในช่วงนั้น. ถ้าเครื่องมีอาการเสีย
-      เราจะอธิบายผลกระทบต่อราคาตามต้นทุนซ่อมหรือความเสี่ยง ไม่ใช้คำกำกวมเพื่อกดราคา. เป้าหมายคือให้คุณตัดสินใจได้ง่าย
-      และรู้สึกสบายใจตลอดการขาย
-    </p>
-    <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-lg font-extrabold text-slate-900">ผู้ดำเนินเว็บไซต์และที่อยู่จดทะเบียน</h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        เว็บไซต์ <span class="font-semibold text-slate-800">{SITE.name}</span> ให้บริการภายใต้{' '}
-        <span class="font-semibold text-slate-800">{SITE.companyLegalName}</span>
-      </p>
-      <p class="mt-3 text-sm leading-relaxed text-slate-700">{SITE.companyRegisteredAddress}</p>
-      <p class="mt-4 text-sm text-slate-600">
-        อยากรู้ว่าประเมินราคา จ่ายเงิน และตรวจเครื่องจริงทำยังไงแบบไม่เป็นทางการเกินไป อ่านได้ที่หน้า{' '}
-        <a class="font-semibold text-emerald-700 underline underline-offset-4 hover:text-emerald-800" href="/ขั้นตอนและเงื่อนไขการให้บริการ/">ขั้นตอนและเงื่อนไขการให้บริการ</a>
-      </p>
-    </div>
-    <div class="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-6">
-      <h2 class="text-lg font-extrabold text-slate-900">หน้าร้านจริง ({SITE.physicalStoreName})</h2>
-      <p class="mt-2 text-sm leading-relaxed text-slate-600">
-        นำทางที่จอดหรือเข้ามาติดต่อได้ผ่าน Google Maps — แนะนำแจ้งนัดผ่าน LINE {SITE.lineHandle} ล่วงหน้าเพื่อความสะดวก
-      </p>
-      <a
-        class="mt-4 inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-5 py-3 text-sm font-extrabold text-white hover:bg-emerald-700"
-        href={SITE.googleMapsUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        เปิด Google Maps — {SITE.physicalStoreName}
-      </a>
-    </div>
-    <div class="mt-6">
-      <CTAButtons />
-    </div>
-  </section>
-
-  <section class="mx-auto w-full max-w-6xl px-4 py-12">
-    <h2 class="text-2xl font-extrabold tracking-tight text-slate-900">บริการอื่นในเครือ</h2>
-    <p class="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
-      นอกจากบริการรับซื้อโน๊ตบุ๊ค เรายังมีเว็บไซต์ในเครือที่ดูแลสินค้าไอทีประเภทอื่น เช่น คอมพิวเตอร์ iPhone iPad MacBook กล้อง เลนส์
-      และบริการจำนำสินค้าไอทีในบางพื้นที่ เพื่อให้ลูกค้าเลือกช่องทางที่เหมาะกับสินค้าที่ต้องการขาย
-    </p>
-    <div class="mt-6">
-      <PartnerSites variant="section" hideHeading limit={6} />
-    </div>
-    <p class="mt-4 text-sm">
-      <a class="font-semibold text-emerald-700 underline underline-offset-4 hover:text-emerald-800" href="/เว็บไซต์ในเครือ/">
-        ดูเว็บไซต์ในเครือทั้งหมด
-      </a>
+<BaseLayout title={title} description={description} canonical={canonical} includeLocalBusiness={true} schemas={schemas}>
+  <section class="mx-auto w-full max-w-6xl px-4 py-12 sm:py-16">
+    <p class="text-sm font-extrabold text-emerald-700">ข้อมูลผู้ดำเนินเว็บไซต์</p>
+    <h1 class="mt-2 max-w-4xl text-4xl font-black tracking-tight text-slate-950 sm:text-5xl">ร้านรับซื้อโน๊ตบุ๊ค.com ดำเนินการโดยใคร</h1>
+    <p class="mt-5 max-w-3xl text-base leading-8 text-slate-700">
+      เว็บไซต์นี้ดำเนินการโดย {SITE.companyLegalName} และเชื่อมโยงกับหน้าร้านจริง {SITE.physicalStoreName} ในจังหวัดอุบลราชธานี
+      ข้อมูลชื่อธุรกิจ ที่อยู่ โทรศัพท์ LINE และ Google Maps ใช้จากชุดข้อมูลกลางของเว็บไซต์เพื่อลดความคลาดเคลื่อนระหว่างหน้าเว็บ
     </p>
   </section>
 
-  <TrustBadges />
+  <TrustProof />
 
-  <section class="mx-auto w-full max-w-6xl px-4 py-14">
-    <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-sm sm:p-10">
-      <h2 class="text-2xl font-bold tracking-tight text-slate-900">อยากเริ่มขายเลย?</h2>
-      <p class="mt-3 text-sm leading-relaxed text-slate-600">
-        กลับไปหน้า <a class="underline" href="/">รับซื้อโน๊ตบุ๊ค</a> หรือไปที่หน้า <a class="underline" href="/ติดต่อเรา/">ติดต่อเรา</a>
-      </p>
-      <div class="mt-6">
-        <CTAButtons />
+  <section id="หลักการ" class="mx-auto w-full max-w-6xl px-4 py-12">
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div>
+        <p class="text-sm font-extrabold text-sky-700">หลักการจัดทำข้อมูล</p>
+        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-950">แยกข้อมูลความรู้จากหน้ารับซื้อให้ชัด</h2>
+        <ul class="mt-6 space-y-4 text-sm leading-7 text-slate-700">
+          {trustProof.editorialPrinciples.map((item) => <li class="rounded-2xl border border-slate-200 bg-white p-4">{item}</li>)}
+        </ul>
+      </div>
+      <div>
+        <p class="text-sm font-extrabold text-amber-700">ข้อจำกัดของการประเมิน</p>
+        <h2 class="mt-2 text-3xl font-black tracking-tight text-slate-950">ไม่ยืนยันราคาสุดท้ายก่อนตรวจเครื่องจริง</h2>
+        <div class="mt-6 rounded-3xl border border-amber-200 bg-amber-50/70 p-6 text-sm leading-7 text-slate-700">
+          การประเมินจากรูป รุ่น หรือสเปกเป็นกรอบเบื้องต้น เพราะยังอาจมีรายละเอียดที่มองไม่เห็น เช่น พอร์ตผิดปกติเป็นครั้งคราว จอมีเส้นเมื่อใช้งานนาน แบตบวมด้านใน หรือสเปกจริงไม่ตรงกับข้อมูลที่แจ้ง ราคาสุดท้ายจึงยืนยันหลังตรวจเครื่องจริงและตกลงซื้อขายเท่านั้น
+        </div>
+        <div class="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-6 text-sm leading-7 text-slate-700">
+          เว็บไซต์ไม่อ้างว่ามีหน้าร้านหลายจังหวัด การกล่าวถึงพื้นที่อื่นหมายถึงพื้นที่ที่อาจให้บริการผ่านการส่งข้อมูล นัดหมาย หรือจัดส่งตามเงื่อนไขที่ทีมงานยืนยัน โดยหน้าร้านจริงอยู่ที่อุบลราชธานี
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto w-full max-w-6xl px-4 pb-14">
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
+      <h2 class="text-2xl font-black text-slate-950">ตรวจสอบข้อมูลร้านหรือเริ่มประเมิน</h2>
+      <p class="mt-3 text-sm leading-7 text-slate-600">ดูตำแหน่งหน้าร้านผ่าน Google Maps หรือส่งรุ่น สเปก และรูปสภาพผ่าน LINE ก่อนตัดสินใจขายได้</p>
+      <div class="mt-6 flex flex-wrap gap-4">
+        <a class="rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-extrabold text-slate-900" href={SITE.googleMapsUrl} target="_blank" rel="noopener noreferrer">เปิด Google Maps</a>
+        <CTAButtons primaryText="ส่งข้อมูลเพื่อประเมิน" secondaryText="โทรสอบถาม" />
       </div>
     </div>
   </section>
 </BaseLayout>
-

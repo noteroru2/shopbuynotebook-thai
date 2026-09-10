@@ -6,9 +6,9 @@ const dist = path.join(root, 'dist');
 const expectedHost = 'xn--42cn4aobed0eb6hubj4es0m5dhvd.com';
 const legacyHomepagePath = '/รับซื้อโน๊ตบุ๊ค/';
 const expectedHomepageTitle =
-  'รับซื้อโน๊ตบุ๊ค ประเมินตามรุ่น สเปก และสภาพจริง | ร้านรับซื้อโน๊ตบุ๊ค.com';
+  'รับซื้อโน๊ตบุ๊คมือสอง ประเมินตามรุ่น สเปก และสภาพจริง | ร้านรับซื้อโน๊ตบุ๊ค.com';
 const expectedHomepageDescription =
-  'รับซื้อโน๊ตบุ๊ค ส่งรูป รุ่น สเปก และสภาพเพื่อประเมินเบื้องต้น ราคาสุดท้ายยืนยันหลังตรวจเครื่อง มีหน้าร้านอุบลราชธานี จังหวัดอื่นนัดหรือจัดส่งตามเงื่อนไข';
+  'รับซื้อโน๊ตบุ๊คมือสอง ส่งรุ่น สเปก รูปสภาพ แบตเตอรี่ และอุปกรณ์เพื่อประเมินเบื้องต้น ราคาสุดท้ายยืนยันหลังตรวจเครื่องจริง หน้าร้านอยู่จังหวัดอุบลราชธานี';
 const wranglerConfigPath = path.join(root, 'wrangler.toml');
 
 if (!fs.existsSync(dist)) {
@@ -93,8 +93,8 @@ if (!fs.existsSync(wranglerConfigPath)) {
   if (!/^\s*directory\s*=\s*"dist"\s*$/m.test(wranglerConfig)) {
     errors.push('wrangler.toml: static assets directory must be dist');
   }
-  if (/^\s*run_worker_first\s*=\s*true\s*$/m.test(wranglerConfig)) {
-    errors.push('wrangler.toml: run_worker_first must not be enabled');
+  if (!/^\s*run_worker_first\s*=\s*true\s*$/m.test(wranglerConfig)) {
+    errors.push('wrangler.toml: run_worker_first must be enabled for R13 production redirects');
   }
 }
 
@@ -107,7 +107,7 @@ if (fs.existsSync(redirectsFile)) {
     .filter((line) => line && !line.startsWith('#'));
   const legacyRules = redirectLines.filter((line) => line.split(/\s+/)[0] === legacyHomepagePath);
   if (legacyRules.length !== 0) {
-    errors.push(`${legacyHomepagePath}: native redirect rule must be removed; selective Worker owns it`);
+    errors.push(`${legacyHomepagePath}: native redirect rule must be removed; R13 Worker manifest owns it`);
   }
 }
 
@@ -210,23 +210,28 @@ if (homepage?.canonical !== 'https://ร้านรับซื้อโน๊�
   errors.push(`/: unexpected canonical ${homepage?.canonical}`);
 }
 if (homepage) {
-  const processSections = homepage.html.match(/\bdata-home-process(?:\s|>)/g) || [];
-  const processCards = homepage.html.match(/\bdata-home-process-card(?:\s|>)/g) || [];
-  if (processSections.length !== 1) {
-    errors.push(`/: expected one marked process section, found ${processSections.length}`);
+  const requiredOwnerLinks = [
+    '/ประเมินราคา/',
+    '/แบรนด์/',
+    '/รุ่น/',
+    '/อาการ/',
+    '/พื้นที่/',
+    '/ขายโน๊ตบุ๊ค/',
+  ];
+  for (const requiredPath of requiredOwnerLinks) {
+    if (!homepage.hrefs.includes(requiredPath)) {
+      errors.push(`/: missing V2 owner link ${requiredPath}`);
+    }
   }
-  if (processCards.length !== 4) {
-    errors.push(`/: expected four marked process cards, found ${processCards.length}`);
+  const h1Text = value(homepage.html, /<h1\b[^>]*>([\s\S]*?)<\/h1>/i).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  if (!/รับซื้อโน๊ตบุ๊คมือสอง/i.test(h1Text) || !/รุ่น\s*สเปก\s*และสภาพจริง/i.test(h1Text)) {
+    errors.push('/: homepage H1 must retain V2 second-hand notebook and evidence-based valuation intent');
   }
-  const processHeadingPatterns = [/4 ขั้นตอน/i, /4 ขั้น(?!ตอน)/i, /ขั้นตอนขาย/i, /ขายโน๊ตบุ๊คกับเรา/i];
-  const headingTexts = [...homepage.html.matchAll(/<h[2-3]\b[^>]*>([\s\S]*?)<\/h[2-3]>/gi)].map(
-    (match) => match[1].replace(/<[^>]+>/g, '').trim(),
-  );
-  const processHeadings = headingTexts.filter((heading) =>
-    processHeadingPatterns.some((pattern) => pattern.test(heading)),
-  );
-  if (processHeadings.length !== 1) {
-    errors.push(`/: expected one process heading, found ${processHeadings.length}`);
+  if (!homepage.html.includes('ส่งรูปและสเปกเพื่อประเมิน')) {
+    errors.push('/: homepage primary valuation CTA is missing');
+  }
+  if (!homepage.html.includes('เครื่องชื่อรุ่นเหมือนกัน อาจได้ราคาไม่เท่ากัน')) {
+    errors.push('/: homepage valuation-factor section is missing');
   }
   for (const phrase of ['ให้ราคาสูงสุด', 'รับถึงที่ทุกจังหวัด']) {
     if (homepage.html.includes(phrase)) errors.push(`/: prohibited homepage phrase ${phrase}`);
