@@ -1,4 +1,4 @@
-import redirectManifest from "../src/data/rebuild-v2-production-redirects.json";
+import redirectManifest from "../src/data/rebuild-v2-production-redirects.json" with { type: "json" };
 
 const APEX_HOST = "xn--42cn4aobed0eb6hubj4es0m5dhvd.com";
 const REDIRECTS = new Map(
