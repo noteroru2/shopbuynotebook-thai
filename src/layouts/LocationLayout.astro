@@ -21,7 +21,13 @@ const { title, description, canonical, ogImage, noindex, breadcrumbs, faqs = [],
 
 const normalizePath = (value: string) => {
   if (!value) return '/';
-  const withLeading = value.startsWith('/') ? value : `/${value}`;
+  let decoded = value;
+  try {
+    decoded = decodeURI(value);
+  } catch {
+    decoded = value;
+  }
+  const withLeading = decoded.startsWith('/') ? decoded : `/${decoded}`;
   return withLeading === '/' ? '/' : `${withLeading.replace(/\/+$/, '')}/`;
 };
 
