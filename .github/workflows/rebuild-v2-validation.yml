@@ -47,7 +47,10 @@ jobs:
         run: npm run build
 
       - name: Validate SEO
-        run: npm run validate:seo
+        shell: bash
+        run: |
+          set -o pipefail
+          npm run validate:seo 2>&1 | tee validate-seo.log
 
       - name: Verify Worker routing source
         run: npm run validate:worker-routing
@@ -61,6 +64,7 @@ jobs:
         with:
           name: rebuild-v2-validation-${{ github.run_id }}
           path: |
+            validate-seo.log
             dist/sitemap*.xml
             src/data/rebuild-v2-index-budget.json
             src/data/rebuild-v2-production-redirects.json
