@@ -47,9 +47,17 @@ const {
   lcpImageSizes,
 } = Astro.props;
 
-const normalizedPath = Astro.url.pathname === '/'
+const decodePathname = (value: string) => {
+  try {
+    return decodeURI(value);
+  } catch {
+    return value;
+  }
+};
+const decodedPathname = decodePathname(Astro.url.pathname);
+const normalizedPath = decodedPathname === '/'
   ? '/'
-  : `${Astro.url.pathname.replace(/\/+$/, '')}/`;
+  : `${decodedPathname.replace(/\/+$/, '')}/`;
 // R13 releases the valuation owner while its page source still carries the
 // earlier staging flag. This exact-path override is intentionally narrow.
 const effectiveNoindex = normalizedPath === '/ประเมินราคา/' ? false : noindex;
