@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import redirectManifest from '../src/data/rebuild-v2-production-redirects.json' with { type: 'json' };
 
 const root = process.cwd();
 const base = (process.env.PRODUCTION_BASE_URL || 'https://xn--42cn4aobed0eb6hubj4es0m5dhvd.com').replace(/\/$/, '');
@@ -8,6 +9,7 @@ const phrase = 'ยอดนิยมยอดนิยม';
 const legacyPath = '/รับซื้อโน๊ตบุ๊ค/';
 const affectedCsv = path.join(root, 'docs', 'batch-2a-2-duplicate-wording-remediation', 'affected-pages.csv');
 const artifactDir = path.join(root, 'qa-artifacts');
+const redirectMap = new Map(redirectManifest.redirects.map(({ source, target }) => [source, target]));
 
 function parseCsv(text) {
   const rows = [];
@@ -41,10 +43,15 @@ function capture(html, regex) {
   return html.match(regex)?.[1]?.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim() ?? '';
 }
 
+function normalizePath(pathname) {
+  if (pathname === '/') return '/';
+  return pathname.endsWith('/') ? pathname : `${pathname}/`;
+}
+
 async function request(url, options = {}) {
   return fetch(url, {
     redirect: options.redirect ?? 'manual',
-    headers: { 'cache-control': 'no-cache', 'user-agent': 'Batch-2A.2-GitHub-Actions-QA' },
+    headers: { 'cache-control': 'no-cache', 'user-agent': 'R13-GitHub-Actions-Production-QA' },
   });
 }
 
@@ -68,7 +75,7 @@ async function pageResult(url) {
     meta_pass: Boolean(meta) && !meta.includes(phrase),
     h1_pass: h1Count === 1,
     canonical_pass: canonicalPass,
-    robots_pass: !/\bnoindex\b/i.test(robots),
+    robots_value: robots,
     asset_pass: true,
     notes: '',
     html,
@@ -108,10 +115,10 @@ await coreCheck('Legacy redirect', `${base}${encodeURI(legacyPath)}`, 301, {
     return Boolean(location) && new URL(location).hostname === new URL(base).hostname;
   },
 });
-const legacyQuery = await coreCheck('Legacy query redirect', `${base}${encodeURI(legacyPath)}?source=batch-2a2-qa`, 301, {
+const legacyQuery = await coreCheck('Legacy query redirect', `${base}${encodeURI(legacyPath)}?source=r13-qa`, 301, {
   assert: response => {
     const location = response.headers.get('location');
-    return Boolean(location) && new URL(location).searchParams.get('source') === 'batch-2a2-qa';
+    return Boolean(location) && new URL(location).searchParams.get('source') === 'r13-qa';
   },
 });
 if (legacyQuery.response.status === 301) {
@@ -131,6 +138,36 @@ await coreCheck('WWW canonical', `${wwwBase}/`, 200, {
   },
 });
 
+const redirectRows = [];
+for (const { source, target, batch } of redirectManifest.redirects) {
+  const sourceUrl = `${base}${encodeURI(source)}?qa=r13&source=${encodeURIComponent(batch)}`;
+  try {
+    const response = await request(sourceUrl);
+    const location = response.headers.get('location') || '';
+    const locationUrl = location ? new URL(location, base) : null;
+    const statusPass = response.status === 301;
+    const targetPass = Boolean(locationUrl)
+      && locationUrl.hostname === new URL(base).hostname
+      && normalizePath(decodeURI(locationUrl.pathname)) === normalizePath(target);
+    const queryPass = Boolean(locationUrl)
+      && locationUrl.searchParams.get('qa') === 'r13'
+      && locationUrl.searchParams.get('source') === batch;
+    let targetStatus = 0;
+    let oneHopPass = false;
+    if (locationUrl) {
+      const targetResponse = await request(locationUrl.toString());
+      targetStatus = targetResponse.status;
+      oneHopPass = targetStatus === 200;
+    }
+    const pass = statusPass && targetPass && queryPass && oneHopPass;
+    redirectRows.push({ source, target, batch, status: response.status, location, target_status: targetStatus, status_pass: statusPass, target_pass: targetPass, query_pass: queryPass, one_hop_pass: oneHopPass, final_verdict: pass ? 'PASS' : 'FAIL' });
+    if (!pass) failures.push(`R13 redirect failed: ${source} -> ${target} (HTTP ${response.status}, Location ${location || 'missing'}, target HTTP ${targetStatus})`);
+  } catch (error) {
+    redirectRows.push({ source, target, batch, status: 0, location: '', target_status: 0, status_pass: false, target_pass: false, query_pass: false, one_hop_pass: false, final_verdict: 'FAIL' });
+    failures.push(`R13 redirect request failed: ${source} (${error instanceof Error ? error.message : String(error)})`);
+  }
+}
+
 const assets = [];
 try {
   assets.push(await verifyAsset(`${base}/`, home.body, /<link[^>]+rel=["']stylesheet["'][^>]+href=["']([^"']+)/i, 'CSS', 'text/css'));
@@ -145,21 +182,41 @@ const affected = parseCsv(await fs.readFile(affectedCsv, 'utf8'))
 if (affected.length !== 28) failures.push(`Expected 28 affected production pages, found ${affected.length} in audit CSV`);
 const pageRows = [];
 for (const row of affected) {
-  const productionUrl = `${base}${new URL(row.url).pathname}`;
+  const pathname = normalizePath(decodeURI(new URL(row.url).pathname));
+  const productionUrl = `${base}${encodeURI(pathname)}`;
+  const redirectTarget = redirectMap.get(pathname);
+
+  if (redirectTarget) {
+    const redirectEvidence = redirectRows.find(item => item.source === pathname);
+    const pass = redirectEvidence?.final_verdict === 'PASS';
+    pageRows.push({
+      url: productionUrl,
+      lifecycle: 'R13_REDIRECT',
+      http_status: redirectEvidence?.status ?? 0,
+      duplicate_phrase_count: 'N/A',
+      title_pass: 'N/A', meta_pass: 'N/A', h1_pass: 'N/A', canonical_pass: 'N/A',
+      robots_value: 'N/A', asset_pass: true,
+      notes: `301 -> ${redirectTarget}`,
+      final_verdict: pass ? 'PASS' : 'FAIL',
+    });
+    if (!pass) failures.push(`Affected legacy page redirect failed: ${productionUrl}`);
+    continue;
+  }
+
   try {
     const result = await pageResult(productionUrl);
     const pass = result.http_status === 200
       && result.duplicate_phrase_count === 0
       && result.title_pass && result.meta_pass && result.h1_pass
-      && result.canonical_pass && result.robots_pass
+      && result.canonical_pass
       && !/<!doctype html>\s*<title>[^<]*(?:error|not found)/i.test(result.html);
-    pageRows.push({ ...result, html: undefined, final_verdict: pass ? 'PASS' : 'FAIL' });
-    if (!pass) failures.push(`Affected page failed: ${productionUrl}`);
+    pageRows.push({ ...result, html: undefined, lifecycle: /\bnoindex\b/i.test(result.robots_value) ? 'HOLD_NOINDEX' : 'INDEXABLE', final_verdict: pass ? 'PASS' : 'FAIL' });
+    if (!pass) failures.push(`Affected live page failed duplicate/content integrity check: ${productionUrl}`);
   } catch (error) {
     pageRows.push({
-      url: productionUrl, http_status: 0, duplicate_phrase_count: -1,
+      url: productionUrl, lifecycle: 'REQUEST_ERROR', http_status: 0, duplicate_phrase_count: -1,
       title_pass: false, meta_pass: false, h1_pass: false, canonical_pass: false,
-      robots_pass: false, asset_pass: false,
+      robots_value: '', asset_pass: false,
       notes: error instanceof Error ? error.message : String(error), final_verdict: 'FAIL',
     });
     failures.push(`Affected page request failed: ${productionUrl}`);
@@ -168,20 +225,24 @@ for (const row of affected) {
 
 await fs.writeFile(path.join(artifactDir, 'core-http-qa.csv'),
   csv(core, ['label','url','status','pass','location']), 'utf8');
+await fs.writeFile(path.join(artifactDir, 'redirect-http-qa.csv'),
+  csv(redirectRows, ['source','target','batch','status','location','target_status','status_pass','target_pass','query_pass','one_hop_pass','final_verdict']), 'utf8');
 await fs.writeFile(path.join(artifactDir, 'production-qa.csv'),
-  csv(pageRows, ['url','http_status','duplicate_phrase_count','title_pass','meta_pass','h1_pass','canonical_pass','robots_pass','asset_pass','notes','final_verdict']), 'utf8');
+  csv(pageRows, ['url','lifecycle','http_status','duplicate_phrase_count','title_pass','meta_pass','h1_pass','canonical_pass','robots_value','asset_pass','notes','final_verdict']), 'utf8');
 await fs.writeFile(path.join(artifactDir, 'asset-qa.csv'),
   csv(assets, ['label','url','status','content_type']), 'utf8');
 
 const passedPages = pageRows.filter(row => row.final_verdict === 'PASS').length;
+const passedRedirects = redirectRows.filter(row => row.final_verdict === 'PASS').length;
 const summary = [
   '## Cloudflare Production Deployment',
   '',
   `- Commit SHA: \`${process.env.GITHUB_SHA || 'local-validation'}\``,
   '- Build and SEO validation: PASS',
   `- Core HTTP QA: ${core.every(row => row.pass) ? 'PASS' : 'FAIL'}`,
-  `- Batch 2A.2 affected pages: ${passedPages}/${pageRows.length} PASS`,
-  `- Production duplicate phrase count: ${pageRows.reduce((sum, row) => sum + Math.max(0, Number(row.duplicate_phrase_count)), 0)}`,
+  `- R13 redirects: ${passedRedirects}/${redirectRows.length} PASS`,
+  `- Batch 2A.2 affected URLs under current lifecycle: ${passedPages}/${pageRows.length} PASS`,
+  `- Production duplicate phrase count on live 200 pages: ${pageRows.reduce((sum, row) => sum + Math.max(0, Number(row.duplicate_phrase_count) || 0), 0)}`,
   '- Known warning: WWW RETURNS 200 WITH NON-WWW CANONICAL',
   `- Final verdict: ${failures.length ? 'FAIL' : 'PASS WITH WARNING'}`,
   '',
@@ -193,4 +254,4 @@ if (failures.length) {
   for (const failure of failures) console.error(`QA failure: ${failure}`);
   process.exit(1);
 }
-console.log(`Production QA passed: core checks and ${passedPages}/${pageRows.length} affected pages.`);
+console.log(`Production QA passed: core checks, ${passedRedirects}/${redirectRows.length} R13 redirects, and ${passedPages}/${pageRows.length} affected URLs.`);
