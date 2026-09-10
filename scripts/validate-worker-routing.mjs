@@ -29,13 +29,20 @@ async function run(url, assetStatus = 200) {
   return { request, response, forwarded };
 }
 
+function expectedLocation(target, query = "") {
+  const destination = new URL(`https://${APEX_HOST}/`);
+  destination.pathname = target;
+  destination.search = query;
+  return destination.toString();
+}
+
 async function expectRedirect(source, target, query = "") {
   const input = `https://${APEX_HOST}${source}${query}`;
   const { response, forwarded } = await run(input);
   assert.equal(response.status, 301, `${input} should return 301`);
   assert.equal(
     response.headers.get("location"),
-    `https://${APEX_HOST}${target}${query}`,
+    expectedLocation(target, query),
     `${input} should preserve the declared one-hop target and query string`,
   );
   assert.equal(forwarded.length, 0, `${source} redirect must not call the assets binding`);
