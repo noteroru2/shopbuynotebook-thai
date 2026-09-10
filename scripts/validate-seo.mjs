@@ -93,8 +93,8 @@ if (!fs.existsSync(wranglerConfigPath)) {
   if (!/^\s*directory\s*=\s*"dist"\s*$/m.test(wranglerConfig)) {
     errors.push('wrangler.toml: static assets directory must be dist');
   }
-  if (/^\s*run_worker_first\s*=\s*true\s*$/m.test(wranglerConfig)) {
-    errors.push('wrangler.toml: run_worker_first must not be enabled');
+  if (!/^\s*run_worker_first\s*=\s*true\s*$/m.test(wranglerConfig)) {
+    errors.push('wrangler.toml: run_worker_first must be enabled for R13 production redirects');
   }
 }
 
