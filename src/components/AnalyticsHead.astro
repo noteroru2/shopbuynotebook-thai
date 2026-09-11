@@ -1,0 +1,52 @@
+---
+const rawGtmId = import.meta.env.PUBLIC_GTM_CONTAINER_ID?.trim() ?? '';
+const rawGa4Id = import.meta.env.PUBLIC_GA4_MEASUREMENT_ID?.trim() ?? '';
+
+const gtmId = /^GTM-[A-Z0-9]+$/i.test(rawGtmId) ? rawGtmId.toUpperCase() : '';
+const ga4Id = /^G-[A-Z0-9]+$/i.test(rawGa4Id) ? rawGa4Id.toUpperCase() : '';
+// A GTM container can deliver GA4 itself. Prefer it when both variables exist
+// so the same browser event cannot be sent twice.
+// The first-party collector is the default. Google remains optional and is
+// only loaded when an explicit, valid ID is supplied at build time.
+const provider = gtmId ? 'gtm' : ga4Id ? 'ga4' : 'first_party';
+const tagId = gtmId || ga4Id;
+---
+
+<meta name="analytics-provider" content={provider} />
+
+{
+  tagId && (
+    <script is:inline define:vars={{ tagId, provider }}>
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
+      // Consent Mode defaults must run before GTM/gtag loads. Advertising
+      // signals stay disabled because this site measures service enquiries.
+      window.gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500,
+      });
+      window.gtag('set', {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false,
+      });
+
+      if (provider === 'gtm') {
+        window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+      } else {
+        window.gtag('js', new Date());
+        window.gtag('config', tagId, {
+          send_page_view: true,
+          allow_google_signals: false,
+          allow_ad_personalization_signals: false,
+        });
+      }
+    </script>
+  )
+}
+
+{provider === 'gtm' && <script is:inline async src={`https://www.googletagmanager.com/gtm.js?id=${gtmId}`}></script>}
+{provider === 'ga4' && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>}

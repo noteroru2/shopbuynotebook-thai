@@ -16,7 +16,7 @@ const nav = [
 const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href));
 ---
 
-<header class="sticky top-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur-xl shadow-sm transition-all duration-300">
+<header data-cta-location="header" class="sticky top-0 z-50 border-b border-white/20 bg-white/70 backdrop-blur-xl shadow-sm transition-all duration-300">
   <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
     <a href="/" class="group flex min-w-0 items-center gap-3 transition-transform duration-300 hover:scale-105">
       <span class="rounded-2xl bg-slate-900 p-2 shadow-md ring-1 ring-slate-900/10">
@@ -73,7 +73,7 @@ const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.s
       <a class="inline-flex min-w-0 items-center justify-center rounded-xl bg-[#06C755] px-3 py-2 text-xs font-extrabold text-white shadow-sm transition-transform active:scale-95" href={SITE.lineUrl} target="_blank" rel="noopener noreferrer" aria-label={`LINE ${SITE.lineHandle}`}>
         <span class="truncate">LINE</span>
       </a>
-      <details class="group relative">
+      <details data-mobile-menu class="group relative">
         <summary class="list-none cursor-pointer rounded-xl border border-slate-200 bg-white px-4 py-2 text-xs font-bold text-slate-900 shadow-sm transition-colors hover:bg-slate-50 active:scale-95" aria-label="เปิดเมนู">เมนู</summary>
         <div class="absolute right-0 mt-3 w-64 origin-top-right scale-95 rounded-2xl border border-white/40 bg-white/90 p-3 opacity-0 shadow-xl backdrop-blur-xl transition-all duration-200 group-open:scale-100 group-open:opacity-100">
           <nav aria-label="เมนูหลัก (มือถือ)" class="flex flex-col gap-1">

@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import StickyMobileCTA from '../components/StickyMobileCTA.astro';
 import JsonLd from '../components/JsonLd.astro';
+import AnalyticsHead from '../components/AnalyticsHead.astro';
+import AnalyticsConsent from '../components/AnalyticsConsent.astro';
 import { absoluteUrl, absoluteSrcset, localBusinessSchema } from '../lib/seo';
 import { organizationSchema, webPageSchema, webSiteSchema } from '../lib/schema';
 import { SITE } from '../config/site';
@@ -74,6 +76,7 @@ const isArticle = !!article;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content={description} />
+    <AnalyticsHead />
     <link rel="canonical" href={canonical} />
     {effectiveNoindex && <meta name="robots" content="noindex,nofollow" />}
 
@@ -143,5 +146,7 @@ const isArticle = !!article;
     </main>
     <Footer />
     <StickyMobileCTA />
+    <AnalyticsConsent />
+    <script src="../scripts/conversion-measurement.ts"></script>
   </body>
 </html>

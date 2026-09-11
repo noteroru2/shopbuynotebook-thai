@@ -5,16 +5,18 @@ interface Props {
   primaryText?: string;
   secondaryText?: string;
   secondaryHref?: string;
+  ctaLocation?: string;
 }
 
 const {
   primaryText = `แอดไลน์ ${SITE.lineHandle} ส่งรูปประเมินราคา`,
   secondaryText = `โทร`,
   secondaryHref = `tel:${SITE.telephone}`,
+  ctaLocation = 'content_cta',
 } = Astro.props;
 ---
 
-<div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+<div data-cta-location={ctaLocation} class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
   <a
     class="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#06C755] px-5 py-3 text-base font-semibold text-white shadow-lg shadow-[#06C755]/30 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105 hover:shadow-xl hover:shadow-[#06C755]/40 focus-visible:outline-none"
     href={SITE.lineUrl}
@@ -32,4 +34,3 @@ const {
     {secondaryText}{secondaryHref.startsWith('tel:') ? ` ${SITE.telephone}` : ''}
   </a>
 </div>
-

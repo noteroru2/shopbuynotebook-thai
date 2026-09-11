@@ -81,6 +81,12 @@ jobs:
       - name: Validate SEO
         run: npm run validate:seo
 
+      - name: Validate conversion measurement
+        run: npm run validate:analytics
+
+      - name: Validate Worker routing and analytics endpoint
+        run: npm run validate:worker-routing
+
       - name: Enforce duplicate wording gate
         shell: bash
         run: |
@@ -118,4 +124,3 @@ jobs:
           path: qa-artifacts/
           if-no-files-found: error
           retention-days: 30
-

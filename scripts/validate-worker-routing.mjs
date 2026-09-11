@@ -29,6 +29,20 @@ async function run(url, assetStatus = 200) {
   return { request, response, forwarded };
 }
 
+async function runAnalytics(payload, { origin = `https://${APEX_HOST}`, method = "POST" } = {}) {
+  const points = [];
+  const request = new Request(`https://${APEX_HOST}/api/analytics`, {
+    method,
+    headers: { "content-type": "application/json", origin },
+    body: method === "POST" ? JSON.stringify(payload) : undefined,
+  });
+  const response = await worker.fetch(request, {
+    ASSETS: { fetch: async () => new Response("unexpected", { status: 500 }) },
+    CONVERSION_ANALYTICS: { writeDataPoint: (point) => points.push(point) },
+  });
+  return { response, points };
+}
+
 function expectedLocation(target, query = "") {
   const destination = new URL(`https://${APEX_HOST}/`);
   destination.pathname = target;
@@ -76,12 +90,42 @@ await expectAsset(`https://preview.example.test${redirects[0].source}`, 404);
 const adminResponse = await expectAsset(`https://${APEX_HOST}/admin/`);
 assert.equal(adminResponse.headers.get("x-robots-tag"), "noindex, nofollow");
 
+const analyticsPayload = {
+  name: "generate_lead",
+  session_id: "test-session",
+  params: {
+    page_path: "/ประเมินราคา/",
+    page_type: "valuation",
+    device_category: "mobile",
+    viewport_width: 390,
+    cta_location: "mobile_sticky",
+    contact_method: "line",
+  },
+};
+const analytics = await runAnalytics(analyticsPayload);
+assert.equal(analytics.response.status, 204, "valid analytics event should return 204");
+assert.equal(analytics.points.length, 1, "valid analytics event should write one data point");
+assert.equal(analytics.points[0].indexes[0], "test-session");
+assert.equal(analytics.points[0].blobs[0], "generate_lead");
+assert.equal(analytics.points[0].blobs[3], "mobile");
+assert.equal(analytics.points[0].doubles[0], 390);
+
+const invalidAnalytics = await runAnalytics({ name: "not_allowed", params: {} });
+assert.equal(invalidAnalytics.response.status, 400, "unknown analytics events must be rejected");
+assert.equal(invalidAnalytics.points.length, 0, "unknown analytics events must not be recorded");
+
+const crossOriginAnalytics = await runAnalytics(analyticsPayload, { origin: "https://attacker.example" });
+assert.equal(crossOriginAnalytics.response.status, 403, "cross-origin analytics posts must be rejected");
+assert.equal(crossOriginAnalytics.points.length, 0, "cross-origin analytics posts must not be recorded");
+
 const config = fs.readFileSync(new URL("../wrangler.toml", import.meta.url), "utf8");
 assert.match(config, /^main\s*=\s*"\.\/worker\/index\.js"\s*$/m);
 assert.match(config, /^\s*directory\s*=\s*"dist"\s*$/m);
 assert.match(config, /^\s*binding\s*=\s*"ASSETS"\s*$/m);
 assert.match(config, /^\s*run_worker_first\s*=\s*true\s*$/m);
 assert.doesNotMatch(config, /^\s*run_worker_first\s*=\s*\[/m, "R13 must not fall back to the old two-path selective routing policy");
+assert.match(config, /^\s*binding\s*=\s*"CONVERSION_ANALYTICS"\s*$/m);
+assert.match(config, /^\s*dataset\s*=\s*"shopbuynotebook_conversion_events"\s*$/m);
 
 for (const { source, target } of redirects) {
   assert.ok(source.startsWith("/") && source.endsWith("/"), `invalid redirect source ${source}`);
