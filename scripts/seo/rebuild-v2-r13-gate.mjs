@@ -35,7 +35,7 @@ const calculated =
 assert(budget.releaseState === 'PRODUCTION_MIGRATION_CANDIDATE', 'Budget must be in PRODUCTION_MIGRATION_CANDIDATE state.');
 assert(calculated === budget.target.projectedIndexable, `Declared index budget ${budget.target.projectedIndexable} != calculated ${calculated}.`);
 assert(calculated >= budget.target.minIndexable && calculated <= budget.target.hardCeiling, `Calculated release surface ${calculated} is outside ${budget.target.minIndexable}-${budget.target.hardCeiling}.`);
-assert(calculated === 113, `R13 immutable initial release surface must be 113 URLs after executable inventory closure, got ${calculated}.`);
+assert(calculated === 112, `R14 consolidated release surface must be 112 URLs after retiring the duplicate secondhand money page, got ${calculated}.`);
 assert(!budget.corePaths.includes('/รับซื้อโน๊ตบุ๊ค/'), 'Redirecting /รับซื้อโน๊ตบุ๊ค/ must not remain in core sitemap allowlist.');
 assert(budget.corePaths.includes('/ประเมินราคา/'), 'Valuation owner must be in release allowlist.');
 assert(budget.releasedV2BrandPaths.length === 9, 'Brand release must contain hub + 8 brand owners.');
@@ -54,7 +54,7 @@ for (const row of redirectRows) {
   sourceSet.add(row.source);
 }
 for (const row of redirectRows) assert(!sourceSet.has(row.target), `Redirect chain detected: ${row.source} -> ${row.target}, where target is another redirect source.`);
-assert(redirectRows.length === 31, `Expected 31 controlled migration redirects, got ${redirectRows.length}.`);
+assert(redirectRows.length === 32, `Expected 32 controlled migration redirects after R14 head-term consolidation, got ${redirectRows.length}.`);
 assert(worker.includes('rebuild-v2-production-redirects.json'), 'Worker must consume the R13 redirect manifest.');
 assert(worker.includes('Response.redirect(destination.toString(), 301)'), 'Worker must emit HTTP 301 redirects.');
 assert(wrangler.includes('run_worker_first = true'), 'Cloudflare Worker must run before assets for the full route surface.');
@@ -128,4 +128,4 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(`R13 PASS: source migration controls valid; projected indexable=${calculated}; redirects=${redirectRows.length}${requireDist || exists('dist') ? '; built sitemap verified' : '; dist verification pending'}.`);
+console.log(`R14 PASS: source migration controls valid; projected indexable=${calculated}; redirects=${redirectRows.length}${requireDist || exists('dist') ? '; built sitemap verified' : '; dist verification pending'}.`);
