@@ -10,7 +10,7 @@ assert.equal(redirectManifest.status, "PRODUCTION_MIGRATION_CANDIDATE");
 assert.equal(redirectManifest.policy.statusCode, 301);
 assert.equal(redirectManifest.policy.oneHopOnly, true);
 assert.equal(redirectManifest.policy.preserveQuery, true);
-assert.equal(redirects.length, 31, "R13 redirect manifest must contain exactly 31 migrations");
+assert.equal(redirects.length, 32, "R14 redirect manifest must contain exactly 32 migrations");
 assert.equal(new Set(redirects.map(({ source }) => source)).size, redirects.length, "redirect sources must be unique");
 
 async function run(url, assetStatus = 200) {
@@ -83,8 +83,8 @@ const encodedLegacyPath = encodeURI("/รับซื้อโน๊ตบุ๊
 await expectRedirect(encodedLegacyPath, "/");
 
 await expectAsset(`https://${APEX_HOST}/`);
-await expectAsset(`https://${APEX_HOST}/รับซื้อโน๊ตบุ๊คมือสอง/`);
-await expectAsset(`https://${APEX_HOST}/this-page-must-not-exist-r13-control/`, 404);
+await expectRedirect("/รับซื้อโน๊ตบุ๊คมือสอง/", "/");
+await expectAsset(`https://${APEX_HOST}/this-page-must-not-exist-r14-control/`, 404);
 await expectAsset(`https://preview.example.test${redirects[0].source}`, 404);
 
 const adminResponse = await expectAsset(`https://${APEX_HOST}/admin/`);
@@ -123,7 +123,7 @@ assert.match(config, /^main\s*=\s*"\.\/worker\/index\.js"\s*$/m);
 assert.match(config, /^\s*directory\s*=\s*"dist"\s*$/m);
 assert.match(config, /^\s*binding\s*=\s*"ASSETS"\s*$/m);
 assert.match(config, /^\s*run_worker_first\s*=\s*true\s*$/m);
-assert.doesNotMatch(config, /^\s*run_worker_first\s*=\s*\[/m, "R13 must not fall back to the old two-path selective routing policy");
+assert.doesNotMatch(config, /^\s*run_worker_first\s*=\s*\[/m, "R14 must not fall back to the old selective routing policy");
 assert.match(config, /^\s*binding\s*=\s*"CONVERSION_ANALYTICS"\s*$/m);
 assert.match(config, /^\s*dataset\s*=\s*"shopbuynotebook_conversion_events"\s*$/m);
 
@@ -139,5 +139,5 @@ for (const { source, target } of redirects) {
 }
 
 console.log(
-  `R13 Worker routing validation passed: ${redirects.length} one-hop redirects, query preservation, encoded path handling, asset fall-through, admin noindex, and Worker-first config.`,
+  `R14 Worker routing validation passed: ${redirects.length} one-hop redirects, query preservation, encoded path handling, asset fall-through, admin noindex, and Worker-first config.`,
 );
