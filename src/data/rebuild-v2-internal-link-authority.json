@@ -24,11 +24,6 @@
       "role": "seller-flow"
     },
     {
-      "label": "รับซื้อโน๊ตบุ๊คมือสอง",
-      "href": "/",
-      "role": "generic-commercial-support"
-    },
-    {
       "label": "แบรนด์โน๊ตบุ๊ค",
       "href": "/แบรนด์/",
       "role": "brand-hub"
