@@ -1,22 +1,44 @@
 {
-  "version": "R13-2026-09-10",
+  "version": "R14-2026-09-22",
   "releaseState": "PRODUCTION_MIGRATION_CANDIDATE",
   "target": {
     "minIndexable": 80,
     "maxIndexable": 120,
     "hardCeiling": 120,
-    "projectedIndexable": 113
+    "projectedIndexable": 112
   },
   "controlledSurface": {
-    "modelSeries": { "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"], "projected": 46 },
-    "conditions": { "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"], "projected": 13 },
-    "locations": { "eligibleActions": ["KEEP_CURRENT_URL", "MIGRATE_LATER"], "projected": 7 },
-    "blogs": { "eligibleActions": ["KEEP_INFORMATIONAL"], "projected": 22 }
+    "modelSeries": {
+      "eligibleActions": [
+        "KEEP_CURRENT_URL",
+        "MIGRATE_LATER"
+      ],
+      "projected": 46
+    },
+    "conditions": {
+      "eligibleActions": [
+        "KEEP_CURRENT_URL",
+        "MIGRATE_LATER"
+      ],
+      "projected": 13
+    },
+    "locations": {
+      "eligibleActions": [
+        "KEEP_CURRENT_URL",
+        "MIGRATE_LATER"
+      ],
+      "projected": 7
+    },
+    "blogs": {
+      "eligibleActions": [
+        "KEEP_INFORMATIONAL"
+      ],
+      "projected": 22
+    }
   },
   "corePaths": [
     "/",
     "/ประเมินราคา/",
-    "/รับซื้อโน๊ตบุ๊คมือสอง/",
     "/ขายโน๊ตบุ๊ค/",
     "/พื้นที่ให้บริการ/",
     "/รับซื้อโน๊ตบุ๊คบริษัท/",
@@ -45,12 +67,18 @@
   "redirectingPathsMustNotBeInSitemap": [
     "/รับซื้อโน๊ตบุ๊ค/",
     "/รับซื้อ-notebook/",
+    "/รับซื้อโน๊ตบุ๊คมือสอง/",
     "/เช็คราคาโน๊ตบุ๊ค/",
     "/เช็คราคาโน๊ตบุ๊คมือสอง/",
     "/ตีราคาโน๊ตบุ๊ค/",
     "/ขายโน๊ตบุ๊คด่วน/"
   ],
-  "alwaysExcludedPrefixes": ["/admin/", "/รุ่น/", "/อาการ/", "/พื้นที่/"],
+  "alwaysExcludedPrefixes": [
+    "/admin/",
+    "/รุ่น/",
+    "/อาการ/",
+    "/พื้นที่/"
+  ],
   "policy": {
     "defaultStaticPage": "EXCLUDE_UNLESS_ALLOWLISTED",
     "noindexMustNotAppearInSitemap": true,
