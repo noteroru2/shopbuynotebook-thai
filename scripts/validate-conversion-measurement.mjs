@@ -40,8 +40,9 @@ if (required.every(exists)) {
   assert(sticky.includes('data-cta-location="mobile_sticky"'), 'Mobile CTA location marker is missing.');
   assert(header.includes('data-mobile-menu'), 'Mobile menu instrumentation marker is missing.');
   assert(tracker.includes("'/api/analytics'"), 'First-party analytics endpoint is not wired in the client.');
+  assert(worker.includes('CONVERSION_ANALYTICS?.writeDataPoint'), 'Worker optional Analytics Engine guard is missing.');
   assert(worker.includes('CONVERSION_ANALYTICS.writeDataPoint'), 'Worker Analytics Engine writer is missing.');
-  assert(wrangler.includes('shopbuynotebook_conversion_events'), 'Analytics Engine dataset binding is missing.');
+  assert(!wrangler.includes('shopbuynotebook_conversion_events'), 'Analytics Engine binding must stay disabled until the Cloudflare account enables Analytics Engine.');
 
   for (const event of [
     'generate_lead',

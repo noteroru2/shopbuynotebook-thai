@@ -110,6 +110,16 @@ assert.equal(analytics.points[0].blobs[0], "generate_lead");
 assert.equal(analytics.points[0].blobs[3], "mobile");
 assert.equal(analytics.points[0].doubles[0], 390);
 
+const noBindingRequest = new Request(`https://${APEX_HOST}/api/analytics`, {
+  method: "POST",
+  headers: { "content-type": "application/json", origin: `https://${APEX_HOST}` },
+  body: JSON.stringify(analyticsPayload),
+});
+const noBindingResponse = await worker.fetch(noBindingRequest, {
+  ASSETS: { fetch: async () => new Response("unexpected", { status: 500 }) },
+});
+assert.equal(noBindingResponse.status, 204, "analytics endpoint must degrade gracefully when Analytics Engine is unavailable");
+
 const invalidAnalytics = await runAnalytics({ name: "not_allowed", params: {} });
 assert.equal(invalidAnalytics.response.status, 400, "unknown analytics events must be rejected");
 assert.equal(invalidAnalytics.points.length, 0, "unknown analytics events must not be recorded");
@@ -124,8 +134,7 @@ assert.match(config, /^\s*directory\s*=\s*"dist"\s*$/m);
 assert.match(config, /^\s*binding\s*=\s*"ASSETS"\s*$/m);
 assert.match(config, /^\s*run_worker_first\s*=\s*true\s*$/m);
 assert.doesNotMatch(config, /^\s*run_worker_first\s*=\s*\[/m, "R14 must not fall back to the old selective routing policy");
-assert.match(config, /^\s*binding\s*=\s*"CONVERSION_ANALYTICS"\s*$/m);
-assert.match(config, /^\s*dataset\s*=\s*"shopbuynotebook_conversion_events"\s*$/m);
+assert.doesNotMatch(config, /^\s*binding\s*=\s*"CONVERSION_ANALYTICS"\s*$/m, "Analytics Engine binding must remain disabled until enabled in the Cloudflare account");
 
 for (const { source, target } of redirects) {
   assert.ok(source.startsWith("/") && source.endsWith("/"), `invalid redirect source ${source}`);
