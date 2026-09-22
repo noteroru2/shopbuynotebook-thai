@@ -91,6 +91,7 @@ if (productionRelease) {
 
 const moneyLosers = [
   ['src/pages/รับซื้อ-notebook.astro', "const target = '/';"],
+  ['src/pages/รับซื้อโน๊ตบุ๊คมือสอง.astro', "const target = '/';"],
   ['src/pages/เช็คราคาโน๊ตบุ๊ค.astro', "const target = '/ประเมินราคา/';"],
   ['src/pages/เช็คราคาโน๊ตบุ๊คมือสอง.astro', "const target = '/ประเมินราคา/';"],
   ['src/pages/ตีราคาโน๊ตบุ๊ค.astro', "const target = '/ประเมินราคา/';"],
