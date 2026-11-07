@@ -35,7 +35,11 @@ const calculated =
 assert(budget.releaseState === 'PRODUCTION_MIGRATION_CANDIDATE', 'Budget must be in PRODUCTION_MIGRATION_CANDIDATE state.');
 assert(calculated === budget.target.projectedIndexable, `Declared index budget ${budget.target.projectedIndexable} != calculated ${calculated}.`);
 assert(calculated >= budget.target.minIndexable && calculated <= budget.target.hardCeiling, `Calculated release surface ${calculated} is outside ${budget.target.minIndexable}-${budget.target.hardCeiling}.`);
-assert(calculated === 112, `R14 consolidated release surface must be 112 URLs after retiring the duplicate secondhand money page, got ${calculated}.`);
+assert(calculated === 114, `R14.1 evidence-backed local recovery must keep exactly 114 indexable URLs, got ${calculated}.`);
+for (const slug of ['มหาสารคาม', 'ศรีสะเกษ']) {
+  assert(r8.items.some((row) => row.slug === slug && row.action === 'KEEP_CURRENT_URL'), `R14.1 recovery location is not eligible for indexing: ${slug}`);
+}
+assert(countEligibleItems(r8.items, ['KEEP_CURRENT_URL', 'MIGRATE_LATER']) === 9, 'R14.1 must release exactly 9 location owners.');
 assert(!budget.corePaths.includes('/รับซื้อโน๊ตบุ๊ค/'), 'Redirecting /รับซื้อโน๊ตบุ๊ค/ must not remain in core sitemap allowlist.');
 assert(budget.corePaths.includes('/ประเมินราคา/'), 'Valuation owner must be in release allowlist.');
 assert(budget.releasedV2BrandPaths.length === 9, 'Brand release must contain hub + 8 brand owners.');
@@ -128,4 +132,4 @@ if (errors.length) {
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
-console.log(`R14 PASS: source migration controls valid; projected indexable=${calculated}; redirects=${redirectRows.length}${requireDist || exists('dist') ? '; built sitemap verified' : '; dist verification pending'}.`);
+console.log(`R14.1 PASS: source migration controls valid; projected indexable=${calculated}; redirects=${redirectRows.length}${requireDist || exists('dist') ? '; built sitemap verified' : '; dist verification pending'}.`);
