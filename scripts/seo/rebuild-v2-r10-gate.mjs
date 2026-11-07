@@ -20,7 +20,8 @@ const stagedPages = [
   'src/pages/พื้นที่/[slug].astro',
 ];
 
-if (graph.version !== '2026-09-09-r10') errors.push('Unexpected R10 graph version');
+// R10 authority contracts are preserved in the R14 graph release.
+if (!['2026-09-09-r10', '2026-09-22-r14'].includes(graph.version)) errors.push(`Unexpected authority graph version: ${graph.version}`);
 if (!Array.isArray(graph.coreOwners) || graph.coreOwners.length < 8) errors.push('R10 core owner graph is incomplete');
 if (!Array.isArray(graph.priorityBrands) || graph.priorityBrands.length !== 8) errors.push('R10 priority brand set must contain 8 staged brand owners');
 
