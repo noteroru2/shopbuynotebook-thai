@@ -6,7 +6,7 @@ const dist = path.join(root, 'dist');
 const expectedHost = 'xn--42cn4aobed0eb6hubj4es0m5dhvd.com';
 const legacyHomepagePath = '/รับซื้อโน๊ตบุ๊ค/';
 const expectedHomepageTitle =
-  'รับซื้อโน๊ตบุ๊คมือสอง ประเมินตามรุ่น สเปก และสภาพจริง | ร้านรับซื้อโน๊ตบุ๊ค.com';
+  'รับซื้อโน๊ตบุ๊คมือสอง เช็คราคาก่อนขาย | ร้านรับซื้อโน๊ตบุ๊ค.com';
 const expectedHomepageDescription =
   'รับซื้อโน๊ตบุ๊คมือสอง ส่งรุ่น สเปก รูปสภาพ แบตเตอรี่ และอุปกรณ์เพื่อประเมินเบื้องต้น ราคาสุดท้ายยืนยันหลังตรวจเครื่องจริง หน้าร้านอยู่จังหวัดอุบลราชธานี';
 const wranglerConfigPath = path.join(root, 'wrangler.toml');
