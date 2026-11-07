@@ -1,11 +1,11 @@
 {
-  "version": "R14-2026-09-22",
+  "version": "R14.1-2026-11-07",
   "releaseState": "PRODUCTION_MIGRATION_CANDIDATE",
   "target": {
     "minIndexable": 80,
     "maxIndexable": 120,
     "hardCeiling": 120,
-    "projectedIndexable": 112
+    "projectedIndexable": 114
   },
   "controlledSurface": {
     "modelSeries": {
@@ -27,7 +27,7 @@
         "KEEP_CURRENT_URL",
         "MIGRATE_LATER"
       ],
-      "projected": 7
+      "projected": 9
     },
     "blogs": {
       "eligibleActions": [
