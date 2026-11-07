@@ -1,5 +1,5 @@
 {
-  "version": "R8",
+  "version": "R8.1-2026-11-07",
   "generatedAt": "2026-09-09",
   "gscWindow": "2026-03-01..2026-09-06",
   "policy": {
@@ -47,6 +47,16 @@
       "evidence": "Two GSC impressions at avg position 19.0. Weak but observable search signal; retain as candidate, not as a template for nationwide expansion."
     },
     {
+      "slug": "มหาสารคาม",
+      "action": "KEEP_CURRENT_URL",
+      "evidence": "GSC page-level final 2026-09-06..2026-10-03: 5 clicks / 32 impressions / avg position 8.38; 2026-10-07..2026-11-03: 0 clicks / 0 impressions. Production 2026-11-07: self-canonical, noindex,nofollow; location page explicitly identifies Ubon as the only storefront and confirms shipping/appointments per case. Restore exactly this distinct local service page for controlled 7/14/28-day measurement; clicks do not prove recovery."
+    },
+    {
+      "slug": "ศรีสะเกษ",
+      "action": "KEEP_CURRENT_URL",
+      "evidence": "GSC page-level final 2026-09-06..2026-10-03: 2 clicks / 13 impressions / avg position 6.69; 2026-10-07..2026-11-03: 0 clicks / 0 impressions. Production 2026-11-07: self-canonical, noindex,nofollow; page clarifies there is no Sisaket branch and that remote valuation/shipping is conditional. Restore only this page and review performance at 7/14/28 days after production verification."
+    },
+    {
       "slug": "พระราม2",
       "action": "MERGE",
       "target": "/รับซื้อโน๊ตบุ๊ค/กรุงเทพ/",
@@ -76,5 +86,6 @@
       "target": "/พื้นที่ให้บริการ/",
       "evidence": "Near-me intent is not a real geographic entity and the legacy near-me combo surface appeared in GSC. Route ownership belongs to the service-area hub rather than a synthetic location page."
     }
-  ]
+  ],
+  "reviewedAt": "2026-11-07"
 }
