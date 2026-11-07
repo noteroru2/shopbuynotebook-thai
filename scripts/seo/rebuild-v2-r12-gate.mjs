@@ -33,14 +33,15 @@ if (blogs !== budget.controlledSurface.blogs.projected) fail(`blog count drift: 
 if (projected !== budget.target.projectedIndexable) fail(`projected total drift: ${projected}`);
 if (projected < budget.target.minIndexable || projected > budget.target.maxIndexable) fail(`projected surface ${projected} outside 80-120`);
 
-for (const required of ['/', '/รับซื้อโน๊ตบุ๊คมือสอง/', '/ขายโน๊ตบุ๊ค/', '/พื้นที่ให้บริการ/', '/blog/']) {
+for (const required of ['/', '/ขายโน๊ตบุ๊ค/', '/พื้นที่ให้บริการ/', '/blog/']) {
   if (!budget.corePaths.includes(required)) fail(`missing protected core path ${required}`);
 }
 if (release) {
   if (budget.corePaths.includes('/รับซื้อโน๊ตบุ๊ค/')) fail('redirecting generic legacy owner must not remain in release sitemap allowlist');
   if (!budget.corePaths.includes('/ประเมินราคา/')) fail('valuation owner missing from release sitemap allowlist');
   if (releasedBrands !== 9) fail(`release requires brand hub + 8 owners, got ${releasedBrands}`);
-  if (projected !== 113) fail(`R13 release surface must be 113 after executable inventory closure, got ${projected}`);
+  if (budget.corePaths.includes('/รับซื้อโน๊ตบุ๊คมือสอง/')) fail('R14 redirect source must not be listed as a core owner');
+  if (projected !== 114) fail(`R14.1 evidence-backed local recovery must be 114 URLs, got ${projected}`);
 }
 
 for (const retired of ['/รับซื้อ-notebook/','/เช็คราคาโน๊ตบุ๊ค/','/เช็คราคาโน๊ตบุ๊คมือสอง/','/ตีราคาโน๊ตบุ๊ค/','/ขายโน๊ตบุ๊คด่วน/']) {
